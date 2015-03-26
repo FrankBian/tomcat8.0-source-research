@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="32" failures="3" name="org.apache.catalina.connector.TestRequest" time="11.08" errors="0" skipped="1">
+  <properties>
+    <property name="idea.version" value="14.1"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="25.25-b02"/>
+    <property name="user.country.format" value="CN"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="idea.launcher.port" value="7535"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/Frank/Developer/idea/tomcat-source-research"/>
+    <property name="java.runtime.version" value="1.8.0_25-b17"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/t0/cyfyyjr10xjf9rxyjch8ftnm0000gn/T/"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/Applications/IntelliJ IDEA 14.app/Contents/plugins/maven/lib/maven3/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/Frank/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.10.2"/>
+    <property name="user.home" value="/Users/Frank"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="idea.launcher.bin.path" value="/Applications/IntelliJ IDEA 14.app/Contents/bin"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="Frank"/>
+    <property name="java.class.path" value="/Applications/IntelliJ IDEA 14.app/Contents/plugins/maven/lib/maven3/boot/plexus-classworlds-2.4.jar:/Applications/IntelliJ IDEA 14.app/Contents/lib/idea_rt.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre"/>
+    <property name="sun.java.command" value="com.intellij.rt.execution.application.AppMain org.codehaus.classworlds.Launcher -Didea.version=14.1 test"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_25"/>
+    <property name="java.ext.dirs" value="/Users/Frank/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/Applications/IntelliJ IDEA 14.app/Contents/plugins/maven/lib/maven3"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug37794" time="8.112"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug38113" time="0.069"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug48692" time="0.082"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug54984" time="0.165"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="getLocaleMultipleHeaders01" time="0.009"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="getLocaleMultipleHeaders02" time="0.001"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="localeParsePerformance" time="0.004">
+    <skipped/>
+  </testcase>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug49424WithChunking" time="0.066"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug56501a" time="0.066"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug56501b" time="0.064"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug56501c" time="0.066"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug56501d" time="0.068"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug56501e" time="0.066"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug56501f" time="0.064"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug56501g" time="0.064"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug56501h" time="0.065"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug56501i" time="0.065"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug56501j" time="0.062"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug56501k" time="0.064"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug56501l" time="0.063"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug56501m" time="0.065"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug56501n" time="0.064"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug56501o" time="0.064"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug57215a" time="0.063"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug57215b" time="0.064"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug57215c" time="0.07">
+    <failure message="expected:&lt;[/%2Fpath]&gt; but was:&lt;[]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;[/%2Fpath]&gt; but was:&lt;[]&gt;
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at org.apache.catalina.connector.TestRequest.doBug56501(TestRequest.java:821)
+	at org.apache.catalina.connector.TestRequest.testBug57215c(TestRequest.java:784)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</failure>
+    <system-err>26-Mar-2015 17:27:24.486 INFO [main] org.apache.catalina.startup.LoggingBaseTest.setUp Starting test case [testBug57215c]
+26-Mar-2015 17:27:24.487 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler [&quot;http-nio-127.0.0.1-auto-134&quot;]
+26-Mar-2015 17:27:24.487 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+26-Mar-2015 17:27:24.488 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Tomcat
+26-Mar-2015 17:27:24.488 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/@VERSION@
+26-Mar-2015 17:27:24.492 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler [&quot;http-nio-127.0.0.1-auto-134-58719&quot;]
+26-Mar-2015 17:27:24.493 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler [&quot;http-nio-127.0.0.1-auto-134-58719&quot;]
+26-Mar-2015 17:27:24.548 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service Tomcat
+26-Mar-2015 17:27:24.550 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler [&quot;http-nio-127.0.0.1-auto-134-58719&quot;]
+26-Mar-2015 17:27:24.550 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler [&quot;http-nio-127.0.0.1-auto-134-58719&quot;]
+</system-err>
+  </testcase>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug57215d" time="0.065">
+    <failure message="expected:&lt;[/%2Fpath]&gt; but was:&lt;[]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;[/%2Fpath]&gt; but was:&lt;[]&gt;
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at org.apache.catalina.connector.TestRequest.doBug56501(TestRequest.java:821)
+	at org.apache.catalina.connector.TestRequest.testBug57215d(TestRequest.java:789)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</failure>
+    <system-err>26-Mar-2015 17:27:24.556 INFO [main] org.apache.catalina.startup.LoggingBaseTest.setUp Starting test case [testBug57215d]
+26-Mar-2015 17:27:24.557 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler [&quot;http-nio-127.0.0.1-auto-135&quot;]
+26-Mar-2015 17:27:24.558 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+26-Mar-2015 17:27:24.558 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Tomcat
+26-Mar-2015 17:27:24.558 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/@VERSION@
+26-Mar-2015 17:27:24.561 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler [&quot;http-nio-127.0.0.1-auto-135-58722&quot;]
+26-Mar-2015 17:27:24.563 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler [&quot;http-nio-127.0.0.1-auto-135-58722&quot;]
+26-Mar-2015 17:27:24.618 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service Tomcat
+26-Mar-2015 17:27:24.620 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler [&quot;http-nio-127.0.0.1-auto-135-58722&quot;]
+26-Mar-2015 17:27:24.621 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler [&quot;http-nio-127.0.0.1-auto-135-58722&quot;]
+</system-err>
+  </testcase>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug57215e" time="0.064"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug57215f" time="0.065">
+    <failure message="expected:&lt;[/foo/..%2fpath]&gt; but was:&lt;[]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;[/foo/..%2fpath]&gt; but was:&lt;[]&gt;
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at org.apache.catalina.connector.TestRequest.doBug56501(TestRequest.java:821)
+	at org.apache.catalina.connector.TestRequest.testBug57215f(TestRequest.java:799)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</failure>
+    <system-err>26-Mar-2015 17:27:24.686 INFO [main] org.apache.catalina.startup.LoggingBaseTest.setUp Starting test case [testBug57215f]
+26-Mar-2015 17:27:24.687 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler [&quot;http-nio-127.0.0.1-auto-137&quot;]
+26-Mar-2015 17:27:24.688 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+26-Mar-2015 17:27:24.688 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Tomcat
+26-Mar-2015 17:27:24.688 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/@VERSION@
+26-Mar-2015 17:27:24.691 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler [&quot;http-nio-127.0.0.1-auto-137-58728&quot;]
+26-Mar-2015 17:27:24.693 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler [&quot;http-nio-127.0.0.1-auto-137-58728&quot;]
+26-Mar-2015 17:27:24.747 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service Tomcat
+26-Mar-2015 17:27:24.749 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler [&quot;http-nio-127.0.0.1-auto-137-58728&quot;]
+26-Mar-2015 17:27:24.750 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler [&quot;http-nio-127.0.0.1-auto-137-58728&quot;]
+</system-err>
+  </testcase>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testLoginLogout" time="0.075"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug37794withoutFilter" time="1.067"/>
+  <testcase classname="org.apache.catalina.connector.TestRequest" name="testBug49424NoChunking" time="0.065"/>
+</testsuite>

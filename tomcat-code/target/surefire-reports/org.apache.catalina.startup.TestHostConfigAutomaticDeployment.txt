@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.catalina.startup.TestHostConfigAutomaticDeployment
+-------------------------------------------------------------------------------
+Tests run: 137, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.104 sec

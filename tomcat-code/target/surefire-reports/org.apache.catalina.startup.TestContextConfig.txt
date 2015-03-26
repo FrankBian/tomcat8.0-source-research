@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.catalina.startup.TestContextConfig
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.125 sec

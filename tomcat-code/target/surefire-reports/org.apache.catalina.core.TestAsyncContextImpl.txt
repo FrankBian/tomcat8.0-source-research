@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.catalina.core.TestAsyncContextImpl
+-------------------------------------------------------------------------------
+Tests run: 54, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 77.093 sec

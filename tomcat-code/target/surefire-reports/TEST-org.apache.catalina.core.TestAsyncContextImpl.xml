@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="54" failures="0" name="org.apache.catalina.core.TestAsyncContextImpl" time="77.093" errors="0" skipped="0">
+  <properties>
+    <property name="idea.version" value="14.1"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="25.25-b02"/>
+    <property name="user.country.format" value="CN"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="idea.launcher.port" value="7535"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/Frank/Developer/idea/tomcat-source-research"/>
+    <property name="java.runtime.version" value="1.8.0_25-b17"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/t0/cyfyyjr10xjf9rxyjch8ftnm0000gn/T/"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/Applications/IntelliJ IDEA 14.app/Contents/plugins/maven/lib/maven3/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/Frank/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.10.2"/>
+    <property name="user.home" value="/Users/Frank"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="idea.launcher.bin.path" value="/Applications/IntelliJ IDEA 14.app/Contents/bin"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="Frank"/>
+    <property name="java.class.path" value="/Applications/IntelliJ IDEA 14.app/Contents/plugins/maven/lib/maven3/boot/plexus-classworlds-2.4.jar:/Applications/IntelliJ IDEA 14.app/Contents/lib/idea_rt.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre"/>
+    <property name="sun.java.command" value="com.intellij.rt.execution.application.AppMain org.codehaus.classworlds.Launcher -Didea.version=14.1 test"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_25"/>
+    <property name="java.ext.dirs" value="/Users/Frank/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/Applications/IntelliJ IDEA 14.app/Contents/plugins/maven/lib/maven3"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testDispatchErrorWithThreadSingleThenComplete" time="0.687"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testDispatchErrorSingleThenComplete" time="0.572"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testTimeoutListenerCompleteNonAsyncDispatch" time="3.08"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testTimeoutListenerNoCompleteAsyncDispatch" time="6.136"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testDispatchErrorWithThreadMultiple" time="0.631"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testDispatchErrorMultiple" time="0.572"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testDispatchMultiple" time="0.066"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testDispatchFromOtherContainerThread" time="0.279"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testBug49528" time="1.07"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testBug49567" time="1.078"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testBug50352" time="3.121"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testBug50753" time="5.13"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testBug53337" time="0.076"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testBug53843" time="3.129"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testBug54178" time="0.071"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testEmptyDispatch" time="0.073"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testDispatchWithCustomRequestResponse" time="0.076"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testTimeoutListenerNoCompleteNoDispatch" time="3.076"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testTimeoutErrorDispatchNonAsync" time="3.08"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testListeners" time="3.081"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testAsyncContextListenerClearing" time="0.065"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testAsyncStartNoComplete" time="2.074"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testGetResponseISE" time="0.068"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testBug51197a" time="1.573"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testBug51197b" time="1.569"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testBug51197c" time="1.567"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testBug51197d" time="1.57"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testAsyncStartWithComplete" time="0.067"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testDispatchWithThreadDouble" time="0.064"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testEmptyDispatchWithCustomRequestResponse" time="0.069"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testDispatchWithThreadSingle" time="0.114"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testTimeoutListenerCompleteNoDispatch" time="3.076"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testTimeoutErrorDispatchAsyncComplete" time="3.082"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testDispatchErrorWithThreadDouble" time="0.574"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testErrorHandling" time="2.073"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testDispatchDouble" time="0.064"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testDispatchErrorDouble" time="0.568"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testCommitOnComplete" time="1.57"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testDispatchErrorWithThreadDoubleThenComplete" time="0.625"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testDispatchErrorWithThreadSingle" time="0.571"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testDispatchErrorDoubleThenComplete" time="0.566"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testDispatchSingle" time="0.064"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testDispatchErrorSingle" time="0.569"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testTimeoutNoListener" time="3.077"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testDispatchWithThreadMultiple" time="0.068"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testGetRequestISE" time="0.066"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testTimeoutErrorDispatchAsyncDispatch" time="3.075"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testTimeoutErrorDispatchNone" time="3.077"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testForbiddenDispatching" time="0.062"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testDispatchErrorWithThreadMultipleThenComplete" time="0.573"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testTimeoutListenerNoCompleteNonAsyncDispatch" time="3.076"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testTimeoutErrorDispatchAsyncStart" time="3.074"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testTimeoutListenerCompleteAsyncDispatch" time="3.084"/>
+  <testcase classname="org.apache.catalina.core.TestAsyncContextImpl" name="testDispatchErrorMultipleThenComplete" time="0.571"/>
+</testsuite>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="20" failures="1" name="org.apache.el.TestELInJsp" time="4.524" errors="0" skipped="0">
+  <properties>
+    <property name="idea.version" value="14.1"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="25.25-b02"/>
+    <property name="user.country.format" value="CN"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="idea.launcher.port" value="7535"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/Frank/Developer/idea/tomcat-source-research"/>
+    <property name="java.runtime.version" value="1.8.0_25-b17"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/t0/cyfyyjr10xjf9rxyjch8ftnm0000gn/T/"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/Applications/IntelliJ IDEA 14.app/Contents/plugins/maven/lib/maven3/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/Frank/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.10.2"/>
+    <property name="user.home" value="/Users/Frank"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="idea.launcher.bin.path" value="/Applications/IntelliJ IDEA 14.app/Contents/bin"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="Frank"/>
+    <property name="java.class.path" value="/Applications/IntelliJ IDEA 14.app/Contents/plugins/maven/lib/maven3/boot/plexus-classworlds-2.4.jar:/Applications/IntelliJ IDEA 14.app/Contents/lib/idea_rt.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre"/>
+    <property name="sun.java.command" value="com.intellij.rt.execution.application.AppMain org.codehaus.classworlds.Launcher -Didea.version=14.1 test"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_25"/>
+    <property name="java.ext.dirs" value="/Users/Frank/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/Applications/IntelliJ IDEA 14.app/Contents/plugins/maven/lib/maven3"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="org.apache.el.TestELInJsp" name="testBug36923" time="0.156"/>
+  <testcase classname="org.apache.el.TestELInJsp" name="testBug42565" time="0.317"/>
+  <testcase classname="org.apache.el.TestELInJsp" name="testBug44994" time="0.268"/>
+  <testcase classname="org.apache.el.TestELInJsp" name="testBug45427" time="0.213"/>
+  <testcase classname="org.apache.el.TestELInJsp" name="testBug45451" time="0.591"/>
+  <testcase classname="org.apache.el.TestELInJsp" name="testBug45511" time="0.233"/>
+  <testcase classname="org.apache.el.TestELInJsp" name="testBug46596" time="0.209"/>
+  <testcase classname="org.apache.el.TestELInJsp" name="testBug47413" time="0.234">
+    <failure message="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;Apache Tomcat/@VERSION@ - Error report&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}.line {height: 1px; background-color: #525D76; border: none;}&lt;/style&gt; &lt;/head&gt;&lt;body&gt;&lt;h1&gt;HTTP Status 500 - /bug47413.jsp (line: 18, column: 0) The value for the useBean class attribute jsp2.examples.ValuesBean is invalid.&lt;/h1&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt; Exception report&lt;/p&gt;&lt;p&gt;&lt;b&gt;message&lt;/b&gt; &lt;u&gt;/bug47413.jsp (line: 18, column: 0) The value for the useBean class attribute jsp2.examples.ValuesBean is invalid.&lt;/u&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt; &lt;u&gt;The server encountered an internal error that prevented it from fulfilling this request.&lt;/u&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;exception&lt;/b&gt;&lt;/p&gt;&lt;pre&gt;org.apache.jasper.JasperException: /bug47413.jsp (line: 18, column: 0) The value for the useBean class attribute jsp2.examples.ValuesBean is invalid.
+	org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:42)
+	org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:275)
+	org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:107)
+	org.apache.jasper.compiler.Generator$GenerateVisitor.visit(Generator.java:1317)
+	org.apache.jasper.compiler.Node$UseBean.accept(Node.java:1178)
+	org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2376)
+	org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2428)
+	org.apache.jasper.compiler.Node$Visitor.visit(Node.java:2434)
+	org.apache.jasper.compiler.Node$Root.accept(Node.java:464)
+	org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2376)
+	org.apache.jasper.compiler.Generator.generate(Generator.java:3594)
+	org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:250)
+	org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	org.apache.jasper.compiler.Compiler.compile(Compiler.java:336)
+	org.apache.jasper.compiler.Compiler.compile(Compiler.java:323)
+	org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:580)
+	org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:356)
+	org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:396)
+	org.apache.jasper.servlet.JspServlet.service(JspServlet.java:340)
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+&lt;/pre&gt;&lt;p&gt;&lt;b&gt;note&lt;/b&gt; &lt;u&gt;The full stack trace of the root cause is available in the Apache Tomcat/@VERSION@ logs.&lt;/u&gt;&lt;/p&gt;&lt;hr class=&quot;line&quot;&gt;&lt;h3&gt;Apache Tomcat/@VERSION@&lt;/h3&gt;&lt;/body&gt;&lt;/html&gt;" type="java.lang.AssertionError">java.lang.AssertionError: &lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;Apache Tomcat/@VERSION@ - Error report&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}.line {height: 1px; background-color: #525D76; border: none;}&lt;/style&gt; &lt;/head&gt;&lt;body&gt;&lt;h1&gt;HTTP Status 500 - /bug47413.jsp (line: 18, column: 0) The value for the useBean class attribute jsp2.examples.ValuesBean is invalid.&lt;/h1&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt; Exception report&lt;/p&gt;&lt;p&gt;&lt;b&gt;message&lt;/b&gt; &lt;u&gt;/bug47413.jsp (line: 18, column: 0) The value for the useBean class attribute jsp2.examples.ValuesBean is invalid.&lt;/u&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt; &lt;u&gt;The server encountered an internal error that prevented it from fulfilling this request.&lt;/u&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;exception&lt;/b&gt;&lt;/p&gt;&lt;pre&gt;org.apache.jasper.JasperException: /bug47413.jsp (line: 18, column: 0) The value for the useBean class attribute jsp2.examples.ValuesBean is invalid.
+	org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:42)
+	org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:275)
+	org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:107)
+	org.apache.jasper.compiler.Generator$GenerateVisitor.visit(Generator.java:1317)
+	org.apache.jasper.compiler.Node$UseBean.accept(Node.java:1178)
+	org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2376)
+	org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2428)
+	org.apache.jasper.compiler.Node$Visitor.visit(Node.java:2434)
+	org.apache.jasper.compiler.Node$Root.accept(Node.java:464)
+	org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2376)
+	org.apache.jasper.compiler.Generator.generate(Generator.java:3594)
+	org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:250)
+	org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	org.apache.jasper.compiler.Compiler.compile(Compiler.java:336)
+	org.apache.jasper.compiler.Compiler.compile(Compiler.java:323)
+	org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:580)
+	org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:356)
+	org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:396)
+	org.apache.jasper.servlet.JspServlet.service(JspServlet.java:340)
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+&lt;/pre&gt;&lt;p&gt;&lt;b&gt;note&lt;/b&gt; &lt;u&gt;The full stack trace of the root cause is available in the Apache Tomcat/@VERSION@ logs.&lt;/u&gt;&lt;/p&gt;&lt;hr class=&quot;line&quot;&gt;&lt;h3&gt;Apache Tomcat/@VERSION@&lt;/h3&gt;&lt;/body&gt;&lt;/html&gt;
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.apache.el.TestELInJsp.assertEcho(TestELInJsp.java:451)
+	at org.apache.el.TestELInJsp.testBug47413(TestELInJsp.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</failure>
+  </testcase>
+  <testcase classname="org.apache.el.TestELInJsp" name="testBug48112" time="0.225"/>
+  <testcase classname="org.apache.el.TestELInJsp" name="testBug49555" time="0.153"/>
+  <testcase classname="org.apache.el.TestELInJsp" name="testBug51544" time="0.151"/>
+  <testcase classname="org.apache.el.TestELInJsp" name="testBug56029" time="0.217"/>
+  <testcase classname="org.apache.el.TestELInJsp" name="testBug56147" time="0.232"/>
+  <testcase classname="org.apache.el.TestELInJsp" name="testBug56612" time="0.152"/>
+  <testcase classname="org.apache.el.TestELInJsp" name="testBug57141" time="0.148"/>
+  <testcase classname="org.apache.el.TestELInJsp" name="testBug57142" time="0.15"/>
+  <testcase classname="org.apache.el.TestELInJsp" name="testBug57441" time="0.165"/>
+  <testcase classname="org.apache.el.TestELInJsp" name="testScriptingExpression" time="0.209"/>
+  <testcase classname="org.apache.el.TestELInJsp" name="testELMisc" time="0.223"/>
+  <testcase classname="org.apache.el.TestELInJsp" name="testELMethod" time="0.277"/>
+</testsuite>

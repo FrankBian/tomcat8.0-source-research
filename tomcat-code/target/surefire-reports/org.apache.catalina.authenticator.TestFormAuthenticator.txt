@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.catalina.authenticator.TestFormAuthenticator
+-------------------------------------------------------------------------------
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 174.357 sec

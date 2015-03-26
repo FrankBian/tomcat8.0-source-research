@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="137" failures="0" name="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" time="22.104" errors="0" skipped="0">
+  <properties>
+    <property name="idea.version" value="14.1"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="25.25-b02"/>
+    <property name="user.country.format" value="CN"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="idea.launcher.port" value="7535"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/Frank/Developer/idea/tomcat-source-research"/>
+    <property name="java.runtime.version" value="1.8.0_25-b17"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/t0/cyfyyjr10xjf9rxyjch8ftnm0000gn/T/"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/Applications/IntelliJ IDEA 14.app/Contents/plugins/maven/lib/maven3/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/Frank/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.10.2"/>
+    <property name="user.home" value="/Users/Frank"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="idea.launcher.bin.path" value="/Applications/IntelliJ IDEA 14.app/Contents/bin"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="Frank"/>
+    <property name="java.class.path" value="/Applications/IntelliJ IDEA 14.app/Contents/plugins/maven/lib/maven3/boot/plexus-classworlds-2.4.jar:/Applications/IntelliJ IDEA 14.app/Contents/lib/idea_rt.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre"/>
+    <property name="sun.java.command" value="com.intellij.rt.execution.application.AppMain org.codehaus.classworlds.Launcher -Didea.version=14.1 test"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_25"/>
+    <property name="java.ext.dirs" value="/Users/Frank/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk8/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/Applications/IntelliJ IDEA 14.app/Contents/plugins/maven/lib/maven3"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteXmlDirRemoveDir" time="0.627"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteXmlDirRemoveXml" time="0.583"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testAdditionDirAddXmlExtwar" time="0.09"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteXmlWarDirRemoveDir" time="0.584"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteXmlWarDirRemoveWar" time="0.575"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteXmlWarDirRemoveXml" time="0.584"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteXmlDirRemoveXmlCopyXml" time="0.584"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testAdditionXmlAddDir" time="0.063"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testAdditionXmlAddWar" time="0.07"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testModifyXmlExtwarUpdateExtwar" time="0.076"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testCopyXMLFFF" time="0.074"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testCopyXMLFFT" time="0.072"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testCopyXMLFTF" time="0.073"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testCopyXMLFTT" time="0.07"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testCopyXMLTFF" time="0.074"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testCopyXMLTFT" time="0.07"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testCopyXMLTTF" time="0.072"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testCopyXMLTTT" time="0.069"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testAdditionDirAddWar" time="0.077"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testAdditionDirAddXml" time="0.078"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testUnpackWARFFF" time="0.067"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testUnpackWARFFT" time="0.07"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testUnpackWARFTF" time="0.071"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testUnpackWARFTT" time="0.109"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testUnpackWARTFF" time="0.065"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testUnpackWARTFT" time="0.069"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testUnpackWARTTF" time="0.066"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testUnpackWARTTT" time="0.067"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testBrokenAppWithAntiLockingF" time="0.072"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testBrokenAppWithAntiLockingT" time="0.07"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testModifyXmlExtwarUpdateXml" time="0.07"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteXmlWarRemoveXmlCopyXml" time="0.581"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlExternalWarXmlFFF" time="0.07"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlExternalWarXmlFFT" time="0.068"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlExternalWarXmlFTF" time="0.065"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlExternalWarXmlFTT" time="0.075"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlExternalWarXmlTFF" time="0.069"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlExternalWarXmlTFT" time="0.068"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlExternalWarXmlTTF" time="0.069"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlExternalWarXmlTTT" time="0.07"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testModifyXmlExtdirUpdateXml" time="0.078"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testAdditionDirAddDirXmlFF" time="0.077"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testAdditionDirAddDirXmlFT" time="0.074"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testAdditionDirAddDirXmlTF" time="0.071"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testAdditionDirAddDirXmlTT" time="0.076"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testModifyWarDirUpdateDir" time="0.068"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testModifyWarDirUpdateWar" time="0.082"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testModifyWarUpdateWar" time="0.075"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testModifyXmlExtwarDirUpdateDir" time="0.068"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testModifyXmlExtwarDirUpdateExt" time="0.075"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testModifyXmlExtwarDirUpdateXml" time="0.078"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testAdditionXmlExtwarAddDir" time="0.068"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testAdditionXmlExtwarAddWar" time="0.065"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentWarXmlFFF" time="0.06"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentWarXmlFFT" time="0.063"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentWarXmlFTF" time="0.063"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentWarXmlFTT" time="0.064"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentWarXmlTFF" time="0.067"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentWarXmlTFT" time="0.071"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentWarXmlTTF" time="0.067"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentWarXmlTTT" time="0.069"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteWarRemoveWar" time="0.573"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testModifyDirUpdateDir" time="0.069"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteXmlWarDirRemoveXmlCopyXml" time="0.578"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteXmlWarDirRemoveDirCopyXml" time="0.579"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testAdditionWarDirAddXml" time="0.083"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteDirRemoveDir" time="0.573"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlExternalDirXmlFFF" time="0.069"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlExternalDirXmlFFT" time="0.066"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlExternalDirXmlFTF" time="0.068"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlExternalDirXmlFTT" time="0.071"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlExternalDirXmlTFF" time="0.068"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlExternalDirXmlTFT" time="0.068"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlExternalDirXmlTTF" time="0.416"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlExternalDirXmlTTT" time="0.068"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testModifyXmlWarDirUpdateDir" time="0.067"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testModifyXmlWarDirUpdateWar" time="0.069"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testModifyXmlWarDirUpdateXml" time="0.075"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testAdditionXmlWarAddDir" time="0.069"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testModifyXmlExtdirUpdateExtdir" time="0.068"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testModifyXmlWarUpdateWar" time="0.068"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testModifyXmlWarUpdateXml" time="0.069"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentDirFFF" time="0.065"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentDirFFT" time="0.067"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentDirFTF" time="0.067"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentDirFTT" time="0.066"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentDirTFF" time="0.066"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentDirTFT" time="0.064"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentDirTTF" time="0.067"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentDirTTT" time="0.066"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testAdditionXmlExtdirAddDir" time="0.067"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testAdditionXmlExtdirAddWar" time="0.067"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testModifyXmlUpdateXml" time="0.065"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentDirXmlFFF" time="0.06"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentDirXmlFFT" time="0.064"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentDirXmlFTF" time="0.063"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentDirXmlFTT" time="0.06"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentDirXmlTFF" time="0.067"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentDirXmlTFT" time="0.063"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentDirXmlTTF" time="0.07"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentDirXmlTTT" time="0.07"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteXmlRemoveXml" time="0.567"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testModifyXmlDirUpdateDir" time="0.069"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testModifyXmlDirUpdateXml" time="0.074"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testAdditionWarAddXmlExtwar" time="0.083"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentWarFFF" time="0.064"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentWarFFT" time="0.065"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentWarFTF" time="0.064"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentWarFTT" time="0.066"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentWarTFF" time="0.067"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentWarTFT" time="0.066"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentWarTTF" time="0.065"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentWarTTT" time="0.067"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteWarDirRemoveDir" time="0.585"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteWarDirRemoveWar" time="0.573"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlFFF" time="0.063"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlFFT" time="0.062"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlFTF" time="0.06"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlFTT" time="0.062"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlTFF" time="0.062"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlTFT" time="0.063"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlTTF" time="0.063"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeploymentXmlTTT" time="0.062"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testSetContextClassName" time="0.074"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteXmlExtwarDirRemoveDir" time="0.603"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteXmlExtwarDirRemoveExt" time="0.579"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteXmlExtwarDirRemoveXml" time="0.575"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testAdditionXmlDirAddWar" time="0.08"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteXmlExtwarRemoveExt" time="0.577"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteXmlExtwarRemoveXml" time="0.572"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteXmlExtdirRemoveExt" time="0.577"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteXmlExtdirRemoveXml" time="0.574"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testAdditionWarAddDir" time="0.067"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testAdditionWarAddXml" time="0.072"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteXmlWarDirRemoveWarCopyXml" time="0.574"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteXmlWarRemoveWar" time="0.572"/>
+  <testcase classname="org.apache.catalina.startup.TestHostConfigAutomaticDeployment" name="testDeleteXmlWarRemoveXml" time="0.577"/>
+</testsuite>
