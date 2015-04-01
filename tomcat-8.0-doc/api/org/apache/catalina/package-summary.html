@@ -1,0 +1,492 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>org.apache.catalina (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="org.apache.catalina (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li class="navBarCell1Rev">Package</li>
+<li>Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev Package</li>
+<li><a href="../../../org/apache/catalina/ant/package-summary.html">Next Package</a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/apache/catalina/package-summary.html" target="_top">Frames</a></li>
+<li><a href="package-summary.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<div class="header">
+<h1 title="Package" class="title">Package&nbsp;org.apache.catalina</h1>
+</div>
+<div class="contentContainer">
+<ul class="blockList">
+<li class="blockList">
+<table class="packageSummary" border="0" cellpadding="3" cellspacing="0" summary="Interface Summary table, listing interfaces, and an explanation">
+<caption><span>Interface Summary</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Interface</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/AccessLog.html" title="interface in org.apache.catalina">AccessLog</a></td>
+<td class="colLast">
+<div class="block">Intended for use by a <a href="../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina"><code>Valve</code></a> to indicate that the <a href="../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina"><code>Valve</code></a>
+ provides access logging.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/AsyncDispatcher.html" title="interface in org.apache.catalina">AsyncDispatcher</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/Authenticator.html" title="interface in org.apache.catalina">Authenticator</a></td>
+<td class="colLast">
+<div class="block">An <b>Authenticator</b> is a component (usually a Valve or Container) that
+ provides some sort of authentication service.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/Cluster.html" title="interface in org.apache.catalina">Cluster</a></td>
+<td class="colLast">
+<div class="block">A <b>Cluster</b> works as a Cluster client/server for the local host
+ Different Cluster implementations can be used to support different
+ ways to communicate within the Cluster.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/Contained.html" title="interface in org.apache.catalina">Contained</a></td>
+<td class="colLast">
+<div class="block">Decoupling interface which specifies that an implementing class is
+ associated with at most one <strong>Container</strong> instance.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a></td>
+<td class="colLast">
+<div class="block">A <b>Container</b> is an object that can execute requests received from
+ a client, and return responses based on those requests.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/ContainerListener.html" title="interface in org.apache.catalina">ContainerListener</a></td>
+<td class="colLast">
+<div class="block">Interface defining a listener for significant Container generated events.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/ContainerServlet.html" title="interface in org.apache.catalina">ContainerServlet</a></td>
+<td class="colLast">
+<div class="block">A <b>ContainerServlet</b> is a servlet that has access to Catalina
+ internal functionality, and is loaded from the Catalina class loader
+ instead of the web application class loader.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a></td>
+<td class="colLast">
+<div class="block">A <b>Context</b> is a Container that represents a servlet context, and
+ therefore an individual web application, in the Catalina servlet engine.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/CredentialHandler.html" title="interface in org.apache.catalina">CredentialHandler</a></td>
+<td class="colLast">
+<div class="block">This interface is used by the <a href="../../../org/apache/catalina/Realm.html" title="interface in org.apache.catalina"><code>Realm</code></a> to compare the user provided
+ credentials with the credentials stored in the <a href="../../../org/apache/catalina/Realm.html" title="interface in org.apache.catalina"><code>Realm</code></a> for that user.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/DistributedManager.html" title="interface in org.apache.catalina">DistributedManager</a></td>
+<td class="colLast">
+<div class="block">Interface implemented by session managers that do not keep a complete copy
+ of all sessions in memory but do know where every session is.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/Engine.html" title="interface in org.apache.catalina">Engine</a></td>
+<td class="colLast">
+<div class="block">An <b>Engine</b> is a Container that represents the entire Catalina servlet
+ engine.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/Executor.html" title="interface in org.apache.catalina">Executor</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/Group.html" title="interface in org.apache.catalina">Group</a></td>
+<td class="colLast">
+<div class="block">Abstract representation of a group of <a href="../../../org/apache/catalina/User.html" title="interface in org.apache.catalina"><code>User</code></a>s in a
+ <a href="../../../org/apache/catalina/UserDatabase.html" title="interface in org.apache.catalina"><code>UserDatabase</code></a>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/Host.html" title="interface in org.apache.catalina">Host</a></td>
+<td class="colLast">
+<div class="block">A <b>Host</b> is a Container that represents a virtual host in the
+ Catalina servlet engine.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/InstanceListener.html" title="interface in org.apache.catalina">InstanceListener</a></td>
+<td class="colLast">
+<div class="block">Interface defining a listener for significant events related to a
+ specific servlet instance, rather than to the Wrapper component that
+ is managing that instance.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/JmxEnabled.html" title="interface in org.apache.catalina">JmxEnabled</a></td>
+<td class="colLast">
+<div class="block">This interface is implemented by components that will be registered with an
+ MBean server when they are created and unregistered when they are destroyed.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a></td>
+<td class="colLast">
+<div class="block">Common interface for component life cycle methods.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/LifecycleListener.html" title="interface in org.apache.catalina">LifecycleListener</a></td>
+<td class="colLast">
+<div class="block">Interface defining a listener for significant events (including "component
+ start" and "component stop" generated by a component that implements the
+ Lifecycle interface.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/Loader.html" title="interface in org.apache.catalina">Loader</a></td>
+<td class="colLast">
+<div class="block">A <b>Loader</b> represents a Java ClassLoader implementation that can
+ be used by a Container to load class files (within a repository associated
+ with the Loader) that are designed to be reloaded upon request, as well as
+ a mechanism to detect whether changes have occurred in the underlying
+ repository.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/Manager.html" title="interface in org.apache.catalina">Manager</a></td>
+<td class="colLast">
+<div class="block">A <b>Manager</b> manages the pool of Sessions that are associated with a
+ particular Container.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/Pipeline.html" title="interface in org.apache.catalina">Pipeline</a></td>
+<td class="colLast">
+<div class="block">Interface describing a collection of Valves that should be executed
+ in sequence when the <code>invoke()</code> method is invoked.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/Realm.html" title="interface in org.apache.catalina">Realm</a></td>
+<td class="colLast">
+<div class="block">A <b>Realm</b> is a read-only facade for an underlying security realm
+ used to authenticate individual users, and identify the security roles
+ associated with those users.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/Role.html" title="interface in org.apache.catalina">Role</a></td>
+<td class="colLast">
+<div class="block">Abstract representation of a security role, suitable for use in
+ environments like JAAS that want to deal with <code>Principals</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/Server.html" title="interface in org.apache.catalina">Server</a></td>
+<td class="colLast">
+<div class="block">A <code>Server</code> element represents the entire Catalina
+ servlet container.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/Service.html" title="interface in org.apache.catalina">Service</a></td>
+<td class="colLast">
+<div class="block">A <strong>Service</strong> is a group of one or more
+ <strong>Connectors</strong> that share a single <strong>Container</strong>
+ to process their incoming requests.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></td>
+<td class="colLast">
+<div class="block">A <b>Session</b> is the Catalina-internal facade for an
+ <code>HttpSession</code> that is used to maintain state information
+ between requests for a particular user of a web application.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/SessionIdGenerator.html" title="interface in org.apache.catalina">SessionIdGenerator</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/SessionListener.html" title="interface in org.apache.catalina">SessionListener</a></td>
+<td class="colLast">
+<div class="block">Interface defining a listener for significant Session generated events.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/Store.html" title="interface in org.apache.catalina">Store</a></td>
+<td class="colLast">
+<div class="block">A <b>Store</b> is the abstraction of a Catalina component that provides
+ persistent storage and loading of Sessions and their associated user data.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/StoreManager.html" title="interface in org.apache.catalina">StoreManager</a></td>
+<td class="colLast">
+<div class="block">PersistentManager would have been a better name but that would have clashed
+ with the implementation name.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/ThreadBindingListener.html" title="interface in org.apache.catalina">ThreadBindingListener</a></td>
+<td class="colLast">
+<div class="block">Callback for establishing naming association when entering the application
+ scope.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/TomcatPrincipal.html" title="interface in org.apache.catalina">TomcatPrincipal</a></td>
+<td class="colLast">
+<div class="block">Defines additional methods implemented by <a href="http://docs.oracle.com/javase/7/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security"><code>Principal</code></a>s created by
+ Tomcat's standard <a href="../../../org/apache/catalina/Realm.html" title="interface in org.apache.catalina"><code>Realm</code></a> implementations.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/TrackedWebResource.html" title="interface in org.apache.catalina">TrackedWebResource</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/User.html" title="interface in org.apache.catalina">User</a></td>
+<td class="colLast">
+<div class="block">Abstract representation of a user in a <a href="../../../org/apache/catalina/UserDatabase.html" title="interface in org.apache.catalina"><code>UserDatabase</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/UserDatabase.html" title="interface in org.apache.catalina">UserDatabase</a></td>
+<td class="colLast">
+<div class="block">Abstract representation of a database of <a href="../../../org/apache/catalina/User.html" title="interface in org.apache.catalina"><code>User</code></a>s and
+ <a href="../../../org/apache/catalina/Group.html" title="interface in org.apache.catalina"><code>Group</code></a>s that can be maintained by an application,
+ along with definitions of corresponding <a href="../../../org/apache/catalina/Role.html" title="interface in org.apache.catalina"><code>Role</code></a>s, and
+ referenced by a <a href="../../../org/apache/catalina/Realm.html" title="interface in org.apache.catalina"><code>Realm</code></a> for authentication and access control.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a></td>
+<td class="colLast">
+<div class="block">A <b>Valve</b> is a request processing component associated with a
+ particular Container.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/WebResource.html" title="interface in org.apache.catalina">WebResource</a></td>
+<td class="colLast">
+<div class="block">Represents a file or directory within a web application.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/WebResourceRoot.html" title="interface in org.apache.catalina">WebResourceRoot</a></td>
+<td class="colLast">
+<div class="block">Represents the complete set of resources for a web application.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/WebResourceSet.html" title="interface in org.apache.catalina">WebResourceSet</a></td>
+<td class="colLast">
+<div class="block">Represents a set of resources that are part of a web application.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/Wrapper.html" title="interface in org.apache.catalina">Wrapper</a></td>
+<td class="colLast">
+<div class="block">A <b>Wrapper</b> is a Container that represents an individual servlet
+ definition from the deployment descriptor of the web application.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList">
+<table class="packageSummary" border="0" cellpadding="3" cellspacing="0" summary="Class Summary table, listing classes, and an explanation">
+<caption><span>Class Summary</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Class</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/ContainerEvent.html" title="class in org.apache.catalina">ContainerEvent</a></td>
+<td class="colLast">
+<div class="block">General event for notifying listeners of significant changes on a Container.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/Globals.html" title="class in org.apache.catalina">Globals</a></td>
+<td class="colLast">
+<div class="block">Global constants that are applicable to multiple packages within Catalina.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/InstanceEvent.html" title="class in org.apache.catalina">InstanceEvent</a></td>
+<td class="colLast">
+<div class="block">General event for notifying listeners of significant events related to
+ a specific instance of a Servlet, or a specific instance of a Filter,
+ as opposed to the Wrapper component that manages it.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/LifecycleEvent.html" title="class in org.apache.catalina">LifecycleEvent</a></td>
+<td class="colLast">
+<div class="block">General event for notifying listeners of significant changes on a component
+ that implements the Lifecycle interface.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/SessionEvent.html" title="class in org.apache.catalina">SessionEvent</a></td>
+<td class="colLast">
+<div class="block">General event for notifying listeners of significant changes on a Session.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList">
+<table class="packageSummary" border="0" cellpadding="3" cellspacing="0" summary="Enum Summary table, listing enums, and an explanation">
+<caption><span>Enum Summary</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Enum</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/LifecycleState.html" title="enum in org.apache.catalina">LifecycleState</a></td>
+<td class="colLast">
+<div class="block">The list of valid states for components that implement <a href="../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina"><code>Lifecycle</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/WebResourceRoot.ResourceSetType.html" title="enum in org.apache.catalina">WebResourceRoot.ResourceSetType</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList">
+<table class="packageSummary" border="0" cellpadding="3" cellspacing="0" summary="Exception Summary table, listing exceptions, and an explanation">
+<caption><span>Exception Summary</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Exception</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></td>
+<td class="colLast">
+<div class="block">General purpose exception that is thrown to indicate a lifecycle related
+ problem.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li class="navBarCell1Rev">Package</li>
+<li>Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev Package</li>
+<li><a href="../../../org/apache/catalina/ant/package-summary.html">Next Package</a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/apache/catalina/package-summary.html" target="_top">Frames</a></li>
+<li><a href="package-summary.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

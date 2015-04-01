@@ -1,0 +1,1049 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AbstractSender (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="AbstractSender (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/catalina/tribes/transport/AbstractRxTask.html" title="class in org.apache.catalina.tribes.transport"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/catalina/tribes/transport/Constants.html" title="class in org.apache.catalina.tribes.transport"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/catalina/tribes/transport/AbstractSender.html" target="_top">Frames</a></li>
+<li><a href="AbstractSender.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.tribes.transport</div>
+<h2 title="Class AbstractSender" class="title">Class AbstractSender</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.tribes.transport.AbstractSender</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html" title="interface in org.apache.catalina.tribes.transport">DataSender</a></dd>
+</dl>
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../../../../org/apache/catalina/tribes/transport/bio/BioSender.html" title="class in org.apache.catalina.tribes.transport.bio">BioSender</a>, <a href="../../../../../org/apache/catalina/tribes/transport/bio/MultipointBioSender.html" title="class in org.apache.catalina.tribes.transport.bio">MultipointBioSender</a>, <a href="../../../../../org/apache/catalina/tribes/transport/nio/NioSender.html" title="class in org.apache.catalina.tribes.transport.nio">NioSender</a>, <a href="../../../../../org/apache/catalina/tribes/transport/nio/ParallelNioSender.html" title="class in org.apache.catalina.tribes.transport.nio">ParallelNioSender</a>, <a href="../../../../../org/apache/catalina/tribes/transport/PooledSender.html" title="class in org.apache.catalina.tribes.transport">PooledSender</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public abstract class <span class="strong">AbstractSender</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html" title="interface in org.apache.catalina.tribes.transport">DataSender</a></pre>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#AbstractSender()">AbstractSender</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#connect()">connect</a></strong>()</code>
+<div class="block">connect</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#disconnect()">disconnect</a></strong>()</code>
+<div class="block">disconnect
+
+ TODO Implement this org.apache.catalina.tribes.transport.DataSender method</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getAddress()">getAddress</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getAttempt()">getAttempt</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getConnectTime()">getConnectTime</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getDestination()">getDestination</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getDirectBuffer()">getDirectBuffer</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getKeepAliveCount()">getKeepAliveCount</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getKeepAliveTime()">getKeepAliveTime</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getMaxRetryAttempts()">getMaxRetryAttempts</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getOoBInline()">getOoBInline</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getPort()">getPort</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getRequestCount()">getRequestCount</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getRxBufSize()">getRxBufSize</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getSoKeepAlive()">getSoKeepAlive</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getSoLingerOn()">getSoLingerOn</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getSoLingerTime()">getSoLingerTime</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getSoReuseAddress()">getSoReuseAddress</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getSoTrafficClass()">getSoTrafficClass</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getTcpNoDelay()">getTcpNoDelay</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getThrowOnFailedAck()">getThrowOnFailedAck</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getTimeout()">getTimeout</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getTxBufSize()">getTxBufSize</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getUdpPort()">getUdpPort</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getUdpRxBufSize()">getUdpRxBufSize</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getUdpTxBufSize()">getUdpTxBufSize</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#isConnected()">isConnected</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#isUdpBased()">isUdpBased</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#keepalive()">keepalive</a></strong>()</code>
+<div class="block">keepalive</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setAddress(java.net.InetAddress)">setAddress</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;address)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setAttempt(int)">setAttempt</a></strong>(int&nbsp;attempt)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setConnected(boolean)">setConnected</a></strong>(boolean&nbsp;connected)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setConnectTime(long)">setConnectTime</a></strong>(long&nbsp;connectTime)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setDestination(org.apache.catalina.tribes.Member)">setDestination</a></strong>(<a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;destination)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setDirectBuffer(boolean)">setDirectBuffer</a></strong>(boolean&nbsp;directBuffer)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setKeepAliveCount(int)">setKeepAliveCount</a></strong>(int&nbsp;keepAliveCount)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setKeepAliveTime(long)">setKeepAliveTime</a></strong>(long&nbsp;keepAliveTime)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setMaxRetryAttempts(int)">setMaxRetryAttempts</a></strong>(int&nbsp;maxRetryAttempts)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setOoBInline(boolean)">setOoBInline</a></strong>(boolean&nbsp;ooBInline)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setPort(int)">setPort</a></strong>(int&nbsp;port)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setRequestCount(int)">setRequestCount</a></strong>(int&nbsp;requestCount)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setRxBufSize(int)">setRxBufSize</a></strong>(int&nbsp;rxBufSize)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setSoKeepAlive(boolean)">setSoKeepAlive</a></strong>(boolean&nbsp;soKeepAlive)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setSoLingerOn(boolean)">setSoLingerOn</a></strong>(boolean&nbsp;soLingerOn)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setSoLingerTime(int)">setSoLingerTime</a></strong>(int&nbsp;soLingerTime)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setSoReuseAddress(boolean)">setSoReuseAddress</a></strong>(boolean&nbsp;soReuseAddress)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setSoTrafficClass(int)">setSoTrafficClass</a></strong>(int&nbsp;soTrafficClass)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setTcpNoDelay(boolean)">setTcpNoDelay</a></strong>(boolean&nbsp;tcpNoDelay)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setThrowOnFailedAck(boolean)">setThrowOnFailedAck</a></strong>(boolean&nbsp;throwOnFailedAck)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setTimeout(long)">setTimeout</a></strong>(long&nbsp;timeout)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setTxBufSize(int)">setTxBufSize</a></strong>(int&nbsp;txBufSize)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setUdpBased(boolean)">setUdpBased</a></strong>(boolean&nbsp;udpBased)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setUdpPort(int)">setUdpPort</a></strong>(int&nbsp;udpPort)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setUdpRxBufSize(int)">setUdpRxBufSize</a></strong>(int&nbsp;udpRxBufSize)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setUdpTxBufSize(int)">setUdpTxBufSize</a></strong>(int&nbsp;udpTxBufSize)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#transferProperties(org.apache.catalina.tribes.transport.AbstractSender,%20org.apache.catalina.tribes.transport.AbstractSender)">transferProperties</a></strong>(<a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html" title="class in org.apache.catalina.tribes.transport">AbstractSender</a>&nbsp;from,
+                  <a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html" title="class in org.apache.catalina.tribes.transport">AbstractSender</a>&nbsp;to)</code>
+<div class="block">transfers sender properties from one sender to another</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="AbstractSender()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>AbstractSender</h4>
+<pre>public&nbsp;AbstractSender()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="transferProperties(org.apache.catalina.tribes.transport.AbstractSender, org.apache.catalina.tribes.transport.AbstractSender)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>transferProperties</h4>
+<pre>public static&nbsp;void&nbsp;transferProperties(<a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html" title="class in org.apache.catalina.tribes.transport">AbstractSender</a>&nbsp;from,
+                      <a href="../../../../../org/apache/catalina/tribes/transport/AbstractSender.html" title="class in org.apache.catalina.tribes.transport">AbstractSender</a>&nbsp;to)</pre>
+<div class="block">transfers sender properties from one sender to another</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>from</code> - AbstractSender</dd><dd><code>to</code> - AbstractSender</dd></dl>
+</li>
+</ul>
+<a name="connect()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>connect</h4>
+<pre>public abstract&nbsp;void&nbsp;connect()
+                      throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">connect</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html#connect()">connect</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html" title="interface in org.apache.catalina.tribes.transport">DataSender</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - TODO Implement this org.apache.catalina.tribes.transport.DataSender method</dd></dl>
+</li>
+</ul>
+<a name="disconnect()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>disconnect</h4>
+<pre>public abstract&nbsp;void&nbsp;disconnect()</pre>
+<div class="block">disconnect
+
+ TODO Implement this org.apache.catalina.tribes.transport.DataSender method</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html#disconnect()">disconnect</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html" title="interface in org.apache.catalina.tribes.transport">DataSender</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="keepalive()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>keepalive</h4>
+<pre>public&nbsp;boolean&nbsp;keepalive()</pre>
+<div class="block">keepalive</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html#keepalive()">keepalive</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html" title="interface in org.apache.catalina.tribes.transport">DataSender</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>boolean
+ TODO Implement this org.apache.catalina.tribes.transport.DataSender method</dd></dl>
+</li>
+</ul>
+<a name="setConnected(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setConnected</h4>
+<pre>protected&nbsp;void&nbsp;setConnected(boolean&nbsp;connected)</pre>
+</li>
+</ul>
+<a name="isConnected()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isConnected</h4>
+<pre>public&nbsp;boolean&nbsp;isConnected()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html#isConnected()">isConnected</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html" title="interface in org.apache.catalina.tribes.transport">DataSender</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getConnectTime()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getConnectTime</h4>
+<pre>public&nbsp;long&nbsp;getConnectTime()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html#getConnectTime()">getConnectTime</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html" title="interface in org.apache.catalina.tribes.transport">DataSender</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getDestination()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDestination</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;getDestination()</pre>
+</li>
+</ul>
+<a name="getKeepAliveCount()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getKeepAliveCount</h4>
+<pre>public&nbsp;int&nbsp;getKeepAliveCount()</pre>
+</li>
+</ul>
+<a name="getKeepAliveTime()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getKeepAliveTime</h4>
+<pre>public&nbsp;long&nbsp;getKeepAliveTime()</pre>
+</li>
+</ul>
+<a name="getRequestCount()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRequestCount</h4>
+<pre>public&nbsp;int&nbsp;getRequestCount()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html#getRequestCount()">getRequestCount</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html" title="interface in org.apache.catalina.tribes.transport">DataSender</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getRxBufSize()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRxBufSize</h4>
+<pre>public&nbsp;int&nbsp;getRxBufSize()</pre>
+</li>
+</ul>
+<a name="getTimeout()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTimeout</h4>
+<pre>public&nbsp;long&nbsp;getTimeout()</pre>
+</li>
+</ul>
+<a name="getTxBufSize()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTxBufSize</h4>
+<pre>public&nbsp;int&nbsp;getTxBufSize()</pre>
+</li>
+</ul>
+<a name="getAddress()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAddress</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;getAddress()</pre>
+</li>
+</ul>
+<a name="getPort()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPort</h4>
+<pre>public&nbsp;int&nbsp;getPort()</pre>
+</li>
+</ul>
+<a name="getMaxRetryAttempts()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMaxRetryAttempts</h4>
+<pre>public&nbsp;int&nbsp;getMaxRetryAttempts()</pre>
+</li>
+</ul>
+<a name="setDirectBuffer(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDirectBuffer</h4>
+<pre>public&nbsp;void&nbsp;setDirectBuffer(boolean&nbsp;directBuffer)</pre>
+</li>
+</ul>
+<a name="getDirectBuffer()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDirectBuffer</h4>
+<pre>public&nbsp;boolean&nbsp;getDirectBuffer()</pre>
+</li>
+</ul>
+<a name="getAttempt()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAttempt</h4>
+<pre>public&nbsp;int&nbsp;getAttempt()</pre>
+</li>
+</ul>
+<a name="getTcpNoDelay()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTcpNoDelay</h4>
+<pre>public&nbsp;boolean&nbsp;getTcpNoDelay()</pre>
+</li>
+</ul>
+<a name="getSoKeepAlive()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSoKeepAlive</h4>
+<pre>public&nbsp;boolean&nbsp;getSoKeepAlive()</pre>
+</li>
+</ul>
+<a name="getOoBInline()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOoBInline</h4>
+<pre>public&nbsp;boolean&nbsp;getOoBInline()</pre>
+</li>
+</ul>
+<a name="getSoReuseAddress()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSoReuseAddress</h4>
+<pre>public&nbsp;boolean&nbsp;getSoReuseAddress()</pre>
+</li>
+</ul>
+<a name="getSoLingerOn()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSoLingerOn</h4>
+<pre>public&nbsp;boolean&nbsp;getSoLingerOn()</pre>
+</li>
+</ul>
+<a name="getSoLingerTime()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSoLingerTime</h4>
+<pre>public&nbsp;int&nbsp;getSoLingerTime()</pre>
+</li>
+</ul>
+<a name="getSoTrafficClass()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSoTrafficClass</h4>
+<pre>public&nbsp;int&nbsp;getSoTrafficClass()</pre>
+</li>
+</ul>
+<a name="getThrowOnFailedAck()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getThrowOnFailedAck</h4>
+<pre>public&nbsp;boolean&nbsp;getThrowOnFailedAck()</pre>
+</li>
+</ul>
+<a name="setKeepAliveCount(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setKeepAliveCount</h4>
+<pre>public&nbsp;void&nbsp;setKeepAliveCount(int&nbsp;keepAliveCount)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html#setKeepAliveCount(int)">setKeepAliveCount</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html" title="interface in org.apache.catalina.tribes.transport">DataSender</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setKeepAliveTime(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setKeepAliveTime</h4>
+<pre>public&nbsp;void&nbsp;setKeepAliveTime(long&nbsp;keepAliveTime)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html#setKeepAliveTime(long)">setKeepAliveTime</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html" title="interface in org.apache.catalina.tribes.transport">DataSender</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setRequestCount(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRequestCount</h4>
+<pre>public&nbsp;void&nbsp;setRequestCount(int&nbsp;requestCount)</pre>
+</li>
+</ul>
+<a name="setRxBufSize(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRxBufSize</h4>
+<pre>public&nbsp;void&nbsp;setRxBufSize(int&nbsp;rxBufSize)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html#setRxBufSize(int)">setRxBufSize</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html" title="interface in org.apache.catalina.tribes.transport">DataSender</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setTimeout(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTimeout</h4>
+<pre>public&nbsp;void&nbsp;setTimeout(long&nbsp;timeout)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html#setTimeout(long)">setTimeout</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html" title="interface in org.apache.catalina.tribes.transport">DataSender</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setTxBufSize(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTxBufSize</h4>
+<pre>public&nbsp;void&nbsp;setTxBufSize(int&nbsp;txBufSize)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html#setTxBufSize(int)">setTxBufSize</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/transport/DataSender.html" title="interface in org.apache.catalina.tribes.transport">DataSender</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setConnectTime(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setConnectTime</h4>
+<pre>public&nbsp;void&nbsp;setConnectTime(long&nbsp;connectTime)</pre>
+</li>
+</ul>
+<a name="setMaxRetryAttempts(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMaxRetryAttempts</h4>
+<pre>public&nbsp;void&nbsp;setMaxRetryAttempts(int&nbsp;maxRetryAttempts)</pre>
+</li>
+</ul>
+<a name="setAttempt(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAttempt</h4>
+<pre>public&nbsp;void&nbsp;setAttempt(int&nbsp;attempt)</pre>
+</li>
+</ul>
+<a name="setTcpNoDelay(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTcpNoDelay</h4>
+<pre>public&nbsp;void&nbsp;setTcpNoDelay(boolean&nbsp;tcpNoDelay)</pre>
+</li>
+</ul>
+<a name="setSoKeepAlive(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSoKeepAlive</h4>
+<pre>public&nbsp;void&nbsp;setSoKeepAlive(boolean&nbsp;soKeepAlive)</pre>
+</li>
+</ul>
+<a name="setOoBInline(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOoBInline</h4>
+<pre>public&nbsp;void&nbsp;setOoBInline(boolean&nbsp;ooBInline)</pre>
+</li>
+</ul>
+<a name="setSoReuseAddress(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSoReuseAddress</h4>
+<pre>public&nbsp;void&nbsp;setSoReuseAddress(boolean&nbsp;soReuseAddress)</pre>
+</li>
+</ul>
+<a name="setSoLingerOn(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSoLingerOn</h4>
+<pre>public&nbsp;void&nbsp;setSoLingerOn(boolean&nbsp;soLingerOn)</pre>
+</li>
+</ul>
+<a name="setSoLingerTime(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSoLingerTime</h4>
+<pre>public&nbsp;void&nbsp;setSoLingerTime(int&nbsp;soLingerTime)</pre>
+</li>
+</ul>
+<a name="setSoTrafficClass(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSoTrafficClass</h4>
+<pre>public&nbsp;void&nbsp;setSoTrafficClass(int&nbsp;soTrafficClass)</pre>
+</li>
+</ul>
+<a name="setThrowOnFailedAck(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setThrowOnFailedAck</h4>
+<pre>public&nbsp;void&nbsp;setThrowOnFailedAck(boolean&nbsp;throwOnFailedAck)</pre>
+</li>
+</ul>
+<a name="setDestination(org.apache.catalina.tribes.Member)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDestination</h4>
+<pre>public&nbsp;void&nbsp;setDestination(<a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;destination)
+                    throws <a href="http://docs.oracle.com/javase/7/docs/api/java/net/UnknownHostException.html?is-external=true" title="class or interface in java.net">UnknownHostException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/net/UnknownHostException.html?is-external=true" title="class or interface in java.net">UnknownHostException</a></code></dd></dl>
+</li>
+</ul>
+<a name="setPort(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPort</h4>
+<pre>public&nbsp;void&nbsp;setPort(int&nbsp;port)</pre>
+</li>
+</ul>
+<a name="setAddress(java.net.InetAddress)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAddress</h4>
+<pre>public&nbsp;void&nbsp;setAddress(<a href="http://docs.oracle.com/javase/7/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;address)</pre>
+</li>
+</ul>
+<a name="isUdpBased()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isUdpBased</h4>
+<pre>public&nbsp;boolean&nbsp;isUdpBased()</pre>
+</li>
+</ul>
+<a name="setUdpBased(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setUdpBased</h4>
+<pre>public&nbsp;void&nbsp;setUdpBased(boolean&nbsp;udpBased)</pre>
+</li>
+</ul>
+<a name="getUdpPort()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUdpPort</h4>
+<pre>public&nbsp;int&nbsp;getUdpPort()</pre>
+</li>
+</ul>
+<a name="setUdpPort(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setUdpPort</h4>
+<pre>public&nbsp;void&nbsp;setUdpPort(int&nbsp;udpPort)</pre>
+</li>
+</ul>
+<a name="getUdpRxBufSize()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUdpRxBufSize</h4>
+<pre>public&nbsp;int&nbsp;getUdpRxBufSize()</pre>
+</li>
+</ul>
+<a name="setUdpRxBufSize(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setUdpRxBufSize</h4>
+<pre>public&nbsp;void&nbsp;setUdpRxBufSize(int&nbsp;udpRxBufSize)</pre>
+</li>
+</ul>
+<a name="getUdpTxBufSize()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUdpTxBufSize</h4>
+<pre>public&nbsp;int&nbsp;getUdpTxBufSize()</pre>
+</li>
+</ul>
+<a name="setUdpTxBufSize(int)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setUdpTxBufSize</h4>
+<pre>public&nbsp;void&nbsp;setUdpTxBufSize(int&nbsp;udpTxBufSize)</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/catalina/tribes/transport/AbstractRxTask.html" title="class in org.apache.catalina.tribes.transport"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/catalina/tribes/transport/Constants.html" title="class in org.apache.catalina.tribes.transport"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/catalina/tribes/transport/AbstractSender.html" target="_top">Frames</a></li>
+<li><a href="AbstractSender.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

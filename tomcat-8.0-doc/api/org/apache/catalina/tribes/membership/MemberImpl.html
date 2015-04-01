@@ -1,0 +1,1367 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MemberImpl (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="MemberImpl (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.SenderThread.html" title="class in org.apache.catalina.tribes.membership"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/catalina/tribes/membership/Membership.html" title="class in org.apache.catalina.tribes.membership"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/catalina/tribes/membership/MemberImpl.html" target="_top">Frames</a></li>
+<li><a href="MemberImpl.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.tribes.membership</div>
+<h2 title="Class MemberImpl" class="title">Class MemberImpl</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.tribes.membership.MemberImpl</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Externalizable.html?is-external=true" title="class or interface in java.io">Externalizable</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>, <a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></dd>
+</dl>
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../../../../org/apache/catalina/tribes/membership/StaticMember.html" title="class in org.apache.catalina.tribes.membership">StaticMember</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">MemberImpl</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Externalizable.html?is-external=true" title="class or interface in java.io">Externalizable</a></pre>
+<div class="block">A <b>membership</b> implementation using simple multicast.
+ This is the representation of a multicast member.
+ Carries the host, and port of the this or other cluster nodes.</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../serialized-form.html#org.apache.catalina.tribes.membership.MemberImpl">Serialized Form</a></dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#command">command</a></strong></code>
+<div class="block">Command, so that the custom payload doesn't have to be used
+ This is for internal tribes use, such as SHUTDOWN_COMMAND</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#dataPkg">dataPkg</a></strong></code>
+<div class="block">To avoid serialization over and over again, once the local dataPkg
+ has been set, we use that to transmit data</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#DO_DNS_LOOKUPS">DO_DNS_LOOKUPS</a></strong></code>
+<div class="block">Should a call to getName or getHostName try to do a DNS lookup?</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#domain">domain</a></strong></code>
+<div class="block">Domain if we want to filter based on domain.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#host">host</a></strong></code>
+<div class="block">The listen host for this member</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#hostname">hostname</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#memberAliveTime">memberAliveTime</a></strong></code>
+<div class="block">The number of milliseconds since this member was
+ created, is kept track of using the start time</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#msgCount">msgCount</a></strong></code>
+<div class="block">Counter for how many broadcast messages have been sent from this member</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#payload">payload</a></strong></code>
+<div class="block">Custom payload that an app framework can broadcast
+ Also used to transport stop command.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#port">port</a></strong></code>
+<div class="block">The tcp listen port for this member</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#securePort">securePort</a></strong></code>
+<div class="block">The tcp/SSL listen port for this member</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#serviceStartTime">serviceStartTime</a></strong></code>
+<div class="block">For the local member only</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#TRIBES_MBR_BEGIN">TRIBES_MBR_BEGIN</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#TRIBES_MBR_END">TRIBES_MBR_END</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#udpPort">udpPort</a></strong></code>
+<div class="block">The udp listen port for this member</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#uniqueId">uniqueId</a></strong></code>
+<div class="block">Unique session Id for this member</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.tribes.Member">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.apache.catalina.tribes.<a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></h3>
+<code><a href="../../../../../org/apache/catalina/tribes/Member.html#SHUTDOWN_PAYLOAD">SHUTDOWN_PAYLOAD</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#MemberImpl()">MemberImpl</a></strong>()</code>
+<div class="block">Empty constructor for serialization</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#MemberImpl(java.lang.String,%20int,%20long)">MemberImpl</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;host,
+          int&nbsp;port,
+          long&nbsp;aliveTime)</code>
+<div class="block">Construct a new member object</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#MemberImpl(java.lang.String,%20int,%20long,%20byte[])">MemberImpl</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;host,
+          int&nbsp;port,
+          long&nbsp;aliveTime,
+          byte[]&nbsp;payload)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#bToS(byte[])">bToS</a></strong>(byte[]&nbsp;data)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#bToS(byte[],%20int)">bToS</a></strong>(byte[]&nbsp;data,
+    int&nbsp;max)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#equals(java.lang.Object)">equals</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>
+<div class="block">Returns true if the param o is a McastMember with the same name</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#getCommand()">getCommand</a></strong>()</code>
+<div class="block">returns the command associated with this member</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#getData()">getData</a></strong>()</code>
+<div class="block">Create a data package to send over the wire representing this member.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#getData(boolean)">getData</a></strong>(boolean&nbsp;getalive)</code>
+<div class="block">Highly optimized version of serializing a member into a byte array
+ Returns a cached byte[] reference, do not modify this data</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#getData(boolean,%20boolean)">getData</a></strong>(boolean&nbsp;getalive,
+       boolean&nbsp;reset)</code>
+<div class="block">Highly optimized version of serializing a member into a byte array
+ Returns a cached byte[] reference, do not modify this data</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#getDataLength()">getDataLength</a></strong>()</code>
+<div class="block">Length of a message obtained by <a href="../../../../../org/apache/catalina/tribes/Member.html#getData(boolean)"><code>Member.getData(boolean)</code></a> or
+ <a href="../../../../../org/apache/catalina/tribes/Member.html#getData(boolean,%20boolean)"><code>Member.getData(boolean, boolean)</code></a>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#getDomain()">getDomain</a></strong>()</code>
+<div class="block">Domain for this cluster</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#getHost()">getHost</a></strong>()</code>
+<div class="block">Return the TCP listen host for this member</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#getHostname()">getHostname</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#getMember(byte[])">getMember</a></strong>(byte[]&nbsp;data)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#getMember(byte[],%20int,%20int)">getMember</a></strong>(byte[]&nbsp;data,
+         int&nbsp;offset,
+         int&nbsp;length)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#getMember(byte[],%20int,%20int,%20org.apache.catalina.tribes.membership.MemberImpl)">getMember</a></strong>(byte[]&nbsp;data,
+         int&nbsp;offset,
+         int&nbsp;length,
+         <a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html" title="class in org.apache.catalina.tribes.membership">MemberImpl</a>&nbsp;member)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#getMember(byte[],%20org.apache.catalina.tribes.membership.MemberImpl)">getMember</a></strong>(byte[]&nbsp;data,
+         <a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html" title="class in org.apache.catalina.tribes.membership">MemberImpl</a>&nbsp;member)</code>
+<div class="block">Deserializes a member from data sent over the wire</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#getMemberAliveTime()">getMemberAliveTime</a></strong>()</code>
+<div class="block">Contains information on how long this member has been online.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#getMsgCount()">getMsgCount</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#getName()">getName</a></strong>()</code>
+<div class="block">Return the name of this object</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#getPayload()">getPayload</a></strong>()</code>
+<div class="block">returns the payload associated with this member</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#getPort()">getPort</a></strong>()</code>
+<div class="block">Return the listen port of this member</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#getSecurePort()">getSecurePort</a></strong>()</code>
+<div class="block">Returns the secure listen port for the ChannelReceiver implementation.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#getServiceStartTime()">getServiceStartTime</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#getUdpPort()">getUdpPort</a></strong>()</code>
+<div class="block">Returns the UDP port that this member is listening to for UDP messages.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#getUniqueId()">getUniqueId</a></strong>()</code>
+<div class="block">returns a UUID unique for this member over all sessions.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#hashCode()">hashCode</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#inc()">inc</a></strong>()</code>
+<div class="block">Increment the message count.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#isFailing()">isFailing</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#isReady()">isReady</a></strong>()</code>
+<div class="block">The current state of the member</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#isSuspect()">isSuspect</a></strong>()</code>
+<div class="block">The current state of the member</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#readExternal(java.io.ObjectInput)">readExternal</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/ObjectInput.html?is-external=true" title="class or interface in java.io">ObjectInput</a>&nbsp;in)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#setCommand(byte[])">setCommand</a></strong>(byte[]&nbsp;command)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#setDomain(byte[])">setDomain</a></strong>(byte[]&nbsp;domain)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#setHost(byte[])">setHost</a></strong>(byte[]&nbsp;host)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#setHostname(java.lang.String)">setHostname</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;host)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#setMemberAliveTime(long)">setMemberAliveTime</a></strong>(long&nbsp;time)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#setMsgCount(int)">setMsgCount</a></strong>(int&nbsp;msgCount)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#setPayload(byte[])">setPayload</a></strong>(byte[]&nbsp;payload)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#setPort(int)">setPort</a></strong>(int&nbsp;port)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#setSecurePort(int)">setSecurePort</a></strong>(int&nbsp;securePort)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#setServiceStartTime(long)">setServiceStartTime</a></strong>(long&nbsp;serviceStartTime)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#setUdpPort(int)">setUdpPort</a></strong>(int&nbsp;port)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#setUniqueId(byte[])">setUniqueId</a></strong>(byte[]&nbsp;uniqueId)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#toString()">toString</a></strong>()</code>
+<div class="block">String representation of this object</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html#writeExternal(java.io.ObjectOutput)">writeExternal</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/ObjectOutput.html?is-external=true" title="class or interface in java.io">ObjectOutput</a>&nbsp;out)</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="DO_DNS_LOOKUPS">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>DO_DNS_LOOKUPS</h4>
+<pre>public static final&nbsp;boolean DO_DNS_LOOKUPS</pre>
+<div class="block">Should a call to getName or getHostName try to do a DNS lookup?
+ default is false</div>
+</li>
+</ul>
+<a name="TRIBES_MBR_BEGIN">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>TRIBES_MBR_BEGIN</h4>
+<pre>public static final transient&nbsp;byte[] TRIBES_MBR_BEGIN</pre>
+</li>
+</ul>
+<a name="TRIBES_MBR_END">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>TRIBES_MBR_END</h4>
+<pre>public static final transient&nbsp;byte[] TRIBES_MBR_END</pre>
+</li>
+</ul>
+<a name="host">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>host</h4>
+<pre>protected&nbsp;byte[] host</pre>
+<div class="block">The listen host for this member</div>
+</li>
+</ul>
+<a name="hostname">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hostname</h4>
+<pre>protected transient&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> hostname</pre>
+</li>
+</ul>
+<a name="port">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>port</h4>
+<pre>protected&nbsp;int port</pre>
+<div class="block">The tcp listen port for this member</div>
+</li>
+</ul>
+<a name="udpPort">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>udpPort</h4>
+<pre>protected&nbsp;int udpPort</pre>
+<div class="block">The udp listen port for this member</div>
+</li>
+</ul>
+<a name="securePort">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>securePort</h4>
+<pre>protected&nbsp;int securePort</pre>
+<div class="block">The tcp/SSL listen port for this member</div>
+</li>
+</ul>
+<a name="msgCount">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>msgCount</h4>
+<pre>protected&nbsp;int msgCount</pre>
+<div class="block">Counter for how many broadcast messages have been sent from this member</div>
+</li>
+</ul>
+<a name="memberAliveTime">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>memberAliveTime</h4>
+<pre>protected&nbsp;long memberAliveTime</pre>
+<div class="block">The number of milliseconds since this member was
+ created, is kept track of using the start time</div>
+</li>
+</ul>
+<a name="serviceStartTime">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>serviceStartTime</h4>
+<pre>protected transient&nbsp;long serviceStartTime</pre>
+<div class="block">For the local member only</div>
+</li>
+</ul>
+<a name="dataPkg">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>dataPkg</h4>
+<pre>protected transient&nbsp;byte[] dataPkg</pre>
+<div class="block">To avoid serialization over and over again, once the local dataPkg
+ has been set, we use that to transmit data</div>
+</li>
+</ul>
+<a name="uniqueId">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>uniqueId</h4>
+<pre>protected&nbsp;byte[] uniqueId</pre>
+<div class="block">Unique session Id for this member</div>
+</li>
+</ul>
+<a name="payload">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>payload</h4>
+<pre>protected&nbsp;byte[] payload</pre>
+<div class="block">Custom payload that an app framework can broadcast
+ Also used to transport stop command.</div>
+</li>
+</ul>
+<a name="command">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>command</h4>
+<pre>protected&nbsp;byte[] command</pre>
+<div class="block">Command, so that the custom payload doesn't have to be used
+ This is for internal tribes use, such as SHUTDOWN_COMMAND</div>
+</li>
+</ul>
+<a name="domain">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>domain</h4>
+<pre>protected&nbsp;byte[] domain</pre>
+<div class="block">Domain if we want to filter based on domain.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="MemberImpl()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>MemberImpl</h4>
+<pre>public&nbsp;MemberImpl()</pre>
+<div class="block">Empty constructor for serialization</div>
+</li>
+</ul>
+<a name="MemberImpl(java.lang.String, int, long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>MemberImpl</h4>
+<pre>public&nbsp;MemberImpl(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;host,
+          int&nbsp;port,
+          long&nbsp;aliveTime)
+           throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Construct a new member object</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>host</code> - - the tcp listen host</dd><dd><code>port</code> - - the tcp listen port</dd><dd><code>aliveTime</code> - - the number of milliseconds since this member was created</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="MemberImpl(java.lang.String, int, long, byte[])">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>MemberImpl</h4>
+<pre>public&nbsp;MemberImpl(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;host,
+          int&nbsp;port,
+          long&nbsp;aliveTime,
+          byte[]&nbsp;payload)
+           throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="isReady()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isReady</h4>
+<pre>public&nbsp;boolean&nbsp;isReady()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html#isReady()">Member</a></code></strong></div>
+<div class="block">The current state of the member</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Member.html#isReady()">isReady</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>boolean - true if the member is functioning correctly</dd></dl>
+</li>
+</ul>
+<a name="isSuspect()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isSuspect</h4>
+<pre>public&nbsp;boolean&nbsp;isSuspect()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html#isSuspect()">Member</a></code></strong></div>
+<div class="block">The current state of the member</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Member.html#isSuspect()">isSuspect</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>boolean - true if the member is suspect, but the crash has not been confirmed</dd></dl>
+</li>
+</ul>
+<a name="isFailing()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isFailing</h4>
+<pre>public&nbsp;boolean&nbsp;isFailing()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Member.html#isFailing()">isFailing</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>boolean - true if the member has been confirmed to malfunction</dd></dl>
+</li>
+</ul>
+<a name="inc()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>inc</h4>
+<pre>protected&nbsp;void&nbsp;inc()</pre>
+<div class="block">Increment the message count.</div>
+</li>
+</ul>
+<a name="getData()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getData</h4>
+<pre>public&nbsp;byte[]&nbsp;getData()</pre>
+<div class="block">Create a data package to send over the wire representing this member.
+ This is faster than serialization.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>- the bytes for this member deserialized</dd></dl>
+</li>
+</ul>
+<a name="getData(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getData</h4>
+<pre>public&nbsp;byte[]&nbsp;getData(boolean&nbsp;getalive)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html#getData(boolean)">Member</a></code></strong></div>
+<div class="block">Highly optimized version of serializing a member into a byte array
+ Returns a cached byte[] reference, do not modify this data</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Member.html#getData(boolean)">getData</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>getalive</code> - calculate memberAlive time</dd></dl>
+</li>
+</ul>
+<a name="getDataLength()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDataLength</h4>
+<pre>public&nbsp;int&nbsp;getDataLength()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html#getDataLength()">Member</a></code></strong></div>
+<div class="block">Length of a message obtained by <a href="../../../../../org/apache/catalina/tribes/Member.html#getData(boolean)"><code>Member.getData(boolean)</code></a> or
+ <a href="../../../../../org/apache/catalina/tribes/Member.html#getData(boolean,%20boolean)"><code>Member.getData(boolean, boolean)</code></a>.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Member.html#getDataLength()">getDataLength</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getData(boolean, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getData</h4>
+<pre>public&nbsp;byte[]&nbsp;getData(boolean&nbsp;getalive,
+             boolean&nbsp;reset)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html#getData(boolean,%20boolean)">Member</a></code></strong></div>
+<div class="block">Highly optimized version of serializing a member into a byte array
+ Returns a cached byte[] reference, do not modify this data</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Member.html#getData(boolean,%20boolean)">getData</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>getalive</code> - calculate memberAlive time</dd><dd><code>reset</code> - reset the cached data package, and create a new one</dd></dl>
+</li>
+</ul>
+<a name="getMember(byte[], org.apache.catalina.tribes.membership.MemberImpl)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMember</h4>
+<pre>public static&nbsp;<a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;getMember(byte[]&nbsp;data,
+               <a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html" title="class in org.apache.catalina.tribes.membership">MemberImpl</a>&nbsp;member)</pre>
+<div class="block">Deserializes a member from data sent over the wire</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>data</code> - - the bytes received</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a member object.</dd></dl>
+</li>
+</ul>
+<a name="getMember(byte[], int, int, org.apache.catalina.tribes.membership.MemberImpl)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMember</h4>
+<pre>public static&nbsp;<a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;getMember(byte[]&nbsp;data,
+               int&nbsp;offset,
+               int&nbsp;length,
+               <a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html" title="class in org.apache.catalina.tribes.membership">MemberImpl</a>&nbsp;member)</pre>
+</li>
+</ul>
+<a name="getMember(byte[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMember</h4>
+<pre>public static&nbsp;<a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;getMember(byte[]&nbsp;data)</pre>
+</li>
+</ul>
+<a name="getMember(byte[], int, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMember</h4>
+<pre>public static&nbsp;<a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;getMember(byte[]&nbsp;data,
+               int&nbsp;offset,
+               int&nbsp;length)</pre>
+</li>
+</ul>
+<a name="getName()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getName</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getName()</pre>
+<div class="block">Return the name of this object</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Member.html#getName()">getName</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a unique name to the cluster</dd></dl>
+</li>
+</ul>
+<a name="getPort()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPort</h4>
+<pre>public&nbsp;int&nbsp;getPort()</pre>
+<div class="block">Return the listen port of this member</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Member.html#getPort()">getPort</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>- tcp listen port</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/ChannelReceiver.html" title="interface in org.apache.catalina.tribes"><code>ChannelReceiver</code></a></dd></dl>
+</li>
+</ul>
+<a name="getHost()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHost</h4>
+<pre>public&nbsp;byte[]&nbsp;getHost()</pre>
+<div class="block">Return the TCP listen host for this member</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Member.html#getHost()">getHost</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>IP address or host name</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/ChannelReceiver.html" title="interface in org.apache.catalina.tribes"><code>ChannelReceiver</code></a></dd></dl>
+</li>
+</ul>
+<a name="getHostname()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHostname</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getHostname()</pre>
+</li>
+</ul>
+<a name="getMsgCount()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMsgCount</h4>
+<pre>public&nbsp;int&nbsp;getMsgCount()</pre>
+</li>
+</ul>
+<a name="getMemberAliveTime()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMemberAliveTime</h4>
+<pre>public&nbsp;long&nbsp;getMemberAliveTime()</pre>
+<div class="block">Contains information on how long this member has been online.
+ The result is the number of milli seconds this member has been
+ broadcasting its membership to the cluster.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Member.html#getMemberAliveTime()">getMemberAliveTime</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>nr of milliseconds since this member started.</dd></dl>
+</li>
+</ul>
+<a name="getServiceStartTime()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getServiceStartTime</h4>
+<pre>public&nbsp;long&nbsp;getServiceStartTime()</pre>
+</li>
+</ul>
+<a name="getUniqueId()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUniqueId</h4>
+<pre>public&nbsp;byte[]&nbsp;getUniqueId()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html#getUniqueId()">Member</a></code></strong></div>
+<div class="block">returns a UUID unique for this member over all sessions.
+ If the member crashes and restarts, the uniqueId will be different.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Member.html#getUniqueId()">getUniqueId</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>byte[]</dd></dl>
+</li>
+</ul>
+<a name="getPayload()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPayload</h4>
+<pre>public&nbsp;byte[]&nbsp;getPayload()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html#getPayload()">Member</a></code></strong></div>
+<div class="block">returns the payload associated with this member</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Member.html#getPayload()">getPayload</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>byte[]</dd></dl>
+</li>
+</ul>
+<a name="getCommand()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCommand</h4>
+<pre>public&nbsp;byte[]&nbsp;getCommand()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html#getCommand()">Member</a></code></strong></div>
+<div class="block">returns the command associated with this member</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Member.html#getCommand()">getCommand</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>byte[]</dd></dl>
+</li>
+</ul>
+<a name="getDomain()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDomain</h4>
+<pre>public&nbsp;byte[]&nbsp;getDomain()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html#getDomain()">Member</a></code></strong></div>
+<div class="block">Domain for this cluster</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Member.html#getDomain()">getDomain</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>byte[]</dd></dl>
+</li>
+</ul>
+<a name="getSecurePort()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSecurePort</h4>
+<pre>public&nbsp;int&nbsp;getSecurePort()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html#getSecurePort()">Member</a></code></strong></div>
+<div class="block">Returns the secure listen port for the ChannelReceiver implementation.
+ Returns -1 if its not listening to a secure port.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Member.html#getSecurePort()">getSecurePort</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the listen port for this member, -1 if its not listening on a secure port</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/ChannelReceiver.html" title="interface in org.apache.catalina.tribes"><code>ChannelReceiver</code></a></dd></dl>
+</li>
+</ul>
+<a name="getUdpPort()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUdpPort</h4>
+<pre>public&nbsp;int&nbsp;getUdpPort()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html#getUdpPort()">Member</a></code></strong></div>
+<div class="block">Returns the UDP port that this member is listening to for UDP messages.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Member.html#getUdpPort()">getUdpPort</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the listen UDP port for this member, -1 if its not listening on a UDP port</dd></dl>
+</li>
+</ul>
+<a name="setMemberAliveTime(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMemberAliveTime</h4>
+<pre>public&nbsp;void&nbsp;setMemberAliveTime(long&nbsp;time)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Member.html#setMemberAliveTime(long)">setMemberAliveTime</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="toString()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toString</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<div class="block">String representation of this object</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="bToS(byte[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>bToS</h4>
+<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;bToS(byte[]&nbsp;data)</pre>
+</li>
+</ul>
+<a name="bToS(byte[], int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>bToS</h4>
+<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;bToS(byte[]&nbsp;data,
+          int&nbsp;max)</pre>
+</li>
+</ul>
+<a name="hashCode()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hashCode</h4>
+<pre>public&nbsp;int&nbsp;hashCode()</pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>The hash code</dd><dt><span class="strong">See Also:</span></dt><dd><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang"><code>Object.hashCode()</code></a></dd></dl>
+</li>
+</ul>
+<a name="equals(java.lang.Object)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>equals</h4>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<div class="block">Returns true if the param o is a McastMember with the same name</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>o</code> - </dd></dl>
+</li>
+</ul>
+<a name="setHost(byte[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setHost</h4>
+<pre>public&nbsp;void&nbsp;setHost(byte[]&nbsp;host)</pre>
+</li>
+</ul>
+<a name="setHostname(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setHostname</h4>
+<pre>public&nbsp;void&nbsp;setHostname(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;host)
+                 throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="setMsgCount(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMsgCount</h4>
+<pre>public&nbsp;void&nbsp;setMsgCount(int&nbsp;msgCount)</pre>
+</li>
+</ul>
+<a name="setPort(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPort</h4>
+<pre>public&nbsp;void&nbsp;setPort(int&nbsp;port)</pre>
+</li>
+</ul>
+<a name="setServiceStartTime(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setServiceStartTime</h4>
+<pre>public&nbsp;void&nbsp;setServiceStartTime(long&nbsp;serviceStartTime)</pre>
+</li>
+</ul>
+<a name="setUniqueId(byte[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setUniqueId</h4>
+<pre>public&nbsp;void&nbsp;setUniqueId(byte[]&nbsp;uniqueId)</pre>
+</li>
+</ul>
+<a name="setPayload(byte[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPayload</h4>
+<pre>public&nbsp;void&nbsp;setPayload(byte[]&nbsp;payload)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Member.html#setPayload(byte[])">setPayload</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setCommand(byte[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCommand</h4>
+<pre>public&nbsp;void&nbsp;setCommand(byte[]&nbsp;command)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Member.html#setCommand(byte[])">setCommand</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setDomain(byte[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDomain</h4>
+<pre>public&nbsp;void&nbsp;setDomain(byte[]&nbsp;domain)</pre>
+</li>
+</ul>
+<a name="setSecurePort(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSecurePort</h4>
+<pre>public&nbsp;void&nbsp;setSecurePort(int&nbsp;securePort)</pre>
+</li>
+</ul>
+<a name="setUdpPort(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setUdpPort</h4>
+<pre>public&nbsp;void&nbsp;setUdpPort(int&nbsp;port)</pre>
+</li>
+</ul>
+<a name="readExternal(java.io.ObjectInput)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>readExternal</h4>
+<pre>public&nbsp;void&nbsp;readExternal(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/ObjectInput.html?is-external=true" title="class or interface in java.io">ObjectInput</a>&nbsp;in)
+                  throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</a></pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Externalizable.html?is-external=true#readExternal(java.io.ObjectInput)" title="class or interface in java.io">readExternal</a></code>&nbsp;in interface&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Externalizable.html?is-external=true" title="class or interface in java.io">Externalizable</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</a></code></dd></dl>
+</li>
+</ul>
+<a name="writeExternal(java.io.ObjectOutput)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>writeExternal</h4>
+<pre>public&nbsp;void&nbsp;writeExternal(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/ObjectOutput.html?is-external=true" title="class or interface in java.io">ObjectOutput</a>&nbsp;out)
+                   throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Externalizable.html?is-external=true#writeExternal(java.io.ObjectOutput)" title="class or interface in java.io">writeExternal</a></code>&nbsp;in interface&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Externalizable.html?is-external=true" title="class or interface in java.io">Externalizable</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.SenderThread.html" title="class in org.apache.catalina.tribes.membership"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/catalina/tribes/membership/Membership.html" title="class in org.apache.catalina.tribes.membership"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/catalina/tribes/membership/MemberImpl.html" target="_top">Frames</a></li>
+<li><a href="MemberImpl.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

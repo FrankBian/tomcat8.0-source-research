@@ -1,0 +1,1267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AuthenticatorBase (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="AuthenticatorBase (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev Class</li>
+<li><a href="../../../../org/apache/catalina/authenticator/BasicAuthenticator.html" title="class in org.apache.catalina.authenticator"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/authenticator/AuthenticatorBase.html" target="_top">Frames</a></li>
+<li><a href="AuthenticatorBase.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.authenticator</div>
+<h2 title="Class AuthenticatorBase" class="title">Class AuthenticatorBase</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../org/apache/catalina/util/LifecycleBase.html" title="class in org.apache.catalina.util">org.apache.catalina.util.LifecycleBase</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html" title="class in org.apache.catalina.util">org.apache.catalina.util.LifecycleMBeanBase</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">org.apache.catalina.valves.ValveBase</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.authenticator.AuthenticatorBase</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://docs.oracle.com/javase/7/docs/api/javax/management/MBeanRegistration.html?is-external=true" title="class or interface in javax.management">MBeanRegistration</a>, <a href="../../../../org/apache/catalina/Authenticator.html" title="interface in org.apache.catalina">Authenticator</a>, <a href="../../../../org/apache/catalina/Contained.html" title="interface in org.apache.catalina">Contained</a>, <a href="../../../../org/apache/catalina/JmxEnabled.html" title="interface in org.apache.catalina">JmxEnabled</a>, <a href="../../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a>, <a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a></dd>
+</dl>
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../../../org/apache/catalina/authenticator/BasicAuthenticator.html" title="class in org.apache.catalina.authenticator">BasicAuthenticator</a>, <a href="../../../../org/apache/catalina/authenticator/DigestAuthenticator.html" title="class in org.apache.catalina.authenticator">DigestAuthenticator</a>, <a href="../../../../org/apache/catalina/authenticator/FormAuthenticator.html" title="class in org.apache.catalina.authenticator">FormAuthenticator</a>, <a href="../../../../org/apache/catalina/authenticator/NonLoginAuthenticator.html" title="class in org.apache.catalina.authenticator">NonLoginAuthenticator</a>, <a href="../../../../org/apache/catalina/authenticator/SpnegoAuthenticator.html" title="class in org.apache.catalina.authenticator">SpnegoAuthenticator</a>, <a href="../../../../org/apache/catalina/authenticator/SSLAuthenticator.html" title="class in org.apache.catalina.authenticator">SSLAuthenticator</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public abstract class <span class="strong">AuthenticatorBase</span>
+extends <a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a>
+implements <a href="../../../../org/apache/catalina/Authenticator.html" title="interface in org.apache.catalina">Authenticator</a></pre>
+<div class="block">Basic implementation of the <b>Valve</b> interface that enforces the
+ <code>&lt;security-constraint&gt;</code> elements in the web application
+ deployment descriptor.  This functionality is implemented as a Valve
+ so that it can be omitted in environments that do not require these
+ features.  Individual implementations of each supported authentication
+ method can subclass this base class as required.
+ <p>
+ <b>USAGE CONSTRAINT</b>:  When this class is utilized, the Context to
+ which it is attached (or a parent Container in a hierarchy) must have an
+ associated Realm that can be used for authenticating users and enumerating
+ the roles to which they have been assigned.
+ <p>
+ <b>USAGE CONSTRAINT</b>:  This Valve is only useful when processing HTTP
+ requests.  Requests of any other type will simply be passed through.</div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Craig R. McClanahan</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#alwaysUseSession">alwaysUseSession</a></strong></code>
+<div class="block">Should a session always be used once a user is authenticated?</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</a></strong></code>
+<div class="block">Authentication header</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#cache">cache</a></strong></code>
+<div class="block">Should we cache authenticated Principals if the request is part of
+ an HTTP session?</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#changeSessionIdOnAuthentication">changeSessionIdOnAuthentication</a></strong></code>
+<div class="block">Should the session ID, if any, be changed upon a successful
+ authentication to prevent a session fixation attack?</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#context">context</a></strong></code>
+<div class="block">The Context to which this Valve is attached.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#disableProxyCaching">disableProxyCaching</a></strong></code>
+<div class="block">Flag to determine if we disable proxy caching, or leave the issue
+ up to the webapp developer.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#REALM_NAME">REALM_NAME</a></strong></code>
+<div class="block">Default authentication realm name.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#securePagesWithPragma">securePagesWithPragma</a></strong></code>
+<div class="block">Flag to determine if we disable proxy caching with headers incompatible
+ with IE.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#secureRandomAlgorithm">secureRandomAlgorithm</a></strong></code>
+<div class="block">The name of the algorithm to use to create instances of
+ <a href="http://docs.oracle.com/javase/7/docs/api/java/security/SecureRandom.html?is-external=true" title="class or interface in java.security"><code>SecureRandom</code></a> which are used to generate SSO session
+ IDs.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#secureRandomClass">secureRandomClass</a></strong></code>
+<div class="block">The Java class name of the secure random number generator class to be
+ used when generating SSO session identifiers.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#secureRandomProvider">secureRandomProvider</a></strong></code>
+<div class="block">The name of the provider to use to create instances of
+ <a href="http://docs.oracle.com/javase/7/docs/api/java/security/SecureRandom.html?is-external=true" title="class or interface in java.security"><code>SecureRandom</code></a> which are used to generate session SSO
+ IDs.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../org/apache/catalina/util/SessionIdGeneratorBase.html" title="class in org.apache.catalina.util">SessionIdGeneratorBase</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#sessionIdGenerator">sessionIdGenerator</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="../../../../org/apache/tomcat/util/res/StringManager.html" title="class in org.apache.tomcat.util.res">StringManager</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#sm">sm</a></strong></code>
+<div class="block">The string manager for this package.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../org/apache/catalina/authenticator/SingleSignOn.html" title="class in org.apache.catalina.authenticator">SingleSignOn</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#sso">sso</a></strong></code>
+<div class="block">The SingleSignOn implementation in our request processing chain,
+ if there is one.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.valves.ValveBase">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.catalina.valves.<a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a></h3>
+<code><a href="../../../../org/apache/catalina/valves/ValveBase.html#asyncSupported">asyncSupported</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#container">container</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#containerLog">containerLog</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#next">next</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.util.LifecycleMBeanBase">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.catalina.util.<a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html" title="class in org.apache.catalina.util">LifecycleMBeanBase</a></h3>
+<code><a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#mserver">mserver</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.Lifecycle">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.apache.catalina.<a href="../../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a></h3>
+<code><a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_DESTROY_EVENT">AFTER_DESTROY_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_INIT_EVENT">AFTER_INIT_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_START_EVENT">AFTER_START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_STOP_EVENT">AFTER_STOP_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_DESTROY_EVENT">BEFORE_DESTROY_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_INIT_EVENT">BEFORE_INIT_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_START_EVENT">BEFORE_START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_STOP_EVENT">BEFORE_STOP_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#CONFIGURE_START_EVENT">CONFIGURE_START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#CONFIGURE_STOP_EVENT">CONFIGURE_STOP_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#PERIODIC_EVENT">PERIODIC_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#START_EVENT">START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#STOP_EVENT">STOP_EVENT</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#AuthenticatorBase()">AuthenticatorBase</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#associate(java.lang.String,%20org.apache.catalina.Session)">associate</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;ssoId,
+         <a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a>&nbsp;session)</code>
+<div class="block">Associate the specified single sign on identifier with the
+ specified Session.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#authenticate(org.apache.catalina.connector.Request,%20javax.servlet.http.HttpServletResponse)">authenticate</a></strong>(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request,
+            <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a>&nbsp;response)</code>
+<div class="block">Authenticate the user making this request, based on the login
+ configuration of the <a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina"><code>Context</code></a> with which this Authenticator is
+ associated.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#checkForCachedAuthentication(org.apache.catalina.connector.Request,%20javax.servlet.http.HttpServletResponse,%20boolean)">checkForCachedAuthentication</a></strong>(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request,
+                            <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a>&nbsp;response,
+                            boolean&nbsp;useSSO)</code>
+<div class="block">Check to see if the user has already been authenticated earlier in the
+ processing chain or if there is enough information available to
+ authenticate the user without requiring further user interaction.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#doLogin(org.apache.catalina.connector.Request,%20java.lang.String,%20java.lang.String)">doLogin</a></strong>(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request,
+       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
+       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password)</code>
+<div class="block">Process the login request.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#getAlwaysUseSession()">getAlwaysUseSession</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected abstract <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#getAuthMethod()">getAuthMethod</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#getCache()">getCache</a></strong>()</code>
+<div class="block">Return the cache authenticated Principals flag.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#getChangeSessionIdOnAuthentication()">getChangeSessionIdOnAuthentication</a></strong>()</code>
+<div class="block">Return the flag that states if we should change the session ID of an
+ existing session upon successful authentication.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#getContainer()">getContainer</a></strong>()</code>
+<div class="block">Return the Container to which this Valve is attached.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#getDisableProxyCaching()">getDisableProxyCaching</a></strong>()</code>
+<div class="block">Return the flag that states if we add headers to disable caching by
+ proxies.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#getRealmName(org.apache.catalina.Context)">getRealmName</a></strong>(<a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a>&nbsp;context)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/security/cert/X509Certificate.html?is-external=true" title="class or interface in java.security.cert">X509Certificate</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#getRequestCertificates(org.apache.catalina.connector.Request)">getRequestCertificates</a></strong>(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request)</code>
+<div class="block">Look for the X509 certificate chain in the Request under the key
+ <code>javax.servlet.request.X509Certificate</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#getSecurePagesWithPragma()">getSecurePagesWithPragma</a></strong>()</code>
+<div class="block">Return the flag that states, if proxy caching is disabled, what headers
+ we add to disable the caching.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#getSecureRandomAlgorithm()">getSecureRandomAlgorithm</a></strong>()</code>
+<div class="block">Return the secure random number generator algorithm name.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#getSecureRandomClass()">getSecureRandomClass</a></strong>()</code>
+<div class="block">Return the secure random number generator class name.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#getSecureRandomProvider()">getSecureRandomProvider</a></strong>()</code>
+<div class="block">Return the secure random number generator provider name.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#invoke(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response)">invoke</a></strong>(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request,
+      <a href="../../../../org/apache/catalina/connector/Response.html" title="class in org.apache.catalina.connector">Response</a>&nbsp;response)</code>
+<div class="block">Enforce the security restrictions in the web application deployment
+ descriptor of our associated Context.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#login(java.lang.String,%20java.lang.String,%20org.apache.catalina.connector.Request)">login</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
+     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password,
+     <a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#logout(org.apache.catalina.connector.Request)">logout</a></strong>(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#reauthenticateFromSSO(java.lang.String,%20org.apache.catalina.connector.Request)">reauthenticateFromSSO</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;ssoId,
+                     <a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request)</code>
+<div class="block">Attempts reauthentication to the <code>Realm</code> using
+ the credentials included in argument <code>entry</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#register(org.apache.catalina.connector.Request,%20javax.servlet.http.HttpServletResponse,%20java.security.Principal,%20java.lang.String,%20java.lang.String,%20java.lang.String)">register</a></strong>(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request,
+        <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a>&nbsp;response,
+        <a href="http://docs.oracle.com/javase/7/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a>&nbsp;principal,
+        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;authType,
+        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
+        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password)</code>
+<div class="block">Register an authenticated Principal and authentication type in our
+ request, in the current session (if there is one), and with our
+ SingleSignOn valve, if there is one.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#setAlwaysUseSession(boolean)">setAlwaysUseSession</a></strong>(boolean&nbsp;alwaysUseSession)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#setCache(boolean)">setCache</a></strong>(boolean&nbsp;cache)</code>
+<div class="block">Set the cache authenticated Principals flag.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#setChangeSessionIdOnAuthentication(boolean)">setChangeSessionIdOnAuthentication</a></strong>(boolean&nbsp;changeSessionIdOnAuthentication)</code>
+<div class="block">Set the value of the flag that states if we should change the session ID
+ of an existing session upon successful authentication.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#setContainer(org.apache.catalina.Container)">setContainer</a></strong>(<a href="../../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a>&nbsp;container)</code>
+<div class="block">Set the Container to which this Valve is attached.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#setDisableProxyCaching(boolean)">setDisableProxyCaching</a></strong>(boolean&nbsp;nocache)</code>
+<div class="block">Set the value of the flag that states if we add headers to disable
+ caching by proxies.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#setSecurePagesWithPragma(boolean)">setSecurePagesWithPragma</a></strong>(boolean&nbsp;securePagesWithPragma)</code>
+<div class="block">Set the value of the flag that states what headers we add to disable
+ proxy caching.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#setSecureRandomAlgorithm(java.lang.String)">setSecureRandomAlgorithm</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;secureRandomAlgorithm)</code>
+<div class="block">Set the secure random number generator algorithm name.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#setSecureRandomClass(java.lang.String)">setSecureRandomClass</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;secureRandomClass)</code>
+<div class="block">Set the secure random number generator class name.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#setSecureRandomProvider(java.lang.String)">setSecureRandomProvider</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;secureRandomProvider)</code>
+<div class="block">Set the secure random number generator provider name.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#startInternal()">startInternal</a></strong>()</code>
+<div class="block">Start this component and implement the requirements
+ of <a href="../../../../org/apache/catalina/util/LifecycleBase.html#startInternal()"><code>LifecycleBase.startInternal()</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/authenticator/AuthenticatorBase.html#stopInternal()">stopInternal</a></strong>()</code>
+<div class="block">Stop this component and implement the requirements
+ of <a href="../../../../org/apache/catalina/util/LifecycleBase.html#stopInternal()"><code>LifecycleBase.stopInternal()</code></a>.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.valves.ValveBase">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.valves.<a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a></h3>
+<code><a href="../../../../org/apache/catalina/valves/ValveBase.html#backgroundProcess()">backgroundProcess</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#event(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response,%20org.apache.catalina.comet.CometEvent)">event</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#getDomainInternal()">getDomainInternal</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#getNext()">getNext</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#getObjectNameKeyProperties()">getObjectNameKeyProperties</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#initInternal()">initInternal</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#isAsyncSupported()">isAsyncSupported</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#setAsyncSupported(boolean)">setAsyncSupported</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#setNext(org.apache.catalina.Valve)">setNext</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#toString()">toString</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.util.LifecycleMBeanBase">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.util.<a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html" title="class in org.apache.catalina.util">LifecycleMBeanBase</a></h3>
+<code><a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#destroyInternal()">destroyInternal</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#getDomain()">getDomain</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#getObjectName()">getObjectName</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#postDeregister()">postDeregister</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#postRegister(java.lang.Boolean)">postRegister</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#preDeregister()">preDeregister</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#preRegister(javax.management.MBeanServer,%20javax.management.ObjectName)">preRegister</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#register(java.lang.Object,%20java.lang.String)">register</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#setDomain(java.lang.String)">setDomain</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#unregister(javax.management.ObjectName)">unregister</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.util.LifecycleBase">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.util.<a href="../../../../org/apache/catalina/util/LifecycleBase.html" title="class in org.apache.catalina.util">LifecycleBase</a></h3>
+<code><a href="../../../../org/apache/catalina/util/LifecycleBase.html#addLifecycleListener(org.apache.catalina.LifecycleListener)">addLifecycleListener</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#destroy()">destroy</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#findLifecycleListeners()">findLifecycleListeners</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#fireLifecycleEvent(java.lang.String,%20java.lang.Object)">fireLifecycleEvent</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#getState()">getState</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#getStateName()">getStateName</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#init()">init</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#removeLifecycleListener(org.apache.catalina.LifecycleListener)">removeLifecycleListener</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#setState(org.apache.catalina.LifecycleState)">setState</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#setState(org.apache.catalina.LifecycleState,%20java.lang.Object)">setState</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#start()">start</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#stop()">stop</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="AUTH_HEADER_NAME">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>AUTH_HEADER_NAME</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> AUTH_HEADER_NAME</pre>
+<div class="block">Authentication header</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.catalina.authenticator.AuthenticatorBase.AUTH_HEADER_NAME">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="REALM_NAME">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>REALM_NAME</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> REALM_NAME</pre>
+<div class="block">Default authentication realm name.</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.catalina.authenticator.AuthenticatorBase.REALM_NAME">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="alwaysUseSession">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>alwaysUseSession</h4>
+<pre>protected&nbsp;boolean alwaysUseSession</pre>
+<div class="block">Should a session always be used once a user is authenticated? This may
+ offer some performance benefits since the session can then be used to
+ cache the authenticated Principal, hence removing the need to
+ authenticate the user via the Realm on every request. This may be of help
+ for combinations such as BASIC authentication used with the JNDIRealm or
+ DataSourceRealms. However there will also be the performance cost of
+ creating and GC'ing the session. By default, a session will not be
+ created.</div>
+</li>
+</ul>
+<a name="cache">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cache</h4>
+<pre>protected&nbsp;boolean cache</pre>
+<div class="block">Should we cache authenticated Principals if the request is part of
+ an HTTP session?</div>
+</li>
+</ul>
+<a name="changeSessionIdOnAuthentication">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>changeSessionIdOnAuthentication</h4>
+<pre>protected&nbsp;boolean changeSessionIdOnAuthentication</pre>
+<div class="block">Should the session ID, if any, be changed upon a successful
+ authentication to prevent a session fixation attack?</div>
+</li>
+</ul>
+<a name="context">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>context</h4>
+<pre>protected&nbsp;<a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a> context</pre>
+<div class="block">The Context to which this Valve is attached.</div>
+</li>
+</ul>
+<a name="disableProxyCaching">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>disableProxyCaching</h4>
+<pre>protected&nbsp;boolean disableProxyCaching</pre>
+<div class="block">Flag to determine if we disable proxy caching, or leave the issue
+ up to the webapp developer.</div>
+</li>
+</ul>
+<a name="securePagesWithPragma">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>securePagesWithPragma</h4>
+<pre>protected&nbsp;boolean securePagesWithPragma</pre>
+<div class="block">Flag to determine if we disable proxy caching with headers incompatible
+ with IE.</div>
+</li>
+</ul>
+<a name="secureRandomClass">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>secureRandomClass</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> secureRandomClass</pre>
+<div class="block">The Java class name of the secure random number generator class to be
+ used when generating SSO session identifiers. The random number generator
+ class must be self-seeding and have a zero-argument constructor. If not
+ specified, an instance of <a href="http://docs.oracle.com/javase/7/docs/api/java/security/SecureRandom.html?is-external=true" title="class or interface in java.security"><code>SecureRandom</code></a> will be
+ generated.</div>
+</li>
+</ul>
+<a name="secureRandomAlgorithm">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>secureRandomAlgorithm</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> secureRandomAlgorithm</pre>
+<div class="block">The name of the algorithm to use to create instances of
+ <a href="http://docs.oracle.com/javase/7/docs/api/java/security/SecureRandom.html?is-external=true" title="class or interface in java.security"><code>SecureRandom</code></a> which are used to generate SSO session
+ IDs. If no algorithm is specified, SHA1PRNG is used. To use the platform
+ default (which may be SHA1PRNG), specify the empty string. If an invalid
+ algorithm and/or provider is specified the SecureRandom instances will be
+ created using the defaults. If that fails, the SecureRandom instances
+ will be created using platform defaults.</div>
+</li>
+</ul>
+<a name="secureRandomProvider">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>secureRandomProvider</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> secureRandomProvider</pre>
+<div class="block">The name of the provider to use to create instances of
+ <a href="http://docs.oracle.com/javase/7/docs/api/java/security/SecureRandom.html?is-external=true" title="class or interface in java.security"><code>SecureRandom</code></a> which are used to generate session SSO
+ IDs. If no algorithm is specified the of SHA1PRNG default is used. If an
+ invalid algorithm and/or provider is specified the SecureRandom instances
+ will be created using the defaults. If that fails, the SecureRandom
+ instances will be created using platform defaults.</div>
+</li>
+</ul>
+<a name="sessionIdGenerator">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sessionIdGenerator</h4>
+<pre>protected&nbsp;<a href="../../../../org/apache/catalina/util/SessionIdGeneratorBase.html" title="class in org.apache.catalina.util">SessionIdGeneratorBase</a> sessionIdGenerator</pre>
+</li>
+</ul>
+<a name="sm">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sm</h4>
+<pre>protected static final&nbsp;<a href="../../../../org/apache/tomcat/util/res/StringManager.html" title="class in org.apache.tomcat.util.res">StringManager</a> sm</pre>
+<div class="block">The string manager for this package.</div>
+</li>
+</ul>
+<a name="sso">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>sso</h4>
+<pre>protected&nbsp;<a href="../../../../org/apache/catalina/authenticator/SingleSignOn.html" title="class in org.apache.catalina.authenticator">SingleSignOn</a> sso</pre>
+<div class="block">The SingleSignOn implementation in our request processing chain,
+ if there is one.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="AuthenticatorBase()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>AuthenticatorBase</h4>
+<pre>public&nbsp;AuthenticatorBase()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getRealmName(org.apache.catalina.Context)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRealmName</h4>
+<pre>protected static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getRealmName(<a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a>&nbsp;context)</pre>
+</li>
+</ul>
+<a name="getAlwaysUseSession()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAlwaysUseSession</h4>
+<pre>public&nbsp;boolean&nbsp;getAlwaysUseSession()</pre>
+</li>
+</ul>
+<a name="setAlwaysUseSession(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAlwaysUseSession</h4>
+<pre>public&nbsp;void&nbsp;setAlwaysUseSession(boolean&nbsp;alwaysUseSession)</pre>
+</li>
+</ul>
+<a name="getCache()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCache</h4>
+<pre>public&nbsp;boolean&nbsp;getCache()</pre>
+<div class="block">Return the cache authenticated Principals flag.</div>
+</li>
+</ul>
+<a name="setCache(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCache</h4>
+<pre>public&nbsp;void&nbsp;setCache(boolean&nbsp;cache)</pre>
+<div class="block">Set the cache authenticated Principals flag.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>cache</code> - The new cache flag</dd></dl>
+</li>
+</ul>
+<a name="getContainer()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getContainer</h4>
+<pre>public&nbsp;<a href="../../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a>&nbsp;getContainer()</pre>
+<div class="block">Return the Container to which this Valve is attached.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Contained.html#getContainer()">getContainer</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Contained.html" title="interface in org.apache.catalina">Contained</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/valves/ValveBase.html#getContainer()">getContainer</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>The Container with which this instance is associated or
+         <code>null</code> if not associated with a Container</dd></dl>
+</li>
+</ul>
+<a name="setContainer(org.apache.catalina.Container)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setContainer</h4>
+<pre>public&nbsp;void&nbsp;setContainer(<a href="../../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a>&nbsp;container)</pre>
+<div class="block">Set the Container to which this Valve is attached.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Contained.html#setContainer(org.apache.catalina.Container)">setContainer</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Contained.html" title="interface in org.apache.catalina">Contained</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/valves/ValveBase.html#setContainer(org.apache.catalina.Container)">setContainer</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>container</code> - The container to which we are attached</dd></dl>
+</li>
+</ul>
+<a name="getDisableProxyCaching()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDisableProxyCaching</h4>
+<pre>public&nbsp;boolean&nbsp;getDisableProxyCaching()</pre>
+<div class="block">Return the flag that states if we add headers to disable caching by
+ proxies.</div>
+</li>
+</ul>
+<a name="setDisableProxyCaching(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDisableProxyCaching</h4>
+<pre>public&nbsp;void&nbsp;setDisableProxyCaching(boolean&nbsp;nocache)</pre>
+<div class="block">Set the value of the flag that states if we add headers to disable
+ caching by proxies.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>nocache</code> - <code>true</code> if we add headers to disable proxy
+              caching, <code>false</code> if we leave the headers alone.</dd></dl>
+</li>
+</ul>
+<a name="getSecurePagesWithPragma()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSecurePagesWithPragma</h4>
+<pre>public&nbsp;boolean&nbsp;getSecurePagesWithPragma()</pre>
+<div class="block">Return the flag that states, if proxy caching is disabled, what headers
+ we add to disable the caching.</div>
+</li>
+</ul>
+<a name="setSecurePagesWithPragma(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSecurePagesWithPragma</h4>
+<pre>public&nbsp;void&nbsp;setSecurePagesWithPragma(boolean&nbsp;securePagesWithPragma)</pre>
+<div class="block">Set the value of the flag that states what headers we add to disable
+ proxy caching.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>securePagesWithPragma</code> - <code>true</code> if we add headers which
+ are incompatible with downloading office documents in IE under SSL but
+ which fix a caching problem in Mozilla.</dd></dl>
+</li>
+</ul>
+<a name="getChangeSessionIdOnAuthentication()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getChangeSessionIdOnAuthentication</h4>
+<pre>public&nbsp;boolean&nbsp;getChangeSessionIdOnAuthentication()</pre>
+<div class="block">Return the flag that states if we should change the session ID of an
+ existing session upon successful authentication.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd><code>true</code> to change session ID upon successful
+         authentication, <code>false</code> to do not perform the change.</dd></dl>
+</li>
+</ul>
+<a name="setChangeSessionIdOnAuthentication(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setChangeSessionIdOnAuthentication</h4>
+<pre>public&nbsp;void&nbsp;setChangeSessionIdOnAuthentication(boolean&nbsp;changeSessionIdOnAuthentication)</pre>
+<div class="block">Set the value of the flag that states if we should change the session ID
+ of an existing session upon successful authentication.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>changeSessionIdOnAuthentication</code> - <code>true</code> to change session ID upon successful
+            authentication, <code>false</code> to do not perform the
+            change.</dd></dl>
+</li>
+</ul>
+<a name="getSecureRandomClass()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSecureRandomClass</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getSecureRandomClass()</pre>
+<div class="block">Return the secure random number generator class name.</div>
+</li>
+</ul>
+<a name="setSecureRandomClass(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSecureRandomClass</h4>
+<pre>public&nbsp;void&nbsp;setSecureRandomClass(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;secureRandomClass)</pre>
+<div class="block">Set the secure random number generator class name.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>secureRandomClass</code> - The new secure random number generator class
+                          name</dd></dl>
+</li>
+</ul>
+<a name="getSecureRandomAlgorithm()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSecureRandomAlgorithm</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getSecureRandomAlgorithm()</pre>
+<div class="block">Return the secure random number generator algorithm name.</div>
+</li>
+</ul>
+<a name="setSecureRandomAlgorithm(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSecureRandomAlgorithm</h4>
+<pre>public&nbsp;void&nbsp;setSecureRandomAlgorithm(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;secureRandomAlgorithm)</pre>
+<div class="block">Set the secure random number generator algorithm name.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>secureRandomAlgorithm</code> - The new secure random number generator
+                              algorithm name</dd></dl>
+</li>
+</ul>
+<a name="getSecureRandomProvider()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSecureRandomProvider</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getSecureRandomProvider()</pre>
+<div class="block">Return the secure random number generator provider name.</div>
+</li>
+</ul>
+<a name="setSecureRandomProvider(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSecureRandomProvider</h4>
+<pre>public&nbsp;void&nbsp;setSecureRandomProvider(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;secureRandomProvider)</pre>
+<div class="block">Set the secure random number generator provider name.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>secureRandomProvider</code> - The new secure random number generator
+                             provider name</dd></dl>
+</li>
+</ul>
+<a name="invoke(org.apache.catalina.connector.Request, org.apache.catalina.connector.Response)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>invoke</h4>
+<pre>public&nbsp;void&nbsp;invoke(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request,
+          <a href="../../../../org/apache/catalina/connector/Response.html" title="class in org.apache.catalina.connector">Response</a>&nbsp;response)
+            throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                   <a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></pre>
+<div class="block">Enforce the security restrictions in the web application deployment
+ descriptor of our associated Context.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Valve.html#invoke(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response)">invoke</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/valves/ValveBase.html#invoke(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response)">invoke</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>request</code> - Request to be processed</dd><dd><code>response</code> - Response to be processed</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if an input/output error occurs</dd>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code> - if thrown by a processing element</dd></dl>
+</li>
+</ul>
+<a name="getRequestCertificates(org.apache.catalina.connector.Request)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRequestCertificates</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/security/cert/X509Certificate.html?is-external=true" title="class or interface in java.security.cert">X509Certificate</a>[]&nbsp;getRequestCertificates(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request)
+                                            throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></pre>
+<div class="block">Look for the X509 certificate chain in the Request under the key
+ <code>javax.servlet.request.X509Certificate</code>. If not found, trigger
+ extracting the certificate chain from the Coyote request.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>request</code> - Request to be processed</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The X509 certificate chain if found, <code>null</code>
+                  otherwise.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code></dd></dl>
+</li>
+</ul>
+<a name="associate(java.lang.String, org.apache.catalina.Session)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>associate</h4>
+<pre>protected&nbsp;void&nbsp;associate(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;ssoId,
+             <a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a>&nbsp;session)</pre>
+<div class="block">Associate the specified single sign on identifier with the
+ specified Session.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ssoId</code> - Single sign on identifier</dd><dd><code>session</code> - Session to be associated</dd></dl>
+</li>
+</ul>
+<a name="authenticate(org.apache.catalina.connector.Request, javax.servlet.http.HttpServletResponse)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>authenticate</h4>
+<pre>public abstract&nbsp;boolean&nbsp;authenticate(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request,
+                   <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a>&nbsp;response)
+                              throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Authenticate the user making this request, based on the login
+ configuration of the <a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina"><code>Context</code></a> with which this Authenticator is
+ associated.  Return <code>true</code> if any specified constraint has
+ been satisfied, or <code>false</code> if we have created a response
+ challenge already.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Authenticator.html#authenticate(org.apache.catalina.connector.Request,%20javax.servlet.http.HttpServletResponse)">authenticate</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Authenticator.html" title="interface in org.apache.catalina">Authenticator</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>request</code> - Request we are processing</dd><dd><code>response</code> - Response we are populating</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if any specified constraints have been
+         satisfied, or <code>false</code> if one more constraints were not
+         satisfied (in which case an authentication challenge will have
+         been written to the response).</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if an input/output error occurs</dd></dl>
+</li>
+</ul>
+<a name="checkForCachedAuthentication(org.apache.catalina.connector.Request, javax.servlet.http.HttpServletResponse, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>checkForCachedAuthentication</h4>
+<pre>protected&nbsp;boolean&nbsp;checkForCachedAuthentication(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request,
+                                   <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a>&nbsp;response,
+                                   boolean&nbsp;useSSO)</pre>
+<div class="block">Check to see if the user has already been authenticated earlier in the
+ processing chain or if there is enough information available to
+ authenticate the user without requiring further user interaction.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>request</code> - The current request</dd><dd><code>response</code> - The current response</dd><dd><code>useSSO</code> - Should information available from SSO be used to attempt
+                to authenticate the current user?</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the user was authenticated via the cache,
+         otherwise <code>false</code></dd></dl>
+</li>
+</ul>
+<a name="reauthenticateFromSSO(java.lang.String, org.apache.catalina.connector.Request)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reauthenticateFromSSO</h4>
+<pre>protected&nbsp;boolean&nbsp;reauthenticateFromSSO(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;ssoId,
+                            <a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request)</pre>
+<div class="block">Attempts reauthentication to the <code>Realm</code> using
+ the credentials included in argument <code>entry</code>.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ssoId</code> - identifier of SingleSignOn session with which the
+              caller is associated</dd><dd><code>request</code> - the request that needs to be authenticated</dd></dl>
+</li>
+</ul>
+<a name="register(org.apache.catalina.connector.Request, javax.servlet.http.HttpServletResponse, java.security.Principal, java.lang.String, java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>register</h4>
+<pre>public&nbsp;void&nbsp;register(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request,
+            <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a>&nbsp;response,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a>&nbsp;principal,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;authType,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password)</pre>
+<div class="block">Register an authenticated Principal and authentication type in our
+ request, in the current session (if there is one), and with our
+ SingleSignOn valve, if there is one.  Set the appropriate cookie
+ to be returned.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>request</code> - The servlet request we are processing</dd><dd><code>response</code> - The servlet response we are generating</dd><dd><code>principal</code> - The authenticated Principal to be registered</dd><dd><code>authType</code> - The authentication type to be registered</dd><dd><code>username</code> - Username used to authenticate (if any)</dd><dd><code>password</code> - Password used to authenticate (if any)</dd></dl>
+</li>
+</ul>
+<a name="login(java.lang.String, java.lang.String, org.apache.catalina.connector.Request)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>login</h4>
+<pre>public&nbsp;void&nbsp;login(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password,
+         <a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request)
+           throws <a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Authenticator.html#login(java.lang.String,%20java.lang.String,%20org.apache.catalina.connector.Request)">login</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Authenticator.html" title="interface in org.apache.catalina">Authenticator</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code></dd></dl>
+</li>
+</ul>
+<a name="getAuthMethod()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAuthMethod</h4>
+<pre>protected abstract&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getAuthMethod()</pre>
+</li>
+</ul>
+<a name="doLogin(org.apache.catalina.connector.Request, java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>doLogin</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a>&nbsp;doLogin(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request,
+                <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
+                <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password)
+                     throws <a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></pre>
+<div class="block">Process the login request.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>request</code> - Associated request</dd><dd><code>username</code> - The user</dd><dd><code>password</code> - The password</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The authenticated Principal</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code></dd></dl>
+</li>
+</ul>
+<a name="logout(org.apache.catalina.connector.Request)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>logout</h4>
+<pre>public&nbsp;void&nbsp;logout(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Authenticator.html#logout(org.apache.catalina.connector.Request)">logout</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Authenticator.html" title="interface in org.apache.catalina">Authenticator</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="startInternal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>startInternal</h4>
+<pre>protected&nbsp;void&nbsp;startInternal()
+                      throws <a href="../../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></pre>
+<div class="block">Start this component and implement the requirements
+ of <a href="../../../../org/apache/catalina/util/LifecycleBase.html#startInternal()"><code>LifecycleBase.startInternal()</code></a>.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/valves/ValveBase.html#startInternal()">startInternal</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></code> - if this component detects a fatal error
+  that prevents this component from being used</dd></dl>
+</li>
+</ul>
+<a name="stopInternal()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>stopInternal</h4>
+<pre>protected&nbsp;void&nbsp;stopInternal()
+                     throws <a href="../../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></pre>
+<div class="block">Stop this component and implement the requirements
+ of <a href="../../../../org/apache/catalina/util/LifecycleBase.html#stopInternal()"><code>LifecycleBase.stopInternal()</code></a>.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/valves/ValveBase.html#stopInternal()">stopInternal</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></code> - if this component detects a fatal error
+  that prevents this component from being used</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev Class</li>
+<li><a href="../../../../org/apache/catalina/authenticator/BasicAuthenticator.html" title="class in org.apache.catalina.authenticator"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/authenticator/AuthenticatorBase.html" target="_top">Frames</a></li>
+<li><a href="AuthenticatorBase.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

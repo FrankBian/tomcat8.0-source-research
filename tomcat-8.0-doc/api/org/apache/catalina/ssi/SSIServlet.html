@@ -1,0 +1,532 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SSIServlet (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="SSIServlet (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/ssi/SSIProcessor.html" title="class in org.apache.catalina.ssi"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/ssi/SSIServletExternalResolver.html" title="class in org.apache.catalina.ssi"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/ssi/SSIServlet.html" target="_top">Frames</a></li>
+<li><a href="SSIServlet.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.ssi</div>
+<h2 title="Class SSIServlet" class="title">Class SSIServlet</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../servletapi/javax/servlet/GenericServlet.html?is-external=true" title="class or interface in javax.servlet">javax.servlet.GenericServlet</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../servletapi/javax/servlet/http/HttpServlet.html?is-external=true" title="class or interface in javax.servlet.http">javax.servlet.http.HttpServlet</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.ssi.SSIServlet</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>, <a href="../../../../../servletapi/javax/servlet/Servlet.html?is-external=true" title="class or interface in javax.servlet">Servlet</a>, <a href="../../../../../servletapi/javax/servlet/ServletConfig.html?is-external=true" title="class or interface in javax.servlet">ServletConfig</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">SSIServlet</span>
+extends <a href="../../../../../servletapi/javax/servlet/http/HttpServlet.html?is-external=true" title="class or interface in javax.servlet.http">HttpServlet</a></pre>
+<div class="block">Servlet to process SSI requests within a webpage. Mapped to a path from
+ within web.xml.</div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Bip Thelin, Amy Roh, Dan Sandberg, David Becker</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../serialized-form.html#org.apache.catalina.ssi.SSIServlet">Serialized Form</a></dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ssi/SSIServlet.html#allowExec">allowExec</a></strong></code>
+<div class="block">Allow exec (normally blocked for security)</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ssi/SSIServlet.html#buffered">buffered</a></strong></code>
+<div class="block">Should the output be buffered.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ssi/SSIServlet.html#debug">debug</a></strong></code>
+<div class="block">Debug level for this servlet.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ssi/SSIServlet.html#expires">expires</a></strong></code>
+<div class="block">Expiration time in seconds for the doc.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ssi/SSIServlet.html#inputEncoding">inputEncoding</a></strong></code>
+<div class="block">Input encoding.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ssi/SSIServlet.html#isVirtualWebappRelative">isVirtualWebappRelative</a></strong></code>
+<div class="block">virtual path can be webapp-relative</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ssi/SSIServlet.html#outputEncoding">outputEncoding</a></strong></code>
+<div class="block">Output encoding.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/catalina/ssi/SSIServlet.html#SSIServlet()">SSIServlet</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ssi/SSIServlet.html#doGet(javax.servlet.http.HttpServletRequest,%20javax.servlet.http.HttpServletResponse)">doGet</a></strong>(<a href="../../../../../servletapi/javax/servlet/http/HttpServletRequest.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletRequest</a>&nbsp;req,
+     <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a>&nbsp;res)</code>
+<div class="block">Process and forward the GET request to our <code>requestHandler()</code>*</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ssi/SSIServlet.html#doPost(javax.servlet.http.HttpServletRequest,%20javax.servlet.http.HttpServletResponse)">doPost</a></strong>(<a href="../../../../../servletapi/javax/servlet/http/HttpServletRequest.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletRequest</a>&nbsp;req,
+      <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a>&nbsp;res)</code>
+<div class="block">Process and forward the POST request to our
+ <code>requestHandler()</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ssi/SSIServlet.html#init()">init</a></strong>()</code>
+<div class="block">Initialize this servlet.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ssi/SSIServlet.html#processSSI(javax.servlet.http.HttpServletRequest,%20javax.servlet.http.HttpServletResponse,%20java.net.URL)">processSSI</a></strong>(<a href="../../../../../servletapi/javax/servlet/http/HttpServletRequest.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletRequest</a>&nbsp;req,
+          <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a>&nbsp;res,
+          <a href="http://docs.oracle.com/javase/7/docs/api/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;resource)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ssi/SSIServlet.html#requestHandler(javax.servlet.http.HttpServletRequest,%20javax.servlet.http.HttpServletResponse)">requestHandler</a></strong>(<a href="../../../../../servletapi/javax/servlet/http/HttpServletRequest.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletRequest</a>&nbsp;req,
+              <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a>&nbsp;res)</code>
+<div class="block">Process our request and locate right SSI command.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_javax.servlet.http.HttpServlet">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;javax.servlet.http.<a href="../../../../../servletapi/javax/servlet/http/HttpServlet.html?is-external=true" title="class or interface in javax.servlet.http">HttpServlet</a></h3>
+<code><a href="../../../../../servletapi/javax/servlet/http/HttpServlet.html?is-external=true#doDelete(javax.servlet.http.HttpServletRequest,%20javax.servlet.http.HttpServletResponse)" title="class or interface in javax.servlet.http">doDelete</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServlet.html?is-external=true#doHead(javax.servlet.http.HttpServletRequest,%20javax.servlet.http.HttpServletResponse)" title="class or interface in javax.servlet.http">doHead</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServlet.html?is-external=true#doOptions(javax.servlet.http.HttpServletRequest,%20javax.servlet.http.HttpServletResponse)" title="class or interface in javax.servlet.http">doOptions</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServlet.html?is-external=true#doPut(javax.servlet.http.HttpServletRequest,%20javax.servlet.http.HttpServletResponse)" title="class or interface in javax.servlet.http">doPut</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServlet.html?is-external=true#doTrace(javax.servlet.http.HttpServletRequest,%20javax.servlet.http.HttpServletResponse)" title="class or interface in javax.servlet.http">doTrace</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServlet.html?is-external=true#getLastModified(javax.servlet.http.HttpServletRequest)" title="class or interface in javax.servlet.http">getLastModified</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServlet.html?is-external=true#service(javax.servlet.http.HttpServletRequest,%20javax.servlet.http.HttpServletResponse)" title="class or interface in javax.servlet.http">service</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServlet.html?is-external=true#service(javax.servlet.ServletRequest,%20javax.servlet.ServletResponse)" title="class or interface in javax.servlet.http">service</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_javax.servlet.GenericServlet">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;javax.servlet.<a href="../../../../../servletapi/javax/servlet/GenericServlet.html?is-external=true" title="class or interface in javax.servlet">GenericServlet</a></h3>
+<code><a href="../../../../../servletapi/javax/servlet/GenericServlet.html?is-external=true#destroy()" title="class or interface in javax.servlet">destroy</a>, <a href="../../../../../servletapi/javax/servlet/GenericServlet.html?is-external=true#getInitParameter(java.lang.String)" title="class or interface in javax.servlet">getInitParameter</a>, <a href="../../../../../servletapi/javax/servlet/GenericServlet.html?is-external=true#getInitParameterNames()" title="class or interface in javax.servlet">getInitParameterNames</a>, <a href="../../../../../servletapi/javax/servlet/GenericServlet.html?is-external=true#getServletConfig()" title="class or interface in javax.servlet">getServletConfig</a>, <a href="../../../../../servletapi/javax/servlet/GenericServlet.html?is-external=true#getServletContext()" title="class or interface in javax.servlet">getServletContext</a>, <a href="../../../../../servletapi/javax/servlet/GenericServlet.html?is-external=true#getServletInfo()" title="class or interface in javax.servlet">getServletInfo</a>, <a href="../../../../../servletapi/javax/servlet/GenericServlet.html?is-external=true#getServletName()" title="class or interface in javax.servlet">getServletName</a>, <a href="../../../../../servletapi/javax/servlet/GenericServlet.html?is-external=true#init(javax.servlet.ServletConfig)" title="class or interface in javax.servlet">init</a>, <a href="../../../../../servletapi/javax/servlet/GenericServlet.html?is-external=true#log(java.lang.String)" title="class or interface in javax.servlet">log</a>, <a href="../../../../../servletapi/javax/servlet/GenericServlet.html?is-external=true#log(java.lang.String,%20java.lang.Throwable)" title="class or interface in javax.servlet">log</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="debug">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>debug</h4>
+<pre>protected&nbsp;int debug</pre>
+<div class="block">Debug level for this servlet.</div>
+</li>
+</ul>
+<a name="buffered">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>buffered</h4>
+<pre>protected&nbsp;boolean buffered</pre>
+<div class="block">Should the output be buffered.</div>
+</li>
+</ul>
+<a name="expires">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>expires</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a> expires</pre>
+<div class="block">Expiration time in seconds for the doc.</div>
+</li>
+</ul>
+<a name="isVirtualWebappRelative">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isVirtualWebappRelative</h4>
+<pre>protected&nbsp;boolean isVirtualWebappRelative</pre>
+<div class="block">virtual path can be webapp-relative</div>
+</li>
+</ul>
+<a name="inputEncoding">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>inputEncoding</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> inputEncoding</pre>
+<div class="block">Input encoding. If not specified, uses platform default</div>
+</li>
+</ul>
+<a name="outputEncoding">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>outputEncoding</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> outputEncoding</pre>
+<div class="block">Output encoding. If not specified, uses platform default</div>
+</li>
+</ul>
+<a name="allowExec">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>allowExec</h4>
+<pre>protected&nbsp;boolean allowExec</pre>
+<div class="block">Allow exec (normally blocked for security)</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="SSIServlet()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>SSIServlet</h4>
+<pre>public&nbsp;SSIServlet()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="init()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>init</h4>
+<pre>public&nbsp;void&nbsp;init()
+          throws <a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></pre>
+<div class="block">Initialize this servlet.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/GenericServlet.html?is-external=true#init()" title="class or interface in javax.servlet">init</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../servletapi/javax/servlet/GenericServlet.html?is-external=true" title="class or interface in javax.servlet">GenericServlet</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code> - if an error occurs</dd></dl>
+</li>
+</ul>
+<a name="doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>doGet</h4>
+<pre>public&nbsp;void&nbsp;doGet(<a href="../../../../../servletapi/javax/servlet/http/HttpServletRequest.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletRequest</a>&nbsp;req,
+         <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a>&nbsp;res)
+           throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                  <a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></pre>
+<div class="block">Process and forward the GET request to our <code>requestHandler()</code>*</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServlet.html?is-external=true#doGet(javax.servlet.http.HttpServletRequest,%20javax.servlet.http.HttpServletResponse)" title="class or interface in javax.servlet.http">doGet</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServlet.html?is-external=true" title="class or interface in javax.servlet.http">HttpServlet</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>req</code> - a value of type 'HttpServletRequest'</dd><dd><code>res</code> - a value of type 'HttpServletResponse'</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if an error occurs</dd>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code> - if an error occurs</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setContentType(java.lang.String)" title="class or interface in javax.servlet"><code>ServletResponse.setContentType(java.lang.String)</code></a></dd></dl>
+</li>
+</ul>
+<a name="doPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>doPost</h4>
+<pre>public&nbsp;void&nbsp;doPost(<a href="../../../../../servletapi/javax/servlet/http/HttpServletRequest.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletRequest</a>&nbsp;req,
+          <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a>&nbsp;res)
+            throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                   <a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></pre>
+<div class="block">Process and forward the POST request to our
+ <code>requestHandler()</code>.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServlet.html?is-external=true#doPost(javax.servlet.http.HttpServletRequest,%20javax.servlet.http.HttpServletResponse)" title="class or interface in javax.servlet.http">doPost</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServlet.html?is-external=true" title="class or interface in javax.servlet.http">HttpServlet</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>req</code> - a value of type 'HttpServletRequest'</dd><dd><code>res</code> - a value of type 'HttpServletResponse'</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if an error occurs</dd>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code> - if an error occurs</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/ServletOutputStream.html?is-external=true" title="class or interface in javax.servlet"><code>ServletOutputStream</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setContentType(java.lang.String)" title="class or interface in javax.servlet"><code>ServletResponse.setContentType(java.lang.String)</code></a></dd></dl>
+</li>
+</ul>
+<a name="requestHandler(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>requestHandler</h4>
+<pre>protected&nbsp;void&nbsp;requestHandler(<a href="../../../../../servletapi/javax/servlet/http/HttpServletRequest.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletRequest</a>&nbsp;req,
+                  <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a>&nbsp;res)
+                       throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Process our request and locate right SSI command.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>req</code> - a value of type 'HttpServletRequest'</dd><dd><code>res</code> - a value of type 'HttpServletResponse'</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="processSSI(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, java.net.URL)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>processSSI</h4>
+<pre>protected&nbsp;void&nbsp;processSSI(<a href="../../../../../servletapi/javax/servlet/http/HttpServletRequest.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletRequest</a>&nbsp;req,
+              <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a>&nbsp;res,
+              <a href="http://docs.oracle.com/javase/7/docs/api/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;resource)
+                   throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/ssi/SSIProcessor.html" title="class in org.apache.catalina.ssi"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/ssi/SSIServletExternalResolver.html" title="class in org.apache.catalina.ssi"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/ssi/SSIServlet.html" target="_top">Frames</a></li>
+<li><a href="SSIServlet.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

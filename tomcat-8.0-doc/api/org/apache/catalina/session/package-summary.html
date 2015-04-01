@@ -1,0 +1,276 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>org.apache.catalina.session (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="org.apache.catalina.session (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li class="navBarCell1Rev">Package</li>
+<li>Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/servlets/package-summary.html">Prev Package</a></li>
+<li><a href="../../../../org/apache/catalina/ssi/package-summary.html">Next Package</a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/session/package-summary.html" target="_top">Frames</a></li>
+<li><a href="package-summary.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<div class="header">
+<h1 title="Package" class="title">Package&nbsp;org.apache.catalina.session</h1>
+<div class="docSummary">
+<div class="block">This package contains the standard <code>Manager</code> and
+<code>Session</code> implementations that represent the collection of
+active sessions and the individual sessions themselves, respectively,
+that are associated with a <code>Context</code>.</div>
+</div>
+<p>See:&nbsp;<a href="#package_description">Description</a></p>
+</div>
+<div class="contentContainer">
+<ul class="blockList">
+<li class="blockList">
+<table class="packageSummary" border="0" cellpadding="3" cellspacing="0" summary="Class Summary table, listing classes, and an explanation">
+<caption><span>Class Summary</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Class</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/session/Constants.html" title="class in org.apache.catalina.session">Constants</a></td>
+<td class="colLast">
+<div class="block">Manifest constants for the <code>org.apache.catalina.session</code>
+ package.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/session/FileStore.html" title="class in org.apache.catalina.session">FileStore</a></td>
+<td class="colLast">
+<div class="block">Concrete implementation of the <b>Store</b> interface that utilizes
+ a file per saved Session in a configured directory.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/session/JDBCStore.html" title="class in org.apache.catalina.session">JDBCStore</a></td>
+<td class="colLast">
+<div class="block">Implementation of the <code>Store</code> interface that stores
+ serialized session objects in a database.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/session/ManagerBase.html" title="class in org.apache.catalina.session">ManagerBase</a></td>
+<td class="colLast">
+<div class="block">Minimal implementation of the <b>Manager</b> interface that supports
+ no session persistence or distributable capabilities.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/session/ManagerBase.SessionTiming.html" title="class in org.apache.catalina.session">ManagerBase.SessionTiming</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/session/PersistentManager.html" title="class in org.apache.catalina.session">PersistentManager</a></td>
+<td class="colLast">
+<div class="block">Implementation of the <b>Manager</b> interface that makes use of
+ a Store to swap active Sessions to disk.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/session/PersistentManagerBase.html" title="class in org.apache.catalina.session">PersistentManagerBase</a></td>
+<td class="colLast">
+<div class="block">Extends the <b>ManagerBase</b> class to implement most of the
+ functionality required by a Manager which supports any kind of
+ persistence, even if only for  restarts.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/session/StandardManager.html" title="class in org.apache.catalina.session">StandardManager</a></td>
+<td class="colLast">
+<div class="block">Standard implementation of the <b>Manager</b> interface that provides
+ simple session persistence across restarts of this component (such as
+ when the entire server is shut down and restarted, or when a particular
+ web application is reloaded.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/session/StandardSession.html" title="class in org.apache.catalina.session">StandardSession</a></td>
+<td class="colLast">
+<div class="block">Standard implementation of the <b>Session</b> interface.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/session/StandardSessionFacade.html" title="class in org.apache.catalina.session">StandardSessionFacade</a></td>
+<td class="colLast">
+<div class="block">Facade for the StandardSession object.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/session/StoreBase.html" title="class in org.apache.catalina.session">StoreBase</a></td>
+<td class="colLast">
+<div class="block">Abstract implementation of the Store interface to
+ support most of the functionality required by a Store.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList">
+<table class="packageSummary" border="0" cellpadding="3" cellspacing="0" summary="Exception Summary table, listing exceptions, and an explanation">
+<caption><span>Exception Summary</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Exception</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/session/TooManyActiveSessionsException.html" title="class in org.apache.catalina.session">TooManyActiveSessionsException</a></td>
+<td class="colLast">
+<div class="block">An exception that indicates the maximum number of active sessions has been
+ reached and the server is refusing to create any new sessions.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<a name="package_description">
+<!--   -->
+</a>
+<h2 title="Package org.apache.catalina.session Description">Package org.apache.catalina.session Description</h2>
+<div class="block"><p>This package contains the standard <code>Manager</code> and
+<code>Session</code> implementations that represent the collection of
+active sessions and the individual sessions themselves, respectively,
+that are associated with a <code>Context</code>.  Additional implementations
+of the <code>Manager</code> interface can be based upon the supplied
+convenience base class (<code>ManagerBase</code>), if desired.  Different
+implementations of <code>Session</code> are possible, but a need for
+functionality beyond what is provided by the standard implementation
+(<code>StandardSession</code>) is not expected.</p>
+
+<p>The convenience <code>ManagerBase</code> base class is configured by
+setting the following properties:</p>
+<ul>
+<li><b>algorithm</b> - Message digest algorithm to be used when
+    generating session identifiers.  This must be the name of an
+    algorithm supported by the <code>java.security.MessageDigest</code>
+    class on your platform.  [DEFAULT_ALGORITHM]</li>
+<li><b>debug</b> - Debugging detail level for this component. [0]</li>
+<li><b>distributable</b> - Has the web application we are associated with
+    been marked as "distributable"?  If it has, attempts to add or replace
+    a session attribute object that does not implement the
+    <code>java.io.Serializable</code> interface will be rejected.
+    [false]</li>
+<li><b>maxInactiveInterval</b> - The default maximum inactive interval,
+    in minutes, for sessions created by this Manager.  The standard
+    implementation automatically updates this value based on the configuration
+    settings in the web application deployment descriptor.  [60]</li>
+<li><b>randomClass</b> - The Java class name of the random number generator
+    to be used when creating session identifiers for this Manager.
+    [java.security.SecureRandom]</li>
+</ul>
+
+<p>The standard implementation of the <code>Manager</code> interface
+(<code>StandardManager</code>) supports the following additional configuration
+properties:</p>
+<ul>
+<li><b>maxActiveSessions</b> - The maximum number of active sessions that
+    will be allowed, or -1 for no limit.  [-1]</li>
+<li><b>pathname</b> - Pathname to the file that is used to store session
+    data persistently across container restarts.  If this pathname is relative,
+    it is resolved against the temporary working directory provided by our
+    associated Context, if any.  ["sessions.ser"]</li>
+</ul></div>
+</div>
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li class="navBarCell1Rev">Package</li>
+<li>Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/servlets/package-summary.html">Prev Package</a></li>
+<li><a href="../../../../org/apache/catalina/ssi/package-summary.html">Next Package</a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/session/package-summary.html" target="_top">Frames</a></li>
+<li><a href="package-summary.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

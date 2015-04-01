@@ -1,0 +1,1068 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Wrapper (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="Wrapper (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/apache/catalina/WebResourceSet.html" title="interface in org.apache.catalina"><span class="strong">Prev Class</span></a></li>
+<li>Next Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/apache/catalina/Wrapper.html" target="_top">Frames</a></li>
+<li><a href="Wrapper.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina</div>
+<h2 title="Interface Wrapper" class="title">Interface Wrapper</h2>
+</div>
+<div class="contentContainer">
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Superinterfaces:</dt>
+<dd><a href="../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a>, <a href="../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a></dd>
+</dl>
+<dl>
+<dt>All Known Implementing Classes:</dt>
+<dd><a href="../../../org/apache/catalina/core/StandardWrapper.html" title="class in org.apache.catalina.core">StandardWrapper</a>, <a href="../../../org/apache/catalina/startup/Tomcat.ExistingStandardWrapper.html" title="class in org.apache.catalina.startup">Tomcat.ExistingStandardWrapper</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public interface <span class="strong">Wrapper</span>
+extends <a href="../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a></pre>
+<div class="block">A <b>Wrapper</b> is a Container that represents an individual servlet
+ definition from the deployment descriptor of the web application.  It
+ provides a convenient mechanism to use Interceptors that see every single
+ request to the servlet represented by this definition.
+ <p>
+ Implementations of Wrapper are responsible for managing the servlet life
+ cycle for their underlying servlet class, including calling init() and
+ destroy() at appropriate times, as well as respecting the existence of
+ the SingleThreadModel declaration on the servlet class itself.
+ <p>
+ The parent Container attached to a Wrapper will generally be an
+ implementation of Context, representing the servlet context (and
+ therefore the web application) within which this servlet executes.
+ <p>
+ Child Containers are not allowed on Wrapper implementations, so the
+ <code>addChild()</code> method should throw an
+ <code>IllegalArgumentException</code>.</div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Craig R. McClanahan</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#ADD_MAPPING_EVENT">ADD_MAPPING_EVENT</a></strong></code>
+<div class="block">Container event for adding a wrapper.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#REMOVE_MAPPING_EVENT">REMOVE_MAPPING_EVENT</a></strong></code>
+<div class="block">Container event for removing a wrapper.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.Container">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.apache.catalina.<a href="../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a></h3>
+<code><a href="../../../org/apache/catalina/Container.html#ADD_CHILD_EVENT">ADD_CHILD_EVENT</a>, <a href="../../../org/apache/catalina/Container.html#ADD_VALVE_EVENT">ADD_VALVE_EVENT</a>, <a href="../../../org/apache/catalina/Container.html#REMOVE_CHILD_EVENT">REMOVE_CHILD_EVENT</a>, <a href="../../../org/apache/catalina/Container.html#REMOVE_VALVE_EVENT">REMOVE_VALVE_EVENT</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.Lifecycle">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.apache.catalina.<a href="../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a></h3>
+<code><a href="../../../org/apache/catalina/Lifecycle.html#AFTER_DESTROY_EVENT">AFTER_DESTROY_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#AFTER_INIT_EVENT">AFTER_INIT_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#AFTER_START_EVENT">AFTER_START_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#AFTER_STOP_EVENT">AFTER_STOP_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#BEFORE_DESTROY_EVENT">BEFORE_DESTROY_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#BEFORE_INIT_EVENT">BEFORE_INIT_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#BEFORE_START_EVENT">BEFORE_START_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#BEFORE_STOP_EVENT">BEFORE_STOP_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#CONFIGURE_START_EVENT">CONFIGURE_START_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#CONFIGURE_STOP_EVENT">CONFIGURE_STOP_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#PERIODIC_EVENT">PERIODIC_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#START_EVENT">START_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#STOP_EVENT">STOP_EVENT</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#addInitParameter(java.lang.String,%20java.lang.String)">addInitParameter</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+                <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</code>
+<div class="block">Add a new servlet initialization parameter for this servlet.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#addInstanceListener(org.apache.catalina.InstanceListener)">addInstanceListener</a></strong>(<a href="../../../org/apache/catalina/InstanceListener.html" title="interface in org.apache.catalina">InstanceListener</a>&nbsp;listener)</code>
+<div class="block">Add a new listener interested in InstanceEvents.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#addMapping(java.lang.String)">addMapping</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;mapping)</code>
+<div class="block">Add a mapping associated with the Wrapper.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#addSecurityReference(java.lang.String,%20java.lang.String)">addSecurityReference</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+                    <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;link)</code>
+<div class="block">Add a new security role reference record to the set of records for
+ this servlet.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../servletapi/javax/servlet/Servlet.html?is-external=true" title="class or interface in javax.servlet">Servlet</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#allocate()">allocate</a></strong>()</code>
+<div class="block">Allocate an initialized instance of this Servlet that is ready to have
+ its <code>service()</code> method called.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#deallocate(javax.servlet.Servlet)">deallocate</a></strong>(<a href="../../../../servletapi/javax/servlet/Servlet.html?is-external=true" title="class or interface in javax.servlet">Servlet</a>&nbsp;servlet)</code>
+<div class="block">Return this previously allocated servlet to the pool of available
+ instances.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#findInitParameter(java.lang.String)">findInitParameter</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Return the value for the specified initialization parameter name,
+ if any; otherwise return <code>null</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#findInitParameters()">findInitParameters</a></strong>()</code>
+<div class="block">Return the names of all defined initialization parameters for this
+ servlet.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#findMappings()">findMappings</a></strong>()</code>
+<div class="block">Return the mappings associated with this wrapper.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#findSecurityReference(java.lang.String)">findSecurityReference</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Return the security role link for the specified security role
+ reference name, if any; otherwise return <code>null</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#findSecurityReferences()">findSecurityReferences</a></strong>()</code>
+<div class="block">Return the set of security role reference names associated with
+ this servlet, if any; otherwise return a zero-length array.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#getAvailable()">getAvailable</a></strong>()</code>
+<div class="block">Return the available date/time for this servlet, in milliseconds since
+ the epoch.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#getLoadOnStartup()">getLoadOnStartup</a></strong>()</code>
+<div class="block">Return the load-on-startup order value (negative value means
+ load on first call).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../servletapi/javax/servlet/MultipartConfigElement.html?is-external=true" title="class or interface in javax.servlet">MultipartConfigElement</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#getMultipartConfigElement()">getMultipartConfigElement</a></strong>()</code>
+<div class="block">Get the multi-part configuration for the associated servlet.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#getRunAs()">getRunAs</a></strong>()</code>
+<div class="block">Return the run-as identity for this servlet.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../servletapi/javax/servlet/Servlet.html?is-external=true" title="class or interface in javax.servlet">Servlet</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#getServlet()">getServlet</a></strong>()</code>
+<div class="block">Return the associated servlet instance.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#getServletClass()">getServletClass</a></strong>()</code>
+<div class="block">Return the fully qualified servlet class name for this servlet.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#getServletMethods()">getServletMethods</a></strong>()</code>
+<div class="block">Gets the names of the methods supported by the underlying servlet.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#incrementErrorCount()">incrementErrorCount</a></strong>()</code>
+<div class="block">Increment the error count value used when monitoring.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#isAsyncSupported()">isAsyncSupported</a></strong>()</code>
+<div class="block">Does the associated Servlet support async processing?</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#isEnabled()">isEnabled</a></strong>()</code>
+<div class="block">Is the associated Servlet enabled?</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#isOverridable()">isOverridable</a></strong>()</code>
+<div class="block">Is the Servlet overridable by a ServletContainerInitializer?</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#isUnavailable()">isUnavailable</a></strong>()</code>
+<div class="block">Is this servlet currently unavailable?</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#load()">load</a></strong>()</code>
+<div class="block">Load and initialize an instance of this servlet, if there is not already
+ at least one initialized instance.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#removeInitParameter(java.lang.String)">removeInitParameter</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Remove the specified initialization parameter from this servlet.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#removeInstanceListener(org.apache.catalina.InstanceListener)">removeInstanceListener</a></strong>(<a href="../../../org/apache/catalina/InstanceListener.html" title="interface in org.apache.catalina">InstanceListener</a>&nbsp;listener)</code>
+<div class="block">Remove a listener no longer interested in InstanceEvents.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#removeMapping(java.lang.String)">removeMapping</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;mapping)</code>
+<div class="block">Remove a mapping associated with the wrapper.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#removeSecurityReference(java.lang.String)">removeSecurityReference</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Remove any security role reference for the specified role name.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#servletSecurityAnnotationScan()">servletSecurityAnnotationScan</a></strong>()</code>
+<div class="block">Scan for (if necessary) and process (if found) the
+ <a href="../../../../servletapi/javax/servlet/annotation/ServletSecurity.html?is-external=true" title="class or interface in javax.servlet.annotation"><code>ServletSecurity</code></a> annotations for the
+ Servlet associated with this wrapper.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#setAsyncSupported(boolean)">setAsyncSupported</a></strong>(boolean&nbsp;asyncSupport)</code>
+<div class="block">Set the async support for the associated servlet.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#setAvailable(long)">setAvailable</a></strong>(long&nbsp;available)</code>
+<div class="block">Set the available date/time for this servlet, in milliseconds since the
+ epoch.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#setEnabled(boolean)">setEnabled</a></strong>(boolean&nbsp;enabled)</code>
+<div class="block">Sets the enabled attribute for the associated servlet.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#setLoadOnStartup(int)">setLoadOnStartup</a></strong>(int&nbsp;value)</code>
+<div class="block">Set the load-on-startup order value (negative value means
+ load on first call).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#setMultipartConfigElement(javax.servlet.MultipartConfigElement)">setMultipartConfigElement</a></strong>(<a href="../../../../servletapi/javax/servlet/MultipartConfigElement.html?is-external=true" title="class or interface in javax.servlet">MultipartConfigElement</a>&nbsp;multipartConfig)</code>
+<div class="block">Set the multi-part configuration for the associated servlet.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#setOverridable(boolean)">setOverridable</a></strong>(boolean&nbsp;overridable)</code>
+<div class="block">Sets the overridable attribute for this Servlet.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#setRunAs(java.lang.String)">setRunAs</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;runAs)</code>
+<div class="block">Set the run-as identity for this servlet.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#setServlet(javax.servlet.Servlet)">setServlet</a></strong>(<a href="../../../../servletapi/javax/servlet/Servlet.html?is-external=true" title="class or interface in javax.servlet">Servlet</a>&nbsp;servlet)</code>
+<div class="block">Set the associated servlet instance</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#setServletClass(java.lang.String)">setServletClass</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;servletClass)</code>
+<div class="block">Set the fully qualified servlet class name for this servlet.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#setServletSecurityAnnotationScanRequired(boolean)">setServletSecurityAnnotationScanRequired</a></strong>(boolean&nbsp;b)</code>
+<div class="block">Set the flag that indicates
+ <a href="../../../../servletapi/javax/servlet/annotation/ServletSecurity.html?is-external=true" title="class or interface in javax.servlet.annotation"><code>ServletSecurity</code></a> annotations must be
+ scanned when the Servlet is first used.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#unavailable(javax.servlet.UnavailableException)">unavailable</a></strong>(<a href="../../../../servletapi/javax/servlet/UnavailableException.html?is-external=true" title="class or interface in javax.servlet">UnavailableException</a>&nbsp;unavailable)</code>
+<div class="block">Process an UnavailableException, marking this servlet as unavailable
+ for the specified amount of time.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Wrapper.html#unload()">unload</a></strong>()</code>
+<div class="block">Unload all initialized instances of this servlet, after calling the
+ <code>destroy()</code> method for each instance.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.Container">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.apache.catalina.<a href="../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a></h3>
+<code><a href="../../../org/apache/catalina/Container.html#addChild(org.apache.catalina.Container)">addChild</a>, <a href="../../../org/apache/catalina/Container.html#addContainerListener(org.apache.catalina.ContainerListener)">addContainerListener</a>, <a href="../../../org/apache/catalina/Container.html#addPropertyChangeListener(java.beans.PropertyChangeListener)">addPropertyChangeListener</a>, <a href="../../../org/apache/catalina/Container.html#backgroundProcess()">backgroundProcess</a>, <a href="../../../org/apache/catalina/Container.html#findChild(java.lang.String)">findChild</a>, <a href="../../../org/apache/catalina/Container.html#findChildren()">findChildren</a>, <a href="../../../org/apache/catalina/Container.html#findContainerListeners()">findContainerListeners</a>, <a href="../../../org/apache/catalina/Container.html#fireContainerEvent(java.lang.String,%20java.lang.Object)">fireContainerEvent</a>, <a href="../../../org/apache/catalina/Container.html#getAccessLog()">getAccessLog</a>, <a href="../../../org/apache/catalina/Container.html#getBackgroundProcessorDelay()">getBackgroundProcessorDelay</a>, <a href="../../../org/apache/catalina/Container.html#getCatalinaBase()">getCatalinaBase</a>, <a href="../../../org/apache/catalina/Container.html#getCatalinaHome()">getCatalinaHome</a>, <a href="../../../org/apache/catalina/Container.html#getCluster()">getCluster</a>, <a href="../../../org/apache/catalina/Container.html#getDomain()">getDomain</a>, <a href="../../../org/apache/catalina/Container.html#getLogger()">getLogger</a>, <a href="../../../org/apache/catalina/Container.html#getMBeanKeyProperties()">getMBeanKeyProperties</a>, <a href="../../../org/apache/catalina/Container.html#getName()">getName</a>, <a href="../../../org/apache/catalina/Container.html#getObjectName()">getObjectName</a>, <a href="../../../org/apache/catalina/Container.html#getParent()">getParent</a>, <a href="../../../org/apache/catalina/Container.html#getParentClassLoader()">getParentClassLoader</a>, <a href="../../../org/apache/catalina/Container.html#getPipeline()">getPipeline</a>, <a href="../../../org/apache/catalina/Container.html#getRealm()">getRealm</a>, <a href="../../../org/apache/catalina/Container.html#getStartStopThreads()">getStartStopThreads</a>, <a href="../../../org/apache/catalina/Container.html#logAccess(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response,%20long,%20boolean)">logAccess</a>, <a href="../../../org/apache/catalina/Container.html#removeChild(org.apache.catalina.Container)">removeChild</a>, <a href="../../../org/apache/catalina/Container.html#removeContainerListener(org.apache.catalina.ContainerListener)">removeContainerListener</a>, <a href="../../../org/apache/catalina/Container.html#removePropertyChangeListener(java.beans.PropertyChangeListener)">removePropertyChangeListener</a>, <a href="../../../org/apache/catalina/Container.html#setBackgroundProcessorDelay(int)">setBackgroundProcessorDelay</a>, <a href="../../../org/apache/catalina/Container.html#setCluster(org.apache.catalina.Cluster)">setCluster</a>, <a href="../../../org/apache/catalina/Container.html#setName(java.lang.String)">setName</a>, <a href="../../../org/apache/catalina/Container.html#setParent(org.apache.catalina.Container)">setParent</a>, <a href="../../../org/apache/catalina/Container.html#setParentClassLoader(java.lang.ClassLoader)">setParentClassLoader</a>, <a href="../../../org/apache/catalina/Container.html#setRealm(org.apache.catalina.Realm)">setRealm</a>, <a href="../../../org/apache/catalina/Container.html#setStartStopThreads(int)">setStartStopThreads</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.Lifecycle">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.apache.catalina.<a href="../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a></h3>
+<code><a href="../../../org/apache/catalina/Lifecycle.html#addLifecycleListener(org.apache.catalina.LifecycleListener)">addLifecycleListener</a>, <a href="../../../org/apache/catalina/Lifecycle.html#destroy()">destroy</a>, <a href="../../../org/apache/catalina/Lifecycle.html#findLifecycleListeners()">findLifecycleListeners</a>, <a href="../../../org/apache/catalina/Lifecycle.html#getState()">getState</a>, <a href="../../../org/apache/catalina/Lifecycle.html#getStateName()">getStateName</a>, <a href="../../../org/apache/catalina/Lifecycle.html#init()">init</a>, <a href="../../../org/apache/catalina/Lifecycle.html#removeLifecycleListener(org.apache.catalina.LifecycleListener)">removeLifecycleListener</a>, <a href="../../../org/apache/catalina/Lifecycle.html#start()">start</a>, <a href="../../../org/apache/catalina/Lifecycle.html#stop()">stop</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="ADD_MAPPING_EVENT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ADD_MAPPING_EVENT</h4>
+<pre>static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> ADD_MAPPING_EVENT</pre>
+<div class="block">Container event for adding a wrapper.</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#org.apache.catalina.Wrapper.ADD_MAPPING_EVENT">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="REMOVE_MAPPING_EVENT">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>REMOVE_MAPPING_EVENT</h4>
+<pre>static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> REMOVE_MAPPING_EVENT</pre>
+<div class="block">Container event for removing a wrapper.</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#org.apache.catalina.Wrapper.REMOVE_MAPPING_EVENT">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getAvailable()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAvailable</h4>
+<pre>long&nbsp;getAvailable()</pre>
+<div class="block">Return the available date/time for this servlet, in milliseconds since
+ the epoch.  If this date/time is in the future, any request for this
+ servlet will return an SC_SERVICE_UNAVAILABLE error.  If it is zero,
+ the servlet is currently available.  A value equal to Long.MAX_VALUE
+ is considered to mean that unavailability is permanent.</div>
+</li>
+</ul>
+<a name="setAvailable(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAvailable</h4>
+<pre>void&nbsp;setAvailable(long&nbsp;available)</pre>
+<div class="block">Set the available date/time for this servlet, in milliseconds since the
+ epoch.  If this date/time is in the future, any request for this servlet
+ will return an SC_SERVICE_UNAVAILABLE error.  A value equal to
+ Long.MAX_VALUE is considered to mean that unavailability is permanent.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>available</code> - The new available date/time</dd></dl>
+</li>
+</ul>
+<a name="getLoadOnStartup()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLoadOnStartup</h4>
+<pre>int&nbsp;getLoadOnStartup()</pre>
+<div class="block">Return the load-on-startup order value (negative value means
+ load on first call).</div>
+</li>
+</ul>
+<a name="setLoadOnStartup(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLoadOnStartup</h4>
+<pre>void&nbsp;setLoadOnStartup(int&nbsp;value)</pre>
+<div class="block">Set the load-on-startup order value (negative value means
+ load on first call).</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - New load-on-startup value</dd></dl>
+</li>
+</ul>
+<a name="getRunAs()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRunAs</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getRunAs()</pre>
+<div class="block">Return the run-as identity for this servlet.</div>
+</li>
+</ul>
+<a name="setRunAs(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRunAs</h4>
+<pre>void&nbsp;setRunAs(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;runAs)</pre>
+<div class="block">Set the run-as identity for this servlet.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>runAs</code> - New run-as identity value</dd></dl>
+</li>
+</ul>
+<a name="getServletClass()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getServletClass</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getServletClass()</pre>
+<div class="block">Return the fully qualified servlet class name for this servlet.</div>
+</li>
+</ul>
+<a name="setServletClass(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setServletClass</h4>
+<pre>void&nbsp;setServletClass(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;servletClass)</pre>
+<div class="block">Set the fully qualified servlet class name for this servlet.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>servletClass</code> - Servlet class name</dd></dl>
+</li>
+</ul>
+<a name="getServletMethods()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getServletMethods</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;getServletMethods()
+                           throws <a href="../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></pre>
+<div class="block">Gets the names of the methods supported by the underlying servlet.
+
+ This is the same set of methods included in the Allow response header
+ in response to an OPTIONS request method processed by the underlying
+ servlet.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>Array of names of the methods supported by the underlying
+         servlet</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code> - If the target servlet can not be loaded</dd></dl>
+</li>
+</ul>
+<a name="isUnavailable()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isUnavailable</h4>
+<pre>boolean&nbsp;isUnavailable()</pre>
+<div class="block">Is this servlet currently unavailable?</div>
+</li>
+</ul>
+<a name="getServlet()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getServlet</h4>
+<pre><a href="../../../../servletapi/javax/servlet/Servlet.html?is-external=true" title="class or interface in javax.servlet">Servlet</a>&nbsp;getServlet()</pre>
+<div class="block">Return the associated servlet instance.</div>
+</li>
+</ul>
+<a name="setServlet(javax.servlet.Servlet)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setServlet</h4>
+<pre>void&nbsp;setServlet(<a href="../../../../servletapi/javax/servlet/Servlet.html?is-external=true" title="class or interface in javax.servlet">Servlet</a>&nbsp;servlet)</pre>
+<div class="block">Set the associated servlet instance</div>
+</li>
+</ul>
+<a name="addInitParameter(java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addInitParameter</h4>
+<pre>void&nbsp;addInitParameter(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+                    <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</pre>
+<div class="block">Add a new servlet initialization parameter for this servlet.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - Name of this initialization parameter to add</dd><dd><code>value</code> - Value of this initialization parameter to add</dd></dl>
+</li>
+</ul>
+<a name="addInstanceListener(org.apache.catalina.InstanceListener)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addInstanceListener</h4>
+<pre>void&nbsp;addInstanceListener(<a href="../../../org/apache/catalina/InstanceListener.html" title="interface in org.apache.catalina">InstanceListener</a>&nbsp;listener)</pre>
+<div class="block">Add a new listener interested in InstanceEvents.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>listener</code> - The new listener</dd></dl>
+</li>
+</ul>
+<a name="addMapping(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addMapping</h4>
+<pre>void&nbsp;addMapping(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;mapping)</pre>
+<div class="block">Add a mapping associated with the Wrapper.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>mapping</code> - The new wrapper mapping</dd></dl>
+</li>
+</ul>
+<a name="addSecurityReference(java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addSecurityReference</h4>
+<pre>void&nbsp;addSecurityReference(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+                        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;link)</pre>
+<div class="block">Add a new security role reference record to the set of records for
+ this servlet.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - Role name used within this servlet</dd><dd><code>link</code> - Role name used within the web application</dd></dl>
+</li>
+</ul>
+<a name="allocate()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>allocate</h4>
+<pre><a href="../../../../servletapi/javax/servlet/Servlet.html?is-external=true" title="class or interface in javax.servlet">Servlet</a>&nbsp;allocate()
+                 throws <a href="../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></pre>
+<div class="block">Allocate an initialized instance of this Servlet that is ready to have
+ its <code>service()</code> method called.  If the servlet class does
+ not implement <code>SingleThreadModel</code>, the (only) initialized
+ instance may be returned immediately.  If the servlet class implements
+ <code>SingleThreadModel</code>, the Wrapper implementation must ensure
+ that this instance is not allocated again until it is deallocated by a
+ call to <code>deallocate()</code>.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code> - if the servlet init() method threw
+  an exception</dd>
+<dd><code><a href="../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code> - if a loading error occurs</dd></dl>
+</li>
+</ul>
+<a name="deallocate(javax.servlet.Servlet)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>deallocate</h4>
+<pre>void&nbsp;deallocate(<a href="../../../../servletapi/javax/servlet/Servlet.html?is-external=true" title="class or interface in javax.servlet">Servlet</a>&nbsp;servlet)
+                throws <a href="../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></pre>
+<div class="block">Return this previously allocated servlet to the pool of available
+ instances.  If this servlet class does not implement SingleThreadModel,
+ no action is actually required.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>servlet</code> - The servlet to be returned</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code> - if a deallocation error occurs</dd></dl>
+</li>
+</ul>
+<a name="findInitParameter(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findInitParameter</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;findInitParameter(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block">Return the value for the specified initialization parameter name,
+ if any; otherwise return <code>null</code>.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - Name of the requested initialization parameter</dd></dl>
+</li>
+</ul>
+<a name="findInitParameters()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findInitParameters</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;findInitParameters()</pre>
+<div class="block">Return the names of all defined initialization parameters for this
+ servlet.</div>
+</li>
+</ul>
+<a name="findMappings()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findMappings</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;findMappings()</pre>
+<div class="block">Return the mappings associated with this wrapper.</div>
+</li>
+</ul>
+<a name="findSecurityReference(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findSecurityReference</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;findSecurityReference(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block">Return the security role link for the specified security role
+ reference name, if any; otherwise return <code>null</code>.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - Security role reference used within this servlet</dd></dl>
+</li>
+</ul>
+<a name="findSecurityReferences()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findSecurityReferences</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;findSecurityReferences()</pre>
+<div class="block">Return the set of security role reference names associated with
+ this servlet, if any; otherwise return a zero-length array.</div>
+</li>
+</ul>
+<a name="incrementErrorCount()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>incrementErrorCount</h4>
+<pre>void&nbsp;incrementErrorCount()</pre>
+<div class="block">Increment the error count value used when monitoring.</div>
+</li>
+</ul>
+<a name="load()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>load</h4>
+<pre>void&nbsp;load()
+          throws <a href="../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></pre>
+<div class="block">Load and initialize an instance of this servlet, if there is not already
+ at least one initialized instance.  This can be used, for example, to
+ load servlets that are marked in the deployment descriptor to be loaded
+ at server startup time.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code> - if the servlet init() method threw
+  an exception</dd>
+<dd><code><a href="../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code> - if some other loading problem occurs</dd></dl>
+</li>
+</ul>
+<a name="removeInitParameter(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeInitParameter</h4>
+<pre>void&nbsp;removeInitParameter(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block">Remove the specified initialization parameter from this servlet.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - Name of the initialization parameter to remove</dd></dl>
+</li>
+</ul>
+<a name="removeInstanceListener(org.apache.catalina.InstanceListener)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeInstanceListener</h4>
+<pre>void&nbsp;removeInstanceListener(<a href="../../../org/apache/catalina/InstanceListener.html" title="interface in org.apache.catalina">InstanceListener</a>&nbsp;listener)</pre>
+<div class="block">Remove a listener no longer interested in InstanceEvents.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>listener</code> - The listener to remove</dd></dl>
+</li>
+</ul>
+<a name="removeMapping(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeMapping</h4>
+<pre>void&nbsp;removeMapping(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;mapping)</pre>
+<div class="block">Remove a mapping associated with the wrapper.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>mapping</code> - The pattern to remove</dd></dl>
+</li>
+</ul>
+<a name="removeSecurityReference(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeSecurityReference</h4>
+<pre>void&nbsp;removeSecurityReference(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block">Remove any security role reference for the specified role name.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - Security role used within this servlet to be removed</dd></dl>
+</li>
+</ul>
+<a name="unavailable(javax.servlet.UnavailableException)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>unavailable</h4>
+<pre>void&nbsp;unavailable(<a href="../../../../servletapi/javax/servlet/UnavailableException.html?is-external=true" title="class or interface in javax.servlet">UnavailableException</a>&nbsp;unavailable)</pre>
+<div class="block">Process an UnavailableException, marking this servlet as unavailable
+ for the specified amount of time.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>unavailable</code> - The exception that occurred, or <code>null</code>
+  to mark this servlet as permanently unavailable</dd></dl>
+</li>
+</ul>
+<a name="unload()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>unload</h4>
+<pre>void&nbsp;unload()
+            throws <a href="../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></pre>
+<div class="block">Unload all initialized instances of this servlet, after calling the
+ <code>destroy()</code> method for each instance.  This can be used,
+ for example, prior to shutting down the entire servlet engine, or
+ prior to reloading all of the classes from the Loader associated with
+ our Loader's repository.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code> - if an unload error occurs</dd></dl>
+</li>
+</ul>
+<a name="getMultipartConfigElement()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMultipartConfigElement</h4>
+<pre><a href="../../../../servletapi/javax/servlet/MultipartConfigElement.html?is-external=true" title="class or interface in javax.servlet">MultipartConfigElement</a>&nbsp;getMultipartConfigElement()</pre>
+<div class="block">Get the multi-part configuration for the associated servlet. If no
+ multi-part configuration has been defined, then <code>null</code> will be
+ returned.</div>
+</li>
+</ul>
+<a name="setMultipartConfigElement(javax.servlet.MultipartConfigElement)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMultipartConfigElement</h4>
+<pre>void&nbsp;setMultipartConfigElement(<a href="../../../../servletapi/javax/servlet/MultipartConfigElement.html?is-external=true" title="class or interface in javax.servlet">MultipartConfigElement</a>&nbsp;multipartConfig)</pre>
+<div class="block">Set the multi-part configuration for the associated servlet. To clear the
+ multi-part configuration specify <code>null</code> as the new value.</div>
+</li>
+</ul>
+<a name="isAsyncSupported()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isAsyncSupported</h4>
+<pre>boolean&nbsp;isAsyncSupported()</pre>
+<div class="block">Does the associated Servlet support async processing? Defaults to
+ <code>false</code>.</div>
+</li>
+</ul>
+<a name="setAsyncSupported(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAsyncSupported</h4>
+<pre>void&nbsp;setAsyncSupported(boolean&nbsp;asyncSupport)</pre>
+<div class="block">Set the async support for the associated servlet.</div>
+</li>
+</ul>
+<a name="isEnabled()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isEnabled</h4>
+<pre>boolean&nbsp;isEnabled()</pre>
+<div class="block">Is the associated Servlet enabled? Defaults to <code>true</code>.</div>
+</li>
+</ul>
+<a name="setEnabled(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setEnabled</h4>
+<pre>void&nbsp;setEnabled(boolean&nbsp;enabled)</pre>
+<div class="block">Sets the enabled attribute for the associated servlet.</div>
+</li>
+</ul>
+<a name="setServletSecurityAnnotationScanRequired(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setServletSecurityAnnotationScanRequired</h4>
+<pre>void&nbsp;setServletSecurityAnnotationScanRequired(boolean&nbsp;b)</pre>
+<div class="block">Set the flag that indicates
+ <a href="../../../../servletapi/javax/servlet/annotation/ServletSecurity.html?is-external=true" title="class or interface in javax.servlet.annotation"><code>ServletSecurity</code></a> annotations must be
+ scanned when the Servlet is first used.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>b</code> - The new value of the flag</dd></dl>
+</li>
+</ul>
+<a name="servletSecurityAnnotationScan()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>servletSecurityAnnotationScan</h4>
+<pre>void&nbsp;servletSecurityAnnotationScan()
+                                   throws <a href="../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></pre>
+<div class="block">Scan for (if necessary) and process (if found) the
+ <a href="../../../../servletapi/javax/servlet/annotation/ServletSecurity.html?is-external=true" title="class or interface in javax.servlet.annotation"><code>ServletSecurity</code></a> annotations for the
+ Servlet associated with this wrapper.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code></dd></dl>
+</li>
+</ul>
+<a name="isOverridable()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isOverridable</h4>
+<pre>boolean&nbsp;isOverridable()</pre>
+<div class="block">Is the Servlet overridable by a ServletContainerInitializer?</div>
+</li>
+</ul>
+<a name="setOverridable(boolean)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setOverridable</h4>
+<pre>void&nbsp;setOverridable(boolean&nbsp;overridable)</pre>
+<div class="block">Sets the overridable attribute for this Servlet.</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/apache/catalina/WebResourceSet.html" title="interface in org.apache.catalina"><span class="strong">Prev Class</span></a></li>
+<li>Next Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/apache/catalina/Wrapper.html" target="_top">Frames</a></li>
+<li><a href="Wrapper.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

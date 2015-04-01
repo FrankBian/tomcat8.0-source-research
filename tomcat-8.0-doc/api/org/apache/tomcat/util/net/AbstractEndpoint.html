@@ -1,0 +1,2332 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AbstractEndpoint (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="AbstractEndpoint (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev Class</li>
+<li><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.Acceptor.html" title="class in org.apache.tomcat.util.net"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/tomcat/util/net/AbstractEndpoint.html" target="_top">Frames</a></li>
+<li><a href="AbstractEndpoint.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.tomcat.util.net</div>
+<h2 title="Class AbstractEndpoint" class="title">Class AbstractEndpoint&lt;S&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.tomcat.util.net.AbstractEndpoint&lt;S&gt;</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../../../../org/apache/tomcat/util/net/AprEndpoint.html" title="class in org.apache.tomcat.util.net">AprEndpoint</a>, <a href="../../../../../org/apache/tomcat/util/net/JIoEndpoint.html" title="class in org.apache.tomcat.util.net">JIoEndpoint</a>, <a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html" title="class in org.apache.tomcat.util.net">Nio2Endpoint</a>, <a href="../../../../../org/apache/tomcat/util/net/NioEndpoint.html" title="class in org.apache.tomcat.util.net">NioEndpoint</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public abstract class <span class="strong">AbstractEndpoint&lt;S&gt;</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Mladen Turk, Remy Maucherat</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested_class_summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Class and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.Acceptor.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint.Acceptor</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.AsyncTimeout.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint.AsyncTimeout</a></strong></code>
+<div class="block">Async timeout thread</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.BindState.html" title="enum in org.apache.tomcat.util.net">AbstractEndpoint.BindState</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static interface&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.Handler.html" title="interface in org.apache.tomcat.util.net">AbstractEndpoint.Handler</a></strong></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.Acceptor.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint.Acceptor</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#acceptors">acceptors</a></strong></code>
+<div class="block">Threads used to accept new connections and pass them to worker threads.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#acceptorThreadCount">acceptorThreadCount</a></strong></code>
+<div class="block">Acceptor thread count.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#acceptorThreadPriority">acceptorThreadPriority</a></strong></code>
+<div class="block">Priority of the acceptor threads.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util">HashMap</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#attributes">attributes</a></strong></code>
+<div class="block">Attributes provide a way for configuration to be passed to sub-components
+ without the <a href="../../../../../org/apache/coyote/ProtocolHandler.html" title="interface in org.apache.coyote"><code>ProtocolHandler</code></a> being aware of the
+ properties available on those sub-components.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#DEFAULT_CIPHERS">DEFAULT_CIPHERS</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#internalExecutor">internalExecutor</a></strong></code>
+<div class="block">Are we using an internal executor</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#paused">paused</a></strong></code>
+<div class="block">Will be set to true whenever the endpoint is paused.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#running">running</a></strong></code>
+<div class="block">Running state of the endpoint.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="../../../../../org/apache/tomcat/util/res/StringManager.html" title="class in org.apache.tomcat.util.res">StringManager</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#sm">sm</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html" title="class in org.apache.tomcat.util.net">SocketProperties</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#socketProperties">socketProperties</a></strong></code>
+<div class="block">Socket properties</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#threadPriority">threadPriority</a></strong></code>
+<div class="block">Priority of the worker threads.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="type parameter in AbstractEndpoint">S</a>&gt;&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#waitingRequests">waitingRequests</a></strong></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#AbstractEndpoint()">AbstractEndpoint</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#bind()">bind</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#configureUseServerCipherSuitesOrder(javax.net.ssl.SSLEngine)">configureUseServerCipherSuitesOrder</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/javax/net/ssl/SSLEngine.html?is-external=true" title="class or interface in javax.net.ssl">SSLEngine</a>&nbsp;engine)</code>
+<div class="block">Configures SSLEngine to honor cipher suites ordering based upon
+ endpoint configuration.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#countDownConnection()">countDownConnection</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#countUpOrAwaitConnection()">countUpOrAwaitConnection</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected abstract <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.Acceptor.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint.Acceptor</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#createAcceptor()">createAcceptor</a></strong>()</code>
+<div class="block">Hook to allow Endpoints to provide a specific Acceptor implementation.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#createExecutor()">createExecutor</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#destroy()">destroy</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#executeNonBlockingDispatches(org.apache.tomcat.util.net.SocketWrapper)">executeNonBlockingDispatches</a></strong>(<a href="../../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="type parameter in AbstractEndpoint">S</a>&gt;&nbsp;socketWrapper)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getAcceptorThreadCount()">getAcceptorThreadCount</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getAcceptorThreadPriority()">getAcceptorThreadPriority</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getAddress()">getAddress</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getAlgorithm()">getAlgorithm</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getAllowUnsafeLegacyRenegotiation()">getAllowUnsafeLegacyRenegotiation</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.AsyncTimeout.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint.AsyncTimeout</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getAsyncTimeout()">getAsyncTimeout</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getAttribute(java.lang.String)">getAttribute</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</code>
+<div class="block">Used by sub-components to retrieve configuration information.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getBacklog()">getBacklog</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getBindOnInit()">getBindOnInit</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getCiphers()">getCiphers</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>abstract <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getCiphersUsed()">getCiphersUsed</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getClientAuth()">getClientAuth</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getConnectionCount()">getConnectionCount</a></strong>()</code>
+<div class="block">Return the current count of connections handled by this endpoint, if the
+ connections are counted (which happens when the maximum count of
+ connections is limited), or <code>-1</code> if they are not.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getCrlFile()">getCrlFile</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getCurrentThreadCount()">getCurrentThreadCount</a></strong>()</code>
+<div class="block">Return the amount of threads that are managed by the pool.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getCurrentThreadsBusy()">getCurrentThreadsBusy</a></strong>()</code>
+<div class="block">Return the amount of threads that are in use</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getDaemon()">getDaemon</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected abstract boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getDeferAccept()">getDeferAccept</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Executor.html?is-external=true" title="class or interface in java.util.concurrent">Executor</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getExecutor()">getExecutor</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getExecutorTerminationTimeoutMillis()">getExecutorTerminationTimeoutMillis</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getKeepAliveTimeout()">getKeepAliveTimeout</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getKeyAlias()">getKeyAlias</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getKeyPass()">getKeyPass</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getKeystoreFile()">getKeystoreFile</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getKeystorePass()">getKeystorePass</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getKeystoreProvider()">getKeystoreProvider</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getKeystoreType()">getKeystoreType</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getLocalPort()">getLocalPort</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected abstract <a href="../../../../../org/apache/juli/logging/Log.html" title="interface in org.apache.juli.logging">Log</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getLog()">getLog</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getMaxConnections()">getMaxConnections</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getMaxHeaderCount()">getMaxHeaderCount</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getMaxKeepAliveRequests()">getMaxKeepAliveRequests</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getMaxThreads()">getMaxThreads</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getMaxThreadsExecutor(boolean)">getMaxThreadsExecutor</a></strong>(boolean&nbsp;useExecutor)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getMinSpareThreads()">getMinSpareThreads</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getName()">getName</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getPort()">getPort</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getProperty(java.lang.String)">getProperty</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getSessionCacheSize()">getSessionCacheSize</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getSessionTimeout()">getSessionTimeout</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html" title="class in org.apache.tomcat.util.net">SocketProperties</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getSocketProperties()">getSocketProperties</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getSoLinger()">getSoLinger</a></strong>()</code>
+<div class="block">Socket linger.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getSoTimeout()">getSoTimeout</a></strong>()</code>
+<div class="block">Socket timeout.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getSslEnabledProtocolsArray()">getSslEnabledProtocolsArray</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getSslProtocol()">getSslProtocol</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getTcpNoDelay()">getTcpNoDelay</a></strong>()</code>
+<div class="block">Socket TCP no delay.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getThreadPriority()">getThreadPriority</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getTrustManagerClassName()">getTrustManagerClassName</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getTrustMaxCertLength()">getTrustMaxCertLength</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getTruststoreAlgorithm()">getTruststoreAlgorithm</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getTruststoreFile()">getTruststoreFile</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getTruststorePass()">getTruststorePass</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getTruststoreProvider()">getTruststoreProvider</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getTruststoreType()">getTruststoreType</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>abstract boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getUseComet()">getUseComet</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getUseCometTimeout()">getUseCometTimeout</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>abstract boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getUsePolling()">getUsePolling</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getUseSendfile()">getUseSendfile</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getUseServerCipherSuitesOrder()">getUseServerCipherSuitesOrder</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#handleExceptionWithDelay(int)">handleExceptionWithDelay</a></strong>(int&nbsp;currentErrorDelay)</code>
+<div class="block">Provides a common approach for sub-classes to handle exceptions where a
+ delay is required to prevent a Thread from entering a tight loop which
+ will consume CPU and may also trigger large amounts of logging.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#init()">init</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../org/apache/tomcat/util/threads/LimitLatch.html" title="class in org.apache.tomcat.util.threads">LimitLatch</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#initializeConnectionLatch()">initializeConnectionLatch</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#isPaused()">isPaused</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#isRunning()">isRunning</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#isSSLEnabled()">isSSLEnabled</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#pause()">pause</a></strong>()</code>
+<div class="block">Pause the endpoint, which will stop it accepting new connections.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#processSocket(org.apache.tomcat.util.net.SocketWrapper,%20org.apache.tomcat.util.net.SocketStatus,%20boolean)">processSocket</a></strong>(<a href="../../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="type parameter in AbstractEndpoint">S</a>&gt;&nbsp;socketWrapper,
+             <a href="../../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net">SocketStatus</a>&nbsp;socketStatus,
+             boolean&nbsp;dispatch)</code>
+<div class="block">Process the given SocketWrapper with the given status.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#releaseConnectionLatch()">releaseConnectionLatch</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#resume()">resume</a></strong>()</code>
+<div class="block">Resume the endpoint, which will make it start accepting new connections
+ again.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setAcceptorThreadCount(int)">setAcceptorThreadCount</a></strong>(int&nbsp;acceptorThreadCount)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setAcceptorThreadPriority(int)">setAcceptorThreadPriority</a></strong>(int&nbsp;acceptorThreadPriority)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setAddress(java.net.InetAddress)">setAddress</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;address)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setAlgorithm(java.lang.String)">setAlgorithm</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setAllowUnsafeLegacyRenegotiation(java.lang.String)">setAllowUnsafeLegacyRenegotiation</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setAsyncTimeout(org.apache.tomcat.util.net.AbstractEndpoint.AsyncTimeout)">setAsyncTimeout</a></strong>(<a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.AsyncTimeout.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint.AsyncTimeout</a>&nbsp;asyncTimeout)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setAttribute(java.lang.String,%20java.lang.Object)">setAttribute</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code>
+<div class="block">Generic property setter called when a property for which a specific
+ setter already exists within the
+ <a href="../../../../../org/apache/coyote/ProtocolHandler.html" title="interface in org.apache.coyote"><code>ProtocolHandler</code></a> needs to be made available to
+ sub-components.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setBacklog(int)">setBacklog</a></strong>(int&nbsp;backlog)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setBindOnInit(boolean)">setBindOnInit</a></strong>(boolean&nbsp;b)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setCiphers(java.lang.String)">setCiphers</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setClientAuth(java.lang.String)">setClientAuth</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setCrlFile(java.lang.String)">setCrlFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;crlFile)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setDaemon(boolean)">setDaemon</a></strong>(boolean&nbsp;b)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setExecutor(java.util.concurrent.Executor)">setExecutor</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Executor.html?is-external=true" title="class or interface in java.util.concurrent">Executor</a>&nbsp;executor)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setExecutorTerminationTimeoutMillis(long)">setExecutorTerminationTimeoutMillis</a></strong>(long&nbsp;executorTerminationTimeoutMillis)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setKeepAliveTimeout(int)">setKeepAliveTimeout</a></strong>(int&nbsp;keepAliveTimeout)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setKeyAlias(java.lang.String)">setKeyAlias</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setKeyPass(java.lang.String)">setKeyPass</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setKeystoreFile(java.lang.String)">setKeystoreFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setKeystorePass(java.lang.String)">setKeystorePass</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setKeystoreProvider(java.lang.String)">setKeystoreProvider</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setKeystoreType(java.lang.String)">setKeystoreType</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setMaxConnections(int)">setMaxConnections</a></strong>(int&nbsp;maxCon)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setMaxHeaderCount(int)">setMaxHeaderCount</a></strong>(int&nbsp;maxHeaderCount)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setMaxKeepAliveRequests(int)">setMaxKeepAliveRequests</a></strong>(int&nbsp;maxKeepAliveRequests)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setMaxThreads(int)">setMaxThreads</a></strong>(int&nbsp;maxThreads)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setMinSpareThreads(int)">setMinSpareThreads</a></strong>(int&nbsp;minSpareThreads)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setName(java.lang.String)">setName</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setPort(int)">setPort</a></strong>(int&nbsp;port)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setProperty(java.lang.String,%20java.lang.String)">setProperty</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setSessionCacheSize(java.lang.String)">setSessionCacheSize</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setSessionTimeout(java.lang.String)">setSessionTimeout</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setSoLinger(int)">setSoLinger</a></strong>(int&nbsp;soLinger)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setSoTimeout(int)">setSoTimeout</a></strong>(int&nbsp;soTimeout)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setSSLEnabled(boolean)">setSSLEnabled</a></strong>(boolean&nbsp;SSLEnabled)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setSslEnabledProtocols(java.lang.String)">setSslEnabledProtocols</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setSslProtocol(java.lang.String)">setSslProtocol</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setTcpNoDelay(boolean)">setTcpNoDelay</a></strong>(boolean&nbsp;tcpNoDelay)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setThreadPriority(int)">setThreadPriority</a></strong>(int&nbsp;threadPriority)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setTrustManagerClassName(java.lang.String)">setTrustManagerClassName</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;trustManagerClassName)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setTrustMaxCertLength(java.lang.String)">setTrustMaxCertLength</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;trustMaxCertLength)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setTruststoreAlgorithm(java.lang.String)">setTruststoreAlgorithm</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;truststoreAlgorithm)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setTruststoreFile(java.lang.String)">setTruststoreFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setTruststorePass(java.lang.String)">setTruststorePass</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;truststorePass)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setTruststoreProvider(java.lang.String)">setTruststoreProvider</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;truststoreProvider)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setTruststoreType(java.lang.String)">setTruststoreType</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;truststoreType)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setUseServerCipherSuitesOrder(java.lang.String)">setUseServerCipherSuitesOrder</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#shutdownExecutor()">shutdownExecutor</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#start()">start</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#startAcceptorThreads()">startAcceptorThreads</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#startInternal()">startInternal</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#stop()">stop</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#stopInternal()">stopInternal</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#unbind()">unbind</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#unlockAccept()">unlockAccept</a></strong>()</code>
+<div class="block">Unlock the server socket accept using a bogus connection.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="DEFAULT_CIPHERS">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>DEFAULT_CIPHERS</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> DEFAULT_CIPHERS</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.util.net.AbstractEndpoint.DEFAULT_CIPHERS">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="sm">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sm</h4>
+<pre>protected static final&nbsp;<a href="../../../../../org/apache/tomcat/util/res/StringManager.html" title="class in org.apache.tomcat.util.res">StringManager</a> sm</pre>
+</li>
+</ul>
+<a name="running">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>running</h4>
+<pre>protected volatile&nbsp;boolean running</pre>
+<div class="block">Running state of the endpoint.</div>
+</li>
+</ul>
+<a name="paused">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>paused</h4>
+<pre>protected volatile&nbsp;boolean paused</pre>
+<div class="block">Will be set to true whenever the endpoint is paused.</div>
+</li>
+</ul>
+<a name="internalExecutor">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>internalExecutor</h4>
+<pre>protected volatile&nbsp;boolean internalExecutor</pre>
+<div class="block">Are we using an internal executor</div>
+</li>
+</ul>
+<a name="socketProperties">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>socketProperties</h4>
+<pre>protected&nbsp;<a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html" title="class in org.apache.tomcat.util.net">SocketProperties</a> socketProperties</pre>
+<div class="block">Socket properties</div>
+</li>
+</ul>
+<a name="acceptors">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>acceptors</h4>
+<pre>protected&nbsp;<a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.Acceptor.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint.Acceptor</a>[] acceptors</pre>
+<div class="block">Threads used to accept new connections and pass them to worker threads.</div>
+</li>
+</ul>
+<a name="acceptorThreadCount">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>acceptorThreadCount</h4>
+<pre>protected&nbsp;int acceptorThreadCount</pre>
+<div class="block">Acceptor thread count.</div>
+</li>
+</ul>
+<a name="acceptorThreadPriority">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>acceptorThreadPriority</h4>
+<pre>protected&nbsp;int acceptorThreadPriority</pre>
+<div class="block">Priority of the acceptor threads.</div>
+</li>
+</ul>
+<a name="threadPriority">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>threadPriority</h4>
+<pre>protected&nbsp;int threadPriority</pre>
+<div class="block">Priority of the worker threads.</div>
+</li>
+</ul>
+<a name="attributes">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>attributes</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util">HashMap</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt; attributes</pre>
+<div class="block">Attributes provide a way for configuration to be passed to sub-components
+ without the <a href="../../../../../org/apache/coyote/ProtocolHandler.html" title="interface in org.apache.coyote"><code>ProtocolHandler</code></a> being aware of the
+ properties available on those sub-components. One example of such a
+ sub-component is the
+ <a href="../../../../../org/apache/tomcat/util/net/ServerSocketFactory.html" title="interface in org.apache.tomcat.util.net"><code>ServerSocketFactory</code></a>.</div>
+</li>
+</ul>
+<a name="waitingRequests">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>waitingRequests</h4>
+<pre>protected final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="type parameter in AbstractEndpoint">S</a>&gt;&gt; waitingRequests</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="AbstractEndpoint()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>AbstractEndpoint</h4>
+<pre>public&nbsp;AbstractEndpoint()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getSocketProperties()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSocketProperties</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html" title="class in org.apache.tomcat.util.net">SocketProperties</a>&nbsp;getSocketProperties()</pre>
+</li>
+</ul>
+<a name="getExecutorTerminationTimeoutMillis()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getExecutorTerminationTimeoutMillis</h4>
+<pre>public&nbsp;long&nbsp;getExecutorTerminationTimeoutMillis()</pre>
+</li>
+</ul>
+<a name="setExecutorTerminationTimeoutMillis(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setExecutorTerminationTimeoutMillis</h4>
+<pre>public&nbsp;void&nbsp;setExecutorTerminationTimeoutMillis(long&nbsp;executorTerminationTimeoutMillis)</pre>
+</li>
+</ul>
+<a name="setAcceptorThreadCount(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAcceptorThreadCount</h4>
+<pre>public&nbsp;void&nbsp;setAcceptorThreadCount(int&nbsp;acceptorThreadCount)</pre>
+</li>
+</ul>
+<a name="getAcceptorThreadCount()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAcceptorThreadCount</h4>
+<pre>public&nbsp;int&nbsp;getAcceptorThreadCount()</pre>
+</li>
+</ul>
+<a name="setAcceptorThreadPriority(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAcceptorThreadPriority</h4>
+<pre>public&nbsp;void&nbsp;setAcceptorThreadPriority(int&nbsp;acceptorThreadPriority)</pre>
+</li>
+</ul>
+<a name="getAcceptorThreadPriority()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAcceptorThreadPriority</h4>
+<pre>public&nbsp;int&nbsp;getAcceptorThreadPriority()</pre>
+</li>
+</ul>
+<a name="setMaxConnections(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMaxConnections</h4>
+<pre>public&nbsp;void&nbsp;setMaxConnections(int&nbsp;maxCon)</pre>
+</li>
+</ul>
+<a name="getMaxConnections()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMaxConnections</h4>
+<pre>public&nbsp;int&nbsp;getMaxConnections()</pre>
+</li>
+</ul>
+<a name="getConnectionCount()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getConnectionCount</h4>
+<pre>public&nbsp;long&nbsp;getConnectionCount()</pre>
+<div class="block">Return the current count of connections handled by this endpoint, if the
+ connections are counted (which happens when the maximum count of
+ connections is limited), or <code>-1</code> if they are not. This
+ property is added here so that this value can be inspected through JMX.
+ It is visible on "ThreadPool" MBean.
+
+ <p>The count is incremented by the Acceptor before it tries to accept a
+ new connection. Until the limit is reached and thus the count cannot be
+ incremented,  this value is more by 1 (the count of acceptors) than the
+ actual count of connections that are being served.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The count</dd></dl>
+</li>
+</ul>
+<a name="setExecutor(java.util.concurrent.Executor)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setExecutor</h4>
+<pre>public&nbsp;void&nbsp;setExecutor(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Executor.html?is-external=true" title="class or interface in java.util.concurrent">Executor</a>&nbsp;executor)</pre>
+</li>
+</ul>
+<a name="getExecutor()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getExecutor</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Executor.html?is-external=true" title="class or interface in java.util.concurrent">Executor</a>&nbsp;getExecutor()</pre>
+</li>
+</ul>
+<a name="getPort()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPort</h4>
+<pre>public&nbsp;int&nbsp;getPort()</pre>
+</li>
+</ul>
+<a name="setPort(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPort</h4>
+<pre>public&nbsp;void&nbsp;setPort(int&nbsp;port)</pre>
+</li>
+</ul>
+<a name="getLocalPort()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLocalPort</h4>
+<pre>public abstract&nbsp;int&nbsp;getLocalPort()</pre>
+</li>
+</ul>
+<a name="getAddress()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAddress</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;getAddress()</pre>
+</li>
+</ul>
+<a name="setAddress(java.net.InetAddress)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAddress</h4>
+<pre>public&nbsp;void&nbsp;setAddress(<a href="http://docs.oracle.com/javase/7/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;address)</pre>
+</li>
+</ul>
+<a name="setBacklog(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setBacklog</h4>
+<pre>public&nbsp;void&nbsp;setBacklog(int&nbsp;backlog)</pre>
+</li>
+</ul>
+<a name="getBacklog()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBacklog</h4>
+<pre>public&nbsp;int&nbsp;getBacklog()</pre>
+</li>
+</ul>
+<a name="getBindOnInit()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBindOnInit</h4>
+<pre>public&nbsp;boolean&nbsp;getBindOnInit()</pre>
+</li>
+</ul>
+<a name="setBindOnInit(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setBindOnInit</h4>
+<pre>public&nbsp;void&nbsp;setBindOnInit(boolean&nbsp;b)</pre>
+</li>
+</ul>
+<a name="getKeepAliveTimeout()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getKeepAliveTimeout</h4>
+<pre>public&nbsp;int&nbsp;getKeepAliveTimeout()</pre>
+</li>
+</ul>
+<a name="setKeepAliveTimeout(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setKeepAliveTimeout</h4>
+<pre>public&nbsp;void&nbsp;setKeepAliveTimeout(int&nbsp;keepAliveTimeout)</pre>
+</li>
+</ul>
+<a name="getTcpNoDelay()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTcpNoDelay</h4>
+<pre>public&nbsp;boolean&nbsp;getTcpNoDelay()</pre>
+<div class="block">Socket TCP no delay.</div>
+</li>
+</ul>
+<a name="setTcpNoDelay(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTcpNoDelay</h4>
+<pre>public&nbsp;void&nbsp;setTcpNoDelay(boolean&nbsp;tcpNoDelay)</pre>
+</li>
+</ul>
+<a name="getSoLinger()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSoLinger</h4>
+<pre>public&nbsp;int&nbsp;getSoLinger()</pre>
+<div class="block">Socket linger.</div>
+</li>
+</ul>
+<a name="setSoLinger(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSoLinger</h4>
+<pre>public&nbsp;void&nbsp;setSoLinger(int&nbsp;soLinger)</pre>
+</li>
+</ul>
+<a name="getSoTimeout()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSoTimeout</h4>
+<pre>public&nbsp;int&nbsp;getSoTimeout()</pre>
+<div class="block">Socket timeout.</div>
+</li>
+</ul>
+<a name="setSoTimeout(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSoTimeout</h4>
+<pre>public&nbsp;void&nbsp;setSoTimeout(int&nbsp;soTimeout)</pre>
+</li>
+</ul>
+<a name="isSSLEnabled()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isSSLEnabled</h4>
+<pre>public&nbsp;boolean&nbsp;isSSLEnabled()</pre>
+</li>
+</ul>
+<a name="setSSLEnabled(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSSLEnabled</h4>
+<pre>public&nbsp;void&nbsp;setSSLEnabled(boolean&nbsp;SSLEnabled)</pre>
+</li>
+</ul>
+<a name="getMinSpareThreads()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMinSpareThreads</h4>
+<pre>public&nbsp;int&nbsp;getMinSpareThreads()</pre>
+</li>
+</ul>
+<a name="setMinSpareThreads(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMinSpareThreads</h4>
+<pre>public&nbsp;void&nbsp;setMinSpareThreads(int&nbsp;minSpareThreads)</pre>
+</li>
+</ul>
+<a name="setMaxThreads(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMaxThreads</h4>
+<pre>public&nbsp;void&nbsp;setMaxThreads(int&nbsp;maxThreads)</pre>
+</li>
+</ul>
+<a name="getMaxThreads()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMaxThreads</h4>
+<pre>public&nbsp;int&nbsp;getMaxThreads()</pre>
+</li>
+</ul>
+<a name="getMaxThreadsExecutor(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMaxThreadsExecutor</h4>
+<pre>protected&nbsp;int&nbsp;getMaxThreadsExecutor(boolean&nbsp;useExecutor)</pre>
+</li>
+</ul>
+<a name="getMaxKeepAliveRequests()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMaxKeepAliveRequests</h4>
+<pre>public&nbsp;int&nbsp;getMaxKeepAliveRequests()</pre>
+</li>
+</ul>
+<a name="setMaxKeepAliveRequests(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMaxKeepAliveRequests</h4>
+<pre>public&nbsp;void&nbsp;setMaxKeepAliveRequests(int&nbsp;maxKeepAliveRequests)</pre>
+</li>
+</ul>
+<a name="getMaxHeaderCount()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMaxHeaderCount</h4>
+<pre>public&nbsp;int&nbsp;getMaxHeaderCount()</pre>
+</li>
+</ul>
+<a name="setMaxHeaderCount(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMaxHeaderCount</h4>
+<pre>public&nbsp;void&nbsp;setMaxHeaderCount(int&nbsp;maxHeaderCount)</pre>
+</li>
+</ul>
+<a name="setName(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setName</h4>
+<pre>public&nbsp;void&nbsp;setName(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+</li>
+</ul>
+<a name="getName()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getName</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getName()</pre>
+</li>
+</ul>
+<a name="setDaemon(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDaemon</h4>
+<pre>public&nbsp;void&nbsp;setDaemon(boolean&nbsp;b)</pre>
+</li>
+</ul>
+<a name="getDaemon()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDaemon</h4>
+<pre>public&nbsp;boolean&nbsp;getDaemon()</pre>
+</li>
+</ul>
+<a name="setThreadPriority(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setThreadPriority</h4>
+<pre>public&nbsp;void&nbsp;setThreadPriority(int&nbsp;threadPriority)</pre>
+</li>
+</ul>
+<a name="getThreadPriority()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getThreadPriority</h4>
+<pre>public&nbsp;int&nbsp;getThreadPriority()</pre>
+</li>
+</ul>
+<a name="getDeferAccept()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDeferAccept</h4>
+<pre>protected abstract&nbsp;boolean&nbsp;getDeferAccept()</pre>
+</li>
+</ul>
+<a name="setAttribute(java.lang.String, java.lang.Object)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAttribute</h4>
+<pre>public&nbsp;void&nbsp;setAttribute(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+                <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+<div class="block">Generic property setter called when a property for which a specific
+ setter already exists within the
+ <a href="../../../../../org/apache/coyote/ProtocolHandler.html" title="interface in org.apache.coyote"><code>ProtocolHandler</code></a> needs to be made available to
+ sub-components. The specific setter will call this method to populate the
+ attributes.</div>
+</li>
+</ul>
+<a name="getAttribute(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAttribute</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;getAttribute(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</pre>
+<div class="block">Used by sub-components to retrieve configuration information.</div>
+</li>
+</ul>
+<a name="setProperty(java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setProperty</h4>
+<pre>public&nbsp;boolean&nbsp;setProperty(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</pre>
+</li>
+</ul>
+<a name="getProperty(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getProperty</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getProperty(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+</li>
+</ul>
+<a name="getCurrentThreadCount()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCurrentThreadCount</h4>
+<pre>public&nbsp;int&nbsp;getCurrentThreadCount()</pre>
+<div class="block">Return the amount of threads that are managed by the pool.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the amount of threads that are managed by the pool</dd></dl>
+</li>
+</ul>
+<a name="getCurrentThreadsBusy()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCurrentThreadsBusy</h4>
+<pre>public&nbsp;int&nbsp;getCurrentThreadsBusy()</pre>
+<div class="block">Return the amount of threads that are in use</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the amount of threads that are in use</dd></dl>
+</li>
+</ul>
+<a name="isRunning()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isRunning</h4>
+<pre>public&nbsp;boolean&nbsp;isRunning()</pre>
+</li>
+</ul>
+<a name="isPaused()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isPaused</h4>
+<pre>public&nbsp;boolean&nbsp;isPaused()</pre>
+</li>
+</ul>
+<a name="createExecutor()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createExecutor</h4>
+<pre>public&nbsp;void&nbsp;createExecutor()</pre>
+</li>
+</ul>
+<a name="shutdownExecutor()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>shutdownExecutor</h4>
+<pre>public&nbsp;void&nbsp;shutdownExecutor()</pre>
+</li>
+</ul>
+<a name="unlockAccept()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>unlockAccept</h4>
+<pre>protected&nbsp;void&nbsp;unlockAccept()</pre>
+<div class="block">Unlock the server socket accept using a bogus connection.</div>
+</li>
+</ul>
+<a name="processSocket(org.apache.tomcat.util.net.SocketWrapper, org.apache.tomcat.util.net.SocketStatus, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>processSocket</h4>
+<pre>public abstract&nbsp;void&nbsp;processSocket(<a href="../../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="type parameter in AbstractEndpoint">S</a>&gt;&nbsp;socketWrapper,
+                 <a href="../../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net">SocketStatus</a>&nbsp;socketStatus,
+                 boolean&nbsp;dispatch)</pre>
+<div class="block">Process the given SocketWrapper with the given status. Used to trigger
+ processing as if the Poller (for those endpoints that have one)
+ selected the socket.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>socketWrapper</code> - The socket wrapper to process</dd><dd><code>socketStatus</code> - The input status to the processing</dd><dd><code>dispatch</code> - Should the processing be performed on a new
+                          container thread</dd></dl>
+</li>
+</ul>
+<a name="executeNonBlockingDispatches(org.apache.tomcat.util.net.SocketWrapper)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>executeNonBlockingDispatches</h4>
+<pre>public&nbsp;void&nbsp;executeNonBlockingDispatches(<a href="../../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="type parameter in AbstractEndpoint">S</a>&gt;&nbsp;socketWrapper)</pre>
+</li>
+</ul>
+<a name="bind()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>bind</h4>
+<pre>public abstract&nbsp;void&nbsp;bind()
+                   throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd></dl>
+</li>
+</ul>
+<a name="unbind()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>unbind</h4>
+<pre>public abstract&nbsp;void&nbsp;unbind()
+                     throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd></dl>
+</li>
+</ul>
+<a name="startInternal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>startInternal</h4>
+<pre>public abstract&nbsp;void&nbsp;startInternal()
+                            throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd></dl>
+</li>
+</ul>
+<a name="stopInternal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>stopInternal</h4>
+<pre>public abstract&nbsp;void&nbsp;stopInternal()
+                           throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd></dl>
+</li>
+</ul>
+<a name="init()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>init</h4>
+<pre>public final&nbsp;void&nbsp;init()
+                throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd></dl>
+</li>
+</ul>
+<a name="start()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>start</h4>
+<pre>public final&nbsp;void&nbsp;start()
+                 throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd></dl>
+</li>
+</ul>
+<a name="startAcceptorThreads()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>startAcceptorThreads</h4>
+<pre>protected final&nbsp;void&nbsp;startAcceptorThreads()</pre>
+</li>
+</ul>
+<a name="createAcceptor()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createAcceptor</h4>
+<pre>protected abstract&nbsp;<a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.Acceptor.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint.Acceptor</a>&nbsp;createAcceptor()</pre>
+<div class="block">Hook to allow Endpoints to provide a specific Acceptor implementation.</div>
+</li>
+</ul>
+<a name="pause()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>pause</h4>
+<pre>public&nbsp;void&nbsp;pause()</pre>
+<div class="block">Pause the endpoint, which will stop it accepting new connections.</div>
+</li>
+</ul>
+<a name="resume()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>resume</h4>
+<pre>public&nbsp;void&nbsp;resume()</pre>
+<div class="block">Resume the endpoint, which will make it start accepting new connections
+ again.</div>
+</li>
+</ul>
+<a name="stop()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>stop</h4>
+<pre>public final&nbsp;void&nbsp;stop()
+                throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd></dl>
+</li>
+</ul>
+<a name="destroy()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>destroy</h4>
+<pre>public final&nbsp;void&nbsp;destroy()
+                   throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd></dl>
+</li>
+</ul>
+<a name="getLog()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLog</h4>
+<pre>protected abstract&nbsp;<a href="../../../../../org/apache/juli/logging/Log.html" title="interface in org.apache.juli.logging">Log</a>&nbsp;getLog()</pre>
+</li>
+</ul>
+<a name="getUseSendfile()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUseSendfile</h4>
+<pre>public abstract&nbsp;boolean&nbsp;getUseSendfile()</pre>
+</li>
+</ul>
+<a name="getUseComet()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUseComet</h4>
+<pre>public abstract&nbsp;boolean&nbsp;getUseComet()</pre>
+</li>
+</ul>
+<a name="getUseCometTimeout()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUseCometTimeout</h4>
+<pre>public abstract&nbsp;boolean&nbsp;getUseCometTimeout()</pre>
+</li>
+</ul>
+<a name="getUsePolling()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUsePolling</h4>
+<pre>public abstract&nbsp;boolean&nbsp;getUsePolling()</pre>
+</li>
+</ul>
+<a name="initializeConnectionLatch()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>initializeConnectionLatch</h4>
+<pre>protected&nbsp;<a href="../../../../../org/apache/tomcat/util/threads/LimitLatch.html" title="class in org.apache.tomcat.util.threads">LimitLatch</a>&nbsp;initializeConnectionLatch()</pre>
+</li>
+</ul>
+<a name="releaseConnectionLatch()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>releaseConnectionLatch</h4>
+<pre>protected&nbsp;void&nbsp;releaseConnectionLatch()</pre>
+</li>
+</ul>
+<a name="countUpOrAwaitConnection()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>countUpOrAwaitConnection</h4>
+<pre>protected&nbsp;void&nbsp;countUpOrAwaitConnection()
+                                 throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</a></code></dd></dl>
+</li>
+</ul>
+<a name="countDownConnection()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>countDownConnection</h4>
+<pre>protected&nbsp;long&nbsp;countDownConnection()</pre>
+</li>
+</ul>
+<a name="handleExceptionWithDelay(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>handleExceptionWithDelay</h4>
+<pre>protected&nbsp;int&nbsp;handleExceptionWithDelay(int&nbsp;currentErrorDelay)</pre>
+<div class="block">Provides a common approach for sub-classes to handle exceptions where a
+ delay is required to prevent a Thread from entering a tight loop which
+ will consume CPU and may also trigger large amounts of logging. For
+ example, this can happen with the Acceptor thread if the ulimit for open
+ files is reached.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>currentErrorDelay</code> - The current delay being applied on failure</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The delay to apply on the next failure</dd></dl>
+</li>
+</ul>
+<a name="getAlgorithm()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAlgorithm</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getAlgorithm()</pre>
+</li>
+</ul>
+<a name="setAlgorithm(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAlgorithm</h4>
+<pre>public&nbsp;void&nbsp;setAlgorithm(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getClientAuth()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getClientAuth</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getClientAuth()</pre>
+</li>
+</ul>
+<a name="setClientAuth(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setClientAuth</h4>
+<pre>public&nbsp;void&nbsp;setClientAuth(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getKeystoreFile()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getKeystoreFile</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getKeystoreFile()</pre>
+</li>
+</ul>
+<a name="setKeystoreFile(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setKeystoreFile</h4>
+<pre>public&nbsp;void&nbsp;setKeystoreFile(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getKeystorePass()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getKeystorePass</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getKeystorePass()</pre>
+</li>
+</ul>
+<a name="setKeystorePass(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setKeystorePass</h4>
+<pre>public&nbsp;void&nbsp;setKeystorePass(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getKeystoreType()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getKeystoreType</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getKeystoreType()</pre>
+</li>
+</ul>
+<a name="setKeystoreType(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setKeystoreType</h4>
+<pre>public&nbsp;void&nbsp;setKeystoreType(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getKeystoreProvider()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getKeystoreProvider</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getKeystoreProvider()</pre>
+</li>
+</ul>
+<a name="setKeystoreProvider(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setKeystoreProvider</h4>
+<pre>public&nbsp;void&nbsp;setKeystoreProvider(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getSslProtocol()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSslProtocol</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getSslProtocol()</pre>
+</li>
+</ul>
+<a name="setSslProtocol(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSslProtocol</h4>
+<pre>public&nbsp;void&nbsp;setSslProtocol(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getCiphers()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCiphers</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getCiphers()</pre>
+</li>
+</ul>
+<a name="setCiphers(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCiphers</h4>
+<pre>public&nbsp;void&nbsp;setCiphers(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getCiphersUsed()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCiphersUsed</h4>
+<pre>public abstract&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;getCiphersUsed()</pre>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The ciphers in use by this Endpoint</dd></dl>
+</li>
+</ul>
+<a name="getUseServerCipherSuitesOrder()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUseServerCipherSuitesOrder</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getUseServerCipherSuitesOrder()</pre>
+</li>
+</ul>
+<a name="setUseServerCipherSuitesOrder(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setUseServerCipherSuitesOrder</h4>
+<pre>public&nbsp;void&nbsp;setUseServerCipherSuitesOrder(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getKeyAlias()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getKeyAlias</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getKeyAlias()</pre>
+</li>
+</ul>
+<a name="setKeyAlias(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setKeyAlias</h4>
+<pre>public&nbsp;void&nbsp;setKeyAlias(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getKeyPass()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getKeyPass</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getKeyPass()</pre>
+</li>
+</ul>
+<a name="setKeyPass(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setKeyPass</h4>
+<pre>public&nbsp;void&nbsp;setKeyPass(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getTruststoreFile()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTruststoreFile</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getTruststoreFile()</pre>
+</li>
+</ul>
+<a name="setTruststoreFile(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTruststoreFile</h4>
+<pre>public&nbsp;void&nbsp;setTruststoreFile(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getTruststorePass()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTruststorePass</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getTruststorePass()</pre>
+</li>
+</ul>
+<a name="setTruststorePass(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTruststorePass</h4>
+<pre>public&nbsp;void&nbsp;setTruststorePass(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;truststorePass)</pre>
+</li>
+</ul>
+<a name="getTruststoreType()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTruststoreType</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getTruststoreType()</pre>
+</li>
+</ul>
+<a name="setTruststoreType(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTruststoreType</h4>
+<pre>public&nbsp;void&nbsp;setTruststoreType(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;truststoreType)</pre>
+</li>
+</ul>
+<a name="getTruststoreProvider()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTruststoreProvider</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getTruststoreProvider()</pre>
+</li>
+</ul>
+<a name="setTruststoreProvider(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTruststoreProvider</h4>
+<pre>public&nbsp;void&nbsp;setTruststoreProvider(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;truststoreProvider)</pre>
+</li>
+</ul>
+<a name="getTruststoreAlgorithm()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTruststoreAlgorithm</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getTruststoreAlgorithm()</pre>
+</li>
+</ul>
+<a name="setTruststoreAlgorithm(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTruststoreAlgorithm</h4>
+<pre>public&nbsp;void&nbsp;setTruststoreAlgorithm(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;truststoreAlgorithm)</pre>
+</li>
+</ul>
+<a name="getTrustManagerClassName()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTrustManagerClassName</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getTrustManagerClassName()</pre>
+</li>
+</ul>
+<a name="setTrustManagerClassName(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTrustManagerClassName</h4>
+<pre>public&nbsp;void&nbsp;setTrustManagerClassName(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;trustManagerClassName)</pre>
+</li>
+</ul>
+<a name="getCrlFile()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCrlFile</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getCrlFile()</pre>
+</li>
+</ul>
+<a name="setCrlFile(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCrlFile</h4>
+<pre>public&nbsp;void&nbsp;setCrlFile(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;crlFile)</pre>
+</li>
+</ul>
+<a name="getTrustMaxCertLength()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTrustMaxCertLength</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getTrustMaxCertLength()</pre>
+</li>
+</ul>
+<a name="setTrustMaxCertLength(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTrustMaxCertLength</h4>
+<pre>public&nbsp;void&nbsp;setTrustMaxCertLength(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;trustMaxCertLength)</pre>
+</li>
+</ul>
+<a name="getSessionCacheSize()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSessionCacheSize</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getSessionCacheSize()</pre>
+</li>
+</ul>
+<a name="setSessionCacheSize(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSessionCacheSize</h4>
+<pre>public&nbsp;void&nbsp;setSessionCacheSize(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getSessionTimeout()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSessionTimeout</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getSessionTimeout()</pre>
+</li>
+</ul>
+<a name="setSessionTimeout(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSessionTimeout</h4>
+<pre>public&nbsp;void&nbsp;setSessionTimeout(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getAllowUnsafeLegacyRenegotiation()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAllowUnsafeLegacyRenegotiation</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getAllowUnsafeLegacyRenegotiation()</pre>
+</li>
+</ul>
+<a name="setAllowUnsafeLegacyRenegotiation(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAllowUnsafeLegacyRenegotiation</h4>
+<pre>public&nbsp;void&nbsp;setAllowUnsafeLegacyRenegotiation(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getSslEnabledProtocolsArray()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSslEnabledProtocolsArray</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;getSslEnabledProtocolsArray()</pre>
+</li>
+</ul>
+<a name="setSslEnabledProtocols(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSslEnabledProtocols</h4>
+<pre>public&nbsp;void&nbsp;setSslEnabledProtocols(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="configureUseServerCipherSuitesOrder(javax.net.ssl.SSLEngine)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>configureUseServerCipherSuitesOrder</h4>
+<pre>protected&nbsp;void&nbsp;configureUseServerCipherSuitesOrder(<a href="http://docs.oracle.com/javase/7/docs/api/javax/net/ssl/SSLEngine.html?is-external=true" title="class or interface in javax.net.ssl">SSLEngine</a>&nbsp;engine)</pre>
+<div class="block">Configures SSLEngine to honor cipher suites ordering based upon
+ endpoint configuration.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code>InvalidAlgorithmParameterException</code> - If the runtime JVM doesn't
+         support this setting.</dd></dl>
+</li>
+</ul>
+<a name="getAsyncTimeout()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAsyncTimeout</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.AsyncTimeout.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint.AsyncTimeout</a>&nbsp;getAsyncTimeout()</pre>
+</li>
+</ul>
+<a name="setAsyncTimeout(org.apache.tomcat.util.net.AbstractEndpoint.AsyncTimeout)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setAsyncTimeout</h4>
+<pre>public&nbsp;void&nbsp;setAsyncTimeout(<a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.AsyncTimeout.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint.AsyncTimeout</a>&nbsp;asyncTimeout)</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev Class</li>
+<li><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.Acceptor.html" title="class in org.apache.tomcat.util.net"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/tomcat/util/net/AbstractEndpoint.html" target="_top">Frames</a></li>
+<li><a href="AbstractEndpoint.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

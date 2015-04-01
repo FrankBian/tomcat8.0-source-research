@@ -1,0 +1,1084 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>DummyProxySession (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="DummyProxySession (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/manager/Constants.html" title="class in org.apache.catalina.manager"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/manager/HTMLManagerServlet.html" title="class in org.apache.catalina.manager"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/manager/DummyProxySession.html" target="_top">Frames</a></li>
+<li><a href="DummyProxySession.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.manager</div>
+<h2 title="Class DummyProxySession" class="title">Class DummyProxySession</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.manager.DummyProxySession</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">DummyProxySession</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></pre>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.Session">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.apache.catalina.<a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></h3>
+<code><a href="../../../../org/apache/catalina/Session.html#SESSION_ACTIVATED_EVENT">SESSION_ACTIVATED_EVENT</a>, <a href="../../../../org/apache/catalina/Session.html#SESSION_CREATED_EVENT">SESSION_CREATED_EVENT</a>, <a href="../../../../org/apache/catalina/Session.html#SESSION_DESTROYED_EVENT">SESSION_DESTROYED_EVENT</a>, <a href="../../../../org/apache/catalina/Session.html#SESSION_PASSIVATED_EVENT">SESSION_PASSIVATED_EVENT</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#DummyProxySession(java.lang.String)">DummyProxySession</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sessionId)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#access()">access</a></strong>()</code>
+<div class="block">Update the accessed time information for this session.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#addSessionListener(org.apache.catalina.SessionListener)">addSessionListener</a></strong>(<a href="../../../../org/apache/catalina/SessionListener.html" title="interface in org.apache.catalina">SessionListener</a>&nbsp;listener)</code>
+<div class="block">Add a session event listener to this component.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#endAccess()">endAccess</a></strong>()</code>
+<div class="block">End access to the session.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#expire()">expire</a></strong>()</code>
+<div class="block">Perform the internal processing required to invalidate this session,
+ without triggering an exception if the session has already expired.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#getAuthType()">getAuthType</a></strong>()</code>
+<div class="block">Return the authentication type used to authenticate our cached
+ Principal, if any.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#getCreationTime()">getCreationTime</a></strong>()</code>
+<div class="block">Return the creation time for this session.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#getCreationTimeInternal()">getCreationTimeInternal</a></strong>()</code>
+<div class="block">Return the creation time for this session, bypassing the session validity
+ checks.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#getId()">getId</a></strong>()</code>
+<div class="block">Return the session identifier for this session.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#getIdInternal()">getIdInternal</a></strong>()</code>
+<div class="block">Return the session identifier for this session.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#getIdleTime()">getIdleTime</a></strong>()</code>
+<div class="block">Return the idle time (in milliseconds) from last client access time.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#getIdleTimeInternal()">getIdleTimeInternal</a></strong>()</code>
+<div class="block">Return the idle time from last client access time without invalidation check</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#getLastAccessedTime()">getLastAccessedTime</a></strong>()</code>
+<div class="block">Return the last time the client sent a request associated with this
+ session, as the number of milliseconds since midnight, January 1, 1970
+ GMT.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#getLastAccessedTimeInternal()">getLastAccessedTimeInternal</a></strong>()</code>
+<div class="block">Return the last client access time without invalidation check</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../org/apache/catalina/Manager.html" title="interface in org.apache.catalina">Manager</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#getManager()">getManager</a></strong>()</code>
+<div class="block">Return the Manager within which this Session is valid.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#getMaxInactiveInterval()">getMaxInactiveInterval</a></strong>()</code>
+<div class="block">Return the maximum time interval, in seconds, between client requests
+ before the servlet container will invalidate the session.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#getNote(java.lang.String)">getNote</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Return the object bound with the specified name to the internal notes
+ for this session, or <code>null</code> if no such binding exists.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#getNoteNames()">getNoteNames</a></strong>()</code>
+<div class="block">Return an Iterator containing the String names of all notes bindings
+ that exist for this session.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#getPrincipal()">getPrincipal</a></strong>()</code>
+<div class="block">Return the authenticated Principal that is associated with this Session.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../servletapi/javax/servlet/http/HttpSession.html?is-external=true" title="class or interface in javax.servlet.http">HttpSession</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#getSession()">getSession</a></strong>()</code>
+<div class="block">Return the <code>HttpSession</code> for which this object
+ is the facade.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#getThisAccessedTime()">getThisAccessedTime</a></strong>()</code>
+<div class="block">Return the last time the client sent a request associated with this
+ session, as the number of milliseconds since midnight, January 1, 1970
+ GMT.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#getThisAccessedTimeInternal()">getThisAccessedTimeInternal</a></strong>()</code>
+<div class="block">Return the last client access time without invalidation check</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#isValid()">isValid</a></strong>()</code>
+<div class="block">Return the <code>isValid</code> flag for this session.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#recycle()">recycle</a></strong>()</code>
+<div class="block">Release all object references, and initialize instance variables, in
+ preparation for reuse of this object.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#removeNote(java.lang.String)">removeNote</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Remove any object bound to the specified name in the internal notes
+ for this session.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#removeSessionListener(org.apache.catalina.SessionListener)">removeSessionListener</a></strong>(<a href="../../../../org/apache/catalina/SessionListener.html" title="interface in org.apache.catalina">SessionListener</a>&nbsp;listener)</code>
+<div class="block">Remove a session event listener from this component.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#setAuthType(java.lang.String)">setAuthType</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;authType)</code>
+<div class="block">Set the authentication type used to authenticate our cached
+ Principal, if any.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#setCreationTime(long)">setCreationTime</a></strong>(long&nbsp;time)</code>
+<div class="block">Set the creation time for this session.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#setId(java.lang.String)">setId</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
+<div class="block">Set the session identifier for this session and notifies any associated
+ listeners that a new session has been created.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#setId(java.lang.String,%20boolean)">setId</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+     boolean&nbsp;notify)</code>
+<div class="block">Set the session identifier for this session and optionally notifies any
+ associated listeners that a new session has been created.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#setManager(org.apache.catalina.Manager)">setManager</a></strong>(<a href="../../../../org/apache/catalina/Manager.html" title="interface in org.apache.catalina">Manager</a>&nbsp;manager)</code>
+<div class="block">Set the Manager within which this Session is valid.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#setMaxInactiveInterval(int)">setMaxInactiveInterval</a></strong>(int&nbsp;interval)</code>
+<div class="block">Set the maximum time interval, in seconds, between client requests
+ before the servlet container will invalidate the session.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#setNew(boolean)">setNew</a></strong>(boolean&nbsp;isNew)</code>
+<div class="block">Set the <code>isNew</code> flag for this session.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#setNote(java.lang.String,%20java.lang.Object)">setNote</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code>
+<div class="block">Bind an object to a specified name in the internal notes associated
+ with this session, replacing any existing binding for this name.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#setPrincipal(java.security.Principal)">setPrincipal</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a>&nbsp;principal)</code>
+<div class="block">Set the authenticated Principal that is associated with this Session.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#setValid(boolean)">setValid</a></strong>(boolean&nbsp;isValid)</code>
+<div class="block">Set the <code>isValid</code> flag for this session.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/manager/DummyProxySession.html#tellChangedSessionId(java.lang.String,%20java.lang.String,%20boolean,%20boolean)">tellChangedSessionId</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newId,
+                    <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;oldId,
+                    boolean&nbsp;notifySessionListeners,
+                    boolean&nbsp;notifyContainerListeners)</code>
+<div class="block">Inform the listeners about the change session ID.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="DummyProxySession(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>DummyProxySession</h4>
+<pre>public&nbsp;DummyProxySession(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sessionId)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="access()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>access</h4>
+<pre>public&nbsp;void&nbsp;access()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#access()">Session</a></code></strong></div>
+<div class="block">Update the accessed time information for this session.  This method
+ should be called by the context when a request comes in for a particular
+ session, even if the application does not reference it.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#access()">access</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="addSessionListener(org.apache.catalina.SessionListener)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addSessionListener</h4>
+<pre>public&nbsp;void&nbsp;addSessionListener(<a href="../../../../org/apache/catalina/SessionListener.html" title="interface in org.apache.catalina">SessionListener</a>&nbsp;listener)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#addSessionListener(org.apache.catalina.SessionListener)">Session</a></code></strong></div>
+<div class="block">Add a session event listener to this component.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#addSessionListener(org.apache.catalina.SessionListener)">addSessionListener</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="endAccess()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>endAccess</h4>
+<pre>public&nbsp;void&nbsp;endAccess()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#endAccess()">Session</a></code></strong></div>
+<div class="block">End access to the session.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#endAccess()">endAccess</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="expire()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>expire</h4>
+<pre>public&nbsp;void&nbsp;expire()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#expire()">Session</a></code></strong></div>
+<div class="block">Perform the internal processing required to invalidate this session,
+ without triggering an exception if the session has already expired.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#expire()">expire</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getAuthType()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAuthType</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getAuthType()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#getAuthType()">Session</a></code></strong></div>
+<div class="block">Return the authentication type used to authenticate our cached
+ Principal, if any.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#getAuthType()">getAuthType</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getCreationTime()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCreationTime</h4>
+<pre>public&nbsp;long&nbsp;getCreationTime()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#getCreationTime()">Session</a></code></strong></div>
+<div class="block">Return the creation time for this session.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#getCreationTime()">getCreationTime</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getCreationTimeInternal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCreationTimeInternal</h4>
+<pre>public&nbsp;long&nbsp;getCreationTimeInternal()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#getCreationTimeInternal()">Session</a></code></strong></div>
+<div class="block">Return the creation time for this session, bypassing the session validity
+ checks.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#getCreationTimeInternal()">getCreationTimeInternal</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getId()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getId</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getId()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#getId()">Session</a></code></strong></div>
+<div class="block">Return the session identifier for this session.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#getId()">getId</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getIdInternal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIdInternal</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getIdInternal()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#getIdInternal()">Session</a></code></strong></div>
+<div class="block">Return the session identifier for this session.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#getIdInternal()">getIdInternal</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getLastAccessedTime()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLastAccessedTime</h4>
+<pre>public&nbsp;long&nbsp;getLastAccessedTime()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#getLastAccessedTime()">Session</a></code></strong></div>
+<div class="block">Return the last time the client sent a request associated with this
+ session, as the number of milliseconds since midnight, January 1, 1970
+ GMT.  Actions that your application takes, such as getting or setting
+ a value associated with the session, do not affect the access time.
+ This one gets updated whenever a request finishes.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#getLastAccessedTime()">getLastAccessedTime</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getLastAccessedTimeInternal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLastAccessedTimeInternal</h4>
+<pre>public&nbsp;long&nbsp;getLastAccessedTimeInternal()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#getLastAccessedTimeInternal()">Session</a></code></strong></div>
+<div class="block">Return the last client access time without invalidation check</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#getLastAccessedTimeInternal()">getLastAccessedTimeInternal</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../org/apache/catalina/Session.html#getLastAccessedTime()"><code>Session.getLastAccessedTime()</code></a></dd></dl>
+</li>
+</ul>
+<a name="getIdleTime()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIdleTime</h4>
+<pre>public&nbsp;long&nbsp;getIdleTime()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#getIdleTime()">Session</a></code></strong></div>
+<div class="block">Return the idle time (in milliseconds) from last client access time.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#getIdleTime()">getIdleTime</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getIdleTimeInternal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIdleTimeInternal</h4>
+<pre>public&nbsp;long&nbsp;getIdleTimeInternal()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#getIdleTimeInternal()">Session</a></code></strong></div>
+<div class="block">Return the idle time from last client access time without invalidation check</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#getIdleTimeInternal()">getIdleTimeInternal</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../org/apache/catalina/Session.html#getIdleTime()"><code>Session.getIdleTime()</code></a></dd></dl>
+</li>
+</ul>
+<a name="getManager()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getManager</h4>
+<pre>public&nbsp;<a href="../../../../org/apache/catalina/Manager.html" title="interface in org.apache.catalina">Manager</a>&nbsp;getManager()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#getManager()">Session</a></code></strong></div>
+<div class="block">Return the Manager within which this Session is valid.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#getManager()">getManager</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getMaxInactiveInterval()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMaxInactiveInterval</h4>
+<pre>public&nbsp;int&nbsp;getMaxInactiveInterval()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#getMaxInactiveInterval()">Session</a></code></strong></div>
+<div class="block">Return the maximum time interval, in seconds, between client requests
+ before the servlet container will invalidate the session.  A negative
+ time indicates that the session should never time out.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#getMaxInactiveInterval()">getMaxInactiveInterval</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getNote(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNote</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;getNote(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#getNote(java.lang.String)">Session</a></code></strong></div>
+<div class="block">Return the object bound with the specified name to the internal notes
+ for this session, or <code>null</code> if no such binding exists.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#getNote(java.lang.String)">getNote</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - Name of the note to be returned</dd></dl>
+</li>
+</ul>
+<a name="getNoteNames()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getNoteNames</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getNoteNames()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#getNoteNames()">Session</a></code></strong></div>
+<div class="block">Return an Iterator containing the String names of all notes bindings
+ that exist for this session.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#getNoteNames()">getNoteNames</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getPrincipal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPrincipal</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a>&nbsp;getPrincipal()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#getPrincipal()">Session</a></code></strong></div>
+<div class="block">Return the authenticated Principal that is associated with this Session.
+ This provides an <code>Authenticator</code> with a means to cache a
+ previously authenticated Principal, and avoid potentially expensive
+ <code>Realm.authenticate()</code> calls on every request.  If there
+ is no current associated Principal, return <code>null</code>.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#getPrincipal()">getPrincipal</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getSession()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSession</h4>
+<pre>public&nbsp;<a href="../../../../../servletapi/javax/servlet/http/HttpSession.html?is-external=true" title="class or interface in javax.servlet.http">HttpSession</a>&nbsp;getSession()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#getSession()">Session</a></code></strong></div>
+<div class="block">Return the <code>HttpSession</code> for which this object
+ is the facade.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#getSession()">getSession</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getThisAccessedTime()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getThisAccessedTime</h4>
+<pre>public&nbsp;long&nbsp;getThisAccessedTime()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#getThisAccessedTime()">Session</a></code></strong></div>
+<div class="block">Return the last time the client sent a request associated with this
+ session, as the number of milliseconds since midnight, January 1, 1970
+ GMT.  Actions that your application takes, such as getting or setting
+ a value associated with the session, do not affect the access time.
+ This one gets updated whenever a request starts.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#getThisAccessedTime()">getThisAccessedTime</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getThisAccessedTimeInternal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getThisAccessedTimeInternal</h4>
+<pre>public&nbsp;long&nbsp;getThisAccessedTimeInternal()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#getThisAccessedTimeInternal()">Session</a></code></strong></div>
+<div class="block">Return the last client access time without invalidation check</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#getThisAccessedTimeInternal()">getThisAccessedTimeInternal</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../org/apache/catalina/Session.html#getThisAccessedTime()"><code>Session.getThisAccessedTime()</code></a></dd></dl>
+</li>
+</ul>
+<a name="isValid()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isValid</h4>
+<pre>public&nbsp;boolean&nbsp;isValid()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#isValid()">Session</a></code></strong></div>
+<div class="block">Return the <code>isValid</code> flag for this session.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#isValid()">isValid</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="recycle()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>recycle</h4>
+<pre>public&nbsp;void&nbsp;recycle()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#recycle()">Session</a></code></strong></div>
+<div class="block">Release all object references, and initialize instance variables, in
+ preparation for reuse of this object.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#recycle()">recycle</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="removeNote(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeNote</h4>
+<pre>public&nbsp;void&nbsp;removeNote(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#removeNote(java.lang.String)">Session</a></code></strong></div>
+<div class="block">Remove any object bound to the specified name in the internal notes
+ for this session.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#removeNote(java.lang.String)">removeNote</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - Name of the note to be removed</dd></dl>
+</li>
+</ul>
+<a name="removeSessionListener(org.apache.catalina.SessionListener)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeSessionListener</h4>
+<pre>public&nbsp;void&nbsp;removeSessionListener(<a href="../../../../org/apache/catalina/SessionListener.html" title="interface in org.apache.catalina">SessionListener</a>&nbsp;listener)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#removeSessionListener(org.apache.catalina.SessionListener)">Session</a></code></strong></div>
+<div class="block">Remove a session event listener from this component.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#removeSessionListener(org.apache.catalina.SessionListener)">removeSessionListener</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setAuthType(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAuthType</h4>
+<pre>public&nbsp;void&nbsp;setAuthType(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;authType)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#setAuthType(java.lang.String)">Session</a></code></strong></div>
+<div class="block">Set the authentication type used to authenticate our cached
+ Principal, if any.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#setAuthType(java.lang.String)">setAuthType</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>authType</code> - The new cached authentication type</dd></dl>
+</li>
+</ul>
+<a name="setCreationTime(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCreationTime</h4>
+<pre>public&nbsp;void&nbsp;setCreationTime(long&nbsp;time)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#setCreationTime(long)">Session</a></code></strong></div>
+<div class="block">Set the creation time for this session.  This method is called by the
+ Manager when an existing Session instance is reused.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#setCreationTime(long)">setCreationTime</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>time</code> - The new creation time</dd></dl>
+</li>
+</ul>
+<a name="setId(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setId</h4>
+<pre>public&nbsp;void&nbsp;setId(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#setId(java.lang.String)">Session</a></code></strong></div>
+<div class="block">Set the session identifier for this session and notifies any associated
+ listeners that a new session has been created.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#setId(java.lang.String)">setId</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - The new session identifier</dd></dl>
+</li>
+</ul>
+<a name="setId(java.lang.String, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setId</h4>
+<pre>public&nbsp;void&nbsp;setId(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+         boolean&nbsp;notify)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#setId(java.lang.String,%20boolean)">Session</a></code></strong></div>
+<div class="block">Set the session identifier for this session and optionally notifies any
+ associated listeners that a new session has been created.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#setId(java.lang.String,%20boolean)">setId</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - The new session identifier</dd><dd><code>notify</code> - Should any associated listeners be notified that a new
+                      session has been created?</dd></dl>
+</li>
+</ul>
+<a name="setManager(org.apache.catalina.Manager)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setManager</h4>
+<pre>public&nbsp;void&nbsp;setManager(<a href="../../../../org/apache/catalina/Manager.html" title="interface in org.apache.catalina">Manager</a>&nbsp;manager)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#setManager(org.apache.catalina.Manager)">Session</a></code></strong></div>
+<div class="block">Set the Manager within which this Session is valid.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#setManager(org.apache.catalina.Manager)">setManager</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>manager</code> - The new Manager</dd></dl>
+</li>
+</ul>
+<a name="setMaxInactiveInterval(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMaxInactiveInterval</h4>
+<pre>public&nbsp;void&nbsp;setMaxInactiveInterval(int&nbsp;interval)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#setMaxInactiveInterval(int)">Session</a></code></strong></div>
+<div class="block">Set the maximum time interval, in seconds, between client requests
+ before the servlet container will invalidate the session.  A negative
+ time indicates that the session should never time out.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#setMaxInactiveInterval(int)">setMaxInactiveInterval</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>interval</code> - The new maximum interval</dd></dl>
+</li>
+</ul>
+<a name="setNew(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setNew</h4>
+<pre>public&nbsp;void&nbsp;setNew(boolean&nbsp;isNew)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#setNew(boolean)">Session</a></code></strong></div>
+<div class="block">Set the <code>isNew</code> flag for this session.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#setNew(boolean)">setNew</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>isNew</code> - The new value for the <code>isNew</code> flag</dd></dl>
+</li>
+</ul>
+<a name="setNote(java.lang.String, java.lang.Object)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setNote</h4>
+<pre>public&nbsp;void&nbsp;setNote(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#setNote(java.lang.String,%20java.lang.Object)">Session</a></code></strong></div>
+<div class="block">Bind an object to a specified name in the internal notes associated
+ with this session, replacing any existing binding for this name.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#setNote(java.lang.String,%20java.lang.Object)">setNote</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - Name to which the object should be bound</dd><dd><code>value</code> - Object to be bound to the specified name</dd></dl>
+</li>
+</ul>
+<a name="setPrincipal(java.security.Principal)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPrincipal</h4>
+<pre>public&nbsp;void&nbsp;setPrincipal(<a href="http://docs.oracle.com/javase/7/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a>&nbsp;principal)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#setPrincipal(java.security.Principal)">Session</a></code></strong></div>
+<div class="block">Set the authenticated Principal that is associated with this Session.
+ This provides an <code>Authenticator</code> with a means to cache a
+ previously authenticated Principal, and avoid potentially expensive
+ <code>Realm.authenticate()</code> calls on every request.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#setPrincipal(java.security.Principal)">setPrincipal</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>principal</code> - The new Principal, or <code>null</code> if none</dd></dl>
+</li>
+</ul>
+<a name="setValid(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setValid</h4>
+<pre>public&nbsp;void&nbsp;setValid(boolean&nbsp;isValid)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#setValid(boolean)">Session</a></code></strong></div>
+<div class="block">Set the <code>isValid</code> flag for this session.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#setValid(boolean)">setValid</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>isValid</code> - The new value for the <code>isValid</code> flag</dd></dl>
+</li>
+</ul>
+<a name="tellChangedSessionId(java.lang.String, java.lang.String, boolean, boolean)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>tellChangedSessionId</h4>
+<pre>public&nbsp;void&nbsp;tellChangedSessionId(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newId,
+                        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;oldId,
+                        boolean&nbsp;notifySessionListeners,
+                        boolean&nbsp;notifyContainerListeners)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Session.html#tellChangedSessionId(java.lang.String,%20java.lang.String,%20boolean,%20boolean)">Session</a></code></strong></div>
+<div class="block">Inform the listeners about the change session ID.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Session.html#tellChangedSessionId(java.lang.String,%20java.lang.String,%20boolean,%20boolean)">tellChangedSessionId</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>newId</code> - new session ID</dd><dd><code>oldId</code> - old session ID</dd><dd><code>notifySessionListeners</code> - Should any associated sessionListeners be
+        notified that session ID has been changed?</dd><dd><code>notifyContainerListeners</code> - Should any associated ContainerListeners
+        be notified that session ID has been changed?</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/manager/Constants.html" title="class in org.apache.catalina.manager"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/manager/HTMLManagerServlet.html" title="class in org.apache.catalina.manager"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/manager/DummyProxySession.html" target="_top">Frames</a></li>
+<li><a href="DummyProxySession.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

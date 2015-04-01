@@ -1,0 +1,1180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>FarmWarDeployer (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="FarmWarDeployer (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/catalina/ha/deploy/Constants.html" title="class in org.apache.catalina.ha.deploy"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/catalina/ha/deploy/FileChangeListener.html" title="interface in org.apache.catalina.ha.deploy"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/catalina/ha/deploy/FarmWarDeployer.html" target="_top">Frames</a></li>
+<li><a href="FarmWarDeployer.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.ha.deploy</div>
+<h2 title="Class FarmWarDeployer" class="title">Class FarmWarDeployer</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../org/apache/catalina/ha/ClusterListener.html" title="class in org.apache.catalina.ha">org.apache.catalina.ha.ClusterListener</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.ha.deploy.FarmWarDeployer</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../../org/apache/catalina/ha/ClusterDeployer.html" title="interface in org.apache.catalina.ha">ClusterDeployer</a>, <a href="../../../../../org/apache/catalina/ha/deploy/FileChangeListener.html" title="interface in org.apache.catalina.ha.deploy">FileChangeListener</a>, <a href="../../../../../org/apache/catalina/tribes/ChannelListener.html" title="interface in org.apache.catalina.tribes">ChannelListener</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">FarmWarDeployer</span>
+extends <a href="../../../../../org/apache/catalina/ha/ClusterListener.html" title="class in org.apache.catalina.ha">ClusterListener</a>
+implements <a href="../../../../../org/apache/catalina/ha/ClusterDeployer.html" title="interface in org.apache.catalina.ha">ClusterDeployer</a>, <a href="../../../../../org/apache/catalina/ha/deploy/FileChangeListener.html" title="interface in org.apache.catalina.ha.deploy">FileChangeListener</a></pre>
+<div class="block"><p>
+ A farm war deployer is a class that is able to deploy/undeploy web
+ applications in WAR from within the cluster.
+ </p>
+ Any host can act as the admin, and will have three directories
+ <ul>
+ <li>watchDir - the directory where we watch for changes</li>
+ <li>deployDir - the directory where we install applications</li>
+ <li>tempDir - a temporaryDirectory to store binary data when downloading a
+ war from the cluster</li>
+ </ul>
+ Currently we only support deployment of WAR files since they are easier to
+ send across the wire.</div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Peter Rossbach</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#configBase">configBase</a></strong></code>
+<div class="block">Path where context descriptors should be deployed.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#deployDir">deployDir</a></strong></code>
+<div class="block">Deployment directory.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util">HashMap</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../../org/apache/catalina/ha/deploy/FileMessageFactory.html" title="class in org.apache.catalina.ha.deploy">FileMessageFactory</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#fileFactories">fileFactories</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../org/apache/catalina/Host.html" title="interface in org.apache.catalina">Host</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#host">host</a></strong></code>
+<div class="block">The associated host.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#maxValidTime">maxValidTime</a></strong></code>
+<div class="block">The maximum valid time(in seconds) for FileMessageFactory.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/javax/management/MBeanServer.html?is-external=true" title="class or interface in javax.management">MBeanServer</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#mBeanServer">mBeanServer</a></strong></code>
+<div class="block">MBean server.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/javax/management/ObjectName.html?is-external=true" title="class or interface in javax.management">ObjectName</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#oname">oname</a></strong></code>
+<div class="block">The associated deployer ObjectName.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#processDeployFrequency">processDeployFrequency</a></strong></code>
+<div class="block">Frequency of the Farm watchDir check.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#started">started</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#tempDir">tempDir</a></strong></code>
+<div class="block">Temporary directory.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#watchDir">watchDir</a></strong></code>
+<div class="block">Watch directory.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#watchEnabled">watchEnabled</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../../org/apache/catalina/ha/deploy/WarWatcher.html" title="class in org.apache.catalina.ha.deploy">WarWatcher</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#watcher">watcher</a></strong></code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.ha.ClusterListener">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.catalina.ha.<a href="../../../../../org/apache/catalina/ha/ClusterListener.html" title="class in org.apache.catalina.ha">ClusterListener</a></h3>
+<code><a href="../../../../../org/apache/catalina/ha/ClusterListener.html#cluster">cluster</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#FarmWarDeployer()">FarmWarDeployer</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#accept(org.apache.catalina.ha.ClusterMessage)">accept</a></strong>(<a href="../../../../../org/apache/catalina/ha/ClusterMessage.html" title="interface in org.apache.catalina.ha">ClusterMessage</a>&nbsp;msg)</code>
+<div class="block">Before the cluster invokes messageReceived the cluster will ask the
+ receiver to accept or decline the message, In the future, when messages
+ get big, the accept method will only take a message header</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#addServiced(java.lang.String)">addServiced</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Invoke the check method on the deployer.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#backgroundProcess()">backgroundProcess</a></strong>()</code>
+<div class="block">call from container Background Process</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#check(java.lang.String)">check</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Invoke the check method on the deployer.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#copy(java.io.File,%20java.io.File)">copy</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;from,
+    <a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;to)</code>
+<div class="block">Copy a file to the specified temp directory.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#equals(java.lang.Object)">equals</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;listener)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#fileModified(java.io.File)">fileModified</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;newWar)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#fileRemoved(java.io.File)">fileRemoved</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;removeWar)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#getDeployDir()">getDeployDir</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#getDeployDirFile()">getDeployDirFile</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/catalina/ha/deploy/FileMessageFactory.html" title="class in org.apache.catalina.ha.deploy">FileMessageFactory</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#getFactory(org.apache.catalina.ha.deploy.FileMessage)">getFactory</a></strong>(<a href="../../../../../org/apache/catalina/ha/deploy/FileMessage.html" title="class in org.apache.catalina.ha.deploy">FileMessage</a>&nbsp;msg)</code>
+<div class="block">create factory for all transported war files</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#getMaxValidTime()">getMaxValidTime</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#getProcessDeployFrequency()">getProcessDeployFrequency</a></strong>()</code>
+<div class="block">Return the frequency of watcher checks.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#getTempDir()">getTempDir</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#getTempDirFile()">getTempDirFile</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#getWatchDir()">getWatchDir</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#getWatchDirFile()">getWatchDirFile</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#getWatchEnabled()">getWatchEnabled</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#hashCode()">hashCode</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#install(java.lang.String,%20java.io.File)">install</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;contextName,
+       <a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;webapp)</code>
+<div class="block">Install a new web application, whose web application archive is at the
+ specified URL, into this container and all the other members of the
+ cluster with the specified context name.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#isServiced(java.lang.String)">isServiced</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Invoke the check method on the deployer.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#isWatchEnabled()">isWatchEnabled</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#messageReceived(org.apache.catalina.ha.ClusterMessage)">messageReceived</a></strong>(<a href="../../../../../org/apache/catalina/ha/ClusterMessage.html" title="interface in org.apache.catalina.ha">ClusterMessage</a>&nbsp;msg)</code>
+<div class="block">Callback from the cluster, when a message is received, The cluster will
+ broadcast it invoking the messageReceived on the receiver.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#remove(java.lang.String)">remove</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;contextName)</code>
+<div class="block">Invoke the remove method on the deployer.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#remove(java.lang.String,%20boolean)">remove</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;contextName,
+      boolean&nbsp;undeploy)</code>
+<div class="block">Remove an existing web application, attached to the specified context
+ name.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#removeFactory(org.apache.catalina.ha.deploy.FileMessage)">removeFactory</a></strong>(<a href="../../../../../org/apache/catalina/ha/deploy/FileMessage.html" title="class in org.apache.catalina.ha.deploy">FileMessage</a>&nbsp;msg)</code>
+<div class="block">Remove file (war) from messages)</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#removeInvalidFileFactories()">removeInvalidFileFactories</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#removeServiced(java.lang.String)">removeServiced</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Invoke the check method on the deployer.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#setDeployDir(java.lang.String)">setDeployDir</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;deployDir)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#setMaxValidTime(int)">setMaxValidTime</a></strong>(int&nbsp;maxValidTime)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#setProcessDeployFrequency(int)">setProcessDeployFrequency</a></strong>(int&nbsp;processExpiresFrequency)</code>
+<div class="block">Set the watcher checks frequency.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#setTempDir(java.lang.String)">setTempDir</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tempDir)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#setWatchDir(java.lang.String)">setWatchDir</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;watchDir)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#setWatchEnabled(boolean)">setWatchEnabled</a></strong>(boolean&nbsp;watchEnabled)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#start()">start</a></strong>()</code>
+<div class="block">Start the cluster deployer, the owning container will invoke this</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#stop()">stop</a></strong>()</code>
+<div class="block">Stops the cluster deployer, the owning container will invoke this</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/deploy/FarmWarDeployer.html#undeployDir(java.io.File)">undeployDir</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;dir)</code>
+<div class="block">Delete the specified directory, including all of its contents and
+ subdirectories recursively.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.ha.ClusterListener">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.ha.<a href="../../../../../org/apache/catalina/ha/ClusterListener.html" title="class in org.apache.catalina.ha">ClusterListener</a></h3>
+<code><a href="../../../../../org/apache/catalina/ha/ClusterListener.html#accept(java.io.Serializable,%20org.apache.catalina.tribes.Member)">accept</a>, <a href="../../../../../org/apache/catalina/ha/ClusterListener.html#getCluster()">getCluster</a>, <a href="../../../../../org/apache/catalina/ha/ClusterListener.html#messageReceived(java.io.Serializable,%20org.apache.catalina.tribes.Member)">messageReceived</a>, <a href="../../../../../org/apache/catalina/ha/ClusterListener.html#setCluster(org.apache.catalina.ha.CatalinaCluster)">setCluster</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.ha.ClusterDeployer">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.apache.catalina.ha.<a href="../../../../../org/apache/catalina/ha/ClusterDeployer.html" title="interface in org.apache.catalina.ha">ClusterDeployer</a></h3>
+<code><a href="../../../../../org/apache/catalina/ha/ClusterDeployer.html#getCluster()">getCluster</a>, <a href="../../../../../org/apache/catalina/ha/ClusterDeployer.html#setCluster(org.apache.catalina.ha.CatalinaCluster)">setCluster</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.tribes.ChannelListener">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.apache.catalina.tribes.<a href="../../../../../org/apache/catalina/tribes/ChannelListener.html" title="interface in org.apache.catalina.tribes">ChannelListener</a></h3>
+<code><a href="../../../../../org/apache/catalina/tribes/ChannelListener.html#accept(java.io.Serializable,%20org.apache.catalina.tribes.Member)">accept</a>, <a href="../../../../../org/apache/catalina/tribes/ChannelListener.html#messageReceived(java.io.Serializable,%20org.apache.catalina.tribes.Member)">messageReceived</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="started">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>started</h4>
+<pre>protected&nbsp;boolean started</pre>
+</li>
+</ul>
+<a name="fileFactories">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>fileFactories</h4>
+<pre>protected final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util">HashMap</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../../org/apache/catalina/ha/deploy/FileMessageFactory.html" title="class in org.apache.catalina.ha.deploy">FileMessageFactory</a>&gt; fileFactories</pre>
+</li>
+</ul>
+<a name="deployDir">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>deployDir</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> deployDir</pre>
+<div class="block">Deployment directory.</div>
+</li>
+</ul>
+<a name="tempDir">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>tempDir</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> tempDir</pre>
+<div class="block">Temporary directory.</div>
+</li>
+</ul>
+<a name="watchDir">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>watchDir</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> watchDir</pre>
+<div class="block">Watch directory.</div>
+</li>
+</ul>
+<a name="watchEnabled">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>watchEnabled</h4>
+<pre>protected&nbsp;boolean watchEnabled</pre>
+</li>
+</ul>
+<a name="watcher">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>watcher</h4>
+<pre>protected&nbsp;<a href="../../../../../org/apache/catalina/ha/deploy/WarWatcher.html" title="class in org.apache.catalina.ha.deploy">WarWatcher</a> watcher</pre>
+</li>
+</ul>
+<a name="processDeployFrequency">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>processDeployFrequency</h4>
+<pre>protected&nbsp;int processDeployFrequency</pre>
+<div class="block">Frequency of the Farm watchDir check. Cluster wide deployment will be
+ done once for the specified amount of backgrondProcess calls (ie, the
+ lower the amount, the most often the checks will occur).</div>
+</li>
+</ul>
+<a name="configBase">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>configBase</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a> configBase</pre>
+<div class="block">Path where context descriptors should be deployed.</div>
+</li>
+</ul>
+<a name="host">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>host</h4>
+<pre>protected&nbsp;<a href="../../../../../org/apache/catalina/Host.html" title="interface in org.apache.catalina">Host</a> host</pre>
+<div class="block">The associated host.</div>
+</li>
+</ul>
+<a name="mBeanServer">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>mBeanServer</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/javax/management/MBeanServer.html?is-external=true" title="class or interface in javax.management">MBeanServer</a> mBeanServer</pre>
+<div class="block">MBean server.</div>
+</li>
+</ul>
+<a name="oname">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>oname</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/javax/management/ObjectName.html?is-external=true" title="class or interface in javax.management">ObjectName</a> oname</pre>
+<div class="block">The associated deployer ObjectName.</div>
+</li>
+</ul>
+<a name="maxValidTime">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>maxValidTime</h4>
+<pre>protected&nbsp;int maxValidTime</pre>
+<div class="block">The maximum valid time(in seconds) for FileMessageFactory.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="FarmWarDeployer()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>FarmWarDeployer</h4>
+<pre>public&nbsp;FarmWarDeployer()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="start()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>start</h4>
+<pre>public&nbsp;void&nbsp;start()
+           throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/catalina/ha/ClusterDeployer.html#start()">ClusterDeployer</a></code></strong></div>
+<div class="block">Start the cluster deployer, the owning container will invoke this</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/ha/ClusterDeployer.html#start()">start</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/ha/ClusterDeployer.html" title="interface in org.apache.catalina.ha">ClusterDeployer</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code> - - if failure to start cluster</dd></dl>
+</li>
+</ul>
+<a name="stop()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>stop</h4>
+<pre>public&nbsp;void&nbsp;stop()
+          throws <a href="../../../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/catalina/ha/ClusterDeployer.html#stop()">ClusterDeployer</a></code></strong></div>
+<div class="block">Stops the cluster deployer, the owning container will invoke this</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/ha/ClusterDeployer.html#stop()">stop</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/ha/ClusterDeployer.html" title="interface in org.apache.catalina.ha">ClusterDeployer</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></code></dd></dl>
+</li>
+</ul>
+<a name="messageReceived(org.apache.catalina.ha.ClusterMessage)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>messageReceived</h4>
+<pre>public&nbsp;void&nbsp;messageReceived(<a href="../../../../../org/apache/catalina/ha/ClusterMessage.html" title="interface in org.apache.catalina.ha">ClusterMessage</a>&nbsp;msg)</pre>
+<div class="block">Callback from the cluster, when a message is received, The cluster will
+ broadcast it invoking the messageReceived on the receiver.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/ha/ClusterListener.html#messageReceived(org.apache.catalina.ha.ClusterMessage)">messageReceived</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/catalina/ha/ClusterListener.html" title="class in org.apache.catalina.ha">ClusterListener</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>msg</code> - ClusterMessage - the message received from the cluster</dd></dl>
+</li>
+</ul>
+<a name="getFactory(org.apache.catalina.ha.deploy.FileMessage)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFactory</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/catalina/ha/deploy/FileMessageFactory.html" title="class in org.apache.catalina.ha.deploy">FileMessageFactory</a>&nbsp;getFactory(<a href="../../../../../org/apache/catalina/ha/deploy/FileMessage.html" title="class in org.apache.catalina.ha.deploy">FileMessage</a>&nbsp;msg)
+                              throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/FileNotFoundException.html?is-external=true" title="class or interface in java.io">FileNotFoundException</a>,
+                                     <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">create factory for all transported war files</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>msg</code> - </dd>
+<dt><span class="strong">Returns:</span></dt><dd>Factory for all app message (war files)</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/FileNotFoundException.html?is-external=true" title="class or interface in java.io">FileNotFoundException</a></code></dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="removeFactory(org.apache.catalina.ha.deploy.FileMessage)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeFactory</h4>
+<pre>public&nbsp;void&nbsp;removeFactory(<a href="../../../../../org/apache/catalina/ha/deploy/FileMessage.html" title="class in org.apache.catalina.ha.deploy">FileMessage</a>&nbsp;msg)</pre>
+<div class="block">Remove file (war) from messages)</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>msg</code> - </dd></dl>
+</li>
+</ul>
+<a name="accept(org.apache.catalina.ha.ClusterMessage)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>accept</h4>
+<pre>public&nbsp;boolean&nbsp;accept(<a href="../../../../../org/apache/catalina/ha/ClusterMessage.html" title="interface in org.apache.catalina.ha">ClusterMessage</a>&nbsp;msg)</pre>
+<div class="block">Before the cluster invokes messageReceived the cluster will ask the
+ receiver to accept or decline the message, In the future, when messages
+ get big, the accept method will only take a message header</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/ha/ClusterListener.html#accept(org.apache.catalina.ha.ClusterMessage)">accept</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/catalina/ha/ClusterListener.html" title="class in org.apache.catalina.ha">ClusterListener</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>msg</code> - ClusterMessage</dd>
+<dt><span class="strong">Returns:</span></dt><dd>boolean - returns true to indicate that messageReceived should be
+         invoked. If false is returned, the messageReceived method will
+         not be invoked.</dd></dl>
+</li>
+</ul>
+<a name="install(java.lang.String, java.io.File)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>install</h4>
+<pre>public&nbsp;void&nbsp;install(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;contextName,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;webapp)
+             throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Install a new web application, whose web application archive is at the
+ specified URL, into this container and all the other members of the
+ cluster with the specified context name.
+ <p>
+ If this application is successfully installed locally, a ContainerEvent
+ of type <code>INSTALL_EVENT</code> will be sent to all registered
+ listeners, with the newly created <code>Context</code> as an argument.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/ha/ClusterDeployer.html#install(java.lang.String,%20java.io.File)">install</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/ha/ClusterDeployer.html" title="interface in org.apache.catalina.ha">ClusterDeployer</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>contextName</code> - The context name to which this application should be installed
+            (must be unique)</dd><dd><code>webapp</code> - A WAR file or unpacked directory structure containing the web
+            application to be installed</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the specified context name is malformed</dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code> - if the specified context name is already deployed</dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if an input/output error was encountered during
+                installation</dd></dl>
+</li>
+</ul>
+<a name="remove(java.lang.String, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>remove</h4>
+<pre>public&nbsp;void&nbsp;remove(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;contextName,
+          boolean&nbsp;undeploy)
+            throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Remove an existing web application, attached to the specified context
+ name. If this application is successfully removed, a ContainerEvent of
+ type <code>REMOVE_EVENT</code> will be sent to all registered
+ listeners, with the removed <code>Context</code> as an argument.
+ Deletes the web application war file and/or directory if they exist in
+ the Host's appBase.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/ha/ClusterDeployer.html#remove(java.lang.String,%20boolean)">remove</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/ha/ClusterDeployer.html" title="interface in org.apache.catalina.ha">ClusterDeployer</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>contextName</code> - The context name of the application to be removed</dd><dd><code>undeploy</code> - boolean flag to remove web application from server</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the specified context name is malformed</dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the specified context name does not identify a
+                currently installed web application</dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if an input/output error occurs during removal</dd></dl>
+</li>
+</ul>
+<a name="fileModified(java.io.File)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>fileModified</h4>
+<pre>public&nbsp;void&nbsp;fileModified(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;newWar)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/ha/deploy/FileChangeListener.html#fileModified(java.io.File)">fileModified</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/ha/deploy/FileChangeListener.html" title="interface in org.apache.catalina.ha.deploy">FileChangeListener</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="fileRemoved(java.io.File)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>fileRemoved</h4>
+<pre>public&nbsp;void&nbsp;fileRemoved(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;removeWar)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/ha/deploy/FileChangeListener.html#fileRemoved(java.io.File)">fileRemoved</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/ha/deploy/FileChangeListener.html" title="interface in org.apache.catalina.ha.deploy">FileChangeListener</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="remove(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>remove</h4>
+<pre>protected&nbsp;void&nbsp;remove(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;contextName)
+               throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<div class="block">Invoke the remove method on the deployer.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd></dl>
+</li>
+</ul>
+<a name="undeployDir(java.io.File)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>undeployDir</h4>
+<pre>protected&nbsp;void&nbsp;undeployDir(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;dir)</pre>
+<div class="block">Delete the specified directory, including all of its contents and
+ subdirectories recursively.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>dir</code> - File object representing the directory to be deleted</dd></dl>
+</li>
+</ul>
+<a name="backgroundProcess()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>backgroundProcess</h4>
+<pre>public&nbsp;void&nbsp;backgroundProcess()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/catalina/ha/ClusterDeployer.html#backgroundProcess()">ClusterDeployer</a></code></strong></div>
+<div class="block">call from container Background Process</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/ha/ClusterDeployer.html#backgroundProcess()">backgroundProcess</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/ha/ClusterDeployer.html" title="interface in org.apache.catalina.ha">ClusterDeployer</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="check(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>check</h4>
+<pre>protected&nbsp;void&nbsp;check(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)
+              throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<div class="block">Invoke the check method on the deployer.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd></dl>
+</li>
+</ul>
+<a name="isServiced(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isServiced</h4>
+<pre>protected&nbsp;boolean&nbsp;isServiced(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)
+                      throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<div class="block">Invoke the check method on the deployer.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd></dl>
+</li>
+</ul>
+<a name="addServiced(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addServiced</h4>
+<pre>protected&nbsp;void&nbsp;addServiced(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)
+                    throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<div class="block">Invoke the check method on the deployer.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd></dl>
+</li>
+</ul>
+<a name="removeServiced(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeServiced</h4>
+<pre>protected&nbsp;void&nbsp;removeServiced(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)
+                       throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<div class="block">Invoke the check method on the deployer.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd></dl>
+</li>
+</ul>
+<a name="equals(java.lang.Object)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>equals</h4>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;listener)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/ChannelListener.html#equals(java.lang.Object)">equals</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/ChannelListener.html" title="interface in org.apache.catalina.tribes">ChannelListener</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/ha/ClusterListener.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/catalina/ha/ClusterListener.html" title="class in org.apache.catalina.ha">ClusterListener</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>listener</code> - Object</dd>
+<dt><span class="strong">Returns:</span></dt><dd>boolean</dd><dt><span class="strong">See Also:</span></dt><dd><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang"><code>Object.equals(Object)</code></a></dd></dl>
+</li>
+</ul>
+<a name="hashCode()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hashCode</h4>
+<pre>public&nbsp;int&nbsp;hashCode()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/ChannelListener.html#hashCode()">hashCode</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/ChannelListener.html" title="interface in org.apache.catalina.tribes">ChannelListener</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/ha/ClusterListener.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/catalina/ha/ClusterListener.html" title="class in org.apache.catalina.ha">ClusterListener</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>int</dd><dt><span class="strong">See Also:</span></dt><dd><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang"><code>Object.hashCode()</code></a></dd></dl>
+</li>
+</ul>
+<a name="getDeployDir()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDeployDir</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getDeployDir()</pre>
+</li>
+</ul>
+<a name="getDeployDirFile()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDeployDirFile</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;getDeployDirFile()</pre>
+</li>
+</ul>
+<a name="setDeployDir(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDeployDir</h4>
+<pre>public&nbsp;void&nbsp;setDeployDir(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;deployDir)</pre>
+</li>
+</ul>
+<a name="getTempDir()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTempDir</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getTempDir()</pre>
+</li>
+</ul>
+<a name="getTempDirFile()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTempDirFile</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;getTempDirFile()</pre>
+</li>
+</ul>
+<a name="setTempDir(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTempDir</h4>
+<pre>public&nbsp;void&nbsp;setTempDir(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tempDir)</pre>
+</li>
+</ul>
+<a name="getWatchDir()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWatchDir</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getWatchDir()</pre>
+</li>
+</ul>
+<a name="getWatchDirFile()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWatchDirFile</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;getWatchDirFile()</pre>
+</li>
+</ul>
+<a name="setWatchDir(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setWatchDir</h4>
+<pre>public&nbsp;void&nbsp;setWatchDir(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;watchDir)</pre>
+</li>
+</ul>
+<a name="isWatchEnabled()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isWatchEnabled</h4>
+<pre>public&nbsp;boolean&nbsp;isWatchEnabled()</pre>
+</li>
+</ul>
+<a name="getWatchEnabled()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWatchEnabled</h4>
+<pre>public&nbsp;boolean&nbsp;getWatchEnabled()</pre>
+</li>
+</ul>
+<a name="setWatchEnabled(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setWatchEnabled</h4>
+<pre>public&nbsp;void&nbsp;setWatchEnabled(boolean&nbsp;watchEnabled)</pre>
+</li>
+</ul>
+<a name="getProcessDeployFrequency()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getProcessDeployFrequency</h4>
+<pre>public&nbsp;int&nbsp;getProcessDeployFrequency()</pre>
+<div class="block">Return the frequency of watcher checks.</div>
+</li>
+</ul>
+<a name="setProcessDeployFrequency(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setProcessDeployFrequency</h4>
+<pre>public&nbsp;void&nbsp;setProcessDeployFrequency(int&nbsp;processExpiresFrequency)</pre>
+<div class="block">Set the watcher checks frequency.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>processExpiresFrequency</code> - the new manager checks frequency</dd></dl>
+</li>
+</ul>
+<a name="getMaxValidTime()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMaxValidTime</h4>
+<pre>public&nbsp;int&nbsp;getMaxValidTime()</pre>
+</li>
+</ul>
+<a name="setMaxValidTime(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMaxValidTime</h4>
+<pre>public&nbsp;void&nbsp;setMaxValidTime(int&nbsp;maxValidTime)</pre>
+</li>
+</ul>
+<a name="copy(java.io.File, java.io.File)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>copy</h4>
+<pre>protected&nbsp;boolean&nbsp;copy(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;from,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;to)</pre>
+<div class="block">Copy a file to the specified temp directory.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>from</code> - copy from temp</dd><dd><code>to</code> - to host appBase directory</dd>
+<dt><span class="strong">Returns:</span></dt><dd>true, copy successful</dd></dl>
+</li>
+</ul>
+<a name="removeInvalidFileFactories()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>removeInvalidFileFactories</h4>
+<pre>protected&nbsp;void&nbsp;removeInvalidFileFactories()</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/catalina/ha/deploy/Constants.html" title="class in org.apache.catalina.ha.deploy"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/catalina/ha/deploy/FileChangeListener.html" title="interface in org.apache.catalina.ha.deploy"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/catalina/ha/deploy/FarmWarDeployer.html" target="_top">Frames</a></li>
+<li><a href="FarmWarDeployer.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

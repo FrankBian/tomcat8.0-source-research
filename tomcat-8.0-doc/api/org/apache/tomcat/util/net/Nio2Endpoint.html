@@ -1,0 +1,1084 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Nio2Endpoint (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="Nio2Endpoint (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.Acceptor.html" title="class in org.apache.tomcat.util.net"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/tomcat/util/net/Nio2Endpoint.html" target="_top">Frames</a></li>
+<li><a href="Nio2Endpoint.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_org.apache.tomcat.util.net.AbstractEndpoint">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.tomcat.util.net</div>
+<h2 title="Class Nio2Endpoint" class="title">Class Nio2Endpoint</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">org.apache.tomcat.util.net.AbstractEndpoint</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;</li>
+<li>
+<ul class="inheritance">
+<li>org.apache.tomcat.util.net.Nio2Endpoint</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="strong">Nio2Endpoint</span>
+extends <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;</pre>
+<div class="block">NIO2 endpoint.</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested_class_summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Class and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.Acceptor.html" title="class in org.apache.tomcat.util.net">Nio2Endpoint.Acceptor</a></strong></code>
+<div class="block">With NIO2, the main acceptor thread only initiates the initial accept
+ but periodically checks that the connector is still accepting (if not
+ it will attempt to start again).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static interface&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.Handler.html" title="interface in org.apache.tomcat.util.net">Nio2Endpoint.Handler</a></strong></code>
+<div class="block">Bare bones interface used for socket processing.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.Nio2SocketWrapper.html" title="class in org.apache.tomcat.util.net">Nio2Endpoint.Nio2SocketWrapper</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.NioBufferHandler.html" title="class in org.apache.tomcat.util.net">Nio2Endpoint.NioBufferHandler</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.SendfileData.html" title="class in org.apache.tomcat.util.net">Nio2Endpoint.SendfileData</a></strong></code>
+<div class="block">SendfileData class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.SendfileState.html" title="enum in org.apache.tomcat.util.net">Nio2Endpoint.SendfileState</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.SocketProcessor.html" title="class in org.apache.tomcat.util.net">Nio2Endpoint.SocketProcessor</a></strong></code>
+<div class="block">This class is the equivalent of the Worker, but will simply use in an
+ external Executor thread pool.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="nested_classes_inherited_from_class_org.apache.tomcat.util.net.AbstractEndpoint">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from class&nbsp;org.apache.tomcat.util.net.<a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a></h3>
+<code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.AsyncTimeout.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint.AsyncTimeout</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.BindState.html" title="enum in org.apache.tomcat.util.net">AbstractEndpoint.BindState</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.tomcat.util.net.AbstractEndpoint">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.tomcat.util.net.<a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a></h3>
+<code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#acceptors">acceptors</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#acceptorThreadCount">acceptorThreadCount</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#acceptorThreadPriority">acceptorThreadPriority</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#attributes">attributes</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#DEFAULT_CIPHERS">DEFAULT_CIPHERS</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#internalExecutor">internalExecutor</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#paused">paused</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#running">running</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#sm">sm</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#socketProperties">socketProperties</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#threadPriority">threadPriority</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#waitingRequests">waitingRequests</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#Nio2Endpoint()">Nio2Endpoint</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#addTimeout(org.apache.tomcat.util.net.SocketWrapper)">addTimeout</a></strong>(<a href="../../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;&nbsp;socket)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#awaitBytes(org.apache.tomcat.util.net.SocketWrapper)">awaitBytes</a></strong>(<a href="../../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;&nbsp;socket)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#bind()">bind</a></strong>()</code>
+<div class="block">Initialize the endpoint.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#checkParachute()">checkParachute</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#closeSocket(org.apache.tomcat.util.net.SocketWrapper,%20org.apache.tomcat.util.net.SocketStatus)">closeSocket</a></strong>(<a href="../../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;&nbsp;socket,
+           <a href="../../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net">SocketStatus</a>&nbsp;status)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.Acceptor.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint.Acceptor</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#createAcceptor()">createAcceptor</a></strong>()</code>
+<div class="block">Hook to allow Endpoints to provide a specific Acceptor implementation.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/javax/net/ssl/SSLEngine.html?is-external=true" title="class or interface in javax.net.ssl">SSLEngine</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#createSSLEngine()">createSSLEngine</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#endInline()">endInline</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#getCiphersUsed()">getCiphersUsed</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#getDeferAccept()">getDeferAccept</a></strong>()</code>
+<div class="block">Is deferAccept supported?</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.Handler.html" title="interface in org.apache.tomcat.util.net">Nio2Endpoint.Handler</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#getHandler()">getHandler</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#getKeepAliveCount()">getKeepAliveCount</a></strong>()</code>
+<div class="block">Number of keepalive sockets.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#getLocalPort()">getLocalPort</a></strong>()</code>
+<div class="block">Port in use.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../org/apache/juli/logging/Log.html" title="interface in org.apache.juli.logging">Log</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#getLog()">getLog</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#getOomParachute()">getOomParachute</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#getOomParachuteData()">getOomParachuteData</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#getPollerThreadPriority()">getPollerThreadPriority</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#getReadBufSize()">getReadBufSize</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/javax/net/ssl/SSLContext.html?is-external=true" title="class or interface in javax.net.ssl">SSLContext</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#getSSLContext()">getSSLContext</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#getUseCaches()">getUseCaches</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#getUseComet()">getUseComet</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#getUseCometTimeout()">getUseCometTimeout</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#getUsePolling()">getUsePolling</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#getUseSendfile()">getUseSendfile</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#getWriteBufSize()">getWriteBufSize</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#isInline()">isInline</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#isWorkerAvailable()">isWorkerAvailable</a></strong>()</code>
+<div class="block">Returns true if a worker thread is available for processing.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.SendfileState.html" title="enum in org.apache.tomcat.util.net">Nio2Endpoint.SendfileState</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#processSendfile(org.apache.tomcat.util.net.Nio2Endpoint.Nio2SocketWrapper)">processSendfile</a></strong>(<a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.Nio2SocketWrapper.html" title="class in org.apache.tomcat.util.net">Nio2Endpoint.Nio2SocketWrapper</a>&nbsp;socket)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#processSocket(org.apache.tomcat.util.net.SocketWrapper,%20org.apache.tomcat.util.net.SocketStatus,%20boolean)">processSocket</a></strong>(<a href="../../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;&nbsp;socketWrapper,
+             <a href="../../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net">SocketStatus</a>&nbsp;socketStatus,
+             boolean&nbsp;dispatch)</code>
+<div class="block">Process the given SocketWrapper with the given status.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#processSocket0(org.apache.tomcat.util.net.SocketWrapper,%20org.apache.tomcat.util.net.SocketStatus,%20boolean)">processSocket0</a></strong>(<a href="../../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;&nbsp;socketWrapper,
+              <a href="../../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net">SocketStatus</a>&nbsp;status,
+              boolean&nbsp;dispatch)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#reclaimParachute(boolean)">reclaimParachute</a></strong>(boolean&nbsp;force)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#releaseCaches()">releaseCaches</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#removeTimeout(org.apache.tomcat.util.net.SocketWrapper)">removeTimeout</a></strong>(<a href="../../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;&nbsp;socket)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#setHandler(org.apache.tomcat.util.net.Nio2Endpoint.Handler)">setHandler</a></strong>(<a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.Handler.html" title="interface in org.apache.tomcat.util.net">Nio2Endpoint.Handler</a>&nbsp;handler)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#setOomParachute(int)">setOomParachute</a></strong>(int&nbsp;oomParachute)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#setOomParachuteData(byte[])">setOomParachuteData</a></strong>(byte[]&nbsp;oomParachuteData)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#setPollerThreadPriority(int)">setPollerThreadPriority</a></strong>(int&nbsp;pollerThreadPriority)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#setSocketOptions(java.nio.channels.AsynchronousSocketChannel)">setSocketOptions</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/nio/channels/AsynchronousSocketChannel.html?is-external=true" title="class or interface in java.nio.channels">AsynchronousSocketChannel</a>&nbsp;socket)</code>
+<div class="block">Process the specified connection.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#setSocketProperties(org.apache.tomcat.util.net.SocketProperties)">setSocketProperties</a></strong>(<a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html" title="class in org.apache.tomcat.util.net">SocketProperties</a>&nbsp;socketProperties)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#setSSLContext(javax.net.ssl.SSLContext)">setSSLContext</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/javax/net/ssl/SSLContext.html?is-external=true" title="class or interface in javax.net.ssl">SSLContext</a>&nbsp;c)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#setUseCaches(boolean)">setUseCaches</a></strong>(boolean&nbsp;useCaches)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#setUseComet(boolean)">setUseComet</a></strong>(boolean&nbsp;useComet)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#setUseSendfile(boolean)">setUseSendfile</a></strong>(boolean&nbsp;useSendfile)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#shutdownExecutor()">shutdownExecutor</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#startInline()">startInline</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#startInternal()">startInternal</a></strong>()</code>
+<div class="block">Start the NIO endpoint, creating acceptor, poller threads.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#stopInternal()">stopInternal</a></strong>()</code>
+<div class="block">Stop the endpoint.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#unbind()">unbind</a></strong>()</code>
+<div class="block">Deallocate NIO memory pools, and close server socket.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/javax/net/ssl/KeyManager.html?is-external=true" title="class or interface in javax.net.ssl">KeyManager</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.html#wrap(javax.net.ssl.KeyManager[])">wrap</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/javax/net/ssl/KeyManager.html?is-external=true" title="class or interface in javax.net.ssl">KeyManager</a>[]&nbsp;managers)</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.tomcat.util.net.AbstractEndpoint">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.tomcat.util.net.<a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a></h3>
+<code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#configureUseServerCipherSuitesOrder(javax.net.ssl.SSLEngine)">configureUseServerCipherSuitesOrder</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#countDownConnection()">countDownConnection</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#countUpOrAwaitConnection()">countUpOrAwaitConnection</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#createExecutor()">createExecutor</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#destroy()">destroy</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#executeNonBlockingDispatches(org.apache.tomcat.util.net.SocketWrapper)">executeNonBlockingDispatches</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getAcceptorThreadCount()">getAcceptorThreadCount</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getAcceptorThreadPriority()">getAcceptorThreadPriority</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getAddress()">getAddress</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getAlgorithm()">getAlgorithm</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getAllowUnsafeLegacyRenegotiation()">getAllowUnsafeLegacyRenegotiation</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getAsyncTimeout()">getAsyncTimeout</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getAttribute(java.lang.String)">getAttribute</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getBacklog()">getBacklog</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getBindOnInit()">getBindOnInit</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getCiphers()">getCiphers</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getClientAuth()">getClientAuth</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getConnectionCount()">getConnectionCount</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getCrlFile()">getCrlFile</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getCurrentThreadCount()">getCurrentThreadCount</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getCurrentThreadsBusy()">getCurrentThreadsBusy</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getDaemon()">getDaemon</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getExecutor()">getExecutor</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getExecutorTerminationTimeoutMillis()">getExecutorTerminationTimeoutMillis</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getKeepAliveTimeout()">getKeepAliveTimeout</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getKeyAlias()">getKeyAlias</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getKeyPass()">getKeyPass</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getKeystoreFile()">getKeystoreFile</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getKeystorePass()">getKeystorePass</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getKeystoreProvider()">getKeystoreProvider</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getKeystoreType()">getKeystoreType</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getMaxConnections()">getMaxConnections</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getMaxHeaderCount()">getMaxHeaderCount</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getMaxKeepAliveRequests()">getMaxKeepAliveRequests</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getMaxThreads()">getMaxThreads</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getMaxThreadsExecutor(boolean)">getMaxThreadsExecutor</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getMinSpareThreads()">getMinSpareThreads</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getName()">getName</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getPort()">getPort</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getProperty(java.lang.String)">getProperty</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getSessionCacheSize()">getSessionCacheSize</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getSessionTimeout()">getSessionTimeout</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getSocketProperties()">getSocketProperties</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getSoLinger()">getSoLinger</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getSoTimeout()">getSoTimeout</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getSslEnabledProtocolsArray()">getSslEnabledProtocolsArray</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getSslProtocol()">getSslProtocol</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getTcpNoDelay()">getTcpNoDelay</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getThreadPriority()">getThreadPriority</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getTrustManagerClassName()">getTrustManagerClassName</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getTrustMaxCertLength()">getTrustMaxCertLength</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getTruststoreAlgorithm()">getTruststoreAlgorithm</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getTruststoreFile()">getTruststoreFile</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getTruststorePass()">getTruststorePass</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getTruststoreProvider()">getTruststoreProvider</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getTruststoreType()">getTruststoreType</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getUseServerCipherSuitesOrder()">getUseServerCipherSuitesOrder</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#handleExceptionWithDelay(int)">handleExceptionWithDelay</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#init()">init</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#initializeConnectionLatch()">initializeConnectionLatch</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#isPaused()">isPaused</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#isRunning()">isRunning</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#isSSLEnabled()">isSSLEnabled</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#pause()">pause</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#releaseConnectionLatch()">releaseConnectionLatch</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#resume()">resume</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setAcceptorThreadCount(int)">setAcceptorThreadCount</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setAcceptorThreadPriority(int)">setAcceptorThreadPriority</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setAddress(java.net.InetAddress)">setAddress</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setAlgorithm(java.lang.String)">setAlgorithm</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setAllowUnsafeLegacyRenegotiation(java.lang.String)">setAllowUnsafeLegacyRenegotiation</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setAsyncTimeout(org.apache.tomcat.util.net.AbstractEndpoint.AsyncTimeout)">setAsyncTimeout</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setAttribute(java.lang.String,%20java.lang.Object)">setAttribute</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setBacklog(int)">setBacklog</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setBindOnInit(boolean)">setBindOnInit</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setCiphers(java.lang.String)">setCiphers</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setClientAuth(java.lang.String)">setClientAuth</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setCrlFile(java.lang.String)">setCrlFile</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setDaemon(boolean)">setDaemon</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setExecutor(java.util.concurrent.Executor)">setExecutor</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setExecutorTerminationTimeoutMillis(long)">setExecutorTerminationTimeoutMillis</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setKeepAliveTimeout(int)">setKeepAliveTimeout</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setKeyAlias(java.lang.String)">setKeyAlias</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setKeyPass(java.lang.String)">setKeyPass</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setKeystoreFile(java.lang.String)">setKeystoreFile</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setKeystorePass(java.lang.String)">setKeystorePass</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setKeystoreProvider(java.lang.String)">setKeystoreProvider</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setKeystoreType(java.lang.String)">setKeystoreType</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setMaxConnections(int)">setMaxConnections</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setMaxHeaderCount(int)">setMaxHeaderCount</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setMaxKeepAliveRequests(int)">setMaxKeepAliveRequests</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setMaxThreads(int)">setMaxThreads</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setMinSpareThreads(int)">setMinSpareThreads</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setName(java.lang.String)">setName</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setPort(int)">setPort</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setProperty(java.lang.String,%20java.lang.String)">setProperty</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setSessionCacheSize(java.lang.String)">setSessionCacheSize</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setSessionTimeout(java.lang.String)">setSessionTimeout</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setSoLinger(int)">setSoLinger</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setSoTimeout(int)">setSoTimeout</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setSSLEnabled(boolean)">setSSLEnabled</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setSslEnabledProtocols(java.lang.String)">setSslEnabledProtocols</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setSslProtocol(java.lang.String)">setSslProtocol</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setTcpNoDelay(boolean)">setTcpNoDelay</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setThreadPriority(int)">setThreadPriority</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setTrustManagerClassName(java.lang.String)">setTrustManagerClassName</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setTrustMaxCertLength(java.lang.String)">setTrustMaxCertLength</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setTruststoreAlgorithm(java.lang.String)">setTruststoreAlgorithm</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setTruststoreFile(java.lang.String)">setTruststoreFile</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setTruststorePass(java.lang.String)">setTruststorePass</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setTruststoreProvider(java.lang.String)">setTruststoreProvider</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setTruststoreType(java.lang.String)">setTruststoreType</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#setUseServerCipherSuitesOrder(java.lang.String)">setUseServerCipherSuitesOrder</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#start()">start</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#startAcceptorThreads()">startAcceptorThreads</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#stop()">stop</a>, <a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#unlockAccept()">unlockAccept</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="Nio2Endpoint()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>Nio2Endpoint</h4>
+<pre>public&nbsp;Nio2Endpoint()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setUseCaches(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setUseCaches</h4>
+<pre>public&nbsp;void&nbsp;setUseCaches(boolean&nbsp;useCaches)</pre>
+</li>
+</ul>
+<a name="getUseCaches()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUseCaches</h4>
+<pre>public&nbsp;boolean&nbsp;getUseCaches()</pre>
+</li>
+</ul>
+<a name="setPollerThreadPriority(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPollerThreadPriority</h4>
+<pre>public&nbsp;void&nbsp;setPollerThreadPriority(int&nbsp;pollerThreadPriority)</pre>
+</li>
+</ul>
+<a name="getPollerThreadPriority()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPollerThreadPriority</h4>
+<pre>public&nbsp;int&nbsp;getPollerThreadPriority()</pre>
+</li>
+</ul>
+<a name="setHandler(org.apache.tomcat.util.net.Nio2Endpoint.Handler)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setHandler</h4>
+<pre>public&nbsp;void&nbsp;setHandler(<a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.Handler.html" title="interface in org.apache.tomcat.util.net">Nio2Endpoint.Handler</a>&nbsp;handler)</pre>
+</li>
+</ul>
+<a name="getHandler()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHandler</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.Handler.html" title="interface in org.apache.tomcat.util.net">Nio2Endpoint.Handler</a>&nbsp;getHandler()</pre>
+</li>
+</ul>
+<a name="setUseComet(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setUseComet</h4>
+<pre>public&nbsp;void&nbsp;setUseComet(boolean&nbsp;useComet)</pre>
+</li>
+</ul>
+<a name="getUseComet()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUseComet</h4>
+<pre>public&nbsp;boolean&nbsp;getUseComet()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getUseComet()">getUseComet</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="getUseCometTimeout()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUseCometTimeout</h4>
+<pre>public&nbsp;boolean&nbsp;getUseCometTimeout()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getUseCometTimeout()">getUseCometTimeout</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="getUsePolling()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUsePolling</h4>
+<pre>public&nbsp;boolean&nbsp;getUsePolling()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getUsePolling()">getUsePolling</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="setSocketProperties(org.apache.tomcat.util.net.SocketProperties)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSocketProperties</h4>
+<pre>public&nbsp;void&nbsp;setSocketProperties(<a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html" title="class in org.apache.tomcat.util.net">SocketProperties</a>&nbsp;socketProperties)</pre>
+</li>
+</ul>
+<a name="setUseSendfile(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setUseSendfile</h4>
+<pre>public&nbsp;void&nbsp;setUseSendfile(boolean&nbsp;useSendfile)</pre>
+</li>
+</ul>
+<a name="getDeferAccept()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDeferAccept</h4>
+<pre>public&nbsp;boolean&nbsp;getDeferAccept()</pre>
+<div class="block">Is deferAccept supported?</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getDeferAccept()">getDeferAccept</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="setOomParachute(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOomParachute</h4>
+<pre>public&nbsp;void&nbsp;setOomParachute(int&nbsp;oomParachute)</pre>
+</li>
+</ul>
+<a name="setOomParachuteData(byte[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOomParachuteData</h4>
+<pre>public&nbsp;void&nbsp;setOomParachuteData(byte[]&nbsp;oomParachuteData)</pre>
+</li>
+</ul>
+<a name="getSSLContext()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSSLContext</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/javax/net/ssl/SSLContext.html?is-external=true" title="class or interface in javax.net.ssl">SSLContext</a>&nbsp;getSSLContext()</pre>
+</li>
+</ul>
+<a name="setSSLContext(javax.net.ssl.SSLContext)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSSLContext</h4>
+<pre>public&nbsp;void&nbsp;setSSLContext(<a href="http://docs.oracle.com/javase/7/docs/api/javax/net/ssl/SSLContext.html?is-external=true" title="class or interface in javax.net.ssl">SSLContext</a>&nbsp;c)</pre>
+</li>
+</ul>
+<a name="getLocalPort()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLocalPort</h4>
+<pre>public&nbsp;int&nbsp;getLocalPort()</pre>
+<div class="block">Port in use.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getLocalPort()">getLocalPort</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="getCiphersUsed()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCiphersUsed</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;getCiphersUsed()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getCiphersUsed()">getCiphersUsed</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;</code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>The ciphers in use by this Endpoint</dd></dl>
+</li>
+</ul>
+<a name="checkParachute()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>checkParachute</h4>
+<pre>protected&nbsp;void&nbsp;checkParachute()</pre>
+</li>
+</ul>
+<a name="reclaimParachute(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reclaimParachute</h4>
+<pre>protected&nbsp;boolean&nbsp;reclaimParachute(boolean&nbsp;force)</pre>
+</li>
+</ul>
+<a name="releaseCaches()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>releaseCaches</h4>
+<pre>protected&nbsp;void&nbsp;releaseCaches()</pre>
+</li>
+</ul>
+<a name="getKeepAliveCount()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getKeepAliveCount</h4>
+<pre>public&nbsp;int&nbsp;getKeepAliveCount()</pre>
+<div class="block">Number of keepalive sockets.</div>
+</li>
+</ul>
+<a name="bind()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>bind</h4>
+<pre>public&nbsp;void&nbsp;bind()
+          throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<div class="block">Initialize the endpoint.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#bind()">bind</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd></dl>
+</li>
+</ul>
+<a name="wrap(javax.net.ssl.KeyManager[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>wrap</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/javax/net/ssl/KeyManager.html?is-external=true" title="class or interface in javax.net.ssl">KeyManager</a>[]&nbsp;wrap(<a href="http://docs.oracle.com/javase/7/docs/api/javax/net/ssl/KeyManager.html?is-external=true" title="class or interface in javax.net.ssl">KeyManager</a>[]&nbsp;managers)</pre>
+</li>
+</ul>
+<a name="startInternal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>startInternal</h4>
+<pre>public&nbsp;void&nbsp;startInternal()
+                   throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<div class="block">Start the NIO endpoint, creating acceptor, poller threads.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#startInternal()">startInternal</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd></dl>
+</li>
+</ul>
+<a name="stopInternal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>stopInternal</h4>
+<pre>public&nbsp;void&nbsp;stopInternal()</pre>
+<div class="block">Stop the endpoint. This will cause all processing threads to stop.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#stopInternal()">stopInternal</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="unbind()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>unbind</h4>
+<pre>public&nbsp;void&nbsp;unbind()
+            throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<div class="block">Deallocate NIO memory pools, and close server socket.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#unbind()">unbind</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd></dl>
+</li>
+</ul>
+<a name="shutdownExecutor()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>shutdownExecutor</h4>
+<pre>public&nbsp;void&nbsp;shutdownExecutor()</pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#shutdownExecutor()">shutdownExecutor</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="getWriteBufSize()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWriteBufSize</h4>
+<pre>public&nbsp;int&nbsp;getWriteBufSize()</pre>
+</li>
+</ul>
+<a name="getReadBufSize()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getReadBufSize</h4>
+<pre>public&nbsp;int&nbsp;getReadBufSize()</pre>
+</li>
+</ul>
+<a name="getUseSendfile()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUseSendfile</h4>
+<pre>public&nbsp;boolean&nbsp;getUseSendfile()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getUseSendfile()">getUseSendfile</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="getOomParachute()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOomParachute</h4>
+<pre>public&nbsp;int&nbsp;getOomParachute()</pre>
+</li>
+</ul>
+<a name="getOomParachuteData()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOomParachuteData</h4>
+<pre>public&nbsp;byte[]&nbsp;getOomParachuteData()</pre>
+</li>
+</ul>
+<a name="createAcceptor()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createAcceptor</h4>
+<pre>protected&nbsp;<a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.Acceptor.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint.Acceptor</a>&nbsp;createAcceptor()</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#createAcceptor()">AbstractEndpoint</a></code></strong></div>
+<div class="block">Hook to allow Endpoints to provide a specific Acceptor implementation.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#createAcceptor()">createAcceptor</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="setSocketOptions(java.nio.channels.AsynchronousSocketChannel)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSocketOptions</h4>
+<pre>protected&nbsp;boolean&nbsp;setSocketOptions(<a href="http://docs.oracle.com/javase/7/docs/api/java/nio/channels/AsynchronousSocketChannel.html?is-external=true" title="class or interface in java.nio.channels">AsynchronousSocketChannel</a>&nbsp;socket)</pre>
+<div class="block">Process the specified connection.</div>
+</li>
+</ul>
+<a name="createSSLEngine()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createSSLEngine</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/javax/net/ssl/SSLEngine.html?is-external=true" title="class or interface in javax.net.ssl">SSLEngine</a>&nbsp;createSSLEngine()</pre>
+</li>
+</ul>
+<a name="isWorkerAvailable()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isWorkerAvailable</h4>
+<pre>protected&nbsp;boolean&nbsp;isWorkerAvailable()</pre>
+<div class="block">Returns true if a worker thread is available for processing.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>boolean</dd></dl>
+</li>
+</ul>
+<a name="processSocket(org.apache.tomcat.util.net.SocketWrapper, org.apache.tomcat.util.net.SocketStatus, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>processSocket</h4>
+<pre>public&nbsp;void&nbsp;processSocket(<a href="../../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;&nbsp;socketWrapper,
+                 <a href="../../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net">SocketStatus</a>&nbsp;socketStatus,
+                 boolean&nbsp;dispatch)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#processSocket(org.apache.tomcat.util.net.SocketWrapper,%20org.apache.tomcat.util.net.SocketStatus,%20boolean)">AbstractEndpoint</a></code></strong></div>
+<div class="block">Process the given SocketWrapper with the given status. Used to trigger
+ processing as if the Poller (for those endpoints that have one)
+ selected the socket.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#processSocket(org.apache.tomcat.util.net.SocketWrapper,%20org.apache.tomcat.util.net.SocketStatus,%20boolean)">processSocket</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;</code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>socketWrapper</code> - The socket wrapper to process</dd><dd><code>socketStatus</code> - The input status to the processing</dd><dd><code>dispatch</code> - Should the processing be performed on a new
+                          container thread</dd></dl>
+</li>
+</ul>
+<a name="processSocket0(org.apache.tomcat.util.net.SocketWrapper, org.apache.tomcat.util.net.SocketStatus, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>processSocket0</h4>
+<pre>protected&nbsp;boolean&nbsp;processSocket0(<a href="../../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;&nbsp;socketWrapper,
+                     <a href="../../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net">SocketStatus</a>&nbsp;status,
+                     boolean&nbsp;dispatch)</pre>
+</li>
+</ul>
+<a name="closeSocket(org.apache.tomcat.util.net.SocketWrapper, org.apache.tomcat.util.net.SocketStatus)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>closeSocket</h4>
+<pre>public&nbsp;void&nbsp;closeSocket(<a href="../../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;&nbsp;socket,
+               <a href="../../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net">SocketStatus</a>&nbsp;status)</pre>
+</li>
+</ul>
+<a name="getLog()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLog</h4>
+<pre>protected&nbsp;<a href="../../../../../org/apache/juli/logging/Log.html" title="interface in org.apache.juli.logging">Log</a>&nbsp;getLog()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html#getLog()">getLog</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="addTimeout(org.apache.tomcat.util.net.SocketWrapper)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addTimeout</h4>
+<pre>public&nbsp;void&nbsp;addTimeout(<a href="../../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;&nbsp;socket)</pre>
+</li>
+</ul>
+<a name="removeTimeout(org.apache.tomcat.util.net.SocketWrapper)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeTimeout</h4>
+<pre>public&nbsp;boolean&nbsp;removeTimeout(<a href="../../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;&nbsp;socket)</pre>
+</li>
+</ul>
+<a name="startInline()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>startInline</h4>
+<pre>public static&nbsp;void&nbsp;startInline()</pre>
+</li>
+</ul>
+<a name="endInline()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>endInline</h4>
+<pre>public static&nbsp;void&nbsp;endInline()</pre>
+</li>
+</ul>
+<a name="isInline()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isInline</h4>
+<pre>public static&nbsp;boolean&nbsp;isInline()</pre>
+</li>
+</ul>
+<a name="awaitBytes(org.apache.tomcat.util.net.SocketWrapper)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>awaitBytes</h4>
+<pre>public&nbsp;void&nbsp;awaitBytes(<a href="../../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net">Nio2Channel</a>&gt;&nbsp;socket)</pre>
+</li>
+</ul>
+<a name="processSendfile(org.apache.tomcat.util.net.Nio2Endpoint.Nio2SocketWrapper)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>processSendfile</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.SendfileState.html" title="enum in org.apache.tomcat.util.net">Nio2Endpoint.SendfileState</a>&nbsp;processSendfile(<a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.Nio2SocketWrapper.html" title="class in org.apache.tomcat.util.net">Nio2Endpoint.Nio2SocketWrapper</a>&nbsp;socket)</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/tomcat/util/net/Nio2Channel.html" title="class in org.apache.tomcat.util.net"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/tomcat/util/net/Nio2Endpoint.Acceptor.html" title="class in org.apache.tomcat.util.net"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/tomcat/util/net/Nio2Endpoint.html" target="_top">Frames</a></li>
+<li><a href="Nio2Endpoint.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_org.apache.tomcat.util.net.AbstractEndpoint">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

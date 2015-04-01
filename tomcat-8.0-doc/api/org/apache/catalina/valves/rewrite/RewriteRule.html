@@ -1,0 +1,1733 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RewriteRule (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="RewriteRule (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteMap.html" title="interface in org.apache.catalina.valves.rewrite"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteValve.html" title="class in org.apache.catalina.valves.rewrite"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/catalina/valves/rewrite/RewriteRule.html" target="_top">Frames</a></li>
+<li><a href="RewriteRule.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.valves.rewrite</div>
+<h2 title="Class RewriteRule" class="title">Class RewriteRule</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.valves.rewrite.RewriteRule</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="strong">RewriteRule</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#chain">chain</a></strong></code>
+<div class="block">This flag chains the current rule with the next rule (which itself
+  can be chained with the following rule, etc.).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../org/apache/catalina/valves/rewrite/RewriteCond.html" title="class in org.apache.catalina.valves.rewrite">RewriteCond</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#conditions">conditions</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#cookie">cookie</a></strong></code>
+<div class="block">This sets a cookie on the client's browser.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#cookieDomain">cookieDomain</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#cookieHttpOnly">cookieHttpOnly</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#cookieLifetime">cookieLifetime</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#cookieName">cookieName</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#cookiePath">cookiePath</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ThreadLocal.html?is-external=true" title="class or interface in java.lang">ThreadLocal</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#cookieResult">cookieResult</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#cookieSecure">cookieSecure</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../../org/apache/catalina/valves/rewrite/Substitution.html" title="class in org.apache.catalina.valves.rewrite">Substitution</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#cookieSubstitution">cookieSubstitution</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#cookieValue">cookieValue</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#env">env</a></strong></code>
+<div class="block">This forces a request attribute named VAR to be set to the value VAL,
+  where VAL can contain regexp back references $N and %N which will be
+  expanded.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#envName">envName</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ThreadLocal.html?is-external=true" title="class or interface in java.lang">ThreadLocal</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#envResult">envResult</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="../../../../../org/apache/catalina/valves/rewrite/Substitution.html" title="class in org.apache.catalina.valves.rewrite">Substitution</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#envSubstitution">envSubstitution</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#envValue">envValue</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#forbidden">forbidden</a></strong></code>
+<div class="block">This forces the current URL to be forbidden, i.e., it immediately sends
+  back a HTTP response of 403 (FORBIDDEN).</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#gone">gone</a></strong></code>
+<div class="block">This forces the current URL to be gone, i.e., it immediately sends
+  back a HTTP response of 410 (GONE).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#host">host</a></strong></code>
+<div class="block">Host.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#last">last</a></strong></code>
+<div class="block">Stop the rewriting process here and don't apply any more rewriting
+  rules.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#next">next</a></strong></code>
+<div class="block">Re-run the rewriting process (starting again with the first rewriting
+  rule).</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#nocase">nocase</a></strong></code>
+<div class="block">This makes the Pattern case-insensitive, i.e., there is no difference
+  between 'A-Z' and 'a-z' when Pattern is matched against the current
+  URL.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#noescape">noescape</a></strong></code>
+<div class="block">This flag keeps mod_rewrite from applying the usual URI escaping rules
+  to the result of a rewrite.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#nosubreq">nosubreq</a></strong></code>
+<div class="block">This flag forces the rewriting engine to skip a rewriting rule if the
+  current request is an internal sub-request.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ThreadLocal.html?is-external=true" title="class or interface in java.lang">ThreadLocal</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex">Pattern</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#pattern">pattern</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#patternString">patternString</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#qsappend">qsappend</a></strong></code>
+<div class="block">This flag forces the rewriting engine to append a query string part in
+  the substitution string to the existing one instead of replacing it.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#redirect">redirect</a></strong></code>
+<div class="block">Prefix Substitution with http://thishost[:thisport]/ (which makes the
+  new URL a URI) to force a external redirection.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#redirectCode">redirectCode</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#skip">skip</a></strong></code>
+<div class="block">This flag forces the rewriting engine to skip the next num rules in
+  sequence when the current rule matches.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../org/apache/catalina/valves/rewrite/Substitution.html" title="class in org.apache.catalina.valves.rewrite">Substitution</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#substitution">substitution</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#substitutionString">substitutionString</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#type">type</a></strong></code>
+<div class="block">Force the MIME-type of the target file to be MIME-type.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#typeValue">typeValue</a></strong></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#RewriteRule()">RewriteRule</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#addCondition(org.apache.catalina.valves.rewrite.RewriteCond)">addCondition</a></strong>(<a href="../../../../../org/apache/catalina/valves/rewrite/RewriteCond.html" title="class in org.apache.catalina.valves.rewrite">RewriteCond</a>&nbsp;condition)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#addEnvName(java.lang.String)">addEnvName</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;envName)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#addEnvValue(java.lang.String)">addEnvValue</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;envValue)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/CharSequence.html?is-external=true" title="class or interface in java.lang">CharSequence</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#evaluate(java.lang.CharSequence,%20org.apache.catalina.valves.rewrite.Resolver)">evaluate</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/CharSequence.html?is-external=true" title="class or interface in java.lang">CharSequence</a>&nbsp;url,
+        <a href="../../../../../org/apache/catalina/valves/rewrite/Resolver.html" title="class in org.apache.catalina.valves.rewrite">Resolver</a>&nbsp;resolver)</code>
+<div class="block">Evaluate the rule based on the context</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteCond.html" title="class in org.apache.catalina.valves.rewrite">RewriteCond</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#getConditions()">getConditions</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#getCookieDomain()">getCookieDomain</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#getCookieLifetime()">getCookieLifetime</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#getCookieName()">getCookieName</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#getCookiePath()">getCookiePath</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#getCookieResult()">getCookieResult</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#getCookieValue()">getCookieValue</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#getEnvName(int)">getEnvName</a></strong>(int&nbsp;i)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#getEnvResult(int)">getEnvResult</a></strong>(int&nbsp;i)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#getEnvSize()">getEnvSize</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#getEnvValue(int)">getEnvValue</a></strong>(int&nbsp;i)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#getPatternString()">getPatternString</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#getRedirectCode()">getRedirectCode</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#getSkip()">getSkip</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/catalina/valves/rewrite/Substitution.html" title="class in org.apache.catalina.valves.rewrite">Substitution</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#getSubstitution()">getSubstitution</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#getSubstitutionString()">getSubstitutionString</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#getTypeValue()">getTypeValue</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#isChain()">isChain</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#isCookie()">isCookie</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#isCookieHttpOnly()">isCookieHttpOnly</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#isCookieSecure()">isCookieSecure</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#isEnv()">isEnv</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#isForbidden()">isForbidden</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#isGone()">isGone</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#isHost()">isHost</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#isLast()">isLast</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#isNext()">isNext</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#isNocase()">isNocase</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#isNoescape()">isNoescape</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#isNosubreq()">isNosubreq</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#isQsappend()">isQsappend</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#isRedirect()">isRedirect</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#isType()">isType</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#parse(java.util.Map)">parse</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../../org/apache/catalina/valves/rewrite/RewriteMap.html" title="interface in org.apache.catalina.valves.rewrite">RewriteMap</a>&gt;&nbsp;maps)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setChain(boolean)">setChain</a></strong>(boolean&nbsp;chain)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setConditions(org.apache.catalina.valves.rewrite.RewriteCond[])">setConditions</a></strong>(<a href="../../../../../org/apache/catalina/valves/rewrite/RewriteCond.html" title="class in org.apache.catalina.valves.rewrite">RewriteCond</a>[]&nbsp;conditions)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setCookie(boolean)">setCookie</a></strong>(boolean&nbsp;cookie)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setCookieDomain(java.lang.String)">setCookieDomain</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;cookieDomain)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setCookieHttpOnly(boolean)">setCookieHttpOnly</a></strong>(boolean&nbsp;cookieHttpOnly)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setCookieLifetime(int)">setCookieLifetime</a></strong>(int&nbsp;cookieLifetime)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setCookieName(java.lang.String)">setCookieName</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;cookieName)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setCookiePath(java.lang.String)">setCookiePath</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;cookiePath)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setCookieSecure(boolean)">setCookieSecure</a></strong>(boolean&nbsp;cookieSecure)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setCookieValue(java.lang.String)">setCookieValue</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;cookieValue)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setEnv(boolean)">setEnv</a></strong>(boolean&nbsp;env)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setForbidden(boolean)">setForbidden</a></strong>(boolean&nbsp;forbidden)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setGone(boolean)">setGone</a></strong>(boolean&nbsp;gone)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setHost(boolean)">setHost</a></strong>(boolean&nbsp;host)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setLast(boolean)">setLast</a></strong>(boolean&nbsp;last)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setNext(boolean)">setNext</a></strong>(boolean&nbsp;next)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setNocase(boolean)">setNocase</a></strong>(boolean&nbsp;nocase)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setNoescape(boolean)">setNoescape</a></strong>(boolean&nbsp;noescape)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setNosubreq(boolean)">setNosubreq</a></strong>(boolean&nbsp;nosubreq)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setPatternString(java.lang.String)">setPatternString</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;patternString)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setQsappend(boolean)">setQsappend</a></strong>(boolean&nbsp;qsappend)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setRedirect(boolean)">setRedirect</a></strong>(boolean&nbsp;redirect)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setRedirectCode(int)">setRedirectCode</a></strong>(int&nbsp;redirectCode)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setSkip(int)">setSkip</a></strong>(int&nbsp;skip)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setSubstitution(org.apache.catalina.valves.rewrite.Substitution)">setSubstitution</a></strong>(<a href="../../../../../org/apache/catalina/valves/rewrite/Substitution.html" title="class in org.apache.catalina.valves.rewrite">Substitution</a>&nbsp;substitution)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setSubstitutionString(java.lang.String)">setSubstitutionString</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;substitutionString)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setType(boolean)">setType</a></strong>(boolean&nbsp;type)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#setTypeValue(java.lang.String)">setTypeValue</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;typeValue)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteRule.html#toString()">toString</a></strong>()</code>
+<div class="block">String representation.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="conditions">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>conditions</h4>
+<pre>protected&nbsp;<a href="../../../../../org/apache/catalina/valves/rewrite/RewriteCond.html" title="class in org.apache.catalina.valves.rewrite">RewriteCond</a>[] conditions</pre>
+</li>
+</ul>
+<a name="pattern">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>pattern</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ThreadLocal.html?is-external=true" title="class or interface in java.lang">ThreadLocal</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex">Pattern</a>&gt; pattern</pre>
+</li>
+</ul>
+<a name="substitution">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>substitution</h4>
+<pre>protected&nbsp;<a href="../../../../../org/apache/catalina/valves/rewrite/Substitution.html" title="class in org.apache.catalina.valves.rewrite">Substitution</a> substitution</pre>
+</li>
+</ul>
+<a name="patternString">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>patternString</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> patternString</pre>
+</li>
+</ul>
+<a name="substitutionString">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>substitutionString</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> substitutionString</pre>
+</li>
+</ul>
+<a name="chain">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>chain</h4>
+<pre>protected&nbsp;boolean chain</pre>
+<div class="block">This flag chains the current rule with the next rule (which itself
+  can be chained with the following rule, etc.). This has the following
+  effect: if a rule matches, then processing continues as usual, i.e.,
+  the flag has no effect. If the rule does not match, then all following
+  chained rules are skipped. For instance, use it to remove the ``.www''
+  part inside a per-directory rule set when you let an external redirect
+  happen (where the ``.www'' part should not to occur!).</div>
+</li>
+</ul>
+<a name="cookie">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cookie</h4>
+<pre>protected&nbsp;boolean cookie</pre>
+<div class="block">This sets a cookie on the client's browser. The cookie's name is
+  specified by NAME and the value is VAL. The domain field is the domain
+  of the cookie, such as '.apache.org',the optional lifetime
+  is the lifetime of the cookie in minutes, and the optional path is the
+  path of the cookie</div>
+</li>
+</ul>
+<a name="cookieName">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cookieName</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> cookieName</pre>
+</li>
+</ul>
+<a name="cookieValue">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cookieValue</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> cookieValue</pre>
+</li>
+</ul>
+<a name="cookieDomain">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cookieDomain</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> cookieDomain</pre>
+</li>
+</ul>
+<a name="cookieLifetime">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cookieLifetime</h4>
+<pre>protected&nbsp;int cookieLifetime</pre>
+</li>
+</ul>
+<a name="cookiePath">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cookiePath</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> cookiePath</pre>
+</li>
+</ul>
+<a name="cookieSecure">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cookieSecure</h4>
+<pre>protected&nbsp;boolean cookieSecure</pre>
+</li>
+</ul>
+<a name="cookieHttpOnly">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cookieHttpOnly</h4>
+<pre>protected&nbsp;boolean cookieHttpOnly</pre>
+</li>
+</ul>
+<a name="cookieSubstitution">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cookieSubstitution</h4>
+<pre>protected&nbsp;<a href="../../../../../org/apache/catalina/valves/rewrite/Substitution.html" title="class in org.apache.catalina.valves.rewrite">Substitution</a> cookieSubstitution</pre>
+</li>
+</ul>
+<a name="cookieResult">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cookieResult</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ThreadLocal.html?is-external=true" title="class or interface in java.lang">ThreadLocal</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt; cookieResult</pre>
+</li>
+</ul>
+<a name="env">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>env</h4>
+<pre>protected&nbsp;boolean env</pre>
+<div class="block">This forces a request attribute named VAR to be set to the value VAL,
+  where VAL can contain regexp back references $N and %N which will be
+  expanded. Multiple env flags are allowed.</div>
+</li>
+</ul>
+<a name="envName">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>envName</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt; envName</pre>
+</li>
+</ul>
+<a name="envValue">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>envValue</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt; envValue</pre>
+</li>
+</ul>
+<a name="envSubstitution">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>envSubstitution</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="../../../../../org/apache/catalina/valves/rewrite/Substitution.html" title="class in org.apache.catalina.valves.rewrite">Substitution</a>&gt; envSubstitution</pre>
+</li>
+</ul>
+<a name="envResult">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>envResult</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ThreadLocal.html?is-external=true" title="class or interface in java.lang">ThreadLocal</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt; envResult</pre>
+</li>
+</ul>
+<a name="forbidden">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>forbidden</h4>
+<pre>protected&nbsp;boolean forbidden</pre>
+<div class="block">This forces the current URL to be forbidden, i.e., it immediately sends
+  back a HTTP response of 403 (FORBIDDEN). Use this flag in conjunction
+  with appropriate RewriteConds to conditionally block some URLs.</div>
+</li>
+</ul>
+<a name="gone">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>gone</h4>
+<pre>protected&nbsp;boolean gone</pre>
+<div class="block">This forces the current URL to be gone, i.e., it immediately sends
+  back a HTTP response of 410 (GONE). Use this flag to mark pages which
+  no longer exist as gone.</div>
+</li>
+</ul>
+<a name="host">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>host</h4>
+<pre>protected&nbsp;boolean host</pre>
+<div class="block">Host. This means this rule and its associated conditions will apply to
+ host, allowing host rewriting (ex: redirecting internally *.foo.com to
+ bar.foo.com).</div>
+</li>
+</ul>
+<a name="last">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>last</h4>
+<pre>protected&nbsp;boolean last</pre>
+<div class="block">Stop the rewriting process here and don't apply any more rewriting
+  rules. This corresponds to the Perl last command or the break command
+  from the C language. Use this flag to prevent the currently rewritten
+  URL from being rewritten further by following rules. For example, use
+  it to rewrite the root-path URL ('/') to a real one, e.g., '/e/www/'.</div>
+</li>
+</ul>
+<a name="next">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>next</h4>
+<pre>protected&nbsp;boolean next</pre>
+<div class="block">Re-run the rewriting process (starting again with the first rewriting
+  rule). Here the URL to match is again not the original URL but the URL
+  from the last rewriting rule. This corresponds to the Perl next
+  command or the continue command from the C language. Use this flag to
+  restart the rewriting process, i.e., to immediately go to the top of
+  the loop. But be careful not to create an infinite loop!</div>
+</li>
+</ul>
+<a name="nocase">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nocase</h4>
+<pre>protected&nbsp;boolean nocase</pre>
+<div class="block">This makes the Pattern case-insensitive, i.e., there is no difference
+  between 'A-Z' and 'a-z' when Pattern is matched against the current
+  URL.</div>
+</li>
+</ul>
+<a name="noescape">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>noescape</h4>
+<pre>protected&nbsp;boolean noescape</pre>
+<div class="block">This flag keeps mod_rewrite from applying the usual URI escaping rules
+  to the result of a rewrite. Ordinarily, special characters (such as
+  '%', '$', ';', and so on) will be escaped into their hexcode
+  equivalents ('%25', '%24', and '%3B', respectively); this flag
+  prevents this from being done. This allows percent symbols to appear
+  in the output, as in
+    RewriteRule /foo/(.*) /bar?arg=P1\%3d$1 [R,NE]
+    which would turn '/foo/zed' into a safe request for '/bar?arg=P1=zed'.</div>
+</li>
+</ul>
+<a name="nosubreq">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nosubreq</h4>
+<pre>protected&nbsp;boolean nosubreq</pre>
+<div class="block">This flag forces the rewriting engine to skip a rewriting rule if the
+  current request is an internal sub-request. For instance, sub-requests
+  occur internally in Apache when mod_include tries to find out
+  information about possible directory default files (index.xxx). On
+  sub-requests it is not always useful and even sometimes causes a
+  failure to if the complete set of rules are applied. Use this flag to
+  exclude some rules. Use the following rule for your decision: whenever
+  you prefix some URLs with CGI-scripts to force them to be processed by
+  the CGI-script, the chance is high that you will run into problems (or
+  even overhead) on sub-requests. In these cases, use this flag.</div>
+</li>
+</ul>
+<a name="qsappend">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>qsappend</h4>
+<pre>protected&nbsp;boolean qsappend</pre>
+<div class="block">This flag forces the rewriting engine to append a query string part in
+  the substitution string to the existing one instead of replacing it.
+  Use this when you want to add more data to the query string via
+  a rewrite rule.</div>
+</li>
+</ul>
+<a name="redirect">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>redirect</h4>
+<pre>protected&nbsp;boolean redirect</pre>
+<div class="block">Prefix Substitution with http://thishost[:thisport]/ (which makes the
+  new URL a URI) to force a external redirection. If no code is given
+  a HTTP response of 302 (MOVED TEMPORARILY) is used. If you want to
+  use other response codes in the range 300-400 just specify them as
+  a number or use one of the following symbolic names: temp (default),
+  permanent, seeother. Use it for rules which should canonicalize the
+  URL and give it back to the client, e.g., translate ``/~'' into ``/u/''
+  or always append a slash to /u/user, etc. Note: When you use this flag,
+  make sure that the substitution field is a valid URL! If not, you are
+  redirecting to an invalid location! And remember that this flag itself
+  only prefixes the URL with http://thishost[:thisport]/, rewriting
+  continues. Usually you also want to stop and do the redirection
+  immediately. To stop the rewriting you also have to provide the
+  'L' flag.</div>
+</li>
+</ul>
+<a name="redirectCode">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>redirectCode</h4>
+<pre>protected&nbsp;int redirectCode</pre>
+</li>
+</ul>
+<a name="skip">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>skip</h4>
+<pre>protected&nbsp;int skip</pre>
+<div class="block">This flag forces the rewriting engine to skip the next num rules in
+  sequence when the current rule matches. Use this to make pseudo
+  if-then-else constructs: The last rule of the then-clause becomes
+  skip=N where N is the number of rules in the else-clause.
+  (This is not the same as the 'chain|C' flag!)</div>
+</li>
+</ul>
+<a name="type">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>type</h4>
+<pre>protected&nbsp;boolean type</pre>
+<div class="block">Force the MIME-type of the target file to be MIME-type. For instance,
+  this can be used to setup the content-type based on some conditions.
+  For example, the following snippet allows .php files to be displayed
+  by mod_php if they are called with the .phps extension:
+  RewriteRule ^(.+\.php)s$ $1 [T=application/x-httpd-php-source]</div>
+</li>
+</ul>
+<a name="typeValue">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>typeValue</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> typeValue</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="RewriteRule()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>RewriteRule</h4>
+<pre>public&nbsp;RewriteRule()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="parse(java.util.Map)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>parse</h4>
+<pre>public&nbsp;void&nbsp;parse(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../../org/apache/catalina/valves/rewrite/RewriteMap.html" title="interface in org.apache.catalina.valves.rewrite">RewriteMap</a>&gt;&nbsp;maps)</pre>
+</li>
+</ul>
+<a name="addCondition(org.apache.catalina.valves.rewrite.RewriteCond)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addCondition</h4>
+<pre>public&nbsp;void&nbsp;addCondition(<a href="../../../../../org/apache/catalina/valves/rewrite/RewriteCond.html" title="class in org.apache.catalina.valves.rewrite">RewriteCond</a>&nbsp;condition)</pre>
+</li>
+</ul>
+<a name="evaluate(java.lang.CharSequence, org.apache.catalina.valves.rewrite.Resolver)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>evaluate</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/CharSequence.html?is-external=true" title="class or interface in java.lang">CharSequence</a>&nbsp;evaluate(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/CharSequence.html?is-external=true" title="class or interface in java.lang">CharSequence</a>&nbsp;url,
+                    <a href="../../../../../org/apache/catalina/valves/rewrite/Resolver.html" title="class in org.apache.catalina.valves.rewrite">Resolver</a>&nbsp;resolver)</pre>
+<div class="block">Evaluate the rule based on the context</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>null if no rewrite took place</dd></dl>
+</li>
+</ul>
+<a name="toString()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toString</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<div class="block">String representation.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="isChain()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isChain</h4>
+<pre>public&nbsp;boolean&nbsp;isChain()</pre>
+</li>
+</ul>
+<a name="setChain(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setChain</h4>
+<pre>public&nbsp;void&nbsp;setChain(boolean&nbsp;chain)</pre>
+</li>
+</ul>
+<a name="getConditions()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getConditions</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/catalina/valves/rewrite/RewriteCond.html" title="class in org.apache.catalina.valves.rewrite">RewriteCond</a>[]&nbsp;getConditions()</pre>
+</li>
+</ul>
+<a name="setConditions(org.apache.catalina.valves.rewrite.RewriteCond[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setConditions</h4>
+<pre>public&nbsp;void&nbsp;setConditions(<a href="../../../../../org/apache/catalina/valves/rewrite/RewriteCond.html" title="class in org.apache.catalina.valves.rewrite">RewriteCond</a>[]&nbsp;conditions)</pre>
+</li>
+</ul>
+<a name="isCookie()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isCookie</h4>
+<pre>public&nbsp;boolean&nbsp;isCookie()</pre>
+</li>
+</ul>
+<a name="setCookie(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCookie</h4>
+<pre>public&nbsp;void&nbsp;setCookie(boolean&nbsp;cookie)</pre>
+</li>
+</ul>
+<a name="getCookieName()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCookieName</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getCookieName()</pre>
+</li>
+</ul>
+<a name="setCookieName(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCookieName</h4>
+<pre>public&nbsp;void&nbsp;setCookieName(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;cookieName)</pre>
+</li>
+</ul>
+<a name="getCookieValue()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCookieValue</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getCookieValue()</pre>
+</li>
+</ul>
+<a name="setCookieValue(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCookieValue</h4>
+<pre>public&nbsp;void&nbsp;setCookieValue(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;cookieValue)</pre>
+</li>
+</ul>
+<a name="getCookieResult()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCookieResult</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getCookieResult()</pre>
+</li>
+</ul>
+<a name="isEnv()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isEnv</h4>
+<pre>public&nbsp;boolean&nbsp;isEnv()</pre>
+</li>
+</ul>
+<a name="getEnvSize()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getEnvSize</h4>
+<pre>public&nbsp;int&nbsp;getEnvSize()</pre>
+</li>
+</ul>
+<a name="setEnv(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setEnv</h4>
+<pre>public&nbsp;void&nbsp;setEnv(boolean&nbsp;env)</pre>
+</li>
+</ul>
+<a name="getEnvName(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getEnvName</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getEnvName(int&nbsp;i)</pre>
+</li>
+</ul>
+<a name="addEnvName(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addEnvName</h4>
+<pre>public&nbsp;void&nbsp;addEnvName(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;envName)</pre>
+</li>
+</ul>
+<a name="getEnvValue(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getEnvValue</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getEnvValue(int&nbsp;i)</pre>
+</li>
+</ul>
+<a name="addEnvValue(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addEnvValue</h4>
+<pre>public&nbsp;void&nbsp;addEnvValue(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;envValue)</pre>
+</li>
+</ul>
+<a name="getEnvResult(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getEnvResult</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getEnvResult(int&nbsp;i)</pre>
+</li>
+</ul>
+<a name="isForbidden()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isForbidden</h4>
+<pre>public&nbsp;boolean&nbsp;isForbidden()</pre>
+</li>
+</ul>
+<a name="setForbidden(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setForbidden</h4>
+<pre>public&nbsp;void&nbsp;setForbidden(boolean&nbsp;forbidden)</pre>
+</li>
+</ul>
+<a name="isGone()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isGone</h4>
+<pre>public&nbsp;boolean&nbsp;isGone()</pre>
+</li>
+</ul>
+<a name="setGone(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setGone</h4>
+<pre>public&nbsp;void&nbsp;setGone(boolean&nbsp;gone)</pre>
+</li>
+</ul>
+<a name="isLast()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isLast</h4>
+<pre>public&nbsp;boolean&nbsp;isLast()</pre>
+</li>
+</ul>
+<a name="setLast(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLast</h4>
+<pre>public&nbsp;void&nbsp;setLast(boolean&nbsp;last)</pre>
+</li>
+</ul>
+<a name="isNext()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isNext</h4>
+<pre>public&nbsp;boolean&nbsp;isNext()</pre>
+</li>
+</ul>
+<a name="setNext(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setNext</h4>
+<pre>public&nbsp;void&nbsp;setNext(boolean&nbsp;next)</pre>
+</li>
+</ul>
+<a name="isNocase()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isNocase</h4>
+<pre>public&nbsp;boolean&nbsp;isNocase()</pre>
+</li>
+</ul>
+<a name="setNocase(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setNocase</h4>
+<pre>public&nbsp;void&nbsp;setNocase(boolean&nbsp;nocase)</pre>
+</li>
+</ul>
+<a name="isNoescape()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isNoescape</h4>
+<pre>public&nbsp;boolean&nbsp;isNoescape()</pre>
+</li>
+</ul>
+<a name="setNoescape(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setNoescape</h4>
+<pre>public&nbsp;void&nbsp;setNoescape(boolean&nbsp;noescape)</pre>
+</li>
+</ul>
+<a name="isNosubreq()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isNosubreq</h4>
+<pre>public&nbsp;boolean&nbsp;isNosubreq()</pre>
+</li>
+</ul>
+<a name="setNosubreq(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setNosubreq</h4>
+<pre>public&nbsp;void&nbsp;setNosubreq(boolean&nbsp;nosubreq)</pre>
+</li>
+</ul>
+<a name="isQsappend()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isQsappend</h4>
+<pre>public&nbsp;boolean&nbsp;isQsappend()</pre>
+</li>
+</ul>
+<a name="setQsappend(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setQsappend</h4>
+<pre>public&nbsp;void&nbsp;setQsappend(boolean&nbsp;qsappend)</pre>
+</li>
+</ul>
+<a name="isRedirect()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isRedirect</h4>
+<pre>public&nbsp;boolean&nbsp;isRedirect()</pre>
+</li>
+</ul>
+<a name="setRedirect(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRedirect</h4>
+<pre>public&nbsp;void&nbsp;setRedirect(boolean&nbsp;redirect)</pre>
+</li>
+</ul>
+<a name="getRedirectCode()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRedirectCode</h4>
+<pre>public&nbsp;int&nbsp;getRedirectCode()</pre>
+</li>
+</ul>
+<a name="setRedirectCode(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRedirectCode</h4>
+<pre>public&nbsp;void&nbsp;setRedirectCode(int&nbsp;redirectCode)</pre>
+</li>
+</ul>
+<a name="getSkip()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSkip</h4>
+<pre>public&nbsp;int&nbsp;getSkip()</pre>
+</li>
+</ul>
+<a name="setSkip(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSkip</h4>
+<pre>public&nbsp;void&nbsp;setSkip(int&nbsp;skip)</pre>
+</li>
+</ul>
+<a name="getSubstitution()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSubstitution</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/catalina/valves/rewrite/Substitution.html" title="class in org.apache.catalina.valves.rewrite">Substitution</a>&nbsp;getSubstitution()</pre>
+</li>
+</ul>
+<a name="setSubstitution(org.apache.catalina.valves.rewrite.Substitution)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSubstitution</h4>
+<pre>public&nbsp;void&nbsp;setSubstitution(<a href="../../../../../org/apache/catalina/valves/rewrite/Substitution.html" title="class in org.apache.catalina.valves.rewrite">Substitution</a>&nbsp;substitution)</pre>
+</li>
+</ul>
+<a name="isType()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isType</h4>
+<pre>public&nbsp;boolean&nbsp;isType()</pre>
+</li>
+</ul>
+<a name="setType(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setType</h4>
+<pre>public&nbsp;void&nbsp;setType(boolean&nbsp;type)</pre>
+</li>
+</ul>
+<a name="getTypeValue()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTypeValue</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getTypeValue()</pre>
+</li>
+</ul>
+<a name="setTypeValue(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTypeValue</h4>
+<pre>public&nbsp;void&nbsp;setTypeValue(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;typeValue)</pre>
+</li>
+</ul>
+<a name="getPatternString()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPatternString</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getPatternString()</pre>
+</li>
+</ul>
+<a name="setPatternString(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPatternString</h4>
+<pre>public&nbsp;void&nbsp;setPatternString(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;patternString)</pre>
+</li>
+</ul>
+<a name="getSubstitutionString()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSubstitutionString</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getSubstitutionString()</pre>
+</li>
+</ul>
+<a name="setSubstitutionString(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSubstitutionString</h4>
+<pre>public&nbsp;void&nbsp;setSubstitutionString(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;substitutionString)</pre>
+</li>
+</ul>
+<a name="isHost()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isHost</h4>
+<pre>public&nbsp;boolean&nbsp;isHost()</pre>
+</li>
+</ul>
+<a name="setHost(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setHost</h4>
+<pre>public&nbsp;void&nbsp;setHost(boolean&nbsp;host)</pre>
+</li>
+</ul>
+<a name="getCookieDomain()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCookieDomain</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getCookieDomain()</pre>
+</li>
+</ul>
+<a name="setCookieDomain(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCookieDomain</h4>
+<pre>public&nbsp;void&nbsp;setCookieDomain(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;cookieDomain)</pre>
+</li>
+</ul>
+<a name="getCookieLifetime()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCookieLifetime</h4>
+<pre>public&nbsp;int&nbsp;getCookieLifetime()</pre>
+</li>
+</ul>
+<a name="setCookieLifetime(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCookieLifetime</h4>
+<pre>public&nbsp;void&nbsp;setCookieLifetime(int&nbsp;cookieLifetime)</pre>
+</li>
+</ul>
+<a name="getCookiePath()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCookiePath</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getCookiePath()</pre>
+</li>
+</ul>
+<a name="setCookiePath(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCookiePath</h4>
+<pre>public&nbsp;void&nbsp;setCookiePath(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;cookiePath)</pre>
+</li>
+</ul>
+<a name="isCookieSecure()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isCookieSecure</h4>
+<pre>public&nbsp;boolean&nbsp;isCookieSecure()</pre>
+</li>
+</ul>
+<a name="setCookieSecure(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCookieSecure</h4>
+<pre>public&nbsp;void&nbsp;setCookieSecure(boolean&nbsp;cookieSecure)</pre>
+</li>
+</ul>
+<a name="isCookieHttpOnly()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isCookieHttpOnly</h4>
+<pre>public&nbsp;boolean&nbsp;isCookieHttpOnly()</pre>
+</li>
+</ul>
+<a name="setCookieHttpOnly(boolean)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setCookieHttpOnly</h4>
+<pre>public&nbsp;void&nbsp;setCookieHttpOnly(boolean&nbsp;cookieHttpOnly)</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteMap.html" title="interface in org.apache.catalina.valves.rewrite"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/catalina/valves/rewrite/RewriteValve.html" title="class in org.apache.catalina.valves.rewrite"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/catalina/valves/rewrite/RewriteRule.html" target="_top">Frames</a></li>
+<li><a href="RewriteRule.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

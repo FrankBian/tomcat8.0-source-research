@@ -1,0 +1,300 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>org.apache.catalina.core (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="org.apache.catalina.core (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li class="navBarCell1Rev">Package</li>
+<li>Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/connector/package-summary.html">Prev Package</a></li>
+<li><a href="../../../../org/apache/catalina/deploy/package-summary.html">Next Package</a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/core/package-summary.html" target="_top">Frames</a></li>
+<li><a href="package-summary.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<div class="header">
+<h1 title="Package" class="title">Package&nbsp;org.apache.catalina.core</h1>
+</div>
+<div class="contentContainer">
+<ul class="blockList">
+<li class="blockList">
+<table class="packageSummary" border="0" cellpadding="3" cellspacing="0" summary="Class Summary table, listing classes, and an explanation">
+<caption><span>Class Summary</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Class</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/AccessLogAdapter.html" title="class in org.apache.catalina.core">AccessLogAdapter</a></td>
+<td class="colLast">
+<div class="block">A helper class that wraps several AccessLog instances.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/ApplicationContext.html" title="class in org.apache.catalina.core">ApplicationContext</a></td>
+<td class="colLast">
+<div class="block">Standard implementation of <code>ServletContext</code> that represents
+ a web application's execution environment.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/ApplicationContextFacade.html" title="class in org.apache.catalina.core">ApplicationContextFacade</a></td>
+<td class="colLast">
+<div class="block">Facade object which masks the internal <code>ApplicationContext</code>
+ object from the web application.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/ApplicationFilterConfig.html" title="class in org.apache.catalina.core">ApplicationFilterConfig</a></td>
+<td class="colLast">
+<div class="block">Implementation of a <code>javax.servlet.FilterConfig</code> useful in
+ managing the filter instances instantiated when a web application
+ is first started.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/ApplicationFilterFactory.html" title="class in org.apache.catalina.core">ApplicationFilterFactory</a></td>
+<td class="colLast">
+<div class="block">Factory for the creation and caching of Filters and creation
+ of Filter Chains.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/ApplicationFilterRegistration.html" title="class in org.apache.catalina.core">ApplicationFilterRegistration</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/ApplicationPart.html" title="class in org.apache.catalina.core">ApplicationPart</a></td>
+<td class="colLast">
+<div class="block">Adaptor to allow <a href="../../../../org/apache/tomcat/util/http/fileupload/FileItem.html" title="interface in org.apache.tomcat.util.http.fileupload"><code>FileItem</code></a> objects generated by the package renamed
+ commons-upload to be used by the Servlet 3.0 upload API that expects
+ <a href="../../../../../servletapi/javax/servlet/http/Part.html?is-external=true" title="class or interface in javax.servlet.http"><code>Part</code></a>s.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/ApplicationServletRegistration.html" title="class in org.apache.catalina.core">ApplicationServletRegistration</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/ApplicationSessionCookieConfig.html" title="class in org.apache.catalina.core">ApplicationSessionCookieConfig</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/AprLifecycleListener.html" title="class in org.apache.catalina.core">AprLifecycleListener</a></td>
+<td class="colLast">
+<div class="block">Implementation of <code>LifecycleListener</code> that will init and
+ and destroy APR.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html" title="class in org.apache.catalina.core">AsyncContextImpl</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/AsyncListenerWrapper.html" title="class in org.apache.catalina.core">AsyncListenerWrapper</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/Constants.html" title="class in org.apache.catalina.core">Constants</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/ContainerBase.html" title="class in org.apache.catalina.core">ContainerBase</a></td>
+<td class="colLast">
+<div class="block">Abstract implementation of the <b>Container</b> interface, providing common
+ functionality required by nearly every implementation.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/DefaultInstanceManager.html" title="class in org.apache.catalina.core">DefaultInstanceManager</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/JreMemoryLeakPreventionListener.html" title="class in org.apache.catalina.core">JreMemoryLeakPreventionListener</a></td>
+<td class="colLast">
+<div class="block">Provide a workaround for known places where the Java Runtime environment can
+ cause a memory leak or lock files.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/NamingContextListener.html" title="class in org.apache.catalina.core">NamingContextListener</a></td>
+<td class="colLast">
+<div class="block">Helper class used to initialize and populate the JNDI context associated
+ with each context and server.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/StandardContext.html" title="class in org.apache.catalina.core">StandardContext</a></td>
+<td class="colLast">
+<div class="block">Standard implementation of the <b>Context</b> interface.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/StandardEngine.html" title="class in org.apache.catalina.core">StandardEngine</a></td>
+<td class="colLast">
+<div class="block">Standard implementation of the <b>Engine</b> interface.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/StandardEngine.AccessLogListener.html" title="class in org.apache.catalina.core">StandardEngine.AccessLogListener</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/StandardEngine.NoopAccessLog.html" title="class in org.apache.catalina.core">StandardEngine.NoopAccessLog</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/StandardHost.html" title="class in org.apache.catalina.core">StandardHost</a></td>
+<td class="colLast">
+<div class="block">Standard implementation of the <b>Host</b> interface.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/StandardPipeline.html" title="class in org.apache.catalina.core">StandardPipeline</a></td>
+<td class="colLast">
+<div class="block">Standard implementation of a processing <b>Pipeline</b> that will invoke
+ a series of Valves that have been configured to be called in order.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/StandardServer.html" title="class in org.apache.catalina.core">StandardServer</a></td>
+<td class="colLast">
+<div class="block">Standard implementation of the <b>Server</b> interface, available for use
+ (but not required) when deploying and starting Catalina.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/StandardService.html" title="class in org.apache.catalina.core">StandardService</a></td>
+<td class="colLast">
+<div class="block">Standard implementation of the <code>Service</code> interface.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/StandardThreadExecutor.html" title="class in org.apache.catalina.core">StandardThreadExecutor</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/StandardWrapper.html" title="class in org.apache.catalina.core">StandardWrapper</a></td>
+<td class="colLast">
+<div class="block">Standard implementation of the <b>Wrapper</b> interface that represents
+ an individual servlet definition.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/StandardWrapperFacade.html" title="class in org.apache.catalina.core">StandardWrapperFacade</a></td>
+<td class="colLast">
+<div class="block">Facade for the <b>StandardWrapper</b> object.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../org/apache/catalina/core/ThreadLocalLeakPreventionListener.html" title="class in org.apache.catalina.core">ThreadLocalLeakPreventionListener</a></td>
+<td class="colLast">
+<div class="block">
+ A <a href="../../../../org/apache/catalina/LifecycleListener.html" title="interface in org.apache.catalina"><code>LifecycleListener</code></a> that triggers the renewal of threads in Executor
+ pools when a <a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina"><code>Context</code></a> is being stopped to avoid thread-local related
+ memory leaks.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li class="navBarCell1Rev">Package</li>
+<li>Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/connector/package-summary.html">Prev Package</a></li>
+<li><a href="../../../../org/apache/catalina/deploy/package-summary.html">Next Package</a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/core/package-summary.html" target="_top">Frames</a></li>
+<li><a href="package-summary.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

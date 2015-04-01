@@ -1,0 +1,964 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>McastServiceImpl (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="McastServiceImpl (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/catalina/tribes/membership/McastService.html" title="class in org.apache.catalina.tribes.membership"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.ReceiverThread.html" title="class in org.apache.catalina.tribes.membership"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/catalina/tribes/membership/McastServiceImpl.html" target="_top">Frames</a></li>
+<li><a href="McastServiceImpl.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.tribes.membership</div>
+<h2 title="Class McastServiceImpl" class="title">Class McastServiceImpl</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.tribes.membership.McastServiceImpl</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="strong">McastServiceImpl</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">A <b>membership</b> implementation using simple multicast.
+ This is the representation of a multicast membership service.
+ This class is responsible for maintaining a list of active cluster nodes in the cluster.
+ If a node fails to send out a heartbeat, the node will be dismissed.
+ This is the low level implementation that handles the multicasting sockets.
+ Need to fix this, could use java.nio and only need one thread to send and receive, or
+ just use a timeout on the receive</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested_class_summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Class and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.ReceiverThread.html" title="class in org.apache.catalina.tribes.membership">McastServiceImpl.ReceiverThread</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.RecoveryThread.html" title="class in org.apache.catalina.tribes.membership">McastServiceImpl.RecoveryThread</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.SenderThread.html" title="class in org.apache.catalina.tribes.membership">McastServiceImpl.SenderThread</a></strong></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#address">address</a></strong></code>
+<div class="block">The multicast address</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#doRunReceiver">doRunReceiver</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#doRunSender">doRunSender</a></strong></code>
+<div class="block">Internal flag used for the listen thread that listens to the multicasting socket.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#executor">executor</a></strong></code>
+<div class="block">Dont interrupt the sender/receiver thread, but pass off to an executor</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#expiredMutex">expiredMutex</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#localLoopbackDisabled">localLoopbackDisabled</a></strong></code>
+<div class="block">disable/enable local loopback message</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#MAX_PACKET_SIZE">MAX_PACKET_SIZE</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#mcastBindAddress">mcastBindAddress</a></strong></code>
+<div class="block">bind address</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#mcastSoTimeout">mcastSoTimeout</a></strong></code>
+<div class="block">Read timeout on the mcast socket</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#mcastTTL">mcastTTL</a></strong></code>
+<div class="block">Time to live for the multicast packets that are being sent out</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html" title="class in org.apache.catalina.tribes.membership">MemberImpl</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#member">member</a></strong></code>
+<div class="block">The local member that we intend to broad cast over and over again</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../org/apache/catalina/tribes/membership/Membership.html" title="class in org.apache.catalina.tribes.membership">Membership</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#membership">membership</a></strong></code>
+<div class="block">The membership, used so that we calculate memberships when they arrive or don't arrive</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../../org/apache/catalina/tribes/MessageListener.html" title="interface in org.apache.catalina.tribes">MessageListener</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#msgservice">msgservice</a></strong></code>
+<div class="block">The actual listener for broadcast callbacks</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#port">port</a></strong></code>
+<div class="block">The multicast port</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/net/DatagramPacket.html?is-external=true" title="class or interface in java.net">DatagramPacket</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#receivePacket">receivePacket</a></strong></code>
+<div class="block">Reuse the receivePacket, no need to create a new one everytime</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.ReceiverThread.html" title="class in org.apache.catalina.tribes.membership">McastServiceImpl.ReceiverThread</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#receiver">receiver</a></strong></code>
+<div class="block">Thread to listen for pings</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#recoveryCounter">recoveryCounter</a></strong></code>
+<div class="block">nr of times the system has to fail before a recovery is initiated</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#recoveryEnabled">recoveryEnabled</a></strong></code>
+<div class="block">Add the ability to turn on/off recovery</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#recoverySleepTime">recoverySleepTime</a></strong></code>
+<div class="block">The time the recovery thread sleeps between recovery attempts</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.SenderThread.html" title="class in org.apache.catalina.tribes.membership">McastServiceImpl.SenderThread</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#sender">sender</a></strong></code>
+<div class="block">Thread to send pings</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#sendFrequency">sendFrequency</a></strong></code>
+<div class="block">How often to we send out a broadcast saying we are alive, must be smaller than timeToExpiration</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/net/DatagramPacket.html?is-external=true" title="class or interface in java.net">DatagramPacket</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#sendPacket">sendPacket</a></strong></code>
+<div class="block">Reuse the sendPacket, no need to create a new one everytime</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../../org/apache/catalina/tribes/MembershipListener.html" title="interface in org.apache.catalina.tribes">MembershipListener</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#service">service</a></strong></code>
+<div class="block">The actual listener, for callback when stuff goes down</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/net/MulticastSocket.html?is-external=true" title="class or interface in java.net">MulticastSocket</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#socket">socket</a></strong></code>
+<div class="block">Socket that we intend to listen to</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#startLevel">startLevel</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#timeToExpiration">timeToExpiration</a></strong></code>
+<div class="block">The time it takes for a member to expire.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#McastServiceImpl(org.apache.catalina.tribes.membership.MemberImpl,%20long,%20long,%20int,%20java.net.InetAddress,%20java.net.InetAddress,%20int,%20int,%20org.apache.catalina.tribes.MembershipListener,%20org.apache.catalina.tribes.MessageListener,%20boolean)">McastServiceImpl</a></strong>(<a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html" title="class in org.apache.catalina.tribes.membership">MemberImpl</a>&nbsp;member,
+                long&nbsp;sendFrequency,
+                long&nbsp;expireTime,
+                int&nbsp;port,
+                <a href="http://docs.oracle.com/javase/7/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;bind,
+                <a href="http://docs.oracle.com/javase/7/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;mcastAddress,
+                int&nbsp;ttl,
+                int&nbsp;soTimeout,
+                <a href="../../../../../org/apache/catalina/tribes/MembershipListener.html" title="interface in org.apache.catalina.tribes">MembershipListener</a>&nbsp;service,
+                <a href="../../../../../org/apache/catalina/tribes/MessageListener.html" title="interface in org.apache.catalina.tribes">MessageListener</a>&nbsp;msgservice,
+                boolean&nbsp;localLoopbackDisabled)</code>
+<div class="block">Create a new mcast service impl</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#checkExpired()">checkExpired</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#getRecoveryCounter()">getRecoveryCounter</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#getRecoverySleepTime()">getRecoverySleepTime</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#getServiceStartTime()">getServiceStartTime</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#init()">init</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#isRecoveryEnabled()">isRecoveryEnabled</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#receive()">receive</a></strong>()</code>
+<div class="block">Receive a datagram packet, locking wait</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#send(boolean)">send</a></strong>(boolean&nbsp;checkexpired)</code>
+<div class="block">Send a ping</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#send(boolean,%20java.net.DatagramPacket)">send</a></strong>(boolean&nbsp;checkexpired,
+    <a href="http://docs.oracle.com/javase/7/docs/api/java/net/DatagramPacket.html?is-external=true" title="class or interface in java.net">DatagramPacket</a>&nbsp;packet)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#setRecoveryCounter(int)">setRecoveryCounter</a></strong>(int&nbsp;recoveryCounter)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#setRecoveryEnabled(boolean)">setRecoveryEnabled</a></strong>(boolean&nbsp;recoveryEnabled)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#setRecoverySleepTime(long)">setRecoverySleepTime</a></strong>(long&nbsp;recoverySleepTime)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#setupSocket()">setupSocket</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#start(int)">start</a></strong>(int&nbsp;level)</code>
+<div class="block">Start the service</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.html#stop(int)">stop</a></strong>(int&nbsp;level)</code>
+<div class="block">Stops the service</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="MAX_PACKET_SIZE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>MAX_PACKET_SIZE</h4>
+<pre>protected static final&nbsp;int MAX_PACKET_SIZE</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.catalina.tribes.membership.McastServiceImpl.MAX_PACKET_SIZE">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="doRunSender">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>doRunSender</h4>
+<pre>protected volatile&nbsp;boolean doRunSender</pre>
+<div class="block">Internal flag used for the listen thread that listens to the multicasting socket.</div>
+</li>
+</ul>
+<a name="doRunReceiver">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>doRunReceiver</h4>
+<pre>protected volatile&nbsp;boolean doRunReceiver</pre>
+</li>
+</ul>
+<a name="startLevel">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>startLevel</h4>
+<pre>protected&nbsp;int startLevel</pre>
+</li>
+</ul>
+<a name="socket">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>socket</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/net/MulticastSocket.html?is-external=true" title="class or interface in java.net">MulticastSocket</a> socket</pre>
+<div class="block">Socket that we intend to listen to</div>
+</li>
+</ul>
+<a name="member">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>member</h4>
+<pre>protected final&nbsp;<a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html" title="class in org.apache.catalina.tribes.membership">MemberImpl</a> member</pre>
+<div class="block">The local member that we intend to broad cast over and over again</div>
+</li>
+</ul>
+<a name="address">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>address</h4>
+<pre>protected final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a> address</pre>
+<div class="block">The multicast address</div>
+</li>
+</ul>
+<a name="port">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>port</h4>
+<pre>protected final&nbsp;int port</pre>
+<div class="block">The multicast port</div>
+</li>
+</ul>
+<a name="timeToExpiration">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>timeToExpiration</h4>
+<pre>protected final&nbsp;long timeToExpiration</pre>
+<div class="block">The time it takes for a member to expire.</div>
+</li>
+</ul>
+<a name="sendFrequency">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sendFrequency</h4>
+<pre>protected final&nbsp;long sendFrequency</pre>
+<div class="block">How often to we send out a broadcast saying we are alive, must be smaller than timeToExpiration</div>
+</li>
+</ul>
+<a name="sendPacket">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sendPacket</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/net/DatagramPacket.html?is-external=true" title="class or interface in java.net">DatagramPacket</a> sendPacket</pre>
+<div class="block">Reuse the sendPacket, no need to create a new one everytime</div>
+</li>
+</ul>
+<a name="receivePacket">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>receivePacket</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/net/DatagramPacket.html?is-external=true" title="class or interface in java.net">DatagramPacket</a> receivePacket</pre>
+<div class="block">Reuse the receivePacket, no need to create a new one everytime</div>
+</li>
+</ul>
+<a name="membership">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>membership</h4>
+<pre>protected&nbsp;<a href="../../../../../org/apache/catalina/tribes/membership/Membership.html" title="class in org.apache.catalina.tribes.membership">Membership</a> membership</pre>
+<div class="block">The membership, used so that we calculate memberships when they arrive or don't arrive</div>
+</li>
+</ul>
+<a name="service">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>service</h4>
+<pre>protected final&nbsp;<a href="../../../../../org/apache/catalina/tribes/MembershipListener.html" title="interface in org.apache.catalina.tribes">MembershipListener</a> service</pre>
+<div class="block">The actual listener, for callback when stuff goes down</div>
+</li>
+</ul>
+<a name="msgservice">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>msgservice</h4>
+<pre>protected final&nbsp;<a href="../../../../../org/apache/catalina/tribes/MessageListener.html" title="interface in org.apache.catalina.tribes">MessageListener</a> msgservice</pre>
+<div class="block">The actual listener for broadcast callbacks</div>
+</li>
+</ul>
+<a name="receiver">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>receiver</h4>
+<pre>protected&nbsp;<a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.ReceiverThread.html" title="class in org.apache.catalina.tribes.membership">McastServiceImpl.ReceiverThread</a> receiver</pre>
+<div class="block">Thread to listen for pings</div>
+</li>
+</ul>
+<a name="sender">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sender</h4>
+<pre>protected&nbsp;<a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.SenderThread.html" title="class in org.apache.catalina.tribes.membership">McastServiceImpl.SenderThread</a> sender</pre>
+<div class="block">Thread to send pings</div>
+</li>
+</ul>
+<a name="mcastTTL">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>mcastTTL</h4>
+<pre>protected final&nbsp;int mcastTTL</pre>
+<div class="block">Time to live for the multicast packets that are being sent out</div>
+</li>
+</ul>
+<a name="mcastSoTimeout">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>mcastSoTimeout</h4>
+<pre>protected&nbsp;int mcastSoTimeout</pre>
+<div class="block">Read timeout on the mcast socket</div>
+</li>
+</ul>
+<a name="mcastBindAddress">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>mcastBindAddress</h4>
+<pre>protected final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a> mcastBindAddress</pre>
+<div class="block">bind address</div>
+</li>
+</ul>
+<a name="recoveryCounter">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>recoveryCounter</h4>
+<pre>protected&nbsp;int recoveryCounter</pre>
+<div class="block">nr of times the system has to fail before a recovery is initiated</div>
+</li>
+</ul>
+<a name="recoverySleepTime">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>recoverySleepTime</h4>
+<pre>protected&nbsp;long recoverySleepTime</pre>
+<div class="block">The time the recovery thread sleeps between recovery attempts</div>
+</li>
+</ul>
+<a name="recoveryEnabled">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>recoveryEnabled</h4>
+<pre>protected&nbsp;boolean recoveryEnabled</pre>
+<div class="block">Add the ability to turn on/off recovery</div>
+</li>
+</ul>
+<a name="executor">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>executor</h4>
+<pre>protected final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ExecutorService.html?is-external=true" title="class or interface in java.util.concurrent">ExecutorService</a> executor</pre>
+<div class="block">Dont interrupt the sender/receiver thread, but pass off to an executor</div>
+</li>
+</ul>
+<a name="localLoopbackDisabled">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>localLoopbackDisabled</h4>
+<pre>protected final&nbsp;boolean localLoopbackDisabled</pre>
+<div class="block">disable/enable local loopback message</div>
+</li>
+</ul>
+<a name="expiredMutex">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>expiredMutex</h4>
+<pre>protected final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a> expiredMutex</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="McastServiceImpl(org.apache.catalina.tribes.membership.MemberImpl, long, long, int, java.net.InetAddress, java.net.InetAddress, int, int, org.apache.catalina.tribes.MembershipListener, org.apache.catalina.tribes.MessageListener, boolean)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>McastServiceImpl</h4>
+<pre>public&nbsp;McastServiceImpl(<a href="../../../../../org/apache/catalina/tribes/membership/MemberImpl.html" title="class in org.apache.catalina.tribes.membership">MemberImpl</a>&nbsp;member,
+                long&nbsp;sendFrequency,
+                long&nbsp;expireTime,
+                int&nbsp;port,
+                <a href="http://docs.oracle.com/javase/7/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;bind,
+                <a href="http://docs.oracle.com/javase/7/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;mcastAddress,
+                int&nbsp;ttl,
+                int&nbsp;soTimeout,
+                <a href="../../../../../org/apache/catalina/tribes/MembershipListener.html" title="interface in org.apache.catalina.tribes">MembershipListener</a>&nbsp;service,
+                <a href="../../../../../org/apache/catalina/tribes/MessageListener.html" title="interface in org.apache.catalina.tribes">MessageListener</a>&nbsp;msgservice,
+                boolean&nbsp;localLoopbackDisabled)
+                 throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Create a new mcast service impl</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>member</code> - - the local member</dd><dd><code>sendFrequency</code> - - the time (ms) in between pings sent out</dd><dd><code>expireTime</code> - - the time (ms) for a member to expire</dd><dd><code>port</code> - - the mcast port</dd><dd><code>bind</code> - - the bind address (not sure this is used yet)</dd><dd><code>mcastAddress</code> - - the mcast address</dd><dd><code>service</code> - - the callback service</dd><dd><code>localLoopbackDisabled</code> - - disable loopbackMode</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="init()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>init</h4>
+<pre>public&nbsp;void&nbsp;init()
+          throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="setupSocket()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setupSocket</h4>
+<pre>protected&nbsp;void&nbsp;setupSocket()
+                    throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="start(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>start</h4>
+<pre>public&nbsp;void&nbsp;start(int&nbsp;level)
+           throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Start the service</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>level</code> - 1 starts the receiver, level 2 starts the sender</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if the service fails to start</dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code> - if the service is already started</dd></dl>
+</li>
+</ul>
+<a name="stop(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>stop</h4>
+<pre>public&nbsp;boolean&nbsp;stop(int&nbsp;level)
+             throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Stops the service</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if the service fails to disconnect from the sockets</dd></dl>
+</li>
+</ul>
+<a name="receive()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>receive</h4>
+<pre>public&nbsp;void&nbsp;receive()
+             throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Receive a datagram packet, locking wait</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="checkExpired()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>checkExpired</h4>
+<pre>protected&nbsp;void&nbsp;checkExpired()</pre>
+</li>
+</ul>
+<a name="send(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>send</h4>
+<pre>public&nbsp;void&nbsp;send(boolean&nbsp;checkexpired)
+          throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Send a ping</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="send(boolean, java.net.DatagramPacket)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>send</h4>
+<pre>public&nbsp;void&nbsp;send(boolean&nbsp;checkexpired,
+        <a href="http://docs.oracle.com/javase/7/docs/api/java/net/DatagramPacket.html?is-external=true" title="class or interface in java.net">DatagramPacket</a>&nbsp;packet)
+          throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="getServiceStartTime()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getServiceStartTime</h4>
+<pre>public&nbsp;long&nbsp;getServiceStartTime()</pre>
+</li>
+</ul>
+<a name="getRecoveryCounter()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRecoveryCounter</h4>
+<pre>public&nbsp;int&nbsp;getRecoveryCounter()</pre>
+</li>
+</ul>
+<a name="isRecoveryEnabled()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isRecoveryEnabled</h4>
+<pre>public&nbsp;boolean&nbsp;isRecoveryEnabled()</pre>
+</li>
+</ul>
+<a name="getRecoverySleepTime()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRecoverySleepTime</h4>
+<pre>public&nbsp;long&nbsp;getRecoverySleepTime()</pre>
+</li>
+</ul>
+<a name="setRecoveryCounter(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRecoveryCounter</h4>
+<pre>public&nbsp;void&nbsp;setRecoveryCounter(int&nbsp;recoveryCounter)</pre>
+</li>
+</ul>
+<a name="setRecoveryEnabled(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRecoveryEnabled</h4>
+<pre>public&nbsp;void&nbsp;setRecoveryEnabled(boolean&nbsp;recoveryEnabled)</pre>
+</li>
+</ul>
+<a name="setRecoverySleepTime(long)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setRecoverySleepTime</h4>
+<pre>public&nbsp;void&nbsp;setRecoverySleepTime(long&nbsp;recoverySleepTime)</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/catalina/tribes/membership/McastService.html" title="class in org.apache.catalina.tribes.membership"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/catalina/tribes/membership/McastServiceImpl.ReceiverThread.html" title="class in org.apache.catalina.tribes.membership"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/catalina/tribes/membership/McastServiceImpl.html" target="_top">Frames</a></li>
+<li><a href="McastServiceImpl.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

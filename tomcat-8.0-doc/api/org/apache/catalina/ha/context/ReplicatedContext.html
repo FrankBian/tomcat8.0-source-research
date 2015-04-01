@@ -1,0 +1,552 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ReplicatedContext (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="ReplicatedContext (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev Class</li>
+<li><a href="../../../../../org/apache/catalina/ha/context/ReplicatedContext.MultiEnumeration.html" title="class in org.apache.catalina.ha.context"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/catalina/ha/context/ReplicatedContext.html" target="_top">Frames</a></li>
+<li><a href="ReplicatedContext.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.ha.context</div>
+<h2 title="Class ReplicatedContext" class="title">Class ReplicatedContext</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../org/apache/catalina/util/LifecycleBase.html" title="class in org.apache.catalina.util">org.apache.catalina.util.LifecycleBase</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../org/apache/catalina/util/LifecycleMBeanBase.html" title="class in org.apache.catalina.util">org.apache.catalina.util.LifecycleMBeanBase</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../org/apache/catalina/core/ContainerBase.html" title="class in org.apache.catalina.core">org.apache.catalina.core.ContainerBase</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../org/apache/catalina/core/StandardContext.html" title="class in org.apache.catalina.core">org.apache.catalina.core.StandardContext</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.ha.context.ReplicatedContext</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://docs.oracle.com/javase/7/docs/api/javax/management/MBeanRegistration.html?is-external=true" title="class or interface in javax.management">MBeanRegistration</a>, <a href="http://docs.oracle.com/javase/7/docs/api/javax/management/NotificationBroadcaster.html?is-external=true" title="class or interface in javax.management">NotificationBroadcaster</a>, <a href="http://docs.oracle.com/javase/7/docs/api/javax/management/NotificationEmitter.html?is-external=true" title="class or interface in javax.management">NotificationEmitter</a>, <a href="../../../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a>, <a href="../../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a>, <a href="../../../../../org/apache/catalina/JmxEnabled.html" title="interface in org.apache.catalina">JmxEnabled</a>, <a href="../../../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a>, <a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapOwner.html" title="interface in org.apache.catalina.tribes.tipis">AbstractReplicatedMap.MapOwner</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">ReplicatedContext</span>
+extends <a href="../../../../../org/apache/catalina/core/StandardContext.html" title="class in org.apache.catalina.core">StandardContext</a>
+implements <a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapOwner.html" title="interface in org.apache.catalina.tribes.tipis">AbstractReplicatedMap.MapOwner</a></pre>
+<dl><dt><span class="strong">Version:</span></dt>
+  <dd>1.0</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested_class_summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Class and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/context/ReplicatedContext.MultiEnumeration.html" title="class in org.apache.catalina.ha.context">ReplicatedContext.MultiEnumeration</a>&lt;<a href="../../../../../org/apache/catalina/ha/context/ReplicatedContext.MultiEnumeration.html" title="type parameter in ReplicatedContext.MultiEnumeration">T</a>&gt;</strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/context/ReplicatedContext.ReplApplContext.html" title="class in org.apache.catalina.ha.context">ReplicatedContext.ReplApplContext</a></strong></code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="nested_classes_inherited_from_class_org.apache.catalina.core.ContainerBase">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from class&nbsp;org.apache.catalina.core.<a href="../../../../../org/apache/catalina/core/ContainerBase.html" title="class in org.apache.catalina.core">ContainerBase</a></h3>
+<code><a href="../../../../../org/apache/catalina/core/ContainerBase.ContainerBackgroundProcessor.html" title="class in org.apache.catalina.core">ContainerBase.ContainerBackgroundProcessor</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.PrivilegedAddChild.html" title="class in org.apache.catalina.core">ContainerBase.PrivilegedAddChild</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/context/ReplicatedContext.html#DEFAULT_REPL_TIMEOUT">DEFAULT_REPL_TIMEOUT</a></strong></code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.core.StandardContext">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.catalina.core.<a href="../../../../../org/apache/catalina/core/StandardContext.html" title="class in org.apache.catalina.core">StandardContext</a></h3>
+<code><a href="../../../../../org/apache/catalina/core/StandardContext.html#allowCasualMultipartParsing">allowCasualMultipartParsing</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#context">context</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#DEFAULT_NAMING_LISTENER">DEFAULT_NAMING_LISTENER</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#manager">manager</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#threadBindingListener">threadBindingListener</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.core.ContainerBase">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.catalina.core.<a href="../../../../../org/apache/catalina/core/ContainerBase.html" title="class in org.apache.catalina.core">ContainerBase</a></h3>
+<code><a href="../../../../../org/apache/catalina/core/ContainerBase.html#accessLog">accessLog</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#backgroundProcessorDelay">backgroundProcessorDelay</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#children">children</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#cluster">cluster</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#listeners">listeners</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#logger">logger</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#logName">logName</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#name">name</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#parent">parent</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#parentClassLoader">parentClassLoader</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#pipeline">pipeline</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#sm">sm</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#startChildren">startChildren</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#startStopExecutor">startStopExecutor</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#support">support</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.util.LifecycleMBeanBase">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.catalina.util.<a href="../../../../../org/apache/catalina/util/LifecycleMBeanBase.html" title="class in org.apache.catalina.util">LifecycleMBeanBase</a></h3>
+<code><a href="../../../../../org/apache/catalina/util/LifecycleMBeanBase.html#mserver">mserver</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.Context">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.apache.catalina.<a href="../../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a></h3>
+<code><a href="../../../../../org/apache/catalina/Context.html#ADD_WELCOME_FILE_EVENT">ADD_WELCOME_FILE_EVENT</a>, <a href="../../../../../org/apache/catalina/Context.html#CHANGE_SESSION_ID_EVENT">CHANGE_SESSION_ID_EVENT</a>, <a href="../../../../../org/apache/catalina/Context.html#CLEAR_WELCOME_FILES_EVENT">CLEAR_WELCOME_FILES_EVENT</a>, <a href="../../../../../org/apache/catalina/Context.html#REMOVE_WELCOME_FILE_EVENT">REMOVE_WELCOME_FILE_EVENT</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.Container">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.apache.catalina.<a href="../../../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a></h3>
+<code><a href="../../../../../org/apache/catalina/Container.html#ADD_CHILD_EVENT">ADD_CHILD_EVENT</a>, <a href="../../../../../org/apache/catalina/Container.html#ADD_VALVE_EVENT">ADD_VALVE_EVENT</a>, <a href="../../../../../org/apache/catalina/Container.html#REMOVE_CHILD_EVENT">REMOVE_CHILD_EVENT</a>, <a href="../../../../../org/apache/catalina/Container.html#REMOVE_VALVE_EVENT">REMOVE_VALVE_EVENT</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.Lifecycle">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.apache.catalina.<a href="../../../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a></h3>
+<code><a href="../../../../../org/apache/catalina/Lifecycle.html#AFTER_DESTROY_EVENT">AFTER_DESTROY_EVENT</a>, <a href="../../../../../org/apache/catalina/Lifecycle.html#AFTER_INIT_EVENT">AFTER_INIT_EVENT</a>, <a href="../../../../../org/apache/catalina/Lifecycle.html#AFTER_START_EVENT">AFTER_START_EVENT</a>, <a href="../../../../../org/apache/catalina/Lifecycle.html#AFTER_STOP_EVENT">AFTER_STOP_EVENT</a>, <a href="../../../../../org/apache/catalina/Lifecycle.html#BEFORE_DESTROY_EVENT">BEFORE_DESTROY_EVENT</a>, <a href="../../../../../org/apache/catalina/Lifecycle.html#BEFORE_INIT_EVENT">BEFORE_INIT_EVENT</a>, <a href="../../../../../org/apache/catalina/Lifecycle.html#BEFORE_START_EVENT">BEFORE_START_EVENT</a>, <a href="../../../../../org/apache/catalina/Lifecycle.html#BEFORE_STOP_EVENT">BEFORE_STOP_EVENT</a>, <a href="../../../../../org/apache/catalina/Lifecycle.html#CONFIGURE_START_EVENT">CONFIGURE_START_EVENT</a>, <a href="../../../../../org/apache/catalina/Lifecycle.html#CONFIGURE_STOP_EVENT">CONFIGURE_STOP_EVENT</a>, <a href="../../../../../org/apache/catalina/Lifecycle.html#PERIODIC_EVENT">PERIODIC_EVENT</a>, <a href="../../../../../org/apache/catalina/Lifecycle.html#START_EVENT">START_EVENT</a>, <a href="../../../../../org/apache/catalina/Lifecycle.html#STOP_EVENT">STOP_EVENT</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/catalina/ha/context/ReplicatedContext.html#ReplicatedContext()">ReplicatedContext</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/context/ReplicatedContext.html#getClassLoaders()">getClassLoaders</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/context/ReplicatedContext.html#getMapSendOptions()">getMapSendOptions</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../servletapi/javax/servlet/ServletContext.html?is-external=true" title="class or interface in javax.servlet">ServletContext</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/context/ReplicatedContext.html#getServletContext()">getServletContext</a></strong>()</code>
+<div class="block">Return the servlet context for which this Context is a facade.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/context/ReplicatedContext.html#objectMadePrimary(java.lang.Object,%20java.lang.Object)">objectMadePrimary</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;key,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/context/ReplicatedContext.html#setMapSendOptions(int)">setMapSendOptions</a></strong>(int&nbsp;mapSendOptions)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/context/ReplicatedContext.html#startInternal()">startInternal</a></strong>()</code>
+<div class="block">Start this component and implement the requirements
+ of <a href="../../../../../org/apache/catalina/util/LifecycleBase.html#startInternal()"><code>LifecycleBase.startInternal()</code></a>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/ha/context/ReplicatedContext.html#stopInternal()">stopInternal</a></strong>()</code>
+<div class="block">Stop this component and implement the requirements
+ of <a href="../../../../../org/apache/catalina/util/LifecycleBase.html#stopInternal()"><code>LifecycleBase.stopInternal()</code></a>.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.core.StandardContext">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.core.<a href="../../../../../org/apache/catalina/core/StandardContext.html" title="class in org.apache.catalina.core">StandardContext</a></h3>
+<code><a href="../../../../../org/apache/catalina/core/StandardContext.html#addApplicationEventListener(java.lang.Object)">addApplicationEventListener</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addApplicationLifecycleListener(java.lang.Object)">addApplicationLifecycleListener</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addApplicationListener(java.lang.String)">addApplicationListener</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addApplicationParameter(org.apache.tomcat.util.descriptor.web.ApplicationParameter)">addApplicationParameter</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addChild(org.apache.catalina.Container)">addChild</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addConstraint(org.apache.tomcat.util.descriptor.web.SecurityConstraint)">addConstraint</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addErrorPage(org.apache.tomcat.util.descriptor.web.ErrorPage)">addErrorPage</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addFilterDef(org.apache.tomcat.util.descriptor.web.FilterDef)">addFilterDef</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addFilterMap(org.apache.tomcat.util.descriptor.web.FilterMap)">addFilterMap</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addFilterMapBefore(org.apache.tomcat.util.descriptor.web.FilterMap)">addFilterMapBefore</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addInstanceListener(java.lang.String)">addInstanceListener</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addLocaleEncodingMappingParameter(java.lang.String,%20java.lang.String)">addLocaleEncodingMappingParameter</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addMessageDestination(org.apache.tomcat.util.descriptor.web.MessageDestination)">addMessageDestination</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addMessageDestinationRef(org.apache.tomcat.util.descriptor.web.MessageDestinationRef)">addMessageDestinationRef</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addMimeMapping(java.lang.String,%20java.lang.String)">addMimeMapping</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addNotificationListener(javax.management.NotificationListener,%20javax.management.NotificationFilter,%20java.lang.Object)">addNotificationListener</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addParameter(java.lang.String,%20java.lang.String)">addParameter</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addPostConstructMethod(java.lang.String,%20java.lang.String)">addPostConstructMethod</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addPreDestroyMethod(java.lang.String,%20java.lang.String)">addPreDestroyMethod</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addRoleMapping(java.lang.String,%20java.lang.String)">addRoleMapping</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addSecurityRole(java.lang.String)">addSecurityRole</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addServletContainerInitializer(javax.servlet.ServletContainerInitializer,%20java.util.Set)">addServletContainerInitializer</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addServletMapping(java.lang.String,%20java.lang.String)">addServletMapping</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addServletMapping(java.lang.String,%20java.lang.String,%20boolean)">addServletMapping</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addServletSecurity(javax.servlet.ServletRegistration.Dynamic,%20javax.servlet.ServletSecurityElement)">addServletSecurity</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addWatchedResource(java.lang.String)">addWatchedResource</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addWelcomeFile(java.lang.String)">addWelcomeFile</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addWrapperLifecycle(java.lang.String)">addWrapperLifecycle</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#addWrapperListener(java.lang.String)">addWrapperListener</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#adjustURLPattern(java.lang.String)">adjustURLPattern</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#backgroundProcess()">backgroundProcess</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#bind(boolean,%20java.lang.ClassLoader)">bind</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#bindThread()">bindThread</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#createWrapper()">createWrapper</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#destroyInternal()">destroyInternal</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#dynamicServletAdded(org.apache.catalina.Wrapper)">dynamicServletAdded</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#dynamicServletCreated(javax.servlet.Servlet)">dynamicServletCreated</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#filterStart()">filterStart</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#filterStop()">filterStop</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findApplicationListeners()">findApplicationListeners</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findApplicationParameters()">findApplicationParameters</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findConstraints()">findConstraints</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findErrorPage(int)">findErrorPage</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findErrorPage(java.lang.String)">findErrorPage</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findErrorPages()">findErrorPages</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findFilterConfig(java.lang.String)">findFilterConfig</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findFilterDef(java.lang.String)">findFilterDef</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findFilterDefs()">findFilterDefs</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findFilterMaps()">findFilterMaps</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findInstanceListeners()">findInstanceListeners</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findMessageDestination(java.lang.String)">findMessageDestination</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findMessageDestinationRef(java.lang.String)">findMessageDestinationRef</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findMessageDestinationRefs()">findMessageDestinationRefs</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findMessageDestinations()">findMessageDestinations</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findMimeMapping(java.lang.String)">findMimeMapping</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findMimeMappings()">findMimeMappings</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findParameter(java.lang.String)">findParameter</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findParameters()">findParameters</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findPostConstructMethod(java.lang.String)">findPostConstructMethod</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findPostConstructMethods()">findPostConstructMethods</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findPreDestroyMethod(java.lang.String)">findPreDestroyMethod</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findPreDestroyMethods()">findPreDestroyMethods</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findRoleMapping(java.lang.String)">findRoleMapping</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findSecurityRole(java.lang.String)">findSecurityRole</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findSecurityRoles()">findSecurityRoles</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findServletMapping(java.lang.String)">findServletMapping</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findServletMappings()">findServletMappings</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findStatusPage(int)">findStatusPage</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findStatusPages()">findStatusPages</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findWatchedResources()">findWatchedResources</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findWelcomeFile(java.lang.String)">findWelcomeFile</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findWelcomeFiles()">findWelcomeFiles</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findWrapperLifecycles()">findWrapperLifecycles</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#findWrapperListeners()">findWrapperListeners</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#fireRequestDestroyEvent(javax.servlet.ServletRequest)">fireRequestDestroyEvent</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#fireRequestInitEvent(javax.servlet.ServletRequest)">fireRequestInitEvent</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getAddWebinfClassesResources()">getAddWebinfClassesResources</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getAllowCasualMultipartParsing()">getAllowCasualMultipartParsing</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getAltDDName()">getAltDDName</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getAntiResourceLocking()">getAntiResourceLocking</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getApplicationEventListeners()">getApplicationEventListeners</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getApplicationLifecycleListeners()">getApplicationLifecycleListeners</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getAuthenticator()">getAuthenticator</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getBaseName()">getBaseName</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getCharset(java.util.Locale)">getCharset</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getCharsetMapper()">getCharsetMapper</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getCharsetMapperClass()">getCharsetMapperClass</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getClearReferencesHttpClientKeepAliveThread()">getClearReferencesHttpClientKeepAliveThread</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getClearReferencesStatic()">getClearReferencesStatic</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getClearReferencesStopThreads()">getClearReferencesStopThreads</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getClearReferencesStopTimerThreads()">getClearReferencesStopTimerThreads</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getComputedFailCtxIfServletStartFails()">getComputedFailCtxIfServletStartFails</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getConfigFile()">getConfigFile</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getConfigured()">getConfigured</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getContainerSciFilter()">getContainerSciFilter</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getCookieProcessor()">getCookieProcessor</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getCookies()">getCookies</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getCopyXML()">getCopyXML</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getCrossContext()">getCrossContext</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getDefaultContextXml()">getDefaultContextXml</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getDefaultWebXml()">getDefaultWebXml</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getDelegate()">getDelegate</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getDenyUncoveredHttpMethods()">getDenyUncoveredHttpMethods</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getDeploymentDescriptor()">getDeploymentDescriptor</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getDisplayName()">getDisplayName</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getDistributable()">getDistributable</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getDocBase()">getDocBase</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getEffectiveMajorVersion()">getEffectiveMajorVersion</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getEffectiveMinorVersion()">getEffectiveMinorVersion</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getEncodedPath()">getEncodedPath</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getErrorCount()">getErrorCount</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getFailCtxIfServletStartFails()">getFailCtxIfServletStartFails</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getFireRequestListenersOnForwards()">getFireRequestListenersOnForwards</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getIgnoreAnnotations()">getIgnoreAnnotations</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getInstanceManager()">getInstanceManager</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getJ2EEApplication()">getJ2EEApplication</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getJ2EEServer()">getJ2EEServer</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getJarScanner()">getJarScanner</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getJavaVMs()">getJavaVMs</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getJndiExceptionOnFailedWrite()">getJndiExceptionOnFailedWrite</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getJspConfigDescriptor()">getJspConfigDescriptor</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getLoader()">getLoader</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getLogEffectiveWebXml()">getLogEffectiveWebXml</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getLoginConfig()">getLoginConfig</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getManager()">getManager</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getMaxTime()">getMaxTime</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getMinTime()">getMinTime</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getNamingContextListener()">getNamingContextListener</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getNamingResources()">getNamingResources</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getNamingToken()">getNamingToken</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getNotificationInfo()">getNotificationInfo</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getObjectNameKeyProperties()">getObjectNameKeyProperties</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getOriginalDocBase()">getOriginalDocBase</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getOverride()">getOverride</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getParentClassLoader()">getParentClassLoader</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getPath()">getPath</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getPaused()">getPaused</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getPreemptiveAuthentication()">getPreemptiveAuthentication</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getPrivileged()">getPrivileged</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getProcessingTime()">getProcessingTime</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getPublicId()">getPublicId</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getRealPath(java.lang.String)">getRealPath</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getReloadable()">getReloadable</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getRenewThreadsWhenStoppingContext()">getRenewThreadsWhenStoppingContext</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getRequestCount()">getRequestCount</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getResourceOnlyServlets()">getResourceOnlyServlets</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getResources()">getResources</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getSendRedirectBody()">getSendRedirectBody</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getServer()">getServer</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getServlets()">getServlets</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getSessionCookieDomain()">getSessionCookieDomain</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getSessionCookieName()">getSessionCookieName</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getSessionCookiePath()">getSessionCookiePath</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getSessionCookiePathUsesTrailingSlash()">getSessionCookiePathUsesTrailingSlash</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getSessionTimeout()">getSessionTimeout</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getStartTime()">getStartTime</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getStartupTime()">getStartupTime</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getSwallowAbortedUploads()">getSwallowAbortedUploads</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getSwallowOutput()">getSwallowOutput</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getThreadBindingListener()">getThreadBindingListener</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getTldScanTime()">getTldScanTime</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getTldValidation()">getTldValidation</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getUnloadDelay()">getUnloadDelay</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getUnpackWAR()">getUnpackWAR</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getUseHttpOnly()">getUseHttpOnly</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getWebappVersion()">getWebappVersion</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getWelcomeFiles()">getWelcomeFiles</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getWorkDir()">getWorkDir</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getWorkPath()">getWorkPath</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getWrapperClass()">getWrapperClass</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getXmlBlockExternal()">getXmlBlockExternal</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getXmlNamespaceAware()">getXmlNamespaceAware</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#getXmlValidation()">getXmlValidation</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#initInternal()">initInternal</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#isResourceOnlyServlet(java.lang.String)">isResourceOnlyServlet</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#isServlet22()">isServlet22</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#isStateManageable()">isStateManageable</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#isUseNaming()">isUseNaming</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#listenerStart()">listenerStart</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#listenerStop()">listenerStop</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#loadOnStartup(org.apache.catalina.Container[])">loadOnStartup</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#reload()">reload</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removeApplicationListener(java.lang.String)">removeApplicationListener</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removeApplicationParameter(java.lang.String)">removeApplicationParameter</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removeChild(org.apache.catalina.Container)">removeChild</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removeConstraint(org.apache.tomcat.util.descriptor.web.SecurityConstraint)">removeConstraint</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removeErrorPage(org.apache.tomcat.util.descriptor.web.ErrorPage)">removeErrorPage</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removeFilterDef(org.apache.tomcat.util.descriptor.web.FilterDef)">removeFilterDef</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removeFilterMap(org.apache.tomcat.util.descriptor.web.FilterMap)">removeFilterMap</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removeInstanceListener(java.lang.String)">removeInstanceListener</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removeMessageDestination(java.lang.String)">removeMessageDestination</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removeMessageDestinationRef(java.lang.String)">removeMessageDestinationRef</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removeMimeMapping(java.lang.String)">removeMimeMapping</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removeNotificationListener(javax.management.NotificationListener)">removeNotificationListener</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removeNotificationListener(javax.management.NotificationListener,%20javax.management.NotificationFilter,%20java.lang.Object)">removeNotificationListener</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removeParameter(java.lang.String)">removeParameter</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removePostConstructMethod(java.lang.String)">removePostConstructMethod</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removePreDestroyMethod(java.lang.String)">removePreDestroyMethod</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removeRoleMapping(java.lang.String)">removeRoleMapping</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removeSecurityRole(java.lang.String)">removeSecurityRole</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removeServletMapping(java.lang.String)">removeServletMapping</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removeWatchedResource(java.lang.String)">removeWatchedResource</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removeWelcomeFile(java.lang.String)">removeWelcomeFile</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removeWrapperLifecycle(java.lang.String)">removeWrapperLifecycle</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#removeWrapperListener(java.lang.String)">removeWrapperListener</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#resourcesStart()">resourcesStart</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#resourcesStop()">resourcesStop</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setAddWebinfClassesResources(boolean)">setAddWebinfClassesResources</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setAllowCasualMultipartParsing(boolean)">setAllowCasualMultipartParsing</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setAltDDName(java.lang.String)">setAltDDName</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setAntiResourceLocking(boolean)">setAntiResourceLocking</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setApplicationEventListeners(java.lang.Object[])">setApplicationEventListeners</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setApplicationLifecycleListeners(java.lang.Object[])">setApplicationLifecycleListeners</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setCharsetMapper(org.apache.catalina.util.CharsetMapper)">setCharsetMapper</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setCharsetMapperClass(java.lang.String)">setCharsetMapperClass</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setClearReferencesHttpClientKeepAliveThread(boolean)">setClearReferencesHttpClientKeepAliveThread</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setClearReferencesStatic(boolean)">setClearReferencesStatic</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setClearReferencesStopThreads(boolean)">setClearReferencesStopThreads</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setClearReferencesStopTimerThreads(boolean)">setClearReferencesStopTimerThreads</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setConfigFile(java.net.URL)">setConfigFile</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setConfigured(boolean)">setConfigured</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setContainerSciFilter(java.lang.String)">setContainerSciFilter</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setCookieProcessor(org.apache.tomcat.util.http.CookieProcessor)">setCookieProcessor</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setCookies(boolean)">setCookies</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setCopyXML(boolean)">setCopyXML</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setCrossContext(boolean)">setCrossContext</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setDefaultContextXml(java.lang.String)">setDefaultContextXml</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setDefaultWebXml(java.lang.String)">setDefaultWebXml</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setDelegate(boolean)">setDelegate</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setDenyUncoveredHttpMethods(boolean)">setDenyUncoveredHttpMethods</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setDisplayName(java.lang.String)">setDisplayName</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setDistributable(boolean)">setDistributable</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setDocBase(java.lang.String)">setDocBase</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setEffectiveMajorVersion(int)">setEffectiveMajorVersion</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setEffectiveMinorVersion(int)">setEffectiveMinorVersion</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setFailCtxIfServletStartFails(java.lang.Boolean)">setFailCtxIfServletStartFails</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setFireRequestListenersOnForwards(boolean)">setFireRequestListenersOnForwards</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setIgnoreAnnotations(boolean)">setIgnoreAnnotations</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setInstanceManager(org.apache.tomcat.InstanceManager)">setInstanceManager</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setJ2EEApplication(java.lang.String)">setJ2EEApplication</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setJ2EEServer(java.lang.String)">setJ2EEServer</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setJarScanner(org.apache.tomcat.JarScanner)">setJarScanner</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setJavaVMs(java.lang.String[])">setJavaVMs</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setJndiExceptionOnFailedWrite(boolean)">setJndiExceptionOnFailedWrite</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setJspConfigDescriptor(javax.servlet.descriptor.JspConfigDescriptor)">setJspConfigDescriptor</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setLoader(org.apache.catalina.Loader)">setLoader</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setLogEffectiveWebXml(boolean)">setLogEffectiveWebXml</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setLoginConfig(org.apache.tomcat.util.descriptor.web.LoginConfig)">setLoginConfig</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setManager(org.apache.catalina.Manager)">setManager</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setNamingContextListener(org.apache.catalina.core.NamingContextListener)">setNamingContextListener</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setNamingResources(org.apache.catalina.deploy.NamingResourcesImpl)">setNamingResources</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setOriginalDocBase(java.lang.String)">setOriginalDocBase</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setOverride(boolean)">setOverride</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setPath(java.lang.String)">setPath</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setPreemptiveAuthentication(boolean)">setPreemptiveAuthentication</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setPrivileged(boolean)">setPrivileged</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setPublicId(java.lang.String)">setPublicId</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setReloadable(boolean)">setReloadable</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setRenewThreadsWhenStoppingContext(boolean)">setRenewThreadsWhenStoppingContext</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setReplaceWelcomeFiles(boolean)">setReplaceWelcomeFiles</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setResourceOnlyServlets(java.lang.String)">setResourceOnlyServlets</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setResources(org.apache.catalina.WebResourceRoot)">setResources</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setSendRedirectBody(boolean)">setSendRedirectBody</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setServer(java.lang.String)">setServer</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setSessionCookieDomain(java.lang.String)">setSessionCookieDomain</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setSessionCookieName(java.lang.String)">setSessionCookieName</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setSessionCookiePath(java.lang.String)">setSessionCookiePath</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setSessionCookiePathUsesTrailingSlash(boolean)">setSessionCookiePathUsesTrailingSlash</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setSessionTimeout(int)">setSessionTimeout</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setStartupTime(long)">setStartupTime</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setSwallowAbortedUploads(boolean)">setSwallowAbortedUploads</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setSwallowOutput(boolean)">setSwallowOutput</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setThreadBindingListener(org.apache.catalina.ThreadBindingListener)">setThreadBindingListener</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setTldScanTime(long)">setTldScanTime</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setTldValidation(boolean)">setTldValidation</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setUnloadDelay(long)">setUnloadDelay</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setUnpackWAR(boolean)">setUnpackWAR</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setUseHttpOnly(boolean)">setUseHttpOnly</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setUseNaming(boolean)">setUseNaming</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setWebappVersion(java.lang.String)">setWebappVersion</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setWorkDir(java.lang.String)">setWorkDir</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setWrapperClass(java.lang.String)">setWrapperClass</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setXmlBlockExternal(boolean)">setXmlBlockExternal</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setXmlNamespaceAware(boolean)">setXmlNamespaceAware</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#setXmlValidation(boolean)">setXmlValidation</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#toString()">toString</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#unbind(boolean,%20java.lang.ClassLoader)">unbind</a>, <a href="../../../../../org/apache/catalina/core/StandardContext.html#unbindThread(java.lang.ClassLoader)">unbindThread</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.core.ContainerBase">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.core.<a href="../../../../../org/apache/catalina/core/ContainerBase.html" title="class in org.apache.catalina.core">ContainerBase</a></h3>
+<code><a href="../../../../../org/apache/catalina/core/ContainerBase.html#addContainerListener(org.apache.catalina.ContainerListener)">addContainerListener</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#addPropertyChangeListener(java.beans.PropertyChangeListener)">addPropertyChangeListener</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#addValve(org.apache.catalina.Valve)">addValve</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#findChild(java.lang.String)">findChild</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#findChildren()">findChildren</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#findContainerListeners()">findContainerListeners</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#fireContainerEvent(java.lang.String,%20java.lang.Object)">fireContainerEvent</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#getAccessLog()">getAccessLog</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#getBackgroundProcessorDelay()">getBackgroundProcessorDelay</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#getCatalinaBase()">getCatalinaBase</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#getCatalinaHome()">getCatalinaHome</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#getChildren()">getChildren</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#getCluster()">getCluster</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#getClusterInternal()">getClusterInternal</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#getDomainInternal()">getDomainInternal</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#getLogger()">getLogger</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#getMBeanKeyProperties()">getMBeanKeyProperties</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#getName()">getName</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#getParent()">getParent</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#getPipeline()">getPipeline</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#getRealm()">getRealm</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#getRealmInternal()">getRealmInternal</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#getStartChildren()">getStartChildren</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#getStartStopThreads()">getStartStopThreads</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#logAccess(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response,%20long,%20boolean)">logAccess</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#logName()">logName</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#removeContainerListener(org.apache.catalina.ContainerListener)">removeContainerListener</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#removePropertyChangeListener(java.beans.PropertyChangeListener)">removePropertyChangeListener</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#setBackgroundProcessorDelay(int)">setBackgroundProcessorDelay</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#setCluster(org.apache.catalina.Cluster)">setCluster</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#setName(java.lang.String)">setName</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#setParent(org.apache.catalina.Container)">setParent</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#setParentClassLoader(java.lang.ClassLoader)">setParentClassLoader</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#setRealm(org.apache.catalina.Realm)">setRealm</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#setStartChildren(boolean)">setStartChildren</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#setStartStopThreads(int)">setStartStopThreads</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#threadStart()">threadStart</a>, <a href="../../../../../org/apache/catalina/core/ContainerBase.html#threadStop()">threadStop</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.util.LifecycleMBeanBase">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.util.<a href="../../../../../org/apache/catalina/util/LifecycleMBeanBase.html" title="class in org.apache.catalina.util">LifecycleMBeanBase</a></h3>
+<code><a href="../../../../../org/apache/catalina/util/LifecycleMBeanBase.html#getDomain()">getDomain</a>, <a href="../../../../../org/apache/catalina/util/LifecycleMBeanBase.html#getObjectName()">getObjectName</a>, <a href="../../../../../org/apache/catalina/util/LifecycleMBeanBase.html#postDeregister()">postDeregister</a>, <a href="../../../../../org/apache/catalina/util/LifecycleMBeanBase.html#postRegister(java.lang.Boolean)">postRegister</a>, <a href="../../../../../org/apache/catalina/util/LifecycleMBeanBase.html#preDeregister()">preDeregister</a>, <a href="../../../../../org/apache/catalina/util/LifecycleMBeanBase.html#preRegister(javax.management.MBeanServer,%20javax.management.ObjectName)">preRegister</a>, <a href="../../../../../org/apache/catalina/util/LifecycleMBeanBase.html#register(java.lang.Object,%20java.lang.String)">register</a>, <a href="../../../../../org/apache/catalina/util/LifecycleMBeanBase.html#setDomain(java.lang.String)">setDomain</a>, <a href="../../../../../org/apache/catalina/util/LifecycleMBeanBase.html#unregister(javax.management.ObjectName)">unregister</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.util.LifecycleBase">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.util.<a href="../../../../../org/apache/catalina/util/LifecycleBase.html" title="class in org.apache.catalina.util">LifecycleBase</a></h3>
+<code><a href="../../../../../org/apache/catalina/util/LifecycleBase.html#addLifecycleListener(org.apache.catalina.LifecycleListener)">addLifecycleListener</a>, <a href="../../../../../org/apache/catalina/util/LifecycleBase.html#destroy()">destroy</a>, <a href="../../../../../org/apache/catalina/util/LifecycleBase.html#findLifecycleListeners()">findLifecycleListeners</a>, <a href="../../../../../org/apache/catalina/util/LifecycleBase.html#fireLifecycleEvent(java.lang.String,%20java.lang.Object)">fireLifecycleEvent</a>, <a href="../../../../../org/apache/catalina/util/LifecycleBase.html#getState()">getState</a>, <a href="../../../../../org/apache/catalina/util/LifecycleBase.html#getStateName()">getStateName</a>, <a href="../../../../../org/apache/catalina/util/LifecycleBase.html#init()">init</a>, <a href="../../../../../org/apache/catalina/util/LifecycleBase.html#removeLifecycleListener(org.apache.catalina.LifecycleListener)">removeLifecycleListener</a>, <a href="../../../../../org/apache/catalina/util/LifecycleBase.html#setState(org.apache.catalina.LifecycleState)">setState</a>, <a href="../../../../../org/apache/catalina/util/LifecycleBase.html#setState(org.apache.catalina.LifecycleState,%20java.lang.Object)">setState</a>, <a href="../../../../../org/apache/catalina/util/LifecycleBase.html#start()">start</a>, <a href="../../../../../org/apache/catalina/util/LifecycleBase.html#stop()">stop</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.Container">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.apache.catalina.<a href="../../../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a></h3>
+<code><a href="../../../../../org/apache/catalina/Container.html#addContainerListener(org.apache.catalina.ContainerListener)">addContainerListener</a>, <a href="../../../../../org/apache/catalina/Container.html#addPropertyChangeListener(java.beans.PropertyChangeListener)">addPropertyChangeListener</a>, <a href="../../../../../org/apache/catalina/Container.html#findChild(java.lang.String)">findChild</a>, <a href="../../../../../org/apache/catalina/Container.html#findChildren()">findChildren</a>, <a href="../../../../../org/apache/catalina/Container.html#findContainerListeners()">findContainerListeners</a>, <a href="../../../../../org/apache/catalina/Container.html#fireContainerEvent(java.lang.String,%20java.lang.Object)">fireContainerEvent</a>, <a href="../../../../../org/apache/catalina/Container.html#getAccessLog()">getAccessLog</a>, <a href="../../../../../org/apache/catalina/Container.html#getBackgroundProcessorDelay()">getBackgroundProcessorDelay</a>, <a href="../../../../../org/apache/catalina/Container.html#getCatalinaBase()">getCatalinaBase</a>, <a href="../../../../../org/apache/catalina/Container.html#getCatalinaHome()">getCatalinaHome</a>, <a href="../../../../../org/apache/catalina/Container.html#getCluster()">getCluster</a>, <a href="../../../../../org/apache/catalina/Container.html#getDomain()">getDomain</a>, <a href="../../../../../org/apache/catalina/Container.html#getLogger()">getLogger</a>, <a href="../../../../../org/apache/catalina/Container.html#getMBeanKeyProperties()">getMBeanKeyProperties</a>, <a href="../../../../../org/apache/catalina/Container.html#getName()">getName</a>, <a href="../../../../../org/apache/catalina/Container.html#getObjectName()">getObjectName</a>, <a href="../../../../../org/apache/catalina/Container.html#getParent()">getParent</a>, <a href="../../../../../org/apache/catalina/Container.html#getPipeline()">getPipeline</a>, <a href="../../../../../org/apache/catalina/Container.html#getRealm()">getRealm</a>, <a href="../../../../../org/apache/catalina/Container.html#getStartStopThreads()">getStartStopThreads</a>, <a href="../../../../../org/apache/catalina/Container.html#logAccess(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response,%20long,%20boolean)">logAccess</a>, <a href="../../../../../org/apache/catalina/Container.html#removeContainerListener(org.apache.catalina.ContainerListener)">removeContainerListener</a>, <a href="../../../../../org/apache/catalina/Container.html#removePropertyChangeListener(java.beans.PropertyChangeListener)">removePropertyChangeListener</a>, <a href="../../../../../org/apache/catalina/Container.html#setBackgroundProcessorDelay(int)">setBackgroundProcessorDelay</a>, <a href="../../../../../org/apache/catalina/Container.html#setCluster(org.apache.catalina.Cluster)">setCluster</a>, <a href="../../../../../org/apache/catalina/Container.html#setName(java.lang.String)">setName</a>, <a href="../../../../../org/apache/catalina/Container.html#setParent(org.apache.catalina.Container)">setParent</a>, <a href="../../../../../org/apache/catalina/Container.html#setParentClassLoader(java.lang.ClassLoader)">setParentClassLoader</a>, <a href="../../../../../org/apache/catalina/Container.html#setRealm(org.apache.catalina.Realm)">setRealm</a>, <a href="../../../../../org/apache/catalina/Container.html#setStartStopThreads(int)">setStartStopThreads</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.Lifecycle">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.apache.catalina.<a href="../../../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a></h3>
+<code><a href="../../../../../org/apache/catalina/Lifecycle.html#addLifecycleListener(org.apache.catalina.LifecycleListener)">addLifecycleListener</a>, <a href="../../../../../org/apache/catalina/Lifecycle.html#destroy()">destroy</a>, <a href="../../../../../org/apache/catalina/Lifecycle.html#findLifecycleListeners()">findLifecycleListeners</a>, <a href="../../../../../org/apache/catalina/Lifecycle.html#getState()">getState</a>, <a href="../../../../../org/apache/catalina/Lifecycle.html#getStateName()">getStateName</a>, <a href="../../../../../org/apache/catalina/Lifecycle.html#init()">init</a>, <a href="../../../../../org/apache/catalina/Lifecycle.html#removeLifecycleListener(org.apache.catalina.LifecycleListener)">removeLifecycleListener</a>, <a href="../../../../../org/apache/catalina/Lifecycle.html#start()">start</a>, <a href="../../../../../org/apache/catalina/Lifecycle.html#stop()">stop</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="DEFAULT_REPL_TIMEOUT">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>DEFAULT_REPL_TIMEOUT</h4>
+<pre>protected static final&nbsp;long DEFAULT_REPL_TIMEOUT</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.catalina.ha.context.ReplicatedContext.DEFAULT_REPL_TIMEOUT">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ReplicatedContext()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ReplicatedContext</h4>
+<pre>public&nbsp;ReplicatedContext()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="startInternal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>startInternal</h4>
+<pre>protected&nbsp;void&nbsp;startInternal()
+                      throws <a href="../../../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></pre>
+<div class="block">Start this component and implement the requirements
+ of <a href="../../../../../org/apache/catalina/util/LifecycleBase.html#startInternal()"><code>LifecycleBase.startInternal()</code></a>.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/core/StandardContext.html#startInternal()">startInternal</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/catalina/core/StandardContext.html" title="class in org.apache.catalina.core">StandardContext</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></code> - if this component detects a fatal error
+  that prevents this component from being used</dd></dl>
+</li>
+</ul>
+<a name="stopInternal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>stopInternal</h4>
+<pre>protected&nbsp;void&nbsp;stopInternal()
+                     throws <a href="../../../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></pre>
+<div class="block">Stop this component and implement the requirements
+ of <a href="../../../../../org/apache/catalina/util/LifecycleBase.html#stopInternal()"><code>LifecycleBase.stopInternal()</code></a>.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/core/StandardContext.html#stopInternal()">stopInternal</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/catalina/core/StandardContext.html" title="class in org.apache.catalina.core">StandardContext</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></code> - if this component detects a fatal error
+  that prevents this component from being used</dd></dl>
+</li>
+</ul>
+<a name="setMapSendOptions(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMapSendOptions</h4>
+<pre>public&nbsp;void&nbsp;setMapSendOptions(int&nbsp;mapSendOptions)</pre>
+</li>
+</ul>
+<a name="getMapSendOptions()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMapSendOptions</h4>
+<pre>public&nbsp;int&nbsp;getMapSendOptions()</pre>
+</li>
+</ul>
+<a name="getClassLoaders()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getClassLoaders</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>[]&nbsp;getClassLoaders()</pre>
+</li>
+</ul>
+<a name="getServletContext()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getServletContext</h4>
+<pre>public&nbsp;<a href="../../../../../../servletapi/javax/servlet/ServletContext.html?is-external=true" title="class or interface in javax.servlet">ServletContext</a>&nbsp;getServletContext()</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../org/apache/catalina/core/StandardContext.html#getServletContext()">StandardContext</a></code></strong></div>
+<div class="block">Return the servlet context for which this Context is a facade.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/Context.html#getServletContext()">getServletContext</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/core/StandardContext.html#getServletContext()">getServletContext</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/catalina/core/StandardContext.html" title="class in org.apache.catalina.core">StandardContext</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="objectMadePrimary(java.lang.Object, java.lang.Object)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>objectMadePrimary</h4>
+<pre>public&nbsp;void&nbsp;objectMadePrimary(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;key,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapOwner.html#objectMadePrimary(java.lang.Object,%20java.lang.Object)">objectMadePrimary</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapOwner.html" title="interface in org.apache.catalina.tribes.tipis">AbstractReplicatedMap.MapOwner</a></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev Class</li>
+<li><a href="../../../../../org/apache/catalina/ha/context/ReplicatedContext.MultiEnumeration.html" title="class in org.apache.catalina.ha.context"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/catalina/ha/context/ReplicatedContext.html" target="_top">Frames</a></li>
+<li><a href="ReplicatedContext.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

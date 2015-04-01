@@ -1,0 +1,1039 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>JAASRealm (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="JAASRealm (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/realm/JAASMemoryLoginModule.html" title="class in org.apache.catalina.realm"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/realm/JDBCRealm.html" title="class in org.apache.catalina.realm"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/realm/JAASRealm.html" target="_top">Frames</a></li>
+<li><a href="JAASRealm.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_classes_inherited_from_class_org.apache.catalina.realm.RealmBase">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.realm</div>
+<h2 title="Class JAASRealm" class="title">Class JAASRealm</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../org/apache/catalina/util/LifecycleBase.html" title="class in org.apache.catalina.util">org.apache.catalina.util.LifecycleBase</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html" title="class in org.apache.catalina.util">org.apache.catalina.util.LifecycleMBeanBase</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../org/apache/catalina/realm/RealmBase.html" title="class in org.apache.catalina.realm">org.apache.catalina.realm.RealmBase</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.realm.JAASRealm</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://docs.oracle.com/javase/7/docs/api/javax/management/MBeanRegistration.html?is-external=true" title="class or interface in javax.management">MBeanRegistration</a>, <a href="../../../../org/apache/catalina/JmxEnabled.html" title="interface in org.apache.catalina">JmxEnabled</a>, <a href="../../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a>, <a href="../../../../org/apache/catalina/Realm.html" title="interface in org.apache.catalina">Realm</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">JAASRealm</span>
+extends <a href="../../../../org/apache/catalina/realm/RealmBase.html" title="class in org.apache.catalina.realm">RealmBase</a></pre>
+<div class="block"><p>Implementation of <b>Realm</b> that authenticates users via the <em>Java
+ Authentication and Authorization Service</em> (JAAS).  JAAS support requires
+ either JDK 1.4 (which includes it as part of the standard platform) or
+ JDK 1.3 (with the plug-in <code>jaas.jar</code> file).</p>
+
+ <p>The value configured for the <code>appName</code> property is passed to
+ the <code>javax.security.auth.login.LoginContext</code> constructor, to
+ specify the <em>application name</em> used to select the set of relevant
+ <code>LoginModules</code> required.</p>
+
+ <p>The JAAS Specification describes the result of a successful login as a
+ <code>javax.security.auth.Subject</code> instance, which can contain zero
+ or more <code>java.security.Principal</code> objects in the return value
+ of the <code>Subject.getPrincipals()</code> method.  However, it provides
+ no guidance on how to distinguish Principals that describe the individual
+ user (and are thus appropriate to return as the value of
+ request.getUserPrincipal() in a web application) from the Principal(s)
+ that describe the authorized roles for this user.  To maintain as much
+ independence as possible from the underlying <code>LoginMethod</code>
+ implementation executed by JAAS, the following policy is implemented by
+ this Realm:</p>
+ <ul>
+ <li>The JAAS <code>LoginModule</code> is assumed to return a
+     <code>Subject</code> with at least one <code>Principal</code> instance
+     representing the user himself or herself, and zero or more separate
+     <code>Principals</code> representing the security roles authorized
+     for this user.</li>
+ <li>On the <code>Principal</code> representing the user, the Principal
+     name is an appropriate value to return via the Servlet API method
+     <code>HttpServletRequest.getRemoteUser()</code>.</li>
+ <li>On the <code>Principals</code> representing the security roles, the
+     name is the name of the authorized security role.</li>
+ <li>This Realm will be configured with two lists of fully qualified Java
+     class names of classes that implement
+     <code>java.security.Principal</code> - one that identifies class(es)
+     representing a user, and one that identifies class(es) representing
+     a security role.</li>
+ <li>As this Realm iterates over the <code>Principals</code> returned by
+     <code>Subject.getPrincipals()</code>, it will identify the first
+     <code>Principal</code> that matches the "user classes" list as the
+     <code>Principal</code> for this user.</li>
+ <li>As this Realm iterates over the <code>Principals</code> returned by
+     <code>Subject.getPrincipals()</code>, it will accumulate the set of
+     all <code>Principals</code> matching the "role classes" list as
+     identifying the security roles for this user.</li>
+ <li>It is a configuration error for the JAAS login method to return a
+     validated <code>Subject</code> without a <code>Principal</code> that
+     matches the "user classes" list.</li>
+ <li>By default, the enclosing Container's name serves as the
+     application name used to obtain the JAAS LoginContext ("Catalina" in
+     a default installation). Tomcat must be able to find an application
+     with this name in the JAAS configuration file. Here is a hypothetical
+     JAAS configuration file entry for a database-oriented login module that uses
+     a Tomcat-managed JNDI database resource:
+     <blockquote><pre>Catalina {
+org.foobar.auth.DatabaseLoginModule REQUIRED
+    JNDI_RESOURCE=jdbc/AuthDB
+  USER_TABLE=users
+  USER_ID_COLUMN=id
+  USER_NAME_COLUMN=name
+  USER_CREDENTIAL_COLUMN=password
+  ROLE_TABLE=roles
+  ROLE_NAME_COLUMN=name
+  PRINCIPAL_FACTORY=org.foobar.auth.impl.SimplePrincipalFactory;
+};</pre></blockquote></li>
+ <li>To set the JAAS configuration file
+     location, set the <code>CATALINA_OPTS</code> environment variable
+     similar to the following:
+<blockquote><code>CATALINA_OPTS="-Djava.security.auth.login.config=$CATALINA_HOME/conf/jaas.config"</code></blockquote>
+ </li>
+ <li>As part of the login process, JAASRealm registers its own <code>CallbackHandler</code>,
+     called (unsurprisingly) <code>JAASCallbackHandler</code>. This handler supplies the
+     HTTP requests's username and credentials to the user-supplied <code>LoginModule</code></li>
+ <li>As with other <code>Realm</code> implementations, digested passwords are supported if
+     the <code>&lt;Realm&gt;</code> element in <code>server.xml</code> contains a
+     <code>digest</code> attribute; <code>JAASCallbackHandler</code> will digest the password
+     prior to passing it back to the <code>LoginModule</code></li>
+ </ul></div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Craig R. McClanahan, Yoav Shapira</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested_class_summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="nested_classes_inherited_from_class_org.apache.catalina.realm.RealmBase">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from class&nbsp;org.apache.catalina.realm.<a href="../../../../org/apache/catalina/realm/RealmBase.html" title="class in org.apache.catalina.realm">RealmBase</a></h3>
+<code><a href="../../../../org/apache/catalina/realm/RealmBase.AllRolesMode.html" title="class in org.apache.catalina.realm">RealmBase.AllRolesMode</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#appName">appName</a></strong></code>
+<div class="block">The application name passed to the JAAS <code>LoginContext</code>,
+ which uses it to select the set of relevant <code>LoginModule</code>s.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#configFile">configFile</a></strong></code>
+<div class="block">Path to find a JAAS configuration file, if not set global JVM JAAS
+ configuration will be used.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/javax/security/auth/login/Configuration.html?is-external=true" title="class or interface in javax.security.auth.login">Configuration</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#jaasConfiguration">jaasConfiguration</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#jaasConfigurationLoaded">jaasConfigurationLoaded</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#name">name</a></strong></code>
+<div class="block">Descriptive information about this <code>Realm</code> implementation.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#roleClasses">roleClasses</a></strong></code>
+<div class="block">The list of role class names, split out for easy processing.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#roleClassNames">roleClassNames</a></strong></code>
+<div class="block">Comma-delimited list of <code>java.security.Principal</code> classes
+ that represent security roles.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#useContextClassLoader">useContextClassLoader</a></strong></code>
+<div class="block">Whether to use context ClassLoader or default ClassLoader.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#userClasses">userClasses</a></strong></code>
+<div class="block">The set of user class names, split out for easy processing.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#userClassNames">userClassNames</a></strong></code>
+<div class="block">Comma-delimited list of <code>java.security.Principal</code> classes
+ that represent individual users.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.realm.RealmBase">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.catalina.realm.<a href="../../../../org/apache/catalina/realm/RealmBase.html" title="class in org.apache.catalina.realm">RealmBase</a></h3>
+<code><a href="../../../../org/apache/catalina/realm/RealmBase.html#allRolesMode">allRolesMode</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#container">container</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#containerLog">containerLog</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#digest">digest</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#digestEncoding">digestEncoding</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#md">md</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#md5Helper">md5Helper</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#realmPath">realmPath</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#sm">sm</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#stripRealmForGss">stripRealmForGss</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#support">support</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#validate">validate</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#x509UsernameRetriever">x509UsernameRetriever</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#x509UsernameRetrieverClassName">x509UsernameRetrieverClassName</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.util.LifecycleMBeanBase">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.catalina.util.<a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html" title="class in org.apache.catalina.util">LifecycleMBeanBase</a></h3>
+<code><a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#mserver">mserver</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.Lifecycle">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.apache.catalina.<a href="../../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a></h3>
+<code><a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_DESTROY_EVENT">AFTER_DESTROY_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_INIT_EVENT">AFTER_INIT_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_START_EVENT">AFTER_START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_STOP_EVENT">AFTER_STOP_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_DESTROY_EVENT">BEFORE_DESTROY_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_INIT_EVENT">BEFORE_INIT_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_START_EVENT">BEFORE_START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_STOP_EVENT">BEFORE_STOP_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#CONFIGURE_START_EVENT">CONFIGURE_START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#CONFIGURE_STOP_EVENT">CONFIGURE_STOP_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#PERIODIC_EVENT">PERIODIC_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#START_EVENT">START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#STOP_EVENT">STOP_EVENT</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#JAASRealm()">JAASRealm</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#authenticate(java.lang.String,%20javax.security.auth.callback.CallbackHandler)">authenticate</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
+            <a href="http://docs.oracle.com/javase/7/docs/api/javax/security/auth/callback/CallbackHandler.html?is-external=true" title="class or interface in javax.security.auth.callback">CallbackHandler</a>&nbsp;callbackHandler)</code>
+<div class="block">Perform the actual JAAS authentication</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#authenticate(java.lang.String,%20java.lang.String)">authenticate</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;credentials)</code>
+<div class="block">Return the <code>Principal</code> associated with the specified username
+ and credentials, if there is one; otherwise return <code>null</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#authenticate(java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String)">authenticate</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;clientDigest,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;nonce,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;nc,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;cnonce,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;qop,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realmName,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;md5a2)</code>
+<div class="block">Return the <code>Principal</code> associated with the specified username
+ and digest, if there is one; otherwise return <code>null</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#createPrincipal(java.lang.String,%20javax.security.auth.Subject,%20javax.security.auth.login.LoginContext)">createPrincipal</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
+               <a href="http://docs.oracle.com/javase/7/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+               <a href="http://docs.oracle.com/javase/7/docs/api/javax/security/auth/login/LoginContext.html?is-external=true" title="class or interface in javax.security.auth.login">LoginContext</a>&nbsp;loginContext)</code>
+<div class="block">Identify and return a <code>java.security.Principal</code> instance
+ representing the authenticated user for the specified <code>Subject</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#getAppName()">getAppName</a></strong>()</code>
+<div class="block">getter for the <code>appName</code> member variable</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/javax/security/auth/login/Configuration.html?is-external=true" title="class or interface in javax.security.auth.login">Configuration</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#getConfig()">getConfig</a></strong>()</code>
+<div class="block">Load custom JAAS Configuration</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#getConfigFile()">getConfigFile</a></strong>()</code>
+<div class="block">Getter for the <code>configfile</code> member variable.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#getName()">getName</a></strong>()</code>
+<div class="block">Return a short name for this <code>Realm</code> implementation.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#getPassword(java.lang.String)">getPassword</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username)</code>
+<div class="block">Return the password associated with the given principal's user name.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#getPrincipal(java.lang.String)">getPrincipal</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username)</code>
+<div class="block">Return the <code>Principal</code> associated with the given user name.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#getRoleClassNames()">getRoleClassNames</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#getUserClassNames()">getUserClassNames</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#isUseContextClassLoader()">isUseContextClassLoader</a></strong>()</code>
+<div class="block">Returns whether to use the context or default ClassLoader.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#makeLegalForJAAS(java.lang.String)">makeLegalForJAAS</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;src)</code>
+<div class="block">Ensure the given name is legal for JAAS configuration.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#parseClassNames(java.lang.String,%20java.util.List)">parseClassNames</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;classNamesString,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;classNamesList)</code>
+<div class="block">Parses a comma-delimited list of class names, and store the class names
+ in the provided List.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#setAppName(java.lang.String)">setAppName</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">setter for the <code>appName</code> member variable</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#setConfigFile(java.lang.String)">setConfigFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;configFile)</code>
+<div class="block">Setter for the <code>configfile</code> member variable.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#setContainer(org.apache.catalina.Container)">setContainer</a></strong>(<a href="../../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a>&nbsp;container)</code>
+<div class="block">Set the Container with which this Realm has been associated.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#setRoleClassNames(java.lang.String)">setRoleClassNames</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;roleClassNames)</code>
+<div class="block">Sets the list of comma-delimited classes that represent roles.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#setUseContextClassLoader(boolean)">setUseContextClassLoader</a></strong>(boolean&nbsp;useContext)</code>
+<div class="block">Sets whether to use the context or default ClassLoader.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#setUserClassNames(java.lang.String)">setUserClassNames</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userClassNames)</code>
+<div class="block">Sets the list of comma-delimited classes that represent individual
+ users.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/realm/JAASRealm.html#startInternal()">startInternal</a></strong>()</code>
+<div class="block">Prepare for the beginning of active use of the public methods of this
+ component and implement the requirements of
+ <a href="../../../../org/apache/catalina/util/LifecycleBase.html#startInternal()"><code>LifecycleBase.startInternal()</code></a>.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.realm.RealmBase">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.realm.<a href="../../../../org/apache/catalina/realm/RealmBase.html" title="class in org.apache.catalina.realm">RealmBase</a></h3>
+<code><a href="../../../../org/apache/catalina/realm/RealmBase.html#addPropertyChangeListener(java.beans.PropertyChangeListener)">addPropertyChangeListener</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#authenticate(org.ietf.jgss.GSSContext,%20boolean)">authenticate</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#authenticate(java.lang.String)">authenticate</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#authenticate(java.security.cert.X509Certificate[])">authenticate</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#backgroundProcess()">backgroundProcess</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#compareCredentials(java.lang.String,%20java.lang.String)">compareCredentials</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#digest(java.lang.String)">digest</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#Digest(java.lang.String,%20java.lang.String,%20java.lang.String)">Digest</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#findSecurityConstraints(org.apache.catalina.connector.Request,%20org.apache.catalina.Context)">findSecurityConstraints</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#getAllRolesMode()">getAllRolesMode</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#getContainer()">getContainer</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#getCredentialHandler()">getCredentialHandler</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#getDigest()">getDigest</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#getDigest(java.lang.String,%20java.lang.String)">getDigest</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#getDigestCharset()">getDigestCharset</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#getDigestEncoding()">getDigestEncoding</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#getDomainInternal()">getDomainInternal</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#getObjectNameKeyProperties()">getObjectNameKeyProperties</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#getPrincipal(java.lang.String,%20org.ietf.jgss.GSSCredential)">getPrincipal</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#getPrincipal(java.security.cert.X509Certificate)">getPrincipal</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#getRealmPath()">getRealmPath</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#getRealmSuffix()">getRealmSuffix</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#getServer()">getServer</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#getValidate()">getValidate</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#getX509UsernameRetrieverClassName()">getX509UsernameRetrieverClassName</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#hasMessageDigest()">hasMessageDigest</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#hasResourcePermission(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response,%20org.apache.tomcat.util.descriptor.web.SecurityConstraint[],%20org.apache.catalina.Context)">hasResourcePermission</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#hasRole(org.apache.catalina.Wrapper,%20java.security.Principal,%20java.lang.String)">hasRole</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#hasUserDataPermission(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response,%20org.apache.tomcat.util.descriptor.web.SecurityConstraint[])">hasUserDataPermission</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#initInternal()">initInternal</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#isStripRealmForGss()">isStripRealmForGss</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#main(java.lang.String[])">main</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#removePropertyChangeListener(java.beans.PropertyChangeListener)">removePropertyChangeListener</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#setAllRolesMode(java.lang.String)">setAllRolesMode</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#setCredentialHandler(org.apache.catalina.CredentialHandler)">setCredentialHandler</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#setDigest(java.lang.String)">setDigest</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#setDigestEncoding(java.lang.String)">setDigestEncoding</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#setRealmPath(java.lang.String)">setRealmPath</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#setStripRealmForGss(boolean)">setStripRealmForGss</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#setValidate(boolean)">setValidate</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#setX509UsernameRetrieverClassName(java.lang.String)">setX509UsernameRetrieverClassName</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#stopInternal()">stopInternal</a>, <a href="../../../../org/apache/catalina/realm/RealmBase.html#toString()">toString</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.util.LifecycleMBeanBase">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.util.<a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html" title="class in org.apache.catalina.util">LifecycleMBeanBase</a></h3>
+<code><a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#destroyInternal()">destroyInternal</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#getDomain()">getDomain</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#getObjectName()">getObjectName</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#postDeregister()">postDeregister</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#postRegister(java.lang.Boolean)">postRegister</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#preDeregister()">preDeregister</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#preRegister(javax.management.MBeanServer,%20javax.management.ObjectName)">preRegister</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#register(java.lang.Object,%20java.lang.String)">register</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#setDomain(java.lang.String)">setDomain</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#unregister(javax.management.ObjectName)">unregister</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.util.LifecycleBase">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.util.<a href="../../../../org/apache/catalina/util/LifecycleBase.html" title="class in org.apache.catalina.util">LifecycleBase</a></h3>
+<code><a href="../../../../org/apache/catalina/util/LifecycleBase.html#addLifecycleListener(org.apache.catalina.LifecycleListener)">addLifecycleListener</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#destroy()">destroy</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#findLifecycleListeners()">findLifecycleListeners</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#fireLifecycleEvent(java.lang.String,%20java.lang.Object)">fireLifecycleEvent</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#getState()">getState</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#getStateName()">getStateName</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#init()">init</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#removeLifecycleListener(org.apache.catalina.LifecycleListener)">removeLifecycleListener</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#setState(org.apache.catalina.LifecycleState)">setState</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#setState(org.apache.catalina.LifecycleState,%20java.lang.Object)">setState</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#start()">start</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#stop()">stop</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="appName">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>appName</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> appName</pre>
+<div class="block">The application name passed to the JAAS <code>LoginContext</code>,
+ which uses it to select the set of relevant <code>LoginModule</code>s.</div>
+</li>
+</ul>
+<a name="name">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>name</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> name</pre>
+<div class="block">Descriptive information about this <code>Realm</code> implementation.</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.catalina.realm.JAASRealm.name">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="roleClasses">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>roleClasses</h4>
+<pre>protected final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt; roleClasses</pre>
+<div class="block">The list of role class names, split out for easy processing.</div>
+</li>
+</ul>
+<a name="userClasses">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>userClasses</h4>
+<pre>protected final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt; userClasses</pre>
+<div class="block">The set of user class names, split out for easy processing.</div>
+</li>
+</ul>
+<a name="useContextClassLoader">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>useContextClassLoader</h4>
+<pre>protected&nbsp;boolean useContextClassLoader</pre>
+<div class="block">Whether to use context ClassLoader or default ClassLoader.
+ True means use context ClassLoader, and True is the default
+ value.</div>
+</li>
+</ul>
+<a name="configFile">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>configFile</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> configFile</pre>
+<div class="block">Path to find a JAAS configuration file, if not set global JVM JAAS
+ configuration will be used.</div>
+</li>
+</ul>
+<a name="jaasConfiguration">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>jaasConfiguration</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/javax/security/auth/login/Configuration.html?is-external=true" title="class or interface in javax.security.auth.login">Configuration</a> jaasConfiguration</pre>
+</li>
+</ul>
+<a name="jaasConfigurationLoaded">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>jaasConfigurationLoaded</h4>
+<pre>protected volatile&nbsp;boolean jaasConfigurationLoaded</pre>
+</li>
+</ul>
+<a name="roleClassNames">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>roleClassNames</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> roleClassNames</pre>
+<div class="block">Comma-delimited list of <code>java.security.Principal</code> classes
+ that represent security roles.</div>
+</li>
+</ul>
+<a name="userClassNames">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>userClassNames</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> userClassNames</pre>
+<div class="block">Comma-delimited list of <code>java.security.Principal</code> classes
+ that represent individual users.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="JAASRealm()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>JAASRealm</h4>
+<pre>public&nbsp;JAASRealm()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getConfigFile()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getConfigFile</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getConfigFile()</pre>
+<div class="block">Getter for the <code>configfile</code> member variable.</div>
+</li>
+</ul>
+<a name="setConfigFile(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setConfigFile</h4>
+<pre>public&nbsp;void&nbsp;setConfigFile(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;configFile)</pre>
+<div class="block">Setter for the <code>configfile</code> member variable.</div>
+</li>
+</ul>
+<a name="setAppName(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAppName</h4>
+<pre>public&nbsp;void&nbsp;setAppName(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block">setter for the <code>appName</code> member variable</div>
+</li>
+</ul>
+<a name="getAppName()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAppName</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getAppName()</pre>
+<div class="block">getter for the <code>appName</code> member variable</div>
+</li>
+</ul>
+<a name="setUseContextClassLoader(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setUseContextClassLoader</h4>
+<pre>public&nbsp;void&nbsp;setUseContextClassLoader(boolean&nbsp;useContext)</pre>
+<div class="block">Sets whether to use the context or default ClassLoader.
+ True means use context ClassLoader.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>useContext</code> - True means use context ClassLoader</dd></dl>
+</li>
+</ul>
+<a name="isUseContextClassLoader()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isUseContextClassLoader</h4>
+<pre>public&nbsp;boolean&nbsp;isUseContextClassLoader()</pre>
+<div class="block">Returns whether to use the context or default ClassLoader.
+ True means to use the context ClassLoader.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The value of useContextClassLoader</dd></dl>
+</li>
+</ul>
+<a name="setContainer(org.apache.catalina.Container)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setContainer</h4>
+<pre>public&nbsp;void&nbsp;setContainer(<a href="../../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a>&nbsp;container)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../org/apache/catalina/realm/RealmBase.html#setContainer(org.apache.catalina.Container)">RealmBase</a></code></strong></div>
+<div class="block">Set the Container with which this Realm has been associated.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Realm.html#setContainer(org.apache.catalina.Container)">setContainer</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Realm.html" title="interface in org.apache.catalina">Realm</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/realm/RealmBase.html#setContainer(org.apache.catalina.Container)">setContainer</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/catalina/realm/RealmBase.html" title="class in org.apache.catalina.realm">RealmBase</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>container</code> - The associated Container</dd></dl>
+</li>
+</ul>
+<a name="getRoleClassNames()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRoleClassNames</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getRoleClassNames()</pre>
+</li>
+</ul>
+<a name="setRoleClassNames(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRoleClassNames</h4>
+<pre>public&nbsp;void&nbsp;setRoleClassNames(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;roleClassNames)</pre>
+<div class="block">Sets the list of comma-delimited classes that represent roles. The
+ classes in the list must implement <code>java.security.Principal</code>.
+ The supplied list of classes will be parsed when <a href="../../../../org/apache/catalina/util/LifecycleBase.html#start()"><code>LifecycleBase.start()</code></a> is
+ called.</div>
+</li>
+</ul>
+<a name="parseClassNames(java.lang.String, java.util.List)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>parseClassNames</h4>
+<pre>protected&nbsp;void&nbsp;parseClassNames(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;classNamesString,
+                   <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;classNamesList)</pre>
+<div class="block">Parses a comma-delimited list of class names, and store the class names
+ in the provided List. Each class must implement
+ <code>java.security.Principal</code>.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>classNamesString</code> - a comma-delimited list of fully qualified class names.</dd><dd><code>classNamesList</code> - the list in which the class names will be stored.
+        The list is cleared before being populated.</dd></dl>
+</li>
+</ul>
+<a name="getUserClassNames()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUserClassNames</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getUserClassNames()</pre>
+</li>
+</ul>
+<a name="setUserClassNames(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setUserClassNames</h4>
+<pre>public&nbsp;void&nbsp;setUserClassNames(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userClassNames)</pre>
+<div class="block">Sets the list of comma-delimited classes that represent individual
+ users. The classes in the list must implement
+ <code>java.security.Principal</code>. The supplied list of classes will
+ be parsed when <a href="../../../../org/apache/catalina/util/LifecycleBase.html#start()"><code>LifecycleBase.start()</code></a> is called.</div>
+</li>
+</ul>
+<a name="authenticate(java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>authenticate</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a>&nbsp;authenticate(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;credentials)</pre>
+<div class="block">Return the <code>Principal</code> associated with the specified username
+ and credentials, if there is one; otherwise return <code>null</code>.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Realm.html#authenticate(java.lang.String,%20java.lang.String)">authenticate</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Realm.html" title="interface in org.apache.catalina">Realm</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/realm/RealmBase.html#authenticate(java.lang.String,%20java.lang.String)">authenticate</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/catalina/realm/RealmBase.html" title="class in org.apache.catalina.realm">RealmBase</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>username</code> - Username of the <code>Principal</code> to look up</dd><dd><code>credentials</code> - Password or other credentials to use in
+  authenticating this username</dd></dl>
+</li>
+</ul>
+<a name="authenticate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>authenticate</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a>&nbsp;authenticate(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;clientDigest,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;nonce,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;nc,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;cnonce,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;qop,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realmName,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;md5a2)</pre>
+<div class="block">Return the <code>Principal</code> associated with the specified username
+ and digest, if there is one; otherwise return <code>null</code>.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Realm.html#authenticate(java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String)">authenticate</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Realm.html" title="interface in org.apache.catalina">Realm</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/realm/RealmBase.html#authenticate(java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String)">authenticate</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/catalina/realm/RealmBase.html" title="class in org.apache.catalina.realm">RealmBase</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>username</code> - Username of the <code>Principal</code> to look up</dd><dd><code>clientDigest</code> - Digest to use in authenticating this username</dd><dd><code>nonce</code> - Server generated nonce</dd><dd><code>nc</code> - Nonce count</dd><dd><code>cnonce</code> - Client generated nonce</dd><dd><code>qop</code> - Quality of protection applied to the message</dd><dd><code>realmName</code> - Realm name</dd><dd><code>md5a2</code> - Second MD5 digest used to calculate the digest
+                          MD5(Method + ":" + uri)</dd></dl>
+</li>
+</ul>
+<a name="authenticate(java.lang.String, javax.security.auth.callback.CallbackHandler)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>authenticate</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a>&nbsp;authenticate(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/javax/security/auth/callback/CallbackHandler.html?is-external=true" title="class or interface in javax.security.auth.callback">CallbackHandler</a>&nbsp;callbackHandler)</pre>
+<div class="block">Perform the actual JAAS authentication</div>
+</li>
+</ul>
+<a name="getName()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getName</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getName()</pre>
+<div class="block">Return a short name for this <code>Realm</code> implementation.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/realm/RealmBase.html#getName()">getName</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/catalina/realm/RealmBase.html" title="class in org.apache.catalina.realm">RealmBase</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getPassword(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPassword</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getPassword(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username)</pre>
+<div class="block">Return the password associated with the given principal's user name. This
+ always returns null as the JAASRealm has no way of obtaining this
+ information.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/realm/RealmBase.html#getPassword(java.lang.String)">getPassword</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/catalina/realm/RealmBase.html" title="class in org.apache.catalina.realm">RealmBase</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getPrincipal(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPrincipal</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a>&nbsp;getPrincipal(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username)</pre>
+<div class="block">Return the <code>Principal</code> associated with the given user name.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/realm/RealmBase.html#getPrincipal(java.lang.String)">getPrincipal</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/catalina/realm/RealmBase.html" title="class in org.apache.catalina.realm">RealmBase</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="createPrincipal(java.lang.String, javax.security.auth.Subject, javax.security.auth.login.LoginContext)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createPrincipal</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/security/Principal.html?is-external=true" title="class or interface in java.security">Principal</a>&nbsp;createPrincipal(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
+                        <a href="http://docs.oracle.com/javase/7/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+                        <a href="http://docs.oracle.com/javase/7/docs/api/javax/security/auth/login/LoginContext.html?is-external=true" title="class or interface in javax.security.auth.login">LoginContext</a>&nbsp;loginContext)</pre>
+<div class="block">Identify and return a <code>java.security.Principal</code> instance
+ representing the authenticated user for the specified <code>Subject</code>.
+ The Principal is constructed by scanning the list of Principals returned
+ by the JAASLoginModule. The first <code>Principal</code> object that matches
+ one of the class names supplied as a "user class" is the user Principal.
+ This object is returned to the caller.
+ Any remaining principal objects returned by the LoginModules are mapped to
+ roles, but only if their respective classes match one of the "role class" classes.
+ If a user Principal cannot be constructed, return <code>null</code>.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>subject</code> - The <code>Subject</code> representing the logged-in user</dd><dd><code>loginContext</code> - Associated with the Principal so
+                     <a href="http://docs.oracle.com/javase/7/docs/api/javax/security/auth/login/LoginContext.html?is-external=true#logout()" title="class or interface in javax.security.auth.login"><code>LoginContext.logout()</code></a> can be called later</dd></dl>
+</li>
+</ul>
+<a name="makeLegalForJAAS(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>makeLegalForJAAS</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;makeLegalForJAAS(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;src)</pre>
+<div class="block">Ensure the given name is legal for JAAS configuration.
+ Added for Bugzilla 30869, made protected for easy customization
+ in case my implementation is insufficient, which I think is
+ very likely.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - The name to validate</dd>
+<dt><span class="strong">Returns:</span></dt><dd>A string that's a valid JAAS realm name</dd></dl>
+</li>
+</ul>
+<a name="startInternal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>startInternal</h4>
+<pre>protected&nbsp;void&nbsp;startInternal()
+                      throws <a href="../../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></pre>
+<div class="block">Prepare for the beginning of active use of the public methods of this
+ component and implement the requirements of
+ <a href="../../../../org/apache/catalina/util/LifecycleBase.html#startInternal()"><code>LifecycleBase.startInternal()</code></a>.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/realm/RealmBase.html#startInternal()">startInternal</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/catalina/realm/RealmBase.html" title="class in org.apache.catalina.realm">RealmBase</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></code> - if this component detects a fatal error
+  that prevents this component from being used</dd></dl>
+</li>
+</ul>
+<a name="getConfig()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getConfig</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/javax/security/auth/login/Configuration.html?is-external=true" title="class or interface in javax.security.auth.login">Configuration</a>&nbsp;getConfig()</pre>
+<div class="block">Load custom JAAS Configuration</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/realm/JAASMemoryLoginModule.html" title="class in org.apache.catalina.realm"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/realm/JDBCRealm.html" title="class in org.apache.catalina.realm"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/realm/JAASRealm.html" target="_top">Frames</a></li>
+<li><a href="JAASRealm.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_classes_inherited_from_class_org.apache.catalina.realm.RealmBase">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

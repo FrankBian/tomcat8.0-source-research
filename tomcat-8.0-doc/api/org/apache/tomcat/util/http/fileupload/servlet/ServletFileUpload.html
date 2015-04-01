@@ -1,0 +1,408 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ServletFileUpload (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="ServletFileUpload (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev Class</li>
+<li><a href="../../../../../../../org/apache/tomcat/util/http/fileupload/servlet/ServletRequestContext.html" title="class in org.apache.tomcat.util.http.fileupload.servlet"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../../index.html?org/apache/tomcat/util/http/fileupload/servlet/ServletFileUpload.html" target="_top">Frames</a></li>
+<li><a href="ServletFileUpload.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_classes_inherited_from_class_org.apache.tomcat.util.http.fileupload.FileUploadBase">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_org.apache.tomcat.util.http.fileupload.FileUploadBase">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.tomcat.util.http.fileupload.servlet</div>
+<h2 title="Class ServletFileUpload" class="title">Class ServletFileUpload</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html" title="class in org.apache.tomcat.util.http.fileupload">org.apache.tomcat.util.http.fileupload.FileUploadBase</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUpload.html" title="class in org.apache.tomcat.util.http.fileupload">org.apache.tomcat.util.http.fileupload.FileUpload</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="strong">ServletFileUpload</span>
+extends <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUpload.html" title="class in org.apache.tomcat.util.http.fileupload">FileUpload</a></pre>
+<div class="block"><p>High level API for processing file uploads.</p>
+
+ <p>This class handles multiple files per single HTML widget, sent using
+ <code>multipart/mixed</code> encoding type, as specified by
+ <a href="http://www.ietf.org/rfc/rfc1867.txt">RFC 1867</a>.  Use <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#parseRequest(org.apache.tomcat.util.http.fileupload.RequestContext)"><code>FileUploadBase.parseRequest(org.apache.tomcat.util.http.fileupload.RequestContext)</code></a> to
+ acquire a list of <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileItem.html" title="interface in org.apache.tomcat.util.http.fileupload"><code>FileItem</code></a>s
+ associated with a given HTML widget.</p>
+
+ <p>How the data for individual parts is stored is determined by the factory
+ used to create them; a given part may be in memory, on disk, or somewhere
+ else.</p></div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested_class_summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="nested_classes_inherited_from_class_org.apache.tomcat.util.http.fileupload.FileUploadBase">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from class&nbsp;org.apache.tomcat.util.http.fileupload.<a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html" title="class in org.apache.tomcat.util.http.fileupload">FileUploadBase</a></h3>
+<code><a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.FileSizeLimitExceededException.html" title="class in org.apache.tomcat.util.http.fileupload">FileUploadBase.FileSizeLimitExceededException</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.FileUploadIOException.html" title="class in org.apache.tomcat.util.http.fileupload">FileUploadBase.FileUploadIOException</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.InvalidContentTypeException.html" title="class in org.apache.tomcat.util.http.fileupload">FileUploadBase.InvalidContentTypeException</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.IOFileUploadException.html" title="class in org.apache.tomcat.util.http.fileupload">FileUploadBase.IOFileUploadException</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.SizeException.html" title="class in org.apache.tomcat.util.http.fileupload">FileUploadBase.SizeException</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.SizeLimitExceededException.html" title="class in org.apache.tomcat.util.http.fileupload">FileUploadBase.SizeLimitExceededException</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.tomcat.util.http.fileupload.FileUploadBase">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.tomcat.util.http.fileupload.<a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html" title="class in org.apache.tomcat.util.http.fileupload">FileUploadBase</a></h3>
+<code><a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#ATTACHMENT">ATTACHMENT</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#CONTENT_DISPOSITION">CONTENT_DISPOSITION</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#CONTENT_LENGTH">CONTENT_LENGTH</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#CONTENT_TYPE">CONTENT_TYPE</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#FORM_DATA">FORM_DATA</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#MULTIPART">MULTIPART</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#MULTIPART_FORM_DATA">MULTIPART_FORM_DATA</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#MULTIPART_MIXED">MULTIPART_MIXED</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../../../org/apache/tomcat/util/http/fileupload/servlet/ServletFileUpload.html#ServletFileUpload()">ServletFileUpload</a></strong>()</code>
+<div class="block">Constructs an uninitialised instance of this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../../../../../org/apache/tomcat/util/http/fileupload/servlet/ServletFileUpload.html#ServletFileUpload(org.apache.tomcat.util.http.fileupload.FileItemFactory)">ServletFileUpload</a></strong>(<a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileItemFactory.html" title="interface in org.apache.tomcat.util.http.fileupload">FileItemFactory</a>&nbsp;fileItemFactory)</code>
+<div class="block">Constructs an instance of this class which uses the supplied factory to
+ create <code>FileItem</code> instances.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileItemIterator.html" title="interface in org.apache.tomcat.util.http.fileupload">FileItemIterator</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../../org/apache/tomcat/util/http/fileupload/servlet/ServletFileUpload.html#getItemIterator(javax.servlet.http.HttpServletRequest)">getItemIterator</a></strong>(<a href="../../../../../../../../servletapi/javax/servlet/http/HttpServletRequest.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletRequest</a>&nbsp;request)</code>
+<div class="block">Processes an <a href="http://www.ietf.org/rfc/rfc1867.txt">RFC 1867</a>
+ compliant <code>multipart/form-data</code> stream.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../../org/apache/tomcat/util/http/fileupload/servlet/ServletFileUpload.html#isMultipartContent(javax.servlet.http.HttpServletRequest)">isMultipartContent</a></strong>(<a href="../../../../../../../../servletapi/javax/servlet/http/HttpServletRequest.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletRequest</a>&nbsp;request)</code>
+<div class="block">Utility method that determines whether the request contains multipart
+ content.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileItem.html" title="interface in org.apache.tomcat.util.http.fileupload">FileItem</a>&gt;&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../../org/apache/tomcat/util/http/fileupload/servlet/ServletFileUpload.html#parseParameterMap(javax.servlet.http.HttpServletRequest)">parseParameterMap</a></strong>(<a href="../../../../../../../../servletapi/javax/servlet/http/HttpServletRequest.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletRequest</a>&nbsp;request)</code>
+<div class="block">Processes an <a href="http://www.ietf.org/rfc/rfc1867.txt">RFC 1867</a>
+ compliant <code>multipart/form-data</code> stream.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.tomcat.util.http.fileupload.FileUpload">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.tomcat.util.http.fileupload.<a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUpload.html" title="class in org.apache.tomcat.util.http.fileupload">FileUpload</a></h3>
+<code><a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUpload.html#getFileItemFactory()">getFileItemFactory</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUpload.html#setFileItemFactory(org.apache.tomcat.util.http.fileupload.FileItemFactory)">setFileItemFactory</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.tomcat.util.http.fileupload.FileUploadBase">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.tomcat.util.http.fileupload.<a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html" title="class in org.apache.tomcat.util.http.fileupload">FileUploadBase</a></h3>
+<code><a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#getBoundary(java.lang.String)">getBoundary</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#getFieldName(org.apache.tomcat.util.http.fileupload.FileItemHeaders)">getFieldName</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#getFileName(org.apache.tomcat.util.http.fileupload.FileItemHeaders)">getFileName</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#getFileSizeMax()">getFileSizeMax</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#getHeaderEncoding()">getHeaderEncoding</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#getItemIterator(org.apache.tomcat.util.http.fileupload.RequestContext)">getItemIterator</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#getParsedHeaders(java.lang.String)">getParsedHeaders</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#getProgressListener()">getProgressListener</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#getSizeMax()">getSizeMax</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#isMultipartContent(org.apache.tomcat.util.http.fileupload.RequestContext)">isMultipartContent</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#newFileItemHeaders()">newFileItemHeaders</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#parseParameterMap(org.apache.tomcat.util.http.fileupload.RequestContext)">parseParameterMap</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#parseRequest(org.apache.tomcat.util.http.fileupload.RequestContext)">parseRequest</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#setFileSizeMax(long)">setFileSizeMax</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#setHeaderEncoding(java.lang.String)">setHeaderEncoding</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#setProgressListener(org.apache.tomcat.util.http.fileupload.ProgressListener)">setProgressListener</a>, <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadBase.html#setSizeMax(long)">setSizeMax</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ServletFileUpload()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ServletFileUpload</h4>
+<pre>public&nbsp;ServletFileUpload()</pre>
+<div class="block">Constructs an uninitialised instance of this class. A factory must be
+ configured, using <code>setFileItemFactory()</code>, before attempting
+ to parse requests.</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUpload.html#FileUpload(org.apache.tomcat.util.http.fileupload.FileItemFactory)"><code>FileUpload.FileUpload(FileItemFactory)</code></a></dd></dl>
+</li>
+</ul>
+<a name="ServletFileUpload(org.apache.tomcat.util.http.fileupload.FileItemFactory)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ServletFileUpload</h4>
+<pre>public&nbsp;ServletFileUpload(<a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileItemFactory.html" title="interface in org.apache.tomcat.util.http.fileupload">FileItemFactory</a>&nbsp;fileItemFactory)</pre>
+<div class="block">Constructs an instance of this class which uses the supplied factory to
+ create <code>FileItem</code> instances.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fileItemFactory</code> - The factory to use for creating file items.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUpload.html#FileUpload()"><code>FileUpload.FileUpload()</code></a></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="isMultipartContent(javax.servlet.http.HttpServletRequest)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isMultipartContent</h4>
+<pre>public static final&nbsp;boolean&nbsp;isMultipartContent(<a href="../../../../../../../../servletapi/javax/servlet/http/HttpServletRequest.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletRequest</a>&nbsp;request)</pre>
+<div class="block">Utility method that determines whether the request contains multipart
+ content.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>request</code> - The servlet request to be evaluated. Must be non-null.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the request is multipart;
+         <code>false</code> otherwise.</dd></dl>
+</li>
+</ul>
+<a name="parseParameterMap(javax.servlet.http.HttpServletRequest)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>parseParameterMap</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileItem.html" title="interface in org.apache.tomcat.util.http.fileupload">FileItem</a>&gt;&gt;&nbsp;parseParameterMap(<a href="../../../../../../../../servletapi/javax/servlet/http/HttpServletRequest.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletRequest</a>&nbsp;request)
+                                             throws <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadException.html" title="class in org.apache.tomcat.util.http.fileupload">FileUploadException</a></pre>
+<div class="block">Processes an <a href="http://www.ietf.org/rfc/rfc1867.txt">RFC 1867</a>
+ compliant <code>multipart/form-data</code> stream.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>request</code> - The servlet request to be parsed.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>A map of <code>FileItem</code> instances parsed from the request.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadException.html" title="class in org.apache.tomcat.util.http.fileupload">FileUploadException</a></code> - if there are problems reading/parsing
+                             the request or storing files.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>1.3</dd></dl>
+</li>
+</ul>
+<a name="getItemIterator(javax.servlet.http.HttpServletRequest)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getItemIterator</h4>
+<pre>public&nbsp;<a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileItemIterator.html" title="interface in org.apache.tomcat.util.http.fileupload">FileItemIterator</a>&nbsp;getItemIterator(<a href="../../../../../../../../servletapi/javax/servlet/http/HttpServletRequest.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletRequest</a>&nbsp;request)
+                                 throws <a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadException.html" title="class in org.apache.tomcat.util.http.fileupload">FileUploadException</a>,
+                                        <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Processes an <a href="http://www.ietf.org/rfc/rfc1867.txt">RFC 1867</a>
+ compliant <code>multipart/form-data</code> stream.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>request</code> - The servlet request to be parsed.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>An iterator to instances of <code>FileItemStream</code>
+         parsed from the request, in the order that they were
+         transmitted.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../../../../org/apache/tomcat/util/http/fileupload/FileUploadException.html" title="class in org.apache.tomcat.util.http.fileupload">FileUploadException</a></code> - if there are problems reading/parsing
+                             the request or storing files.</dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - An I/O error occurred. This may be a network
+   error while communicating with the client or a problem while
+   storing the uploaded content.</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev Class</li>
+<li><a href="../../../../../../../org/apache/tomcat/util/http/fileupload/servlet/ServletRequestContext.html" title="class in org.apache.tomcat.util.http.fileupload.servlet"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../../index.html?org/apache/tomcat/util/http/fileupload/servlet/ServletFileUpload.html" target="_top">Frames</a></li>
+<li><a href="ServletFileUpload.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_classes_inherited_from_class_org.apache.tomcat.util.http.fileupload.FileUploadBase">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_org.apache.tomcat.util.http.fileupload.FileUploadBase">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

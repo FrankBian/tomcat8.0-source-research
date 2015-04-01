@@ -448,7 +448,8 @@ public final class Bootstrap {
      */
     public static void main(String args[]) {
 
-         System.out.println("Perfect ! It's started by Frank");
+        System.out.println("Perfect ! It's started by Frank");
+
         if (daemon == null) {
             // Don't set daemon until init() has completed
             Bootstrap bootstrap = new Bootstrap();

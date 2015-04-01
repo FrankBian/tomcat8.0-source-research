@@ -1,0 +1,1043 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Container (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="Container (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/apache/catalina/Contained.html" title="interface in org.apache.catalina"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../org/apache/catalina/ContainerEvent.html" title="class in org.apache.catalina"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/apache/catalina/Container.html" target="_top">Frames</a></li>
+<li><a href="Container.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina</div>
+<h2 title="Interface Container" class="title">Interface Container</h2>
+</div>
+<div class="contentContainer">
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Superinterfaces:</dt>
+<dd><a href="../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a></dd>
+</dl>
+<dl>
+<dt>All Known Subinterfaces:</dt>
+<dd><a href="../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a>, <a href="../../../org/apache/catalina/Engine.html" title="interface in org.apache.catalina">Engine</a>, <a href="../../../org/apache/catalina/Host.html" title="interface in org.apache.catalina">Host</a>, <a href="../../../org/apache/catalina/Wrapper.html" title="interface in org.apache.catalina">Wrapper</a></dd>
+</dl>
+<dl>
+<dt>All Known Implementing Classes:</dt>
+<dd><a href="../../../org/apache/catalina/core/ContainerBase.html" title="class in org.apache.catalina.core">ContainerBase</a>, <a href="../../../org/apache/catalina/startup/FailedContext.html" title="class in org.apache.catalina.startup">FailedContext</a>, <a href="../../../org/apache/catalina/ha/context/ReplicatedContext.html" title="class in org.apache.catalina.ha.context">ReplicatedContext</a>, <a href="../../../org/apache/catalina/core/StandardContext.html" title="class in org.apache.catalina.core">StandardContext</a>, <a href="../../../org/apache/catalina/core/StandardEngine.html" title="class in org.apache.catalina.core">StandardEngine</a>, <a href="../../../org/apache/catalina/core/StandardHost.html" title="class in org.apache.catalina.core">StandardHost</a>, <a href="../../../org/apache/catalina/core/StandardWrapper.html" title="class in org.apache.catalina.core">StandardWrapper</a>, <a href="../../../org/apache/catalina/startup/Tomcat.ExistingStandardWrapper.html" title="class in org.apache.catalina.startup">Tomcat.ExistingStandardWrapper</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public interface <span class="strong">Container</span>
+extends <a href="../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a></pre>
+<div class="block">A <b>Container</b> is an object that can execute requests received from
+ a client, and return responses based on those requests.  A Container may
+ optionally support a pipeline of Valves that process the request in an
+ order configured at runtime, by implementing the <b>Pipeline</b> interface
+ as well.
+ <p>
+ Containers will exist at several conceptual levels within Catalina.  The
+ following examples represent common cases:
+ <ul>
+ <li><b>Engine</b> - Representation of the entire Catalina servlet engine,
+     most likely containing one or more subcontainers that are either Host
+     or Context implementations, or other custom groups.
+ <li><b>Host</b> - Representation of a virtual host containing a number
+     of Contexts.
+ <li><b>Context</b> - Representation of a single ServletContext, which will
+     typically contain one or more Wrappers for the supported servlets.
+ <li><b>Wrapper</b> - Representation of an individual servlet definition
+     (which may support multiple servlet instances if the servlet itself
+     implements SingleThreadModel).
+ </ul>
+ A given deployment of Catalina need not include Containers at all of the
+ levels described above.  For example, an administration application
+ embedded within a network device (such as a router) might only contain
+ a single Context and a few Wrappers, or even a single Wrapper if the
+ application is relatively small.  Therefore, Container implementations
+ need to be designed so that they will operate correctly in the absence
+ of parent Containers in a given deployment.
+ <p>
+ A Container may also be associated with a number of support components
+ that provide functionality which might be shared (by attaching it to a
+ parent Container) or individually customized.  The following support
+ components are currently recognized:
+ <ul>
+ <li><b>Loader</b> - Class loader to use for integrating new Java classes
+     for this Container into the JVM in which Catalina is running.
+ <li><b>Logger</b> - Implementation of the <code>log()</code> method
+     signatures of the <code>ServletContext</code> interface.
+ <li><b>Manager</b> - Manager for the pool of Sessions associated with
+     this Container.
+ <li><b>Realm</b> - Read-only interface to a security domain, for
+     authenticating user identities and their corresponding roles.
+ <li><b>Resources</b> - JNDI directory context enabling access to static
+     resources, enabling custom linkages to existing server components when
+     Catalina is embedded in a larger server.
+ </ul></div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Craig R. McClanahan, Remy Maucherat</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#ADD_CHILD_EVENT">ADD_CHILD_EVENT</a></strong></code>
+<div class="block">The ContainerEvent event type sent when a child container is added
+ by <code>addChild()</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#ADD_VALVE_EVENT">ADD_VALVE_EVENT</a></strong></code>
+<div class="block">The ContainerEvent event type sent when a valve is added
+ by <code>addValve()</code>, if this Container supports pipelines.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#REMOVE_CHILD_EVENT">REMOVE_CHILD_EVENT</a></strong></code>
+<div class="block">The ContainerEvent event type sent when a child container is removed
+ by <code>removeChild()</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#REMOVE_VALVE_EVENT">REMOVE_VALVE_EVENT</a></strong></code>
+<div class="block">The ContainerEvent event type sent when a valve is removed
+ by <code>removeValve()</code>, if this Container supports pipelines.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.Lifecycle">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.apache.catalina.<a href="../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a></h3>
+<code><a href="../../../org/apache/catalina/Lifecycle.html#AFTER_DESTROY_EVENT">AFTER_DESTROY_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#AFTER_INIT_EVENT">AFTER_INIT_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#AFTER_START_EVENT">AFTER_START_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#AFTER_STOP_EVENT">AFTER_STOP_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#BEFORE_DESTROY_EVENT">BEFORE_DESTROY_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#BEFORE_INIT_EVENT">BEFORE_INIT_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#BEFORE_START_EVENT">BEFORE_START_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#BEFORE_STOP_EVENT">BEFORE_STOP_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#CONFIGURE_START_EVENT">CONFIGURE_START_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#CONFIGURE_STOP_EVENT">CONFIGURE_STOP_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#PERIODIC_EVENT">PERIODIC_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#START_EVENT">START_EVENT</a>, <a href="../../../org/apache/catalina/Lifecycle.html#STOP_EVENT">STOP_EVENT</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#addChild(org.apache.catalina.Container)">addChild</a></strong>(<a href="../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a>&nbsp;child)</code>
+<div class="block">Add a new child Container to those associated with this Container,
+ if supported.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#addContainerListener(org.apache.catalina.ContainerListener)">addContainerListener</a></strong>(<a href="../../../org/apache/catalina/ContainerListener.html" title="interface in org.apache.catalina">ContainerListener</a>&nbsp;listener)</code>
+<div class="block">Add a container event listener to this component.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#addPropertyChangeListener(java.beans.PropertyChangeListener)">addPropertyChangeListener</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/beans/PropertyChangeListener.html?is-external=true" title="class or interface in java.beans">PropertyChangeListener</a>&nbsp;listener)</code>
+<div class="block">Add a property change listener to this component.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#backgroundProcess()">backgroundProcess</a></strong>()</code>
+<div class="block">Execute a periodic task, such as reloading, etc.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#findChild(java.lang.String)">findChild</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Obtain a child Container by name.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#findChildren()">findChildren</a></strong>()</code>
+<div class="block">Obtain the child Containers associated with this Container.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../org/apache/catalina/ContainerListener.html" title="interface in org.apache.catalina">ContainerListener</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#findContainerListeners()">findContainerListeners</a></strong>()</code>
+<div class="block">Obtain the container listeners associated with this Container.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#fireContainerEvent(java.lang.String,%20java.lang.Object)">fireContainerEvent</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;type,
+                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;data)</code>
+<div class="block">Notify all container event listeners that a particular event has
+ occurred for this Container.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../org/apache/catalina/AccessLog.html" title="interface in org.apache.catalina">AccessLog</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#getAccessLog()">getAccessLog</a></strong>()</code>
+<div class="block">Obtain the AccessLog to use to log a request/response that is destined
+ for this container.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#getBackgroundProcessorDelay()">getBackgroundProcessorDelay</a></strong>()</code>
+<div class="block">Get the delay between the invocation of the backgroundProcess method on
+ this container and its children.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#getCatalinaBase()">getCatalinaBase</a></strong>()</code>
+<div class="block">Obtain the location of CATALINA_BASE.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#getCatalinaHome()">getCatalinaHome</a></strong>()</code>
+<div class="block">Obtain the location of CATALINA_HOME.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../org/apache/catalina/Cluster.html" title="interface in org.apache.catalina">Cluster</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#getCluster()">getCluster</a></strong>()</code>
+<div class="block">Get the Cluster for this container.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#getDomain()">getDomain</a></strong>()</code>
+<div class="block">Obtain the JMX domain under which this container will be / has been
+ registered.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../org/apache/juli/logging/Log.html" title="interface in org.apache.juli.logging">Log</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#getLogger()">getLogger</a></strong>()</code>
+<div class="block">Obtain the log to which events for this container should be logged.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#getMBeanKeyProperties()">getMBeanKeyProperties</a></strong>()</code>
+<div class="block">Calculate the key properties string to be added to an object's
+ <a href="http://docs.oracle.com/javase/7/docs/api/javax/management/ObjectName.html?is-external=true" title="class or interface in javax.management"><code>ObjectName</code></a> to indicate that it is associated with this container.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#getName()">getName</a></strong>()</code>
+<div class="block">Return a name string (suitable for use by humans) that describes this
+ Container.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/javax/management/ObjectName.html?is-external=true" title="class or interface in javax.management">ObjectName</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#getObjectName()">getObjectName</a></strong>()</code>
+<div class="block">Obtain the JMX name for this container.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#getParent()">getParent</a></strong>()</code>
+<div class="block">Get the parent container.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#getParentClassLoader()">getParentClassLoader</a></strong>()</code>
+<div class="block">Get the parent class loader.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../org/apache/catalina/Pipeline.html" title="interface in org.apache.catalina">Pipeline</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#getPipeline()">getPipeline</a></strong>()</code>
+<div class="block">Return the Pipeline object that manages the Valves associated with
+ this Container.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../org/apache/catalina/Realm.html" title="interface in org.apache.catalina">Realm</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#getRealm()">getRealm</a></strong>()</code>
+<div class="block">Obtain the Realm with which this Container is associated.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#getStartStopThreads()">getStartStopThreads</a></strong>()</code>
+<div class="block">Obtain the number of threads available for starting and stopping any
+ children associated with this container.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#logAccess(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response,%20long,%20boolean)">logAccess</a></strong>(<a href="../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request,
+         <a href="../../../org/apache/catalina/connector/Response.html" title="class in org.apache.catalina.connector">Response</a>&nbsp;response,
+         long&nbsp;time,
+         boolean&nbsp;useDefault)</code>
+<div class="block">Log a request/response that was destined for this container but has been
+ handled earlier in the processing chain so that the request/response
+ still appears in the correct access logs.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#removeChild(org.apache.catalina.Container)">removeChild</a></strong>(<a href="../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a>&nbsp;child)</code>
+<div class="block">Remove an existing child Container from association with this parent
+ Container.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#removeContainerListener(org.apache.catalina.ContainerListener)">removeContainerListener</a></strong>(<a href="../../../org/apache/catalina/ContainerListener.html" title="interface in org.apache.catalina">ContainerListener</a>&nbsp;listener)</code>
+<div class="block">Remove a container event listener from this component.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#removePropertyChangeListener(java.beans.PropertyChangeListener)">removePropertyChangeListener</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/beans/PropertyChangeListener.html?is-external=true" title="class or interface in java.beans">PropertyChangeListener</a>&nbsp;listener)</code>
+<div class="block">Remove a property change listener from this component.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#setBackgroundProcessorDelay(int)">setBackgroundProcessorDelay</a></strong>(int&nbsp;delay)</code>
+<div class="block">Set the delay between the invocation of the execute method on this
+ container and its children.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#setCluster(org.apache.catalina.Cluster)">setCluster</a></strong>(<a href="../../../org/apache/catalina/Cluster.html" title="interface in org.apache.catalina">Cluster</a>&nbsp;cluster)</code>
+<div class="block">Set the Cluster with which this Container is associated.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#setName(java.lang.String)">setName</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Set a name string (suitable for use by humans) that describes this
+ Container.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#setParent(org.apache.catalina.Container)">setParent</a></strong>(<a href="../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a>&nbsp;container)</code>
+<div class="block">Set the parent Container to which this Container is being added as a
+ child.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#setParentClassLoader(java.lang.ClassLoader)">setParentClassLoader</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>&nbsp;parent)</code>
+<div class="block">Set the parent class loader for this component.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#setRealm(org.apache.catalina.Realm)">setRealm</a></strong>(<a href="../../../org/apache/catalina/Realm.html" title="interface in org.apache.catalina">Realm</a>&nbsp;realm)</code>
+<div class="block">Set the Realm with which this Container is associated.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/catalina/Container.html#setStartStopThreads(int)">setStartStopThreads</a></strong>(int&nbsp;startStopThreads)</code>
+<div class="block">Sets the number of threads available for starting and stopping any
+ children associated with this container.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.Lifecycle">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.apache.catalina.<a href="../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a></h3>
+<code><a href="../../../org/apache/catalina/Lifecycle.html#addLifecycleListener(org.apache.catalina.LifecycleListener)">addLifecycleListener</a>, <a href="../../../org/apache/catalina/Lifecycle.html#destroy()">destroy</a>, <a href="../../../org/apache/catalina/Lifecycle.html#findLifecycleListeners()">findLifecycleListeners</a>, <a href="../../../org/apache/catalina/Lifecycle.html#getState()">getState</a>, <a href="../../../org/apache/catalina/Lifecycle.html#getStateName()">getStateName</a>, <a href="../../../org/apache/catalina/Lifecycle.html#init()">init</a>, <a href="../../../org/apache/catalina/Lifecycle.html#removeLifecycleListener(org.apache.catalina.LifecycleListener)">removeLifecycleListener</a>, <a href="../../../org/apache/catalina/Lifecycle.html#start()">start</a>, <a href="../../../org/apache/catalina/Lifecycle.html#stop()">stop</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="ADD_CHILD_EVENT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ADD_CHILD_EVENT</h4>
+<pre>static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> ADD_CHILD_EVENT</pre>
+<div class="block">The ContainerEvent event type sent when a child container is added
+ by <code>addChild()</code>.</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#org.apache.catalina.Container.ADD_CHILD_EVENT">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="ADD_VALVE_EVENT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ADD_VALVE_EVENT</h4>
+<pre>static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> ADD_VALVE_EVENT</pre>
+<div class="block">The ContainerEvent event type sent when a valve is added
+ by <code>addValve()</code>, if this Container supports pipelines.</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#org.apache.catalina.Container.ADD_VALVE_EVENT">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="REMOVE_CHILD_EVENT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>REMOVE_CHILD_EVENT</h4>
+<pre>static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> REMOVE_CHILD_EVENT</pre>
+<div class="block">The ContainerEvent event type sent when a child container is removed
+ by <code>removeChild()</code>.</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#org.apache.catalina.Container.REMOVE_CHILD_EVENT">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="REMOVE_VALVE_EVENT">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>REMOVE_VALVE_EVENT</h4>
+<pre>static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> REMOVE_VALVE_EVENT</pre>
+<div class="block">The ContainerEvent event type sent when a valve is removed
+ by <code>removeValve()</code>, if this Container supports pipelines.</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#org.apache.catalina.Container.REMOVE_VALVE_EVENT">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getLogger()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLogger</h4>
+<pre><a href="../../../org/apache/juli/logging/Log.html" title="interface in org.apache.juli.logging">Log</a>&nbsp;getLogger()</pre>
+<div class="block">Obtain the log to which events for this container should be logged.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The Logger with which this Container is associated.  If there is
+         no associated Logger, return the Logger associated with the
+         parent Container (if any); otherwise return <code>null</code>.</dd></dl>
+</li>
+</ul>
+<a name="getObjectName()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getObjectName</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/javax/management/ObjectName.html?is-external=true" title="class or interface in javax.management">ObjectName</a>&nbsp;getObjectName()</pre>
+<div class="block">Obtain the JMX name for this container.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the JMX name associated with this container.</dd></dl>
+</li>
+</ul>
+<a name="getDomain()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDomain</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getDomain()</pre>
+<div class="block">Obtain the JMX domain under which this container will be / has been
+ registered.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The JMX domain name</dd></dl>
+</li>
+</ul>
+<a name="getMBeanKeyProperties()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMBeanKeyProperties</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getMBeanKeyProperties()</pre>
+<div class="block">Calculate the key properties string to be added to an object's
+ <a href="http://docs.oracle.com/javase/7/docs/api/javax/management/ObjectName.html?is-external=true" title="class or interface in javax.management"><code>ObjectName</code></a> to indicate that it is associated with this container.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>A string suitable for appending to the ObjectName</dd></dl>
+</li>
+</ul>
+<a name="getPipeline()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPipeline</h4>
+<pre><a href="../../../org/apache/catalina/Pipeline.html" title="interface in org.apache.catalina">Pipeline</a>&nbsp;getPipeline()</pre>
+<div class="block">Return the Pipeline object that manages the Valves associated with
+ this Container.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The Pipeline</dd></dl>
+</li>
+</ul>
+<a name="getCluster()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCluster</h4>
+<pre><a href="../../../org/apache/catalina/Cluster.html" title="interface in org.apache.catalina">Cluster</a>&nbsp;getCluster()</pre>
+<div class="block">Get the Cluster for this container.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The Cluster with which this Container is associated. If there is
+         no associated Cluster, return the Cluster associated with our
+         parent Container (if any); otherwise return <code>null</code>.</dd></dl>
+</li>
+</ul>
+<a name="setCluster(org.apache.catalina.Cluster)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCluster</h4>
+<pre>void&nbsp;setCluster(<a href="../../../org/apache/catalina/Cluster.html" title="interface in org.apache.catalina">Cluster</a>&nbsp;cluster)</pre>
+<div class="block">Set the Cluster with which this Container is associated.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>cluster</code> - the Cluster with which this Container is associated.</dd></dl>
+</li>
+</ul>
+<a name="getBackgroundProcessorDelay()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBackgroundProcessorDelay</h4>
+<pre>int&nbsp;getBackgroundProcessorDelay()</pre>
+<div class="block">Get the delay between the invocation of the backgroundProcess method on
+ this container and its children. Child containers will not be invoked if
+ their delay value is positive (which would mean they are using their own
+ thread). Setting this to a positive value will cause a thread to be
+ spawned. After waiting the specified amount of time, the thread will
+ invoke the <a href="../../../org/apache/catalina/Container.html#backgroundProcess()"><code>backgroundProcess()</code></a> method on this container and all
+ children with non-positive delay values.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The delay between the invocation of the backgroundProcess method
+         on this container and its children. A non-positive value
+         indicates that background processing will be managed by the
+         parent.</dd></dl>
+</li>
+</ul>
+<a name="setBackgroundProcessorDelay(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setBackgroundProcessorDelay</h4>
+<pre>void&nbsp;setBackgroundProcessorDelay(int&nbsp;delay)</pre>
+<div class="block">Set the delay between the invocation of the execute method on this
+ container and its children.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>delay</code> - The delay in seconds between the invocation of
+              backgroundProcess methods</dd></dl>
+</li>
+</ul>
+<a name="getName()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getName</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getName()</pre>
+<div class="block">Return a name string (suitable for use by humans) that describes this
+ Container.  Within the set of child containers belonging to a particular
+ parent, Container names must be unique.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The human readable name of this container.</dd></dl>
+</li>
+</ul>
+<a name="setName(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setName</h4>
+<pre>void&nbsp;setName(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block">Set a name string (suitable for use by humans) that describes this
+ Container.  Within the set of child containers belonging to a particular
+ parent, Container names must be unique.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - New name of this container</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code> - if this Container has already been
+  added to the children of a parent Container (after which the name
+  may not be changed)</dd></dl>
+</li>
+</ul>
+<a name="getParent()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getParent</h4>
+<pre><a href="../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a>&nbsp;getParent()</pre>
+<div class="block">Get the parent container.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>Return the Container for which this Container is a child, if
+         there is one. If there is no defined parent, return
+         <code>null</code>.</dd></dl>
+</li>
+</ul>
+<a name="setParent(org.apache.catalina.Container)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setParent</h4>
+<pre>void&nbsp;setParent(<a href="../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a>&nbsp;container)</pre>
+<div class="block">Set the parent Container to which this Container is being added as a
+ child.  This Container may refuse to become attached to the specified
+ Container by throwing an exception.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>container</code> - Container to which this Container is being added
+  as a child</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if this Container refuses to become
+  attached to the specified Container</dd></dl>
+</li>
+</ul>
+<a name="getParentClassLoader()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getParentClassLoader</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>&nbsp;getParentClassLoader()</pre>
+<div class="block">Get the parent class loader.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the parent class loader for this component. If not set, return
+         <a href="../../../org/apache/catalina/Container.html#getParent()"><code>getParent()</code></a>.<a href="../../../org/apache/catalina/Container.html#getParentClassLoader()"><code>getParentClassLoader()</code></a>. If no
+         parent has been set, return the system class loader.</dd></dl>
+</li>
+</ul>
+<a name="setParentClassLoader(java.lang.ClassLoader)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setParentClassLoader</h4>
+<pre>void&nbsp;setParentClassLoader(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>&nbsp;parent)</pre>
+<div class="block">Set the parent class loader for this component. For <a href="../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina"><code>Context</code></a>s
+ this call is meaningful only <strong>before</strong> a Loader has
+ been configured, and the specified value (if non-null) should be
+ passed as an argument to the class loader constructor.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>parent</code> - The new parent class loader</dd></dl>
+</li>
+</ul>
+<a name="getRealm()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRealm</h4>
+<pre><a href="../../../org/apache/catalina/Realm.html" title="interface in org.apache.catalina">Realm</a>&nbsp;getRealm()</pre>
+<div class="block">Obtain the Realm with which this Container is associated.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The associated Realm; if there is no associated Realm, the
+         Realm associated with the parent Container (if any); otherwise
+         return <code>null</code>.</dd></dl>
+</li>
+</ul>
+<a name="setRealm(org.apache.catalina.Realm)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRealm</h4>
+<pre>void&nbsp;setRealm(<a href="../../../org/apache/catalina/Realm.html" title="interface in org.apache.catalina">Realm</a>&nbsp;realm)</pre>
+<div class="block">Set the Realm with which this Container is associated.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>realm</code> - The newly associated Realm</dd></dl>
+</li>
+</ul>
+<a name="backgroundProcess()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>backgroundProcess</h4>
+<pre>void&nbsp;backgroundProcess()</pre>
+<div class="block">Execute a periodic task, such as reloading, etc. This method will be
+ invoked inside the classloading context of this container. Unexpected
+ throwables will be caught and logged.</div>
+</li>
+</ul>
+<a name="addChild(org.apache.catalina.Container)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addChild</h4>
+<pre>void&nbsp;addChild(<a href="../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a>&nbsp;child)</pre>
+<div class="block">Add a new child Container to those associated with this Container,
+ if supported.  Prior to adding this Container to the set of children,
+ the child's <code>setParent()</code> method must be called, with this
+ Container as an argument.  This method may thrown an
+ <code>IllegalArgumentException</code> if this Container chooses not
+ to be attached to the specified Container, in which case it is not added</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>child</code> - New child Container to be added</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if this exception is thrown by
+  the <code>setParent()</code> method of the child Container</dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the new child does not have
+  a name unique from that of existing children of this Container</dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code> - if this Container does not support
+  child Containers</dd></dl>
+</li>
+</ul>
+<a name="addContainerListener(org.apache.catalina.ContainerListener)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addContainerListener</h4>
+<pre>void&nbsp;addContainerListener(<a href="../../../org/apache/catalina/ContainerListener.html" title="interface in org.apache.catalina">ContainerListener</a>&nbsp;listener)</pre>
+<div class="block">Add a container event listener to this component.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>listener</code> - The listener to add</dd></dl>
+</li>
+</ul>
+<a name="addPropertyChangeListener(java.beans.PropertyChangeListener)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addPropertyChangeListener</h4>
+<pre>void&nbsp;addPropertyChangeListener(<a href="http://docs.oracle.com/javase/7/docs/api/java/beans/PropertyChangeListener.html?is-external=true" title="class or interface in java.beans">PropertyChangeListener</a>&nbsp;listener)</pre>
+<div class="block">Add a property change listener to this component.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>listener</code> - The listener to add</dd></dl>
+</li>
+</ul>
+<a name="findChild(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findChild</h4>
+<pre><a href="../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a>&nbsp;findChild(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block">Obtain a child Container by name.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - Name of the child Container to be retrieved</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The child Container with the given name or <code>null</code> if
+         no such child exists.</dd></dl>
+</li>
+</ul>
+<a name="findChildren()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findChildren</h4>
+<pre><a href="../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a>[]&nbsp;findChildren()</pre>
+<div class="block">Obtain the child Containers associated with this Container.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>An array containing all children of this container. If this
+         Container has no children, a zero-length array is returned.</dd></dl>
+</li>
+</ul>
+<a name="findContainerListeners()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findContainerListeners</h4>
+<pre><a href="../../../org/apache/catalina/ContainerListener.html" title="interface in org.apache.catalina">ContainerListener</a>[]&nbsp;findContainerListeners()</pre>
+<div class="block">Obtain the container listeners associated with this Container.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>An array containing the container listeners associated with this
+         Container. If this Container has no registered container
+         listeners, a zero-length array is returned.</dd></dl>
+</li>
+</ul>
+<a name="removeChild(org.apache.catalina.Container)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeChild</h4>
+<pre>void&nbsp;removeChild(<a href="../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a>&nbsp;child)</pre>
+<div class="block">Remove an existing child Container from association with this parent
+ Container.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>child</code> - Existing child Container to be removed</dd></dl>
+</li>
+</ul>
+<a name="removeContainerListener(org.apache.catalina.ContainerListener)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeContainerListener</h4>
+<pre>void&nbsp;removeContainerListener(<a href="../../../org/apache/catalina/ContainerListener.html" title="interface in org.apache.catalina">ContainerListener</a>&nbsp;listener)</pre>
+<div class="block">Remove a container event listener from this component.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>listener</code> - The listener to remove</dd></dl>
+</li>
+</ul>
+<a name="removePropertyChangeListener(java.beans.PropertyChangeListener)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removePropertyChangeListener</h4>
+<pre>void&nbsp;removePropertyChangeListener(<a href="http://docs.oracle.com/javase/7/docs/api/java/beans/PropertyChangeListener.html?is-external=true" title="class or interface in java.beans">PropertyChangeListener</a>&nbsp;listener)</pre>
+<div class="block">Remove a property change listener from this component.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>listener</code> - The listener to remove</dd></dl>
+</li>
+</ul>
+<a name="fireContainerEvent(java.lang.String, java.lang.Object)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>fireContainerEvent</h4>
+<pre>void&nbsp;fireContainerEvent(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;type,
+                      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;data)</pre>
+<div class="block">Notify all container event listeners that a particular event has
+ occurred for this Container.  The default implementation performs
+ this notification synchronously using the calling thread.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>type</code> - Event type</dd><dd><code>data</code> - Event data</dd></dl>
+</li>
+</ul>
+<a name="logAccess(org.apache.catalina.connector.Request, org.apache.catalina.connector.Response, long, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>logAccess</h4>
+<pre>void&nbsp;logAccess(<a href="../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request,
+             <a href="../../../org/apache/catalina/connector/Response.html" title="class in org.apache.catalina.connector">Response</a>&nbsp;response,
+             long&nbsp;time,
+             boolean&nbsp;useDefault)</pre>
+<div class="block">Log a request/response that was destined for this container but has been
+ handled earlier in the processing chain so that the request/response
+ still appears in the correct access logs.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>request</code> - Request (associated with the response) to log</dd><dd><code>response</code> - Response (associated with the request) to log</dd><dd><code>time</code> - Time taken to process the request/response in
+                      milliseconds (use 0 if not known)</dd><dd><code>useDefault</code> - Flag that indicates that the request/response should
+                      be logged in the engine's default access log</dd></dl>
+</li>
+</ul>
+<a name="getAccessLog()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAccessLog</h4>
+<pre><a href="../../../org/apache/catalina/AccessLog.html" title="interface in org.apache.catalina">AccessLog</a>&nbsp;getAccessLog()</pre>
+<div class="block">Obtain the AccessLog to use to log a request/response that is destined
+ for this container. This is typically used when the request/response was
+ handled (and rejected) earlier in the processing chain so that the
+ request/response still appears in the correct access logs.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The AccessLog to use for a request/response destined for this
+         container</dd></dl>
+</li>
+</ul>
+<a name="getStartStopThreads()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getStartStopThreads</h4>
+<pre>int&nbsp;getStartStopThreads()</pre>
+<div class="block">Obtain the number of threads available for starting and stopping any
+ children associated with this container. This allows start/stop calls to
+ children to be processed in parallel.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The currently configured number of threads used to start/stop
+         children associated with this container</dd></dl>
+</li>
+</ul>
+<a name="setStartStopThreads(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setStartStopThreads</h4>
+<pre>void&nbsp;setStartStopThreads(int&nbsp;startStopThreads)</pre>
+<div class="block">Sets the number of threads available for starting and stopping any
+ children associated with this container. This allows start/stop calls to
+ children to be processed in parallel.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>startStopThreads</code> - The new number of threads to be used</dd></dl>
+</li>
+</ul>
+<a name="getCatalinaBase()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCatalinaBase</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;getCatalinaBase()</pre>
+<div class="block">Obtain the location of CATALINA_BASE.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The location of CATALINA_BASE.</dd></dl>
+</li>
+</ul>
+<a name="getCatalinaHome()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getCatalinaHome</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;getCatalinaHome()</pre>
+<div class="block">Obtain the location of CATALINA_HOME.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The location of CATALINA_HOME.</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/apache/catalina/Contained.html" title="interface in org.apache.catalina"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../org/apache/catalina/ContainerEvent.html" title="class in org.apache.catalina"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/apache/catalina/Container.html" target="_top">Frames</a></li>
+<li><a href="Container.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

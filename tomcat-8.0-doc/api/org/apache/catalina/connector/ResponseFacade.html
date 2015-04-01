@@ -1,0 +1,1456 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ResponseFacade (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="ResponseFacade (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/connector/Response.html" title="class in org.apache.catalina.connector"><span class="strong">Prev Class</span></a></li>
+<li>Next Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/connector/ResponseFacade.html" target="_top">Frames</a></li>
+<li><a href="ResponseFacade.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.connector</div>
+<h2 title="Class ResponseFacade" class="title">Class ResponseFacade</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.connector.ResponseFacade</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a>, <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">ResponseFacade</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></pre>
+<div class="block">Facade class that wraps a Coyote response object.
+ All methods are delegated to the wrapped response.</div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Remy Maucherat</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../org/apache/catalina/connector/Response.html" title="class in org.apache.catalina.connector">Response</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#response">response</a></strong></code>
+<div class="block">The wrapped response.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="../../../../org/apache/tomcat/util/res/StringManager.html" title="class in org.apache.tomcat.util.res">StringManager</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#sm">sm</a></strong></code>
+<div class="block">The string manager for this package.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_javax.servlet.http.HttpServletResponse">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;javax.servlet.http.<a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></h3>
+<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_ACCEPTED" title="class or interface in javax.servlet.http">SC_ACCEPTED</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_BAD_GATEWAY" title="class or interface in javax.servlet.http">SC_BAD_GATEWAY</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_BAD_REQUEST" title="class or interface in javax.servlet.http">SC_BAD_REQUEST</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_CONFLICT" title="class or interface in javax.servlet.http">SC_CONFLICT</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_CONTINUE" title="class or interface in javax.servlet.http">SC_CONTINUE</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_CREATED" title="class or interface in javax.servlet.http">SC_CREATED</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_EXPECTATION_FAILED" title="class or interface in javax.servlet.http">SC_EXPECTATION_FAILED</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_FORBIDDEN" title="class or interface in javax.servlet.http">SC_FORBIDDEN</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_FOUND" title="class or interface in javax.servlet.http">SC_FOUND</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_GATEWAY_TIMEOUT" title="class or interface in javax.servlet.http">SC_GATEWAY_TIMEOUT</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_GONE" title="class or interface in javax.servlet.http">SC_GONE</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_HTTP_VERSION_NOT_SUPPORTED" title="class or interface in javax.servlet.http">SC_HTTP_VERSION_NOT_SUPPORTED</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_INTERNAL_SERVER_ERROR" title="class or interface in javax.servlet.http">SC_INTERNAL_SERVER_ERROR</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_LENGTH_REQUIRED" title="class or interface in javax.servlet.http">SC_LENGTH_REQUIRED</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_METHOD_NOT_ALLOWED" title="class or interface in javax.servlet.http">SC_METHOD_NOT_ALLOWED</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_MOVED_PERMANENTLY" title="class or interface in javax.servlet.http">SC_MOVED_PERMANENTLY</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_MOVED_TEMPORARILY" title="class or interface in javax.servlet.http">SC_MOVED_TEMPORARILY</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_MULTIPLE_CHOICES" title="class or interface in javax.servlet.http">SC_MULTIPLE_CHOICES</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_NO_CONTENT" title="class or interface in javax.servlet.http">SC_NO_CONTENT</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_NON_AUTHORITATIVE_INFORMATION" title="class or interface in javax.servlet.http">SC_NON_AUTHORITATIVE_INFORMATION</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_NOT_ACCEPTABLE" title="class or interface in javax.servlet.http">SC_NOT_ACCEPTABLE</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_NOT_FOUND" title="class or interface in javax.servlet.http">SC_NOT_FOUND</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_NOT_IMPLEMENTED" title="class or interface in javax.servlet.http">SC_NOT_IMPLEMENTED</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_NOT_MODIFIED" title="class or interface in javax.servlet.http">SC_NOT_MODIFIED</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_OK" title="class or interface in javax.servlet.http">SC_OK</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_PARTIAL_CONTENT" title="class or interface in javax.servlet.http">SC_PARTIAL_CONTENT</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_PAYMENT_REQUIRED" title="class or interface in javax.servlet.http">SC_PAYMENT_REQUIRED</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_PRECONDITION_FAILED" title="class or interface in javax.servlet.http">SC_PRECONDITION_FAILED</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_PROXY_AUTHENTICATION_REQUIRED" title="class or interface in javax.servlet.http">SC_PROXY_AUTHENTICATION_REQUIRED</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_REQUEST_ENTITY_TOO_LARGE" title="class or interface in javax.servlet.http">SC_REQUEST_ENTITY_TOO_LARGE</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_REQUEST_TIMEOUT" title="class or interface in javax.servlet.http">SC_REQUEST_TIMEOUT</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_REQUEST_URI_TOO_LONG" title="class or interface in javax.servlet.http">SC_REQUEST_URI_TOO_LONG</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_REQUESTED_RANGE_NOT_SATISFIABLE" title="class or interface in javax.servlet.http">SC_REQUESTED_RANGE_NOT_SATISFIABLE</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_RESET_CONTENT" title="class or interface in javax.servlet.http">SC_RESET_CONTENT</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_SEE_OTHER" title="class or interface in javax.servlet.http">SC_SEE_OTHER</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_SERVICE_UNAVAILABLE" title="class or interface in javax.servlet.http">SC_SERVICE_UNAVAILABLE</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_SWITCHING_PROTOCOLS" title="class or interface in javax.servlet.http">SC_SWITCHING_PROTOCOLS</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_TEMPORARY_REDIRECT" title="class or interface in javax.servlet.http">SC_TEMPORARY_REDIRECT</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_UNAUTHORIZED" title="class or interface in javax.servlet.http">SC_UNAUTHORIZED</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_UNSUPPORTED_MEDIA_TYPE" title="class or interface in javax.servlet.http">SC_UNSUPPORTED_MEDIA_TYPE</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#SC_USE_PROXY" title="class or interface in javax.servlet.http">SC_USE_PROXY</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#ResponseFacade(org.apache.catalina.connector.Response)">ResponseFacade</a></strong>(<a href="../../../../org/apache/catalina/connector/Response.html" title="class in org.apache.catalina.connector">Response</a>&nbsp;response)</code>
+<div class="block">Construct a wrapper for the specified response.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#addCookie(javax.servlet.http.Cookie)">addCookie</a></strong>(<a href="../../../../../servletapi/javax/servlet/http/Cookie.html?is-external=true" title="class or interface in javax.servlet.http">Cookie</a>&nbsp;cookie)</code>
+<div class="block">Adds the specified cookie to the response.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#addDateHeader(java.lang.String,%20long)">addDateHeader</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+             long&nbsp;date)</code>
+<div class="block">Adds a response header with the given name and date-value.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#addHeader(java.lang.String,%20java.lang.String)">addHeader</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</code>
+<div class="block">Adds a response header with the given name and value.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#addIntHeader(java.lang.String,%20int)">addIntHeader</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+            int&nbsp;value)</code>
+<div class="block">Adds a response header with the given name and integer value.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#clear()">clear</a></strong>()</code>
+<div class="block">Clear facade.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#clone()">clone</a></strong>()</code>
+<div class="block">Prevent cloning the facade.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#containsHeader(java.lang.String)">containsHeader</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Returns a boolean indicating whether the named response header has
+ already been set.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#encodeRedirectUrl(java.lang.String)">encodeRedirectUrl</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;url)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#encodeRedirectURL(java.lang.String)">encodeRedirectURL</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;url)</code>
+<div class="block">Encodes the specified URL for use in the <code>sendRedirect</code> method
+ or, if encoding is not needed, returns the URL unchanged.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#encodeUrl(java.lang.String)">encodeUrl</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;url)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#encodeURL(java.lang.String)">encodeURL</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;url)</code>
+<div class="block">Encodes the specified URL by including the session ID in it, or, if
+ encoding is not needed, returns the URL unchanged.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#finish()">finish</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#flushBuffer()">flushBuffer</a></strong>()</code>
+<div class="block">Forces any content in the buffer to be written to the client.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#getBufferSize()">getBufferSize</a></strong>()</code>
+<div class="block">Returns the actual buffer size used for the response.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#getCharacterEncoding()">getCharacterEncoding</a></strong>()</code>
+<div class="block">Returns the name of the character encoding (MIME charset) used for the
+ body sent in this response.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#getContentType()">getContentType</a></strong>()</code>
+<div class="block">Returns the content type used for the MIME body sent in this response.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#getContentWritten()">getContentWritten</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#getHeader(java.lang.String)">getHeader</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Return the value for the specified header, or <code>null</code> if this
+ header has not been set.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#getHeaderNames()">getHeaderNames</a></strong>()</code>
+<div class="block">Get the header names set for this HTTP response.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#getHeaders(java.lang.String)">getHeaders</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Return a Collection of all the header values associated with the
+ specified header name.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html?is-external=true" title="class or interface in java.util">Locale</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#getLocale()">getLocale</a></strong>()</code>
+<div class="block">Returns the locale specified for this response using the
+ <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setLocale(java.util.Locale)" title="class or interface in javax.servlet"><code>ServletResponse.setLocale(java.util.Locale)</code></a> method.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../servletapi/javax/servlet/ServletOutputStream.html?is-external=true" title="class or interface in javax.servlet">ServletOutputStream</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#getOutputStream()">getOutputStream</a></strong>()</code>
+<div class="block">Returns a <a href="../../../../../servletapi/javax/servlet/ServletOutputStream.html?is-external=true" title="class or interface in javax.servlet"><code>ServletOutputStream</code></a> suitable for writing binary data in
+ the response.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#getStatus()">getStatus</a></strong>()</code>
+<div class="block">Get the HTTP status code for this Response.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/PrintWriter.html?is-external=true" title="class or interface in java.io">PrintWriter</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#getWriter()">getWriter</a></strong>()</code>
+<div class="block">Returns a <code>PrintWriter</code> object that can send character text to
+ the client.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#isCommitted()">isCommitted</a></strong>()</code>
+<div class="block">Returns a boolean indicating if the response has been committed.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#isFinished()">isFinished</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#reset()">reset</a></strong>()</code>
+<div class="block">Clears any data that exists in the buffer as well as the status code and
+ headers.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#resetBuffer()">resetBuffer</a></strong>()</code>
+<div class="block">Clears the content of the underlying buffer in the response without
+ clearing headers or status code.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#sendError(int)">sendError</a></strong>(int&nbsp;sc)</code>
+<div class="block">Sends an error response to the client using the specified status code and
+ clears the buffer.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#sendError(int,%20java.lang.String)">sendError</a></strong>(int&nbsp;sc,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;msg)</code>
+<div class="block">Sends an error response to the client using the specified status code and
+ clears the output buffer.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#sendRedirect(java.lang.String)">sendRedirect</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;location)</code>
+<div class="block">Sends a temporary redirect response to the client using the specified
+ redirect location URL.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#setBufferSize(int)">setBufferSize</a></strong>(int&nbsp;size)</code>
+<div class="block">Sets the preferred buffer size for the body of the response.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#setCharacterEncoding(java.lang.String)">setCharacterEncoding</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;arg0)</code>
+<div class="block">Sets the character encoding (MIME charset) of the response being sent to
+ the client, for example, to UTF-8.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#setContentLength(int)">setContentLength</a></strong>(int&nbsp;len)</code>
+<div class="block">Sets the length of the content body in the response In HTTP servlets,
+ this method sets the HTTP Content-Length header.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#setContentLengthLong(long)">setContentLengthLong</a></strong>(long&nbsp;length)</code>
+<div class="block">TODO SERVLET 3.1</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#setContentType(java.lang.String)">setContentType</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;type)</code>
+<div class="block">Sets the content type of the response being sent to the client, if the
+ response has not been committed yet.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#setDateHeader(java.lang.String,%20long)">setDateHeader</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+             long&nbsp;date)</code>
+<div class="block">Sets a response header with the given name and date-value.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#setHeader(java.lang.String,%20java.lang.String)">setHeader</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</code>
+<div class="block">Sets a response header with the given name and value.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#setIntHeader(java.lang.String,%20int)">setIntHeader</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+            int&nbsp;value)</code>
+<div class="block">Sets a response header with the given name and integer value.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#setLocale(java.util.Locale)">setLocale</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html?is-external=true" title="class or interface in java.util">Locale</a>&nbsp;loc)</code>
+<div class="block">Sets the locale of the response, if the response has not been committed
+ yet.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#setStatus(int)">setStatus</a></strong>(int&nbsp;sc)</code>
+<div class="block">Sets the status code for this response.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/ResponseFacade.html#setStatus(int,%20java.lang.String)">setStatus</a></strong>(int&nbsp;sc,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sm)</code>
+<div class="block">Sets the status code and message for this response.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="sm">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sm</h4>
+<pre>protected static final&nbsp;<a href="../../../../org/apache/tomcat/util/res/StringManager.html" title="class in org.apache.tomcat.util.res">StringManager</a> sm</pre>
+<div class="block">The string manager for this package.</div>
+</li>
+</ul>
+<a name="response">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>response</h4>
+<pre>protected&nbsp;<a href="../../../../org/apache/catalina/connector/Response.html" title="class in org.apache.catalina.connector">Response</a> response</pre>
+<div class="block">The wrapped response.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ResponseFacade(org.apache.catalina.connector.Response)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ResponseFacade</h4>
+<pre>public&nbsp;ResponseFacade(<a href="../../../../org/apache/catalina/connector/Response.html" title="class in org.apache.catalina.connector">Response</a>&nbsp;response)</pre>
+<div class="block">Construct a wrapper for the specified response.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>response</code> - The response to be wrapped</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="clear()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clear</h4>
+<pre>public&nbsp;void&nbsp;clear()</pre>
+<div class="block">Clear facade.</div>
+</li>
+</ul>
+<a name="clone()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clone</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;clone()
+                throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/CloneNotSupportedException.html?is-external=true" title="class or interface in java.lang">CloneNotSupportedException</a></pre>
+<div class="block">Prevent cloning the facade.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/CloneNotSupportedException.html?is-external=true" title="class or interface in java.lang">CloneNotSupportedException</a></code></dd></dl>
+</li>
+</ul>
+<a name="finish()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>finish</h4>
+<pre>public&nbsp;void&nbsp;finish()</pre>
+</li>
+</ul>
+<a name="isFinished()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isFinished</h4>
+<pre>public&nbsp;boolean&nbsp;isFinished()</pre>
+</li>
+</ul>
+<a name="getContentWritten()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getContentWritten</h4>
+<pre>public&nbsp;long&nbsp;getContentWritten()</pre>
+</li>
+</ul>
+<a name="getCharacterEncoding()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCharacterEncoding</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getCharacterEncoding()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getCharacterEncoding()" title="class or interface in javax.servlet">javax.servlet.ServletResponse</a></code></strong></div>
+<div class="block">Returns the name of the character encoding (MIME charset) used for the
+ body sent in this response. The character encoding may have been
+ specified explicitly using the <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setCharacterEncoding(java.lang.String)" title="class or interface in javax.servlet"><code>ServletResponse.setCharacterEncoding(java.lang.String)</code></a> or
+ <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setContentType(java.lang.String)" title="class or interface in javax.servlet"><code>ServletResponse.setContentType(java.lang.String)</code></a> methods, or implicitly using the
+ <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setLocale(java.util.Locale)" title="class or interface in javax.servlet"><code>ServletResponse.setLocale(java.util.Locale)</code></a> method. Explicit specifications take precedence over
+ implicit specifications. Calls made to these methods after
+ <code>getWriter</code> has been called or after the response has been
+ committed have no effect on the character encoding. If no character
+ encoding has been specified, <code>ISO-8859-1</code> is returned.
+ <p>
+ See RFC 2047 (http://www.ietf.org/rfc/rfc2047.txt) for more information
+ about character encoding and MIME.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getCharacterEncoding()" title="class or interface in javax.servlet">getCharacterEncoding</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a <code>String</code> specifying the name of the character
+         encoding, for example, <code>UTF-8</code></dd></dl>
+</li>
+</ul>
+<a name="getOutputStream()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOutputStream</h4>
+<pre>public&nbsp;<a href="../../../../../servletapi/javax/servlet/ServletOutputStream.html?is-external=true" title="class or interface in javax.servlet">ServletOutputStream</a>&nbsp;getOutputStream()
+                                    throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getOutputStream()" title="class or interface in javax.servlet">javax.servlet.ServletResponse</a></code></strong></div>
+<div class="block">Returns a <a href="../../../../../servletapi/javax/servlet/ServletOutputStream.html?is-external=true" title="class or interface in javax.servlet"><code>ServletOutputStream</code></a> suitable for writing binary data in
+ the response. The servlet container does not encode the binary data.
+ <p>
+ Calling flush() on the ServletOutputStream commits the response. Either
+ this method or <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getWriter()" title="class or interface in javax.servlet"><code>ServletResponse.getWriter()</code></a> may be called to write the body, not
+ both.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getOutputStream()" title="class or interface in javax.servlet">getOutputStream</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a <a href="../../../../../servletapi/javax/servlet/ServletOutputStream.html?is-external=true" title="class or interface in javax.servlet"><code>ServletOutputStream</code></a> for writing binary data</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if an input or output exception occurred</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getWriter()" title="class or interface in javax.servlet"><code>ServletResponse.getWriter()</code></a></dd></dl>
+</li>
+</ul>
+<a name="getWriter()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWriter</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/PrintWriter.html?is-external=true" title="class or interface in java.io">PrintWriter</a>&nbsp;getWriter()
+                      throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getWriter()" title="class or interface in javax.servlet">javax.servlet.ServletResponse</a></code></strong></div>
+<div class="block">Returns a <code>PrintWriter</code> object that can send character text to
+ the client. The <code>PrintWriter</code> uses the character encoding
+ returned by <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getCharacterEncoding()" title="class or interface in javax.servlet"><code>ServletResponse.getCharacterEncoding()</code></a>. If the response's character
+ encoding has not been specified as described in
+ <code>getCharacterEncoding</code> (i.e., the method just returns the
+ default value <code>ISO-8859-1</code>), <code>getWriter</code> updates it
+ to <code>ISO-8859-1</code>.
+ <p>
+ Calling flush() on the <code>PrintWriter</code> commits the response.
+ <p>
+ Either this method or <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getOutputStream()" title="class or interface in javax.servlet"><code>ServletResponse.getOutputStream()</code></a> may be called to write the
+ body, not both.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getWriter()" title="class or interface in javax.servlet">getWriter</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a <code>PrintWriter</code> object that can return character data
+         to the client</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/UnsupportedEncodingException.html?is-external=true" title="class or interface in java.io">UnsupportedEncodingException</a></code> - if the character encoding returned by
+                <code>getCharacterEncoding</code> cannot be used</dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if an input or output exception occurred</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getOutputStream()" title="class or interface in javax.servlet"><code>ServletResponse.getOutputStream()</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setCharacterEncoding(java.lang.String)" title="class or interface in javax.servlet"><code>ServletResponse.setCharacterEncoding(java.lang.String)</code></a></dd></dl>
+</li>
+</ul>
+<a name="setContentLength(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setContentLength</h4>
+<pre>public&nbsp;void&nbsp;setContentLength(int&nbsp;len)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setContentLength(int)" title="class or interface in javax.servlet">javax.servlet.ServletResponse</a></code></strong></div>
+<div class="block">Sets the length of the content body in the response In HTTP servlets,
+ this method sets the HTTP Content-Length header.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setContentLength(int)" title="class or interface in javax.servlet">setContentLength</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>len</code> - an integer specifying the length of the content being returned
+            to the client; sets the Content-Length header</dd></dl>
+</li>
+</ul>
+<a name="setContentLengthLong(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setContentLengthLong</h4>
+<pre>public&nbsp;void&nbsp;setContentLengthLong(long&nbsp;length)</pre>
+<div class="block">TODO SERVLET 3.1</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setContentLengthLong(long)" title="class or interface in javax.servlet">setContentLengthLong</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>length</code> - an integer specifying the length of the content being returned
+            to the client; sets the Content-Length header</dd></dl>
+</li>
+</ul>
+<a name="setContentType(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setContentType</h4>
+<pre>public&nbsp;void&nbsp;setContentType(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;type)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setContentType(java.lang.String)" title="class or interface in javax.servlet">javax.servlet.ServletResponse</a></code></strong></div>
+<div class="block">Sets the content type of the response being sent to the client, if the
+ response has not been committed yet. The given content type may include a
+ character encoding specification, for example,
+ <code>text/html;charset=UTF-8</code>. The response's character encoding
+ is only set from the given content type if this method is called before
+ <code>getWriter</code> is called.
+ <p>
+ This method may be called repeatedly to change content type and character
+ encoding. This method has no effect if called after the response has been
+ committed. It does not set the response's character encoding if it is
+ called after <code>getWriter</code> has been called or after the response
+ has been committed.
+ <p>
+ Containers must communicate the content type and the character encoding
+ used for the servlet response's writer to the client if the protocol
+ provides a way for doing so. In the case of HTTP, the
+ <code>Content-Type</code> header is used.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setContentType(java.lang.String)" title="class or interface in javax.servlet">setContentType</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>type</code> - a <code>String</code> specifying the MIME type of the content</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setLocale(java.util.Locale)" title="class or interface in javax.servlet"><code>ServletResponse.setLocale(java.util.Locale)</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setCharacterEncoding(java.lang.String)" title="class or interface in javax.servlet"><code>ServletResponse.setCharacterEncoding(java.lang.String)</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getOutputStream()" title="class or interface in javax.servlet"><code>ServletResponse.getOutputStream()</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getWriter()" title="class or interface in javax.servlet"><code>ServletResponse.getWriter()</code></a></dd></dl>
+</li>
+</ul>
+<a name="setBufferSize(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setBufferSize</h4>
+<pre>public&nbsp;void&nbsp;setBufferSize(int&nbsp;size)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setBufferSize(int)" title="class or interface in javax.servlet">javax.servlet.ServletResponse</a></code></strong></div>
+<div class="block">Sets the preferred buffer size for the body of the response. The servlet
+ container will use a buffer at least as large as the size requested. The
+ actual buffer size used can be found using <code>getBufferSize</code>.
+ <p>
+ A larger buffer allows more content to be written before anything is
+ actually sent, thus providing the servlet with more time to set
+ appropriate status codes and headers. A smaller buffer decreases server
+ memory load and allows the client to start receiving data more quickly.
+ <p>
+ This method must be called before any response body content is written;
+ if content has been written or the response object has been committed,
+ this method throws an <code>IllegalStateException</code>.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setBufferSize(int)" title="class or interface in javax.servlet">setBufferSize</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>size</code> - the preferred buffer size</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getBufferSize()" title="class or interface in javax.servlet"><code>ServletResponse.getBufferSize()</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#flushBuffer()" title="class or interface in javax.servlet"><code>ServletResponse.flushBuffer()</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#isCommitted()" title="class or interface in javax.servlet"><code>ServletResponse.isCommitted()</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#reset()" title="class or interface in javax.servlet"><code>ServletResponse.reset()</code></a></dd></dl>
+</li>
+</ul>
+<a name="getBufferSize()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBufferSize</h4>
+<pre>public&nbsp;int&nbsp;getBufferSize()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getBufferSize()" title="class or interface in javax.servlet">javax.servlet.ServletResponse</a></code></strong></div>
+<div class="block">Returns the actual buffer size used for the response. If no buffering is
+ used, this method returns 0.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getBufferSize()" title="class or interface in javax.servlet">getBufferSize</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the actual buffer size used</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setBufferSize(int)" title="class or interface in javax.servlet"><code>ServletResponse.setBufferSize(int)</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#flushBuffer()" title="class or interface in javax.servlet"><code>ServletResponse.flushBuffer()</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#isCommitted()" title="class or interface in javax.servlet"><code>ServletResponse.isCommitted()</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#reset()" title="class or interface in javax.servlet"><code>ServletResponse.reset()</code></a></dd></dl>
+</li>
+</ul>
+<a name="flushBuffer()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>flushBuffer</h4>
+<pre>public&nbsp;void&nbsp;flushBuffer()
+                 throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#flushBuffer()" title="class or interface in javax.servlet">javax.servlet.ServletResponse</a></code></strong></div>
+<div class="block">Forces any content in the buffer to be written to the client. A call to
+ this method automatically commits the response, meaning the status code
+ and headers will be written.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#flushBuffer()" title="class or interface in javax.servlet">flushBuffer</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if an I/O occurs during the flushing of the response</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setBufferSize(int)" title="class or interface in javax.servlet"><code>ServletResponse.setBufferSize(int)</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getBufferSize()" title="class or interface in javax.servlet"><code>ServletResponse.getBufferSize()</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#isCommitted()" title="class or interface in javax.servlet"><code>ServletResponse.isCommitted()</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#reset()" title="class or interface in javax.servlet"><code>ServletResponse.reset()</code></a></dd></dl>
+</li>
+</ul>
+<a name="resetBuffer()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>resetBuffer</h4>
+<pre>public&nbsp;void&nbsp;resetBuffer()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#resetBuffer()" title="class or interface in javax.servlet">javax.servlet.ServletResponse</a></code></strong></div>
+<div class="block">Clears the content of the underlying buffer in the response without
+ clearing headers or status code. If the response has been committed, this
+ method throws an <code>IllegalStateException</code>.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#resetBuffer()" title="class or interface in javax.servlet">resetBuffer</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a></code></dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setBufferSize(int)" title="class or interface in javax.servlet"><code>ServletResponse.setBufferSize(int)</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getBufferSize()" title="class or interface in javax.servlet"><code>ServletResponse.getBufferSize()</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#isCommitted()" title="class or interface in javax.servlet"><code>ServletResponse.isCommitted()</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#reset()" title="class or interface in javax.servlet"><code>ServletResponse.reset()</code></a></dd></dl>
+</li>
+</ul>
+<a name="isCommitted()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isCommitted</h4>
+<pre>public&nbsp;boolean&nbsp;isCommitted()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#isCommitted()" title="class or interface in javax.servlet">javax.servlet.ServletResponse</a></code></strong></div>
+<div class="block">Returns a boolean indicating if the response has been committed. A
+ committed response has already had its status code and headers written.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#isCommitted()" title="class or interface in javax.servlet">isCommitted</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a boolean indicating if the response has been committed</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setBufferSize(int)" title="class or interface in javax.servlet"><code>ServletResponse.setBufferSize(int)</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getBufferSize()" title="class or interface in javax.servlet"><code>ServletResponse.getBufferSize()</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#flushBuffer()" title="class or interface in javax.servlet"><code>ServletResponse.flushBuffer()</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#reset()" title="class or interface in javax.servlet"><code>ServletResponse.reset()</code></a></dd></dl>
+</li>
+</ul>
+<a name="reset()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reset</h4>
+<pre>public&nbsp;void&nbsp;reset()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#reset()" title="class or interface in javax.servlet">javax.servlet.ServletResponse</a></code></strong></div>
+<div class="block">Clears any data that exists in the buffer as well as the status code and
+ headers. If the response has been committed, this method throws an
+ <code>IllegalStateException</code>.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#reset()" title="class or interface in javax.servlet">reset</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a></code></dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setBufferSize(int)" title="class or interface in javax.servlet"><code>ServletResponse.setBufferSize(int)</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getBufferSize()" title="class or interface in javax.servlet"><code>ServletResponse.getBufferSize()</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#flushBuffer()" title="class or interface in javax.servlet"><code>ServletResponse.flushBuffer()</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#isCommitted()" title="class or interface in javax.servlet"><code>ServletResponse.isCommitted()</code></a></dd></dl>
+</li>
+</ul>
+<a name="setLocale(java.util.Locale)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLocale</h4>
+<pre>public&nbsp;void&nbsp;setLocale(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html?is-external=true" title="class or interface in java.util">Locale</a>&nbsp;loc)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setLocale(java.util.Locale)" title="class or interface in javax.servlet">javax.servlet.ServletResponse</a></code></strong></div>
+<div class="block">Sets the locale of the response, if the response has not been committed
+ yet. It also sets the response's character encoding appropriately for the
+ locale, if the character encoding has not been explicitly set using
+ <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setContentType(java.lang.String)" title="class or interface in javax.servlet"><code>ServletResponse.setContentType(java.lang.String)</code></a> or <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setCharacterEncoding(java.lang.String)" title="class or interface in javax.servlet"><code>ServletResponse.setCharacterEncoding(java.lang.String)</code></a>,
+ <code>getWriter</code> hasn't been called yet, and the response hasn't
+ been committed yet. If the deployment descriptor contains a
+ <code>locale-encoding-mapping-list</code> element, and that element
+ provides a mapping for the given locale, that mapping is used. Otherwise,
+ the mapping from locale to character encoding is container dependent.
+ <p>
+ This method may be called repeatedly to change locale and character
+ encoding. The method has no effect if called after the response has been
+ committed. It does not set the response's character encoding if it is
+ called after <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setContentType(java.lang.String)" title="class or interface in javax.servlet"><code>ServletResponse.setContentType(java.lang.String)</code></a> has been called with a charset
+ specification, after <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setCharacterEncoding(java.lang.String)" title="class or interface in javax.servlet"><code>ServletResponse.setCharacterEncoding(java.lang.String)</code></a> has been called, after
+ <code>getWriter</code> has been called, or after the response has been
+ committed.
+ <p>
+ Containers must communicate the locale and the character encoding used
+ for the servlet response's writer to the client if the protocol provides
+ a way for doing so. In the case of HTTP, the locale is communicated via
+ the <code>Content-Language</code> header, the character encoding as part
+ of the <code>Content-Type</code> header for text media types. Note that
+ the character encoding cannot be communicated via HTTP headers if the
+ servlet does not specify a content type; however, it is still used to
+ encode text written via the servlet response's writer.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setLocale(java.util.Locale)" title="class or interface in javax.servlet">setLocale</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>loc</code> - the locale of the response</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getLocale()" title="class or interface in javax.servlet"><code>ServletResponse.getLocale()</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setContentType(java.lang.String)" title="class or interface in javax.servlet"><code>ServletResponse.setContentType(java.lang.String)</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setCharacterEncoding(java.lang.String)" title="class or interface in javax.servlet"><code>ServletResponse.setCharacterEncoding(java.lang.String)</code></a></dd></dl>
+</li>
+</ul>
+<a name="getLocale()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLocale</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html?is-external=true" title="class or interface in java.util">Locale</a>&nbsp;getLocale()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getLocale()" title="class or interface in javax.servlet">javax.servlet.ServletResponse</a></code></strong></div>
+<div class="block">Returns the locale specified for this response using the
+ <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setLocale(java.util.Locale)" title="class or interface in javax.servlet"><code>ServletResponse.setLocale(java.util.Locale)</code></a> method. Calls made to <code>setLocale</code> after the
+ response is committed have no effect.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getLocale()" title="class or interface in javax.servlet">getLocale</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>The locale specified for this response using the
+          <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setLocale(java.util.Locale)" title="class or interface in javax.servlet"><code>ServletResponse.setLocale(java.util.Locale)</code></a> method. If no locale has been specified, the
+          container's default locale is returned.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setLocale(java.util.Locale)" title="class or interface in javax.servlet"><code>ServletResponse.setLocale(java.util.Locale)</code></a></dd></dl>
+</li>
+</ul>
+<a name="addCookie(javax.servlet.http.Cookie)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addCookie</h4>
+<pre>public&nbsp;void&nbsp;addCookie(<a href="../../../../../servletapi/javax/servlet/http/Cookie.html?is-external=true" title="class or interface in javax.servlet.http">Cookie</a>&nbsp;cookie)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#addCookie(javax.servlet.http.Cookie)" title="class or interface in javax.servlet.http">javax.servlet.http.HttpServletResponse</a></code></strong></div>
+<div class="block">Adds the specified cookie to the response. This method can be called
+ multiple times to set more than one cookie.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#addCookie(javax.servlet.http.Cookie)" title="class or interface in javax.servlet.http">addCookie</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>cookie</code> - the Cookie to return to the client</dd></dl>
+</li>
+</ul>
+<a name="containsHeader(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>containsHeader</h4>
+<pre>public&nbsp;boolean&nbsp;containsHeader(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#containsHeader(java.lang.String)" title="class or interface in javax.servlet.http">javax.servlet.http.HttpServletResponse</a></code></strong></div>
+<div class="block">Returns a boolean indicating whether the named response header has
+ already been set.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#containsHeader(java.lang.String)" title="class or interface in javax.servlet.http">containsHeader</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - the header name</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the named response header has already been
+         set; <code>false</code> otherwise</dd></dl>
+</li>
+</ul>
+<a name="encodeURL(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>encodeURL</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;encodeURL(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;url)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#encodeURL(java.lang.String)" title="class or interface in javax.servlet.http">javax.servlet.http.HttpServletResponse</a></code></strong></div>
+<div class="block">Encodes the specified URL by including the session ID in it, or, if
+ encoding is not needed, returns the URL unchanged. The implementation of
+ this method includes the logic to determine whether the session ID needs
+ to be encoded in the URL. For example, if the browser supports cookies,
+ or session tracking is turned off, URL encoding is unnecessary.
+ <p>
+ For robust session tracking, all URLs emitted by a servlet should be run
+ through this method. Otherwise, URL rewriting cannot be used with
+ browsers which do not support cookies.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#encodeURL(java.lang.String)" title="class or interface in javax.servlet.http">encodeURL</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>url</code> - the url to be encoded.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the encoded URL if encoding is needed; the unchanged URL
+         otherwise.</dd></dl>
+</li>
+</ul>
+<a name="encodeRedirectURL(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>encodeRedirectURL</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;encodeRedirectURL(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;url)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#encodeRedirectURL(java.lang.String)" title="class or interface in javax.servlet.http">javax.servlet.http.HttpServletResponse</a></code></strong></div>
+<div class="block">Encodes the specified URL for use in the <code>sendRedirect</code> method
+ or, if encoding is not needed, returns the URL unchanged. The
+ implementation of this method includes the logic to determine whether the
+ session ID needs to be encoded in the URL. Because the rules for making
+ this determination can differ from those used to decide whether to encode
+ a normal link, this method is separated from the <code>encodeURL</code>
+ method.
+ <p>
+ All URLs sent to the <code>HttpServletResponse.sendRedirect</code> method
+ should be run through this method. Otherwise, URL rewriting cannot be
+ used with browsers which do not support cookies.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#encodeRedirectURL(java.lang.String)" title="class or interface in javax.servlet.http">encodeRedirectURL</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>url</code> - the url to be encoded.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the encoded URL if encoding is needed; the unchanged URL
+         otherwise.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#sendRedirect(java.lang.String)" title="class or interface in javax.servlet.http"><code>HttpServletResponse.sendRedirect(java.lang.String)</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#encodeUrl(java.lang.String)" title="class or interface in javax.servlet.http"><code>HttpServletResponse.encodeUrl(java.lang.String)</code></a></dd></dl>
+</li>
+</ul>
+<a name="encodeUrl(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>encodeUrl</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;encodeUrl(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;url)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#encodeUrl(java.lang.String)" title="class or interface in javax.servlet.http">encodeUrl</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>url</code> - the url to be encoded.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the encoded URL if encoding is needed; the unchanged URL
+         otherwise.</dd></dl>
+</li>
+</ul>
+<a name="encodeRedirectUrl(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>encodeRedirectUrl</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;encodeRedirectUrl(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;url)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#encodeRedirectUrl(java.lang.String)" title="class or interface in javax.servlet.http">encodeRedirectUrl</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>url</code> - the url to be encoded.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the encoded URL if encoding is needed; the unchanged URL
+         otherwise.</dd></dl>
+</li>
+</ul>
+<a name="sendError(int, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sendError</h4>
+<pre>public&nbsp;void&nbsp;sendError(int&nbsp;sc,
+             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;msg)
+               throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#sendError(int,%20java.lang.String)" title="class or interface in javax.servlet.http">javax.servlet.http.HttpServletResponse</a></code></strong></div>
+<div class="block">Sends an error response to the client using the specified status code and
+ clears the output buffer. The server defaults to creating the response to
+ look like an HTML-formatted server error page containing the specified
+ message, setting the content type to "text/html", leaving cookies and
+ other headers unmodified. If an error-page declaration has been made for
+ the web application corresponding to the status code passed in, it will
+ be served back in preference to the suggested msg parameter.
+ <p>
+ If the response has already been committed, this method throws an
+ IllegalStateException. After using this method, the response should be
+ considered to be committed and should not be written to.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#sendError(int,%20java.lang.String)" title="class or interface in javax.servlet.http">sendError</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>sc</code> - the error status code</dd><dd><code>msg</code> - the descriptive message</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - If an input or output exception occurs</dd></dl>
+</li>
+</ul>
+<a name="sendError(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sendError</h4>
+<pre>public&nbsp;void&nbsp;sendError(int&nbsp;sc)
+               throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#sendError(int)" title="class or interface in javax.servlet.http">javax.servlet.http.HttpServletResponse</a></code></strong></div>
+<div class="block">Sends an error response to the client using the specified status code and
+ clears the buffer. This is equivalent to calling <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#sendError(int,%20java.lang.String)" title="class or interface in javax.servlet.http"><code>HttpServletResponse.sendError(int,
+ String)</code></a> with the same status code and <code>null</code> for the message.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#sendError(int)" title="class or interface in javax.servlet.http">sendError</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>sc</code> - the error status code</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - If an input or output exception occurs</dd></dl>
+</li>
+</ul>
+<a name="sendRedirect(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sendRedirect</h4>
+<pre>public&nbsp;void&nbsp;sendRedirect(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;location)
+                  throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#sendRedirect(java.lang.String)" title="class or interface in javax.servlet.http">javax.servlet.http.HttpServletResponse</a></code></strong></div>
+<div class="block">Sends a temporary redirect response to the client using the specified
+ redirect location URL. This method can accept relative URLs; the servlet
+ container must convert the relative URL to an absolute URL before sending
+ the response to the client. If the location is relative without a leading
+ '/' the container interprets it as relative to the current request URI.
+ If the location is relative with a leading '/' the container interprets
+ it as relative to the servlet container root.
+ <p>
+ If the response has already been committed, this method throws an
+ IllegalStateException. After using this method, the response should be
+ considered to be committed and should not be written to.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#sendRedirect(java.lang.String)" title="class or interface in javax.servlet.http">sendRedirect</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>location</code> - the redirect location URL</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - If an input or output exception occurs</dd></dl>
+</li>
+</ul>
+<a name="setDateHeader(java.lang.String, long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDateHeader</h4>
+<pre>public&nbsp;void&nbsp;setDateHeader(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+                 long&nbsp;date)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#setDateHeader(java.lang.String,%20long)" title="class or interface in javax.servlet.http">javax.servlet.http.HttpServletResponse</a></code></strong></div>
+<div class="block">Sets a response header with the given name and date-value. The date is
+ specified in terms of milliseconds since the epoch. If the header had
+ already been set, the new value overwrites the previous one. The
+ <code>containsHeader</code> method can be used to test for the presence
+ of a header before setting its value.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#setDateHeader(java.lang.String,%20long)" title="class or interface in javax.servlet.http">setDateHeader</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - the name of the header to set</dd><dd><code>date</code> - the assigned date value</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#containsHeader(java.lang.String)" title="class or interface in javax.servlet.http"><code>HttpServletResponse.containsHeader(java.lang.String)</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#addDateHeader(java.lang.String,%20long)" title="class or interface in javax.servlet.http"><code>HttpServletResponse.addDateHeader(java.lang.String, long)</code></a></dd></dl>
+</li>
+</ul>
+<a name="addDateHeader(java.lang.String, long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addDateHeader</h4>
+<pre>public&nbsp;void&nbsp;addDateHeader(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+                 long&nbsp;date)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#addDateHeader(java.lang.String,%20long)" title="class or interface in javax.servlet.http">javax.servlet.http.HttpServletResponse</a></code></strong></div>
+<div class="block">Adds a response header with the given name and date-value. The date is
+ specified in terms of milliseconds since the epoch. This method allows
+ response headers to have multiple values.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#addDateHeader(java.lang.String,%20long)" title="class or interface in javax.servlet.http">addDateHeader</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - the name of the header to set</dd><dd><code>date</code> - the additional date value</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#setDateHeader(java.lang.String,%20long)" title="class or interface in javax.servlet.http"><code>HttpServletResponse.setDateHeader(java.lang.String, long)</code></a></dd></dl>
+</li>
+</ul>
+<a name="setHeader(java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setHeader</h4>
+<pre>public&nbsp;void&nbsp;setHeader(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#setHeader(java.lang.String,%20java.lang.String)" title="class or interface in javax.servlet.http">javax.servlet.http.HttpServletResponse</a></code></strong></div>
+<div class="block">Sets a response header with the given name and value. If the header had
+ already been set, the new value overwrites the previous one. The
+ <code>containsHeader</code> method can be used to test for the presence
+ of a header before setting its value.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#setHeader(java.lang.String,%20java.lang.String)" title="class or interface in javax.servlet.http">setHeader</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - the name of the header</dd><dd><code>value</code> - the header value If it contains octet string, it should be
+            encoded according to RFC 2047
+            (http://www.ietf.org/rfc/rfc2047.txt)</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#containsHeader(java.lang.String)" title="class or interface in javax.servlet.http"><code>HttpServletResponse.containsHeader(java.lang.String)</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#addHeader(java.lang.String,%20java.lang.String)" title="class or interface in javax.servlet.http"><code>HttpServletResponse.addHeader(java.lang.String, java.lang.String)</code></a></dd></dl>
+</li>
+</ul>
+<a name="addHeader(java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addHeader</h4>
+<pre>public&nbsp;void&nbsp;addHeader(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#addHeader(java.lang.String,%20java.lang.String)" title="class or interface in javax.servlet.http">javax.servlet.http.HttpServletResponse</a></code></strong></div>
+<div class="block">Adds a response header with the given name and value. This method allows
+ response headers to have multiple values.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#addHeader(java.lang.String,%20java.lang.String)" title="class or interface in javax.servlet.http">addHeader</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - the name of the header</dd><dd><code>value</code> - the additional header value If it contains octet string, it
+            should be encoded according to RFC 2047
+            (http://www.ietf.org/rfc/rfc2047.txt)</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#setHeader(java.lang.String,%20java.lang.String)" title="class or interface in javax.servlet.http"><code>HttpServletResponse.setHeader(java.lang.String, java.lang.String)</code></a></dd></dl>
+</li>
+</ul>
+<a name="setIntHeader(java.lang.String, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setIntHeader</h4>
+<pre>public&nbsp;void&nbsp;setIntHeader(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+                int&nbsp;value)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#setIntHeader(java.lang.String,%20int)" title="class or interface in javax.servlet.http">javax.servlet.http.HttpServletResponse</a></code></strong></div>
+<div class="block">Sets a response header with the given name and integer value. If the
+ header had already been set, the new value overwrites the previous one.
+ The <code>containsHeader</code> method can be used to test for the
+ presence of a header before setting its value.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#setIntHeader(java.lang.String,%20int)" title="class or interface in javax.servlet.http">setIntHeader</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - the name of the header</dd><dd><code>value</code> - the assigned integer value</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#containsHeader(java.lang.String)" title="class or interface in javax.servlet.http"><code>HttpServletResponse.containsHeader(java.lang.String)</code></a>, 
+<a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#addIntHeader(java.lang.String,%20int)" title="class or interface in javax.servlet.http"><code>HttpServletResponse.addIntHeader(java.lang.String, int)</code></a></dd></dl>
+</li>
+</ul>
+<a name="addIntHeader(java.lang.String, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addIntHeader</h4>
+<pre>public&nbsp;void&nbsp;addIntHeader(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+                int&nbsp;value)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#addIntHeader(java.lang.String,%20int)" title="class or interface in javax.servlet.http">javax.servlet.http.HttpServletResponse</a></code></strong></div>
+<div class="block">Adds a response header with the given name and integer value. This method
+ allows response headers to have multiple values.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#addIntHeader(java.lang.String,%20int)" title="class or interface in javax.servlet.http">addIntHeader</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - the name of the header</dd><dd><code>value</code> - the assigned integer value</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#setIntHeader(java.lang.String,%20int)" title="class or interface in javax.servlet.http"><code>HttpServletResponse.setIntHeader(java.lang.String, int)</code></a></dd></dl>
+</li>
+</ul>
+<a name="setStatus(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setStatus</h4>
+<pre>public&nbsp;void&nbsp;setStatus(int&nbsp;sc)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#setStatus(int)" title="class or interface in javax.servlet.http">javax.servlet.http.HttpServletResponse</a></code></strong></div>
+<div class="block">Sets the status code for this response. This method is used to set the
+ return status code when there is no error (for example, for the status
+ codes SC_OK or SC_MOVED_TEMPORARILY). If there is an error, and the
+ caller wishes to invoke an error-page defined in the web application, the
+ <code>sendError</code> method should be used instead.
+ <p>
+ The container clears the buffer and sets the Location header, preserving
+ cookies and other headers.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#setStatus(int)" title="class or interface in javax.servlet.http">setStatus</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>sc</code> - the status code</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#sendError(int,%20java.lang.String)" title="class or interface in javax.servlet.http"><code>HttpServletResponse.sendError(int, java.lang.String)</code></a></dd></dl>
+</li>
+</ul>
+<a name="setStatus(int, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setStatus</h4>
+<pre>public&nbsp;void&nbsp;setStatus(int&nbsp;sc,
+             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sm)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#setStatus(int,%20java.lang.String)" title="class or interface in javax.servlet.http">javax.servlet.http.HttpServletResponse</a></code></strong></div>
+<div class="block">Sets the status code and message for this response.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#setStatus(int,%20java.lang.String)" title="class or interface in javax.servlet.http">setStatus</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>sc</code> - the status code</dd><dd><code>sm</code> - the status message</dd></dl>
+</li>
+</ul>
+<a name="getContentType()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getContentType</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getContentType()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getContentType()" title="class or interface in javax.servlet">javax.servlet.ServletResponse</a></code></strong></div>
+<div class="block">Returns the content type used for the MIME body sent in this response.
+ The content type proper must have been specified using
+ <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setContentType(java.lang.String)" title="class or interface in javax.servlet"><code>ServletResponse.setContentType(java.lang.String)</code></a> before the response is committed. If no content
+ type has been specified, this method returns null. If a content type has
+ been specified and a character encoding has been explicitly or implicitly
+ specified as described in <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getCharacterEncoding()" title="class or interface in javax.servlet"><code>ServletResponse.getCharacterEncoding()</code></a>, the charset
+ parameter is included in the string returned. If no character encoding
+ has been specified, the charset parameter is omitted.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#getContentType()" title="class or interface in javax.servlet">getContentType</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a <code>String</code> specifying the content type, for example,
+         <code>text/html; charset=UTF-8</code>, or null</dd></dl>
+</li>
+</ul>
+<a name="setCharacterEncoding(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCharacterEncoding</h4>
+<pre>public&nbsp;void&nbsp;setCharacterEncoding(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;arg0)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setCharacterEncoding(java.lang.String)" title="class or interface in javax.servlet">javax.servlet.ServletResponse</a></code></strong></div>
+<div class="block">Sets the character encoding (MIME charset) of the response being sent to
+ the client, for example, to UTF-8. If the character encoding has already
+ been set by <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setContentType(java.lang.String)" title="class or interface in javax.servlet"><code>ServletResponse.setContentType(java.lang.String)</code></a> or <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setLocale(java.util.Locale)" title="class or interface in javax.servlet"><code>ServletResponse.setLocale(java.util.Locale)</code></a>, this method
+ overrides it. Calling <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setContentType(java.lang.String)" title="class or interface in javax.servlet"><code>ServletResponse.setContentType(java.lang.String)</code></a> with the
+ <code>String</code> of <code>text/html</code> and calling this method
+ with the <code>String</code> of <code>UTF-8</code> is equivalent with
+ calling <code>setContentType</code> with the <code>String</code> of
+ <code>text/html; charset=UTF-8</code>.
+ <p>
+ This method can be called repeatedly to change the character encoding.
+ This method has no effect if it is called after <code>getWriter</code>
+ has been called or after the response has been committed.
+ <p>
+ Containers must communicate the character encoding used for the servlet
+ response's writer to the client if the protocol provides a way for doing
+ so. In the case of HTTP, the character encoding is communicated as part
+ of the <code>Content-Type</code> header for text media types. Note that
+ the character encoding cannot be communicated via HTTP headers if the
+ servlet does not specify a content type; however, it is still used to
+ encode text written via the servlet response's writer.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setCharacterEncoding(java.lang.String)" title="class or interface in javax.servlet">setCharacterEncoding</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>arg0</code> - a String specifying only the character set defined by IANA
+            Character Sets
+            (http://www.iana.org/assignments/character-sets)</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true#setContentType(java.lang.String)" title="class or interface in javax.servlet"><code>#setLocale</code></a></dd></dl>
+</li>
+</ul>
+<a name="getStatus()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getStatus</h4>
+<pre>public&nbsp;int&nbsp;getStatus()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#getStatus()" title="class or interface in javax.servlet.http">javax.servlet.http.HttpServletResponse</a></code></strong></div>
+<div class="block">Get the HTTP status code for this Response.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#getStatus()" title="class or interface in javax.servlet.http">getStatus</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>The HTTP status code for this Response</dd></dl>
+</li>
+</ul>
+<a name="getHeader(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHeader</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getHeader(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#getHeader(java.lang.String)" title="class or interface in javax.servlet.http">javax.servlet.http.HttpServletResponse</a></code></strong></div>
+<div class="block">Return the value for the specified header, or <code>null</code> if this
+ header has not been set.  If more than one value was added for this
+ name, only the first is returned; use <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#getHeaders(java.lang.String)" title="class or interface in javax.servlet.http"><code>HttpServletResponse.getHeaders(String)</code></a> to
+ retrieve all of them.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#getHeader(java.lang.String)" title="class or interface in javax.servlet.http">getHeader</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - Header name to look up</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The first value for the specified header. This is the raw value
+         so if multiple values are specified in the first header then they
+         will be returned as a single header value .</dd></dl>
+</li>
+</ul>
+<a name="getHeaderNames()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHeaderNames</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getHeaderNames()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#getHeaderNames()" title="class or interface in javax.servlet.http">javax.servlet.http.HttpServletResponse</a></code></strong></div>
+<div class="block">Get the header names set for this HTTP response.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#getHeaderNames()" title="class or interface in javax.servlet.http">getHeaderNames</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>The header names set for this HTTP response.</dd></dl>
+</li>
+</ul>
+<a name="getHeaders(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getHeaders</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getHeaders(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#getHeaders(java.lang.String)" title="class or interface in javax.servlet.http">javax.servlet.http.HttpServletResponse</a></code></strong></div>
+<div class="block">Return a Collection of all the header values associated with the
+ specified header name.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true#getHeaders(java.lang.String)" title="class or interface in javax.servlet.http">getHeaders</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - Header name to look up</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The values for the specified header. These are the raw values so
+         if multiple values are specified in a single header that will be
+         returned as a single header value.</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/connector/Response.html" title="class in org.apache.catalina.connector"><span class="strong">Prev Class</span></a></li>
+<li>Next Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/connector/ResponseFacade.html" target="_top">Frames</a></li>
+<li><a href="ResponseFacade.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

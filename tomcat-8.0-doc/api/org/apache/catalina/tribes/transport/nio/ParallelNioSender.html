@@ -1,0 +1,488 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ParallelNioSender (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="ParallelNioSender (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../../org/apache/catalina/tribes/transport/nio/NioSender.html" title="class in org.apache.catalina.tribes.transport.nio"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../../org/apache/catalina/tribes/transport/nio/PooledParallelSender.html" title="class in org.apache.catalina.tribes.transport.nio"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../index.html?org/apache/catalina/tribes/transport/nio/ParallelNioSender.html" target="_top">Frames</a></li>
+<li><a href="ParallelNioSender.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.tribes.transport.nio</div>
+<h2 title="Class ParallelNioSender" class="title">Class ParallelNioSender</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html" title="class in org.apache.catalina.tribes.transport">org.apache.catalina.tribes.transport.AbstractSender</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.tribes.transport.nio.ParallelNioSender</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../../../org/apache/catalina/tribes/transport/DataSender.html" title="interface in org.apache.catalina.tribes.transport">DataSender</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/MultiPointSender.html" title="interface in org.apache.catalina.tribes.transport">MultiPointSender</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">ParallelNioSender</span>
+extends <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html" title="class in org.apache.catalina.tribes.transport">AbstractSender</a>
+implements <a href="../../../../../../org/apache/catalina/tribes/transport/MultiPointSender.html" title="interface in org.apache.catalina.tribes.transport">MultiPointSender</a></pre>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util">HashMap</a>&lt;<a href="../../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>,<a href="../../../../../../org/apache/catalina/tribes/transport/nio/NioSender.html" title="class in org.apache.catalina.tribes.transport.nio">NioSender</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/apache/catalina/tribes/transport/nio/ParallelNioSender.html#nioSenders">nioSenders</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/nio/channels/Selector.html?is-external=true" title="class or interface in java.nio.channels">Selector</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/apache/catalina/tribes/transport/nio/ParallelNioSender.html#selector">selector</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/apache/catalina/tribes/transport/nio/ParallelNioSender.html#selectTimeout">selectTimeout</a></strong></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../../org/apache/catalina/tribes/transport/nio/ParallelNioSender.html#ParallelNioSender()">ParallelNioSender</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/apache/catalina/tribes/transport/nio/ParallelNioSender.html#add(org.apache.catalina.tribes.Member)">add</a></strong>(<a href="../../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;member)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/apache/catalina/tribes/transport/nio/ParallelNioSender.html#connect()">connect</a></strong>()</code>
+<div class="block">connect</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/apache/catalina/tribes/transport/nio/ParallelNioSender.html#disconnect()">disconnect</a></strong>()</code>
+<div class="block">disconnect
+
+ TODO Implement this org.apache.catalina.tribes.transport.DataSender method</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/apache/catalina/tribes/transport/nio/ParallelNioSender.html#finalize()">finalize</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/apache/catalina/tribes/transport/nio/ParallelNioSender.html#keepalive()">keepalive</a></strong>()</code>
+<div class="block">keepalive</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/apache/catalina/tribes/transport/nio/ParallelNioSender.html#remove(org.apache.catalina.tribes.Member)">remove</a></strong>(<a href="../../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;member)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/apache/catalina/tribes/transport/nio/ParallelNioSender.html#sendMessage(org.apache.catalina.tribes.Member[],%20org.apache.catalina.tribes.ChannelMessage)">sendMessage</a></strong>(<a href="../../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>[]&nbsp;destination,
+           <a href="../../../../../../org/apache/catalina/tribes/ChannelMessage.html" title="interface in org.apache.catalina.tribes">ChannelMessage</a>&nbsp;msg)</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.tribes.transport.AbstractSender">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.tribes.transport.<a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html" title="class in org.apache.catalina.tribes.transport">AbstractSender</a></h3>
+<code><a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getAddress()">getAddress</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getAttempt()">getAttempt</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getConnectTime()">getConnectTime</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getDestination()">getDestination</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getDirectBuffer()">getDirectBuffer</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getKeepAliveCount()">getKeepAliveCount</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getKeepAliveTime()">getKeepAliveTime</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getMaxRetryAttempts()">getMaxRetryAttempts</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getOoBInline()">getOoBInline</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getPort()">getPort</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getRequestCount()">getRequestCount</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getRxBufSize()">getRxBufSize</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getSoKeepAlive()">getSoKeepAlive</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getSoLingerOn()">getSoLingerOn</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getSoLingerTime()">getSoLingerTime</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getSoReuseAddress()">getSoReuseAddress</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getSoTrafficClass()">getSoTrafficClass</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getTcpNoDelay()">getTcpNoDelay</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getThrowOnFailedAck()">getThrowOnFailedAck</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getTimeout()">getTimeout</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getTxBufSize()">getTxBufSize</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getUdpPort()">getUdpPort</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getUdpRxBufSize()">getUdpRxBufSize</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#getUdpTxBufSize()">getUdpTxBufSize</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#isConnected()">isConnected</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#isUdpBased()">isUdpBased</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setAddress(java.net.InetAddress)">setAddress</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setAttempt(int)">setAttempt</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setConnected(boolean)">setConnected</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setConnectTime(long)">setConnectTime</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setDestination(org.apache.catalina.tribes.Member)">setDestination</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setDirectBuffer(boolean)">setDirectBuffer</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setKeepAliveCount(int)">setKeepAliveCount</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setKeepAliveTime(long)">setKeepAliveTime</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setMaxRetryAttempts(int)">setMaxRetryAttempts</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setOoBInline(boolean)">setOoBInline</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setPort(int)">setPort</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setRequestCount(int)">setRequestCount</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setRxBufSize(int)">setRxBufSize</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setSoKeepAlive(boolean)">setSoKeepAlive</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setSoLingerOn(boolean)">setSoLingerOn</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setSoLingerTime(int)">setSoLingerTime</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setSoReuseAddress(boolean)">setSoReuseAddress</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setSoTrafficClass(int)">setSoTrafficClass</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setTcpNoDelay(boolean)">setTcpNoDelay</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setThrowOnFailedAck(boolean)">setThrowOnFailedAck</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setTimeout(long)">setTimeout</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setTxBufSize(int)">setTxBufSize</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setUdpBased(boolean)">setUdpBased</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setUdpPort(int)">setUdpPort</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setUdpRxBufSize(int)">setUdpRxBufSize</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#setUdpTxBufSize(int)">setUdpTxBufSize</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#transferProperties(org.apache.catalina.tribes.transport.AbstractSender,%20org.apache.catalina.tribes.transport.AbstractSender)">transferProperties</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.tribes.transport.MultiPointSender">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.apache.catalina.tribes.transport.<a href="../../../../../../org/apache/catalina/tribes/transport/MultiPointSender.html" title="interface in org.apache.catalina.tribes.transport">MultiPointSender</a></h3>
+<code><a href="../../../../../../org/apache/catalina/tribes/transport/MultiPointSender.html#setDirectBuffer(boolean)">setDirectBuffer</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/MultiPointSender.html#setMaxRetryAttempts(int)">setMaxRetryAttempts</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.tribes.transport.DataSender">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.apache.catalina.tribes.transport.<a href="../../../../../../org/apache/catalina/tribes/transport/DataSender.html" title="interface in org.apache.catalina.tribes.transport">DataSender</a></h3>
+<code><a href="../../../../../../org/apache/catalina/tribes/transport/DataSender.html#getConnectTime()">getConnectTime</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/DataSender.html#getRequestCount()">getRequestCount</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/DataSender.html#isConnected()">isConnected</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/DataSender.html#setKeepAliveCount(int)">setKeepAliveCount</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/DataSender.html#setKeepAliveTime(long)">setKeepAliveTime</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/DataSender.html#setRxBufSize(int)">setRxBufSize</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/DataSender.html#setTimeout(long)">setTimeout</a>, <a href="../../../../../../org/apache/catalina/tribes/transport/DataSender.html#setTxBufSize(int)">setTxBufSize</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="selectTimeout">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>selectTimeout</h4>
+<pre>protected final&nbsp;long selectTimeout</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../../constant-values.html#org.apache.catalina.tribes.transport.nio.ParallelNioSender.selectTimeout">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="selector">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>selector</h4>
+<pre>protected final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/nio/channels/Selector.html?is-external=true" title="class or interface in java.nio.channels">Selector</a> selector</pre>
+</li>
+</ul>
+<a name="nioSenders">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>nioSenders</h4>
+<pre>protected final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util">HashMap</a>&lt;<a href="../../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>,<a href="../../../../../../org/apache/catalina/tribes/transport/nio/NioSender.html" title="class in org.apache.catalina.tribes.transport.nio">NioSender</a>&gt; nioSenders</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ParallelNioSender()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ParallelNioSender</h4>
+<pre>public&nbsp;ParallelNioSender()
+                  throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="sendMessage(org.apache.catalina.tribes.Member[], org.apache.catalina.tribes.ChannelMessage)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sendMessage</h4>
+<pre>public&nbsp;void&nbsp;sendMessage(<a href="../../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>[]&nbsp;destination,
+               <a href="../../../../../../org/apache/catalina/tribes/ChannelMessage.html" title="interface in org.apache.catalina.tribes">ChannelMessage</a>&nbsp;msg)
+                 throws <a href="../../../../../../org/apache/catalina/tribes/ChannelException.html" title="class in org.apache.catalina.tribes">ChannelException</a></pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/apache/catalina/tribes/transport/MultiPointSender.html#sendMessage(org.apache.catalina.tribes.Member[],%20org.apache.catalina.tribes.ChannelMessage)">sendMessage</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/apache/catalina/tribes/transport/MultiPointSender.html" title="interface in org.apache.catalina.tribes.transport">MultiPointSender</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../../../org/apache/catalina/tribes/ChannelException.html" title="class in org.apache.catalina.tribes">ChannelException</a></code></dd></dl>
+</li>
+</ul>
+<a name="connect()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>connect</h4>
+<pre>public&nbsp;void&nbsp;connect()</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#connect()">AbstractSender</a></code></strong></div>
+<div class="block">connect</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/apache/catalina/tribes/transport/DataSender.html#connect()">connect</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/apache/catalina/tribes/transport/DataSender.html" title="interface in org.apache.catalina.tribes.transport">DataSender</a></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#connect()">connect</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html" title="class in org.apache.catalina.tribes.transport">AbstractSender</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="add(org.apache.catalina.tribes.Member)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>add</h4>
+<pre>public&nbsp;void&nbsp;add(<a href="../../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;member)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/apache/catalina/tribes/transport/MultiPointSender.html#add(org.apache.catalina.tribes.Member)">add</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/apache/catalina/tribes/transport/MultiPointSender.html" title="interface in org.apache.catalina.tribes.transport">MultiPointSender</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="remove(org.apache.catalina.tribes.Member)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>remove</h4>
+<pre>public&nbsp;void&nbsp;remove(<a href="../../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;member)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/apache/catalina/tribes/transport/MultiPointSender.html#remove(org.apache.catalina.tribes.Member)">remove</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/apache/catalina/tribes/transport/MultiPointSender.html" title="interface in org.apache.catalina.tribes.transport">MultiPointSender</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="disconnect()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>disconnect</h4>
+<pre>public&nbsp;void&nbsp;disconnect()</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#disconnect()">AbstractSender</a></code></strong></div>
+<div class="block">disconnect
+
+ TODO Implement this org.apache.catalina.tribes.transport.DataSender method</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/apache/catalina/tribes/transport/DataSender.html#disconnect()">disconnect</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/apache/catalina/tribes/transport/DataSender.html" title="interface in org.apache.catalina.tribes.transport">DataSender</a></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#disconnect()">disconnect</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html" title="class in org.apache.catalina.tribes.transport">AbstractSender</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="finalize()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>finalize</h4>
+<pre>public&nbsp;void&nbsp;finalize()
+              throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a></pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a></code></dd></dl>
+</li>
+</ul>
+<a name="keepalive()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>keepalive</h4>
+<pre>public&nbsp;boolean&nbsp;keepalive()</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#keepalive()">AbstractSender</a></code></strong></div>
+<div class="block">keepalive</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/apache/catalina/tribes/transport/DataSender.html#keepalive()">keepalive</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/apache/catalina/tribes/transport/DataSender.html" title="interface in org.apache.catalina.tribes.transport">DataSender</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html#keepalive()">keepalive</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../org/apache/catalina/tribes/transport/AbstractSender.html" title="class in org.apache.catalina.tribes.transport">AbstractSender</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>boolean
+ TODO Implement this org.apache.catalina.tribes.transport.DataSender method</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../../org/apache/catalina/tribes/transport/nio/NioSender.html" title="class in org.apache.catalina.tribes.transport.nio"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../../org/apache/catalina/tribes/transport/nio/PooledParallelSender.html" title="class in org.apache.catalina.tribes.transport.nio"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../index.html?org/apache/catalina/tribes/transport/nio/ParallelNioSender.html" target="_top">Frames</a></li>
+<li><a href="ParallelNioSender.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

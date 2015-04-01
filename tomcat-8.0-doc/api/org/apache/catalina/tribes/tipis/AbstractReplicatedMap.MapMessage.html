@@ -1,0 +1,718 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AbstractReplicatedMap.MapMessage (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="AbstractReplicatedMap.MapMessage (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapEntry.html" title="class in org.apache.catalina.tribes.tipis"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapOwner.html" title="interface in org.apache.catalina.tribes.tipis"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html" target="_top">Frames</a></li>
+<li><a href="AbstractReplicatedMap.MapMessage.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.tribes.tipis</div>
+<h2 title="Class AbstractReplicatedMap.MapMessage" class="title">Class AbstractReplicatedMap.MapMessage</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.tribes.tipis.AbstractReplicatedMap.MapMessage</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></dd>
+</dl>
+<dl>
+<dt>Enclosing class:</dt>
+<dd><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.html" title="class in org.apache.catalina.tribes.tipis">AbstractReplicatedMap</a>&lt;<a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.html" title="type parameter in AbstractReplicatedMap">K</a>,<a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.html" title="type parameter in AbstractReplicatedMap">V</a>&gt;</dd>
+</dl>
+<hr>
+<br>
+<pre>public static class <span class="strong">AbstractReplicatedMap.MapMessage</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../serialized-form.html#org.apache.catalina.tribes.tipis.AbstractReplicatedMap.MapMessage">Serialized Form</a></dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#MSG_ACCESS">MSG_ACCESS</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#MSG_BACKUP">MSG_BACKUP</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#MSG_COPY">MSG_COPY</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#MSG_INIT">MSG_INIT</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#MSG_NOTIFY_MAPMEMBER">MSG_NOTIFY_MAPMEMBER</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#MSG_PROXY">MSG_PROXY</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#MSG_REMOVE">MSG_REMOVE</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#MSG_RETRIEVE_BACKUP">MSG_RETRIEVE_BACKUP</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#MSG_START">MSG_START</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#MSG_STATE">MSG_STATE</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#MSG_STATE_COPY">MSG_STATE_COPY</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#MSG_STOP">MSG_STOP</a></strong></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#AbstractReplicatedMap.MapMessage(byte[],%20int,%20boolean,%20java.io.Serializable,%20java.io.Serializable,%20byte[],%20org.apache.catalina.tribes.Member,%20org.apache.catalina.tribes.Member[])">AbstractReplicatedMap.MapMessage</a></strong>(byte[]&nbsp;mapId,
+                                int&nbsp;msgtype,
+                                boolean&nbsp;diff,
+                                <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;key,
+                                <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;value,
+                                byte[]&nbsp;diffvalue,
+                                <a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;primary,
+                                <a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>[]&nbsp;nodes)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#clone()">clone</a></strong>()</code>
+<div class="block">shallow clone</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#deserialize(java.lang.ClassLoader[])">deserialize</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>[]&nbsp;cls)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#getBackupNodes()">getBackupNodes</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#getDiffValue()">getDiffValue</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#getKey()">getKey</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#getKeyData()">getKeyData</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#getMapId()">getMapId</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#getMsgType()">getMsgType</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#getPrimary()">getPrimary</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#getTypeDesc()">getTypeDesc</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#getValue()">getValue</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#getValueData()">getValueData</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#isDiff()">isDiff</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#key(java.lang.ClassLoader[])">key</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>[]&nbsp;cls)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#setKey(java.io.Serializable)">setKey</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;key)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#setValue(java.io.Serializable)">setValue</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;value)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#toString()">toString</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html#value(java.lang.ClassLoader[])">value</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>[]&nbsp;cls)</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="MSG_BACKUP">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>MSG_BACKUP</h4>
+<pre>public static final&nbsp;int MSG_BACKUP</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.catalina.tribes.tipis.AbstractReplicatedMap.MapMessage.MSG_BACKUP">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="MSG_RETRIEVE_BACKUP">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>MSG_RETRIEVE_BACKUP</h4>
+<pre>public static final&nbsp;int MSG_RETRIEVE_BACKUP</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.catalina.tribes.tipis.AbstractReplicatedMap.MapMessage.MSG_RETRIEVE_BACKUP">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="MSG_PROXY">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>MSG_PROXY</h4>
+<pre>public static final&nbsp;int MSG_PROXY</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.catalina.tribes.tipis.AbstractReplicatedMap.MapMessage.MSG_PROXY">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="MSG_REMOVE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>MSG_REMOVE</h4>
+<pre>public static final&nbsp;int MSG_REMOVE</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.catalina.tribes.tipis.AbstractReplicatedMap.MapMessage.MSG_REMOVE">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="MSG_STATE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>MSG_STATE</h4>
+<pre>public static final&nbsp;int MSG_STATE</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.catalina.tribes.tipis.AbstractReplicatedMap.MapMessage.MSG_STATE">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="MSG_START">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>MSG_START</h4>
+<pre>public static final&nbsp;int MSG_START</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.catalina.tribes.tipis.AbstractReplicatedMap.MapMessage.MSG_START">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="MSG_STOP">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>MSG_STOP</h4>
+<pre>public static final&nbsp;int MSG_STOP</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.catalina.tribes.tipis.AbstractReplicatedMap.MapMessage.MSG_STOP">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="MSG_INIT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>MSG_INIT</h4>
+<pre>public static final&nbsp;int MSG_INIT</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.catalina.tribes.tipis.AbstractReplicatedMap.MapMessage.MSG_INIT">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="MSG_COPY">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>MSG_COPY</h4>
+<pre>public static final&nbsp;int MSG_COPY</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.catalina.tribes.tipis.AbstractReplicatedMap.MapMessage.MSG_COPY">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="MSG_STATE_COPY">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>MSG_STATE_COPY</h4>
+<pre>public static final&nbsp;int MSG_STATE_COPY</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.catalina.tribes.tipis.AbstractReplicatedMap.MapMessage.MSG_STATE_COPY">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="MSG_ACCESS">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>MSG_ACCESS</h4>
+<pre>public static final&nbsp;int MSG_ACCESS</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.catalina.tribes.tipis.AbstractReplicatedMap.MapMessage.MSG_ACCESS">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="MSG_NOTIFY_MAPMEMBER">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>MSG_NOTIFY_MAPMEMBER</h4>
+<pre>public static final&nbsp;int MSG_NOTIFY_MAPMEMBER</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.catalina.tribes.tipis.AbstractReplicatedMap.MapMessage.MSG_NOTIFY_MAPMEMBER">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="AbstractReplicatedMap.MapMessage(byte[], int, boolean, java.io.Serializable, java.io.Serializable, byte[], org.apache.catalina.tribes.Member, org.apache.catalina.tribes.Member[])">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>AbstractReplicatedMap.MapMessage</h4>
+<pre>public&nbsp;AbstractReplicatedMap.MapMessage(byte[]&nbsp;mapId,
+                                int&nbsp;msgtype,
+                                boolean&nbsp;diff,
+                                <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;key,
+                                <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;value,
+                                byte[]&nbsp;diffvalue,
+                                <a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;primary,
+                                <a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>[]&nbsp;nodes)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="toString()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toString</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getTypeDesc()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTypeDesc</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getTypeDesc()</pre>
+</li>
+</ul>
+<a name="deserialize(java.lang.ClassLoader[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>deserialize</h4>
+<pre>public&nbsp;void&nbsp;deserialize(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>[]&nbsp;cls)
+                 throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</a></code></dd></dl>
+</li>
+</ul>
+<a name="getMsgType()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMsgType</h4>
+<pre>public&nbsp;int&nbsp;getMsgType()</pre>
+</li>
+</ul>
+<a name="isDiff()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isDiff</h4>
+<pre>public&nbsp;boolean&nbsp;isDiff()</pre>
+</li>
+</ul>
+<a name="getKey()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getKey</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;getKey()</pre>
+</li>
+</ul>
+<a name="key(java.lang.ClassLoader[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>key</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;key(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>[]&nbsp;cls)
+                 throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</a></code></dd></dl>
+</li>
+</ul>
+<a name="getKeyData()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getKeyData</h4>
+<pre>public&nbsp;byte[]&nbsp;getKeyData()</pre>
+</li>
+</ul>
+<a name="getValue()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getValue</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;getValue()</pre>
+</li>
+</ul>
+<a name="value(java.lang.ClassLoader[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>value</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;value(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>[]&nbsp;cls)
+                   throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</a></code></dd></dl>
+</li>
+</ul>
+<a name="getValueData()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getValueData</h4>
+<pre>public&nbsp;byte[]&nbsp;getValueData()</pre>
+</li>
+</ul>
+<a name="getDiffValue()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDiffValue</h4>
+<pre>public&nbsp;byte[]&nbsp;getDiffValue()</pre>
+</li>
+</ul>
+<a name="getBackupNodes()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBackupNodes</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>[]&nbsp;getBackupNodes()</pre>
+</li>
+</ul>
+<a name="getPrimary()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPrimary</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;getPrimary()</pre>
+</li>
+</ul>
+<a name="getMapId()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMapId</h4>
+<pre>public&nbsp;byte[]&nbsp;getMapId()</pre>
+</li>
+</ul>
+<a name="setValue(java.io.Serializable)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setValue</h4>
+<pre>public&nbsp;void&nbsp;setValue(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;value)</pre>
+</li>
+</ul>
+<a name="setKey(java.io.Serializable)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setKey</h4>
+<pre>public&nbsp;void&nbsp;setKey(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;key)</pre>
+</li>
+</ul>
+<a name="clone()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>clone</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;clone()</pre>
+<div class="block">shallow clone</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>Object</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapEntry.html" title="class in org.apache.catalina.tribes.tipis"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapOwner.html" title="interface in org.apache.catalina.tribes.tipis"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/catalina/tribes/tipis/AbstractReplicatedMap.MapMessage.html" target="_top">Frames</a></li>
+<li><a href="AbstractReplicatedMap.MapMessage.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

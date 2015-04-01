@@ -1,0 +1,506 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CrawlerSessionManagerValve (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="CrawlerSessionManagerValve (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/valves/Constants.AccessLog.html" title="class in org.apache.catalina.valves"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/valves/ErrorReportValve.html" title="class in org.apache.catalina.valves"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/valves/CrawlerSessionManagerValve.html" target="_top">Frames</a></li>
+<li><a href="CrawlerSessionManagerValve.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_org.apache.catalina.valves.ValveBase">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.valves</div>
+<h2 title="Class CrawlerSessionManagerValve" class="title">Class CrawlerSessionManagerValve</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../org/apache/catalina/util/LifecycleBase.html" title="class in org.apache.catalina.util">org.apache.catalina.util.LifecycleBase</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html" title="class in org.apache.catalina.util">org.apache.catalina.util.LifecycleMBeanBase</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">org.apache.catalina.valves.ValveBase</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.valves.CrawlerSessionManagerValve</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://docs.oracle.com/javase/7/docs/api/java/util/EventListener.html?is-external=true" title="class or interface in java.util">EventListener</a>, <a href="http://docs.oracle.com/javase/7/docs/api/javax/management/MBeanRegistration.html?is-external=true" title="class or interface in javax.management">MBeanRegistration</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpSessionBindingListener.html?is-external=true" title="class or interface in javax.servlet.http">HttpSessionBindingListener</a>, <a href="../../../../org/apache/catalina/Contained.html" title="interface in org.apache.catalina">Contained</a>, <a href="../../../../org/apache/catalina/JmxEnabled.html" title="interface in org.apache.catalina">JmxEnabled</a>, <a href="../../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a>, <a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">CrawlerSessionManagerValve</span>
+extends <a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a>
+implements <a href="../../../../../servletapi/javax/servlet/http/HttpSessionBindingListener.html?is-external=true" title="class or interface in javax.servlet.http">HttpSessionBindingListener</a></pre>
+<div class="block">Web crawlers can trigger the creation of many thousands of sessions as they
+ crawl a site which may result in significant memory consumption. This Valve
+ ensures that crawlers are associated with a single session - just like normal
+ users - regardless of whether or not they provide a session token with their
+ requests.</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.valves.ValveBase">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.catalina.valves.<a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a></h3>
+<code><a href="../../../../org/apache/catalina/valves/ValveBase.html#asyncSupported">asyncSupported</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#container">container</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#containerLog">containerLog</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#next">next</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#sm">sm</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.util.LifecycleMBeanBase">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.catalina.util.<a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html" title="class in org.apache.catalina.util">LifecycleMBeanBase</a></h3>
+<code><a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#mserver">mserver</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.Lifecycle">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.apache.catalina.<a href="../../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a></h3>
+<code><a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_DESTROY_EVENT">AFTER_DESTROY_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_INIT_EVENT">AFTER_INIT_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_START_EVENT">AFTER_START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_STOP_EVENT">AFTER_STOP_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_DESTROY_EVENT">BEFORE_DESTROY_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_INIT_EVENT">BEFORE_INIT_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_START_EVENT">BEFORE_START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_STOP_EVENT">BEFORE_STOP_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#CONFIGURE_START_EVENT">CONFIGURE_START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#CONFIGURE_STOP_EVENT">CONFIGURE_STOP_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#PERIODIC_EVENT">PERIODIC_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#START_EVENT">START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#STOP_EVENT">STOP_EVENT</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/catalina/valves/CrawlerSessionManagerValve.html#CrawlerSessionManagerValve()">CrawlerSessionManagerValve</a></strong>()</code>
+<div class="block">Specifies a default constructor so async support can be configured.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/CrawlerSessionManagerValve.html#getClientIpSessionId()">getClientIpSessionId</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/CrawlerSessionManagerValve.html#getCrawlerUserAgents()">getCrawlerUserAgents</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/CrawlerSessionManagerValve.html#getSessionInactiveInterval()">getSessionInactiveInterval</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/CrawlerSessionManagerValve.html#initInternal()">initInternal</a></strong>()</code>
+<div class="block">Sub-classes wishing to perform additional initialization should override
+ this method, ensuring that super.initInternal() is the first call in the
+ overriding method.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/CrawlerSessionManagerValve.html#invoke(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response)">invoke</a></strong>(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request,
+      <a href="../../../../org/apache/catalina/connector/Response.html" title="class in org.apache.catalina.connector">Response</a>&nbsp;response)</code>
+<div class="block">The implementation-specific logic represented by this Valve.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/CrawlerSessionManagerValve.html#setCrawlerUserAgents(java.lang.String)">setCrawlerUserAgents</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;crawlerUserAgents)</code>
+<div class="block">Specify the regular expression (using <a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex"><code>Pattern</code></a>) that will be used
+ to identify crawlers based in the User-Agent header provided.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/CrawlerSessionManagerValve.html#setSessionInactiveInterval(int)">setSessionInactiveInterval</a></strong>(int&nbsp;sessionInactiveInterval)</code>
+<div class="block">Specify the session timeout (in seconds) for a crawler's session.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/CrawlerSessionManagerValve.html#valueBound(javax.servlet.http.HttpSessionBindingEvent)">valueBound</a></strong>(<a href="../../../../../servletapi/javax/servlet/http/HttpSessionBindingEvent.html?is-external=true" title="class or interface in javax.servlet.http">HttpSessionBindingEvent</a>&nbsp;event)</code>
+<div class="block">Notifies the object that it is being bound to a session and identifies
+ the session.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/CrawlerSessionManagerValve.html#valueUnbound(javax.servlet.http.HttpSessionBindingEvent)">valueUnbound</a></strong>(<a href="../../../../../servletapi/javax/servlet/http/HttpSessionBindingEvent.html?is-external=true" title="class or interface in javax.servlet.http">HttpSessionBindingEvent</a>&nbsp;event)</code>
+<div class="block">Notifies the object that it is being unbound from a session and
+ identifies the session.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.valves.ValveBase">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.valves.<a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a></h3>
+<code><a href="../../../../org/apache/catalina/valves/ValveBase.html#backgroundProcess()">backgroundProcess</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#event(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response,%20org.apache.catalina.comet.CometEvent)">event</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#getContainer()">getContainer</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#getDomainInternal()">getDomainInternal</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#getNext()">getNext</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#getObjectNameKeyProperties()">getObjectNameKeyProperties</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#isAsyncSupported()">isAsyncSupported</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#setAsyncSupported(boolean)">setAsyncSupported</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#setContainer(org.apache.catalina.Container)">setContainer</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#setNext(org.apache.catalina.Valve)">setNext</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#startInternal()">startInternal</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#stopInternal()">stopInternal</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#toString()">toString</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.util.LifecycleMBeanBase">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.util.<a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html" title="class in org.apache.catalina.util">LifecycleMBeanBase</a></h3>
+<code><a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#destroyInternal()">destroyInternal</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#getDomain()">getDomain</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#getObjectName()">getObjectName</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#postDeregister()">postDeregister</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#postRegister(java.lang.Boolean)">postRegister</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#preDeregister()">preDeregister</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#preRegister(javax.management.MBeanServer,%20javax.management.ObjectName)">preRegister</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#register(java.lang.Object,%20java.lang.String)">register</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#setDomain(java.lang.String)">setDomain</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#unregister(javax.management.ObjectName)">unregister</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.util.LifecycleBase">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.util.<a href="../../../../org/apache/catalina/util/LifecycleBase.html" title="class in org.apache.catalina.util">LifecycleBase</a></h3>
+<code><a href="../../../../org/apache/catalina/util/LifecycleBase.html#addLifecycleListener(org.apache.catalina.LifecycleListener)">addLifecycleListener</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#destroy()">destroy</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#findLifecycleListeners()">findLifecycleListeners</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#fireLifecycleEvent(java.lang.String,%20java.lang.Object)">fireLifecycleEvent</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#getState()">getState</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#getStateName()">getStateName</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#init()">init</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#removeLifecycleListener(org.apache.catalina.LifecycleListener)">removeLifecycleListener</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#setState(org.apache.catalina.LifecycleState)">setState</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#setState(org.apache.catalina.LifecycleState,%20java.lang.Object)">setState</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#start()">start</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#stop()">stop</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="CrawlerSessionManagerValve()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>CrawlerSessionManagerValve</h4>
+<pre>public&nbsp;CrawlerSessionManagerValve()</pre>
+<div class="block">Specifies a default constructor so async support can be configured.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setCrawlerUserAgents(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCrawlerUserAgents</h4>
+<pre>public&nbsp;void&nbsp;setCrawlerUserAgents(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;crawlerUserAgents)</pre>
+<div class="block">Specify the regular expression (using <a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex"><code>Pattern</code></a>) that will be used
+ to identify crawlers based in the User-Agent header provided. The default
+ is ".*GoogleBot.*|.*bingbot.*|.*Yahoo! Slurp.*"</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>crawlerUserAgents</code> - The regular expression using <a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex"><code>Pattern</code></a></dd></dl>
+</li>
+</ul>
+<a name="getCrawlerUserAgents()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCrawlerUserAgents</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getCrawlerUserAgents()</pre>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The current regular expression being used to match user agents.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../org/apache/catalina/valves/CrawlerSessionManagerValve.html#setCrawlerUserAgents(java.lang.String)"><code>setCrawlerUserAgents(String)</code></a></dd></dl>
+</li>
+</ul>
+<a name="setSessionInactiveInterval(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSessionInactiveInterval</h4>
+<pre>public&nbsp;void&nbsp;setSessionInactiveInterval(int&nbsp;sessionInactiveInterval)</pre>
+<div class="block">Specify the session timeout (in seconds) for a crawler's session. This is
+ typically lower than that for a user session. The default is 60 seconds.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>sessionInactiveInterval</code> - The new timeout for crawler sessions</dd></dl>
+</li>
+</ul>
+<a name="getSessionInactiveInterval()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSessionInactiveInterval</h4>
+<pre>public&nbsp;int&nbsp;getSessionInactiveInterval()</pre>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The current timeout in seconds</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../org/apache/catalina/valves/CrawlerSessionManagerValve.html#setSessionInactiveInterval(int)"><code>setSessionInactiveInterval(int)</code></a></dd></dl>
+</li>
+</ul>
+<a name="getClientIpSessionId()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getClientIpSessionId</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getClientIpSessionId()</pre>
+</li>
+</ul>
+<a name="initInternal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>initInternal</h4>
+<pre>protected&nbsp;void&nbsp;initInternal()
+                     throws <a href="../../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#initInternal()">LifecycleMBeanBase</a></code></strong></div>
+<div class="block">Sub-classes wishing to perform additional initialization should override
+ this method, ensuring that super.initInternal() is the first call in the
+ overriding method.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/valves/ValveBase.html#initInternal()">initInternal</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></code></dd></dl>
+</li>
+</ul>
+<a name="invoke(org.apache.catalina.connector.Request, org.apache.catalina.connector.Response)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>invoke</h4>
+<pre>public&nbsp;void&nbsp;invoke(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request,
+          <a href="../../../../org/apache/catalina/connector/Response.html" title="class in org.apache.catalina.connector">Response</a>&nbsp;response)
+            throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                   <a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../org/apache/catalina/valves/ValveBase.html#invoke(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response)">ValveBase</a></code></strong></div>
+<div class="block">The implementation-specific logic represented by this Valve.  See the
+ Valve description for the normal design patterns for this method.
+ <p>
+ This method <strong>MUST</strong> be provided by a subclass.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Valve.html#invoke(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response)">invoke</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/valves/ValveBase.html#invoke(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response)">invoke</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>request</code> - The servlet request to be processed</dd><dd><code>response</code> - The servlet response to be created</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if an input/output error occurs</dd>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code> - if a servlet error occurs</dd></dl>
+</li>
+</ul>
+<a name="valueBound(javax.servlet.http.HttpSessionBindingEvent)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>valueBound</h4>
+<pre>public&nbsp;void&nbsp;valueBound(<a href="../../../../../servletapi/javax/servlet/http/HttpSessionBindingEvent.html?is-external=true" title="class or interface in javax.servlet.http">HttpSessionBindingEvent</a>&nbsp;event)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpSessionBindingListener.html?is-external=true#valueBound(javax.servlet.http.HttpSessionBindingEvent)" title="class or interface in javax.servlet.http">javax.servlet.http.HttpSessionBindingListener</a></code></strong></div>
+<div class="block">Notifies the object that it is being bound to a session and identifies
+ the session.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpSessionBindingListener.html?is-external=true#valueBound(javax.servlet.http.HttpSessionBindingEvent)" title="class or interface in javax.servlet.http">valueBound</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpSessionBindingListener.html?is-external=true" title="class or interface in javax.servlet.http">HttpSessionBindingListener</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>event</code> - the event that identifies the session</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/http/HttpSessionBindingListener.html?is-external=true#valueUnbound(javax.servlet.http.HttpSessionBindingEvent)" title="class or interface in javax.servlet.http"><code>HttpSessionBindingListener.valueUnbound(javax.servlet.http.HttpSessionBindingEvent)</code></a></dd></dl>
+</li>
+</ul>
+<a name="valueUnbound(javax.servlet.http.HttpSessionBindingEvent)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>valueUnbound</h4>
+<pre>public&nbsp;void&nbsp;valueUnbound(<a href="../../../../../servletapi/javax/servlet/http/HttpSessionBindingEvent.html?is-external=true" title="class or interface in javax.servlet.http">HttpSessionBindingEvent</a>&nbsp;event)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpSessionBindingListener.html?is-external=true#valueUnbound(javax.servlet.http.HttpSessionBindingEvent)" title="class or interface in javax.servlet.http">javax.servlet.http.HttpSessionBindingListener</a></code></strong></div>
+<div class="block">Notifies the object that it is being unbound from a session and
+ identifies the session.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/http/HttpSessionBindingListener.html?is-external=true#valueUnbound(javax.servlet.http.HttpSessionBindingEvent)" title="class or interface in javax.servlet.http">valueUnbound</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/http/HttpSessionBindingListener.html?is-external=true" title="class or interface in javax.servlet.http">HttpSessionBindingListener</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>event</code> - the event that identifies the session</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../servletapi/javax/servlet/http/HttpSessionBindingListener.html?is-external=true#valueBound(javax.servlet.http.HttpSessionBindingEvent)" title="class or interface in javax.servlet.http"><code>HttpSessionBindingListener.valueBound(javax.servlet.http.HttpSessionBindingEvent)</code></a></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/valves/Constants.AccessLog.html" title="class in org.apache.catalina.valves"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/valves/ErrorReportValve.html" title="class in org.apache.catalina.valves"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/valves/CrawlerSessionManagerValve.html" target="_top">Frames</a></li>
+<li><a href="CrawlerSessionManagerValve.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_org.apache.catalina.valves.ValveBase">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

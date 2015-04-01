@@ -1,0 +1,1181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ContextConfig (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="ContextConfig (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/startup/Constants.html" title="class in org.apache.catalina.startup"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/startup/ContextRuleSet.html" title="class in org.apache.catalina.startup"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/startup/ContextConfig.html" target="_top">Frames</a></li>
+<li><a href="ContextConfig.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.startup</div>
+<h2 title="Class ContextConfig" class="title">Class ContextConfig</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.startup.ContextConfig</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../org/apache/catalina/LifecycleListener.html" title="interface in org.apache.catalina">LifecycleListener</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">ContextConfig</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="../../../../org/apache/catalina/LifecycleListener.html" title="interface in org.apache.catalina">LifecycleListener</a></pre>
+<div class="block">Startup event listener for a <b>Context</b> that configures the properties
+ of that Context, and the associated defined servlets.</div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Craig R. McClanahan</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#authenticators">authenticators</a></strong></code>
+<div class="block">The set of Authenticators that we know how to configure.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#context">context</a></strong></code>
+<div class="block">The Context we are associated with.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/apache/catalina/Authenticator.html" title="interface in org.apache.catalina">Authenticator</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#customAuthenticators">customAuthenticators</a></strong></code>
+<div class="block">Custom mappings of login methods to authenticators</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#defaultWebXml">defaultWebXml</a></strong></code>
+<div class="block">The default web application's deployment descriptor location.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#deploymentCount">deploymentCount</a></strong></code>
+<div class="block">Deployment count.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="../../../../org/apache/tomcat/util/descriptor/web/LoginConfig.html" title="class in org.apache.tomcat.util.descriptor.web">LoginConfig</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#DUMMY_LOGIN_CONFIG">DUMMY_LOGIN_CONFIG</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#handlesTypesAnnotations">handlesTypesAnnotations</a></strong></code>
+<div class="block">Flag that indicates if at least one <a href="../../../../../servletapi/javax/servlet/annotation/HandlesTypes.html?is-external=true" title="class or interface in javax.servlet.annotation"><code>HandlesTypes</code></a> entry is present
+ that represents an annotation.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#handlesTypesNonAnnotations">handlesTypesNonAnnotations</a></strong></code>
+<div class="block">Flag that indicates if at least one <a href="../../../../../servletapi/javax/servlet/annotation/HandlesTypes.html?is-external=true" title="class or interface in javax.servlet.annotation"><code>HandlesTypes</code></a> entry is present
+ that represents a non-annotation.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../org/apache/catalina/Host.html" title="interface in org.apache.catalina">Host</a>,org.apache.catalina.startup.ContextConfig.DefaultWebXmlCacheEntry&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#hostWebXmlCache">hostWebXmlCache</a></strong></code>
+<div class="block">Cache of default web.xml fragments per Host</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../servletapi/javax/servlet/ServletContainerInitializer.html?is-external=true" title="class or interface in javax.servlet">ServletContainerInitializer</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&gt;&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#initializerClassMap">initializerClassMap</a></strong></code>
+<div class="block">Map of ServletContainerInitializer to classes they expressed interest in.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,org.apache.catalina.startup.ContextConfig.JavaClassCacheEntry&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#javaClassCache">javaClassCache</a></strong></code>
+<div class="block">Cache of JavaClass objects (byte code) by fully qualified class name.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#ok">ok</a></strong></code>
+<div class="block">Track any fatal errors during startup configuration processing.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#originalDocBase">originalDocBase</a></strong></code>
+<div class="block">Original docBase.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="../../../../org/apache/tomcat/util/res/StringManager.html" title="class in org.apache.tomcat.util.res">StringManager</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#sm">sm</a></strong></code>
+<div class="block">The string resources for this package.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;,<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../servletapi/javax/servlet/ServletContainerInitializer.html?is-external=true" title="class or interface in javax.servlet">ServletContainerInitializer</a>&gt;&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#typeInitializerMap">typeInitializerMap</a></strong></code>
+<div class="block">Map of Types to ServletContainerInitializer that are interested in those
+ types.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#ContextConfig()">ContextConfig</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#antiLocking()">antiLocking</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#applicationAnnotationsConfig()">applicationAnnotationsConfig</a></strong>()</code>
+<div class="block">Process the application classes annotations, if it exists.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#authenticatorConfig()">authenticatorConfig</a></strong>()</code>
+<div class="block">Set up an Authenticator automatically if required, and one has not
+ already been configured.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#beforeStart()">beforeStart</a></strong>()</code>
+<div class="block">Process a "before start" event for this Context.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#checkHandlesTypes(org.apache.tomcat.util.bcel.classfile.JavaClass)">checkHandlesTypes</a></strong>(<a href="../../../../org/apache/tomcat/util/bcel/classfile/JavaClass.html" title="class in org.apache.tomcat.util.bcel.classfile">JavaClass</a>&nbsp;javaClass)</code>
+<div class="block">For classes packaged with the web application, the class and each
+ super class needs to be checked for a match with <a href="../../../../../servletapi/javax/servlet/annotation/HandlesTypes.html?is-external=true" title="class or interface in javax.servlet.annotation"><code>HandlesTypes</code></a> or
+ for an annotation that matches <a href="../../../../../servletapi/javax/servlet/annotation/HandlesTypes.html?is-external=true" title="class or interface in javax.servlet.annotation"><code>HandlesTypes</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#configureStart()">configureStart</a></strong>()</code>
+<div class="block">Process a "contextConfig" event for this Context.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#configureStop()">configureStop</a></strong>()</code>
+<div class="block">Process a "stop" event for this Context.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#contextConfig(org.apache.tomcat.util.digester.Digester)">contextConfig</a></strong>(<a href="../../../../org/apache/tomcat/util/digester/Digester.html" title="class in org.apache.tomcat.util.digester">Digester</a>&nbsp;digester)</code>
+<div class="block">Process the default configuration file, if it exists.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../org/apache/tomcat/util/digester/Digester.html" title="class in org.apache.tomcat.util.digester">Digester</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#createContextDigester()">createContextDigester</a></strong>()</code>
+<div class="block">Create (if necessary) and return a Digester configured to process the
+ context configuration descriptor for an application.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#createWebXml()">createWebXml</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#destroy()">destroy</a></strong>()</code>
+<div class="block">Process a "destroy" event for this Context.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#fixDocBase()">fixDocBase</a></strong>()</code>
+<div class="block">Adjust docBase.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/org/xml/sax/InputSource.html?is-external=true" title="class or interface in org.xml.sax">InputSource</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#getContextWebXmlSource()">getContextWebXmlSource</a></strong>()</code>
+<div class="block">Identify the application web.xml to be used and obtain an input source
+ for it.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#getDefaultWebXml()">getDefaultWebXml</a></strong>()</code>
+<div class="block">Return the location of the default deployment descriptor</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/org/xml/sax/InputSource.html?is-external=true" title="class or interface in org.xml.sax">InputSource</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#getGlobalWebXmlSource()">getGlobalWebXmlSource</a></strong>()</code>
+<div class="block">Identify the default web.xml to be used and obtain an input source for
+ it.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#getHostConfigBase()">getHostConfigBase</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/org/xml/sax/InputSource.html?is-external=true" title="class or interface in org.xml.sax">InputSource</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#getHostWebXmlSource()">getHostWebXmlSource</a></strong>()</code>
+<div class="block">Identify the host web.xml to be used and obtain an input source for
+ it.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/org/xml/sax/InputSource.html?is-external=true" title="class or interface in org.xml.sax">InputSource</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#getWebXmlSource(java.lang.String,%20java.lang.String)">getWebXmlSource</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filename,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#init()">init</a></strong>()</code>
+<div class="block">Process a "init" event for this Context.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#lifecycleEvent(org.apache.catalina.LifecycleEvent)">lifecycleEvent</a></strong>(<a href="../../../../org/apache/catalina/LifecycleEvent.html" title="class in org.apache.catalina">LifecycleEvent</a>&nbsp;event)</code>
+<div class="block">Process events for an associated Context.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#processAnnotations(java.util.Set,%20boolean)">processAnnotations</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&gt;&nbsp;fragments,
+                  boolean&nbsp;handlesTypesOnly)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#processAnnotationsFile(java.io.File,%20org.apache.tomcat.util.descriptor.web.WebXml,%20boolean)">processAnnotationsFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file,
+                      <a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&nbsp;fragment,
+                      boolean&nbsp;handlesTypesOnly)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#processAnnotationsJar(java.net.URL,%20org.apache.tomcat.util.descriptor.web.WebXml,%20boolean)">processAnnotationsJar</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;url,
+                     <a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&nbsp;fragment,
+                     boolean&nbsp;handlesTypesOnly)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#processAnnotationsStream(java.io.InputStream,%20org.apache.tomcat.util.descriptor.web.WebXml,%20boolean)">processAnnotationsStream</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;is,
+                        <a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&nbsp;fragment,
+                        boolean&nbsp;handlesTypesOnly)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#processAnnotationsStringArray(org.apache.tomcat.util.bcel.classfile.ElementValue)">processAnnotationsStringArray</a></strong>(<a href="../../../../org/apache/tomcat/util/bcel/classfile/ElementValue.html" title="class in org.apache.tomcat.util.bcel.classfile">ElementValue</a>&nbsp;ev)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#processAnnotationsUrl(java.net.URL,%20org.apache.tomcat.util.descriptor.web.WebXml,%20boolean)">processAnnotationsUrl</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;url,
+                     <a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&nbsp;fragment,
+                     boolean&nbsp;handlesTypesOnly)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#processAnnotationsWebResource(org.apache.catalina.WebResource,%20org.apache.tomcat.util.descriptor.web.WebXml,%20boolean)">processAnnotationsWebResource</a></strong>(<a href="../../../../org/apache/catalina/WebResource.html" title="interface in org.apache.catalina">WebResource</a>&nbsp;webResource,
+                             <a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&nbsp;fragment,
+                             boolean&nbsp;handlesTypesOnly)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#processAnnotationWebFilter(java.lang.String,%20org.apache.tomcat.util.bcel.classfile.AnnotationEntry,%20org.apache.tomcat.util.descriptor.web.WebXml)">processAnnotationWebFilter</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;className,
+                          <a href="../../../../org/apache/tomcat/util/bcel/classfile/AnnotationEntry.html" title="class in org.apache.tomcat.util.bcel.classfile">AnnotationEntry</a>&nbsp;ae,
+                          <a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&nbsp;fragment)</code>
+<div class="block">process filter annotation and merge with existing one!</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#processAnnotationWebInitParams(org.apache.tomcat.util.bcel.classfile.ElementValue)">processAnnotationWebInitParams</a></strong>(<a href="../../../../org/apache/tomcat/util/bcel/classfile/ElementValue.html" title="class in org.apache.tomcat.util.bcel.classfile">ElementValue</a>&nbsp;ev)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#processAnnotationWebServlet(java.lang.String,%20org.apache.tomcat.util.bcel.classfile.AnnotationEntry,%20org.apache.tomcat.util.descriptor.web.WebXml)">processAnnotationWebServlet</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;className,
+                           <a href="../../../../org/apache/tomcat/util/bcel/classfile/AnnotationEntry.html" title="class in org.apache.tomcat.util.bcel.classfile">AnnotationEntry</a>&nbsp;ae,
+                           <a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&nbsp;fragment)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#processContextConfig(org.apache.tomcat.util.digester.Digester,%20java.net.URL)">processContextConfig</a></strong>(<a href="../../../../org/apache/tomcat/util/digester/Digester.html" title="class in org.apache.tomcat.util.digester">Digester</a>&nbsp;digester,
+                    <a href="http://docs.oracle.com/javase/7/docs/api/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;contextXml)</code>
+<div class="block">Process a context.xml.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#processJarsForWebFragments(org.apache.tomcat.util.descriptor.web.WebXml)">processJarsForWebFragments</a></strong>(<a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&nbsp;application)</code>
+<div class="block">Scan /WEB-INF/lib for JARs and for each one found add it and any
+ /META-INF/web-fragment.xml to the resulting Map. web-fragment.xml files
+ will be parsed before being added to the map.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#processResourceJARs(java.util.Set)">processResourceJARs</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&gt;&nbsp;fragments)</code>
+<div class="block">Scan JARs that contain web-fragment.xml files that will be used to
+ configure this application to see if they also contain static resources.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#processServletContainerInitializers()">processServletContainerInitializers</a></strong>()</code>
+<div class="block">Scan JARs for ServletContainerInitializer implementations.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#setCustomAuthenticators(java.util.Map)">setCustomAuthenticators</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/apache/catalina/Authenticator.html" title="interface in org.apache.catalina">Authenticator</a>&gt;&nbsp;customAuthenticators)</code>
+<div class="block">Sets custom mappings of login methods to authenticators.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#setDefaultWebXml(java.lang.String)">setDefaultWebXml</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</code>
+<div class="block">Set the location of the default deployment descriptor</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#validateSecurityRoles()">validateSecurityRoles</a></strong>()</code>
+<div class="block">Validate the usage of security role names in the web application
+ deployment descriptor.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/startup/ContextConfig.html#webConfig()">webConfig</a></strong>()</code>
+<div class="block">Scan the web.xml files that apply to the web application and merge them
+ using the rules defined in the spec.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="sm">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sm</h4>
+<pre>protected static final&nbsp;<a href="../../../../org/apache/tomcat/util/res/StringManager.html" title="class in org.apache.tomcat.util.res">StringManager</a> sm</pre>
+<div class="block">The string resources for this package.</div>
+</li>
+</ul>
+<a name="DUMMY_LOGIN_CONFIG">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>DUMMY_LOGIN_CONFIG</h4>
+<pre>protected static final&nbsp;<a href="../../../../org/apache/tomcat/util/descriptor/web/LoginConfig.html" title="class in org.apache.tomcat.util.descriptor.web">LoginConfig</a> DUMMY_LOGIN_CONFIG</pre>
+</li>
+</ul>
+<a name="authenticators">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>authenticators</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a> authenticators</pre>
+<div class="block">The set of Authenticators that we know how to configure.  The key is
+ the name of the implemented authentication method, and the value is
+ the fully qualified Java class name of the corresponding Valve.</div>
+</li>
+</ul>
+<a name="deploymentCount">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>deploymentCount</h4>
+<pre>protected static&nbsp;long deploymentCount</pre>
+<div class="block">Deployment count.</div>
+</li>
+</ul>
+<a name="hostWebXmlCache">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hostWebXmlCache</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../org/apache/catalina/Host.html" title="interface in org.apache.catalina">Host</a>,org.apache.catalina.startup.ContextConfig.DefaultWebXmlCacheEntry&gt; hostWebXmlCache</pre>
+<div class="block">Cache of default web.xml fragments per Host</div>
+</li>
+</ul>
+<a name="customAuthenticators">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>customAuthenticators</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/apache/catalina/Authenticator.html" title="interface in org.apache.catalina">Authenticator</a>&gt; customAuthenticators</pre>
+<div class="block">Custom mappings of login methods to authenticators</div>
+</li>
+</ul>
+<a name="context">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>context</h4>
+<pre>protected&nbsp;<a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a> context</pre>
+<div class="block">The Context we are associated with.</div>
+</li>
+</ul>
+<a name="defaultWebXml">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>defaultWebXml</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> defaultWebXml</pre>
+<div class="block">The default web application's deployment descriptor location.</div>
+</li>
+</ul>
+<a name="ok">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ok</h4>
+<pre>protected&nbsp;boolean ok</pre>
+<div class="block">Track any fatal errors during startup configuration processing.</div>
+</li>
+</ul>
+<a name="originalDocBase">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>originalDocBase</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> originalDocBase</pre>
+<div class="block">Original docBase.</div>
+</li>
+</ul>
+<a name="initializerClassMap">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>initializerClassMap</h4>
+<pre>protected final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../servletapi/javax/servlet/ServletContainerInitializer.html?is-external=true" title="class or interface in javax.servlet">ServletContainerInitializer</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&gt;&gt; initializerClassMap</pre>
+<div class="block">Map of ServletContainerInitializer to classes they expressed interest in.</div>
+</li>
+</ul>
+<a name="typeInitializerMap">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>typeInitializerMap</h4>
+<pre>protected final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;,<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../servletapi/javax/servlet/ServletContainerInitializer.html?is-external=true" title="class or interface in javax.servlet">ServletContainerInitializer</a>&gt;&gt; typeInitializerMap</pre>
+<div class="block">Map of Types to ServletContainerInitializer that are interested in those
+ types.</div>
+</li>
+</ul>
+<a name="javaClassCache">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>javaClassCache</h4>
+<pre>protected final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,org.apache.catalina.startup.ContextConfig.JavaClassCacheEntry&gt; javaClassCache</pre>
+<div class="block">Cache of JavaClass objects (byte code) by fully qualified class name.
+ Only populated if it is necessary to scan the super types and interfaces
+ as part of the processing for <a href="../../../../../servletapi/javax/servlet/annotation/HandlesTypes.html?is-external=true" title="class or interface in javax.servlet.annotation"><code>HandlesTypes</code></a>.</div>
+</li>
+</ul>
+<a name="handlesTypesAnnotations">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>handlesTypesAnnotations</h4>
+<pre>protected&nbsp;boolean handlesTypesAnnotations</pre>
+<div class="block">Flag that indicates if at least one <a href="../../../../../servletapi/javax/servlet/annotation/HandlesTypes.html?is-external=true" title="class or interface in javax.servlet.annotation"><code>HandlesTypes</code></a> entry is present
+ that represents an annotation.</div>
+</li>
+</ul>
+<a name="handlesTypesNonAnnotations">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>handlesTypesNonAnnotations</h4>
+<pre>protected&nbsp;boolean handlesTypesNonAnnotations</pre>
+<div class="block">Flag that indicates if at least one <a href="../../../../../servletapi/javax/servlet/annotation/HandlesTypes.html?is-external=true" title="class or interface in javax.servlet.annotation"><code>HandlesTypes</code></a> entry is present
+ that represents a non-annotation.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ContextConfig()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ContextConfig</h4>
+<pre>public&nbsp;ContextConfig()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getDefaultWebXml()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDefaultWebXml</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getDefaultWebXml()</pre>
+<div class="block">Return the location of the default deployment descriptor</div>
+</li>
+</ul>
+<a name="setDefaultWebXml(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDefaultWebXml</h4>
+<pre>public&nbsp;void&nbsp;setDefaultWebXml(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</pre>
+<div class="block">Set the location of the default deployment descriptor</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>path</code> - Absolute/relative path to the default web.xml</dd></dl>
+</li>
+</ul>
+<a name="setCustomAuthenticators(java.util.Map)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCustomAuthenticators</h4>
+<pre>public&nbsp;void&nbsp;setCustomAuthenticators(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/apache/catalina/Authenticator.html" title="interface in org.apache.catalina">Authenticator</a>&gt;&nbsp;customAuthenticators)</pre>
+<div class="block">Sets custom mappings of login methods to authenticators.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>customAuthenticators</code> - Custom mappings of login methods to
+ authenticators</dd></dl>
+</li>
+</ul>
+<a name="lifecycleEvent(org.apache.catalina.LifecycleEvent)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>lifecycleEvent</h4>
+<pre>public&nbsp;void&nbsp;lifecycleEvent(<a href="../../../../org/apache/catalina/LifecycleEvent.html" title="class in org.apache.catalina">LifecycleEvent</a>&nbsp;event)</pre>
+<div class="block">Process events for an associated Context.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/LifecycleListener.html#lifecycleEvent(org.apache.catalina.LifecycleEvent)">lifecycleEvent</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/LifecycleListener.html" title="interface in org.apache.catalina">LifecycleListener</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>event</code> - The lifecycle event that has occurred</dd></dl>
+</li>
+</ul>
+<a name="applicationAnnotationsConfig()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>applicationAnnotationsConfig</h4>
+<pre>protected&nbsp;void&nbsp;applicationAnnotationsConfig()</pre>
+<div class="block">Process the application classes annotations, if it exists.</div>
+</li>
+</ul>
+<a name="authenticatorConfig()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>authenticatorConfig</h4>
+<pre>protected&nbsp;void&nbsp;authenticatorConfig()</pre>
+<div class="block">Set up an Authenticator automatically if required, and one has not
+ already been configured.</div>
+</li>
+</ul>
+<a name="createContextDigester()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createContextDigester</h4>
+<pre>protected&nbsp;<a href="../../../../org/apache/tomcat/util/digester/Digester.html" title="class in org.apache.tomcat.util.digester">Digester</a>&nbsp;createContextDigester()</pre>
+<div class="block">Create (if necessary) and return a Digester configured to process the
+ context configuration descriptor for an application.</div>
+</li>
+</ul>
+<a name="contextConfig(org.apache.tomcat.util.digester.Digester)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>contextConfig</h4>
+<pre>protected&nbsp;void&nbsp;contextConfig(<a href="../../../../org/apache/tomcat/util/digester/Digester.html" title="class in org.apache.tomcat.util.digester">Digester</a>&nbsp;digester)</pre>
+<div class="block">Process the default configuration file, if it exists.</div>
+</li>
+</ul>
+<a name="processContextConfig(org.apache.tomcat.util.digester.Digester, java.net.URL)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>processContextConfig</h4>
+<pre>protected&nbsp;void&nbsp;processContextConfig(<a href="../../../../org/apache/tomcat/util/digester/Digester.html" title="class in org.apache.tomcat.util.digester">Digester</a>&nbsp;digester,
+                        <a href="http://docs.oracle.com/javase/7/docs/api/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;contextXml)</pre>
+<div class="block">Process a context.xml.</div>
+</li>
+</ul>
+<a name="fixDocBase()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>fixDocBase</h4>
+<pre>protected&nbsp;void&nbsp;fixDocBase()
+                   throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Adjust docBase.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="antiLocking()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>antiLocking</h4>
+<pre>protected&nbsp;void&nbsp;antiLocking()</pre>
+</li>
+</ul>
+<a name="init()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>init</h4>
+<pre>protected&nbsp;void&nbsp;init()</pre>
+<div class="block">Process a "init" event for this Context.</div>
+</li>
+</ul>
+<a name="beforeStart()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>beforeStart</h4>
+<pre>protected&nbsp;void&nbsp;beforeStart()</pre>
+<div class="block">Process a "before start" event for this Context.</div>
+</li>
+</ul>
+<a name="configureStart()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>configureStart</h4>
+<pre>protected&nbsp;void&nbsp;configureStart()</pre>
+<div class="block">Process a "contextConfig" event for this Context.</div>
+</li>
+</ul>
+<a name="configureStop()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>configureStop</h4>
+<pre>protected&nbsp;void&nbsp;configureStop()</pre>
+<div class="block">Process a "stop" event for this Context.</div>
+</li>
+</ul>
+<a name="destroy()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>destroy</h4>
+<pre>protected&nbsp;void&nbsp;destroy()</pre>
+<div class="block">Process a "destroy" event for this Context.</div>
+</li>
+</ul>
+<a name="validateSecurityRoles()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>validateSecurityRoles</h4>
+<pre>protected&nbsp;void&nbsp;validateSecurityRoles()</pre>
+<div class="block">Validate the usage of security role names in the web application
+ deployment descriptor.  If any problems are found, issue warning
+ messages (for backwards compatibility) and add the missing roles.
+ (To make these problems fatal instead, simply set the <code>ok</code>
+ instance variable to <code>false</code> as well).</div>
+</li>
+</ul>
+<a name="getHostConfigBase()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHostConfigBase</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;getHostConfigBase()</pre>
+</li>
+</ul>
+<a name="webConfig()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>webConfig</h4>
+<pre>protected&nbsp;void&nbsp;webConfig()</pre>
+<div class="block">Scan the web.xml files that apply to the web application and merge them
+ using the rules defined in the spec. For the global web.xml files,
+ where there is duplicate configuration, the most specific level wins. ie
+ an application's web.xml takes precedence over the host level or global
+ web.xml file.</div>
+</li>
+</ul>
+<a name="createWebXml()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createWebXml</h4>
+<pre>protected&nbsp;<a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&nbsp;createWebXml()</pre>
+</li>
+</ul>
+<a name="processServletContainerInitializers()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>processServletContainerInitializers</h4>
+<pre>protected&nbsp;void&nbsp;processServletContainerInitializers()</pre>
+<div class="block">Scan JARs for ServletContainerInitializer implementations.</div>
+</li>
+</ul>
+<a name="processResourceJARs(java.util.Set)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>processResourceJARs</h4>
+<pre>protected&nbsp;void&nbsp;processResourceJARs(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&gt;&nbsp;fragments)</pre>
+<div class="block">Scan JARs that contain web-fragment.xml files that will be used to
+ configure this application to see if they also contain static resources.
+ If static resources are found, add them to the context. Resources are
+ added in web-fragment.xml priority order.</div>
+</li>
+</ul>
+<a name="getGlobalWebXmlSource()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getGlobalWebXmlSource</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/org/xml/sax/InputSource.html?is-external=true" title="class or interface in org.xml.sax">InputSource</a>&nbsp;getGlobalWebXmlSource()</pre>
+<div class="block">Identify the default web.xml to be used and obtain an input source for
+ it.</div>
+</li>
+</ul>
+<a name="getHostWebXmlSource()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHostWebXmlSource</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/org/xml/sax/InputSource.html?is-external=true" title="class or interface in org.xml.sax">InputSource</a>&nbsp;getHostWebXmlSource()</pre>
+<div class="block">Identify the host web.xml to be used and obtain an input source for
+ it.</div>
+</li>
+</ul>
+<a name="getContextWebXmlSource()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getContextWebXmlSource</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/org/xml/sax/InputSource.html?is-external=true" title="class or interface in org.xml.sax">InputSource</a>&nbsp;getContextWebXmlSource()</pre>
+<div class="block">Identify the application web.xml to be used and obtain an input source
+ for it.</div>
+</li>
+</ul>
+<a name="getWebXmlSource(java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWebXmlSource</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/org/xml/sax/InputSource.html?is-external=true" title="class or interface in org.xml.sax">InputSource</a>&nbsp;getWebXmlSource(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filename,
+                          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</pre>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>filename</code> - Name of the file (possibly with one or more leading path
+                  segments) to read</dd><dd><code>path</code> - Location that filename is relative to</dd></dl>
+</li>
+</ul>
+<a name="processJarsForWebFragments(org.apache.tomcat.util.descriptor.web.WebXml)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>processJarsForWebFragments</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&gt;&nbsp;processJarsForWebFragments(<a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&nbsp;application)</pre>
+<div class="block">Scan /WEB-INF/lib for JARs and for each one found add it and any
+ /META-INF/web-fragment.xml to the resulting Map. web-fragment.xml files
+ will be parsed before being added to the map. Every JAR will be added and
+ <code>null</code> will be used if no web-fragment.xml was found. Any JARs
+ known not contain fragments will be skipped.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>A map of JAR name to processed web fragment (if any)</dd></dl>
+</li>
+</ul>
+<a name="processAnnotations(java.util.Set, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>processAnnotations</h4>
+<pre>protected&nbsp;void&nbsp;processAnnotations(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&gt;&nbsp;fragments,
+                      boolean&nbsp;handlesTypesOnly)</pre>
+</li>
+</ul>
+<a name="processAnnotationsWebResource(org.apache.catalina.WebResource, org.apache.tomcat.util.descriptor.web.WebXml, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>processAnnotationsWebResource</h4>
+<pre>protected&nbsp;void&nbsp;processAnnotationsWebResource(<a href="../../../../org/apache/catalina/WebResource.html" title="interface in org.apache.catalina">WebResource</a>&nbsp;webResource,
+                                 <a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&nbsp;fragment,
+                                 boolean&nbsp;handlesTypesOnly)</pre>
+</li>
+</ul>
+<a name="processAnnotationsUrl(java.net.URL, org.apache.tomcat.util.descriptor.web.WebXml, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>processAnnotationsUrl</h4>
+<pre>protected&nbsp;void&nbsp;processAnnotationsUrl(<a href="http://docs.oracle.com/javase/7/docs/api/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;url,
+                         <a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&nbsp;fragment,
+                         boolean&nbsp;handlesTypesOnly)</pre>
+</li>
+</ul>
+<a name="processAnnotationsJar(java.net.URL, org.apache.tomcat.util.descriptor.web.WebXml, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>processAnnotationsJar</h4>
+<pre>protected&nbsp;void&nbsp;processAnnotationsJar(<a href="http://docs.oracle.com/javase/7/docs/api/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a>&nbsp;url,
+                         <a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&nbsp;fragment,
+                         boolean&nbsp;handlesTypesOnly)</pre>
+</li>
+</ul>
+<a name="processAnnotationsFile(java.io.File, org.apache.tomcat.util.descriptor.web.WebXml, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>processAnnotationsFile</h4>
+<pre>protected&nbsp;void&nbsp;processAnnotationsFile(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file,
+                          <a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&nbsp;fragment,
+                          boolean&nbsp;handlesTypesOnly)</pre>
+</li>
+</ul>
+<a name="processAnnotationsStream(java.io.InputStream, org.apache.tomcat.util.descriptor.web.WebXml, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>processAnnotationsStream</h4>
+<pre>protected&nbsp;void&nbsp;processAnnotationsStream(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;is,
+                            <a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&nbsp;fragment,
+                            boolean&nbsp;handlesTypesOnly)
+                                 throws <a href="../../../../org/apache/tomcat/util/bcel/classfile/ClassFormatException.html" title="class in org.apache.tomcat.util.bcel.classfile">ClassFormatException</a>,
+                                        <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../org/apache/tomcat/util/bcel/classfile/ClassFormatException.html" title="class in org.apache.tomcat.util.bcel.classfile">ClassFormatException</a></code></dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="checkHandlesTypes(org.apache.tomcat.util.bcel.classfile.JavaClass)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>checkHandlesTypes</h4>
+<pre>protected&nbsp;void&nbsp;checkHandlesTypes(<a href="../../../../org/apache/tomcat/util/bcel/classfile/JavaClass.html" title="class in org.apache.tomcat.util.bcel.classfile">JavaClass</a>&nbsp;javaClass)</pre>
+<div class="block">For classes packaged with the web application, the class and each
+ super class needs to be checked for a match with <a href="../../../../../servletapi/javax/servlet/annotation/HandlesTypes.html?is-external=true" title="class or interface in javax.servlet.annotation"><code>HandlesTypes</code></a> or
+ for an annotation that matches <a href="../../../../../servletapi/javax/servlet/annotation/HandlesTypes.html?is-external=true" title="class or interface in javax.servlet.annotation"><code>HandlesTypes</code></a>.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>javaClass</code> - </dd></dl>
+</li>
+</ul>
+<a name="processAnnotationWebServlet(java.lang.String, org.apache.tomcat.util.bcel.classfile.AnnotationEntry, org.apache.tomcat.util.descriptor.web.WebXml)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>processAnnotationWebServlet</h4>
+<pre>protected&nbsp;void&nbsp;processAnnotationWebServlet(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;className,
+                               <a href="../../../../org/apache/tomcat/util/bcel/classfile/AnnotationEntry.html" title="class in org.apache.tomcat.util.bcel.classfile">AnnotationEntry</a>&nbsp;ae,
+                               <a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&nbsp;fragment)</pre>
+</li>
+</ul>
+<a name="processAnnotationWebFilter(java.lang.String, org.apache.tomcat.util.bcel.classfile.AnnotationEntry, org.apache.tomcat.util.descriptor.web.WebXml)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>processAnnotationWebFilter</h4>
+<pre>protected&nbsp;void&nbsp;processAnnotationWebFilter(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;className,
+                              <a href="../../../../org/apache/tomcat/util/bcel/classfile/AnnotationEntry.html" title="class in org.apache.tomcat.util.bcel.classfile">AnnotationEntry</a>&nbsp;ae,
+                              <a href="../../../../org/apache/tomcat/util/descriptor/web/WebXml.html" title="class in org.apache.tomcat.util.descriptor.web">WebXml</a>&nbsp;fragment)</pre>
+<div class="block">process filter annotation and merge with existing one!
+ FIXME: refactoring method too long and has redundant subroutines with
+        processAnnotationWebServlet!</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>className</code> - </dd><dd><code>ae</code> - </dd><dd><code>fragment</code> - </dd></dl>
+</li>
+</ul>
+<a name="processAnnotationsStringArray(org.apache.tomcat.util.bcel.classfile.ElementValue)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>processAnnotationsStringArray</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;processAnnotationsStringArray(<a href="../../../../org/apache/tomcat/util/bcel/classfile/ElementValue.html" title="class in org.apache.tomcat.util.bcel.classfile">ElementValue</a>&nbsp;ev)</pre>
+</li>
+</ul>
+<a name="processAnnotationWebInitParams(org.apache.tomcat.util.bcel.classfile.ElementValue)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>processAnnotationWebInitParams</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;processAnnotationWebInitParams(<a href="../../../../org/apache/tomcat/util/bcel/classfile/ElementValue.html" title="class in org.apache.tomcat.util.bcel.classfile">ElementValue</a>&nbsp;ev)</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/startup/Constants.html" title="class in org.apache.catalina.startup"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/startup/ContextRuleSet.html" title="class in org.apache.catalina.startup"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/startup/ContextConfig.html" target="_top">Frames</a></li>
+<li><a href="ContextConfig.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

@@ -1,0 +1,602 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MimeHeaders (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="MimeHeaders (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/tomcat/util/http/LegacyCookieProcessor.html" title="class in org.apache.tomcat.util.http"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/tomcat/util/http/Parameters.html" title="class in org.apache.tomcat.util.http"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/tomcat/util/http/MimeHeaders.html" target="_top">Frames</a></li>
+<li><a href="MimeHeaders.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.tomcat.util.http</div>
+<h2 title="Class MimeHeaders" class="title">Class MimeHeaders</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.tomcat.util.http.MimeHeaders</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="strong">MimeHeaders</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">Memory-efficient repository for Mime Headers. When the object is recycled, it
+  will keep the allocated headers[] and all the MimeHeaderField - no GC is generated.
+
+  For input headers it is possible to use the MessageByte for Fields - so no GC
+  will be generated.
+
+  The only garbage is generated when using the String for header names/values -
+  this can't be avoided when the servlet calls header methods, but is easy
+  to avoid inside tomcat. The goal is to use _only_ MessageByte-based Fields,
+  and reduce to 0 the memory overhead of tomcat.
+
+  TODO:
+  XXX one-buffer parsing - for http ( other protocols don't need that )
+  XXX remove unused methods
+  XXX External enumerations, with 0 GC.
+  XXX use HeaderName ID</div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>dac@eng.sun.com, James Todd [gonzo@eng.sun.com], Costin Manolache, kevin seguin</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/http/MimeHeaders.html#DEFAULT_HEADER_SIZE">DEFAULT_HEADER_SIZE</a></strong></code>
+<div class="block">Initial size - should be == average number of headers per request
+  XXX  make it configurable ( fine-tuning of web-apps )</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/tomcat/util/http/MimeHeaders.html#MimeHeaders()">MimeHeaders</a></strong>()</code>
+<div class="block">Creates a new MimeHeaders object using a default buffer size.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/http/MimeHeaders.html#addValue(byte[],%20int,%20int)">addValue</a></strong>(byte[]&nbsp;b,
+        int&nbsp;startN,
+        int&nbsp;len)</code>
+<div class="block">Create a new named header using un-translated byte[].</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/http/MimeHeaders.html#addValue(java.lang.String)">addValue</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Create a new named header , return the MessageBytes
+        container for the new value</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/http/MimeHeaders.html#clear()">clear</a></strong>()</code>
+<div class="block">Clears all header fields.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/http/MimeHeaders.html#findHeader(java.lang.String,%20int)">findHeader</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+          int&nbsp;starting)</code>
+<div class="block">Find the index of a header with the given name.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/http/MimeHeaders.html#getHeader(java.lang.String)">getHeader</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/http/MimeHeaders.html#getName(int)">getName</a></strong>(int&nbsp;n)</code>
+<div class="block">Returns the Nth header name, or null if there is no such header.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/http/MimeHeaders.html#getUniqueValue(java.lang.String)">getUniqueValue</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Finds and returns a unique header field with the given name.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/http/MimeHeaders.html#getValue(int)">getValue</a></strong>(int&nbsp;n)</code>
+<div class="block">Returns the Nth header value, or null if there is no such header.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/http/MimeHeaders.html#getValue(java.lang.String)">getValue</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Finds and returns a header field with the given name.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Enumeration.html?is-external=true" title="class or interface in java.util">Enumeration</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/http/MimeHeaders.html#names()">names</a></strong>()</code>
+<div class="block">Returns an enumeration of strings representing the header field names.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/http/MimeHeaders.html#recycle()">recycle</a></strong>()</code>
+<div class="block">Clears all header fields.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/http/MimeHeaders.html#removeHeader(java.lang.String)">removeHeader</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Removes a header field with the specified name.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/http/MimeHeaders.html#setLimit(int)">setLimit</a></strong>(int&nbsp;limit)</code>
+<div class="block">Set limit on the number of header fields.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/http/MimeHeaders.html#setValue(java.lang.String)">setValue</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Allow "set" operations -
+        return a MessageBytes container for the
+        header value ( existing header or new
+        if this .</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/http/MimeHeaders.html#size()">size</a></strong>()</code>
+<div class="block">Returns the current number of header fields.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/http/MimeHeaders.html#toString()">toString</a></strong>()</code>
+<div class="block">EXPENSIVE!!!</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Enumeration.html?is-external=true" title="class or interface in java.util">Enumeration</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/http/MimeHeaders.html#values(java.lang.String)">values</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="DEFAULT_HEADER_SIZE">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>DEFAULT_HEADER_SIZE</h4>
+<pre>public static final&nbsp;int DEFAULT_HEADER_SIZE</pre>
+<div class="block">Initial size - should be == average number of headers per request
+  XXX  make it configurable ( fine-tuning of web-apps )</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.util.http.MimeHeaders.DEFAULT_HEADER_SIZE">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="MimeHeaders()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>MimeHeaders</h4>
+<pre>public&nbsp;MimeHeaders()</pre>
+<div class="block">Creates a new MimeHeaders object using a default buffer size.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setLimit(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLimit</h4>
+<pre>public&nbsp;void&nbsp;setLimit(int&nbsp;limit)</pre>
+<div class="block">Set limit on the number of header fields.</div>
+</li>
+</ul>
+<a name="recycle()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>recycle</h4>
+<pre>public&nbsp;void&nbsp;recycle()</pre>
+<div class="block">Clears all header fields.</div>
+</li>
+</ul>
+<a name="clear()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clear</h4>
+<pre>public&nbsp;void&nbsp;clear()</pre>
+<div class="block">Clears all header fields.</div>
+</li>
+</ul>
+<a name="toString()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toString</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<div class="block">EXPENSIVE!!!  only for debugging.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="size()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>size</h4>
+<pre>public&nbsp;int&nbsp;size()</pre>
+<div class="block">Returns the current number of header fields.</div>
+</li>
+</ul>
+<a name="getName(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getName</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;getName(int&nbsp;n)</pre>
+<div class="block">Returns the Nth header name, or null if there is no such header.
+ This may be used to iterate through all header fields.</div>
+</li>
+</ul>
+<a name="getValue(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getValue</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;getValue(int&nbsp;n)</pre>
+<div class="block">Returns the Nth header value, or null if there is no such header.
+ This may be used to iterate through all header fields.</div>
+</li>
+</ul>
+<a name="findHeader(java.lang.String, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findHeader</h4>
+<pre>public&nbsp;int&nbsp;findHeader(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+             int&nbsp;starting)</pre>
+<div class="block">Find the index of a header with the given name.</div>
+</li>
+</ul>
+<a name="names()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>names</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Enumeration.html?is-external=true" title="class or interface in java.util">Enumeration</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;names()</pre>
+<div class="block">Returns an enumeration of strings representing the header field names.
+ Field names may appear multiple times in this enumeration, indicating
+ that multiple fields with that name exist in this header.</div>
+</li>
+</ul>
+<a name="values(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>values</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Enumeration.html?is-external=true" title="class or interface in java.util">Enumeration</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;values(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+</li>
+</ul>
+<a name="addValue(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addValue</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;addValue(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block">Create a new named header , return the MessageBytes
+        container for the new value</div>
+</li>
+</ul>
+<a name="addValue(byte[], int, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addValue</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;addValue(byte[]&nbsp;b,
+                    int&nbsp;startN,
+                    int&nbsp;len)</pre>
+<div class="block">Create a new named header using un-translated byte[].
+        The conversion to chars can be delayed until
+        encoding is known.</div>
+</li>
+</ul>
+<a name="setValue(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setValue</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;setValue(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block">Allow "set" operations -
+        return a MessageBytes container for the
+        header value ( existing header or new
+        if this .</div>
+</li>
+</ul>
+<a name="getValue(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getValue</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;getValue(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block">Finds and returns a header field with the given name.  If no such
+ field exists, null is returned.  If more than one such field is
+ in the header, an arbitrary one is returned.</div>
+</li>
+</ul>
+<a name="getUniqueValue(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUniqueValue</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;getUniqueValue(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block">Finds and returns a unique header field with the given name. If no such
+ field exists, null is returned. If the specified header field is not
+ unique then an <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang"><code>IllegalArgumentException</code></a> is thrown.</div>
+</li>
+</ul>
+<a name="getHeader(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHeader</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getHeader(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+</li>
+</ul>
+<a name="removeHeader(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>removeHeader</h4>
+<pre>public&nbsp;void&nbsp;removeHeader(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block">Removes a header field with the specified name.  Does nothing
+ if such a field could not be found.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - the name of the header field to be removed</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/tomcat/util/http/LegacyCookieProcessor.html" title="class in org.apache.tomcat.util.http"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/tomcat/util/http/Parameters.html" title="class in org.apache.tomcat.util.http"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/tomcat/util/http/MimeHeaders.html" target="_top">Frames</a></li>
+<li><a href="MimeHeaders.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

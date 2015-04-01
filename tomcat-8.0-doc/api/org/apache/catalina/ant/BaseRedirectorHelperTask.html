@@ -1,0 +1,811 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BaseRedirectorHelperTask (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="BaseRedirectorHelperTask (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/ant/AbstractCatalinaTask.html" title="class in org.apache.catalina.ant"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/ant/DeployTask.html" title="class in org.apache.catalina.ant"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/ant/BaseRedirectorHelperTask.html" target="_top">Frames</a></li>
+<li><a href="BaseRedirectorHelperTask.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.ant</div>
+<h2 title="Class BaseRedirectorHelperTask" class="title">Class BaseRedirectorHelperTask</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.tools.ant.ProjectComponent</li>
+<li>
+<ul class="inheritance">
+<li>org.apache.tools.ant.Task</li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.ant.BaseRedirectorHelperTask</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Cloneable.html?is-external=true" title="class or interface in java.lang">Cloneable</a></dd>
+</dl>
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../../../org/apache/catalina/ant/AbstractCatalinaTask.html" title="class in org.apache.catalina.ant">AbstractCatalinaTask</a>, <a href="../../../../org/apache/catalina/ant/jmx/JMXAccessorTask.html" title="class in org.apache.catalina.ant.jmx">JMXAccessorTask</a>, <a href="../../../../org/apache/catalina/ant/ValidatorTask.html" title="class in org.apache.catalina.ant">ValidatorTask</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public abstract class <span class="strong">BaseRedirectorHelperTask</span>
+extends org.apache.tools.ant.Task</pre>
+<div class="block">Abstract base class to add output redirection support for Catalina
+ Ant tasks. These tasks require Ant 1.5 or later.
+ <br>
+ <strong>WARNING:</strong> due to depends chain, Ant could call a Task
+ more than once and this can affect the output redirection when configured.
+ If you are collecting the output in a property, it will collect the output
+ of only the first run, since Ant properties are immutable and once created
+ they cannot be changed.
+ <br>
+ If you are collecting output in a file the file will be overwritten with the
+ output of the last run, unless you set append="true", in which case each run
+ will append it's output to the file.</div>
+<dl><dt><span class="strong">Since:</span></dt>
+  <dd>5.5</dd>
+<dt><span class="strong">Author:</span></dt>
+  <dd>Gabriele Garuglieri</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#alwaysLog">alwaysLog</a></strong></code>
+<div class="block">Flag which indicates that, if redirected, output should also be
+ always sent to the log.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#failOnError">failOnError</a></strong></code>
+<div class="block">Whether to fail (with a BuildException) if
+ ManagerServlet returns an error.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/io/OutputStream.html?is-external=true" title="class or interface in java.io">OutputStream</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#redirectErrStream">redirectErrStream</a></strong></code>
+<div class="block">The stream for error output</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected org.apache.tools.ant.taskdefs.Redirector</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#redirector">redirector</a></strong></code>
+<div class="block">Redirector helper</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#redirectorConfigured">redirectorConfigured</a></strong></code>
+<div class="block">will be set to <code>true</code> when the configuration of the Redirector is
+ complete.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected org.apache.tools.ant.types.RedirectorElement</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#redirectorElement">redirectorElement</a></strong></code>
+<div class="block">Redirector element for this task</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#redirectOutput">redirectOutput</a></strong></code>
+<div class="block"><code>true</code> true when output redirection is requested for this task .</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/io/OutputStream.html?is-external=true" title="class or interface in java.io">OutputStream</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#redirectOutStream">redirectOutStream</a></strong></code>
+<div class="block">The stream for info output</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.tools.ant.Task">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.tools.ant.Task</h3>
+<code>target, taskName, taskType, wrapper</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.tools.ant.ProjectComponent">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.tools.ant.ProjectComponent</h3>
+<code>description, location, project</code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#BaseRedirectorHelperTask()">BaseRedirectorHelperTask</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#addConfiguredRedirector(org.apache.tools.ant.types.RedirectorElement)">addConfiguredRedirector</a></strong>(org.apache.tools.ant.types.RedirectorElement&nbsp;redirectorElement)</code>
+<div class="block">Add a <CODE>RedirectorElement</CODE> to this task.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#closeRedirector()">closeRedirector</a></strong>()</code>
+<div class="block">Ask redirector to close all the streams.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#handleErrorFlush(java.lang.String)">handleErrorFlush</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;output)</code>
+<div class="block">Handles error output with the ERR priority and flushes the stream.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#handleErrorOutput(java.lang.String)">handleErrorOutput</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;output)</code>
+<div class="block">Handles error output with the ERR priority.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#handleFlush(java.lang.String)">handleFlush</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;output)</code>
+<div class="block">Handles output with the INFO priority and flushes the stream.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#handleOutput(java.lang.String)">handleOutput</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;output)</code>
+<div class="block">Handles output with the INFO priority.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#handleOutput(java.lang.String,%20int)">handleOutput</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;output,
+            int&nbsp;priority)</code>
+<div class="block">Handles output with ERR priority to error stream and all other
+ priorities to output stream.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#isFailOnError()">isFailOnError</a></strong>()</code>
+<div class="block">Returns the value of the failOnError
+ property.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#openRedirector()">openRedirector</a></strong>()</code>
+<div class="block">Set up properties on the Redirector and create output streams.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#setAlwaysLog(boolean)">setAlwaysLog</a></strong>(boolean&nbsp;alwaysLog)</code>
+<div class="block">If true, (error and non-error) output will be redirected
+ as specified while being sent to Ant's logging mechanism as if no
+ redirection had taken place.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#setAppend(boolean)">setAppend</a></strong>(boolean&nbsp;append)</code>
+<div class="block">If true, append output to existing file.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#setCreateEmptyFiles(boolean)">setCreateEmptyFiles</a></strong>(boolean&nbsp;createEmptyFiles)</code>
+<div class="block">Whether output and error files should be created even when empty.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#setError(java.io.File)">setError</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;error)</code>
+<div class="block">File the error output of the task is redirected to.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#setErrorProperty(java.lang.String)">setErrorProperty</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;errorProperty)</code>
+<div class="block">Property name whose value should be set to the error of
+ the task..</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#setFailonerror(boolean)">setFailonerror</a></strong>(boolean&nbsp;fail)</code>
+<div class="block">Whether to fail (with a BuildException) if
+ ManagerServlet returns an error.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#setLogError(boolean)">setLogError</a></strong>(boolean&nbsp;logError)</code>
+<div class="block">Controls whether error output is logged.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#setOutput(java.io.File)">setOutput</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;out)</code>
+<div class="block">File the output of the task is redirected to.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ant/BaseRedirectorHelperTask.html#setOutputproperty(java.lang.String)">setOutputproperty</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;outputProperty)</code>
+<div class="block">Property name whose value should be set to the output of
+ the task.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.tools.ant.Task">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.tools.ant.Task</h3>
+<code>bindToOwner, execute, getOwningTarget, getRuntimeConfigurableWrapper, getTaskName, getTaskType, getWrapper, handleInput, init, isInvalid, log, log, log, log, maybeConfigure, perform, reconfigure, setOwningTarget, setRuntimeConfigurableWrapper, setTaskName, setTaskType</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.tools.ant.ProjectComponent">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.tools.ant.ProjectComponent</h3>
+<code>clone, getDescription, getLocation, getProject, setDescription, setLocation, setProject</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="redirector">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>redirector</h4>
+<pre>protected final&nbsp;org.apache.tools.ant.taskdefs.Redirector redirector</pre>
+<div class="block">Redirector helper</div>
+</li>
+</ul>
+<a name="redirectorElement">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>redirectorElement</h4>
+<pre>protected&nbsp;org.apache.tools.ant.types.RedirectorElement redirectorElement</pre>
+<div class="block">Redirector element for this task</div>
+</li>
+</ul>
+<a name="redirectOutStream">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>redirectOutStream</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/OutputStream.html?is-external=true" title="class or interface in java.io">OutputStream</a> redirectOutStream</pre>
+<div class="block">The stream for info output</div>
+</li>
+</ul>
+<a name="redirectErrStream">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>redirectErrStream</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/OutputStream.html?is-external=true" title="class or interface in java.io">OutputStream</a> redirectErrStream</pre>
+<div class="block">The stream for error output</div>
+</li>
+</ul>
+<a name="failOnError">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>failOnError</h4>
+<pre>protected&nbsp;boolean failOnError</pre>
+<div class="block">Whether to fail (with a BuildException) if
+ ManagerServlet returns an error. The default behavior is
+ to do so.
+ <b>
+ This flag does not control parameters checking. If the task is called
+ with wrong or invalid parameters, it will throw BuildException
+ independently from the setting of this flag.
+ </b></div>
+</li>
+</ul>
+<a name="redirectOutput">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>redirectOutput</h4>
+<pre>protected&nbsp;boolean redirectOutput</pre>
+<div class="block"><code>true</code> true when output redirection is requested for this task .
+ Default is to log on Ant log.</div>
+</li>
+</ul>
+<a name="redirectorConfigured">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>redirectorConfigured</h4>
+<pre>protected&nbsp;boolean redirectorConfigured</pre>
+<div class="block">will be set to <code>true</code> when the configuration of the Redirector is
+ complete.</div>
+</li>
+</ul>
+<a name="alwaysLog">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>alwaysLog</h4>
+<pre>protected&nbsp;boolean alwaysLog</pre>
+<div class="block">Flag which indicates that, if redirected, output should also be
+ always sent to the log. Default is that output is sent only to
+ redirected streams.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="BaseRedirectorHelperTask()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>BaseRedirectorHelperTask</h4>
+<pre>public&nbsp;BaseRedirectorHelperTask()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setFailonerror(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setFailonerror</h4>
+<pre>public&nbsp;void&nbsp;setFailonerror(boolean&nbsp;fail)</pre>
+<div class="block">Whether to fail (with a BuildException) if
+ ManagerServlet returns an error.  The default behavior is
+ to do so.</div>
+</li>
+</ul>
+<a name="isFailOnError()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isFailOnError</h4>
+<pre>public&nbsp;boolean&nbsp;isFailOnError()</pre>
+<div class="block">Returns the value of the failOnError
+ property.</div>
+</li>
+</ul>
+<a name="setOutput(java.io.File)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOutput</h4>
+<pre>public&nbsp;void&nbsp;setOutput(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;out)</pre>
+<div class="block">File the output of the task is redirected to.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>out</code> - name of the output file</dd></dl>
+</li>
+</ul>
+<a name="setError(java.io.File)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setError</h4>
+<pre>public&nbsp;void&nbsp;setError(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;error)</pre>
+<div class="block">File the error output of the task is redirected to.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>error</code> - name of the error file</dd></dl>
+</li>
+</ul>
+<a name="setLogError(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLogError</h4>
+<pre>public&nbsp;void&nbsp;setLogError(boolean&nbsp;logError)</pre>
+<div class="block">Controls whether error output is logged. This is only useful
+ when output is being redirected and error output is desired in the
+ Ant log</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>logError</code> - if true the standard error is sent to the Ant log system
+        and not sent to output stream.</dd></dl>
+</li>
+</ul>
+<a name="setOutputproperty(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOutputproperty</h4>
+<pre>public&nbsp;void&nbsp;setOutputproperty(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;outputProperty)</pre>
+<div class="block">Property name whose value should be set to the output of
+ the task.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>outputProperty</code> - property name</dd></dl>
+</li>
+</ul>
+<a name="setErrorProperty(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setErrorProperty</h4>
+<pre>public&nbsp;void&nbsp;setErrorProperty(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;errorProperty)</pre>
+<div class="block">Property name whose value should be set to the error of
+ the task..</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>errorProperty</code> - property name</dd></dl>
+</li>
+</ul>
+<a name="setAppend(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAppend</h4>
+<pre>public&nbsp;void&nbsp;setAppend(boolean&nbsp;append)</pre>
+<div class="block">If true, append output to existing file.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>append</code> - if true, append output to existing file</dd></dl>
+</li>
+</ul>
+<a name="setAlwaysLog(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAlwaysLog</h4>
+<pre>public&nbsp;void&nbsp;setAlwaysLog(boolean&nbsp;alwaysLog)</pre>
+<div class="block">If true, (error and non-error) output will be redirected
+ as specified while being sent to Ant's logging mechanism as if no
+ redirection had taken place.  Defaults to false.
+ <br>
+ Actually handled internally, with Ant 1.6.3 it will be handled by
+ the <code>Redirector</code> itself.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>alwaysLog</code> - <code>boolean</code></dd></dl>
+</li>
+</ul>
+<a name="setCreateEmptyFiles(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCreateEmptyFiles</h4>
+<pre>public&nbsp;void&nbsp;setCreateEmptyFiles(boolean&nbsp;createEmptyFiles)</pre>
+<div class="block">Whether output and error files should be created even when empty.
+ Defaults to true.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>createEmptyFiles</code> - <CODE>boolean</CODE>.</dd></dl>
+</li>
+</ul>
+<a name="addConfiguredRedirector(org.apache.tools.ant.types.RedirectorElement)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addConfiguredRedirector</h4>
+<pre>public&nbsp;void&nbsp;addConfiguredRedirector(org.apache.tools.ant.types.RedirectorElement&nbsp;redirectorElement)</pre>
+<div class="block">Add a <CODE>RedirectorElement</CODE> to this task.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>redirectorElement</code> - <CODE>RedirectorElement</CODE>.</dd></dl>
+</li>
+</ul>
+<a name="openRedirector()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openRedirector</h4>
+<pre>protected&nbsp;void&nbsp;openRedirector()</pre>
+<div class="block">Set up properties on the Redirector and create output streams.</div>
+</li>
+</ul>
+<a name="closeRedirector()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>closeRedirector</h4>
+<pre>protected&nbsp;void&nbsp;closeRedirector()</pre>
+<div class="block">Ask redirector to close all the streams. It is necessary to call this method
+ before leaving the Task to have the Streams flush their contents. If you are
+ collecting output in a property, it will be created only if this method is
+ called, otherwise you'll find it unset.</div>
+</li>
+</ul>
+<a name="handleOutput(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>handleOutput</h4>
+<pre>protected&nbsp;void&nbsp;handleOutput(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;output)</pre>
+<div class="block">Handles output with the INFO priority.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code>handleOutput</code>&nbsp;in class&nbsp;<code>org.apache.tools.ant.Task</code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>output</code> - The output to log. Should not be <code>null</code>.</dd></dl>
+</li>
+</ul>
+<a name="handleFlush(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>handleFlush</h4>
+<pre>protected&nbsp;void&nbsp;handleFlush(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;output)</pre>
+<div class="block">Handles output with the INFO priority and flushes the stream.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code>handleFlush</code>&nbsp;in class&nbsp;<code>org.apache.tools.ant.Task</code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>output</code> - The output to log. Should not be <code>null</code>.</dd></dl>
+</li>
+</ul>
+<a name="handleErrorOutput(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>handleErrorOutput</h4>
+<pre>protected&nbsp;void&nbsp;handleErrorOutput(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;output)</pre>
+<div class="block">Handles error output with the ERR priority.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code>handleErrorOutput</code>&nbsp;in class&nbsp;<code>org.apache.tools.ant.Task</code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>output</code> - The error output to log. Should not be <code>null</code>.</dd></dl>
+</li>
+</ul>
+<a name="handleErrorFlush(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>handleErrorFlush</h4>
+<pre>protected&nbsp;void&nbsp;handleErrorFlush(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;output)</pre>
+<div class="block">Handles error output with the ERR priority and flushes the stream.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code>handleErrorFlush</code>&nbsp;in class&nbsp;<code>org.apache.tools.ant.Task</code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>output</code> - The error output to log. Should not be <code>null</code>.</dd></dl>
+</li>
+</ul>
+<a name="handleOutput(java.lang.String, int)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>handleOutput</h4>
+<pre>protected&nbsp;void&nbsp;handleOutput(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;output,
+                int&nbsp;priority)</pre>
+<div class="block">Handles output with ERR priority to error stream and all other
+ priorities to output stream.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>output</code> - The output to log. Should not be <code>null</code>.</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/ant/AbstractCatalinaTask.html" title="class in org.apache.catalina.ant"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/ant/DeployTask.html" title="class in org.apache.catalina.ant"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/ant/BaseRedirectorHelperTask.html" target="_top">Frames</a></li>
+<li><a href="BaseRedirectorHelperTask.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

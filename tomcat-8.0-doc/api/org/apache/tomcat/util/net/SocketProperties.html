@@ -1,0 +1,1418 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SocketProperties (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="SocketProperties (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/tomcat/util/net/ServerSocketFactory.html" title="interface in org.apache.tomcat.util.net"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/tomcat/util/net/SocketProperties.html" target="_top">Frames</a></li>
+<li><a href="SocketProperties.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.tomcat.util.net</div>
+<h2 title="Class SocketProperties" class="title">Class SocketProperties</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.tomcat.util.net.SocketProperties</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="strong">SocketProperties</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">Properties that can be set in the &lt;Connector&gt; element
+ in server.xml. All properties are prefixed with &quot;socket.&quot;
+ and are currently only working for the Nio connector</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#appReadBufSize">appReadBufSize</a></strong></code>
+<div class="block">The application read buffer size in bytes.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#appWriteBufSize">appWriteBufSize</a></strong></code>
+<div class="block">The application write buffer size in bytes
+ Default value is txBufSize</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#bufferPool">bufferPool</a></strong></code>
+<div class="block">NioChannel pool size for the endpoint,
+ this value is how many channels
+ -1 means unlimited cached, 0 means no cache
+ Default value is 500</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#bufferPoolSize">bufferPoolSize</a></strong></code>
+<div class="block">Buffer pool size in bytes to be cached
+ -1 means unlimited, 0 means no cache
+ Default value is 100MB (1024*1024*100 bytes)</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#directBuffer">directBuffer</a></strong></code>
+<div class="block">Enable/disable direct buffers for the network buffers
+ Default value is enabled</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#directSslBuffer">directSslBuffer</a></strong></code>
+<div class="block">Enable/disable direct buffers for the network buffers for SSL
+ Default value is enabled</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#eventCache">eventCache</a></strong></code>
+<div class="block">Enable/disable poller event cache, this bounded cache stores
+ PollerEvent objects to reduce GC for the poller
+ Default is 500
+ -1 is unlimited
+ 0 is disabled
+ &gt;0 the max number of objects to keep in cache.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#ooBInline">ooBInline</a></strong></code>
+<div class="block">OOBINLINE option.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#performanceBandwidth">performanceBandwidth</a></strong></code>
+<div class="block">Performance preferences according to
+ http://docs.oracle.com/javase/1.5.0/docs/api/java/net/Socket.html#setPerformancePreferences(int,%20int,%20int)
+ All three performance attributes must be set or the JVM defaults will be
+ used.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#performanceConnectionTime">performanceConnectionTime</a></strong></code>
+<div class="block">Performance preferences according to
+ http://docs.oracle.com/javase/1.5.0/docs/api/java/net/Socket.html#setPerformancePreferences(int,%20int,%20int)
+ All three performance attributes must be set or the JVM defaults will be
+ used.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#performanceLatency">performanceLatency</a></strong></code>
+<div class="block">Performance preferences according to
+ http://docs.oracle.com/javase/1.5.0/docs/api/java/net/Socket.html#setPerformancePreferences(int,%20int,%20int)
+ All three performance attributes must be set or the JVM defaults will be
+ used.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#processorCache">processorCache</a></strong></code>
+<div class="block">Enable/disable socket processor cache, this bounded cache stores
+ SocketProcessor objects to reduce GC
+ Default is 500
+ -1 is unlimited
+ 0 is disabled</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#rxBufSize">rxBufSize</a></strong></code>
+<div class="block">Socket receive buffer size in bytes (SO_RCVBUF).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#socketWrapperCache">socketWrapperCache</a></strong></code>
+<div class="block">Enable/disable socket wrapper cache, this bounded cache stores
+ SocketWrapper objects to reduce GC
+ Default is 500
+ -1 is unlimited
+ 0 is disabled</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#soKeepAlive">soKeepAlive</a></strong></code>
+<div class="block">SO_KEEPALIVE option.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#soLingerOn">soLingerOn</a></strong></code>
+<div class="block">SO_LINGER option, paired with the <code>soLingerTime</code> value.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#soLingerTime">soLingerTime</a></strong></code>
+<div class="block">SO_LINGER option, paired with the <code>soLingerOn</code> value.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#soReuseAddress">soReuseAddress</a></strong></code>
+<div class="block">SO_REUSEADDR option.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#soTimeout">soTimeout</a></strong></code>
+<div class="block">SO_TIMEOUT option. default is 20000.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#tcpNoDelay">tcpNoDelay</a></strong></code>
+<div class="block">TCP_NO_DELAY option.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#timeoutInterval">timeoutInterval</a></strong></code>
+<div class="block">The minimum frequency of the timeout interval to avoid excess load from
+ the poller during high traffic</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#txBufSize">txBufSize</a></strong></code>
+<div class="block">Socket send buffer size in bytes (SO_SNDBUF).</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#unlockTimeout">unlockTimeout</a></strong></code>
+<div class="block">Timeout in milliseconds for an unlock to take place.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#SocketProperties()">SocketProperties</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getAppReadBufSize()">getAppReadBufSize</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getAppWriteBufSize()">getAppWriteBufSize</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getBufferPool()">getBufferPool</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getBufferPoolSize()">getBufferPoolSize</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getDirectBuffer()">getDirectBuffer</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getDirectBufferPool()">getDirectBufferPool</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getDirectSslBuffer()">getDirectSslBuffer</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getEventCache()">getEventCache</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getKeyCache()">getKeyCache</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getOoBInline()">getOoBInline</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getPerformanceBandwidth()">getPerformanceBandwidth</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getPerformanceConnectionTime()">getPerformanceConnectionTime</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getPerformanceLatency()">getPerformanceLatency</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getProcessorCache()">getProcessorCache</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getRxBufSize()">getRxBufSize</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getSocketWrapperCache()">getSocketWrapperCache</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getSoKeepAlive()">getSoKeepAlive</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getSoLingerOn()">getSoLingerOn</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getSoLingerTime()">getSoLingerTime</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getSoReuseAddress()">getSoReuseAddress</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getSoTimeout()">getSoTimeout</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getTcpNoDelay()">getTcpNoDelay</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getTimeoutInterval()">getTimeoutInterval</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getTxBufSize()">getTxBufSize</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#getUnlockTimeout()">getUnlockTimeout</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setAppReadBufSize(int)">setAppReadBufSize</a></strong>(int&nbsp;appReadBufSize)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setAppWriteBufSize(int)">setAppWriteBufSize</a></strong>(int&nbsp;appWriteBufSize)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setBufferPool(int)">setBufferPool</a></strong>(int&nbsp;bufferPool)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setBufferPoolSize(int)">setBufferPoolSize</a></strong>(int&nbsp;bufferPoolSize)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setDirectBuffer(boolean)">setDirectBuffer</a></strong>(boolean&nbsp;directBuffer)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setDirectBufferPool(int)">setDirectBufferPool</a></strong>(int&nbsp;directBufferPool)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setDirectSslBuffer(boolean)">setDirectSslBuffer</a></strong>(boolean&nbsp;directSslBuffer)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setEventCache(int)">setEventCache</a></strong>(int&nbsp;eventCache)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setKeyCache(int)">setKeyCache</a></strong>(int&nbsp;keyCache)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setOoBInline(boolean)">setOoBInline</a></strong>(boolean&nbsp;ooBInline)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setPerformanceBandwidth(int)">setPerformanceBandwidth</a></strong>(int&nbsp;performanceBandwidth)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setPerformanceConnectionTime(int)">setPerformanceConnectionTime</a></strong>(int&nbsp;performanceConnectionTime)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setPerformanceLatency(int)">setPerformanceLatency</a></strong>(int&nbsp;performanceLatency)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setProcessorCache(int)">setProcessorCache</a></strong>(int&nbsp;processorCache)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setProperties(java.nio.channels.AsynchronousServerSocketChannel)">setProperties</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/nio/channels/AsynchronousServerSocketChannel.html?is-external=true" title="class or interface in java.nio.channels">AsynchronousServerSocketChannel</a>&nbsp;socket)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setProperties(java.nio.channels.AsynchronousSocketChannel)">setProperties</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/nio/channels/AsynchronousSocketChannel.html?is-external=true" title="class or interface in java.nio.channels">AsynchronousSocketChannel</a>&nbsp;socket)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setProperties(java.net.ServerSocket)">setProperties</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/net/ServerSocket.html?is-external=true" title="class or interface in java.net">ServerSocket</a>&nbsp;socket)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setProperties(java.net.Socket)">setProperties</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/net/Socket.html?is-external=true" title="class or interface in java.net">Socket</a>&nbsp;socket)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setRxBufSize(int)">setRxBufSize</a></strong>(int&nbsp;rxBufSize)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setSocketWrapperCache(int)">setSocketWrapperCache</a></strong>(int&nbsp;socketWrapperCache)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setSoKeepAlive(boolean)">setSoKeepAlive</a></strong>(boolean&nbsp;soKeepAlive)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setSoLingerOn(boolean)">setSoLingerOn</a></strong>(boolean&nbsp;soLingerOn)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setSoLingerTime(int)">setSoLingerTime</a></strong>(int&nbsp;soLingerTime)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setSoReuseAddress(boolean)">setSoReuseAddress</a></strong>(boolean&nbsp;soReuseAddress)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setSoTimeout(int)">setSoTimeout</a></strong>(int&nbsp;soTimeout)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setTcpNoDelay(boolean)">setTcpNoDelay</a></strong>(boolean&nbsp;tcpNoDelay)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setTimeoutInterval(long)">setTimeoutInterval</a></strong>(long&nbsp;timeoutInterval)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setTxBufSize(int)">setTxBufSize</a></strong>(int&nbsp;txBufSize)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/net/SocketProperties.html#setUnlockTimeout(int)">setUnlockTimeout</a></strong>(int&nbsp;unlockTimeout)</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="socketWrapperCache">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>socketWrapperCache</h4>
+<pre>protected&nbsp;int socketWrapperCache</pre>
+<div class="block">Enable/disable socket wrapper cache, this bounded cache stores
+ SocketWrapper objects to reduce GC
+ Default is 500
+ -1 is unlimited
+ 0 is disabled</div>
+</li>
+</ul>
+<a name="processorCache">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>processorCache</h4>
+<pre>protected&nbsp;int processorCache</pre>
+<div class="block">Enable/disable socket processor cache, this bounded cache stores
+ SocketProcessor objects to reduce GC
+ Default is 500
+ -1 is unlimited
+ 0 is disabled</div>
+</li>
+</ul>
+<a name="eventCache">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eventCache</h4>
+<pre>protected&nbsp;int eventCache</pre>
+<div class="block">Enable/disable poller event cache, this bounded cache stores
+ PollerEvent objects to reduce GC for the poller
+ Default is 500
+ -1 is unlimited
+ 0 is disabled
+ &gt;0 the max number of objects to keep in cache.</div>
+</li>
+</ul>
+<a name="directBuffer">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>directBuffer</h4>
+<pre>protected&nbsp;boolean directBuffer</pre>
+<div class="block">Enable/disable direct buffers for the network buffers
+ Default value is enabled</div>
+</li>
+</ul>
+<a name="directSslBuffer">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>directSslBuffer</h4>
+<pre>protected&nbsp;boolean directSslBuffer</pre>
+<div class="block">Enable/disable direct buffers for the network buffers for SSL
+ Default value is enabled</div>
+</li>
+</ul>
+<a name="rxBufSize">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>rxBufSize</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a> rxBufSize</pre>
+<div class="block">Socket receive buffer size in bytes (SO_RCVBUF).
+ JVM default used if not set.</div>
+</li>
+</ul>
+<a name="txBufSize">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>txBufSize</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a> txBufSize</pre>
+<div class="block">Socket send buffer size in bytes (SO_SNDBUF).
+ JVM default used if not set.</div>
+</li>
+</ul>
+<a name="appReadBufSize">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>appReadBufSize</h4>
+<pre>protected&nbsp;int appReadBufSize</pre>
+<div class="block">The application read buffer size in bytes.
+ Default value is rxBufSize</div>
+</li>
+</ul>
+<a name="appWriteBufSize">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>appWriteBufSize</h4>
+<pre>protected&nbsp;int appWriteBufSize</pre>
+<div class="block">The application write buffer size in bytes
+ Default value is txBufSize</div>
+</li>
+</ul>
+<a name="bufferPool">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>bufferPool</h4>
+<pre>protected&nbsp;int bufferPool</pre>
+<div class="block">NioChannel pool size for the endpoint,
+ this value is how many channels
+ -1 means unlimited cached, 0 means no cache
+ Default value is 500</div>
+</li>
+</ul>
+<a name="bufferPoolSize">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>bufferPoolSize</h4>
+<pre>protected&nbsp;int bufferPoolSize</pre>
+<div class="block">Buffer pool size in bytes to be cached
+ -1 means unlimited, 0 means no cache
+ Default value is 100MB (1024*1024*100 bytes)</div>
+</li>
+</ul>
+<a name="tcpNoDelay">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>tcpNoDelay</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a> tcpNoDelay</pre>
+<div class="block">TCP_NO_DELAY option. JVM default used if not set.</div>
+</li>
+</ul>
+<a name="soKeepAlive">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>soKeepAlive</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a> soKeepAlive</pre>
+<div class="block">SO_KEEPALIVE option. JVM default used if not set.</div>
+</li>
+</ul>
+<a name="ooBInline">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ooBInline</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a> ooBInline</pre>
+<div class="block">OOBINLINE option. JVM default used if not set.</div>
+</li>
+</ul>
+<a name="soReuseAddress">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>soReuseAddress</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a> soReuseAddress</pre>
+<div class="block">SO_REUSEADDR option. JVM default used if not set.</div>
+</li>
+</ul>
+<a name="soLingerOn">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>soLingerOn</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a> soLingerOn</pre>
+<div class="block">SO_LINGER option, paired with the <code>soLingerTime</code> value.
+ JVM defaults used unless both attributes are set.</div>
+</li>
+</ul>
+<a name="soLingerTime">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>soLingerTime</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a> soLingerTime</pre>
+<div class="block">SO_LINGER option, paired with the <code>soLingerOn</code> value.
+ JVM defaults used unless both attributes are set.</div>
+</li>
+</ul>
+<a name="soTimeout">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>soTimeout</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a> soTimeout</pre>
+<div class="block">SO_TIMEOUT option. default is 20000.</div>
+</li>
+</ul>
+<a name="performanceConnectionTime">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>performanceConnectionTime</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a> performanceConnectionTime</pre>
+<div class="block">Performance preferences according to
+ http://docs.oracle.com/javase/1.5.0/docs/api/java/net/Socket.html#setPerformancePreferences(int,%20int,%20int)
+ All three performance attributes must be set or the JVM defaults will be
+ used.</div>
+</li>
+</ul>
+<a name="performanceLatency">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>performanceLatency</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a> performanceLatency</pre>
+<div class="block">Performance preferences according to
+ http://docs.oracle.com/javase/1.5.0/docs/api/java/net/Socket.html#setPerformancePreferences(int,%20int,%20int)
+ All three performance attributes must be set or the JVM defaults will be
+ used.</div>
+</li>
+</ul>
+<a name="performanceBandwidth">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>performanceBandwidth</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a> performanceBandwidth</pre>
+<div class="block">Performance preferences according to
+ http://docs.oracle.com/javase/1.5.0/docs/api/java/net/Socket.html#setPerformancePreferences(int,%20int,%20int)
+ All three performance attributes must be set or the JVM defaults will be
+ used.</div>
+</li>
+</ul>
+<a name="timeoutInterval">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>timeoutInterval</h4>
+<pre>protected&nbsp;long timeoutInterval</pre>
+<div class="block">The minimum frequency of the timeout interval to avoid excess load from
+ the poller during high traffic</div>
+</li>
+</ul>
+<a name="unlockTimeout">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>unlockTimeout</h4>
+<pre>protected&nbsp;int unlockTimeout</pre>
+<div class="block">Timeout in milliseconds for an unlock to take place.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="SocketProperties()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>SocketProperties</h4>
+<pre>public&nbsp;SocketProperties()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setProperties(java.net.Socket)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setProperties</h4>
+<pre>public&nbsp;void&nbsp;setProperties(<a href="http://docs.oracle.com/javase/7/docs/api/java/net/Socket.html?is-external=true" title="class or interface in java.net">Socket</a>&nbsp;socket)
+                   throws <a href="http://docs.oracle.com/javase/7/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></code></dd></dl>
+</li>
+</ul>
+<a name="setProperties(java.net.ServerSocket)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setProperties</h4>
+<pre>public&nbsp;void&nbsp;setProperties(<a href="http://docs.oracle.com/javase/7/docs/api/java/net/ServerSocket.html?is-external=true" title="class or interface in java.net">ServerSocket</a>&nbsp;socket)
+                   throws <a href="http://docs.oracle.com/javase/7/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></code></dd></dl>
+</li>
+</ul>
+<a name="setProperties(java.nio.channels.AsynchronousSocketChannel)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setProperties</h4>
+<pre>public&nbsp;void&nbsp;setProperties(<a href="http://docs.oracle.com/javase/7/docs/api/java/nio/channels/AsynchronousSocketChannel.html?is-external=true" title="class or interface in java.nio.channels">AsynchronousSocketChannel</a>&nbsp;socket)
+                   throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="setProperties(java.nio.channels.AsynchronousServerSocketChannel)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setProperties</h4>
+<pre>public&nbsp;void&nbsp;setProperties(<a href="http://docs.oracle.com/javase/7/docs/api/java/nio/channels/AsynchronousServerSocketChannel.html?is-external=true" title="class or interface in java.nio.channels">AsynchronousServerSocketChannel</a>&nbsp;socket)
+                   throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="getDirectBuffer()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDirectBuffer</h4>
+<pre>public&nbsp;boolean&nbsp;getDirectBuffer()</pre>
+</li>
+</ul>
+<a name="getDirectSslBuffer()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDirectSslBuffer</h4>
+<pre>public&nbsp;boolean&nbsp;getDirectSslBuffer()</pre>
+</li>
+</ul>
+<a name="getOoBInline()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOoBInline</h4>
+<pre>public&nbsp;boolean&nbsp;getOoBInline()</pre>
+</li>
+</ul>
+<a name="getPerformanceBandwidth()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPerformanceBandwidth</h4>
+<pre>public&nbsp;int&nbsp;getPerformanceBandwidth()</pre>
+</li>
+</ul>
+<a name="getPerformanceConnectionTime()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPerformanceConnectionTime</h4>
+<pre>public&nbsp;int&nbsp;getPerformanceConnectionTime()</pre>
+</li>
+</ul>
+<a name="getPerformanceLatency()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPerformanceLatency</h4>
+<pre>public&nbsp;int&nbsp;getPerformanceLatency()</pre>
+</li>
+</ul>
+<a name="getRxBufSize()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRxBufSize</h4>
+<pre>public&nbsp;int&nbsp;getRxBufSize()</pre>
+</li>
+</ul>
+<a name="getSoKeepAlive()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSoKeepAlive</h4>
+<pre>public&nbsp;boolean&nbsp;getSoKeepAlive()</pre>
+</li>
+</ul>
+<a name="getSoLingerOn()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSoLingerOn</h4>
+<pre>public&nbsp;boolean&nbsp;getSoLingerOn()</pre>
+</li>
+</ul>
+<a name="getSoLingerTime()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSoLingerTime</h4>
+<pre>public&nbsp;int&nbsp;getSoLingerTime()</pre>
+</li>
+</ul>
+<a name="getSoReuseAddress()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSoReuseAddress</h4>
+<pre>public&nbsp;boolean&nbsp;getSoReuseAddress()</pre>
+</li>
+</ul>
+<a name="getSoTimeout()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSoTimeout</h4>
+<pre>public&nbsp;int&nbsp;getSoTimeout()</pre>
+</li>
+</ul>
+<a name="getTcpNoDelay()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTcpNoDelay</h4>
+<pre>public&nbsp;boolean&nbsp;getTcpNoDelay()</pre>
+</li>
+</ul>
+<a name="getTxBufSize()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTxBufSize</h4>
+<pre>public&nbsp;int&nbsp;getTxBufSize()</pre>
+</li>
+</ul>
+<a name="getBufferPool()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBufferPool</h4>
+<pre>public&nbsp;int&nbsp;getBufferPool()</pre>
+</li>
+</ul>
+<a name="getBufferPoolSize()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBufferPoolSize</h4>
+<pre>public&nbsp;int&nbsp;getBufferPoolSize()</pre>
+</li>
+</ul>
+<a name="getEventCache()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getEventCache</h4>
+<pre>public&nbsp;int&nbsp;getEventCache()</pre>
+</li>
+</ul>
+<a name="getKeyCache()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getKeyCache</h4>
+<pre>public&nbsp;int&nbsp;getKeyCache()</pre>
+</li>
+</ul>
+<a name="getSocketWrapperCache()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSocketWrapperCache</h4>
+<pre>public&nbsp;int&nbsp;getSocketWrapperCache()</pre>
+</li>
+</ul>
+<a name="getAppReadBufSize()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAppReadBufSize</h4>
+<pre>public&nbsp;int&nbsp;getAppReadBufSize()</pre>
+</li>
+</ul>
+<a name="getAppWriteBufSize()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAppWriteBufSize</h4>
+<pre>public&nbsp;int&nbsp;getAppWriteBufSize()</pre>
+</li>
+</ul>
+<a name="getProcessorCache()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getProcessorCache</h4>
+<pre>public&nbsp;int&nbsp;getProcessorCache()</pre>
+</li>
+</ul>
+<a name="getTimeoutInterval()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTimeoutInterval</h4>
+<pre>public&nbsp;long&nbsp;getTimeoutInterval()</pre>
+</li>
+</ul>
+<a name="getDirectBufferPool()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDirectBufferPool</h4>
+<pre>public&nbsp;int&nbsp;getDirectBufferPool()</pre>
+</li>
+</ul>
+<a name="setPerformanceConnectionTime(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPerformanceConnectionTime</h4>
+<pre>public&nbsp;void&nbsp;setPerformanceConnectionTime(int&nbsp;performanceConnectionTime)</pre>
+</li>
+</ul>
+<a name="setTxBufSize(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTxBufSize</h4>
+<pre>public&nbsp;void&nbsp;setTxBufSize(int&nbsp;txBufSize)</pre>
+</li>
+</ul>
+<a name="setTcpNoDelay(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTcpNoDelay</h4>
+<pre>public&nbsp;void&nbsp;setTcpNoDelay(boolean&nbsp;tcpNoDelay)</pre>
+</li>
+</ul>
+<a name="setSoTimeout(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSoTimeout</h4>
+<pre>public&nbsp;void&nbsp;setSoTimeout(int&nbsp;soTimeout)</pre>
+</li>
+</ul>
+<a name="setSoReuseAddress(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSoReuseAddress</h4>
+<pre>public&nbsp;void&nbsp;setSoReuseAddress(boolean&nbsp;soReuseAddress)</pre>
+</li>
+</ul>
+<a name="setSoLingerTime(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSoLingerTime</h4>
+<pre>public&nbsp;void&nbsp;setSoLingerTime(int&nbsp;soLingerTime)</pre>
+</li>
+</ul>
+<a name="setSoKeepAlive(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSoKeepAlive</h4>
+<pre>public&nbsp;void&nbsp;setSoKeepAlive(boolean&nbsp;soKeepAlive)</pre>
+</li>
+</ul>
+<a name="setRxBufSize(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRxBufSize</h4>
+<pre>public&nbsp;void&nbsp;setRxBufSize(int&nbsp;rxBufSize)</pre>
+</li>
+</ul>
+<a name="setPerformanceLatency(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPerformanceLatency</h4>
+<pre>public&nbsp;void&nbsp;setPerformanceLatency(int&nbsp;performanceLatency)</pre>
+</li>
+</ul>
+<a name="setPerformanceBandwidth(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPerformanceBandwidth</h4>
+<pre>public&nbsp;void&nbsp;setPerformanceBandwidth(int&nbsp;performanceBandwidth)</pre>
+</li>
+</ul>
+<a name="setOoBInline(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOoBInline</h4>
+<pre>public&nbsp;void&nbsp;setOoBInline(boolean&nbsp;ooBInline)</pre>
+</li>
+</ul>
+<a name="setDirectBuffer(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDirectBuffer</h4>
+<pre>public&nbsp;void&nbsp;setDirectBuffer(boolean&nbsp;directBuffer)</pre>
+</li>
+</ul>
+<a name="setDirectSslBuffer(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDirectSslBuffer</h4>
+<pre>public&nbsp;void&nbsp;setDirectSslBuffer(boolean&nbsp;directSslBuffer)</pre>
+</li>
+</ul>
+<a name="setSoLingerOn(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSoLingerOn</h4>
+<pre>public&nbsp;void&nbsp;setSoLingerOn(boolean&nbsp;soLingerOn)</pre>
+</li>
+</ul>
+<a name="setBufferPool(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setBufferPool</h4>
+<pre>public&nbsp;void&nbsp;setBufferPool(int&nbsp;bufferPool)</pre>
+</li>
+</ul>
+<a name="setBufferPoolSize(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setBufferPoolSize</h4>
+<pre>public&nbsp;void&nbsp;setBufferPoolSize(int&nbsp;bufferPoolSize)</pre>
+</li>
+</ul>
+<a name="setEventCache(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setEventCache</h4>
+<pre>public&nbsp;void&nbsp;setEventCache(int&nbsp;eventCache)</pre>
+</li>
+</ul>
+<a name="setSocketWrapperCache(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSocketWrapperCache</h4>
+<pre>public&nbsp;void&nbsp;setSocketWrapperCache(int&nbsp;socketWrapperCache)</pre>
+</li>
+</ul>
+<a name="setKeyCache(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setKeyCache</h4>
+<pre>public&nbsp;void&nbsp;setKeyCache(int&nbsp;keyCache)</pre>
+</li>
+</ul>
+<a name="setAppReadBufSize(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAppReadBufSize</h4>
+<pre>public&nbsp;void&nbsp;setAppReadBufSize(int&nbsp;appReadBufSize)</pre>
+</li>
+</ul>
+<a name="setAppWriteBufSize(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAppWriteBufSize</h4>
+<pre>public&nbsp;void&nbsp;setAppWriteBufSize(int&nbsp;appWriteBufSize)</pre>
+</li>
+</ul>
+<a name="setProcessorCache(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setProcessorCache</h4>
+<pre>public&nbsp;void&nbsp;setProcessorCache(int&nbsp;processorCache)</pre>
+</li>
+</ul>
+<a name="setTimeoutInterval(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTimeoutInterval</h4>
+<pre>public&nbsp;void&nbsp;setTimeoutInterval(long&nbsp;timeoutInterval)</pre>
+</li>
+</ul>
+<a name="setDirectBufferPool(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDirectBufferPool</h4>
+<pre>public&nbsp;void&nbsp;setDirectBufferPool(int&nbsp;directBufferPool)</pre>
+</li>
+</ul>
+<a name="getUnlockTimeout()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUnlockTimeout</h4>
+<pre>public&nbsp;int&nbsp;getUnlockTimeout()</pre>
+</li>
+</ul>
+<a name="setUnlockTimeout(int)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setUnlockTimeout</h4>
+<pre>public&nbsp;void&nbsp;setUnlockTimeout(int&nbsp;unlockTimeout)</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/tomcat/util/net/ServerSocketFactory.html" title="interface in org.apache.tomcat.util.net"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/tomcat/util/net/SocketProperties.html" target="_top">Frames</a></li>
+<li><a href="SocketProperties.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

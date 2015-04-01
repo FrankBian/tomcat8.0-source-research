@@ -1,0 +1,679 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ClassLoaderLogManager (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="ClassLoaderLogManager (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/apache/juli/AsyncFileHandler.LoggerThread.html" title="class in org.apache.juli"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../org/apache/juli/ClassLoaderLogManager.ClassLoaderLogInfo.html" title="class in org.apache.juli"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/apache/juli/ClassLoaderLogManager.html" target="_top">Frames</a></li>
+<li><a href="ClassLoaderLogManager.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.juli</div>
+<h2 title="Class ClassLoaderLogManager" class="title">Class ClassLoaderLogManager</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true" title="class or interface in java.util.logging">java.util.logging.LogManager</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.juli.ClassLoaderLogManager</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="strong">ClassLoaderLogManager</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true" title="class or interface in java.util.logging">LogManager</a></pre>
+<div class="block">Per classloader LogManager implementation.
+
+ For light debugging, set the system property
+ <code>org.apache.juli.ClassLoaderLogManager.debug=true</code>.
+ Short configuration information will be sent to <code>System.err</code>.</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested_class_summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Class and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.ClassLoaderLogInfo.html" title="class in org.apache.juli">ClassLoaderLogManager.ClassLoaderLogInfo</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.LogNode.html" title="class in org.apache.juli">ClassLoaderLogManager.LogNode</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.RootLogger.html" title="class in org.apache.juli">ClassLoaderLogManager.RootLogger</a></strong></code>
+<div class="block">This class is needed to instantiate the root of each per classloader
+ hierarchy.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>,<a href="../../../org/apache/juli/ClassLoaderLogManager.ClassLoaderLogInfo.html" title="class in org.apache.juli">ClassLoaderLogManager.ClassLoaderLogInfo</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.html#classLoaderLoggers">classLoaderLoggers</a></strong></code>
+<div class="block">Map containing the classloader information, keyed per classloader.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.html#DEBUG_PROPERTY">DEBUG_PROPERTY</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ThreadLocal.html?is-external=true" title="class or interface in java.lang">ThreadLocal</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.html#prefix">prefix</a></strong></code>
+<div class="block">This prefix is used to allow using prefixes for the properties names
+ of handlers and their subcomponents.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.html#useShutdownHook">useShutdownHook</a></strong></code>
+<div class="block">Determines if the shutdown hook is used to perform any necessary
+ clean-up such as flushing buffered handlers on JVM shutdown.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_java.util.logging.LogManager">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;java.util.logging.<a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true" title="class or interface in java.util.logging">LogManager</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true#LOGGING_MXBEAN_NAME" title="class or interface in java.util.logging">LOGGING_MXBEAN_NAME</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.html#ClassLoaderLogManager()">ClassLoaderLogManager</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.html#addLogger(java.util.logging.Logger)">addLogger</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging">Logger</a>&nbsp;logger)</code>
+<div class="block">Add the specified logger to the classloader local configuration.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.html#doSetParentLogger(java.util.logging.Logger,%20java.util.logging.Logger)">doSetParentLogger</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging">Logger</a>&nbsp;logger,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging">Logger</a>&nbsp;parent)</code>
+<div class="block">Set parent child relationship between the two specified loggers.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../org/apache/juli/ClassLoaderLogManager.ClassLoaderLogInfo.html" title="class in org.apache.juli">ClassLoaderLogManager.ClassLoaderLogInfo</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.html#getClassLoaderInfo(java.lang.ClassLoader)">getClassLoaderInfo</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>&nbsp;classLoader)</code>
+<div class="block">Retrieve the configuration associated with the specified classloader.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging">Logger</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.html#getLogger(java.lang.String)">getLogger</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Get the logger associated with the specified name inside
+ the classloader local configuration.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Enumeration.html?is-external=true" title="class or interface in java.util">Enumeration</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.html#getLoggerNames()">getLoggerNames</a></strong>()</code>
+<div class="block">Get an enumeration of the logger names currently defined in the
+ classloader local configuration.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.html#getProperty(java.lang.String)">getProperty</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Get the value of the specified property in the classloader local
+ configuration.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.html#isUseShutdownHook()">isUseShutdownHook</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.html#readConfiguration()">readConfiguration</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.html#readConfiguration(java.lang.ClassLoader)">readConfiguration</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>&nbsp;classLoader)</code>
+<div class="block">Read configuration for the specified classloader.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.html#readConfiguration(java.io.InputStream)">readConfiguration</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;is)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.html#readConfiguration(java.io.InputStream,%20java.lang.ClassLoader)">readConfiguration</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;is,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>&nbsp;classLoader)</code>
+<div class="block">Load specified configuration.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.html#replace(java.lang.String)">replace</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;str)</code>
+<div class="block">System property replacement in the given string.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.html#reset()">reset</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.html#setUseShutdownHook(boolean)">setUseShutdownHook</a></strong>(boolean&nbsp;useShutdownHook)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/juli/ClassLoaderLogManager.html#shutdown()">shutdown</a></strong>()</code>
+<div class="block">Shuts down the logging system.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.util.logging.LogManager">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.util.logging.<a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true" title="class or interface in java.util.logging">LogManager</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true#addPropertyChangeListener(java.beans.PropertyChangeListener)" title="class or interface in java.util.logging">addPropertyChangeListener</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true#checkAccess()" title="class or interface in java.util.logging">checkAccess</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true#getLoggingMXBean()" title="class or interface in java.util.logging">getLoggingMXBean</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true#getLogManager()" title="class or interface in java.util.logging">getLogManager</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true#removePropertyChangeListener(java.beans.PropertyChangeListener)" title="class or interface in java.util.logging">removePropertyChangeListener</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="DEBUG_PROPERTY">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>DEBUG_PROPERTY</h4>
+<pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> DEBUG_PROPERTY</pre>
+</li>
+</ul>
+<a name="classLoaderLoggers">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>classLoaderLoggers</h4>
+<pre>protected final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>,<a href="../../../org/apache/juli/ClassLoaderLogManager.ClassLoaderLogInfo.html" title="class in org.apache.juli">ClassLoaderLogManager.ClassLoaderLogInfo</a>&gt; classLoaderLoggers</pre>
+<div class="block">Map containing the classloader information, keyed per classloader. A
+ weak hashmap is used to ensure no classloader reference is leaked from
+ application redeployment.</div>
+</li>
+</ul>
+<a name="prefix">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>prefix</h4>
+<pre>protected final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ThreadLocal.html?is-external=true" title="class or interface in java.lang">ThreadLocal</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt; prefix</pre>
+<div class="block">This prefix is used to allow using prefixes for the properties names
+ of handlers and their subcomponents.</div>
+</li>
+</ul>
+<a name="useShutdownHook">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>useShutdownHook</h4>
+<pre>protected volatile&nbsp;boolean useShutdownHook</pre>
+<div class="block">Determines if the shutdown hook is used to perform any necessary
+ clean-up such as flushing buffered handlers on JVM shutdown. Defaults to
+ <code>true</code> but may be set to false if another component ensures
+ that <a href="../../../org/apache/juli/ClassLoaderLogManager.html#shutdown()"><code>shutdown()</code></a> is called.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ClassLoaderLogManager()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ClassLoaderLogManager</h4>
+<pre>public&nbsp;ClassLoaderLogManager()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="isUseShutdownHook()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isUseShutdownHook</h4>
+<pre>public&nbsp;boolean&nbsp;isUseShutdownHook()</pre>
+</li>
+</ul>
+<a name="setUseShutdownHook(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setUseShutdownHook</h4>
+<pre>public&nbsp;void&nbsp;setUseShutdownHook(boolean&nbsp;useShutdownHook)</pre>
+</li>
+</ul>
+<a name="addLogger(java.util.logging.Logger)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addLogger</h4>
+<pre>public&nbsp;boolean&nbsp;addLogger(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging">Logger</a>&nbsp;logger)</pre>
+<div class="block">Add the specified logger to the classloader local configuration.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true#addLogger(java.util.logging.Logger)" title="class or interface in java.util.logging">addLogger</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true" title="class or interface in java.util.logging">LogManager</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>logger</code> - The logger to be added</dd></dl>
+</li>
+</ul>
+<a name="getLogger(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLogger</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging">Logger</a>&nbsp;getLogger(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block">Get the logger associated with the specified name inside
+ the classloader local configuration. If this returns null,
+ and the call originated for Logger.getLogger, a new
+ logger with the specified name will be instantiated and
+ added using addLogger.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true#getLogger(java.lang.String)" title="class or interface in java.util.logging">getLogger</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true" title="class or interface in java.util.logging">LogManager</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - The name of the logger to retrieve</dd></dl>
+</li>
+</ul>
+<a name="getLoggerNames()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLoggerNames</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Enumeration.html?is-external=true" title="class or interface in java.util">Enumeration</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getLoggerNames()</pre>
+<div class="block">Get an enumeration of the logger names currently defined in the
+ classloader local configuration.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true#getLoggerNames()" title="class or interface in java.util.logging">getLoggerNames</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true" title="class or interface in java.util.logging">LogManager</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getProperty(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getProperty</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getProperty(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block">Get the value of the specified property in the classloader local
+ configuration.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true#getProperty(java.lang.String)" title="class or interface in java.util.logging">getProperty</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true" title="class or interface in java.util.logging">LogManager</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - The property name</dd></dl>
+</li>
+</ul>
+<a name="readConfiguration()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>readConfiguration</h4>
+<pre>public&nbsp;void&nbsp;readConfiguration()
+                       throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                              <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/SecurityException.html?is-external=true" title="class or interface in java.lang">SecurityException</a></pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true#readConfiguration()" title="class or interface in java.util.logging">readConfiguration</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true" title="class or interface in java.util.logging">LogManager</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/SecurityException.html?is-external=true" title="class or interface in java.lang">SecurityException</a></code></dd></dl>
+</li>
+</ul>
+<a name="readConfiguration(java.io.InputStream)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>readConfiguration</h4>
+<pre>public&nbsp;void&nbsp;readConfiguration(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;is)
+                       throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                              <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/SecurityException.html?is-external=true" title="class or interface in java.lang">SecurityException</a></pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true#readConfiguration(java.io.InputStream)" title="class or interface in java.util.logging">readConfiguration</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true" title="class or interface in java.util.logging">LogManager</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/SecurityException.html?is-external=true" title="class or interface in java.lang">SecurityException</a></code></dd></dl>
+</li>
+</ul>
+<a name="reset()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reset</h4>
+<pre>public&nbsp;void&nbsp;reset()
+           throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/SecurityException.html?is-external=true" title="class or interface in java.lang">SecurityException</a></pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true#reset()" title="class or interface in java.util.logging">reset</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/LogManager.html?is-external=true" title="class or interface in java.util.logging">LogManager</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/SecurityException.html?is-external=true" title="class or interface in java.lang">SecurityException</a></code></dd></dl>
+</li>
+</ul>
+<a name="shutdown()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>shutdown</h4>
+<pre>public&nbsp;void&nbsp;shutdown()</pre>
+<div class="block">Shuts down the logging system.</div>
+</li>
+</ul>
+<a name="getClassLoaderInfo(java.lang.ClassLoader)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getClassLoaderInfo</h4>
+<pre>protected&nbsp;<a href="../../../org/apache/juli/ClassLoaderLogManager.ClassLoaderLogInfo.html" title="class in org.apache.juli">ClassLoaderLogManager.ClassLoaderLogInfo</a>&nbsp;getClassLoaderInfo(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>&nbsp;classLoader)</pre>
+<div class="block">Retrieve the configuration associated with the specified classloader. If
+ it does not exist, it will be created.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>classLoader</code> - The classloader for which we will retrieve or build the
+                    configuration</dd></dl>
+</li>
+</ul>
+<a name="readConfiguration(java.lang.ClassLoader)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>readConfiguration</h4>
+<pre>protected&nbsp;void&nbsp;readConfiguration(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>&nbsp;classLoader)
+                          throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Read configuration for the specified classloader.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>classLoader</code> - </dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - Error</dd></dl>
+</li>
+</ul>
+<a name="readConfiguration(java.io.InputStream, java.lang.ClassLoader)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>readConfiguration</h4>
+<pre>protected&nbsp;void&nbsp;readConfiguration(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;is,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>&nbsp;classLoader)
+                          throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Load specified configuration.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>is</code> - InputStream to the properties file</dd><dd><code>classLoader</code> - for which the configuration will be loaded</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - If something wrong happens during loading</dd></dl>
+</li>
+</ul>
+<a name="doSetParentLogger(java.util.logging.Logger, java.util.logging.Logger)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>doSetParentLogger</h4>
+<pre>protected static&nbsp;void&nbsp;doSetParentLogger(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging">Logger</a>&nbsp;logger,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/Logger.html?is-external=true" title="class or interface in java.util.logging">Logger</a>&nbsp;parent)</pre>
+<div class="block">Set parent child relationship between the two specified loggers.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>logger</code> - </dd><dd><code>parent</code> - </dd></dl>
+</li>
+</ul>
+<a name="replace(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>replace</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;replace(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;str)</pre>
+<div class="block">System property replacement in the given string.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>str</code> - The original string</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the modified string</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/apache/juli/AsyncFileHandler.LoggerThread.html" title="class in org.apache.juli"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../org/apache/juli/ClassLoaderLogManager.ClassLoaderLogInfo.html" title="class in org.apache.juli"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/apache/juli/ClassLoaderLogManager.html" target="_top">Frames</a></li>
+<li><a href="ClassLoaderLogManager.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

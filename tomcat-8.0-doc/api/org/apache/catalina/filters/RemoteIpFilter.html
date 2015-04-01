@@ -1,0 +1,1385 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RemoteIpFilter (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="RemoteIpFilter (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/filters/RemoteHostFilter.html" title="class in org.apache.catalina.filters"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.XForwardedRequest.html" title="class in org.apache.catalina.filters"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/filters/RemoteIpFilter.html" target="_top">Frames</a></li>
+<li><a href="RemoteIpFilter.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.filters</div>
+<h2 title="Class RemoteIpFilter" class="title">Class RemoteIpFilter</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.filters.RemoteIpFilter</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../../servletapi/javax/servlet/Filter.html?is-external=true" title="class or interface in javax.servlet">Filter</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">RemoteIpFilter</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="../../../../../servletapi/javax/servlet/Filter.html?is-external=true" title="class or interface in javax.servlet">Filter</a></pre>
+<div class="block"><p>
+ Servlet filter to integrate "X-Forwarded-For" and "X-Forwarded-Proto" HTTP headers.
+ </p>
+ <p>
+ Most of the design of this Servlet Filter is a port of <a
+ href="http://httpd.apache.org/docs/trunk/mod/mod_remoteip.html">mod_remoteip</a>, this servlet filter replaces the apparent client remote
+ IP address and hostname for the request with the IP address list presented by a proxy or a load balancer via a request headers (e.g.
+ "X-Forwarded-For").
+ </p>
+ <p>
+ Another feature of this servlet filter is to replace the apparent scheme (http/https) and server port with the scheme presented by a
+ proxy or a load balancer via a request header (e.g. "X-Forwarded-Proto").
+ </p>
+ <p>
+ This servlet filter proceeds as follows:
+ </p>
+ <p>
+ If the incoming <code>request.getRemoteAddr()</code> matches the servlet filter's list of internal proxies :
+ </p>
+ <ul>
+ <li>Loop on the comma delimited list of IPs and hostnames passed by the preceding load balancer or proxy in the given request's Http
+ header named <code>$remoteIpHeader</code> (default value <code>x-forwarded-for</code>). Values are processed in right-to-left order.</li>
+ <li>For each ip/host of the list:
+ <ul>
+ <li>if it matches the internal proxies list, the ip/host is swallowed</li>
+ <li>if it matches the trusted proxies list, the ip/host is added to the created proxies header</li>
+ <li>otherwise, the ip/host is declared to be the remote ip and looping is stopped.</li>
+ </ul>
+ </li>
+ <li>If the request http header named <code>$protocolHeader</code> (e.g. <code>x-forwarded-for</code>) equals to the value of
+ <code>protocolHeaderHttpsValue</code> configuration parameter (default <code>https</code>) then <code>request.isSecure = true</code>,
+ <code>request.scheme = https</code> and <code>request.serverPort = 443</code>. Note that 443 can be overwritten with the
+ <code>$httpsServerPort</code> configuration parameter.</li>
+ </ul>
+ <table border="1">
+ <caption>Configuration parameters</caption>
+ <tr>
+ <th>XForwardedFilter property</th>
+ <th>Description</th>
+ <th>Equivalent mod_remoteip directive</th>
+ <th>Format</th>
+ <th>Default Value</th>
+ </tr>
+ <tr>
+ <td>remoteIpHeader</td>
+ <td>Name of the Http Header read by this servlet filter that holds the list of traversed IP addresses starting from the requesting client
+ </td>
+ <td>RemoteIPHeader</td>
+ <td>Compliant http header name</td>
+ <td>x-forwarded-for</td>
+ </tr>
+ <tr>
+ <td>internalProxies</td>
+ <td>Regular expression that matches the IP addresses of internal proxies.
+ If they appear in the <code>remoteIpHeader</code> value, they will be
+ trusted and will not appear
+ in the <code>proxiesHeader</code> value</td>
+ <td>RemoteIPInternalProxy</td>
+ <td>Regular expression (in the syntax supported by
+ <a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex"><code>java.util.regex</code></a>)</td>
+ <td>10\.\d{1,3}\.\d{1,3}\.\d{1,3}|192\.168\.\d{1,3}\.\d{1,3}|
+     169\.254\.\d{1,3}\.\d{1,3}|127\.\d{1,3}\.\d{1,3}\.\d{1,3}|
+     172\.1[6-9]{1}\.\d{1,3}\.\d{1,3}|172\.2[0-9]{1}\.\d{1,3}\.\d{1,3}|
+     172\.3[0-1]{1}\.\d{1,3}\.\d{1,3}
+     <br>
+ By default, 10/8, 192.168/16, 169.254/16, 127/8 and 172.16/12 are allowed.</td>
+ </tr>
+ <tr>
+ <td>proxiesHeader</td>
+ <td>Name of the http header created by this servlet filter to hold the list of proxies that have been processed in the incoming
+ <code>remoteIpHeader</code></td>
+ <td>RemoteIPProxiesHeader</td>
+ <td>Compliant http header name</td>
+ <td>x-forwarded-by</td>
+ </tr>
+ <tr>
+ <td>trustedProxies</td>
+ <td>Regular expression that matches the IP addresses of trusted proxies.
+ If they appear in the <code>remoteIpHeader</code> value, they will be
+ trusted and will appear in the <code>proxiesHeader</code> value</td>
+ <td>RemoteIPTrustedProxy</td>
+ <td>Regular expression (in the syntax supported by
+ <a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex"><code>java.util.regex</code></a>)</td>
+ <td>&nbsp;</td>
+ </tr>
+ <tr>
+ <td>protocolHeader</td>
+ <td>Name of the http header read by this servlet filter that holds the flag that this request</td>
+ <td>N/A</td>
+ <td>Compliant http header name like <code>X-Forwarded-Proto</code>, <code>X-Forwarded-Ssl</code> or <code>Front-End-Https</code></td>
+ <td><code>null</code></td>
+ </tr>
+ <tr>
+ <td>protocolHeaderHttpsValue</td>
+ <td>Value of the <code>protocolHeader</code> to indicate that it is an Https request</td>
+ <td>N/A</td>
+ <td>String like <code>https</code> or <code>ON</code></td>
+ <td><code>https</code></td>
+ </tr>
+ <tr>
+ <td>httpServerPort</td>
+ <td>Value returned by <a href="../../../../../servletapi/javax/servlet/ServletRequest.html?is-external=true#getServerPort()" title="class or interface in javax.servlet"><code>ServletRequest.getServerPort()</code></a> when the <code>protocolHeader</code> indicates <code>http</code> protocol</td>
+ <td>N/A</td>
+ <td>integer</td>
+ <td>80</td>
+ </tr>
+ <tr>
+ <td>httpsServerPort</td>
+ <td>Value returned by <a href="../../../../../servletapi/javax/servlet/ServletRequest.html?is-external=true#getServerPort()" title="class or interface in javax.servlet"><code>ServletRequest.getServerPort()</code></a> when the <code>protocolHeader</code> indicates <code>https</code> protocol</td>
+ <td>N/A</td>
+ <td>integer</td>
+ <td>443</td>
+ </tr>
+ </table>
+ <p>
+ <p>
+ <strong>Regular expression vs. IP address blocks:</strong> <code>mod_remoteip</code> allows to use address blocks (e.g.
+ <code>192.168/16</code>) to configure <code>RemoteIPInternalProxy</code> and <code>RemoteIPTrustedProxy</code> ; as the JVM doesn't have a
+ library similar to <a
+ href="http://apr.apache.org/docs/apr/1.3/group__apr__network__io.html#gb74d21b8898b7c40bf7fd07ad3eb993d">apr_ipsubnet_test</a>, we rely on
+ regular expressions.
+ </p>
+ <hr>
+ <p>
+ <strong>Sample with internal proxies</strong>
+ </p>
+ <p>
+ XForwardedFilter configuration:
+ </p>
+ <code>
+ &lt;filter&gt;
+    &lt;filter-name&gt;RemoteIpFilter&lt;/filter-name&gt;
+    &lt;filter-class&gt;org.apache.catalina.filters.RemoteIpFilter&lt;/filter-class&gt;
+    &lt;init-param&gt;
+       &lt;param-name&gt;internalProxies&lt;/param-name&gt;
+       &lt;param-value&gt;192\.168\.0\.10|192\.168\.0\.11&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;init-param&gt;
+       &lt;param-name&gt;remoteIpHeader&lt;/param-name&gt;
+       &lt;param-value&gt;x-forwarded-for&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;init-param&gt;
+       &lt;param-name&gt;remoteIpProxiesHeader&lt;/param-name&gt;
+       &lt;param-value&gt;x-forwarded-by&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;init-param&gt;
+       &lt;param-name&gt;protocolHeader&lt;/param-name&gt;
+       &lt;param-value&gt;x-forwarded-proto&lt;/param-value&gt;
+    &lt;/init-param&gt;
+ &lt;/filter&gt;
+
+ &lt;filter-mapping&gt;
+    &lt;filter-name&gt;RemoteIpFilter&lt;/filter-name&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+    &lt;dispatcher&gt;REQUEST&lt;/dispatcher&gt;
+ &lt;/filter-mapping&gt;</code>
+ <table border="1">
+ <caption>Request Values</caption>
+ <tr>
+ <th>property</th>
+ <th>Value Before RemoteIpFilter</th>
+ <th>Value After RemoteIpFilter</th>
+ </tr>
+ <tr>
+ <td>request.remoteAddr</td>
+ <td>192.168.0.10</td>
+ <td>140.211.11.130</td>
+ </tr>
+ <tr>
+ <td>request.header['x-forwarded-for']</td>
+ <td>140.211.11.130, 192.168.0.10</td>
+ <td>null</td>
+ </tr>
+ <tr>
+ <td>request.header['x-forwarded-by']</td>
+ <td>null</td>
+ <td>null</td>
+ </tr>
+ <tr>
+ <td>request.header['x-forwarded-proto']</td>
+ <td>https</td>
+ <td>https</td>
+ </tr>
+ <tr>
+ <td>request.scheme</td>
+ <td>http</td>
+ <td>https</td>
+ </tr>
+ <tr>
+ <td>request.secure</td>
+ <td>false</td>
+ <td>true</td>
+ </tr>
+ <tr>
+ <td>request.serverPort</td>
+ <td>80</td>
+ <td>443</td>
+ </tr>
+ </table>
+ Note : <code>x-forwarded-by</code> header is null because only internal proxies as been traversed by the request.
+ <code>x-forwarded-by</code> is null because all the proxies are trusted or internal.
+ <hr>
+ <p>
+ <strong>Sample with trusted proxies</strong>
+ </p>
+ <p>
+ RemoteIpFilter configuration:
+ </p>
+ <code>
+ &lt;filter&gt;
+    &lt;filter-name&gt;RemoteIpFilter&lt;/filter-name&gt;
+    &lt;filter-class&gt;org.apache.catalina.filters.RemoteIpFilter&lt;/filter-class&gt;
+    &lt;init-param&gt;
+       &lt;param-name&gt;internalProxies&lt;/param-name&gt;
+       &lt;param-value&gt;192\.168\.0\.10|192\.168\.0\.11&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;init-param&gt;
+       &lt;param-name&gt;remoteIpHeader&lt;/param-name&gt;
+       &lt;param-value&gt;x-forwarded-for&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;init-param&gt;
+       &lt;param-name&gt;remoteIpProxiesHeader&lt;/param-name&gt;
+       &lt;param-value&gt;x-forwarded-by&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;init-param&gt;
+       &lt;param-name&gt;trustedProxies&lt;/param-name&gt;
+       &lt;param-value&gt;proxy1|proxy2&lt;/param-value&gt;
+    &lt;/init-param&gt;
+ &lt;/filter&gt;
+
+ &lt;filter-mapping&gt;
+    &lt;filter-name&gt;RemoteIpFilter&lt;/filter-name&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+    &lt;dispatcher&gt;REQUEST&lt;/dispatcher&gt;
+ &lt;/filter-mapping&gt;</code>
+ <table border="1">
+ <caption>Request Values</caption>
+ <tr>
+ <th>property</th>
+ <th>Value Before RemoteIpFilter</th>
+ <th>Value After RemoteIpFilter</th>
+ </tr>
+ <tr>
+ <td>request.remoteAddr</td>
+ <td>192.168.0.10</td>
+ <td>140.211.11.130</td>
+ </tr>
+ <tr>
+ <td>request.header['x-forwarded-for']</td>
+ <td>140.211.11.130, proxy1, proxy2</td>
+ <td>null</td>
+ </tr>
+ <tr>
+ <td>request.header['x-forwarded-by']</td>
+ <td>null</td>
+ <td>proxy1, proxy2</td>
+ </tr>
+ </table>
+ <p>
+ Note : <code>proxy1</code> and <code>proxy2</code> are both trusted proxies that come in <code>x-forwarded-for</code> header, they both
+ are migrated in <code>x-forwarded-by</code> header. <code>x-forwarded-by</code> is null because all the proxies are trusted or internal.
+ </p>
+ <hr>
+ <p>
+ <strong>Sample with internal and trusted proxies</strong>
+ </p>
+ <p>
+ RemoteIpFilter configuration:
+ </p>
+ <code>
+ &lt;filter&gt;
+    &lt;filter-name&gt;RemoteIpFilter&lt;/filter-name&gt;
+    &lt;filter-class&gt;org.apache.catalina.filters.RemoteIpFilter&lt;/filter-class&gt;
+    &lt;init-param&gt;
+       &lt;param-name&gt;internalProxies&lt;/param-name&gt;
+       &lt;param-value&gt;192\.168\.0\.10|192\.168\.0\.11&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;init-param&gt;
+       &lt;param-name&gt;remoteIpHeader&lt;/param-name&gt;
+       &lt;param-value&gt;x-forwarded-for&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;init-param&gt;
+       &lt;param-name&gt;remoteIpProxiesHeader&lt;/param-name&gt;
+       &lt;param-value&gt;x-forwarded-by&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;init-param&gt;
+       &lt;param-name&gt;trustedProxies&lt;/param-name&gt;
+       &lt;param-value&gt;proxy1|proxy2&lt;/param-value&gt;
+    &lt;/init-param&gt;
+ &lt;/filter&gt;
+
+ &lt;filter-mapping&gt;
+    &lt;filter-name&gt;RemoteIpFilter&lt;/filter-name&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+    &lt;dispatcher&gt;REQUEST&lt;/dispatcher&gt;
+ &lt;/filter-mapping&gt;</code>
+ <table border="1">
+ <caption>Request Values</caption>
+ <tr>
+ <th>property</th>
+ <th>Value Before RemoteIpFilter</th>
+ <th>Value After RemoteIpFilter</th>
+ </tr>
+ <tr>
+ <td>request.remoteAddr</td>
+ <td>192.168.0.10</td>
+ <td>140.211.11.130</td>
+ </tr>
+ <tr>
+ <td>request.header['x-forwarded-for']</td>
+ <td>140.211.11.130, proxy1, proxy2, 192.168.0.10</td>
+ <td>null</td>
+ </tr>
+ <tr>
+ <td>request.header['x-forwarded-by']</td>
+ <td>null</td>
+ <td>proxy1, proxy2</td>
+ </tr>
+ </table>
+ <p>
+ Note : <code>proxy1</code> and <code>proxy2</code> are both trusted proxies that come in <code>x-forwarded-for</code> header, they both
+ are migrated in <code>x-forwarded-by</code> header. As <code>192.168.0.10</code> is an internal proxy, it does not appear in
+ <code>x-forwarded-by</code>. <code>x-forwarded-by</code> is null because all the proxies are trusted or internal.
+ </p>
+ <hr>
+ <p>
+ <strong>Sample with an untrusted proxy</strong>
+ </p>
+ <p>
+ RemoteIpFilter configuration:
+ </p>
+ <code>
+ &lt;filter&gt;
+    &lt;filter-name&gt;RemoteIpFilter&lt;/filter-name&gt;
+    &lt;filter-class&gt;org.apache.catalina.filters.RemoteIpFilter&lt;/filter-class&gt;
+    &lt;init-param&gt;
+       &lt;param-name&gt;internalProxies&lt;/param-name&gt;
+       &lt;param-value&gt;192\.168\.0\.10|192\.168\.0\.11&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;init-param&gt;
+       &lt;param-name&gt;remoteIpHeader&lt;/param-name&gt;
+       &lt;param-value&gt;x-forwarded-for&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;init-param&gt;
+       &lt;param-name&gt;remoteIpProxiesHeader&lt;/param-name&gt;
+       &lt;param-value&gt;x-forwarded-by&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;init-param&gt;
+       &lt;param-name&gt;trustedProxies&lt;/param-name&gt;
+       &lt;param-value&gt;proxy1|proxy2&lt;/param-value&gt;
+    &lt;/init-param&gt;
+ &lt;/filter&gt;
+
+ &lt;filter-mapping&gt;
+    &lt;filter-name&gt;RemoteIpFilter&lt;/filter-name&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+    &lt;dispatcher&gt;REQUEST&lt;/dispatcher&gt;
+ &lt;/filter-mapping&gt;</code>
+ <table border="1">
+ <caption>Request Values</caption>
+ <tr>
+ <th>property</th>
+ <th>Value Before RemoteIpFilter</th>
+ <th>Value After RemoteIpFilter</th>
+ </tr>
+ <tr>
+ <td>request.remoteAddr</td>
+ <td>192.168.0.10</td>
+ <td>untrusted-proxy</td>
+ </tr>
+ <tr>
+ <td>request.header['x-forwarded-for']</td>
+ <td>140.211.11.130, untrusted-proxy, proxy1</td>
+ <td>140.211.11.130</td>
+ </tr>
+ <tr>
+ <td>request.header['x-forwarded-by']</td>
+ <td>null</td>
+ <td>proxy1</td>
+ </tr>
+ </table>
+ <p>
+ Note : <code>x-forwarded-by</code> holds the trusted proxy <code>proxy1</code>. <code>x-forwarded-by</code> holds
+ <code>140.211.11.130</code> because <code>untrusted-proxy</code> is not trusted and thus, we can not trust that
+ <code>untrusted-proxy</code> is the actual remote ip. <code>request.remoteAddr</code> is <code>untrusted-proxy</code> that is an IP
+ verified by <code>proxy1</code>.
+ </p>
+ <hr></div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested_class_summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Class and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.XForwardedRequest.html" title="class in org.apache.catalina.filters">RemoteIpFilter.XForwardedRequest</a></strong></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#CHANGE_LOCAL_PORT_PARAMETER">CHANGE_LOCAL_PORT_PARAMETER</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#HTTP_SERVER_PORT_PARAMETER">HTTP_SERVER_PORT_PARAMETER</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#HTTPS_SERVER_PORT_PARAMETER">HTTPS_SERVER_PORT_PARAMETER</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#INTERNAL_PROXIES_PARAMETER">INTERNAL_PROXIES_PARAMETER</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#PORT_HEADER_PARAMETER">PORT_HEADER_PARAMETER</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#PROTOCOL_HEADER_HTTPS_VALUE_PARAMETER">PROTOCOL_HEADER_HTTPS_VALUE_PARAMETER</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#PROTOCOL_HEADER_PARAMETER">PROTOCOL_HEADER_PARAMETER</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#PROXIES_HEADER_PARAMETER">PROXIES_HEADER_PARAMETER</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#REMOTE_IP_HEADER_PARAMETER">REMOTE_IP_HEADER_PARAMETER</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#TRUSTED_PROXIES_PARAMETER">TRUSTED_PROXIES_PARAMETER</a></strong></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#RemoteIpFilter()">RemoteIpFilter</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#commaDelimitedListToStringArray(java.lang.String)">commaDelimitedListToStringArray</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;commaDelimitedStrings)</code>
+<div class="block">Convert a given comma delimited list of regular expressions into an array of String</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#destroy()">destroy</a></strong>()</code>
+<div class="block">Called by the web container to indicate to a filter that it is being
+ taken out of service.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#doFilter(javax.servlet.http.HttpServletRequest,%20javax.servlet.http.HttpServletResponse,%20javax.servlet.FilterChain)">doFilter</a></strong>(<a href="../../../../../servletapi/javax/servlet/http/HttpServletRequest.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletRequest</a>&nbsp;request,
+        <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a>&nbsp;response,
+        <a href="../../../../../servletapi/javax/servlet/FilterChain.html?is-external=true" title="class or interface in javax.servlet">FilterChain</a>&nbsp;chain)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#doFilter(javax.servlet.ServletRequest,%20javax.servlet.ServletResponse,%20javax.servlet.FilterChain)">doFilter</a></strong>(<a href="../../../../../servletapi/javax/servlet/ServletRequest.html?is-external=true" title="class or interface in javax.servlet">ServletRequest</a>&nbsp;request,
+        <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a>&nbsp;response,
+        <a href="../../../../../servletapi/javax/servlet/FilterChain.html?is-external=true" title="class or interface in javax.servlet">FilterChain</a>&nbsp;chain)</code>
+<div class="block">Wrap the incoming <code>request</code> in a <a href="../../../../org/apache/catalina/filters/RemoteIpFilter.XForwardedRequest.html" title="class in org.apache.catalina.filters"><code>RemoteIpFilter.XForwardedRequest</code></a> if the http header <code>x-forwareded-for</code> is not empty.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#getHttpsServerPort()">getHttpsServerPort</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex">Pattern</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#getInternalProxies()">getInternalProxies</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#getPortHeader()">getPortHeader</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#getProtocolHeader()">getProtocolHeader</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#getProtocolHeaderHttpsValue()">getProtocolHeaderHttpsValue</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#getProxiesHeader()">getProxiesHeader</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#getRemoteIpHeader()">getRemoteIpHeader</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#getRequestAttributesEnabled()">getRequestAttributesEnabled</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex">Pattern</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#getTrustedProxies()">getTrustedProxies</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#init(javax.servlet.FilterConfig)">init</a></strong>(<a href="../../../../../servletapi/javax/servlet/FilterConfig.html?is-external=true" title="class or interface in javax.servlet">FilterConfig</a>&nbsp;filterConfig)</code>
+<div class="block">Called by the web container to indicate to a filter that it is being
+ placed into service.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#isChangeLocalPort()">isChangeLocalPort</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#listToCommaDelimitedString(java.util.List)">listToCommaDelimitedString</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;stringList)</code>
+<div class="block">Convert an array of strings in a comma delimited string</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#setChangeLocalPort(boolean)">setChangeLocalPort</a></strong>(boolean&nbsp;changeLocalPort)</code>
+<div class="block">
+ If <code>true</code>, the return values for both <a href="../../../../../servletapi/javax/servlet/ServletRequest.html?is-external=true#getLocalPort()" title="class or interface in javax.servlet"><code>ServletRequest.getLocalPort()</code></a> and <a href="../../../../../servletapi/javax/servlet/ServletRequest.html?is-external=true#getServerPort()" title="class or interface in javax.servlet"><code>ServletRequest.getServerPort()</code></a>
+ wil be modified by this Filter rather than just
+ <a href="../../../../../servletapi/javax/servlet/ServletRequest.html?is-external=true#getServerPort()" title="class or interface in javax.servlet"><code>ServletRequest.getServerPort()</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#setHttpServerPort(int)">setHttpServerPort</a></strong>(int&nbsp;httpServerPort)</code>
+<div class="block">
+ Server Port value if the <a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#protocolHeader"><code>protocolHeader</code></a> indicates HTTP (i.e.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#setHttpsServerPort(int)">setHttpsServerPort</a></strong>(int&nbsp;httpsServerPort)</code>
+<div class="block">
+ Server Port value if the <a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#protocolHeader"><code>protocolHeader</code></a> indicates HTTPS
+ 
+ 
+ Default value : 443
+ </div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#setInternalProxies(java.lang.String)">setInternalProxies</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;internalProxies)</code>
+<div class="block">
+ Regular expression that defines the internal proxies.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#setPortHeader(java.lang.String)">setPortHeader</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;portHeader)</code>
+<div class="block">
+ Header that holds the incoming port, usally named
+ <code>X-Forwarded-Port</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#setProtocolHeader(java.lang.String)">setProtocolHeader</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;protocolHeader)</code>
+<div class="block">
+ Header that holds the incoming protocol, usally named <code>X-Forwarded-Proto</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#setProtocolHeaderHttpsValue(java.lang.String)">setProtocolHeaderHttpsValue</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;protocolHeaderHttpsValue)</code>
+<div class="block">
+ Case insensitive value of the protocol header to indicate that the incoming http request uses HTTPS.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#setProxiesHeader(java.lang.String)">setProxiesHeader</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;proxiesHeader)</code>
+<div class="block">
+ The proxiesHeader directive specifies a header into which mod_remoteip will collect a list of all of the intermediate client IP
+ addresses trusted to resolve the actual remote IP.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#setRemoteIpHeader(java.lang.String)">setRemoteIpHeader</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;remoteIpHeader)</code>
+<div class="block">
+ Name of the http header from which the remote ip is extracted.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#setRequestAttributesEnabled(boolean)">setRequestAttributesEnabled</a></strong>(boolean&nbsp;requestAttributesEnabled)</code>
+<div class="block">Should this filter set request attributes for IP address, Hostname,
+ protocol and port used for the request?</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#setTrustedProxies(java.lang.String)">setTrustedProxies</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;trustedProxies)</code>
+<div class="block">
+ Regular expression defining proxies that are trusted when they appear in
+ the <a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#remoteIpHeader"><code>remoteIpHeader</code></a> header.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="HTTP_SERVER_PORT_PARAMETER">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>HTTP_SERVER_PORT_PARAMETER</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> HTTP_SERVER_PORT_PARAMETER</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.catalina.filters.RemoteIpFilter.HTTP_SERVER_PORT_PARAMETER">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="HTTPS_SERVER_PORT_PARAMETER">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>HTTPS_SERVER_PORT_PARAMETER</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> HTTPS_SERVER_PORT_PARAMETER</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.catalina.filters.RemoteIpFilter.HTTPS_SERVER_PORT_PARAMETER">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="INTERNAL_PROXIES_PARAMETER">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>INTERNAL_PROXIES_PARAMETER</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> INTERNAL_PROXIES_PARAMETER</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.catalina.filters.RemoteIpFilter.INTERNAL_PROXIES_PARAMETER">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROTOCOL_HEADER_PARAMETER">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROTOCOL_HEADER_PARAMETER</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROTOCOL_HEADER_PARAMETER</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.catalina.filters.RemoteIpFilter.PROTOCOL_HEADER_PARAMETER">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROTOCOL_HEADER_HTTPS_VALUE_PARAMETER">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROTOCOL_HEADER_HTTPS_VALUE_PARAMETER</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROTOCOL_HEADER_HTTPS_VALUE_PARAMETER</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.catalina.filters.RemoteIpFilter.PROTOCOL_HEADER_HTTPS_VALUE_PARAMETER">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PORT_HEADER_PARAMETER">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PORT_HEADER_PARAMETER</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PORT_HEADER_PARAMETER</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.catalina.filters.RemoteIpFilter.PORT_HEADER_PARAMETER">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="CHANGE_LOCAL_PORT_PARAMETER">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>CHANGE_LOCAL_PORT_PARAMETER</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> CHANGE_LOCAL_PORT_PARAMETER</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.catalina.filters.RemoteIpFilter.CHANGE_LOCAL_PORT_PARAMETER">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROXIES_HEADER_PARAMETER">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROXIES_HEADER_PARAMETER</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROXIES_HEADER_PARAMETER</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.catalina.filters.RemoteIpFilter.PROXIES_HEADER_PARAMETER">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="REMOTE_IP_HEADER_PARAMETER">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>REMOTE_IP_HEADER_PARAMETER</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> REMOTE_IP_HEADER_PARAMETER</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.catalina.filters.RemoteIpFilter.REMOTE_IP_HEADER_PARAMETER">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="TRUSTED_PROXIES_PARAMETER">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>TRUSTED_PROXIES_PARAMETER</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> TRUSTED_PROXIES_PARAMETER</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.catalina.filters.RemoteIpFilter.TRUSTED_PROXIES_PARAMETER">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="RemoteIpFilter()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>RemoteIpFilter</h4>
+<pre>public&nbsp;RemoteIpFilter()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="commaDelimitedListToStringArray(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>commaDelimitedListToStringArray</h4>
+<pre>protected static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;commaDelimitedListToStringArray(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;commaDelimitedStrings)</pre>
+<div class="block">Convert a given comma delimited list of regular expressions into an array of String</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>array of patterns (non <code>null</code>)</dd></dl>
+</li>
+</ul>
+<a name="listToCommaDelimitedString(java.util.List)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>listToCommaDelimitedString</h4>
+<pre>protected static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;listToCommaDelimitedString(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;stringList)</pre>
+<div class="block">Convert an array of strings in a comma delimited string</div>
+</li>
+</ul>
+<a name="destroy()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>destroy</h4>
+<pre>public&nbsp;void&nbsp;destroy()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/Filter.html?is-external=true#destroy()" title="class or interface in javax.servlet">javax.servlet.Filter</a></code></strong></div>
+<div class="block">Called by the web container to indicate to a filter that it is being
+ taken out of service. This method is only called once all threads within
+ the filter's doFilter method have exited or after a timeout period has
+ passed. After the web container calls this method, it will not call the
+ doFilter method again on this instance of the filter. <br>
+ <br>
+
+ This method gives the filter an opportunity to clean up any resources
+ that are being held (for example, memory, file handles, threads) and make
+ sure that any persistent state is synchronized with the filter's current
+ state in memory.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/Filter.html?is-external=true#destroy()" title="class or interface in javax.servlet">destroy</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/Filter.html?is-external=true" title="class or interface in javax.servlet">Filter</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="doFilter(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, javax.servlet.FilterChain)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>doFilter</h4>
+<pre>public&nbsp;void&nbsp;doFilter(<a href="../../../../../servletapi/javax/servlet/http/HttpServletRequest.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletRequest</a>&nbsp;request,
+            <a href="../../../../../servletapi/javax/servlet/http/HttpServletResponse.html?is-external=true" title="class or interface in javax.servlet.http">HttpServletResponse</a>&nbsp;response,
+            <a href="../../../../../servletapi/javax/servlet/FilterChain.html?is-external=true" title="class or interface in javax.servlet">FilterChain</a>&nbsp;chain)
+              throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                     <a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code></dd></dl>
+</li>
+</ul>
+<a name="doFilter(javax.servlet.ServletRequest, javax.servlet.ServletResponse, javax.servlet.FilterChain)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>doFilter</h4>
+<pre>public&nbsp;void&nbsp;doFilter(<a href="../../../../../servletapi/javax/servlet/ServletRequest.html?is-external=true" title="class or interface in javax.servlet">ServletRequest</a>&nbsp;request,
+            <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a>&nbsp;response,
+            <a href="../../../../../servletapi/javax/servlet/FilterChain.html?is-external=true" title="class or interface in javax.servlet">FilterChain</a>&nbsp;chain)
+              throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                     <a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></pre>
+<div class="block">Wrap the incoming <code>request</code> in a <a href="../../../../org/apache/catalina/filters/RemoteIpFilter.XForwardedRequest.html" title="class in org.apache.catalina.filters"><code>RemoteIpFilter.XForwardedRequest</code></a> if the http header <code>x-forwareded-for</code> is not empty.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/Filter.html?is-external=true#doFilter(javax.servlet.ServletRequest,%20javax.servlet.ServletResponse,%20javax.servlet.FilterChain)" title="class or interface in javax.servlet">doFilter</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/Filter.html?is-external=true" title="class or interface in javax.servlet">Filter</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>request</code> - The request to process</dd><dd><code>response</code> - The response associated with the request</dd><dd><code>chain</code> - Provides access to the next filter in the chain for this
+                 filter to pass the request and response to for further
+                 processing</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if an I/O error occurs during this filter's
+                     processing of the request</dd>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code> - if the processing fails for any other reason</dd></dl>
+</li>
+</ul>
+<a name="isChangeLocalPort()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isChangeLocalPort</h4>
+<pre>public&nbsp;boolean&nbsp;isChangeLocalPort()</pre>
+</li>
+</ul>
+<a name="getHttpsServerPort()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHttpsServerPort</h4>
+<pre>public&nbsp;int&nbsp;getHttpsServerPort()</pre>
+</li>
+</ul>
+<a name="getInternalProxies()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getInternalProxies</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex">Pattern</a>&nbsp;getInternalProxies()</pre>
+</li>
+</ul>
+<a name="getProtocolHeader()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getProtocolHeader</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getProtocolHeader()</pre>
+</li>
+</ul>
+<a name="getPortHeader()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPortHeader</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getPortHeader()</pre>
+</li>
+</ul>
+<a name="getProtocolHeaderHttpsValue()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getProtocolHeaderHttpsValue</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getProtocolHeaderHttpsValue()</pre>
+</li>
+</ul>
+<a name="getProxiesHeader()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getProxiesHeader</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getProxiesHeader()</pre>
+</li>
+</ul>
+<a name="getRemoteIpHeader()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRemoteIpHeader</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getRemoteIpHeader()</pre>
+</li>
+</ul>
+<a name="getRequestAttributesEnabled()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRequestAttributesEnabled</h4>
+<pre>public&nbsp;boolean&nbsp;getRequestAttributesEnabled()</pre>
+<dl><dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the attributes will be logged, otherwise
+         <code>false</code></dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#setRequestAttributesEnabled(boolean)"><code>setRequestAttributesEnabled(boolean)</code></a></dd></dl>
+</li>
+</ul>
+<a name="getTrustedProxies()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTrustedProxies</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex">Pattern</a>&nbsp;getTrustedProxies()</pre>
+</li>
+</ul>
+<a name="init(javax.servlet.FilterConfig)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>init</h4>
+<pre>public&nbsp;void&nbsp;init(<a href="../../../../../servletapi/javax/servlet/FilterConfig.html?is-external=true" title="class or interface in javax.servlet">FilterConfig</a>&nbsp;filterConfig)
+          throws <a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/Filter.html?is-external=true#init(javax.servlet.FilterConfig)" title="class or interface in javax.servlet">javax.servlet.Filter</a></code></strong></div>
+<div class="block">Called by the web container to indicate to a filter that it is being
+ placed into service. The servlet container calls the init method exactly
+ once after instantiating the filter. The init method must complete
+ successfully before the filter is asked to do any filtering work.
+ <p>
+ The web container cannot place the filter into service if the init method
+ either:
+ <ul>
+ <li>Throws a ServletException</li>
+ <li>Does not return within a time period defined by the web
+     container</li>
+ </ul></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/Filter.html?is-external=true#init(javax.servlet.FilterConfig)" title="class or interface in javax.servlet">init</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/Filter.html?is-external=true" title="class or interface in javax.servlet">Filter</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>filterConfig</code> - The configuration information associated with the
+                     filter instance being initialised</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code> - if the initialisation fails</dd></dl>
+</li>
+</ul>
+<a name="setChangeLocalPort(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setChangeLocalPort</h4>
+<pre>public&nbsp;void&nbsp;setChangeLocalPort(boolean&nbsp;changeLocalPort)</pre>
+<div class="block"><p>
+ If <code>true</code>, the return values for both <a href="../../../../../servletapi/javax/servlet/ServletRequest.html?is-external=true#getLocalPort()" title="class or interface in javax.servlet"><code>ServletRequest.getLocalPort()</code></a> and <a href="../../../../../servletapi/javax/servlet/ServletRequest.html?is-external=true#getServerPort()" title="class or interface in javax.servlet"><code>ServletRequest.getServerPort()</code></a>
+ wil be modified by this Filter rather than just
+ <a href="../../../../../servletapi/javax/servlet/ServletRequest.html?is-external=true#getServerPort()" title="class or interface in javax.servlet"><code>ServletRequest.getServerPort()</code></a>.
+ </p>
+ <p>
+ Default value : <code>false</code>
+ </p></div>
+</li>
+</ul>
+<a name="setHttpServerPort(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setHttpServerPort</h4>
+<pre>public&nbsp;void&nbsp;setHttpServerPort(int&nbsp;httpServerPort)</pre>
+<div class="block"><p>
+ Server Port value if the <a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#protocolHeader"><code>protocolHeader</code></a> indicates HTTP (i.e. <a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#protocolHeader"><code>protocolHeader</code></a> is not null and
+ has a value different of <a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#protocolHeaderHttpsValue"><code>protocolHeaderHttpsValue</code></a>).
+ </p>
+ <p>
+ Default value : 80
+ </p></div>
+</li>
+</ul>
+<a name="setHttpsServerPort(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setHttpsServerPort</h4>
+<pre>public&nbsp;void&nbsp;setHttpsServerPort(int&nbsp;httpsServerPort)</pre>
+<div class="block"><p>
+ Server Port value if the <a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#protocolHeader"><code>protocolHeader</code></a> indicates HTTPS
+ </p>
+ <p>
+ Default value : 443
+ </p></div>
+</li>
+</ul>
+<a name="setInternalProxies(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setInternalProxies</h4>
+<pre>public&nbsp;void&nbsp;setInternalProxies(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;internalProxies)</pre>
+<div class="block"><p>
+ Regular expression that defines the internal proxies.
+ </p>
+ <p>
+ Default value : 10\.\d{1,3}\.\d{1,3}\.\d{1,3}|192\.168\.\d{1,3}\.\d{1,3}|169\.254.\d{1,3}.\d{1,3}|127\.\d{1,3}\.\d{1,3}\.\d{1,3}
+ </p></div>
+</li>
+</ul>
+<a name="setPortHeader(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPortHeader</h4>
+<pre>public&nbsp;void&nbsp;setPortHeader(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;portHeader)</pre>
+<div class="block"><p>
+ Header that holds the incoming port, usally named
+ <code>X-Forwarded-Port</code>. If <code>null</code>,
+ <a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#httpServerPort"><code>httpServerPort</code></a> or <a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#httpsServerPort"><code>httpsServerPort</code></a> will be used.
+ </p>
+ <p>
+ Default value : <code>null</code>
+ </p></div>
+</li>
+</ul>
+<a name="setProtocolHeader(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setProtocolHeader</h4>
+<pre>public&nbsp;void&nbsp;setProtocolHeader(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;protocolHeader)</pre>
+<div class="block"><p>
+ Header that holds the incoming protocol, usally named <code>X-Forwarded-Proto</code>. If <code>null</code>, request.scheme and
+ request.secure will not be modified.
+ </p>
+ <p>
+ Default value : <code>null</code>
+ </p></div>
+</li>
+</ul>
+<a name="setProtocolHeaderHttpsValue(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setProtocolHeaderHttpsValue</h4>
+<pre>public&nbsp;void&nbsp;setProtocolHeaderHttpsValue(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;protocolHeaderHttpsValue)</pre>
+<div class="block"><p>
+ Case insensitive value of the protocol header to indicate that the incoming http request uses HTTPS.
+ </p>
+ <p>
+ Default value : <code>https</code>
+ </p></div>
+</li>
+</ul>
+<a name="setProxiesHeader(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setProxiesHeader</h4>
+<pre>public&nbsp;void&nbsp;setProxiesHeader(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;proxiesHeader)</pre>
+<div class="block"><p>
+ The proxiesHeader directive specifies a header into which mod_remoteip will collect a list of all of the intermediate client IP
+ addresses trusted to resolve the actual remote IP. Note that intermediate RemoteIPTrustedProxy addresses are recorded in this header,
+ while any intermediate RemoteIPInternalProxy addresses are discarded.
+ </p>
+ <p>
+ Name of the http header that holds the list of trusted proxies that has been traversed by the http request.
+ </p>
+ <p>
+ The value of this header can be comma delimited.
+ </p>
+ <p>
+ Default value : <code>X-Forwarded-By</code>
+ </p></div>
+</li>
+</ul>
+<a name="setRemoteIpHeader(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRemoteIpHeader</h4>
+<pre>public&nbsp;void&nbsp;setRemoteIpHeader(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;remoteIpHeader)</pre>
+<div class="block"><p>
+ Name of the http header from which the remote ip is extracted.
+ </p>
+ <p>
+ The value of this header can be comma delimited.
+ </p>
+ <p>
+ Default value : <code>X-Forwarded-For</code>
+ </p></div>
+</li>
+</ul>
+<a name="setRequestAttributesEnabled(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRequestAttributesEnabled</h4>
+<pre>public&nbsp;void&nbsp;setRequestAttributesEnabled(boolean&nbsp;requestAttributesEnabled)</pre>
+<div class="block">Should this filter set request attributes for IP address, Hostname,
+ protocol and port used for the request? This are typically used in
+ conjunction with an <a href="../../../../org/apache/catalina/AccessLog.html" title="interface in org.apache.catalina"><code>AccessLog</code></a> which will otherwise log the
+ original values. Default is <code>true</code>.
+
+ The attributes set are:
+ <ul>
+ <li>org.apache.catalina.AccessLog.RemoteAddr</li>
+ <li>org.apache.catalina.AccessLog.RemoteHost</li>
+ <li>org.apache.catalina.AccessLog.Protocol</li>
+ <li>org.apache.catalina.AccessLog.ServerPort</li>
+ <li>org.apache.tomcat.remoteAddr</li>
+ </ul></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>requestAttributesEnabled</code> - <code>true</code> causes the attributes
+                                  to be set, <code>false</code> disables
+                                  the setting of the attributes.</dd></dl>
+</li>
+</ul>
+<a name="setTrustedProxies(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setTrustedProxies</h4>
+<pre>public&nbsp;void&nbsp;setTrustedProxies(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;trustedProxies)</pre>
+<div class="block"><p>
+ Regular expression defining proxies that are trusted when they appear in
+ the <a href="../../../../org/apache/catalina/filters/RemoteIpFilter.html#remoteIpHeader"><code>remoteIpHeader</code></a> header.
+ </p>
+ <p>
+ Default value : empty list, no external proxy is trusted.
+ </p></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/filters/RemoteHostFilter.html" title="class in org.apache.catalina.filters"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/filters/RemoteIpFilter.XForwardedRequest.html" title="class in org.apache.catalina.filters"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/filters/RemoteIpFilter.html" target="_top">Frames</a></li>
+<li><a href="RemoteIpFilter.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

@@ -1,0 +1,707 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>StandardPipeline (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="StandardPipeline (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/core/StandardHost.html" title="class in org.apache.catalina.core"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/core/StandardServer.html" title="class in org.apache.catalina.core"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/core/StandardPipeline.html" target="_top">Frames</a></li>
+<li><a href="StandardPipeline.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.core</div>
+<h2 title="Class StandardPipeline" class="title">Class StandardPipeline</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../org/apache/catalina/util/LifecycleBase.html" title="class in org.apache.catalina.util">org.apache.catalina.util.LifecycleBase</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.core.StandardPipeline</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../org/apache/catalina/Contained.html" title="interface in org.apache.catalina">Contained</a>, <a href="../../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a>, <a href="../../../../org/apache/catalina/Pipeline.html" title="interface in org.apache.catalina">Pipeline</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">StandardPipeline</span>
+extends <a href="../../../../org/apache/catalina/util/LifecycleBase.html" title="class in org.apache.catalina.util">LifecycleBase</a>
+implements <a href="../../../../org/apache/catalina/Pipeline.html" title="interface in org.apache.catalina">Pipeline</a>, <a href="../../../../org/apache/catalina/Contained.html" title="interface in org.apache.catalina">Contained</a></pre>
+<div class="block">Standard implementation of a processing <b>Pipeline</b> that will invoke
+ a series of Valves that have been configured to be called in order.  This
+ implementation can be used for any type of Container.
+
+ <b>IMPLEMENTATION WARNING</b> - This implementation assumes that no
+ calls to <code>addValve()</code> or <code>removeValve</code> are allowed
+ while a request is currently being processed.  Otherwise, the mechanism
+ by which per-thread state is maintained will need to be modified.</div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Craig R. McClanahan</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/StandardPipeline.html#basic">basic</a></strong></code>
+<div class="block">The basic Valve (if any) associated with this Pipeline.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/StandardPipeline.html#container">container</a></strong></code>
+<div class="block">The Container with which this Pipeline is associated.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/StandardPipeline.html#first">first</a></strong></code>
+<div class="block">The first valve associated with this Pipeline.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.Lifecycle">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.apache.catalina.<a href="../../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a></h3>
+<code><a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_DESTROY_EVENT">AFTER_DESTROY_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_INIT_EVENT">AFTER_INIT_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_START_EVENT">AFTER_START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_STOP_EVENT">AFTER_STOP_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_DESTROY_EVENT">BEFORE_DESTROY_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_INIT_EVENT">BEFORE_INIT_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_START_EVENT">BEFORE_START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_STOP_EVENT">BEFORE_STOP_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#CONFIGURE_START_EVENT">CONFIGURE_START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#CONFIGURE_STOP_EVENT">CONFIGURE_STOP_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#PERIODIC_EVENT">PERIODIC_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#START_EVENT">START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#STOP_EVENT">STOP_EVENT</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/catalina/core/StandardPipeline.html#StandardPipeline()">StandardPipeline</a></strong>()</code>
+<div class="block">Construct a new StandardPipeline instance with no associated Container.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/catalina/core/StandardPipeline.html#StandardPipeline(org.apache.catalina.Container)">StandardPipeline</a></strong>(<a href="../../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a>&nbsp;container)</code>
+<div class="block">Construct a new StandardPipeline instance that is associated with the
+ specified Container.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/StandardPipeline.html#addValve(org.apache.catalina.Valve)">addValve</a></strong>(<a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a>&nbsp;valve)</code>
+<div class="block">Add a new Valve to the end of the pipeline associated with this
+ Container.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/StandardPipeline.html#destroyInternal()">destroyInternal</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/StandardPipeline.html#getBasic()">getBasic</a></strong>()</code>
+<div class="block">Return the Valve instance that has been distinguished as the basic
+ Valve for this Pipeline (if any).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/StandardPipeline.html#getContainer()">getContainer</a></strong>()</code>
+<div class="block">Return the Container with which this Pipeline is associated.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/StandardPipeline.html#getFirst()">getFirst</a></strong>()</code>
+<div class="block">Return the Valve instance that has been distinguished as the basic
+ Valve for this Pipeline (if any).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/javax/management/ObjectName.html?is-external=true" title="class or interface in javax.management">ObjectName</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/StandardPipeline.html#getValveObjectNames()">getValveObjectNames</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/StandardPipeline.html#getValves()">getValves</a></strong>()</code>
+<div class="block">Return the set of Valves in the pipeline associated with this
+ Container, including the basic Valve (if any).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/StandardPipeline.html#initInternal()">initInternal</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/StandardPipeline.html#isAsyncSupported()">isAsyncSupported</a></strong>()</code>
+<div class="block">Returns true if all the valves in this pipeline support async, false otherwise</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/StandardPipeline.html#removeValve(org.apache.catalina.Valve)">removeValve</a></strong>(<a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a>&nbsp;valve)</code>
+<div class="block">Remove the specified Valve from the pipeline associated with this
+ Container, if it is found; otherwise, do nothing.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/StandardPipeline.html#setBasic(org.apache.catalina.Valve)">setBasic</a></strong>(<a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a>&nbsp;valve)</code>
+<div class="block">Set the Valve instance that has been distinguished as the basic
+ Valve for this Pipeline (if any).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/StandardPipeline.html#setContainer(org.apache.catalina.Container)">setContainer</a></strong>(<a href="../../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a>&nbsp;container)</code>
+<div class="block">Set the Container with which this Pipeline is associated.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/StandardPipeline.html#startInternal()">startInternal</a></strong>()</code>
+<div class="block">Start <a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina"><code>Valve</code></a>s) in this pipeline and implement the requirements
+ of <a href="../../../../org/apache/catalina/util/LifecycleBase.html#startInternal()"><code>LifecycleBase.startInternal()</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/StandardPipeline.html#stopInternal()">stopInternal</a></strong>()</code>
+<div class="block">Stop <a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina"><code>Valve</code></a>s) in this pipeline and implement the requirements
+ of <a href="../../../../org/apache/catalina/util/LifecycleBase.html#stopInternal()"><code>LifecycleBase.stopInternal()</code></a>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/StandardPipeline.html#toString()">toString</a></strong>()</code>
+<div class="block">Return a String representation of this component.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.util.LifecycleBase">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.util.<a href="../../../../org/apache/catalina/util/LifecycleBase.html" title="class in org.apache.catalina.util">LifecycleBase</a></h3>
+<code><a href="../../../../org/apache/catalina/util/LifecycleBase.html#addLifecycleListener(org.apache.catalina.LifecycleListener)">addLifecycleListener</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#destroy()">destroy</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#findLifecycleListeners()">findLifecycleListeners</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#fireLifecycleEvent(java.lang.String,%20java.lang.Object)">fireLifecycleEvent</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#getState()">getState</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#getStateName()">getStateName</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#init()">init</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#removeLifecycleListener(org.apache.catalina.LifecycleListener)">removeLifecycleListener</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#setState(org.apache.catalina.LifecycleState)">setState</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#setState(org.apache.catalina.LifecycleState,%20java.lang.Object)">setState</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#start()">start</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#stop()">stop</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="basic">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>basic</h4>
+<pre>protected&nbsp;<a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a> basic</pre>
+<div class="block">The basic Valve (if any) associated with this Pipeline.</div>
+</li>
+</ul>
+<a name="container">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>container</h4>
+<pre>protected&nbsp;<a href="../../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a> container</pre>
+<div class="block">The Container with which this Pipeline is associated.</div>
+</li>
+</ul>
+<a name="first">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>first</h4>
+<pre>protected&nbsp;<a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a> first</pre>
+<div class="block">The first valve associated with this Pipeline.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="StandardPipeline()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>StandardPipeline</h4>
+<pre>public&nbsp;StandardPipeline()</pre>
+<div class="block">Construct a new StandardPipeline instance with no associated Container.</div>
+</li>
+</ul>
+<a name="StandardPipeline(org.apache.catalina.Container)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>StandardPipeline</h4>
+<pre>public&nbsp;StandardPipeline(<a href="../../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a>&nbsp;container)</pre>
+<div class="block">Construct a new StandardPipeline instance that is associated with the
+ specified Container.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>container</code> - The container we should be associated with</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="isAsyncSupported()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isAsyncSupported</h4>
+<pre>public&nbsp;boolean&nbsp;isAsyncSupported()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Pipeline.html#isAsyncSupported()">Pipeline</a></code></strong></div>
+<div class="block">Returns true if all the valves in this pipeline support async, false otherwise</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Pipeline.html#isAsyncSupported()">isAsyncSupported</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Pipeline.html" title="interface in org.apache.catalina">Pipeline</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>true if all the valves in this pipeline support async, false otherwise</dd></dl>
+</li>
+</ul>
+<a name="getContainer()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getContainer</h4>
+<pre>public&nbsp;<a href="../../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a>&nbsp;getContainer()</pre>
+<div class="block">Return the Container with which this Pipeline is associated.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Contained.html#getContainer()">getContainer</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Contained.html" title="interface in org.apache.catalina">Contained</a></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Pipeline.html#getContainer()">getContainer</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Pipeline.html" title="interface in org.apache.catalina">Pipeline</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>The Container with which this instance is associated or
+         <code>null</code> if not associated with a Container</dd></dl>
+</li>
+</ul>
+<a name="setContainer(org.apache.catalina.Container)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setContainer</h4>
+<pre>public&nbsp;void&nbsp;setContainer(<a href="../../../../org/apache/catalina/Container.html" title="interface in org.apache.catalina">Container</a>&nbsp;container)</pre>
+<div class="block">Set the Container with which this Pipeline is associated.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Contained.html#setContainer(org.apache.catalina.Container)">setContainer</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Contained.html" title="interface in org.apache.catalina">Contained</a></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Pipeline.html#setContainer(org.apache.catalina.Container)">setContainer</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Pipeline.html" title="interface in org.apache.catalina">Pipeline</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>container</code> - The new associated container</dd></dl>
+</li>
+</ul>
+<a name="initInternal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>initInternal</h4>
+<pre>protected&nbsp;void&nbsp;initInternal()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/util/LifecycleBase.html#initInternal()">initInternal</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/catalina/util/LifecycleBase.html" title="class in org.apache.catalina.util">LifecycleBase</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="startInternal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>startInternal</h4>
+<pre>protected&nbsp;void&nbsp;startInternal()
+                      throws <a href="../../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></pre>
+<div class="block">Start <a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina"><code>Valve</code></a>s) in this pipeline and implement the requirements
+ of <a href="../../../../org/apache/catalina/util/LifecycleBase.html#startInternal()"><code>LifecycleBase.startInternal()</code></a>.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/util/LifecycleBase.html#startInternal()">startInternal</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/catalina/util/LifecycleBase.html" title="class in org.apache.catalina.util">LifecycleBase</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></code> - if this component detects a fatal error
+  that prevents this component from being used</dd></dl>
+</li>
+</ul>
+<a name="stopInternal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>stopInternal</h4>
+<pre>protected&nbsp;void&nbsp;stopInternal()
+                     throws <a href="../../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></pre>
+<div class="block">Stop <a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina"><code>Valve</code></a>s) in this pipeline and implement the requirements
+ of <a href="../../../../org/apache/catalina/util/LifecycleBase.html#stopInternal()"><code>LifecycleBase.stopInternal()</code></a>.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/util/LifecycleBase.html#stopInternal()">stopInternal</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/catalina/util/LifecycleBase.html" title="class in org.apache.catalina.util">LifecycleBase</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></code> - if this component detects a fatal error
+  that prevents this component from being used</dd></dl>
+</li>
+</ul>
+<a name="destroyInternal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>destroyInternal</h4>
+<pre>protected&nbsp;void&nbsp;destroyInternal()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/util/LifecycleBase.html#destroyInternal()">destroyInternal</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/catalina/util/LifecycleBase.html" title="class in org.apache.catalina.util">LifecycleBase</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="toString()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toString</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<div class="block">Return a String representation of this component.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getBasic()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBasic</h4>
+<pre>public&nbsp;<a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a>&nbsp;getBasic()</pre>
+<div class="block"><p>Return the Valve instance that has been distinguished as the basic
+ Valve for this Pipeline (if any).</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Pipeline.html#getBasic()">getBasic</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Pipeline.html" title="interface in org.apache.catalina">Pipeline</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setBasic(org.apache.catalina.Valve)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setBasic</h4>
+<pre>public&nbsp;void&nbsp;setBasic(<a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a>&nbsp;valve)</pre>
+<div class="block"><p>Set the Valve instance that has been distinguished as the basic
+ Valve for this Pipeline (if any).  Prior to setting the basic Valve,
+ the Valve's <code>setContainer()</code> will be called, if it
+ implements <code>Contained</code>, with the owning Container as an
+ argument.  The method may throw an <code>IllegalArgumentException</code>
+ if this Valve chooses not to be associated with this Container, or
+ <code>IllegalStateException</code> if it is already associated with
+ a different Container.</p></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Pipeline.html#setBasic(org.apache.catalina.Valve)">setBasic</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Pipeline.html" title="interface in org.apache.catalina">Pipeline</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>valve</code> - Valve to be distinguished as the basic Valve</dd></dl>
+</li>
+</ul>
+<a name="addValve(org.apache.catalina.Valve)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addValve</h4>
+<pre>public&nbsp;void&nbsp;addValve(<a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a>&nbsp;valve)</pre>
+<div class="block"><p>Add a new Valve to the end of the pipeline associated with this
+ Container.  Prior to adding the Valve, the Valve's
+ <code>setContainer()</code> method will be called, if it implements
+ <code>Contained</code>, with the owning Container as an argument.
+ The method may throw an
+ <code>IllegalArgumentException</code> if this Valve chooses not to
+ be associated with this Container, or <code>IllegalStateException</code>
+ if it is already associated with a different Container.</p></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Pipeline.html#addValve(org.apache.catalina.Valve)">addValve</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Pipeline.html" title="interface in org.apache.catalina">Pipeline</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>valve</code> - Valve to be added</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if this Container refused to
+  accept the specified Valve</dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the specified Valve refuses to be
+  associated with this Container</dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code> - if the specified Valve is already
+  associated with a different Container</dd></dl>
+</li>
+</ul>
+<a name="getValves()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getValves</h4>
+<pre>public&nbsp;<a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a>[]&nbsp;getValves()</pre>
+<div class="block">Return the set of Valves in the pipeline associated with this
+ Container, including the basic Valve (if any).  If there are no
+ such Valves, a zero-length array is returned.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Pipeline.html#getValves()">getValves</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Pipeline.html" title="interface in org.apache.catalina">Pipeline</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getValveObjectNames()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getValveObjectNames</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/javax/management/ObjectName.html?is-external=true" title="class or interface in javax.management">ObjectName</a>[]&nbsp;getValveObjectNames()</pre>
+</li>
+</ul>
+<a name="removeValve(org.apache.catalina.Valve)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeValve</h4>
+<pre>public&nbsp;void&nbsp;removeValve(<a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a>&nbsp;valve)</pre>
+<div class="block">Remove the specified Valve from the pipeline associated with this
+ Container, if it is found; otherwise, do nothing.  If the Valve is
+ found and removed, the Valve's <code>setContainer(null)</code> method
+ will be called if it implements <code>Contained</code>.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Pipeline.html#removeValve(org.apache.catalina.Valve)">removeValve</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Pipeline.html" title="interface in org.apache.catalina">Pipeline</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>valve</code> - Valve to be removed</dd></dl>
+</li>
+</ul>
+<a name="getFirst()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getFirst</h4>
+<pre>public&nbsp;<a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a>&nbsp;getFirst()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/Pipeline.html#getFirst()">Pipeline</a></code></strong></div>
+<div class="block"><p>Return the Valve instance that has been distinguished as the basic
+ Valve for this Pipeline (if any).</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Pipeline.html#getFirst()">getFirst</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Pipeline.html" title="interface in org.apache.catalina">Pipeline</a></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/core/StandardHost.html" title="class in org.apache.catalina.core"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/core/StandardServer.html" title="class in org.apache.catalina.core"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/core/StandardPipeline.html" target="_top">Frames</a></li>
+<li><a href="StandardPipeline.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>javax.servlet.annotation (Servlet 3.1 API Documentation - Apache Tomcat 8.0.21)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="javax.servlet.annotation (Servlet 3.1 API Documentation - Apache Tomcat 8.0.21)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li class="navBarCell1Rev">Package</li>
+<li>Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Servlet 3.1 - Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../javax/servlet/package-summary.html">Prev Package</a></li>
+<li><a href="../../../javax/servlet/descriptor/package-summary.html">Next Package</a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?javax/servlet/annotation/package-summary.html" target="_top">Frames</a></li>
+<li><a href="package-summary.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<div class="header">
+<h1 title="Package" class="title">Package&nbsp;javax.servlet.annotation</h1>
+</div>
+<div class="contentContainer">
+<ul class="blockList">
+<li class="blockList">
+<table class="packageSummary" border="0" cellpadding="3" cellspacing="0" summary="Enum Summary table, listing enums, and an explanation">
+<caption><span>Enum Summary</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Enum</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../javax/servlet/annotation/ServletSecurity.EmptyRoleSemantic.html" title="enum in javax.servlet.annotation">ServletSecurity.EmptyRoleSemantic</a></td>
+<td class="colLast">
+<div class="block">Represents the two possible values of the empty role semantic, active
+ when a list of role names is empty.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../javax/servlet/annotation/ServletSecurity.TransportGuarantee.html" title="enum in javax.servlet.annotation">ServletSecurity.TransportGuarantee</a></td>
+<td class="colLast">
+<div class="block">Represents the two possible values of data transport, encrypted or not.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList">
+<table class="packageSummary" border="0" cellpadding="3" cellspacing="0" summary="Annotation Types Summary table, listing annotation types, and an explanation">
+<caption><span>Annotation Types Summary</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Annotation Type</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../javax/servlet/annotation/HandlesTypes.html" title="annotation in javax.servlet.annotation">HandlesTypes</a></td>
+<td class="colLast">
+<div class="block">This annotation is used to declare an array of application classes which are
+ passed to a <a href="../../../javax/servlet/ServletContainerInitializer.html" title="interface in javax.servlet"><code>ServletContainerInitializer</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../javax/servlet/annotation/HttpConstraint.html" title="annotation in javax.servlet.annotation">HttpConstraint</a></td>
+<td class="colLast">
+<div class="block">This annotation represents the security constraints that are applied to all
+ requests with HTTP protocol method types that are not otherwise represented
+ by a corresponding <a href="../../../javax/servlet/annotation/HttpMethodConstraint.html" title="annotation in javax.servlet.annotation"><code>HttpMethodConstraint</code></a> in a
+ <a href="../../../javax/servlet/annotation/ServletSecurity.html" title="annotation in javax.servlet.annotation"><code>ServletSecurity</code></a> annotation.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../javax/servlet/annotation/HttpMethodConstraint.html" title="annotation in javax.servlet.annotation">HttpMethodConstraint</a></td>
+<td class="colLast">
+<div class="block">Specific security constraints can be applied to different types of request,
+ differentiated by the HTTP protocol method type by using this annotation
+ inside the <a href="../../../javax/servlet/annotation/ServletSecurity.html" title="annotation in javax.servlet.annotation"><code>ServletSecurity</code></a> annotation.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../javax/servlet/annotation/MultipartConfig.html" title="annotation in javax.servlet.annotation">MultipartConfig</a></td>
+<td class="colLast">
+<div class="block">This annotation is used to indicate that the <a href="../../../javax/servlet/Servlet.html" title="interface in javax.servlet"><code>Servlet</code></a> on
+ which it is declared expects requests to made using the <code>multipart/form-data</code> MIME type.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../javax/servlet/annotation/ServletSecurity.html" title="annotation in javax.servlet.annotation">ServletSecurity</a></td>
+<td class="colLast">
+<div class="block">Declare this annotation on a <a href="../../../javax/servlet/Servlet.html" title="interface in javax.servlet"><code>Servlet</code></a> implementation
+ class to enforce security constraints on HTTP protocol requests.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../javax/servlet/annotation/WebFilter.html" title="annotation in javax.servlet.annotation">WebFilter</a></td>
+<td class="colLast">
+<div class="block">The annotation used to declare a Servlet <a href="../../../javax/servlet/Filter.html" title="interface in javax.servlet"><code>Filter</code></a>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../javax/servlet/annotation/WebInitParam.html" title="annotation in javax.servlet.annotation">WebInitParam</a></td>
+<td class="colLast">
+<div class="block">The annotation used to declare an initialization parameter on a
+ <a href="../../../javax/servlet/Servlet.html" title="interface in javax.servlet"><code>Servlet</code></a> or <a href="../../../javax/servlet/Filter.html" title="interface in javax.servlet"><code>Filter</code></a>, within a
+ <a href="../../../javax/servlet/annotation/WebFilter.html" title="annotation in javax.servlet.annotation"><code>WebFilter</code></a> or
+ <a href="../../../javax/servlet/annotation/WebServlet.html" title="annotation in javax.servlet.annotation"><code>WebServlet</code></a> annotation.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../javax/servlet/annotation/WebListener.html" title="annotation in javax.servlet.annotation">WebListener</a></td>
+<td class="colLast">
+<div class="block">The annotation used to declare a listener for various types of event, in a
+ given web application context.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../javax/servlet/annotation/WebServlet.html" title="annotation in javax.servlet.annotation">WebServlet</a></td>
+<td class="colLast">
+<div class="block">This annotation is used to declare the configuration of an
+ <a href="../../../javax/servlet/Servlet.html" title="interface in javax.servlet"><code>Servlet</code></a>.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li class="navBarCell1Rev">Package</li>
+<li>Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Servlet 3.1 - Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../javax/servlet/package-summary.html">Prev Package</a></li>
+<li><a href="../../../javax/servlet/descriptor/package-summary.html">Next Package</a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?javax/servlet/annotation/package-summary.html" target="_top">Frames</a></li>
+<li><a href="package-summary.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

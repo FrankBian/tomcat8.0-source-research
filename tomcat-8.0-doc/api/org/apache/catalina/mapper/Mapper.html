@@ -1,0 +1,806 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mapper (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="Mapper (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/mapper/Constants.html" title="class in org.apache.catalina.mapper"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/mapper/Mapper.ContextList.html" title="class in org.apache.catalina.mapper"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/mapper/Mapper.html" target="_top">Frames</a></li>
+<li><a href="Mapper.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.mapper</div>
+<h2 title="Class Mapper" class="title">Class Mapper</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.mapper.Mapper</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public final class <span class="strong">Mapper</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">Mapper, which implements the servlet API mapping rules (which are derived
+ from the HTTP rules).</div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Remy Maucherat</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested_class_summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Class and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.ContextList.html" title="class in org.apache.catalina.mapper">Mapper.ContextList</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.ContextVersion.html" title="class in org.apache.catalina.mapper">Mapper.ContextVersion</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.MapElement.html" title="class in org.apache.catalina.mapper">Mapper.MapElement</a>&lt;<a href="../../../../org/apache/catalina/mapper/Mapper.MapElement.html" title="type parameter in Mapper.MapElement">T</a>&gt;</strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.MappedContext.html" title="class in org.apache.catalina.mapper">Mapper.MappedContext</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.MappedHost.html" title="class in org.apache.catalina.mapper">Mapper.MappedHost</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.MappedWrapper.html" title="class in org.apache.catalina.mapper">Mapper.MappedWrapper</a></strong></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a>,<a href="../../../../org/apache/catalina/mapper/Mapper.ContextVersion.html" title="class in org.apache.catalina.mapper">Mapper.ContextVersion</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#contextObjectToContextVersionMap">contextObjectToContextVersionMap</a></strong></code>
+<div class="block">Mapping from Context object to Context version to support
+ RequestDispatcher mappings.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#defaultHostName">defaultHostName</a></strong></code>
+<div class="block">Default host name.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../org/apache/catalina/mapper/Mapper.MappedHost.html" title="class in org.apache.catalina.mapper">Mapper.MappedHost</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#hosts">hosts</a></strong></code>
+<div class="block">Array containing the virtual hosts definitions.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="../../../../org/apache/tomcat/util/res/StringManager.html" title="class in org.apache.tomcat.util.res">StringManager</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#sm">sm</a></strong></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#Mapper()">Mapper</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#addContextVersion(java.lang.String,%20org.apache.catalina.Host,%20java.lang.String,%20java.lang.String,%20org.apache.catalina.Context,%20java.lang.String[],%20org.apache.catalina.WebResourceRoot)">addContextVersion</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostName,
+                 <a href="../../../../org/apache/catalina/Host.html" title="interface in org.apache.catalina">Host</a>&nbsp;host,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;version,
+                 <a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a>&nbsp;context,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;welcomeResources,
+                 <a href="../../../../org/apache/catalina/WebResourceRoot.html" title="interface in org.apache.catalina">WebResourceRoot</a>&nbsp;resources)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../org/apache/catalina/mapper/Mapper.html#addContextVersion(java.lang.String,%20org.apache.catalina.Host,%20java.lang.String,%20java.lang.String,%20org.apache.catalina.Context,%20java.lang.String[],%20org.apache.catalina.WebResourceRoot,%20java.util.Collection)"><code>addContextVersion(String, Host, String, String, Context, String[], WebResourceRoot, Collection)</code></a></i></div>
+</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#addContextVersion(java.lang.String,%20org.apache.catalina.Host,%20java.lang.String,%20java.lang.String,%20org.apache.catalina.Context,%20java.lang.String[],%20org.apache.catalina.WebResourceRoot,%20java.util.Collection)">addContextVersion</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostName,
+                 <a href="../../../../org/apache/catalina/Host.html" title="interface in org.apache.catalina">Host</a>&nbsp;host,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;version,
+                 <a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a>&nbsp;context,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;welcomeResources,
+                 <a href="../../../../org/apache/catalina/WebResourceRoot.html" title="interface in org.apache.catalina">WebResourceRoot</a>&nbsp;resources,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../org/apache/catalina/mapper/WrapperMappingInfo.html" title="class in org.apache.catalina.mapper">WrapperMappingInfo</a>&gt;&nbsp;wrappers)</code>
+<div class="block">Add a new Context to an existing Host.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#addHost(java.lang.String,%20java.lang.String[],%20org.apache.catalina.Host)">addHost</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;aliases,
+       <a href="../../../../org/apache/catalina/Host.html" title="interface in org.apache.catalina">Host</a>&nbsp;host)</code>
+<div class="block">Add a new host to the mapper.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#addHostAlias(java.lang.String,%20java.lang.String)">addHostAlias</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;alias)</code>
+<div class="block">Add an alias to an existing host.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#addWelcomeFile(java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String)">addWelcomeFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostName,
+              <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;contextPath,
+              <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;version,
+              <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;welcomeFile)</code>
+<div class="block">Add a welcome file to the given context.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#addWrapper(org.apache.catalina.mapper.Mapper.ContextVersion,%20java.lang.String,%20org.apache.catalina.Wrapper,%20boolean,%20boolean)">addWrapper</a></strong>(<a href="../../../../org/apache/catalina/mapper/Mapper.ContextVersion.html" title="class in org.apache.catalina.mapper">Mapper.ContextVersion</a>&nbsp;context,
+          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path,
+          <a href="../../../../org/apache/catalina/Wrapper.html" title="interface in org.apache.catalina">Wrapper</a>&nbsp;wrapper,
+          boolean&nbsp;jspWildCard,
+          boolean&nbsp;resourceOnly)</code>
+<div class="block">Adds a wrapper to the given context.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#addWrapper(java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20org.apache.catalina.Wrapper,%20boolean,%20boolean)">addWrapper</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostName,
+          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;contextPath,
+          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;version,
+          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path,
+          <a href="../../../../org/apache/catalina/Wrapper.html" title="interface in org.apache.catalina">Wrapper</a>&nbsp;wrapper,
+          boolean&nbsp;jspWildCard,
+          boolean&nbsp;resourceOnly)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#addWrappers(java.lang.String,%20java.lang.String,%20java.lang.String,%20java.util.Collection)">addWrappers</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostName,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;contextPath,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;version,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../org/apache/catalina/mapper/WrapperMappingInfo.html" title="class in org.apache.catalina.mapper">WrapperMappingInfo</a>&gt;&nbsp;wrappers)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#clearWelcomeFiles(java.lang.String,%20java.lang.String,%20java.lang.String)">clearWelcomeFiles</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostName,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;contextPath,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;version)</code>
+<div class="block">Clear the welcome files for the given context.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#map(org.apache.catalina.Context,%20org.apache.tomcat.util.buf.MessageBytes,%20org.apache.catalina.mapper.MappingData)">map</a></strong>(<a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a>&nbsp;context,
+   <a href="../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;uri,
+   <a href="../../../../org/apache/catalina/mapper/MappingData.html" title="class in org.apache.catalina.mapper">MappingData</a>&nbsp;mappingData)</code>
+<div class="block">Map the specified URI relative to the context,
+ mutating the given mapping data.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#map(org.apache.tomcat.util.buf.MessageBytes,%20org.apache.tomcat.util.buf.MessageBytes,%20java.lang.String,%20org.apache.catalina.mapper.MappingData)">map</a></strong>(<a href="../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;host,
+   <a href="../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;uri,
+   <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;version,
+   <a href="../../../../org/apache/catalina/mapper/MappingData.html" title="class in org.apache.catalina.mapper">MappingData</a>&nbsp;mappingData)</code>
+<div class="block">Map the specified host name and URI, mutating the given mapping data.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#pauseContextVersion(org.apache.catalina.Context,%20java.lang.String,%20java.lang.String,%20java.lang.String)">pauseContextVersion</a></strong>(<a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a>&nbsp;ctxt,
+                   <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostName,
+                   <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;contextPath,
+                   <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;version)</code>
+<div class="block">Mark a context as being reloaded.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#removeContextVersion(org.apache.catalina.Context,%20java.lang.String,%20java.lang.String,%20java.lang.String)">removeContextVersion</a></strong>(<a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a>&nbsp;ctxt,
+                    <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostName,
+                    <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path,
+                    <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;version)</code>
+<div class="block">Remove a context from an existing host.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#removeHost(java.lang.String)">removeHost</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Remove a host from the mapper.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#removeHostAlias(java.lang.String)">removeHostAlias</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;alias)</code>
+<div class="block">Remove a host alias</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#removeWelcomeFile(java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String)">removeWelcomeFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostName,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;contextPath,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;version,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;welcomeFile)</code>
+<div class="block">Remove a welcome file from the given context.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#removeWrapper(org.apache.catalina.mapper.Mapper.ContextVersion,%20java.lang.String)">removeWrapper</a></strong>(<a href="../../../../org/apache/catalina/mapper/Mapper.ContextVersion.html" title="class in org.apache.catalina.mapper">Mapper.ContextVersion</a>&nbsp;context,
+             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#removeWrapper(java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String)">removeWrapper</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostName,
+             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;contextPath,
+             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;version,
+             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</code>
+<div class="block">Remove a wrapper from an existing context.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/mapper/Mapper.html#setDefaultHostName(java.lang.String)">setDefaultHostName</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;defaultHostName)</code>
+<div class="block">Set default host.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="sm">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sm</h4>
+<pre>protected static final&nbsp;<a href="../../../../org/apache/tomcat/util/res/StringManager.html" title="class in org.apache.tomcat.util.res">StringManager</a> sm</pre>
+</li>
+</ul>
+<a name="hosts">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hosts</h4>
+<pre>protected&nbsp;<a href="../../../../org/apache/catalina/mapper/Mapper.MappedHost.html" title="class in org.apache.catalina.mapper">Mapper.MappedHost</a>[] hosts</pre>
+<div class="block">Array containing the virtual hosts definitions.</div>
+</li>
+</ul>
+<a name="defaultHostName">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>defaultHostName</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> defaultHostName</pre>
+<div class="block">Default host name.</div>
+</li>
+</ul>
+<a name="contextObjectToContextVersionMap">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>contextObjectToContextVersionMap</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a>,<a href="../../../../org/apache/catalina/mapper/Mapper.ContextVersion.html" title="class in org.apache.catalina.mapper">Mapper.ContextVersion</a>&gt; contextObjectToContextVersionMap</pre>
+<div class="block">Mapping from Context object to Context version to support
+ RequestDispatcher mappings.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="Mapper()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>Mapper</h4>
+<pre>public&nbsp;Mapper()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setDefaultHostName(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDefaultHostName</h4>
+<pre>public&nbsp;void&nbsp;setDefaultHostName(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;defaultHostName)</pre>
+<div class="block">Set default host.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>defaultHostName</code> - Default host name</dd></dl>
+</li>
+</ul>
+<a name="addHost(java.lang.String, java.lang.String[], org.apache.catalina.Host)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addHost</h4>
+<pre>public&nbsp;void&nbsp;addHost(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;aliases,
+           <a href="../../../../org/apache/catalina/Host.html" title="interface in org.apache.catalina">Host</a>&nbsp;host)</pre>
+<div class="block">Add a new host to the mapper.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - Virtual host name</dd><dd><code>aliases</code> - Alias names for the virtual host</dd><dd><code>host</code> - Host object</dd></dl>
+</li>
+</ul>
+<a name="removeHost(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeHost</h4>
+<pre>public&nbsp;void&nbsp;removeHost(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block">Remove a host from the mapper.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - Virtual host name</dd></dl>
+</li>
+</ul>
+<a name="addHostAlias(java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addHostAlias</h4>
+<pre>public&nbsp;void&nbsp;addHostAlias(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+                <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;alias)</pre>
+<div class="block">Add an alias to an existing host.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - The name of the host</dd><dd><code>alias</code> - The alias to add</dd></dl>
+</li>
+</ul>
+<a name="removeHostAlias(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeHostAlias</h4>
+<pre>public&nbsp;void&nbsp;removeHostAlias(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;alias)</pre>
+<div class="block">Remove a host alias</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>alias</code> - The alias to remove</dd></dl>
+</li>
+</ul>
+<a name="addContextVersion(java.lang.String, org.apache.catalina.Host, java.lang.String, java.lang.String, org.apache.catalina.Context, java.lang.String[], org.apache.catalina.WebResourceRoot)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addContextVersion</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;void&nbsp;addContextVersion(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostName,
+                                <a href="../../../../org/apache/catalina/Host.html" title="interface in org.apache.catalina">Host</a>&nbsp;host,
+                                <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path,
+                                <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;version,
+                                <a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a>&nbsp;context,
+                                <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;welcomeResources,
+                                <a href="../../../../org/apache/catalina/WebResourceRoot.html" title="interface in org.apache.catalina">WebResourceRoot</a>&nbsp;resources)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../org/apache/catalina/mapper/Mapper.html#addContextVersion(java.lang.String,%20org.apache.catalina.Host,%20java.lang.String,%20java.lang.String,%20org.apache.catalina.Context,%20java.lang.String[],%20org.apache.catalina.WebResourceRoot,%20java.util.Collection)"><code>addContextVersion(String, Host, String, String, Context, String[], WebResourceRoot, Collection)</code></a></i></div>
+<div class="block">Add a new Context to an existing Host.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>hostName</code> - Virtual host name this context belongs to</dd><dd><code>host</code> - Host object</dd><dd><code>path</code> - Context path</dd><dd><code>version</code> - Context version</dd><dd><code>context</code> - Context object</dd><dd><code>welcomeResources</code> - Welcome files defined for this context</dd><dd><code>resources</code> - Static resources of the context</dd></dl>
+</li>
+</ul>
+<a name="addContextVersion(java.lang.String, org.apache.catalina.Host, java.lang.String, java.lang.String, org.apache.catalina.Context, java.lang.String[], org.apache.catalina.WebResourceRoot, java.util.Collection)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addContextVersion</h4>
+<pre>public&nbsp;void&nbsp;addContextVersion(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostName,
+                     <a href="../../../../org/apache/catalina/Host.html" title="interface in org.apache.catalina">Host</a>&nbsp;host,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;version,
+                     <a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a>&nbsp;context,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;welcomeResources,
+                     <a href="../../../../org/apache/catalina/WebResourceRoot.html" title="interface in org.apache.catalina">WebResourceRoot</a>&nbsp;resources,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../org/apache/catalina/mapper/WrapperMappingInfo.html" title="class in org.apache.catalina.mapper">WrapperMappingInfo</a>&gt;&nbsp;wrappers)</pre>
+<div class="block">Add a new Context to an existing Host.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>hostName</code> - Virtual host name this context belongs to</dd><dd><code>host</code> - Host object</dd><dd><code>path</code> - Context path</dd><dd><code>version</code> - Context version</dd><dd><code>context</code> - Context object</dd><dd><code>welcomeResources</code> - Welcome files defined for this context</dd><dd><code>resources</code> - Static resources of the context</dd><dd><code>wrappers</code> - Information on wrapper mappings</dd></dl>
+</li>
+</ul>
+<a name="removeContextVersion(org.apache.catalina.Context, java.lang.String, java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeContextVersion</h4>
+<pre>public&nbsp;void&nbsp;removeContextVersion(<a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a>&nbsp;ctxt,
+                        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostName,
+                        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path,
+                        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;version)</pre>
+<div class="block">Remove a context from an existing host.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ctxt</code> - The actual context</dd><dd><code>hostName</code> - Virtual host name this context belongs to</dd><dd><code>path</code> - Context path</dd><dd><code>version</code> - Context version</dd></dl>
+</li>
+</ul>
+<a name="pauseContextVersion(org.apache.catalina.Context, java.lang.String, java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>pauseContextVersion</h4>
+<pre>public&nbsp;void&nbsp;pauseContextVersion(<a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a>&nbsp;ctxt,
+                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostName,
+                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;contextPath,
+                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;version)</pre>
+<div class="block">Mark a context as being reloaded. Reversion of this state is performed
+ by calling <code>addContextVersion(...)</code> when context starts up.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ctxt</code> - The actual context</dd><dd><code>hostName</code> - Virtual host name this context belongs to</dd><dd><code>contextPath</code> - Context path</dd><dd><code>version</code> - Context version</dd></dl>
+</li>
+</ul>
+<a name="addWrapper(java.lang.String, java.lang.String, java.lang.String, java.lang.String, org.apache.catalina.Wrapper, boolean, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addWrapper</h4>
+<pre>public&nbsp;void&nbsp;addWrapper(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostName,
+              <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;contextPath,
+              <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;version,
+              <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path,
+              <a href="../../../../org/apache/catalina/Wrapper.html" title="interface in org.apache.catalina">Wrapper</a>&nbsp;wrapper,
+              boolean&nbsp;jspWildCard,
+              boolean&nbsp;resourceOnly)</pre>
+</li>
+</ul>
+<a name="addWrappers(java.lang.String, java.lang.String, java.lang.String, java.util.Collection)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addWrappers</h4>
+<pre>public&nbsp;void&nbsp;addWrappers(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostName,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;contextPath,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;version,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../org/apache/catalina/mapper/WrapperMappingInfo.html" title="class in org.apache.catalina.mapper">WrapperMappingInfo</a>&gt;&nbsp;wrappers)</pre>
+</li>
+</ul>
+<a name="addWrapper(org.apache.catalina.mapper.Mapper.ContextVersion, java.lang.String, org.apache.catalina.Wrapper, boolean, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addWrapper</h4>
+<pre>protected&nbsp;void&nbsp;addWrapper(<a href="../../../../org/apache/catalina/mapper/Mapper.ContextVersion.html" title="class in org.apache.catalina.mapper">Mapper.ContextVersion</a>&nbsp;context,
+              <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path,
+              <a href="../../../../org/apache/catalina/Wrapper.html" title="interface in org.apache.catalina">Wrapper</a>&nbsp;wrapper,
+              boolean&nbsp;jspWildCard,
+              boolean&nbsp;resourceOnly)</pre>
+<div class="block">Adds a wrapper to the given context.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>context</code> - The context to which to add the wrapper</dd><dd><code>path</code> - Wrapper mapping</dd><dd><code>wrapper</code> - The Wrapper object</dd><dd><code>jspWildCard</code> - true if the wrapper corresponds to the JspServlet
+   and the mapping path contains a wildcard; false otherwise</dd><dd><code>resourceOnly</code> - true if this wrapper always expects a physical
+                     resource to be present (such as a JSP)</dd></dl>
+</li>
+</ul>
+<a name="removeWrapper(java.lang.String, java.lang.String, java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeWrapper</h4>
+<pre>public&nbsp;void&nbsp;removeWrapper(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostName,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;contextPath,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;version,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</pre>
+<div class="block">Remove a wrapper from an existing context.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>hostName</code> - Virtual host name this wrapper belongs to</dd><dd><code>contextPath</code> - Context path this wrapper belongs to</dd><dd><code>path</code> - Wrapper mapping</dd></dl>
+</li>
+</ul>
+<a name="removeWrapper(org.apache.catalina.mapper.Mapper.ContextVersion, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeWrapper</h4>
+<pre>protected&nbsp;void&nbsp;removeWrapper(<a href="../../../../org/apache/catalina/mapper/Mapper.ContextVersion.html" title="class in org.apache.catalina.mapper">Mapper.ContextVersion</a>&nbsp;context,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</pre>
+</li>
+</ul>
+<a name="addWelcomeFile(java.lang.String, java.lang.String, java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addWelcomeFile</h4>
+<pre>public&nbsp;void&nbsp;addWelcomeFile(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostName,
+                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;contextPath,
+                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;version,
+                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;welcomeFile)</pre>
+<div class="block">Add a welcome file to the given context.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>hostName</code> - </dd><dd><code>contextPath</code> - </dd><dd><code>welcomeFile</code> - </dd></dl>
+</li>
+</ul>
+<a name="removeWelcomeFile(java.lang.String, java.lang.String, java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeWelcomeFile</h4>
+<pre>public&nbsp;void&nbsp;removeWelcomeFile(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostName,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;contextPath,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;version,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;welcomeFile)</pre>
+<div class="block">Remove a welcome file from the given context.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>hostName</code> - </dd><dd><code>contextPath</code> - </dd><dd><code>welcomeFile</code> - </dd></dl>
+</li>
+</ul>
+<a name="clearWelcomeFiles(java.lang.String, java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clearWelcomeFiles</h4>
+<pre>public&nbsp;void&nbsp;clearWelcomeFiles(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostName,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;contextPath,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;version)</pre>
+<div class="block">Clear the welcome files for the given context.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>hostName</code> - </dd><dd><code>contextPath</code> - </dd></dl>
+</li>
+</ul>
+<a name="map(org.apache.tomcat.util.buf.MessageBytes, org.apache.tomcat.util.buf.MessageBytes, java.lang.String, org.apache.catalina.mapper.MappingData)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>map</h4>
+<pre>public&nbsp;void&nbsp;map(<a href="../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;host,
+       <a href="../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;uri,
+       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;version,
+       <a href="../../../../org/apache/catalina/mapper/MappingData.html" title="class in org.apache.catalina.mapper">MappingData</a>&nbsp;mappingData)
+         throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Map the specified host name and URI, mutating the given mapping data.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>host</code> - Virtual host name</dd><dd><code>uri</code> - URI</dd><dd><code>mappingData</code> - This structure will contain the result of the mapping
+                    operation</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if the buffers are too small to hold the results of
+                     the mapping.</dd></dl>
+</li>
+</ul>
+<a name="map(org.apache.catalina.Context, org.apache.tomcat.util.buf.MessageBytes, org.apache.catalina.mapper.MappingData)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>map</h4>
+<pre>public&nbsp;void&nbsp;map(<a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a>&nbsp;context,
+       <a href="../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;uri,
+       <a href="../../../../org/apache/catalina/mapper/MappingData.html" title="class in org.apache.catalina.mapper">MappingData</a>&nbsp;mappingData)
+         throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Map the specified URI relative to the context,
+ mutating the given mapping data.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>context</code> - The actual context</dd><dd><code>uri</code> - URI</dd><dd><code>mappingData</code> - This structure will contain the result of the mapping
+                    operation</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if the buffers are too small to hold the results of
+                     the mapping.</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/mapper/Constants.html" title="class in org.apache.catalina.mapper"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/mapper/Mapper.ContextList.html" title="class in org.apache.catalina.mapper"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/mapper/Mapper.html" target="_top">Frames</a></li>
+<li><a href="Mapper.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

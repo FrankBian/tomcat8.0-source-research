@@ -1,0 +1,371 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ParallelWebappClassLoader (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="ParallelWebappClassLoader (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/loader/JdbcLeakPrevention.html" title="class in org.apache.catalina.loader"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/loader/ResourceEntry.html" title="class in org.apache.catalina.loader"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/loader/ParallelWebappClassLoader.html" target="_top">Frames</a></li>
+<li><a href="ParallelWebappClassLoader.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_classes_inherited_from_class_org.apache.catalina.loader.WebappClassLoaderBase">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_org.apache.catalina.loader.WebappClassLoaderBase">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.loader</div>
+<h2 title="Class ParallelWebappClassLoader" class="title">Class ParallelWebappClassLoader</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">java.lang.ClassLoader</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/security/SecureClassLoader.html?is-external=true" title="class or interface in java.security">java.security.SecureClassLoader</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/net/URLClassLoader.html?is-external=true" title="class or interface in java.net">java.net.URLClassLoader</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html" title="class in org.apache.catalina.loader">org.apache.catalina.loader.WebappClassLoaderBase</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.loader.ParallelWebappClassLoader</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang">AutoCloseable</a>, <a href="../../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a>, <a href="../../../../org/apache/juli/WebappProperties.html" title="interface in org.apache.juli">WebappProperties</a>, <a href="../../../../org/apache/tomcat/InstrumentableClassLoader.html" title="interface in org.apache.tomcat">InstrumentableClassLoader</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">ParallelWebappClassLoader</span>
+extends <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html" title="class in org.apache.catalina.loader">WebappClassLoaderBase</a></pre>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested_class_summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="nested_classes_inherited_from_class_org.apache.catalina.loader.WebappClassLoaderBase">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from class&nbsp;org.apache.catalina.loader.<a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html" title="class in org.apache.catalina.loader">WebappClassLoaderBase</a></h3>
+<code><a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.PrivilegedFindResourceByName.html" title="class in org.apache.catalina.loader">WebappClassLoaderBase.PrivilegedFindResourceByName</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.PrivilegedGetClassLoader.html" title="class in org.apache.catalina.loader">WebappClassLoaderBase.PrivilegedGetClassLoader</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.loader.WebappClassLoaderBase">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.catalina.loader.<a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html" title="class in org.apache.catalina.loader">WebappClassLoaderBase</a></h3>
+<code><a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#allPermission">allPermission</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#delegate">delegate</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#loaderPC">loaderPC</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#needConvert">needConvert</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#packageTriggersDeny">packageTriggersDeny</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#packageTriggersPermit">packageTriggersPermit</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#parent">parent</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#permissionList">permissionList</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#resourceEntries">resourceEntries</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#resources">resources</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#securityManager">securityManager</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#sm">sm</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.Lifecycle">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.apache.catalina.<a href="../../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a></h3>
+<code><a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_DESTROY_EVENT">AFTER_DESTROY_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_INIT_EVENT">AFTER_INIT_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_START_EVENT">AFTER_START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_STOP_EVENT">AFTER_STOP_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_DESTROY_EVENT">BEFORE_DESTROY_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_INIT_EVENT">BEFORE_INIT_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_START_EVENT">BEFORE_START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_STOP_EVENT">BEFORE_STOP_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#CONFIGURE_START_EVENT">CONFIGURE_START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#CONFIGURE_STOP_EVENT">CONFIGURE_STOP_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#PERIODIC_EVENT">PERIODIC_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#START_EVENT">START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#STOP_EVENT">STOP_EVENT</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/catalina/loader/ParallelWebappClassLoader.html#ParallelWebappClassLoader()">ParallelWebappClassLoader</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/catalina/loader/ParallelWebappClassLoader.html#ParallelWebappClassLoader(java.lang.ClassLoader)">ParallelWebappClassLoader</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>&nbsp;parent)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../org/apache/catalina/loader/ParallelWebappClassLoader.html" title="class in org.apache.catalina.loader">ParallelWebappClassLoader</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/loader/ParallelWebappClassLoader.html#copyWithoutTransformers()">copyWithoutTransformers</a></strong>()</code>
+<div class="block">Returns a copy of this class loader without any class file
+ transformers.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.loader.WebappClassLoaderBase">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.loader.<a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html" title="class in org.apache.catalina.loader">WebappClassLoaderBase</a></h3>
+<code><a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#addLifecycleListener(org.apache.catalina.LifecycleListener)">addLifecycleListener</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#addTransformer(java.lang.instrument.ClassFileTransformer)">addTransformer</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#addURL(java.net.URL)">addURL</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#checkStateForClassLoading(java.lang.String)">checkStateForClassLoading</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#checkStateForResourceLoading(java.lang.String)">checkStateForResourceLoading</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#clearReferences()">clearReferences</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#copyStateWithoutTransformers(org.apache.catalina.loader.WebappClassLoaderBase)">copyStateWithoutTransformers</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#destroy()">destroy</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#doDefineClass(java.lang.String,%20byte[],%20int,%20int,%20java.security.ProtectionDomain)">doDefineClass</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#filter(java.lang.String)">filter</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#findClass(java.lang.String)">findClass</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#findClassInternal(java.lang.String)">findClassInternal</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#findLifecycleListeners()">findLifecycleListeners</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#findLoadedClass0(java.lang.String)">findLoadedClass0</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#findLoadedResource(java.lang.String)">findLoadedResource</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#findResource(java.lang.String)">findResource</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#findResourceInternal(java.lang.String,%20java.lang.String)">findResourceInternal</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#findResources(java.lang.String)">findResources</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#getClearReferencesHttpClientKeepAliveThread()">getClearReferencesHttpClientKeepAliveThread</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#getClearReferencesLogFactoryRelease()">getClearReferencesLogFactoryRelease</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#getClearReferencesStatic()">getClearReferencesStatic</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#getClearReferencesStopThreads()">getClearReferencesStopThreads</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#getClearReferencesStopTimerThreads()">getClearReferencesStopTimerThreads</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#getContextName()">getContextName</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#getDelegate()">getDelegate</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#getHostName()">getHostName</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#getJavaseClassLoader()">getJavaseClassLoader</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#getPermissions(java.security.CodeSource)">getPermissions</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#getResource(java.lang.String)">getResource</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#getResourceAsStream(java.lang.String)">getResourceAsStream</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#getResources()">getResources</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#getServiceName()">getServiceName</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#getState()">getState</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#getStateName()">getStateName</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#getURLs()">getURLs</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#getWebappName()">getWebappName</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#init()">init</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#isPackageSealed(java.lang.String,%20java.util.jar.Manifest)">isPackageSealed</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#loadClass(java.lang.String)">loadClass</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#loadClass(java.lang.String,%20boolean)">loadClass</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#modified()">modified</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#refreshPolicy()">refreshPolicy</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#removeLifecycleListener(org.apache.catalina.LifecycleListener)">removeLifecycleListener</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#removeTransformer(java.lang.instrument.ClassFileTransformer)">removeTransformer</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#setClearReferencesHttpClientKeepAliveThread(boolean)">setClearReferencesHttpClientKeepAliveThread</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#setClearReferencesLogFactoryRelease(boolean)">setClearReferencesLogFactoryRelease</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#setClearReferencesStatic(boolean)">setClearReferencesStatic</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#setClearReferencesStopThreads(boolean)">setClearReferencesStopThreads</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#setClearReferencesStopTimerThreads(boolean)">setClearReferencesStopTimerThreads</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#setDelegate(boolean)">setDelegate</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#setJavaseClassLoader(java.lang.ClassLoader)">setJavaseClassLoader</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#setResources(org.apache.catalina.WebResourceRoot)">setResources</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#start()">start</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#stop()">stop</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#toString()">toString</a>, <a href="../../../../org/apache/catalina/loader/WebappClassLoaderBase.html#validate(java.lang.String)">validate</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.net.URLClassLoader">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.net.<a href="http://docs.oracle.com/javase/7/docs/api/java/net/URLClassLoader.html?is-external=true" title="class or interface in java.net">URLClassLoader</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/net/URLClassLoader.html?is-external=true#close()" title="class or interface in java.net">close</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/net/URLClassLoader.html?is-external=true#definePackage(java.lang.String,%20java.util.jar.Manifest,%20java.net.URL)" title="class or interface in java.net">definePackage</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/net/URLClassLoader.html?is-external=true#newInstance(java.net.URL[])" title="class or interface in java.net">newInstance</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/net/URLClassLoader.html?is-external=true#newInstance(java.net.URL[],%20java.lang.ClassLoader)" title="class or interface in java.net">newInstance</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.security.SecureClassLoader">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.security.<a href="http://docs.oracle.com/javase/7/docs/api/java/security/SecureClassLoader.html?is-external=true" title="class or interface in java.security">SecureClassLoader</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/security/SecureClassLoader.html?is-external=true#defineClass(java.lang.String,%20byte[],%20int,%20int,%20java.security.CodeSource)" title="class or interface in java.security">defineClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/security/SecureClassLoader.html?is-external=true#defineClass(java.lang.String,%20java.nio.ByteBuffer,%20java.security.CodeSource)" title="class or interface in java.security">defineClass</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.ClassLoader">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#clearAssertionStatus()" title="class or interface in java.lang">clearAssertionStatus</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#defineClass(byte[],%20int,%20int)" title="class or interface in java.lang">defineClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#defineClass(java.lang.String,%20byte[],%20int,%20int)" title="class or interface in java.lang">defineClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#defineClass(java.lang.String,%20byte[],%20int,%20int,%20java.security.ProtectionDomain)" title="class or interface in java.lang">defineClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#defineClass(java.lang.String,%20java.nio.ByteBuffer,%20java.security.ProtectionDomain)" title="class or interface in java.lang">defineClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#definePackage(java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.net.URL)" title="class or interface in java.lang">definePackage</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#findLibrary(java.lang.String)" title="class or interface in java.lang">findLibrary</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#findLoadedClass(java.lang.String)" title="class or interface in java.lang">findLoadedClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#findSystemClass(java.lang.String)" title="class or interface in java.lang">findSystemClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#getClassLoadingLock(java.lang.String)" title="class or interface in java.lang">getClassLoadingLock</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#getPackage(java.lang.String)" title="class or interface in java.lang">getPackage</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#getPackages()" title="class or interface in java.lang">getPackages</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#getParent()" title="class or interface in java.lang">getParent</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#getResources(java.lang.String)" title="class or interface in java.lang">getResources</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#getSystemClassLoader()" title="class or interface in java.lang">getSystemClassLoader</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#getSystemResource(java.lang.String)" title="class or interface in java.lang">getSystemResource</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#getSystemResourceAsStream(java.lang.String)" title="class or interface in java.lang">getSystemResourceAsStream</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#getSystemResources(java.lang.String)" title="class or interface in java.lang">getSystemResources</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#registerAsParallelCapable()" title="class or interface in java.lang">registerAsParallelCapable</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#resolveClass(java.lang.Class)" title="class or interface in java.lang">resolveClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#setClassAssertionStatus(java.lang.String,%20boolean)" title="class or interface in java.lang">setClassAssertionStatus</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#setDefaultAssertionStatus(boolean)" title="class or interface in java.lang">setDefaultAssertionStatus</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#setPackageAssertionStatus(java.lang.String,%20boolean)" title="class or interface in java.lang">setPackageAssertionStatus</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true#setSigners(java.lang.Class,%20java.lang.Object[])" title="class or interface in java.lang">setSigners</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ParallelWebappClassLoader()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ParallelWebappClassLoader</h4>
+<pre>public&nbsp;ParallelWebappClassLoader()</pre>
+</li>
+</ul>
+<a name="ParallelWebappClassLoader(java.lang.ClassLoader)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ParallelWebappClassLoader</h4>
+<pre>public&nbsp;ParallelWebappClassLoader(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>&nbsp;parent)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="copyWithoutTransformers()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>copyWithoutTransformers</h4>
+<pre>public&nbsp;<a href="../../../../org/apache/catalina/loader/ParallelWebappClassLoader.html" title="class in org.apache.catalina.loader">ParallelWebappClassLoader</a>&nbsp;copyWithoutTransformers()</pre>
+<div class="block">Returns a copy of this class loader without any class file
+ transformers. This is a tool often used by Java Persistence API
+ providers to inspect entity classes in the absence of any
+ instrumentation, something that can't be guaranteed within the
+ context of a <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/instrument/ClassFileTransformer.html?is-external=true" title="class or interface in java.lang.instrument"><code>ClassFileTransformer</code></a>'s
+ <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/instrument/ClassFileTransformer.html?is-external=true#transform(java.lang.ClassLoader,%20java.lang.String,%20java.lang.Class,%20java.security.ProtectionDomain,%20byte[])" title="class or interface in java.lang.instrument"><code>transform</code></a> method.
+ <p>
+ The returned class loader's resource cache will have been cleared
+ so that classes already instrumented will not be retained or
+ returned.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the transformer-free copy of this class loader.</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/loader/JdbcLeakPrevention.html" title="class in org.apache.catalina.loader"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/loader/ResourceEntry.html" title="class in org.apache.catalina.loader"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/loader/ParallelWebappClassLoader.html" target="_top">Frames</a></li>
+<li><a href="ParallelWebappClassLoader.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_classes_inherited_from_class_org.apache.catalina.loader.WebappClassLoaderBase">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_org.apache.catalina.loader.WebappClassLoaderBase">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

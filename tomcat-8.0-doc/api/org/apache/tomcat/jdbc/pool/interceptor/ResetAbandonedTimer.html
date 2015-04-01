@@ -1,0 +1,502 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ResetAbandonedTimer (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="ResetAbandonedTimer (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/QueryTimeoutInterceptor.html" title="class in org.apache.tomcat.jdbc.pool.interceptor"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/SlowQueryReport.html" title="class in org.apache.tomcat.jdbc.pool.interceptor"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../index.html?org/apache/tomcat/jdbc/pool/interceptor/ResetAbandonedTimer.html" target="_top">Frames</a></li>
+<li><a href="ResetAbandonedTimer.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_classes_inherited_from_class_org.apache.tomcat.jdbc.pool.interceptor.AbstractQueryReport">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_org.apache.tomcat.jdbc.pool.interceptor.AbstractQueryReport">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.tomcat.jdbc.pool.interceptor</div>
+<h2 title="Class ResetAbandonedTimer" class="title">Class ResetAbandonedTimer</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html" title="class in org.apache.tomcat.jdbc.pool">org.apache.tomcat.jdbc.pool.JdbcInterceptor</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html" title="class in org.apache.tomcat.jdbc.pool.interceptor">org.apache.tomcat.jdbc.pool.interceptor.AbstractCreateStatementInterceptor</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html" title="class in org.apache.tomcat.jdbc.pool.interceptor">org.apache.tomcat.jdbc.pool.interceptor.AbstractQueryReport</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.tomcat.jdbc.pool.interceptor.ResetAbandonedTimer</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/InvocationHandler.html?is-external=true" title="class or interface in java.lang.reflect">InvocationHandler</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">ResetAbandonedTimer</span>
+extends <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html" title="class in org.apache.tomcat.jdbc.pool.interceptor">AbstractQueryReport</a></pre>
+<div class="block">Class that resets the abandoned timer on any activity on the
+ Connection or any successful query executions.
+ This interceptor is useful for when you have a <a href="../../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setRemoveAbandonedTimeout(int)"><code>PoolConfiguration.setRemoveAbandonedTimeout(int)</code></a>
+ that is fairly low, and you want to reset the abandoned time each time any operation on the connection is performed
+ This is useful for batch processing programs that use connections for extensive amount of times.</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested_class_summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="nested_classes_inherited_from_class_org.apache.tomcat.jdbc.pool.interceptor.AbstractQueryReport">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from class&nbsp;org.apache.tomcat.jdbc.pool.interceptor.<a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html" title="class in org.apache.tomcat.jdbc.pool.interceptor">AbstractQueryReport</a></h3>
+<code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.StatementProxy.html" title="class in org.apache.tomcat.jdbc.pool.interceptor">AbstractQueryReport.StatementProxy</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.tomcat.jdbc.pool.interceptor.AbstractQueryReport">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.tomcat.jdbc.pool.interceptor.<a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html" title="class in org.apache.tomcat.jdbc.pool.interceptor">AbstractQueryReport</a></h3>
+<code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html#constructors">constructors</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html#threshold">threshold</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.tomcat.jdbc.pool.interceptor.AbstractCreateStatementInterceptor">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.tomcat.jdbc.pool.interceptor.<a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html" title="class in org.apache.tomcat.jdbc.pool.interceptor">AbstractCreateStatementInterceptor</a></h3>
+<code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#CREATE_STATEMENT">CREATE_STATEMENT</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#CREATE_STATEMENT_IDX">CREATE_STATEMENT_IDX</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#EXECUTE">EXECUTE</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#EXECUTE_BATCH">EXECUTE_BATCH</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#EXECUTE_QUERY">EXECUTE_QUERY</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#EXECUTE_TYPES">EXECUTE_TYPES</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#EXECUTE_UPDATE">EXECUTE_UPDATE</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#PREPARE_CALL">PREPARE_CALL</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#PREPARE_CALL_IDX">PREPARE_CALL_IDX</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#PREPARE_STATEMENT">PREPARE_STATEMENT</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#PREPARE_STATEMENT_IDX">PREPARE_STATEMENT_IDX</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#STATEMENT_TYPE_COUNT">STATEMENT_TYPE_COUNT</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#STATEMENT_TYPES">STATEMENT_TYPES</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.tomcat.jdbc.pool.JdbcInterceptor">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.tomcat.jdbc.pool.<a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html" title="class in org.apache.tomcat.jdbc.pool">JdbcInterceptor</a></h3>
+<code><a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html#CLOSE_VAL">CLOSE_VAL</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html#EQUALS_VAL">EQUALS_VAL</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html#GETCONNECTION_VAL">GETCONNECTION_VAL</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html#HASHCODE_VAL">HASHCODE_VAL</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html#ISCLOSED_VAL">ISCLOSED_VAL</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html#ISVALID_VAL">ISVALID_VAL</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html#ISWRAPPERFOR_VAL">ISWRAPPERFOR_VAL</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html#properties">properties</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html#TOSTRING_VAL">TOSTRING_VAL</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html#UNWRAP_VAL">UNWRAP_VAL</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/ResetAbandonedTimer.html#ResetAbandonedTimer()">ResetAbandonedTimer</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/ResetAbandonedTimer.html#closeInvoked()">closeInvoked</a></strong>()</code>
+<div class="block">Method invoked when the operation <a href="http://docs.oracle.com/javase/7/docs/api/java/sql/Connection.html?is-external=true#close()" title="class or interface in java.sql"><code>Connection.close()</code></a> is invoked.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/ResetAbandonedTimer.html#invoke(java.lang.Object,%20java.lang.reflect.Method,%20java.lang.Object[])">invoke</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;proxy,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Method.html?is-external=true" title="class or interface in java.lang.reflect">Method</a>&nbsp;method,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>[]&nbsp;args)</code>
+<div class="block">Gets invoked each time an operation on <a href="http://docs.oracle.com/javase/7/docs/api/java/sql/Connection.html?is-external=true" title="class or interface in java.sql"><code>Connection</code></a> is invoked.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/ResetAbandonedTimer.html#prepareCall(java.lang.String,%20long)">prepareCall</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;query,
+           long&nbsp;time)</code>
+<div class="block">Invoked when prepareCall has been called and completed.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/ResetAbandonedTimer.html#prepareStatement(java.lang.String,%20long)">prepareStatement</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sql,
+                long&nbsp;time)</code>
+<div class="block">Invoked when prepareStatement has been called and completed.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/ResetAbandonedTimer.html#reportQuery(java.lang.String,%20java.lang.Object[],%20java.lang.String,%20long,%20long)">reportQuery</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;query,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>[]&nbsp;args,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+           long&nbsp;start,
+           long&nbsp;delta)</code>
+<div class="block">Invoked when a query execution, a call to execute/executeQuery or executeBatch succeeded and was within the timing threshold</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/ResetAbandonedTimer.html#reportSlowQuery(java.lang.String,%20java.lang.Object[],%20java.lang.String,%20long,%20long)">reportSlowQuery</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;query,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>[]&nbsp;args,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+               long&nbsp;start,
+               long&nbsp;delta)</code>
+<div class="block">Invoked when a query execution, a call to execute/executeQuery or executeBatch succeeded and was exceeded the timing threshold</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/ResetAbandonedTimer.html#resetTimer()">resetTimer</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.tomcat.jdbc.pool.interceptor.AbstractQueryReport">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.tomcat.jdbc.pool.interceptor.<a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html" title="class in org.apache.tomcat.jdbc.pool.interceptor">AbstractQueryReport</a></h3>
+<code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html#createStatement(java.lang.Object,%20java.lang.reflect.Method,%20java.lang.Object[],%20java.lang.Object,%20long)">createStatement</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html#getConstructor(int,%20java.lang.Class)">getConstructor</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html#getThreshold()">getThreshold</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html#reportFailedQuery(java.lang.String,%20java.lang.Object[],%20java.lang.String,%20long,%20java.lang.Throwable)">reportFailedQuery</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html#setThreshold(long)">setThreshold</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.tomcat.jdbc.pool.interceptor.AbstractCreateStatementInterceptor">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.tomcat.jdbc.pool.interceptor.<a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html" title="class in org.apache.tomcat.jdbc.pool.interceptor">AbstractCreateStatementInterceptor</a></h3>
+<code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#isExecute(java.lang.reflect.Method,%20boolean)">isExecute</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#isStatement(java.lang.reflect.Method,%20boolean)">isStatement</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#process(java.lang.String[],%20java.lang.reflect.Method,%20boolean)">process</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#reset(org.apache.tomcat.jdbc.pool.ConnectionPool,%20org.apache.tomcat.jdbc.pool.PooledConnection)">reset</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.tomcat.jdbc.pool.JdbcInterceptor">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.tomcat.jdbc.pool.<a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html" title="class in org.apache.tomcat.jdbc.pool">JdbcInterceptor</a></h3>
+<code><a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html#compare(java.lang.String,%20java.lang.reflect.Method)">compare</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html#compare(java.lang.String,%20java.lang.String)">compare</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html#disconnected(org.apache.tomcat.jdbc.pool.ConnectionPool,%20org.apache.tomcat.jdbc.pool.PooledConnection,%20boolean)">disconnected</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html#getNext()">getNext</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html#getProperties()">getProperties</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html#isUseEquals()">isUseEquals</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html#poolClosed(org.apache.tomcat.jdbc.pool.ConnectionPool)">poolClosed</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html#poolStarted(org.apache.tomcat.jdbc.pool.ConnectionPool)">poolStarted</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html#setNext(org.apache.tomcat.jdbc.pool.JdbcInterceptor)">setNext</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html#setProperties(java.util.Map)">setProperties</a>, <a href="../../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html#setUseEquals(boolean)">setUseEquals</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ResetAbandonedTimer()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ResetAbandonedTimer</h4>
+<pre>public&nbsp;ResetAbandonedTimer()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="resetTimer()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>resetTimer</h4>
+<pre>public&nbsp;boolean&nbsp;resetTimer()</pre>
+</li>
+</ul>
+<a name="invoke(java.lang.Object, java.lang.reflect.Method, java.lang.Object[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>invoke</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;invoke(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;proxy,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Method.html?is-external=true" title="class or interface in java.lang.reflect">Method</a>&nbsp;method,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>[]&nbsp;args)
+              throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a></pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#invoke(java.lang.Object,%20java.lang.reflect.Method,%20java.lang.Object[])">AbstractCreateStatementInterceptor</a></code></strong></div>
+<div class="block">Gets invoked each time an operation on <a href="http://docs.oracle.com/javase/7/docs/api/java/sql/Connection.html?is-external=true" title="class or interface in java.sql"><code>Connection</code></a> is invoked.
+ </div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/InvocationHandler.html?is-external=true#invoke(java.lang.Object,%20java.lang.reflect.Method,%20java.lang.Object[])" title="class or interface in java.lang.reflect">invoke</a></code>&nbsp;in interface&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/InvocationHandler.html?is-external=true" title="class or interface in java.lang.reflect">InvocationHandler</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#invoke(java.lang.Object,%20java.lang.reflect.Method,%20java.lang.Object[])">invoke</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html" title="class in org.apache.tomcat.jdbc.pool.interceptor">AbstractCreateStatementInterceptor</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a></code></dd></dl>
+</li>
+</ul>
+<a name="prepareCall(java.lang.String, long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>prepareCall</h4>
+<pre>protected&nbsp;void&nbsp;prepareCall(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;query,
+               long&nbsp;time)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html#prepareCall(java.lang.String,%20long)">AbstractQueryReport</a></code></strong></div>
+<div class="block">Invoked when prepareCall has been called and completed.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html#prepareCall(java.lang.String,%20long)">prepareCall</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html" title="class in org.apache.tomcat.jdbc.pool.interceptor">AbstractQueryReport</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>query</code> - - the string used to prepare the statement with</dd><dd><code>time</code> - - the time it took to invoke prepare</dd></dl>
+</li>
+</ul>
+<a name="prepareStatement(java.lang.String, long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>prepareStatement</h4>
+<pre>protected&nbsp;void&nbsp;prepareStatement(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sql,
+                    long&nbsp;time)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html#prepareStatement(java.lang.String,%20long)">AbstractQueryReport</a></code></strong></div>
+<div class="block">Invoked when prepareStatement has been called and completed.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html#prepareStatement(java.lang.String,%20long)">prepareStatement</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html" title="class in org.apache.tomcat.jdbc.pool.interceptor">AbstractQueryReport</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>sql</code> - - the string used to prepare the statement with</dd><dd><code>time</code> - - the time it took to invoke prepare</dd></dl>
+</li>
+</ul>
+<a name="closeInvoked()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>closeInvoked</h4>
+<pre>public&nbsp;void&nbsp;closeInvoked()</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#closeInvoked()">AbstractCreateStatementInterceptor</a></code></strong></div>
+<div class="block">Method invoked when the operation <a href="http://docs.oracle.com/javase/7/docs/api/java/sql/Connection.html?is-external=true#close()" title="class or interface in java.sql"><code>Connection.close()</code></a> is invoked.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#closeInvoked()">closeInvoked</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html" title="class in org.apache.tomcat.jdbc.pool.interceptor">AbstractCreateStatementInterceptor</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="reportQuery(java.lang.String, java.lang.Object[], java.lang.String, long, long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reportQuery</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;reportQuery(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;query,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>[]&nbsp;args,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+                 long&nbsp;start,
+                 long&nbsp;delta)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html#reportQuery(java.lang.String,%20java.lang.Object[],%20java.lang.String,%20long,%20long)">AbstractQueryReport</a></code></strong></div>
+<div class="block">Invoked when a query execution, a call to execute/executeQuery or executeBatch succeeded and was within the timing threshold</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html#reportQuery(java.lang.String,%20java.lang.Object[],%20java.lang.String,%20long,%20long)">reportQuery</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html" title="class in org.apache.tomcat.jdbc.pool.interceptor">AbstractQueryReport</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>query</code> - the query that was executed and failed</dd><dd><code>args</code> - the arguments to the execution</dd><dd><code>name</code> - the name of the method used to execute <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#isExecute(java.lang.reflect.Method,%20boolean)"><code>AbstractCreateStatementInterceptor.isExecute(Method, boolean)</code></a></dd><dd><code>start</code> - the time the query execution started</dd><dd><code>delta</code> - the time the execution took</dd>
+<dt><span class="strong">Returns:</span></dt><dd>- the SQL that was executed or the string &quot;batch&quot; if it was a batch execution</dd></dl>
+</li>
+</ul>
+<a name="reportSlowQuery(java.lang.String, java.lang.Object[], java.lang.String, long, long)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>reportSlowQuery</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;reportSlowQuery(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;query,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>[]&nbsp;args,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+                     long&nbsp;start,
+                     long&nbsp;delta)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html#reportSlowQuery(java.lang.String,%20java.lang.Object[],%20java.lang.String,%20long,%20long)">AbstractQueryReport</a></code></strong></div>
+<div class="block">Invoked when a query execution, a call to execute/executeQuery or executeBatch succeeded and was exceeded the timing threshold</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html#reportSlowQuery(java.lang.String,%20java.lang.Object[],%20java.lang.String,%20long,%20long)">reportSlowQuery</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html" title="class in org.apache.tomcat.jdbc.pool.interceptor">AbstractQueryReport</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>query</code> - the query that was executed and failed</dd><dd><code>args</code> - the arguments to the execution</dd><dd><code>name</code> - the name of the method used to execute <a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatementInterceptor.html#isExecute(java.lang.reflect.Method,%20boolean)"><code>AbstractCreateStatementInterceptor.isExecute(Method, boolean)</code></a></dd><dd><code>start</code> - the time the query execution started</dd><dd><code>delta</code> - the time the execution took</dd>
+<dt><span class="strong">Returns:</span></dt><dd>- the SQL that was executed or the string &quot;batch&quot; if it was a batch execution</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/QueryTimeoutInterceptor.html" title="class in org.apache.tomcat.jdbc.pool.interceptor"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../../org/apache/tomcat/jdbc/pool/interceptor/SlowQueryReport.html" title="class in org.apache.tomcat.jdbc.pool.interceptor"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../../index.html?org/apache/tomcat/jdbc/pool/interceptor/ResetAbandonedTimer.html" target="_top">Frames</a></li>
+<li><a href="ResetAbandonedTimer.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_classes_inherited_from_class_org.apache.tomcat.jdbc.pool.interceptor.AbstractQueryReport">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_org.apache.tomcat.jdbc.pool.interceptor.AbstractQueryReport">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

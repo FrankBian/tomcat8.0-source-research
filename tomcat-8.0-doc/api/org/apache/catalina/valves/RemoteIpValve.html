@@ -1,0 +1,1119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RemoteIpValve (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="RemoteIpValve (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/valves/RemoteHostValve.html" title="class in org.apache.catalina.valves"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/valves/RequestFilterValve.html" title="class in org.apache.catalina.valves"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/valves/RemoteIpValve.html" target="_top">Frames</a></li>
+<li><a href="RemoteIpValve.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_org.apache.catalina.valves.ValveBase">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.valves</div>
+<h2 title="Class RemoteIpValve" class="title">Class RemoteIpValve</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../org/apache/catalina/util/LifecycleBase.html" title="class in org.apache.catalina.util">org.apache.catalina.util.LifecycleBase</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html" title="class in org.apache.catalina.util">org.apache.catalina.util.LifecycleMBeanBase</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">org.apache.catalina.valves.ValveBase</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.valves.RemoteIpValve</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://docs.oracle.com/javase/7/docs/api/javax/management/MBeanRegistration.html?is-external=true" title="class or interface in javax.management">MBeanRegistration</a>, <a href="../../../../org/apache/catalina/Contained.html" title="interface in org.apache.catalina">Contained</a>, <a href="../../../../org/apache/catalina/JmxEnabled.html" title="interface in org.apache.catalina">JmxEnabled</a>, <a href="../../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a>, <a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">RemoteIpValve</span>
+extends <a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a></pre>
+<div class="block"><p>
+ Tomcat port of <a href="http://httpd.apache.org/docs/trunk/mod/mod_remoteip.html">mod_remoteip</a>, this valve replaces the apparent
+ client remote IP address and hostname for the request with the IP address list presented by a proxy or a load balancer via a request
+ headers (e.g. "X-Forwarded-For").
+ </p>
+ <p>
+ Another feature of this valve is to replace the apparent scheme (http/https) and server port with the scheme presented by a proxy or a
+ load balancer via a request header (e.g. "X-Forwarded-Proto").
+ </p>
+ <p>
+ This valve proceeds as follows:
+ </p>
+ <p>
+ If the incoming <code>request.getRemoteAddr()</code> matches the valve's list of internal proxies :
+ </p>
+ <ul>
+ <li>Loop on the comma delimited list of IPs and hostnames passed by the preceding load balancer or proxy in the given request's Http
+ header named <code>$remoteIpHeader</code> (default value <code>x-forwarded-for</code>). Values are processed in right-to-left order.</li>
+ <li>For each ip/host of the list:
+ <ul>
+ <li>if it matches the internal proxies list, the ip/host is swallowed</li>
+ <li>if it matches the trusted proxies list, the ip/host is added to the created proxies header</li>
+ <li>otherwise, the ip/host is declared to be the remote ip and looping is stopped.</li>
+ </ul>
+ </li>
+ <li>If the request http header named <code>$protocolHeader</code> (e.g. <code>x-forwarded-for</code>) equals to the value of
+ <code>protocolHeaderHttpsValue</code> configuration parameter (default <code>https</code>) then <code>request.isSecure = true</code>,
+ <code>request.scheme = https</code> and <code>request.serverPort = 443</code>. Note that 443 can be overwritten with the
+ <code>$httpsServerPort</code> configuration parameter.</li>
+ </ul>
+ <table border="1">
+ <caption>Configuration parameters</caption>
+ <tr>
+ <th>RemoteIpValve property</th>
+ <th>Description</th>
+ <th>Equivalent mod_remoteip directive</th>
+ <th>Format</th>
+ <th>Default Value</th>
+ </tr>
+ <tr>
+ <td>remoteIpHeader</td>
+ <td>Name of the Http Header read by this valve that holds the list of traversed IP addresses starting from the requesting client</td>
+ <td>RemoteIPHeader</td>
+ <td>Compliant http header name</td>
+ <td>x-forwarded-for</td>
+ </tr>
+ <tr>
+ <td>internalProxies</td>
+ <td>Regular expression that matches the IP addresses of internal proxies.
+ If they appear in the <code>remoteIpHeader</code> value, they will be
+ trusted and will not appear
+ in the <code>proxiesHeader</code> value</td>
+ <td>RemoteIPInternalProxy</td>
+ <td>Regular expression (in the syntax supported by
+ <a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex"><code>java.util.regex</code></a>)</td>
+ <td>10\.\d{1,3}\.\d{1,3}\.\d{1,3}|192\.168\.\d{1,3}\.\d{1,3}|
+     169\.254\.\d{1,3}\.\d{1,3}|127\.\d{1,3}\.\d{1,3}\.\d{1,3}|
+     172\.1[6-9]{1}\.\d{1,3}\.\d{1,3}|172\.2[0-9]{1}\.\d{1,3}\.\d{1,3}|
+     172\.3[0-1]{1}\.\d{1,3}\.\d{1,3}
+     <br>
+ By default, 10/8, 192.168/16, 169.254/16, 127/8 and 172.16/12 are allowed.</td>
+ </tr>
+ <tr>
+ <td>proxiesHeader</td>
+ <td>Name of the http header created by this valve to hold the list of proxies that have been processed in the incoming
+ <code>remoteIpHeader</code></td>
+ <td>proxiesHeader</td>
+ <td>Compliant http header name</td>
+ <td>x-forwarded-by</td>
+ </tr>
+ <tr>
+ <td>trustedProxies</td>
+ <td>Regular expression that matches the IP addresses of trusted proxies.
+ If they appear in the <code>remoteIpHeader</code> value, they will be
+ trusted and will appear in the <code>proxiesHeader</code> value</td>
+ <td>RemoteIPTrustedProxy</td>
+ <td>Regular expression (in the syntax supported by
+ <a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex"><code>java.util.regex</code></a>)</td>
+ <td>&nbsp;</td>
+ </tr>
+ <tr>
+ <td>protocolHeader</td>
+ <td>Name of the http header read by this valve that holds the flag that this request </td>
+ <td>N/A</td>
+ <td>Compliant http header name like <code>X-Forwarded-Proto</code>, <code>X-Forwarded-Ssl</code> or <code>Front-End-Https</code></td>
+ <td><code>null</code></td>
+ </tr>
+ <tr>
+ <td>protocolHeaderHttpsValue</td>
+ <td>Value of the <code>protocolHeader</code> to indicate that it is an Https request</td>
+ <td>N/A</td>
+ <td>String like <code>https</code> or <code>ON</code></td>
+ <td><code>https</code></td>
+ </tr>
+ <tr>
+ <td>httpServerPort</td>
+ <td>Value returned by <a href="../../../../../servletapi/javax/servlet/ServletRequest.html?is-external=true#getServerPort()" title="class or interface in javax.servlet"><code>ServletRequest.getServerPort()</code></a> when the <code>protocolHeader</code> indicates <code>http</code> protocol</td>
+ <td>N/A</td>
+ <td>integer</td>
+ <td>80</td>
+ </tr>
+ <tr>
+ <td>httpsServerPort</td>
+ <td>Value returned by <a href="../../../../../servletapi/javax/servlet/ServletRequest.html?is-external=true#getServerPort()" title="class or interface in javax.servlet"><code>ServletRequest.getServerPort()</code></a> when the <code>protocolHeader</code> indicates <code>https</code> protocol</td>
+ <td>N/A</td>
+ <td>integer</td>
+ <td>443</td>
+ </tr>
+ </table>
+ <p>
+ <p>
+ This Valve may be attached to any Container, depending on the granularity of the filtering you wish to perform.
+ </p>
+ <p>
+ <strong>Regular expression vs. IP address blocks:</strong> <code>mod_remoteip</code> allows to use address blocks (e.g.
+ <code>192.168/16</code>) to configure <code>RemoteIPInternalProxy</code> and <code>RemoteIPTrustedProxy</code> ; as Tomcat doesn't have a
+ library similar to <a
+ href="http://apr.apache.org/docs/apr/1.3/group__apr__network__io.html#gb74d21b8898b7c40bf7fd07ad3eb993d">apr_ipsubnet_test</a>,
+ <code>RemoteIpValve</code> uses regular expression to configure <code>internalProxies</code> and <code>trustedProxies</code> in the same
+ fashion as <a href="../../../../org/apache/catalina/valves/RequestFilterValve.html" title="class in org.apache.catalina.valves"><code>RequestFilterValve</code></a> does.
+ </p>
+ <hr>
+ <p>
+ <strong>Sample with internal proxies</strong>
+ </p>
+ <p>
+ RemoteIpValve configuration:
+ </p>
+ <code>
+ &lt;Valve
+   className="org.apache.catalina.valves.RemoteIpValve"
+   internalProxies="192\.168\.0\.10|192\.168\.0\.11"
+   remoteIpHeader="x-forwarded-for"
+   proxiesHeader="x-forwarded-by"
+   protocolHeader="x-forwarded-proto"
+   /&gt;</code>
+ <table border="1">
+ <caption>Request Values</caption>
+ <tr>
+ <th>property</th>
+ <th>Value Before RemoteIpValve</th>
+ <th>Value After RemoteIpValve</th>
+ </tr>
+ <tr>
+ <td>request.remoteAddr</td>
+ <td>192.168.0.10</td>
+ <td>140.211.11.130</td>
+ </tr>
+ <tr>
+ <td>request.header['x-forwarded-for']</td>
+ <td>140.211.11.130, 192.168.0.10</td>
+ <td>null</td>
+ </tr>
+ <tr>
+ <td>request.header['x-forwarded-by']</td>
+ <td>null</td>
+ <td>null</td>
+ </tr>
+ <tr>
+ <td>request.header['x-forwarded-proto']</td>
+ <td>https</td>
+ <td>https</td>
+ </tr>
+ <tr>
+ <td>request.scheme</td>
+ <td>http</td>
+ <td>https</td>
+ </tr>
+ <tr>
+ <td>request.secure</td>
+ <td>false</td>
+ <td>true</td>
+ </tr>
+ <tr>
+ <td>request.serverPort</td>
+ <td>80</td>
+ <td>443</td>
+ </tr>
+ </table>
+ <p>
+ Note : <code>x-forwarded-by</code> header is null because only internal proxies as been traversed by the request.
+ <code>x-forwarded-by</code> is null because all the proxies are trusted or internal.
+ </p>
+ <hr>
+ <p>
+ <strong>Sample with trusted proxies</strong>
+ </p>
+ <p>
+ RemoteIpValve configuration:
+ </p>
+ <code>
+ &lt;Valve
+   className="org.apache.catalina.valves.RemoteIpValve"
+   internalProxies="192\.168\.0\.10|192\.168\.0\.11"
+   remoteIpHeader="x-forwarded-for"
+   proxiesHeader="x-forwarded-by"
+   trustedProxies="proxy1|proxy2"
+   /&gt;</code>
+ <table border="1">
+ <caption>Request Values</caption>
+ <tr>
+ <th>property</th>
+ <th>Value Before RemoteIpValve</th>
+ <th>Value After RemoteIpValve</th>
+ </tr>
+ <tr>
+ <td>request.remoteAddr</td>
+ <td>192.168.0.10</td>
+ <td>140.211.11.130</td>
+ </tr>
+ <tr>
+ <td>request.header['x-forwarded-for']</td>
+ <td>140.211.11.130, proxy1, proxy2</td>
+ <td>null</td>
+ </tr>
+ <tr>
+ <td>request.header['x-forwarded-by']</td>
+ <td>null</td>
+ <td>proxy1, proxy2</td>
+ </tr>
+ </table>
+ <p>
+ Note : <code>proxy1</code> and <code>proxy2</code> are both trusted proxies that come in <code>x-forwarded-for</code> header, they both
+ are migrated in <code>x-forwarded-by</code> header. <code>x-forwarded-by</code> is null because all the proxies are trusted or internal.
+ </p>
+ <hr>
+ <p>
+ <strong>Sample with internal and trusted proxies</strong>
+ </p>
+ <p>
+ RemoteIpValve configuration:
+ </p>
+ <code>
+ &lt;Valve
+   className="org.apache.catalina.valves.RemoteIpValve"
+   internalProxies="192\.168\.0\.10|192\.168\.0\.11"
+   remoteIpHeader="x-forwarded-for"
+   proxiesHeader="x-forwarded-by"
+   trustedProxies="proxy1|proxy2"
+   /&gt;</code>
+ <table border="1">
+ <caption>Request Values</caption>
+ <tr>
+ <th>property</th>
+ <th>Value Before RemoteIpValve</th>
+ <th>Value After RemoteIpValve</th>
+ </tr>
+ <tr>
+ <td>request.remoteAddr</td>
+ <td>192.168.0.10</td>
+ <td>140.211.11.130</td>
+ </tr>
+ <tr>
+ <td>request.header['x-forwarded-for']</td>
+ <td>140.211.11.130, proxy1, proxy2, 192.168.0.10</td>
+ <td>null</td>
+ </tr>
+ <tr>
+ <td>request.header['x-forwarded-by']</td>
+ <td>null</td>
+ <td>proxy1, proxy2</td>
+ </tr>
+ </table>
+ <p>
+ Note : <code>proxy1</code> and <code>proxy2</code> are both trusted proxies that come in <code>x-forwarded-for</code> header, they both
+ are migrated in <code>x-forwarded-by</code> header. As <code>192.168.0.10</code> is an internal proxy, it does not appear in
+ <code>x-forwarded-by</code>. <code>x-forwarded-by</code> is null because all the proxies are trusted or internal.
+ </p>
+ <hr>
+ <p>
+ <strong>Sample with an untrusted proxy</strong>
+ </p>
+ <p>
+ RemoteIpValve configuration:
+ </p>
+ <code>
+ &lt;Valve
+   className="org.apache.catalina.valves.RemoteIpValve"
+   internalProxies="192\.168\.0\.10|192\.168\.0\.11"
+   remoteIpHeader="x-forwarded-for"
+   proxiesHeader="x-forwarded-by"
+   trustedProxies="proxy1|proxy2"
+   /&gt;</code>
+ <table border="1">
+ <caption>Request Values</caption>
+ <tr>
+ <th>property</th>
+ <th>Value Before RemoteIpValve</th>
+ <th>Value After RemoteIpValve</th>
+ </tr>
+ <tr>
+ <td>request.remoteAddr</td>
+ <td>192.168.0.10</td>
+ <td>untrusted-proxy</td>
+ </tr>
+ <tr>
+ <td>request.header['x-forwarded-for']</td>
+ <td>140.211.11.130, untrusted-proxy, proxy1</td>
+ <td>140.211.11.130</td>
+ </tr>
+ <tr>
+ <td>request.header['x-forwarded-by']</td>
+ <td>null</td>
+ <td>proxy1</td>
+ </tr>
+ </table>
+ <p>
+ Note : <code>x-forwarded-by</code> holds the trusted proxy <code>proxy1</code>. <code>x-forwarded-by</code> holds
+ <code>140.211.11.130</code> because <code>untrusted-proxy</code> is not trusted and thus, we can not trust that
+ <code>untrusted-proxy</code> is the actual remote ip. <code>request.remoteAddr</code> is <code>untrusted-proxy</code> that is an IP
+ verified by <code>proxy1</code>.
+ </p></div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.valves.ValveBase">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.catalina.valves.<a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a></h3>
+<code><a href="../../../../org/apache/catalina/valves/ValveBase.html#asyncSupported">asyncSupported</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#container">container</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#containerLog">containerLog</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#next">next</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#sm">sm</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.util.LifecycleMBeanBase">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.catalina.util.<a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html" title="class in org.apache.catalina.util">LifecycleMBeanBase</a></h3>
+<code><a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#mserver">mserver</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.Lifecycle">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.apache.catalina.<a href="../../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a></h3>
+<code><a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_DESTROY_EVENT">AFTER_DESTROY_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_INIT_EVENT">AFTER_INIT_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_START_EVENT">AFTER_START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_STOP_EVENT">AFTER_STOP_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_DESTROY_EVENT">BEFORE_DESTROY_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_INIT_EVENT">BEFORE_INIT_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_START_EVENT">BEFORE_START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_STOP_EVENT">BEFORE_STOP_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#CONFIGURE_START_EVENT">CONFIGURE_START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#CONFIGURE_STOP_EVENT">CONFIGURE_STOP_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#PERIODIC_EVENT">PERIODIC_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#START_EVENT">START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#STOP_EVENT">STOP_EVENT</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#RemoteIpValve()">RemoteIpValve</a></strong>()</code>
+<div class="block">Default constructor that ensures <a href="../../../../org/apache/catalina/valves/ValveBase.html#ValveBase(boolean)"><code>ValveBase.ValveBase(boolean)</code></a> is
+ called with <code>true</code>.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#commaDelimitedListToStringArray(java.lang.String)">commaDelimitedListToStringArray</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;commaDelimitedStrings)</code>
+<div class="block">Convert a given comma delimited String into an array of String</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#getHttpServerPort()">getHttpServerPort</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#getHttpsServerPort()">getHttpsServerPort</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#getInternalProxies()">getInternalProxies</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#getPortHeader()">getPortHeader</a></strong>()</code>
+<div class="block">Obtain the name of the HTTP header used to override the value returned
+ by <a href="../../../../org/apache/catalina/connector/Request.html#getServerPort()"><code>Request.getServerPort()</code></a> and (optionally depending on {link
+ <a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#isChangeLocalPort()"><code>isChangeLocalPort()</code></a> <a href="../../../../org/apache/catalina/connector/Request.html#getLocalPort()"><code>Request.getLocalPort()</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#getProtocolHeader()">getProtocolHeader</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#getProtocolHeaderHttpsValue()">getProtocolHeaderHttpsValue</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#getProxiesHeader()">getProxiesHeader</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#getRemoteIpHeader()">getRemoteIpHeader</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#getRequestAttributesEnabled()">getRequestAttributesEnabled</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#getTrustedProxies()">getTrustedProxies</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#invoke(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response)">invoke</a></strong>(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request,
+      <a href="../../../../org/apache/catalina/connector/Response.html" title="class in org.apache.catalina.connector">Response</a>&nbsp;response)</code>
+<div class="block">The implementation-specific logic represented by this Valve.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#isChangeLocalPort()">isChangeLocalPort</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#listToCommaDelimitedString(java.util.List)">listToCommaDelimitedString</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;stringList)</code>
+<div class="block">Convert an array of strings in a comma delimited string</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#setChangeLocalPort(boolean)">setChangeLocalPort</a></strong>(boolean&nbsp;changeLocalPort)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#setHttpServerPort(int)">setHttpServerPort</a></strong>(int&nbsp;httpServerPort)</code>
+<div class="block">
+ Server Port value if the <a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#protocolHeader"><code>protocolHeader</code></a> is not <code>null</code> and does not indicate HTTP
+ 
+ 
+ Default value : 80
+ </div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#setHttpsServerPort(int)">setHttpsServerPort</a></strong>(int&nbsp;httpsServerPort)</code>
+<div class="block">
+ Server Port value if the <a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#protocolHeader"><code>protocolHeader</code></a> indicates HTTPS
+ 
+ 
+ Default value : 443
+ </div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#setInternalProxies(java.lang.String)">setInternalProxies</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;internalProxies)</code>
+<div class="block">
+ Regular expression that defines the internal proxies.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#setPortHeader(java.lang.String)">setPortHeader</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;portHeader)</code>
+<div class="block">Set the name of the HTTP header used to override the value returned
+ by <a href="../../../../org/apache/catalina/connector/Request.html#getServerPort()"><code>Request.getServerPort()</code></a> and (optionally depending on {link
+ <a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#isChangeLocalPort()"><code>isChangeLocalPort()</code></a> <a href="../../../../org/apache/catalina/connector/Request.html#getLocalPort()"><code>Request.getLocalPort()</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#setProtocolHeader(java.lang.String)">setProtocolHeader</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;protocolHeader)</code>
+<div class="block">
+ Header that holds the incoming protocol, usally named <code>X-Forwarded-Proto</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#setProtocolHeaderHttpsValue(java.lang.String)">setProtocolHeaderHttpsValue</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;protocolHeaderHttpsValue)</code>
+<div class="block">
+ Case insensitive value of the protocol header to indicate that the incoming http request uses SSL.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#setProxiesHeader(java.lang.String)">setProxiesHeader</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;proxiesHeader)</code>
+<div class="block">
+ The proxiesHeader directive specifies a header into which mod_remoteip will collect a list of all of the intermediate client IP
+ addresses trusted to resolve the actual remote IP.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#setRemoteIpHeader(java.lang.String)">setRemoteIpHeader</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;remoteIpHeader)</code>
+<div class="block">
+ Name of the http header from which the remote ip is extracted.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#setRequestAttributesEnabled(boolean)">setRequestAttributesEnabled</a></strong>(boolean&nbsp;requestAttributesEnabled)</code>
+<div class="block">Should this valve set request attributes for IP address, Hostname,
+ protocol and port used for the request?</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#setTrustedProxies(java.lang.String)">setTrustedProxies</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;trustedProxies)</code>
+<div class="block">
+ Regular expression defining proxies that are trusted when they appear in
+ the <a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#remoteIpHeader"><code>remoteIpHeader</code></a> header.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.valves.ValveBase">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.valves.<a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a></h3>
+<code><a href="../../../../org/apache/catalina/valves/ValveBase.html#backgroundProcess()">backgroundProcess</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#event(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response,%20org.apache.catalina.comet.CometEvent)">event</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#getContainer()">getContainer</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#getDomainInternal()">getDomainInternal</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#getNext()">getNext</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#getObjectNameKeyProperties()">getObjectNameKeyProperties</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#initInternal()">initInternal</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#isAsyncSupported()">isAsyncSupported</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#setAsyncSupported(boolean)">setAsyncSupported</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#setContainer(org.apache.catalina.Container)">setContainer</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#setNext(org.apache.catalina.Valve)">setNext</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#startInternal()">startInternal</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#stopInternal()">stopInternal</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#toString()">toString</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.util.LifecycleMBeanBase">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.util.<a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html" title="class in org.apache.catalina.util">LifecycleMBeanBase</a></h3>
+<code><a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#destroyInternal()">destroyInternal</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#getDomain()">getDomain</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#getObjectName()">getObjectName</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#postDeregister()">postDeregister</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#postRegister(java.lang.Boolean)">postRegister</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#preDeregister()">preDeregister</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#preRegister(javax.management.MBeanServer,%20javax.management.ObjectName)">preRegister</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#register(java.lang.Object,%20java.lang.String)">register</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#setDomain(java.lang.String)">setDomain</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#unregister(javax.management.ObjectName)">unregister</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.util.LifecycleBase">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.util.<a href="../../../../org/apache/catalina/util/LifecycleBase.html" title="class in org.apache.catalina.util">LifecycleBase</a></h3>
+<code><a href="../../../../org/apache/catalina/util/LifecycleBase.html#addLifecycleListener(org.apache.catalina.LifecycleListener)">addLifecycleListener</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#destroy()">destroy</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#findLifecycleListeners()">findLifecycleListeners</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#fireLifecycleEvent(java.lang.String,%20java.lang.Object)">fireLifecycleEvent</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#getState()">getState</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#getStateName()">getStateName</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#init()">init</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#removeLifecycleListener(org.apache.catalina.LifecycleListener)">removeLifecycleListener</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#setState(org.apache.catalina.LifecycleState)">setState</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#setState(org.apache.catalina.LifecycleState,%20java.lang.Object)">setState</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#start()">start</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#stop()">stop</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="RemoteIpValve()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>RemoteIpValve</h4>
+<pre>public&nbsp;RemoteIpValve()</pre>
+<div class="block">Default constructor that ensures <a href="../../../../org/apache/catalina/valves/ValveBase.html#ValveBase(boolean)"><code>ValveBase.ValveBase(boolean)</code></a> is
+ called with <code>true</code>.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="commaDelimitedListToStringArray(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>commaDelimitedListToStringArray</h4>
+<pre>protected static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;commaDelimitedListToStringArray(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;commaDelimitedStrings)</pre>
+<div class="block">Convert a given comma delimited String into an array of String</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>array of String (non <code>null</code>)</dd></dl>
+</li>
+</ul>
+<a name="listToCommaDelimitedString(java.util.List)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>listToCommaDelimitedString</h4>
+<pre>protected static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;listToCommaDelimitedString(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;stringList)</pre>
+<div class="block">Convert an array of strings in a comma delimited string</div>
+</li>
+</ul>
+<a name="getHttpsServerPort()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHttpsServerPort</h4>
+<pre>public&nbsp;int&nbsp;getHttpsServerPort()</pre>
+</li>
+</ul>
+<a name="getHttpServerPort()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHttpServerPort</h4>
+<pre>public&nbsp;int&nbsp;getHttpServerPort()</pre>
+</li>
+</ul>
+<a name="isChangeLocalPort()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isChangeLocalPort</h4>
+<pre>public&nbsp;boolean&nbsp;isChangeLocalPort()</pre>
+</li>
+</ul>
+<a name="setChangeLocalPort(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setChangeLocalPort</h4>
+<pre>public&nbsp;void&nbsp;setChangeLocalPort(boolean&nbsp;changeLocalPort)</pre>
+</li>
+</ul>
+<a name="getPortHeader()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPortHeader</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getPortHeader()</pre>
+<div class="block">Obtain the name of the HTTP header used to override the value returned
+ by <a href="../../../../org/apache/catalina/connector/Request.html#getServerPort()"><code>Request.getServerPort()</code></a> and (optionally depending on {link
+ <a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#isChangeLocalPort()"><code>isChangeLocalPort()</code></a> <a href="../../../../org/apache/catalina/connector/Request.html#getLocalPort()"><code>Request.getLocalPort()</code></a>.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The HTTP header name</dd></dl>
+</li>
+</ul>
+<a name="setPortHeader(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPortHeader</h4>
+<pre>public&nbsp;void&nbsp;setPortHeader(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;portHeader)</pre>
+<div class="block">Set the name of the HTTP header used to override the value returned
+ by <a href="../../../../org/apache/catalina/connector/Request.html#getServerPort()"><code>Request.getServerPort()</code></a> and (optionally depending on {link
+ <a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#isChangeLocalPort()"><code>isChangeLocalPort()</code></a> <a href="../../../../org/apache/catalina/connector/Request.html#getLocalPort()"><code>Request.getLocalPort()</code></a>.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>portHeader</code> - The HTTP header name</dd></dl>
+</li>
+</ul>
+<a name="getInternalProxies()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getInternalProxies</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getInternalProxies()</pre>
+<dl><dt><span class="strong">Returns:</span></dt><dd>Regular expression that defines the internal proxies</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#setInternalProxies(java.lang.String)"><code>setInternalProxies(String)</code></a></dd></dl>
+</li>
+</ul>
+<a name="getProtocolHeader()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getProtocolHeader</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getProtocolHeader()</pre>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the protocol header (e.g. "X-Forwarded-Proto")</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#setProtocolHeader(java.lang.String)"><code>setProtocolHeader(String)</code></a></dd></dl>
+</li>
+</ul>
+<a name="getProtocolHeaderHttpsValue()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getProtocolHeaderHttpsValue</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getProtocolHeaderHttpsValue()</pre>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the value of the protocol header for incoming https request (e.g. "https")</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#setProtocolHeaderHttpsValue(java.lang.String)"><code>setProtocolHeaderHttpsValue(String)</code></a></dd></dl>
+</li>
+</ul>
+<a name="getProxiesHeader()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getProxiesHeader</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getProxiesHeader()</pre>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the proxies header name (e.g. "X-Forwarded-By")</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#setProxiesHeader(java.lang.String)"><code>setProxiesHeader(String)</code></a></dd></dl>
+</li>
+</ul>
+<a name="getRemoteIpHeader()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRemoteIpHeader</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getRemoteIpHeader()</pre>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the remote IP header name (e.g. "X-Forwarded-For")</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#setRemoteIpHeader(java.lang.String)"><code>setRemoteIpHeader(String)</code></a></dd></dl>
+</li>
+</ul>
+<a name="getRequestAttributesEnabled()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRequestAttributesEnabled</h4>
+<pre>public&nbsp;boolean&nbsp;getRequestAttributesEnabled()</pre>
+<dl><dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the attributes will be logged, otherwise
+         <code>false</code></dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#setRequestAttributesEnabled(boolean)"><code>setRequestAttributesEnabled(boolean)</code></a></dd></dl>
+</li>
+</ul>
+<a name="getTrustedProxies()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTrustedProxies</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getTrustedProxies()</pre>
+<dl><dt><span class="strong">Returns:</span></dt><dd>Regular expression that defines the trusted proxies</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#setTrustedProxies(java.lang.String)"><code>setTrustedProxies(String)</code></a></dd></dl>
+</li>
+</ul>
+<a name="invoke(org.apache.catalina.connector.Request, org.apache.catalina.connector.Response)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>invoke</h4>
+<pre>public&nbsp;void&nbsp;invoke(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request,
+          <a href="../../../../org/apache/catalina/connector/Response.html" title="class in org.apache.catalina.connector">Response</a>&nbsp;response)
+            throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                   <a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></pre>
+<div class="block">The implementation-specific logic represented by this Valve.  See the
+ Valve description for the normal design patterns for this method.
+ <p>
+ This method <strong>MUST</strong> be provided by a subclass.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Valve.html#invoke(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response)">invoke</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/valves/ValveBase.html#invoke(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response)">invoke</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>request</code> - The servlet request to be processed</dd><dd><code>response</code> - The servlet response to be created</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if an input/output error occurs</dd>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code> - if a servlet error occurs</dd></dl>
+</li>
+</ul>
+<a name="setHttpServerPort(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setHttpServerPort</h4>
+<pre>public&nbsp;void&nbsp;setHttpServerPort(int&nbsp;httpServerPort)</pre>
+<div class="block"><p>
+ Server Port value if the <a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#protocolHeader"><code>protocolHeader</code></a> is not <code>null</code> and does not indicate HTTP
+ </p>
+ <p>
+ Default value : 80
+ </p></div>
+</li>
+</ul>
+<a name="setHttpsServerPort(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setHttpsServerPort</h4>
+<pre>public&nbsp;void&nbsp;setHttpsServerPort(int&nbsp;httpsServerPort)</pre>
+<div class="block"><p>
+ Server Port value if the <a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#protocolHeader"><code>protocolHeader</code></a> indicates HTTPS
+ </p>
+ <p>
+ Default value : 443
+ </p></div>
+</li>
+</ul>
+<a name="setInternalProxies(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setInternalProxies</h4>
+<pre>public&nbsp;void&nbsp;setInternalProxies(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;internalProxies)</pre>
+<div class="block"><p>
+ Regular expression that defines the internal proxies.
+ </p>
+ <p>
+ Default value : 10\.\d{1,3}\.\d{1,3}\.\d{1,3}|192\.168\.\d{1,3}\.\d{1,3}|169\.254.\d{1,3}.\d{1,3}|127\.\d{1,3}\.\d{1,3}\.\d{1,3}
+ </p></div>
+</li>
+</ul>
+<a name="setProtocolHeader(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setProtocolHeader</h4>
+<pre>public&nbsp;void&nbsp;setProtocolHeader(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;protocolHeader)</pre>
+<div class="block"><p>
+ Header that holds the incoming protocol, usally named <code>X-Forwarded-Proto</code>. If <code>null</code>, request.scheme and
+ request.secure will not be modified.
+ </p>
+ <p>
+ Default value : <code>null</code>
+ </p></div>
+</li>
+</ul>
+<a name="setProtocolHeaderHttpsValue(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setProtocolHeaderHttpsValue</h4>
+<pre>public&nbsp;void&nbsp;setProtocolHeaderHttpsValue(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;protocolHeaderHttpsValue)</pre>
+<div class="block"><p>
+ Case insensitive value of the protocol header to indicate that the incoming http request uses SSL.
+ </p>
+ <p>
+ Default value : <code>https</code>
+ </p></div>
+</li>
+</ul>
+<a name="setProxiesHeader(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setProxiesHeader</h4>
+<pre>public&nbsp;void&nbsp;setProxiesHeader(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;proxiesHeader)</pre>
+<div class="block"><p>
+ The proxiesHeader directive specifies a header into which mod_remoteip will collect a list of all of the intermediate client IP
+ addresses trusted to resolve the actual remote IP. Note that intermediate RemoteIPTrustedProxy addresses are recorded in this header,
+ while any intermediate RemoteIPInternalProxy addresses are discarded.
+ </p>
+ <p>
+ Name of the http header that holds the list of trusted proxies that has been traversed by the http request.
+ </p>
+ <p>
+ The value of this header can be comma delimited.
+ </p>
+ <p>
+ Default value : <code>X-Forwarded-By</code>
+ </p></div>
+</li>
+</ul>
+<a name="setRemoteIpHeader(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRemoteIpHeader</h4>
+<pre>public&nbsp;void&nbsp;setRemoteIpHeader(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;remoteIpHeader)</pre>
+<div class="block"><p>
+ Name of the http header from which the remote ip is extracted.
+ </p>
+ <p>
+ The value of this header can be comma delimited.
+ </p>
+ <p>
+ Default value : <code>X-Forwarded-For</code>
+ </p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>remoteIpHeader</code> - </dd></dl>
+</li>
+</ul>
+<a name="setRequestAttributesEnabled(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRequestAttributesEnabled</h4>
+<pre>public&nbsp;void&nbsp;setRequestAttributesEnabled(boolean&nbsp;requestAttributesEnabled)</pre>
+<div class="block">Should this valve set request attributes for IP address, Hostname,
+ protocol and port used for the request? This are typically used in
+ conjunction with the <a href="../../../../org/apache/catalina/AccessLog.html" title="interface in org.apache.catalina"><code>AccessLog</code></a> which will otherwise log the
+ original values. Default is <code>true</code>.
+
+ The attributes set are:
+ <ul>
+ <li>org.apache.catalina.AccessLog.RemoteAddr</li>
+ <li>org.apache.catalina.AccessLog.RemoteHost</li>
+ <li>org.apache.catalina.AccessLog.Protocol</li>
+ <li>org.apache.catalina.AccessLog.ServerPort</li>
+ <li>org.apache.tomcat.remoteAddr</li>
+ </ul></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>requestAttributesEnabled</code> - <code>true</code> causes the attributes
+                                  to be set, <code>false</code> disables
+                                  the setting of the attributes.</dd></dl>
+</li>
+</ul>
+<a name="setTrustedProxies(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setTrustedProxies</h4>
+<pre>public&nbsp;void&nbsp;setTrustedProxies(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;trustedProxies)</pre>
+<div class="block"><p>
+ Regular expression defining proxies that are trusted when they appear in
+ the <a href="../../../../org/apache/catalina/valves/RemoteIpValve.html#remoteIpHeader"><code>remoteIpHeader</code></a> header.
+ </p>
+ <p>
+ Default value : empty list, no external proxy is trusted.
+ </p></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/valves/RemoteHostValve.html" title="class in org.apache.catalina.valves"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/valves/RequestFilterValve.html" title="class in org.apache.catalina.valves"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/valves/RemoteIpValve.html" target="_top">Frames</a></li>
+<li><a href="RemoteIpValve.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_org.apache.catalina.valves.ValveBase">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

@@ -1,0 +1,1598 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AbstractHttp11Processor (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="AbstractHttp11Processor (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html" title="class in org.apache.coyote.http11"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html" title="class in org.apache.coyote.http11"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/coyote/http11/AbstractHttp11Processor.html" target="_top">Frames</a></li>
+<li><a href="AbstractHttp11Processor.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.coyote.http11</div>
+<h2 title="Class AbstractHttp11Processor" class="title">Class AbstractHttp11Processor&lt;S&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">org.apache.coyote.AbstractProcessor</a>&lt;S&gt;</li>
+<li>
+<ul class="inheritance">
+<li>org.apache.coyote.http11.AbstractHttp11Processor&lt;S&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../org/apache/coyote/ActionHook.html" title="interface in org.apache.coyote">ActionHook</a>, <a href="../../../../org/apache/coyote/Processor.html" title="interface in org.apache.coyote">Processor</a>&lt;S&gt;</dd>
+</dl>
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../../../org/apache/coyote/http11/Http11AprProcessor.html" title="class in org.apache.coyote.http11">Http11AprProcessor</a>, <a href="../../../../org/apache/coyote/http11/Http11Nio2Processor.html" title="class in org.apache.coyote.http11">Http11Nio2Processor</a>, <a href="../../../../org/apache/coyote/http11/Http11NioProcessor.html" title="class in org.apache.coyote.http11">Http11NioProcessor</a>, <a href="../../../../org/apache/coyote/http11/Http11Processor.html" title="class in org.apache.coyote.http11">Http11Processor</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public abstract class <span class="strong">AbstractHttp11Processor&lt;S&gt;</span>
+extends <a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">AbstractProcessor</a>&lt;S&gt;</pre>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#comet">comet</a></strong></code>
+<div class="block">Comet used.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#compressableMimeTypes">compressableMimeTypes</a></strong></code>
+<div class="block">List of MIMES which could be gzipped</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#compressionLevel">compressionLevel</a></strong></code>
+<div class="block">Allowed compression level.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#compressionMinSize">compressionMinSize</a></strong></code>
+<div class="block">Minimum content size to make compression.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#connectionUploadTimeout">connectionUploadTimeout</a></strong></code>
+<div class="block">Maximum timeout on uploads. 5 minutes as in Apache HTTPD server.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#contentDelimitation">contentDelimitation</a></strong></code>
+<div class="block">Content delimiter for the request (if false, the connection will
+ be closed at the end of the request).</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#disableUploadTimeout">disableUploadTimeout</a></strong></code>
+<div class="block">Flag to disable setting a different time-out on uploads.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#expectation">expectation</a></strong></code>
+<div class="block">Is there an expectation ?</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected char[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#hostNameC">hostNameC</a></strong></code>
+<div class="block">Host name (used to avoid useless B2C conversion on the host name).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#http09">http09</a></strong></code>
+<div class="block">HTTP/0.9 flag.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#http11">http11</a></strong></code>
+<div class="block">HTTP/1.1 flag.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../servletapi/javax/servlet/http/HttpUpgradeHandler.html?is-external=true" title="class or interface in javax.servlet.http">HttpUpgradeHandler</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#httpUpgradeHandler">httpUpgradeHandler</a></strong></code>
+<div class="block">Instance of the new protocol to use after the HTTP connection has been
+ upgraded.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../org/apache/coyote/http11/AbstractInputBuffer.html" title="class in org.apache.coyote.http11">AbstractInputBuffer</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#inputBuffer">inputBuffer</a></strong></code>
+<div class="block">Input.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#keepAlive">keepAlive</a></strong></code>
+<div class="block">Keep-alive.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#keepAliveTimeout">keepAliveTimeout</a></strong></code>
+<div class="block">The number of seconds Tomcat will wait for a subsequent request
+ before closing the connection.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#keptAlive">keptAlive</a></strong></code>
+<div class="block">Flag used to indicate that the socket should treat the next request
+ processed like a keep-alive connection - i.e. one where there may not be
+ any data to process.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#maxKeepAliveRequests">maxKeepAliveRequests</a></strong></code>
+<div class="block">Maximum number of Keep-Alive requests to honor.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#maxSavePostSize">maxSavePostSize</a></strong></code>
+<div class="block">Max saved post size.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex">Pattern</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#noCompressionUserAgents">noCompressionUserAgents</a></strong></code>
+<div class="block">Regular expression that defines the user agents to not use gzip with</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#openSocket">openSocket</a></strong></code>
+<div class="block">Flag used to indicate that the socket should be kept open (e.g. for keep
+ alive or send file.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html" title="class in org.apache.coyote.http11">AbstractOutputBuffer</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#outputBuffer">outputBuffer</a></strong></code>
+<div class="block">Output.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#readComplete">readComplete</a></strong></code>
+<div class="block">Flag that indicates if the request headers have been completely read.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex">Pattern</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#restrictedUserAgents">restrictedUserAgents</a></strong></code>
+<div class="block">Regular expression that defines the restricted user agents.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#sendfileInProgress">sendfileInProgress</a></strong></code>
+<div class="block">Flag that indicates that send file processing is in progress and that the
+ socket should not be returned to the poller (where a poller is used).</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#server">server</a></strong></code>
+<div class="block">Allow a customized the server header for the tin-foil hat folks.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="../../../../org/apache/tomcat/util/res/StringManager.html" title="class in org.apache.tomcat.util.res">StringManager</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#sm">sm</a></strong></code>
+<div class="block">The string manager for this package.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.coyote.AbstractProcessor">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.coyote.<a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">AbstractProcessor</a></h3>
+<code><a href="../../../../org/apache/coyote/AbstractProcessor.html#adapter">adapter</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#asyncStateMachine">asyncStateMachine</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#endpoint">endpoint</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#request">request</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#response">response</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#socketWrapper">socketWrapper</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#AbstractHttp11Processor(org.apache.tomcat.util.net.AbstractEndpoint)">AbstractHttp11Processor</a></strong>(<a href="../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;&nbsp;endpoint)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#action(org.apache.coyote.ActionCode,%20java.lang.Object)">action</a></strong>(<a href="../../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a>&nbsp;actionCode,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;param)</code>
+<div class="block">Send an action to the connector.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#addCompressableMimeType(java.lang.String)">addCompressableMimeType</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;mimeType)</code>
+<div class="block">Add a mime-type which will be compressible
+ The mime-type String will be exactly matched
+ in the response mime-type header .</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../org/apache/tomcat/util/net/AbstractEndpoint.Handler.SocketState.html" title="enum in org.apache.tomcat.util.net">AbstractEndpoint.Handler.SocketState</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#asyncDispatch(org.apache.tomcat.util.net.SocketStatus)">asyncDispatch</a></strong>(<a href="../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net">SocketStatus</a>&nbsp;status)</code>
+<div class="block">Process in-progress Servlet 3.0 Async requests.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected abstract boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#breakKeepAliveLoop(org.apache.tomcat.util.net.SocketWrapper)">breakKeepAliveLoop</a></strong>(<a href="../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;&nbsp;socketWrapper)</code>
+<div class="block">Checks to see if the keep-alive loop should be broken, performing any
+ processing (e.g. sendfile handling) that may have an impact on whether
+ or not the keep-alive loop should be broken.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected abstract boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#disableKeepAlive()">disableKeepAlive</a></strong>()</code>
+<div class="block">Processors (currently only HTTP BIO) may elect to disable HTTP keep-alive
+ in some circumstances.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#endRequest()">endRequest</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#findBytes(org.apache.tomcat.util.buf.ByteChunk,%20byte[])">findBytes</a></strong>(<a href="../../../../org/apache/tomcat/util/buf/ByteChunk.html" title="class in org.apache.tomcat.util.buf">ByteChunk</a>&nbsp;bc,
+         byte[]&nbsp;b)</code>
+<div class="block">Specialized utility method: find a sequence of lower case bytes inside
+ a ByteChunk.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#getCompression()">getCompression</a></strong>()</code>
+<div class="block">Return compression level.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#getConnectionUploadTimeout()">getConnectionUploadTimeout</a></strong>()</code>
+<div class="block">Get the upload timeout.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#getDisableUploadTimeout()">getDisableUploadTimeout</a></strong>()</code>
+<div class="block">Get the flag that controls upload time-outs.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../servletapi/javax/servlet/http/HttpUpgradeHandler.html?is-external=true" title="class or interface in javax.servlet.http">HttpUpgradeHandler</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#getHttpUpgradeHandler()">getHttpUpgradeHandler</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected abstract <a href="../../../../org/apache/coyote/http11/AbstractInputBuffer.html" title="class in org.apache.coyote.http11">AbstractInputBuffer</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#getInputBuffer()">getInputBuffer</a></strong>()</code>
+<div class="block">Exposes input buffer to super class to allow better code re-use.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#getKeepAliveTimeout()">getKeepAliveTimeout</a></strong>()</code>
+<div class="block">Return the number Keep-Alive timeout.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/nio/ByteBuffer.html?is-external=true" title="class or interface in java.nio">ByteBuffer</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#getLeftoverInput()">getLeftoverInput</a></strong>()</code>
+<div class="block">Allows retrieving additional input during the upgrade process</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#getMaxKeepAliveRequests()">getMaxKeepAliveRequests</a></strong>()</code>
+<div class="block">Return the number of Keep-Alive requests that we will honor.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#getMaxSavePostSize()">getMaxSavePostSize</a></strong>()</code>
+<div class="block">Return the maximum size of a POST which will be buffered in SSL mode.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected abstract <a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html" title="class in org.apache.coyote.http11">AbstractOutputBuffer</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#getOutputBuffer()">getOutputBuffer</a></strong>()</code>
+<div class="block">Exposes output buffer to super class to allow better code re-use.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#getServer()">getServer</a></strong>()</code>
+<div class="block">Get the server header name.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#getSocketBuffer()">getSocketBuffer</a></strong>()</code>
+<div class="block">Get the socket buffer flag.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected abstract boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#handleIncompleteRequestLineRead()">handleIncompleteRequestLineRead</a></strong>()</code>
+<div class="block">Defines how a connector handles an incomplete request line read.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#initializeFilters(int,%20java.util.Set,%20int,%20int)">initializeFilters</a></strong>(int&nbsp;maxTrailerSize,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;allowedTrailerHeaders,
+                 int&nbsp;maxExtensionSize,
+                 int&nbsp;maxSwallowSize)</code>
+<div class="block">Initialize standard input and output filters.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#isComet()">isComet</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#isUpgrade()">isUpgrade</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#parseHost(org.apache.tomcat.util.buf.MessageBytes)">parseHost</a></strong>(<a href="../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;valueMB)</code>
+<div class="block">Parse host.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#prepareRequest()">prepareRequest</a></strong>()</code>
+<div class="block">After reading the request headers, we have to setup the request filters.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#prepareRequestInternal()">prepareRequestInternal</a></strong>()</code>
+<div class="block">Connector implementation specific request preparation.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../org/apache/tomcat/util/net/AbstractEndpoint.Handler.SocketState.html" title="enum in org.apache.tomcat.util.net">AbstractEndpoint.Handler.SocketState</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#process(org.apache.tomcat.util.net.SocketWrapper)">process</a></strong>(<a href="../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;&nbsp;socketWrapper)</code>
+<div class="block">Process pipelined HTTP requests using the specified input and output
+ streams.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#recycle(boolean)">recycle</a></strong>(boolean&nbsp;isSocketClosing)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#recycleInternal()">recycleInternal</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#resetTimeouts()">resetTimeouts</a></strong>()</code>
+<div class="block">Provides a mechanism for those connector implementations (currently only
+ NIO) that need to reset timeouts from Async timeouts to standard HTTP
+ timeouts once async processing completes.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#setCometTimeouts(org.apache.tomcat.util.net.SocketWrapper)">setCometTimeouts</a></strong>(<a href="../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;&nbsp;socketWrapper)</code>
+<div class="block">Provides a mechanism for those connectors (currently only NIO) that need
+ that need to set comet timeouts.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#setCompressableMimeTypes(java.lang.String)">setCompressableMimeTypes</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;compressableMimeTypes)</code>
+<div class="block">Set compressable mime-type list
+ List contains users agents separated by ',' :
+
+ ie: "text/html,text/xml,text/plain"</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#setCompressableMimeTypes(java.lang.String[])">setCompressableMimeTypes</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;compressableMimeTypes)</code>
+<div class="block">Set compressible mime-type list (this method is best when used with
+ a large number of connectors, where it would be better to have all of
+ them referenced a single array).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#setCompression(java.lang.String)">setCompression</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;compression)</code>
+<div class="block">Set compression level.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#setCompressionMinSize(int)">setCompressionMinSize</a></strong>(int&nbsp;compressionMinSize)</code>
+<div class="block">Set Minimum size to trigger compression.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#setConnectionUploadTimeout(int)">setConnectionUploadTimeout</a></strong>(int&nbsp;timeout)</code>
+<div class="block">Set the upload timeout.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#setDisableUploadTimeout(boolean)">setDisableUploadTimeout</a></strong>(boolean&nbsp;isDisabled)</code>
+<div class="block">Set the flag to control upload time-outs.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#setKeepAliveTimeout(int)">setKeepAliveTimeout</a></strong>(int&nbsp;timeout)</code>
+<div class="block">Set the Keep-Alive timeout.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#setMaxKeepAliveRequests(int)">setMaxKeepAliveRequests</a></strong>(int&nbsp;mkar)</code>
+<div class="block">Set the maximum number of Keep-Alive requests to honor.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#setMaxSavePostSize(int)">setMaxSavePostSize</a></strong>(int&nbsp;msps)</code>
+<div class="block">Set the maximum size of a POST which will be buffered in SSL mode.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#setNoCompressionUserAgents(java.lang.String)">setNoCompressionUserAgents</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;noCompressionUserAgents)</code>
+<div class="block">Set no compression user agent pattern.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#setRequestLineReadTimeout()">setRequestLineReadTimeout</a></strong>()</code>
+<div class="block">Configures the timeout to be used for reading the request line.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#setRestrictedUserAgents(java.lang.String)">setRestrictedUserAgents</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;restrictedUserAgents)</code>
+<div class="block">Set restricted user agent list (which will downgrade the connector
+ to HTTP/1.0 mode).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#setServer(java.lang.String)">setServer</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;server)</code>
+<div class="block">Set the server header name.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#setSocketBuffer(int)">setSocketBuffer</a></strong>(int&nbsp;socketBuffer)</code>
+<div class="block">Set the socket buffer flag.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#setSocketTimeout(int)">setSocketTimeout</a></strong>(int&nbsp;timeout)</code>
+<div class="block">Set the socket timeout.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#statusDropsConnection(int)">statusDropsConnection</a></strong>(int&nbsp;status)</code>
+<div class="block">Determine if we must drop the connection because of the HTTP status
+ code.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../org/apache/tomcat/util/net/AbstractEndpoint.Handler.SocketState.html" title="enum in org.apache.tomcat.util.net">AbstractEndpoint.Handler.SocketState</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html#upgradeDispatch(org.apache.tomcat.util.net.SocketStatus)">upgradeDispatch</a></strong>(<a href="../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net">SocketStatus</a>&nbsp;status)</code>
+<div class="block">Processes data received on a connection that has been through an HTTP
+ upgrade.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.coyote.AbstractProcessor">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.coyote.<a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">AbstractProcessor</a></h3>
+<code><a href="../../../../org/apache/coyote/AbstractProcessor.html#asyncPostProcess()">asyncPostProcess</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#errorDispatch()">errorDispatch</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#event(org.apache.tomcat.util.net.SocketStatus)">event</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#getAdapter()">getAdapter</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#getEndpoint()">getEndpoint</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#getErrorState()">getErrorState</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#getExecutor()">getExecutor</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#getLog()">getLog</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#getRequest()">getRequest</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#getSocketWrapper()">getSocketWrapper</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#isAsync()">isAsync</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#registerForEvent(boolean,%20boolean)">registerForEvent</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#resetErrorState()">resetErrorState</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#setAdapter(org.apache.coyote.Adapter)">setAdapter</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#setErrorState(org.apache.coyote.ErrorState,%20java.lang.Throwable)">setErrorState</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#setSocketWrapper(org.apache.tomcat.util.net.SocketWrapper)">setSocketWrapper</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.coyote.Processor">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.apache.coyote.<a href="../../../../org/apache/coyote/Processor.html" title="interface in org.apache.coyote">Processor</a></h3>
+<code><a href="../../../../org/apache/coyote/Processor.html#setSslSupport(org.apache.tomcat.util.net.SSLSupport)">setSslSupport</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="sm">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sm</h4>
+<pre>protected static final&nbsp;<a href="../../../../org/apache/tomcat/util/res/StringManager.html" title="class in org.apache.tomcat.util.res">StringManager</a> sm</pre>
+<div class="block">The string manager for this package.</div>
+</li>
+</ul>
+<a name="inputBuffer">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>inputBuffer</h4>
+<pre>protected&nbsp;<a href="../../../../org/apache/coyote/http11/AbstractInputBuffer.html" title="class in org.apache.coyote.http11">AbstractInputBuffer</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt; inputBuffer</pre>
+<div class="block">Input.</div>
+</li>
+</ul>
+<a name="outputBuffer">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>outputBuffer</h4>
+<pre>protected&nbsp;<a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html" title="class in org.apache.coyote.http11">AbstractOutputBuffer</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt; outputBuffer</pre>
+<div class="block">Output.</div>
+</li>
+</ul>
+<a name="keepAlive">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>keepAlive</h4>
+<pre>protected&nbsp;boolean keepAlive</pre>
+<div class="block">Keep-alive.</div>
+</li>
+</ul>
+<a name="openSocket">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openSocket</h4>
+<pre>protected&nbsp;boolean openSocket</pre>
+<div class="block">Flag used to indicate that the socket should be kept open (e.g. for keep
+ alive or send file.</div>
+</li>
+</ul>
+<a name="keptAlive">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>keptAlive</h4>
+<pre>protected&nbsp;boolean keptAlive</pre>
+<div class="block">Flag used to indicate that the socket should treat the next request
+ processed like a keep-alive connection - i.e. one where there may not be
+ any data to process. The initial value of this flag on entering the
+ process method is different for connectors that use polling (NIO / APR -
+ data is always expected) compared to those that use blocking (BIO - data
+ is only expected if the connection isn't in the keep-alive state).</div>
+</li>
+</ul>
+<a name="sendfileInProgress">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sendfileInProgress</h4>
+<pre>protected&nbsp;boolean sendfileInProgress</pre>
+<div class="block">Flag that indicates that send file processing is in progress and that the
+ socket should not be returned to the poller (where a poller is used).</div>
+</li>
+</ul>
+<a name="readComplete">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>readComplete</h4>
+<pre>protected&nbsp;boolean readComplete</pre>
+<div class="block">Flag that indicates if the request headers have been completely read.</div>
+</li>
+</ul>
+<a name="http11">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>http11</h4>
+<pre>protected&nbsp;boolean http11</pre>
+<div class="block">HTTP/1.1 flag.</div>
+</li>
+</ul>
+<a name="http09">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>http09</h4>
+<pre>protected&nbsp;boolean http09</pre>
+<div class="block">HTTP/0.9 flag.</div>
+</li>
+</ul>
+<a name="contentDelimitation">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>contentDelimitation</h4>
+<pre>protected&nbsp;boolean contentDelimitation</pre>
+<div class="block">Content delimiter for the request (if false, the connection will
+ be closed at the end of the request).</div>
+</li>
+</ul>
+<a name="expectation">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>expectation</h4>
+<pre>protected&nbsp;boolean expectation</pre>
+<div class="block">Is there an expectation ?</div>
+</li>
+</ul>
+<a name="comet">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>comet</h4>
+<pre>protected&nbsp;boolean comet</pre>
+<div class="block">Comet used.</div>
+</li>
+</ul>
+<a name="restrictedUserAgents">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>restrictedUserAgents</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex">Pattern</a> restrictedUserAgents</pre>
+<div class="block">Regular expression that defines the restricted user agents.</div>
+</li>
+</ul>
+<a name="maxKeepAliveRequests">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>maxKeepAliveRequests</h4>
+<pre>protected&nbsp;int maxKeepAliveRequests</pre>
+<div class="block">Maximum number of Keep-Alive requests to honor.</div>
+</li>
+</ul>
+<a name="keepAliveTimeout">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>keepAliveTimeout</h4>
+<pre>protected&nbsp;int keepAliveTimeout</pre>
+<div class="block">The number of seconds Tomcat will wait for a subsequent request
+ before closing the connection.</div>
+</li>
+</ul>
+<a name="connectionUploadTimeout">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>connectionUploadTimeout</h4>
+<pre>protected&nbsp;int connectionUploadTimeout</pre>
+<div class="block">Maximum timeout on uploads. 5 minutes as in Apache HTTPD server.</div>
+</li>
+</ul>
+<a name="disableUploadTimeout">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>disableUploadTimeout</h4>
+<pre>protected&nbsp;boolean disableUploadTimeout</pre>
+<div class="block">Flag to disable setting a different time-out on uploads.</div>
+</li>
+</ul>
+<a name="compressionLevel">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>compressionLevel</h4>
+<pre>protected&nbsp;int compressionLevel</pre>
+<div class="block">Allowed compression level.</div>
+</li>
+</ul>
+<a name="compressionMinSize">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>compressionMinSize</h4>
+<pre>protected&nbsp;int compressionMinSize</pre>
+<div class="block">Minimum content size to make compression.</div>
+</li>
+</ul>
+<a name="maxSavePostSize">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>maxSavePostSize</h4>
+<pre>protected&nbsp;int maxSavePostSize</pre>
+<div class="block">Max saved post size.</div>
+</li>
+</ul>
+<a name="noCompressionUserAgents">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>noCompressionUserAgents</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex">Pattern</a> noCompressionUserAgents</pre>
+<div class="block">Regular expression that defines the user agents to not use gzip with</div>
+</li>
+</ul>
+<a name="compressableMimeTypes">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>compressableMimeTypes</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[] compressableMimeTypes</pre>
+<div class="block">List of MIMES which could be gzipped</div>
+</li>
+</ul>
+<a name="hostNameC">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hostNameC</h4>
+<pre>protected&nbsp;char[] hostNameC</pre>
+<div class="block">Host name (used to avoid useless B2C conversion on the host name).</div>
+</li>
+</ul>
+<a name="server">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>server</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> server</pre>
+<div class="block">Allow a customized the server header for the tin-foil hat folks.</div>
+</li>
+</ul>
+<a name="httpUpgradeHandler">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>httpUpgradeHandler</h4>
+<pre>protected&nbsp;<a href="../../../../../servletapi/javax/servlet/http/HttpUpgradeHandler.html?is-external=true" title="class or interface in javax.servlet.http">HttpUpgradeHandler</a> httpUpgradeHandler</pre>
+<div class="block">Instance of the new protocol to use after the HTTP connection has been
+ upgraded.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="AbstractHttp11Processor(org.apache.tomcat.util.net.AbstractEndpoint)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>AbstractHttp11Processor</h4>
+<pre>public&nbsp;AbstractHttp11Processor(<a href="../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;&nbsp;endpoint)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setCompression(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCompression</h4>
+<pre>public&nbsp;void&nbsp;setCompression(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;compression)</pre>
+<div class="block">Set compression level.</div>
+</li>
+</ul>
+<a name="setCompressionMinSize(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCompressionMinSize</h4>
+<pre>public&nbsp;void&nbsp;setCompressionMinSize(int&nbsp;compressionMinSize)</pre>
+<div class="block">Set Minimum size to trigger compression.</div>
+</li>
+</ul>
+<a name="setNoCompressionUserAgents(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setNoCompressionUserAgents</h4>
+<pre>public&nbsp;void&nbsp;setNoCompressionUserAgents(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;noCompressionUserAgents)</pre>
+<div class="block">Set no compression user agent pattern. Regular expression as supported
+ by <a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex"><code>Pattern</code></a>.
+
+ ie: "gorilla|desesplorer|tigrus"</div>
+</li>
+</ul>
+<a name="addCompressableMimeType(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addCompressableMimeType</h4>
+<pre>public&nbsp;void&nbsp;addCompressableMimeType(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;mimeType)</pre>
+<div class="block">Add a mime-type which will be compressible
+ The mime-type String will be exactly matched
+ in the response mime-type header .</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>mimeType</code> - mime-type string</dd></dl>
+</li>
+</ul>
+<a name="setCompressableMimeTypes(java.lang.String[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCompressableMimeTypes</h4>
+<pre>public&nbsp;void&nbsp;setCompressableMimeTypes(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;compressableMimeTypes)</pre>
+<div class="block">Set compressible mime-type list (this method is best when used with
+ a large number of connectors, where it would be better to have all of
+ them referenced a single array).</div>
+</li>
+</ul>
+<a name="setCompressableMimeTypes(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCompressableMimeTypes</h4>
+<pre>public&nbsp;void&nbsp;setCompressableMimeTypes(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;compressableMimeTypes)</pre>
+<div class="block">Set compressable mime-type list
+ List contains users agents separated by ',' :
+
+ ie: "text/html,text/xml,text/plain"</div>
+</li>
+</ul>
+<a name="getCompression()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCompression</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getCompression()</pre>
+<div class="block">Return compression level.</div>
+</li>
+</ul>
+<a name="setRestrictedUserAgents(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRestrictedUserAgents</h4>
+<pre>public&nbsp;void&nbsp;setRestrictedUserAgents(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;restrictedUserAgents)</pre>
+<div class="block">Set restricted user agent list (which will downgrade the connector
+ to HTTP/1.0 mode). Regular expression as supported by <a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex"><code>Pattern</code></a>.
+
+ ie: "gorilla|desesplorer|tigrus"</div>
+</li>
+</ul>
+<a name="setMaxKeepAliveRequests(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMaxKeepAliveRequests</h4>
+<pre>public&nbsp;void&nbsp;setMaxKeepAliveRequests(int&nbsp;mkar)</pre>
+<div class="block">Set the maximum number of Keep-Alive requests to honor.
+ This is to safeguard from DoS attacks.  Setting to a negative
+ value disables the check.</div>
+</li>
+</ul>
+<a name="getMaxKeepAliveRequests()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMaxKeepAliveRequests</h4>
+<pre>public&nbsp;int&nbsp;getMaxKeepAliveRequests()</pre>
+<div class="block">Return the number of Keep-Alive requests that we will honor.</div>
+</li>
+</ul>
+<a name="setKeepAliveTimeout(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setKeepAliveTimeout</h4>
+<pre>public&nbsp;void&nbsp;setKeepAliveTimeout(int&nbsp;timeout)</pre>
+<div class="block">Set the Keep-Alive timeout.</div>
+</li>
+</ul>
+<a name="getKeepAliveTimeout()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getKeepAliveTimeout</h4>
+<pre>public&nbsp;int&nbsp;getKeepAliveTimeout()</pre>
+<div class="block">Return the number Keep-Alive timeout.</div>
+</li>
+</ul>
+<a name="setMaxSavePostSize(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMaxSavePostSize</h4>
+<pre>public&nbsp;void&nbsp;setMaxSavePostSize(int&nbsp;msps)</pre>
+<div class="block">Set the maximum size of a POST which will be buffered in SSL mode.</div>
+</li>
+</ul>
+<a name="getMaxSavePostSize()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMaxSavePostSize</h4>
+<pre>public&nbsp;int&nbsp;getMaxSavePostSize()</pre>
+<div class="block">Return the maximum size of a POST which will be buffered in SSL mode.</div>
+</li>
+</ul>
+<a name="setDisableUploadTimeout(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDisableUploadTimeout</h4>
+<pre>public&nbsp;void&nbsp;setDisableUploadTimeout(boolean&nbsp;isDisabled)</pre>
+<div class="block">Set the flag to control upload time-outs.</div>
+</li>
+</ul>
+<a name="getDisableUploadTimeout()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDisableUploadTimeout</h4>
+<pre>public&nbsp;boolean&nbsp;getDisableUploadTimeout()</pre>
+<div class="block">Get the flag that controls upload time-outs.</div>
+</li>
+</ul>
+<a name="setSocketBuffer(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSocketBuffer</h4>
+<pre>public&nbsp;void&nbsp;setSocketBuffer(int&nbsp;socketBuffer)</pre>
+<div class="block">Set the socket buffer flag.</div>
+</li>
+</ul>
+<a name="getSocketBuffer()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSocketBuffer</h4>
+<pre>public&nbsp;int&nbsp;getSocketBuffer()</pre>
+<div class="block">Get the socket buffer flag.</div>
+</li>
+</ul>
+<a name="setConnectionUploadTimeout(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setConnectionUploadTimeout</h4>
+<pre>public&nbsp;void&nbsp;setConnectionUploadTimeout(int&nbsp;timeout)</pre>
+<div class="block">Set the upload timeout.</div>
+</li>
+</ul>
+<a name="getConnectionUploadTimeout()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getConnectionUploadTimeout</h4>
+<pre>public&nbsp;int&nbsp;getConnectionUploadTimeout()</pre>
+<div class="block">Get the upload timeout.</div>
+</li>
+</ul>
+<a name="setServer(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setServer</h4>
+<pre>public&nbsp;void&nbsp;setServer(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;server)</pre>
+<div class="block">Set the server header name.</div>
+</li>
+</ul>
+<a name="getServer()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getServer</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getServer()</pre>
+<div class="block">Get the server header name.</div>
+</li>
+</ul>
+<a name="findBytes(org.apache.tomcat.util.buf.ByteChunk, byte[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>findBytes</h4>
+<pre>protected&nbsp;int&nbsp;findBytes(<a href="../../../../org/apache/tomcat/util/buf/ByteChunk.html" title="class in org.apache.tomcat.util.buf">ByteChunk</a>&nbsp;bc,
+            byte[]&nbsp;b)</pre>
+<div class="block">Specialized utility method: find a sequence of lower case bytes inside
+ a ByteChunk.</div>
+</li>
+</ul>
+<a name="statusDropsConnection(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>statusDropsConnection</h4>
+<pre>protected&nbsp;boolean&nbsp;statusDropsConnection(int&nbsp;status)</pre>
+<div class="block">Determine if we must drop the connection because of the HTTP status
+ code.  Use the same list of codes as Apache/httpd.</div>
+</li>
+</ul>
+<a name="getInputBuffer()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getInputBuffer</h4>
+<pre>protected abstract&nbsp;<a href="../../../../org/apache/coyote/http11/AbstractInputBuffer.html" title="class in org.apache.coyote.http11">AbstractInputBuffer</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;&nbsp;getInputBuffer()</pre>
+<div class="block">Exposes input buffer to super class to allow better code re-use.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The input buffer used by the processor.</dd></dl>
+</li>
+</ul>
+<a name="getOutputBuffer()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOutputBuffer</h4>
+<pre>protected abstract&nbsp;<a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html" title="class in org.apache.coyote.http11">AbstractOutputBuffer</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;&nbsp;getOutputBuffer()</pre>
+<div class="block">Exposes output buffer to super class to allow better code re-use.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The output buffer used by the processor.</dd></dl>
+</li>
+</ul>
+<a name="initializeFilters(int, java.util.Set, int, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>initializeFilters</h4>
+<pre>protected&nbsp;void&nbsp;initializeFilters(int&nbsp;maxTrailerSize,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;allowedTrailerHeaders,
+                     int&nbsp;maxExtensionSize,
+                     int&nbsp;maxSwallowSize)</pre>
+<div class="block">Initialize standard input and output filters.</div>
+</li>
+</ul>
+<a name="action(org.apache.coyote.ActionCode, java.lang.Object)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>action</h4>
+<pre>public final&nbsp;void&nbsp;action(<a href="../../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a>&nbsp;actionCode,
+          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;param)</pre>
+<div class="block">Send an action to the connector.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>actionCode</code> - Type of the action</dd><dd><code>param</code> - Action parameter</dd></dl>
+</li>
+</ul>
+<a name="disableKeepAlive()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>disableKeepAlive</h4>
+<pre>protected abstract&nbsp;boolean&nbsp;disableKeepAlive()</pre>
+<div class="block">Processors (currently only HTTP BIO) may elect to disable HTTP keep-alive
+ in some circumstances. This method allows the processor implementation to
+ determine if keep-alive should be disabled or not.</div>
+</li>
+</ul>
+<a name="setRequestLineReadTimeout()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRequestLineReadTimeout</h4>
+<pre>protected abstract&nbsp;void&nbsp;setRequestLineReadTimeout()
+                                           throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Configures the timeout to be used for reading the request line.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="handleIncompleteRequestLineRead()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>handleIncompleteRequestLineRead</h4>
+<pre>protected abstract&nbsp;boolean&nbsp;handleIncompleteRequestLineRead()</pre>
+<div class="block">Defines how a connector handles an incomplete request line read.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the processor should break out of the
+         processing loop, otherwise <code>false</code>.</dd></dl>
+</li>
+</ul>
+<a name="setSocketTimeout(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSocketTimeout</h4>
+<pre>protected abstract&nbsp;void&nbsp;setSocketTimeout(int&nbsp;timeout)
+                                  throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Set the socket timeout.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="process(org.apache.tomcat.util.net.SocketWrapper)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>process</h4>
+<pre>public&nbsp;<a href="../../../../org/apache/tomcat/util/net/AbstractEndpoint.Handler.SocketState.html" title="enum in org.apache.tomcat.util.net">AbstractEndpoint.Handler.SocketState</a>&nbsp;process(<a href="../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;&nbsp;socketWrapper)
+                                             throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Process pipelined HTTP requests using the specified input and output
+ streams.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Processor.html#process(org.apache.tomcat.util.net.SocketWrapper)">process</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Processor.html" title="interface in org.apache.coyote">Processor</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;</code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/AbstractProcessor.html#process(org.apache.tomcat.util.net.SocketWrapper)">process</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">AbstractProcessor</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;</code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>socketWrapper</code> - Socket from which the HTTP requests will be read
+               and the HTTP responses will be written.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - error during an I/O operation</dd></dl>
+</li>
+</ul>
+<a name="prepareRequest()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>prepareRequest</h4>
+<pre>protected&nbsp;void&nbsp;prepareRequest()</pre>
+<div class="block">After reading the request headers, we have to setup the request filters.</div>
+</li>
+</ul>
+<a name="prepareRequestInternal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>prepareRequestInternal</h4>
+<pre>protected abstract&nbsp;void&nbsp;prepareRequestInternal()</pre>
+<div class="block">Connector implementation specific request preparation. Ideally, this will
+ go away in the future.</div>
+</li>
+</ul>
+<a name="parseHost(org.apache.tomcat.util.buf.MessageBytes)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>parseHost</h4>
+<pre>protected&nbsp;void&nbsp;parseHost(<a href="../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;valueMB)</pre>
+<div class="block">Parse host.</div>
+</li>
+</ul>
+<a name="asyncDispatch(org.apache.tomcat.util.net.SocketStatus)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>asyncDispatch</h4>
+<pre>public&nbsp;<a href="../../../../org/apache/tomcat/util/net/AbstractEndpoint.Handler.SocketState.html" title="enum in org.apache.tomcat.util.net">AbstractEndpoint.Handler.SocketState</a>&nbsp;asyncDispatch(<a href="../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net">SocketStatus</a>&nbsp;status)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProcessor.html#asyncDispatch(org.apache.tomcat.util.net.SocketStatus)">AbstractProcessor</a></code></strong></div>
+<div class="block">Process in-progress Servlet 3.0 Async requests. These will start as HTTP
+ requests.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Processor.html#asyncDispatch(org.apache.tomcat.util.net.SocketStatus)">asyncDispatch</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Processor.html" title="interface in org.apache.coyote">Processor</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;</code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/AbstractProcessor.html#asyncDispatch(org.apache.tomcat.util.net.SocketStatus)">asyncDispatch</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">AbstractProcessor</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="isComet()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isComet</h4>
+<pre>public&nbsp;boolean&nbsp;isComet()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Processor.html#isComet()">isComet</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Processor.html" title="interface in org.apache.coyote">Processor</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;</code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/AbstractProcessor.html#isComet()">isComet</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">AbstractProcessor</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="isUpgrade()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isUpgrade</h4>
+<pre>public&nbsp;boolean&nbsp;isUpgrade()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Processor.html#isUpgrade()">isUpgrade</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Processor.html" title="interface in org.apache.coyote">Processor</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;</code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/AbstractProcessor.html#isUpgrade()">isUpgrade</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">AbstractProcessor</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="upgradeDispatch(org.apache.tomcat.util.net.SocketStatus)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>upgradeDispatch</h4>
+<pre>public&nbsp;<a href="../../../../org/apache/tomcat/util/net/AbstractEndpoint.Handler.SocketState.html" title="enum in org.apache.tomcat.util.net">AbstractEndpoint.Handler.SocketState</a>&nbsp;upgradeDispatch(<a href="../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net">SocketStatus</a>&nbsp;status)
+                                                     throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProcessor.html#upgradeDispatch(org.apache.tomcat.util.net.SocketStatus)">AbstractProcessor</a></code></strong></div>
+<div class="block">Processes data received on a connection that has been through an HTTP
+ upgrade.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Processor.html#upgradeDispatch(org.apache.tomcat.util.net.SocketStatus)">upgradeDispatch</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Processor.html" title="interface in org.apache.coyote">Processor</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;</code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/AbstractProcessor.html#upgradeDispatch(org.apache.tomcat.util.net.SocketStatus)">upgradeDispatch</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">AbstractProcessor</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="getHttpUpgradeHandler()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHttpUpgradeHandler</h4>
+<pre>public&nbsp;<a href="../../../../../servletapi/javax/servlet/http/HttpUpgradeHandler.html?is-external=true" title="class or interface in javax.servlet.http">HttpUpgradeHandler</a>&nbsp;getHttpUpgradeHandler()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Processor.html#getHttpUpgradeHandler()">getHttpUpgradeHandler</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Processor.html" title="interface in org.apache.coyote">Processor</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;</code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/AbstractProcessor.html#getHttpUpgradeHandler()">getHttpUpgradeHandler</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">AbstractProcessor</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="resetTimeouts()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>resetTimeouts</h4>
+<pre>protected abstract&nbsp;void&nbsp;resetTimeouts()</pre>
+<div class="block">Provides a mechanism for those connector implementations (currently only
+ NIO) that need to reset timeouts from Async timeouts to standard HTTP
+ timeouts once async processing completes.</div>
+</li>
+</ul>
+<a name="setCometTimeouts(org.apache.tomcat.util.net.SocketWrapper)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCometTimeouts</h4>
+<pre>protected abstract&nbsp;void&nbsp;setCometTimeouts(<a href="../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;&nbsp;socketWrapper)</pre>
+<div class="block">Provides a mechanism for those connectors (currently only NIO) that need
+ that need to set comet timeouts.</div>
+</li>
+</ul>
+<a name="endRequest()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>endRequest</h4>
+<pre>public&nbsp;void&nbsp;endRequest()</pre>
+</li>
+</ul>
+<a name="breakKeepAliveLoop(org.apache.tomcat.util.net.SocketWrapper)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>breakKeepAliveLoop</h4>
+<pre>protected abstract&nbsp;boolean&nbsp;breakKeepAliveLoop(<a href="../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="type parameter in AbstractHttp11Processor">S</a>&gt;&nbsp;socketWrapper)</pre>
+<div class="block">Checks to see if the keep-alive loop should be broken, performing any
+ processing (e.g. sendfile handling) that may have an impact on whether
+ or not the keep-alive loop should be broken.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>true if the keep-alive loop should be broken</dd></dl>
+</li>
+</ul>
+<a name="recycle(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>recycle</h4>
+<pre>public final&nbsp;void&nbsp;recycle(boolean&nbsp;isSocketClosing)</pre>
+</li>
+</ul>
+<a name="recycleInternal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>recycleInternal</h4>
+<pre>protected abstract&nbsp;void&nbsp;recycleInternal()</pre>
+</li>
+</ul>
+<a name="getLeftoverInput()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getLeftoverInput</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/nio/ByteBuffer.html?is-external=true" title="class or interface in java.nio">ByteBuffer</a>&nbsp;getLeftoverInput()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/coyote/Processor.html#getLeftoverInput()">Processor</a></code></strong></div>
+<div class="block">Allows retrieving additional input during the upgrade process</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>leftover bytes</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html" title="class in org.apache.coyote.http11"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html" title="class in org.apache.coyote.http11"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/coyote/http11/AbstractHttp11Processor.html" target="_top">Frames</a></li>
+<li><a href="AbstractHttp11Processor.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

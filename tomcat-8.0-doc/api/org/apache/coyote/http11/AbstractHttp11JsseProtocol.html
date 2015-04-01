@@ -1,0 +1,924 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AbstractHttp11JsseProtocol (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="AbstractHttp11JsseProtocol (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev Class</li>
+<li><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="class in org.apache.coyote.http11"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/coyote/http11/AbstractHttp11JsseProtocol.html" target="_top">Frames</a></li>
+<li><a href="AbstractHttp11JsseProtocol.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_classes_inherited_from_class_org.apache.coyote.AbstractProtocol">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.coyote.http11</div>
+<h2 title="Class AbstractHttp11JsseProtocol" class="title">Class AbstractHttp11JsseProtocol&lt;S&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../org/apache/coyote/AbstractProtocol.html" title="class in org.apache.coyote">org.apache.coyote.AbstractProtocol</a>&lt;S&gt;</li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html" title="class in org.apache.coyote.http11">org.apache.coyote.http11.AbstractHttp11Protocol</a>&lt;S&gt;</li>
+<li>
+<ul class="inheritance">
+<li>org.apache.coyote.http11.AbstractHttp11JsseProtocol&lt;S&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://docs.oracle.com/javase/7/docs/api/javax/management/MBeanRegistration.html?is-external=true" title="class or interface in javax.management">MBeanRegistration</a>, <a href="../../../../org/apache/coyote/ProtocolHandler.html" title="interface in org.apache.coyote">ProtocolHandler</a></dd>
+</dl>
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../../../org/apache/coyote/http11/Http11Nio2Protocol.html" title="class in org.apache.coyote.http11">Http11Nio2Protocol</a>, <a href="../../../../org/apache/coyote/http11/Http11NioProtocol.html" title="class in org.apache.coyote.http11">Http11NioProtocol</a>, <a href="../../../../org/apache/coyote/http11/Http11Protocol.html" title="class in org.apache.coyote.http11">Http11Protocol</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public abstract class <span class="strong">AbstractHttp11JsseProtocol&lt;S&gt;</span>
+extends <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html" title="class in org.apache.coyote.http11">AbstractHttp11Protocol</a>&lt;S&gt;</pre>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested_class_summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="nested_classes_inherited_from_class_org.apache.coyote.AbstractProtocol">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from class&nbsp;org.apache.coyote.<a href="../../../../org/apache/coyote/AbstractProtocol.html" title="class in org.apache.coyote">AbstractProtocol</a></h3>
+<code><a href="../../../../org/apache/coyote/AbstractProtocol.AbstractConnectionHandler.html" title="class in org.apache.coyote">AbstractProtocol.AbstractConnectionHandler</a>&lt;<a href="../../../../org/apache/coyote/AbstractProtocol.AbstractConnectionHandler.html" title="type parameter in AbstractProtocol.AbstractConnectionHandler">S</a>,<a href="../../../../org/apache/coyote/AbstractProtocol.AbstractConnectionHandler.html" title="type parameter in AbstractProtocol.AbstractConnectionHandler">P</a> extends <a href="../../../../org/apache/coyote/Processor.html" title="interface in org.apache.coyote">Processor</a>&lt;<a href="../../../../org/apache/coyote/AbstractProtocol.AbstractConnectionHandler.html" title="type parameter in AbstractProtocol.AbstractConnectionHandler">S</a>&gt;&gt;, <a href="../../../../org/apache/coyote/AbstractProtocol.RecycledProcessors.html" title="class in org.apache.coyote">AbstractProtocol.RecycledProcessors</a>&lt;<a href="../../../../org/apache/coyote/AbstractProtocol.RecycledProcessors.html" title="type parameter in AbstractProtocol.RecycledProcessors">P</a> extends <a href="../../../../org/apache/coyote/Processor.html" title="interface in org.apache.coyote">Processor</a>&lt;<a href="../../../../org/apache/coyote/AbstractProtocol.RecycledProcessors.html" title="type parameter in AbstractProtocol.RecycledProcessors">S</a>&gt;,<a href="../../../../org/apache/coyote/AbstractProtocol.RecycledProcessors.html" title="type parameter in AbstractProtocol.RecycledProcessors">S</a>&gt;</code></li>
+</ul>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../org/apache/tomcat/util/net/SSLImplementation.html" title="class in org.apache.tomcat.util.net">SSLImplementation</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#sslImplementation">sslImplementation</a></strong></code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.coyote.http11.AbstractHttp11Protocol">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.coyote.http11.<a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html" title="class in org.apache.coyote.http11">AbstractHttp11Protocol</a></h3>
+<code><a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#npnHandler">npnHandler</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.coyote.AbstractProtocol">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.coyote.<a href="../../../../org/apache/coyote/AbstractProtocol.html" title="class in org.apache.coyote">AbstractProtocol</a></h3>
+<code><a href="../../../../org/apache/coyote/AbstractProtocol.html#adapter">adapter</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#clientCertProvider">clientCertProvider</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#domain">domain</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#endpoint">endpoint</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#mserver">mserver</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#oname">oname</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#processorCache">processorCache</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#rgOname">rgOname</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#sm">sm</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#tpOname">tpOname</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#AbstractHttp11JsseProtocol()">AbstractHttp11JsseProtocol</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#getAlgorithm()">getAlgorithm</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#getAllowUnsafeLegacyRenegotiation()">getAllowUnsafeLegacyRenegotiation</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#getCiphers()">getCiphers</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#getCiphersUsed()">getCiphersUsed</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#getClientAuth()">getClientAuth</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#getCrlFile()">getCrlFile</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#getKeyAlias()">getKeyAlias</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#getKeyPass()">getKeyPass</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#getKeystoreFile()">getKeystoreFile</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#getKeystorePass()">getKeystorePass</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#getKeystoreProvider()">getKeystoreProvider</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#getKeystoreType()">getKeystoreType</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#getSessionCacheSize()">getSessionCacheSize</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#getSessionTimeout()">getSessionTimeout</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#getSslImplementationName()">getSslImplementationName</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#getSslProtocol()">getSslProtocol</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#getTrustMaxCertLength()">getTrustMaxCertLength</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#getTruststoreAlgorithm()">getTruststoreAlgorithm</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#getTruststoreFile()">getTruststoreFile</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#getTruststorePass()">getTruststorePass</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#getTruststoreProvider()">getTruststoreProvider</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#getTruststoreType()">getTruststoreType</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#init()">init</a></strong>()</code>
+<div class="block">Initialise the protocol.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#setAlgorithm(java.lang.String)">setAlgorithm</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#setAllowUnsafeLegacyRenegotiation(java.lang.String)">setAllowUnsafeLegacyRenegotiation</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#setCiphers(java.lang.String)">setCiphers</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#setClientAuth(java.lang.String)">setClientAuth</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#setCrlFile(java.lang.String)">setCrlFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#setKeyAlias(java.lang.String)">setKeyAlias</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#setKeyPass(java.lang.String)">setKeyPass</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#setKeystoreFile(java.lang.String)">setKeystoreFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#setKeystorePass(java.lang.String)">setKeystorePass</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#setKeystoreProvider(java.lang.String)">setKeystoreProvider</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#setKeystoreType(java.lang.String)">setKeystoreType</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#setSessionCacheSize(java.lang.String)">setSessionCacheSize</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#setSessionTimeout(java.lang.String)">setSessionTimeout</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#setSslImplementationName(java.lang.String)">setSslImplementationName</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#setSslProtocol(java.lang.String)">setSslProtocol</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#setTrustMaxCertLength(java.lang.String)">setTrustMaxCertLength</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#setTruststoreAlgorithm(java.lang.String)">setTruststoreAlgorithm</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;a)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#setTruststoreFile(java.lang.String)">setTruststoreFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;f)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#setTruststorePass(java.lang.String)">setTruststorePass</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;p)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#setTruststoreProvider(java.lang.String)">setTruststoreProvider</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;t)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html#setTruststoreType(java.lang.String)">setTruststoreType</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;t)</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.coyote.http11.AbstractHttp11Protocol">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.coyote.http11.<a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html" title="class in org.apache.coyote.http11">AbstractHttp11Protocol</a></h3>
+<code><a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#addAllowedTrailerHeader(java.lang.String)">addAllowedTrailerHeader</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#configureProcessor(org.apache.coyote.http11.AbstractHttp11Processor)">configureProcessor</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#getAllowedTrailerHeaders()">getAllowedTrailerHeaders</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#getAllowedTrailerHeadersAsSet()">getAllowedTrailerHeadersAsSet</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#getCompressableMimeType()">getCompressableMimeType</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#getCompressableMimeTypes()">getCompressableMimeTypes</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#getCompression()">getCompression</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#getCompressionMinSize()">getCompressionMinSize</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#getConnectionUploadTimeout()">getConnectionUploadTimeout</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#getDisableUploadTimeout()">getDisableUploadTimeout</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#getMaxExtensionSize()">getMaxExtensionSize</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#getMaxHttpHeaderSize()">getMaxHttpHeaderSize</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#getMaxKeepAliveRequests()">getMaxKeepAliveRequests</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#getMaxSavePostSize()">getMaxSavePostSize</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#getMaxSwallowSize()">getMaxSwallowSize</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#getMaxTrailerSize()">getMaxTrailerSize</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#getNoCompressionUserAgents()">getNoCompressionUserAgents</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#getProtocolName()">getProtocolName</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#getRestrictedUserAgents()">getRestrictedUserAgents</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#getSecure()">getSecure</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#getServer()">getServer</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#getSocketBuffer()">getSocketBuffer</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#getUpgradeAsyncWriteBufferSize()">getUpgradeAsyncWriteBufferSize</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#isSSLEnabled()">isSSLEnabled</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#removeAllowedTrailerHeader(java.lang.String)">removeAllowedTrailerHeader</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#setAllowedTrailerHeaders(java.lang.String)">setAllowedTrailerHeaders</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#setCompressableMimeType(java.lang.String)">setCompressableMimeType</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#setCompressableMimeTypes(java.lang.String)">setCompressableMimeTypes</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#setCompression(java.lang.String)">setCompression</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#setCompressionMinSize(int)">setCompressionMinSize</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#setConnectionUploadTimeout(int)">setConnectionUploadTimeout</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#setDisableUploadTimeout(boolean)">setDisableUploadTimeout</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#setMaxExtensionSize(int)">setMaxExtensionSize</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#setMaxHttpHeaderSize(int)">setMaxHttpHeaderSize</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#setMaxKeepAliveRequests(int)">setMaxKeepAliveRequests</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#setMaxSavePostSize(int)">setMaxSavePostSize</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#setMaxSwallowSize(int)">setMaxSwallowSize</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#setMaxTrailerSize(int)">setMaxTrailerSize</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#setNoCompressionUserAgents(java.lang.String)">setNoCompressionUserAgents</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#setNpnHandler(java.lang.String)">setNpnHandler</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#setRestrictedUserAgents(java.lang.String)">setRestrictedUserAgents</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#setSecure(boolean)">setSecure</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#setServer(java.lang.String)">setServer</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#setSocketBuffer(int)">setSocketBuffer</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#setSSLEnabled(boolean)">setSSLEnabled</a>, <a href="../../../../org/apache/coyote/http11/AbstractHttp11Protocol.html#setUpgradeAsyncWriteBufferSize(int)">setUpgradeAsyncWriteBufferSize</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.coyote.AbstractProtocol">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.coyote.<a href="../../../../org/apache/coyote/AbstractProtocol.html" title="class in org.apache.coyote">AbstractProtocol</a></h3>
+<code><a href="../../../../org/apache/coyote/AbstractProtocol.html#destroy()">destroy</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getAdapter()">getAdapter</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getAddress()">getAddress</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getBacklog()">getBacklog</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getClientCertProvider()">getClientCertProvider</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getConnectionCount()">getConnectionCount</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getConnectionTimeout()">getConnectionTimeout</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getDomain()">getDomain</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getExecutor()">getExecutor</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getHandler()">getHandler</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getKeepAliveTimeout()">getKeepAliveTimeout</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getLocalPort()">getLocalPort</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getLog()">getLog</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getMaxConnections()">getMaxConnections</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getMaxHeaderCount()">getMaxHeaderCount</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getMaxThreads()">getMaxThreads</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getMinSpareThreads()">getMinSpareThreads</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getName()">getName</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getNameIndex()">getNameIndex</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getNamePrefix()">getNamePrefix</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getObjectName()">getObjectName</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getPort()">getPort</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getProcessorCache()">getProcessorCache</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getProperty(java.lang.String)">getProperty</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getSoLinger()">getSoLinger</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getSoTimeout()">getSoTimeout</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getTcpNoDelay()">getTcpNoDelay</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#getThreadPriority()">getThreadPriority</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#isAprRequired()">isAprRequired</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#isCometSupported()">isCometSupported</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#isCometTimeoutSupported()">isCometTimeoutSupported</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#isSendfileSupported()">isSendfileSupported</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#pause()">pause</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#postDeregister()">postDeregister</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#postRegister(java.lang.Boolean)">postRegister</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#preDeregister()">preDeregister</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#preRegister(javax.management.MBeanServer,%20javax.management.ObjectName)">preRegister</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#resume()">resume</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#setAdapter(org.apache.coyote.Adapter)">setAdapter</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#setAddress(java.net.InetAddress)">setAddress</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#setBacklog(int)">setBacklog</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#setClientCertProvider(java.lang.String)">setClientCertProvider</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#setConnectionTimeout(int)">setConnectionTimeout</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#setExecutor(java.util.concurrent.Executor)">setExecutor</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#setKeepAliveTimeout(int)">setKeepAliveTimeout</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#setMaxConnections(int)">setMaxConnections</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#setMaxHeaderCount(int)">setMaxHeaderCount</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#setMaxThreads(int)">setMaxThreads</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#setMinSpareThreads(int)">setMinSpareThreads</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#setPort(int)">setPort</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#setProcessorCache(int)">setProcessorCache</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#setProperty(java.lang.String,%20java.lang.String)">setProperty</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#setSoLinger(int)">setSoLinger</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#setSoTimeout(int)">setSoTimeout</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#setTcpNoDelay(boolean)">setTcpNoDelay</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#setThreadPriority(int)">setThreadPriority</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#start()">start</a>, <a href="../../../../org/apache/coyote/AbstractProtocol.html#stop()">stop</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="sslImplementation">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>sslImplementation</h4>
+<pre>protected&nbsp;<a href="../../../../org/apache/tomcat/util/net/SSLImplementation.html" title="class in org.apache.tomcat.util.net">SSLImplementation</a> sslImplementation</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="AbstractHttp11JsseProtocol()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>AbstractHttp11JsseProtocol</h4>
+<pre>public&nbsp;AbstractHttp11JsseProtocol()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getAlgorithm()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAlgorithm</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getAlgorithm()</pre>
+</li>
+</ul>
+<a name="setAlgorithm(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAlgorithm</h4>
+<pre>public&nbsp;void&nbsp;setAlgorithm(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getClientAuth()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getClientAuth</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getClientAuth()</pre>
+</li>
+</ul>
+<a name="setClientAuth(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setClientAuth</h4>
+<pre>public&nbsp;void&nbsp;setClientAuth(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getKeystoreFile()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getKeystoreFile</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getKeystoreFile()</pre>
+</li>
+</ul>
+<a name="setKeystoreFile(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setKeystoreFile</h4>
+<pre>public&nbsp;void&nbsp;setKeystoreFile(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getKeystorePass()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getKeystorePass</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getKeystorePass()</pre>
+</li>
+</ul>
+<a name="setKeystorePass(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setKeystorePass</h4>
+<pre>public&nbsp;void&nbsp;setKeystorePass(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getKeystoreType()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getKeystoreType</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getKeystoreType()</pre>
+</li>
+</ul>
+<a name="setKeystoreType(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setKeystoreType</h4>
+<pre>public&nbsp;void&nbsp;setKeystoreType(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getKeystoreProvider()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getKeystoreProvider</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getKeystoreProvider()</pre>
+</li>
+</ul>
+<a name="setKeystoreProvider(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setKeystoreProvider</h4>
+<pre>public&nbsp;void&nbsp;setKeystoreProvider(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getSslProtocol()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSslProtocol</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getSslProtocol()</pre>
+</li>
+</ul>
+<a name="setSslProtocol(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSslProtocol</h4>
+<pre>public&nbsp;void&nbsp;setSslProtocol(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getCiphers()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCiphers</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getCiphers()</pre>
+</li>
+</ul>
+<a name="setCiphers(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCiphers</h4>
+<pre>public&nbsp;void&nbsp;setCiphers(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getCiphersUsed()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCiphersUsed</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;getCiphersUsed()</pre>
+</li>
+</ul>
+<a name="getKeyAlias()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getKeyAlias</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getKeyAlias()</pre>
+</li>
+</ul>
+<a name="setKeyAlias(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setKeyAlias</h4>
+<pre>public&nbsp;void&nbsp;setKeyAlias(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getKeyPass()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getKeyPass</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getKeyPass()</pre>
+</li>
+</ul>
+<a name="setKeyPass(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setKeyPass</h4>
+<pre>public&nbsp;void&nbsp;setKeyPass(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="setTruststoreFile(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTruststoreFile</h4>
+<pre>public&nbsp;void&nbsp;setTruststoreFile(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;f)</pre>
+</li>
+</ul>
+<a name="getTruststoreFile()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTruststoreFile</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getTruststoreFile()</pre>
+</li>
+</ul>
+<a name="setTruststorePass(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTruststorePass</h4>
+<pre>public&nbsp;void&nbsp;setTruststorePass(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;p)</pre>
+</li>
+</ul>
+<a name="getTruststorePass()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTruststorePass</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getTruststorePass()</pre>
+</li>
+</ul>
+<a name="setTruststoreType(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTruststoreType</h4>
+<pre>public&nbsp;void&nbsp;setTruststoreType(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;t)</pre>
+</li>
+</ul>
+<a name="getTruststoreType()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTruststoreType</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getTruststoreType()</pre>
+</li>
+</ul>
+<a name="setTruststoreProvider(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTruststoreProvider</h4>
+<pre>public&nbsp;void&nbsp;setTruststoreProvider(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;t)</pre>
+</li>
+</ul>
+<a name="getTruststoreProvider()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTruststoreProvider</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getTruststoreProvider()</pre>
+</li>
+</ul>
+<a name="setTruststoreAlgorithm(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTruststoreAlgorithm</h4>
+<pre>public&nbsp;void&nbsp;setTruststoreAlgorithm(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;a)</pre>
+</li>
+</ul>
+<a name="getTruststoreAlgorithm()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTruststoreAlgorithm</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getTruststoreAlgorithm()</pre>
+</li>
+</ul>
+<a name="setTrustMaxCertLength(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTrustMaxCertLength</h4>
+<pre>public&nbsp;void&nbsp;setTrustMaxCertLength(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getTrustMaxCertLength()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTrustMaxCertLength</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getTrustMaxCertLength()</pre>
+</li>
+</ul>
+<a name="setCrlFile(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCrlFile</h4>
+<pre>public&nbsp;void&nbsp;setCrlFile(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getCrlFile()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCrlFile</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getCrlFile()</pre>
+</li>
+</ul>
+<a name="setSessionCacheSize(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSessionCacheSize</h4>
+<pre>public&nbsp;void&nbsp;setSessionCacheSize(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getSessionCacheSize()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSessionCacheSize</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getSessionCacheSize()</pre>
+</li>
+</ul>
+<a name="setSessionTimeout(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSessionTimeout</h4>
+<pre>public&nbsp;void&nbsp;setSessionTimeout(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getSessionTimeout()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSessionTimeout</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getSessionTimeout()</pre>
+</li>
+</ul>
+<a name="setAllowUnsafeLegacyRenegotiation(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAllowUnsafeLegacyRenegotiation</h4>
+<pre>public&nbsp;void&nbsp;setAllowUnsafeLegacyRenegotiation(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="getAllowUnsafeLegacyRenegotiation()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAllowUnsafeLegacyRenegotiation</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getAllowUnsafeLegacyRenegotiation()</pre>
+</li>
+</ul>
+<a name="getSslImplementationName()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSslImplementationName</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getSslImplementationName()</pre>
+</li>
+</ul>
+<a name="setSslImplementationName(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSslImplementationName</h4>
+<pre>public&nbsp;void&nbsp;setSslImplementationName(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="init()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>init</h4>
+<pre>public&nbsp;void&nbsp;init()
+          throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/coyote/ProtocolHandler.html#init()">ProtocolHandler</a></code></strong></div>
+<div class="block">Initialise the protocol.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/ProtocolHandler.html#init()">init</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/ProtocolHandler.html" title="interface in org.apache.coyote">ProtocolHandler</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/AbstractProtocol.html#init()">init</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProtocol.html" title="class in org.apache.coyote">AbstractProtocol</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractHttp11JsseProtocol.html" title="type parameter in AbstractHttp11JsseProtocol">S</a>&gt;</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev Class</li>
+<li><a href="../../../../org/apache/coyote/http11/AbstractHttp11Processor.html" title="class in org.apache.coyote.http11"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/coyote/http11/AbstractHttp11JsseProtocol.html" target="_top">Frames</a></li>
+<li><a href="AbstractHttp11JsseProtocol.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_classes_inherited_from_class_org.apache.coyote.AbstractProtocol">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

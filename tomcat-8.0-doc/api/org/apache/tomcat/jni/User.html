@@ -1,0 +1,486 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>User (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="User (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/tomcat/jni/Time.html" title="class in org.apache.tomcat.jni"><span class="strong">Prev Class</span></a></li>
+<li>Next Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/tomcat/jni/User.html" target="_top">Frames</a></li>
+<li><a href="User.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.tomcat.jni</div>
+<h2 title="Class User" class="title">Class User</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.tomcat.jni.User</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="strong">User</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">User</div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Mladen Turk</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/tomcat/jni/User.html#User()">User</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/User.html#gid(java.lang.String,%20long)">gid</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;groupname,
+   long&nbsp;p)</code>
+<div class="block">Get the groupid for a specified group name
+ This function is available only if APR_HAS_USER is defined.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/User.html#gidcompare(long,%20long)">gidcompare</a></strong>(long&nbsp;left,
+          long&nbsp;right)</code>
+<div class="block">Compare two group identifiers for equality.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/User.html#gidCurrent(long)">gidCurrent</a></strong>(long&nbsp;p)</code>
+<div class="block">Get the groupid of the calling process
+ This function is available only if APR_HAS_USER is defined.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/User.html#groupname(long,%20long)">groupname</a></strong>(long&nbsp;groupid,
+         long&nbsp;p)</code>
+<div class="block">Get the group name for a specified groupid
+ This function is available only if APR_HAS_USER is defined.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/User.html#homepath(java.lang.String,%20long)">homepath</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
+        long&nbsp;p)</code>
+<div class="block">Get the home directory for the named user
+ This function is available only if APR_HAS_USER is defined.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/User.html#uid(java.lang.String,%20long)">uid</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
+   long&nbsp;p)</code>
+<div class="block">Get the userid for the specified username
+ This function is available only if APR_HAS_USER is defined.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/User.html#uidcompare(long,%20long)">uidcompare</a></strong>(long&nbsp;left,
+          long&nbsp;right)</code>
+<div class="block">Compare two user identifiers for equality.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/User.html#uidCurrent(long)">uidCurrent</a></strong>(long&nbsp;p)</code>
+<div class="block">Get the userid (and groupid) of the calling process
+ This function is available only if APR_HAS_USER is defined.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/User.html#usergid(java.lang.String,%20long)">usergid</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
+       long&nbsp;p)</code>
+<div class="block">Get the groupid for the specified username
+ This function is available only if APR_HAS_USER is defined.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/User.html#username(long,%20long)">username</a></strong>(long&nbsp;userid,
+        long&nbsp;p)</code>
+<div class="block">Get the user name for a specified userid
+ This function is available only if APR_HAS_USER is defined.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="User()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>User</h4>
+<pre>public&nbsp;User()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="uidCurrent(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>uidCurrent</h4>
+<pre>public static&nbsp;long&nbsp;uidCurrent(long&nbsp;p)
+                       throws <a href="../../../../org/apache/tomcat/jni/Error.html" title="class in org.apache.tomcat.jni">Error</a></pre>
+<div class="block">Get the userid (and groupid) of the calling process
+ This function is available only if APR_HAS_USER is defined.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>p</code> - The pool from which to allocate working space</dd>
+<dt><span class="strong">Returns:</span></dt><dd>Returns the user id</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../org/apache/tomcat/jni/Error.html" title="class in org.apache.tomcat.jni">Error</a></code></dd></dl>
+</li>
+</ul>
+<a name="gidCurrent(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>gidCurrent</h4>
+<pre>public static&nbsp;long&nbsp;gidCurrent(long&nbsp;p)
+                       throws <a href="../../../../org/apache/tomcat/jni/Error.html" title="class in org.apache.tomcat.jni">Error</a></pre>
+<div class="block">Get the groupid of the calling process
+ This function is available only if APR_HAS_USER is defined.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>p</code> - The pool from which to allocate working space</dd>
+<dt><span class="strong">Returns:</span></dt><dd>Returns the group id</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../org/apache/tomcat/jni/Error.html" title="class in org.apache.tomcat.jni">Error</a></code></dd></dl>
+</li>
+</ul>
+<a name="uid(java.lang.String, long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>uid</h4>
+<pre>public static&nbsp;long&nbsp;uid(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
+       long&nbsp;p)
+                throws <a href="../../../../org/apache/tomcat/jni/Error.html" title="class in org.apache.tomcat.jni">Error</a></pre>
+<div class="block">Get the userid for the specified username
+ This function is available only if APR_HAS_USER is defined.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>username</code> - The username to lookup</dd><dd><code>p</code> - The pool from which to allocate working space</dd>
+<dt><span class="strong">Returns:</span></dt><dd>Returns the user id</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../org/apache/tomcat/jni/Error.html" title="class in org.apache.tomcat.jni">Error</a></code></dd></dl>
+</li>
+</ul>
+<a name="usergid(java.lang.String, long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>usergid</h4>
+<pre>public static&nbsp;long&nbsp;usergid(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
+           long&nbsp;p)
+                    throws <a href="../../../../org/apache/tomcat/jni/Error.html" title="class in org.apache.tomcat.jni">Error</a></pre>
+<div class="block">Get the groupid for the specified username
+ This function is available only if APR_HAS_USER is defined.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>username</code> - The username to lookup</dd><dd><code>p</code> - The pool from which to allocate working space</dd>
+<dt><span class="strong">Returns:</span></dt><dd>Returns the user's group id</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../org/apache/tomcat/jni/Error.html" title="class in org.apache.tomcat.jni">Error</a></code></dd></dl>
+</li>
+</ul>
+<a name="gid(java.lang.String, long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>gid</h4>
+<pre>public static&nbsp;long&nbsp;gid(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;groupname,
+       long&nbsp;p)
+                throws <a href="../../../../org/apache/tomcat/jni/Error.html" title="class in org.apache.tomcat.jni">Error</a></pre>
+<div class="block">Get the groupid for a specified group name
+ This function is available only if APR_HAS_USER is defined.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>groupname</code> - The group name to look up</dd><dd><code>p</code> - The pool from which to allocate working space</dd>
+<dt><span class="strong">Returns:</span></dt><dd>Returns the user's group id</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../org/apache/tomcat/jni/Error.html" title="class in org.apache.tomcat.jni">Error</a></code></dd></dl>
+</li>
+</ul>
+<a name="username(long, long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>username</h4>
+<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username(long&nbsp;userid,
+              long&nbsp;p)
+                       throws <a href="../../../../org/apache/tomcat/jni/Error.html" title="class in org.apache.tomcat.jni">Error</a></pre>
+<div class="block">Get the user name for a specified userid
+ This function is available only if APR_HAS_USER is defined.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>userid</code> - The userid</dd><dd><code>p</code> - The pool from which to allocate the string</dd>
+<dt><span class="strong">Returns:</span></dt><dd>New string containing user name</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../org/apache/tomcat/jni/Error.html" title="class in org.apache.tomcat.jni">Error</a></code></dd></dl>
+</li>
+</ul>
+<a name="groupname(long, long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>groupname</h4>
+<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;groupname(long&nbsp;groupid,
+               long&nbsp;p)
+                        throws <a href="../../../../org/apache/tomcat/jni/Error.html" title="class in org.apache.tomcat.jni">Error</a></pre>
+<div class="block">Get the group name for a specified groupid
+ This function is available only if APR_HAS_USER is defined.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>groupid</code> - The groupid</dd><dd><code>p</code> - The pool from which to allocate the string</dd>
+<dt><span class="strong">Returns:</span></dt><dd>New string containing group name</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../org/apache/tomcat/jni/Error.html" title="class in org.apache.tomcat.jni">Error</a></code></dd></dl>
+</li>
+</ul>
+<a name="uidcompare(long, long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>uidcompare</h4>
+<pre>public static&nbsp;int&nbsp;uidcompare(long&nbsp;left,
+             long&nbsp;right)</pre>
+<div class="block">Compare two user identifiers for equality.
+ This function is available only if APR_HAS_USER is defined.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>left</code> - One uid to test</dd><dd><code>right</code> - Another uid to test</dd>
+<dt><span class="strong">Returns:</span></dt><dd>APR_SUCCESS if the apr_uid_t structures identify the same user,
+ APR_EMISMATCH if not, APR_BADARG if an apr_uid_t is invalid.</dd></dl>
+</li>
+</ul>
+<a name="gidcompare(long, long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>gidcompare</h4>
+<pre>public static&nbsp;int&nbsp;gidcompare(long&nbsp;left,
+             long&nbsp;right)</pre>
+<div class="block">Compare two group identifiers for equality.
+ This function is available only if APR_HAS_USER is defined.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>left</code> - One gid to test</dd><dd><code>right</code> - Another gid to test</dd>
+<dt><span class="strong">Returns:</span></dt><dd>APR_SUCCESS if the apr_gid_t structures identify the same group,
+ APR_EMISMATCH if not, APR_BADARG if an apr_gid_t is invalid.</dd></dl>
+</li>
+</ul>
+<a name="homepath(java.lang.String, long)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>homepath</h4>
+<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;homepath(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
+              long&nbsp;p)
+                       throws <a href="../../../../org/apache/tomcat/jni/Error.html" title="class in org.apache.tomcat.jni">Error</a></pre>
+<div class="block">Get the home directory for the named user
+ This function is available only if APR_HAS_USER is defined.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>username</code> - The named user</dd><dd><code>p</code> - The pool from which to allocate the string</dd>
+<dt><span class="strong">Returns:</span></dt><dd>New string containing directory name</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../org/apache/tomcat/jni/Error.html" title="class in org.apache.tomcat.jni">Error</a></code></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/tomcat/jni/Time.html" title="class in org.apache.tomcat.jni"><span class="strong">Prev Class</span></a></li>
+<li>Next Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/tomcat/jni/User.html" target="_top">Frames</a></li>
+<li><a href="User.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

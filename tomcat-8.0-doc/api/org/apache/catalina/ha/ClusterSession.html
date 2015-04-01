@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ClusterSession (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="ClusterSession (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/ha/ClusterRuleSet.html" title="class in org.apache.catalina.ha"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/ha/ClusterValve.html" title="interface in org.apache.catalina.ha"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/ha/ClusterSession.html" target="_top">Frames</a></li>
+<li><a href="ClusterSession.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.ha</div>
+<h2 title="Interface ClusterSession" class="title">Interface ClusterSession</h2>
+</div>
+<div class="contentContainer">
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Superinterfaces:</dt>
+<dd><a href="../../../../../servletapi/javax/servlet/http/HttpSession.html?is-external=true" title="class or interface in javax.servlet.http">HttpSession</a>, <a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></dd>
+</dl>
+<dl>
+<dt>All Known Implementing Classes:</dt>
+<dd><a href="../../../../org/apache/catalina/ha/session/DeltaSession.html" title="class in org.apache.catalina.ha.session">DeltaSession</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public interface <span class="strong">ClusterSession</span>
+extends <a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpSession.html?is-external=true" title="class or interface in javax.servlet.http">HttpSession</a></pre>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.Session">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.apache.catalina.<a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></h3>
+<code><a href="../../../../org/apache/catalina/Session.html#SESSION_ACTIVATED_EVENT">SESSION_ACTIVATED_EVENT</a>, <a href="../../../../org/apache/catalina/Session.html#SESSION_CREATED_EVENT">SESSION_CREATED_EVENT</a>, <a href="../../../../org/apache/catalina/Session.html#SESSION_DESTROYED_EVENT">SESSION_DESTROYED_EVENT</a>, <a href="../../../../org/apache/catalina/Session.html#SESSION_PASSIVATED_EVENT">SESSION_PASSIVATED_EVENT</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ha/ClusterSession.html#isPrimarySession()">isPrimarySession</a></strong>()</code>
+<div class="block">returns true if this session is the primary session, if that is the
+ case, the manager can expire it upon timeout.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/ha/ClusterSession.html#setPrimarySession(boolean)">setPrimarySession</a></strong>(boolean&nbsp;primarySession)</code>
+<div class="block">Sets whether this is the primary session or not.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.Session">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.apache.catalina.<a href="../../../../org/apache/catalina/Session.html" title="interface in org.apache.catalina">Session</a></h3>
+<code><a href="../../../../org/apache/catalina/Session.html#access()">access</a>, <a href="../../../../org/apache/catalina/Session.html#addSessionListener(org.apache.catalina.SessionListener)">addSessionListener</a>, <a href="../../../../org/apache/catalina/Session.html#endAccess()">endAccess</a>, <a href="../../../../org/apache/catalina/Session.html#expire()">expire</a>, <a href="../../../../org/apache/catalina/Session.html#getAuthType()">getAuthType</a>, <a href="../../../../org/apache/catalina/Session.html#getCreationTime()">getCreationTime</a>, <a href="../../../../org/apache/catalina/Session.html#getCreationTimeInternal()">getCreationTimeInternal</a>, <a href="../../../../org/apache/catalina/Session.html#getId()">getId</a>, <a href="../../../../org/apache/catalina/Session.html#getIdInternal()">getIdInternal</a>, <a href="../../../../org/apache/catalina/Session.html#getIdleTime()">getIdleTime</a>, <a href="../../../../org/apache/catalina/Session.html#getIdleTimeInternal()">getIdleTimeInternal</a>, <a href="../../../../org/apache/catalina/Session.html#getLastAccessedTime()">getLastAccessedTime</a>, <a href="../../../../org/apache/catalina/Session.html#getLastAccessedTimeInternal()">getLastAccessedTimeInternal</a>, <a href="../../../../org/apache/catalina/Session.html#getManager()">getManager</a>, <a href="../../../../org/apache/catalina/Session.html#getMaxInactiveInterval()">getMaxInactiveInterval</a>, <a href="../../../../org/apache/catalina/Session.html#getNote(java.lang.String)">getNote</a>, <a href="../../../../org/apache/catalina/Session.html#getNoteNames()">getNoteNames</a>, <a href="../../../../org/apache/catalina/Session.html#getPrincipal()">getPrincipal</a>, <a href="../../../../org/apache/catalina/Session.html#getSession()">getSession</a>, <a href="../../../../org/apache/catalina/Session.html#getThisAccessedTime()">getThisAccessedTime</a>, <a href="../../../../org/apache/catalina/Session.html#getThisAccessedTimeInternal()">getThisAccessedTimeInternal</a>, <a href="../../../../org/apache/catalina/Session.html#isValid()">isValid</a>, <a href="../../../../org/apache/catalina/Session.html#recycle()">recycle</a>, <a href="../../../../org/apache/catalina/Session.html#removeNote(java.lang.String)">removeNote</a>, <a href="../../../../org/apache/catalina/Session.html#removeSessionListener(org.apache.catalina.SessionListener)">removeSessionListener</a>, <a href="../../../../org/apache/catalina/Session.html#setAuthType(java.lang.String)">setAuthType</a>, <a href="../../../../org/apache/catalina/Session.html#setCreationTime(long)">setCreationTime</a>, <a href="../../../../org/apache/catalina/Session.html#setId(java.lang.String)">setId</a>, <a href="../../../../org/apache/catalina/Session.html#setId(java.lang.String,%20boolean)">setId</a>, <a href="../../../../org/apache/catalina/Session.html#setManager(org.apache.catalina.Manager)">setManager</a>, <a href="../../../../org/apache/catalina/Session.html#setMaxInactiveInterval(int)">setMaxInactiveInterval</a>, <a href="../../../../org/apache/catalina/Session.html#setNew(boolean)">setNew</a>, <a href="../../../../org/apache/catalina/Session.html#setNote(java.lang.String,%20java.lang.Object)">setNote</a>, <a href="../../../../org/apache/catalina/Session.html#setPrincipal(java.security.Principal)">setPrincipal</a>, <a href="../../../../org/apache/catalina/Session.html#setValid(boolean)">setValid</a>, <a href="../../../../org/apache/catalina/Session.html#tellChangedSessionId(java.lang.String,%20java.lang.String,%20boolean,%20boolean)">tellChangedSessionId</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_javax.servlet.http.HttpSession">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;javax.servlet.http.<a href="../../../../../servletapi/javax/servlet/http/HttpSession.html?is-external=true" title="class or interface in javax.servlet.http">HttpSession</a></h3>
+<code><a href="../../../../../servletapi/javax/servlet/http/HttpSession.html?is-external=true#getAttribute(java.lang.String)" title="class or interface in javax.servlet.http">getAttribute</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpSession.html?is-external=true#getAttributeNames()" title="class or interface in javax.servlet.http">getAttributeNames</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpSession.html?is-external=true#getCreationTime()" title="class or interface in javax.servlet.http">getCreationTime</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpSession.html?is-external=true#getId()" title="class or interface in javax.servlet.http">getId</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpSession.html?is-external=true#getLastAccessedTime()" title="class or interface in javax.servlet.http">getLastAccessedTime</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpSession.html?is-external=true#getMaxInactiveInterval()" title="class or interface in javax.servlet.http">getMaxInactiveInterval</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpSession.html?is-external=true#getServletContext()" title="class or interface in javax.servlet.http">getServletContext</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpSession.html?is-external=true#getSessionContext()" title="class or interface in javax.servlet.http">getSessionContext</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpSession.html?is-external=true#getValue(java.lang.String)" title="class or interface in javax.servlet.http">getValue</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpSession.html?is-external=true#getValueNames()" title="class or interface in javax.servlet.http">getValueNames</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpSession.html?is-external=true#invalidate()" title="class or interface in javax.servlet.http">invalidate</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpSession.html?is-external=true#isNew()" title="class or interface in javax.servlet.http">isNew</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpSession.html?is-external=true#putValue(java.lang.String,%20java.lang.Object)" title="class or interface in javax.servlet.http">putValue</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpSession.html?is-external=true#removeAttribute(java.lang.String)" title="class or interface in javax.servlet.http">removeAttribute</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpSession.html?is-external=true#removeValue(java.lang.String)" title="class or interface in javax.servlet.http">removeValue</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpSession.html?is-external=true#setAttribute(java.lang.String,%20java.lang.Object)" title="class or interface in javax.servlet.http">setAttribute</a>, <a href="../../../../../servletapi/javax/servlet/http/HttpSession.html?is-external=true#setMaxInactiveInterval(int)" title="class or interface in javax.servlet.http">setMaxInactiveInterval</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="isPrimarySession()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isPrimarySession</h4>
+<pre>boolean&nbsp;isPrimarySession()</pre>
+<div class="block">returns true if this session is the primary session, if that is the
+ case, the manager can expire it upon timeout.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>True if this session is primary</dd></dl>
+</li>
+</ul>
+<a name="setPrimarySession(boolean)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setPrimarySession</h4>
+<pre>void&nbsp;setPrimarySession(boolean&nbsp;primarySession)</pre>
+<div class="block">Sets whether this is the primary session or not.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>primarySession</code> - Flag value</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/ha/ClusterRuleSet.html" title="class in org.apache.catalina.ha"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/ha/ClusterValve.html" title="interface in org.apache.catalina.ha"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/ha/ClusterSession.html" target="_top">Frames</a></li>
+<li><a href="ClusterSession.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

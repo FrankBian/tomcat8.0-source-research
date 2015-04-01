@@ -1,0 +1,612 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SpdyProcessor (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="SpdyProcessor (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/coyote/spdy/SpdyAprNpnHandler.html" title="class in org.apache.coyote.spdy"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/coyote/spdy/SpdyProxyProtocol.html" title="class in org.apache.coyote.spdy"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/coyote/spdy/SpdyProcessor.html" target="_top">Frames</a></li>
+<li><a href="SpdyProcessor.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_org.apache.coyote.AbstractProcessor">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.coyote.spdy</div>
+<h2 title="Class SpdyProcessor" class="title">Class SpdyProcessor&lt;S&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">org.apache.coyote.AbstractProcessor</a>&lt;S&gt;</li>
+<li>
+<ul class="inheritance">
+<li>org.apache.coyote.spdy.SpdyProcessor&lt;S&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a>, <a href="../../../../org/apache/coyote/ActionHook.html" title="interface in org.apache.coyote">ActionHook</a>, <a href="../../../../org/apache/coyote/Processor.html" title="interface in org.apache.coyote">Processor</a>&lt;S&gt;</dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">SpdyProcessor&lt;S&gt;</span>
+extends <a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">AbstractProcessor</a>&lt;S&gt;
+implements <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a></pre>
+<div class="block">A spdy stream ( multiplexed over a spdy tcp connection ) processed by a
+ tomcat servlet.
+
+ Based on the AJP processor.</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.coyote.AbstractProcessor">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.coyote.<a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">AbstractProcessor</a></h3>
+<code><a href="../../../../org/apache/coyote/AbstractProcessor.html#adapter">adapter</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#asyncStateMachine">asyncStateMachine</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#endpoint">endpoint</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#request">request</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#response">response</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#sm">sm</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#socketWrapper">socketWrapper</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html#SpdyProcessor(org.apache.tomcat.spdy.SpdyConnection,%20org.apache.tomcat.util.net.AbstractEndpoint)">SpdyProcessor</a></strong>(<a href="../../../../org/apache/tomcat/spdy/SpdyConnection.html" title="class in org.apache.tomcat.spdy">SpdyConnection</a>&nbsp;spdy,
+             <a href="../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;&nbsp;endpoint)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html#action(org.apache.coyote.ActionCode,%20java.lang.Object)">action</a></strong>(<a href="../../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a>&nbsp;actionCode,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;param)</code>
+<div class="block">Send an action to the connector.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../org/apache/tomcat/util/net/AbstractEndpoint.Handler.SocketState.html" title="enum in org.apache.tomcat.util.net">AbstractEndpoint.Handler.SocketState</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html#asyncDispatch(org.apache.tomcat.util.net.SocketStatus)">asyncDispatch</a></strong>(<a href="../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net">SocketStatus</a>&nbsp;status)</code>
+<div class="block">Process in-progress Servlet 3.0 Async requests.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../org/apache/tomcat/util/net/AbstractEndpoint.Handler.SocketState.html" title="enum in org.apache.tomcat.util.net">AbstractEndpoint.Handler.SocketState</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html#event(org.apache.tomcat.util.net.SocketStatus)">event</a></strong>(<a href="../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net">SocketStatus</a>&nbsp;status)</code>
+<div class="block">Process in-progress Comet requests.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../servletapi/javax/servlet/http/HttpUpgradeHandler.html?is-external=true" title="class or interface in javax.servlet.http">HttpUpgradeHandler</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html#getHttpUpgradeHandler()">getHttpUpgradeHandler</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/nio/ByteBuffer.html?is-external=true" title="class or interface in java.nio">ByteBuffer</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html#getLeftoverInput()">getLeftoverInput</a></strong>()</code>
+<div class="block">Allows retrieving additional input during the upgrade process</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../org/apache/juli/logging/Log.html" title="interface in org.apache.juli.logging">Log</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html#getLog()">getLog</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html#isComet()">isComet</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html#isUpgrade()">isUpgrade</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html#onSynStream(org.apache.tomcat.spdy.SpdyStream)">onSynStream</a></strong>(<a href="../../../../org/apache/tomcat/spdy/SpdyStream.html" title="class in org.apache.tomcat.spdy">SpdyStream</a>&nbsp;str)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../org/apache/tomcat/util/net/AbstractEndpoint.Handler.SocketState.html" title="enum in org.apache.tomcat.util.net">AbstractEndpoint.Handler.SocketState</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html#process(org.apache.tomcat.util.net.SocketWrapper)">process</a></strong>(<a href="../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;&nbsp;socket)</code>
+<div class="block">Process HTTP requests.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html#recycle(boolean)">recycle</a></strong>(boolean&nbsp;socketClosing)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html#registerForEvent(boolean,%20boolean)">registerForEvent</a></strong>(boolean&nbsp;read,
+                boolean&nbsp;write)</code>
+<div class="block">Register the socket for the specified events.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html#run()">run</a></strong>()</code>
+<div class="block">Execute the request.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html#sendSynReply()">sendSynReply</a></strong>()</code>
+<div class="block">When committing the response, we have to validate the set of headers, as
+ well as setup the response filters.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html#setSslSupport(org.apache.tomcat.util.net.SSLSupport)">setSslSupport</a></strong>(<a href="../../../../org/apache/tomcat/util/net/SSLSupport.html" title="interface in org.apache.tomcat.util.net">SSLSupport</a>&nbsp;sslSupport)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../org/apache/tomcat/util/net/AbstractEndpoint.Handler.SocketState.html" title="enum in org.apache.tomcat.util.net">AbstractEndpoint.Handler.SocketState</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html#upgradeDispatch(org.apache.tomcat.util.net.SocketStatus)">upgradeDispatch</a></strong>(<a href="../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net">SocketStatus</a>&nbsp;status)</code>
+<div class="block">Processes data received on a connection that has been through an HTTP
+ upgrade.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.coyote.AbstractProcessor">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.coyote.<a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">AbstractProcessor</a></h3>
+<code><a href="../../../../org/apache/coyote/AbstractProcessor.html#asyncPostProcess()">asyncPostProcess</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#errorDispatch()">errorDispatch</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#getAdapter()">getAdapter</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#getEndpoint()">getEndpoint</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#getErrorState()">getErrorState</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#getExecutor()">getExecutor</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#getRequest()">getRequest</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#getSocketWrapper()">getSocketWrapper</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#isAsync()">isAsync</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#resetErrorState()">resetErrorState</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#setAdapter(org.apache.coyote.Adapter)">setAdapter</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#setErrorState(org.apache.coyote.ErrorState,%20java.lang.Throwable)">setErrorState</a>, <a href="../../../../org/apache/coyote/AbstractProcessor.html#setSocketWrapper(org.apache.tomcat.util.net.SocketWrapper)">setSocketWrapper</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="SpdyProcessor(org.apache.tomcat.spdy.SpdyConnection, org.apache.tomcat.util.net.AbstractEndpoint)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>SpdyProcessor</h4>
+<pre>public&nbsp;SpdyProcessor(<a href="../../../../org/apache/tomcat/spdy/SpdyConnection.html" title="class in org.apache.tomcat.spdy">SpdyConnection</a>&nbsp;spdy,
+             <a href="../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;&nbsp;endpoint)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="run()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>run</h4>
+<pre>public&nbsp;void&nbsp;run()</pre>
+<div class="block">Execute the request.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Runnable.html?is-external=true#run()" title="class or interface in java.lang">run</a></code>&nbsp;in interface&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="action(org.apache.coyote.ActionCode, java.lang.Object)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>action</h4>
+<pre>public&nbsp;void&nbsp;action(<a href="../../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a>&nbsp;actionCode,
+          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;param)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/coyote/ActionHook.html#action(org.apache.coyote.ActionCode,%20java.lang.Object)">ActionHook</a></code></strong></div>
+<div class="block">Send an action to the connector.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/ActionHook.html#action(org.apache.coyote.ActionCode,%20java.lang.Object)">action</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/ActionHook.html" title="interface in org.apache.coyote">ActionHook</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>actionCode</code> - Type of the action</dd><dd><code>param</code> - Action parameter</dd></dl>
+</li>
+</ul>
+<a name="sendSynReply()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sendSynReply</h4>
+<pre>protected&nbsp;void&nbsp;sendSynReply()</pre>
+<div class="block">When committing the response, we have to validate the set of headers, as
+ well as setup the response filters.</div>
+</li>
+</ul>
+<a name="isComet()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isComet</h4>
+<pre>public&nbsp;boolean&nbsp;isComet()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Processor.html#isComet()">isComet</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Processor.html" title="interface in org.apache.coyote">Processor</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;</code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/AbstractProcessor.html#isComet()">isComet</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">AbstractProcessor</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="process(org.apache.tomcat.util.net.SocketWrapper)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>process</h4>
+<pre>public&nbsp;<a href="../../../../org/apache/tomcat/util/net/AbstractEndpoint.Handler.SocketState.html" title="enum in org.apache.tomcat.util.net">AbstractEndpoint.Handler.SocketState</a>&nbsp;process(<a href="../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;&nbsp;socket)
+                                             throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProcessor.html#process(org.apache.tomcat.util.net.SocketWrapper)">AbstractProcessor</a></code></strong></div>
+<div class="block">Process HTTP requests. All requests are treated as HTTP requests to start
+ with although they may change type during processing.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Processor.html#process(org.apache.tomcat.util.net.SocketWrapper)">process</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Processor.html" title="interface in org.apache.coyote">Processor</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;</code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/AbstractProcessor.html#process(org.apache.tomcat.util.net.SocketWrapper)">process</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">AbstractProcessor</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="event(org.apache.tomcat.util.net.SocketStatus)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>event</h4>
+<pre>public&nbsp;<a href="../../../../org/apache/tomcat/util/net/AbstractEndpoint.Handler.SocketState.html" title="enum in org.apache.tomcat.util.net">AbstractEndpoint.Handler.SocketState</a>&nbsp;event(<a href="../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net">SocketStatus</a>&nbsp;status)
+                                           throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProcessor.html#event(org.apache.tomcat.util.net.SocketStatus)">AbstractProcessor</a></code></strong></div>
+<div class="block">Process in-progress Comet requests. These will start as HTTP requests.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Processor.html#event(org.apache.tomcat.util.net.SocketStatus)">event</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Processor.html" title="interface in org.apache.coyote">Processor</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;</code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/AbstractProcessor.html#event(org.apache.tomcat.util.net.SocketStatus)">event</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">AbstractProcessor</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="asyncDispatch(org.apache.tomcat.util.net.SocketStatus)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>asyncDispatch</h4>
+<pre>public&nbsp;<a href="../../../../org/apache/tomcat/util/net/AbstractEndpoint.Handler.SocketState.html" title="enum in org.apache.tomcat.util.net">AbstractEndpoint.Handler.SocketState</a>&nbsp;asyncDispatch(<a href="../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net">SocketStatus</a>&nbsp;status)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProcessor.html#asyncDispatch(org.apache.tomcat.util.net.SocketStatus)">AbstractProcessor</a></code></strong></div>
+<div class="block">Process in-progress Servlet 3.0 Async requests. These will start as HTTP
+ requests.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Processor.html#asyncDispatch(org.apache.tomcat.util.net.SocketStatus)">asyncDispatch</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Processor.html" title="interface in org.apache.coyote">Processor</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;</code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/AbstractProcessor.html#asyncDispatch(org.apache.tomcat.util.net.SocketStatus)">asyncDispatch</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">AbstractProcessor</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="isUpgrade()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isUpgrade</h4>
+<pre>public&nbsp;boolean&nbsp;isUpgrade()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Processor.html#isUpgrade()">isUpgrade</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Processor.html" title="interface in org.apache.coyote">Processor</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;</code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/AbstractProcessor.html#isUpgrade()">isUpgrade</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">AbstractProcessor</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="getLeftoverInput()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLeftoverInput</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/nio/ByteBuffer.html?is-external=true" title="class or interface in java.nio">ByteBuffer</a>&nbsp;getLeftoverInput()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/coyote/Processor.html#getLeftoverInput()">Processor</a></code></strong></div>
+<div class="block">Allows retrieving additional input during the upgrade process</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Processor.html#getLeftoverInput()">getLeftoverInput</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Processor.html" title="interface in org.apache.coyote">Processor</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;</code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>leftover bytes</dd></dl>
+</li>
+</ul>
+<a name="upgradeDispatch(org.apache.tomcat.util.net.SocketStatus)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>upgradeDispatch</h4>
+<pre>public&nbsp;<a href="../../../../org/apache/tomcat/util/net/AbstractEndpoint.Handler.SocketState.html" title="enum in org.apache.tomcat.util.net">AbstractEndpoint.Handler.SocketState</a>&nbsp;upgradeDispatch(<a href="../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net">SocketStatus</a>&nbsp;status)
+                                                     throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProcessor.html#upgradeDispatch(org.apache.tomcat.util.net.SocketStatus)">AbstractProcessor</a></code></strong></div>
+<div class="block">Processes data received on a connection that has been through an HTTP
+ upgrade.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Processor.html#upgradeDispatch(org.apache.tomcat.util.net.SocketStatus)">upgradeDispatch</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Processor.html" title="interface in org.apache.coyote">Processor</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;</code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/AbstractProcessor.html#upgradeDispatch(org.apache.tomcat.util.net.SocketStatus)">upgradeDispatch</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">AbstractProcessor</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="registerForEvent(boolean, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>registerForEvent</h4>
+<pre>protected&nbsp;void&nbsp;registerForEvent(boolean&nbsp;read,
+                    boolean&nbsp;write)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProcessor.html#registerForEvent(boolean,%20boolean)">AbstractProcessor</a></code></strong></div>
+<div class="block">Register the socket for the specified events.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/AbstractProcessor.html#registerForEvent(boolean,%20boolean)">registerForEvent</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">AbstractProcessor</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;</code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>read</code> - Register the socket for read events</dd><dd><code>write</code> - Register the socket for write events</dd></dl>
+</li>
+</ul>
+<a name="onSynStream(org.apache.tomcat.spdy.SpdyStream)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>onSynStream</h4>
+<pre>public&nbsp;void&nbsp;onSynStream(<a href="../../../../org/apache/tomcat/spdy/SpdyStream.html" title="class in org.apache.tomcat.spdy">SpdyStream</a>&nbsp;str)
+                 throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="recycle(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>recycle</h4>
+<pre>public&nbsp;void&nbsp;recycle(boolean&nbsp;socketClosing)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Processor.html#recycle(boolean)">recycle</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Processor.html" title="interface in org.apache.coyote">Processor</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="setSslSupport(org.apache.tomcat.util.net.SSLSupport)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSslSupport</h4>
+<pre>public&nbsp;void&nbsp;setSslSupport(<a href="../../../../org/apache/tomcat/util/net/SSLSupport.html" title="interface in org.apache.tomcat.util.net">SSLSupport</a>&nbsp;sslSupport)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Processor.html#setSslSupport(org.apache.tomcat.util.net.SSLSupport)">setSslSupport</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Processor.html" title="interface in org.apache.coyote">Processor</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="getHttpUpgradeHandler()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHttpUpgradeHandler</h4>
+<pre>public&nbsp;<a href="../../../../../servletapi/javax/servlet/http/HttpUpgradeHandler.html?is-external=true" title="class or interface in javax.servlet.http">HttpUpgradeHandler</a>&nbsp;getHttpUpgradeHandler()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Processor.html#getHttpUpgradeHandler()">getHttpUpgradeHandler</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Processor.html" title="interface in org.apache.coyote">Processor</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;</code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/AbstractProcessor.html#getHttpUpgradeHandler()">getHttpUpgradeHandler</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">AbstractProcessor</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="getLog()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getLog</h4>
+<pre>protected&nbsp;<a href="../../../../org/apache/juli/logging/Log.html" title="interface in org.apache.juli.logging">Log</a>&nbsp;getLog()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/AbstractProcessor.html#getLog()">getLog</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/coyote/AbstractProcessor.html" title="class in org.apache.coyote">AbstractProcessor</a>&lt;<a href="../../../../org/apache/coyote/spdy/SpdyProcessor.html" title="type parameter in SpdyProcessor">S</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/coyote/spdy/SpdyAprNpnHandler.html" title="class in org.apache.coyote.spdy"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/coyote/spdy/SpdyProxyProtocol.html" title="class in org.apache.coyote.spdy"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/coyote/spdy/SpdyProcessor.html" target="_top">Frames</a></li>
+<li><a href="SpdyProcessor.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_org.apache.coyote.AbstractProcessor">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

@@ -1,0 +1,1077 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>JDBCAccessLogValve (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="JDBCAccessLogValve (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/valves/ExtendedAccessLogValve.TimeElement.html" title="class in org.apache.catalina.valves"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/valves/PersistentValve.html" title="class in org.apache.catalina.valves"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/valves/JDBCAccessLogValve.html" target="_top">Frames</a></li>
+<li><a href="JDBCAccessLogValve.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.valves</div>
+<h2 title="Class JDBCAccessLogValve" class="title">Class JDBCAccessLogValve</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../org/apache/catalina/util/LifecycleBase.html" title="class in org.apache.catalina.util">org.apache.catalina.util.LifecycleBase</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html" title="class in org.apache.catalina.util">org.apache.catalina.util.LifecycleMBeanBase</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">org.apache.catalina.valves.ValveBase</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.valves.JDBCAccessLogValve</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://docs.oracle.com/javase/7/docs/api/javax/management/MBeanRegistration.html?is-external=true" title="class or interface in javax.management">MBeanRegistration</a>, <a href="../../../../org/apache/catalina/AccessLog.html" title="interface in org.apache.catalina">AccessLog</a>, <a href="../../../../org/apache/catalina/Contained.html" title="interface in org.apache.catalina">Contained</a>, <a href="../../../../org/apache/catalina/JmxEnabled.html" title="interface in org.apache.catalina">JmxEnabled</a>, <a href="../../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a>, <a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public final class <span class="strong">JDBCAccessLogValve</span>
+extends <a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a>
+implements <a href="../../../../org/apache/catalina/AccessLog.html" title="interface in org.apache.catalina">AccessLog</a></pre>
+<div class="block"><p>
+ This Tomcat extension logs server access directly to a database, and can
+ be used instead of the regular file-based access log implemented in
+ AccessLogValve.
+ To use, copy into the server/classes directory of the Tomcat installation
+ and configure in server.xml as:
+ </p>
+ <pre>
+      &lt;Valve className="org.apache.catalina.valves.JDBCAccessLogValve"
+          driverName="<i>your_jdbc_driver</i>"
+          connectionURL="<i>your_jdbc_url</i>"
+          pattern="combined" resolveHosts="false"
+      /&gt;
+ </pre>
+ <p>
+ Many parameters can be configured, such as the database connection (with
+ <code>driverName</code> and <code>connectionURL</code>),
+ the table name (<code>tableName</code>)
+ and the field names (corresponding to the get/set method names).
+ The same options as AccessLogValve are supported, such as
+ <code>resolveHosts</code> and <code>pattern</code> ("common" or "combined"
+ only).
+ </p>
+ <p>
+ When Tomcat is started, a database connection is created and used for all the
+ log activity. When Tomcat is shutdown, the database connection is closed.
+ This logger can be used at the level of the Engine context (being shared
+ by all the defined hosts) or the Host context (one instance of the logger
+ per host, possibly using different databases).
+ </p>
+ <p>
+ The database table can be created with the following command:
+ </p>
+ <pre>
+ CREATE TABLE access (
+ id INT UNSIGNED AUTO_INCREMENT NOT NULL,
+ remoteHost CHAR(15) NOT NULL,
+ userName CHAR(15),
+ timestamp TIMESTAMP NOT NULL,
+ virtualHost VARCHAR(64) NOT NULL,
+ method VARCHAR(8) NOT NULL,
+ query VARCHAR(255) NOT NULL,
+ status SMALLINT UNSIGNED NOT NULL,
+ bytes INT UNSIGNED NOT NULL,
+ referer VARCHAR(128),
+ userAgent VARCHAR(128),
+ PRIMARY KEY (id),
+ INDEX (timestamp),
+ INDEX (remoteHost),
+ INDEX (virtualHost),
+ INDEX (query),
+ INDEX (userAgent)
+ );
+ </pre>
+ <p>Set JDBCAccessLogValve attribute useLongContentLength="true" as you have more then 4GB outputs.
+ Please, use long SQL datatype at access.bytes attribute.
+ The datatype of bytes at oracle is <i>number</i> and other databases use <i>bytes BIGINT NOT NULL</i>.
+ </p>
+
+ <p>
+ If the table is created as above, its name and the field names don't need
+ to be defined.
+ </p>
+ <p>
+ If the request method is "common", only these fields are used:
+ <code>remoteHost, user, timeStamp, query, status, bytes</code>
+ </p>
+ <p>
+ <i>TO DO: provide option for excluding logging of certain MIME types.</i>
+ </p></div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Andre de Jesus, Peter Rossbach</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#connectionName">connectionName</a></strong></code>
+<div class="block">The connection username to use when trying to connect to the database.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#connectionPassword">connectionPassword</a></strong></code>
+<div class="block">The connection URL to use when trying to connect to the database.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/sql/Driver.html?is-external=true" title="class or interface in java.sql">Driver</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#driver">driver</a></strong></code>
+<div class="block">Instance of the JDBC Driver class we use as a connection factory.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#requestAttributesEnabled">requestAttributesEnabled</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#useLongContentLength">useLongContentLength</a></strong></code>
+<div class="block">Use long contentLength as you have more 4 GB output.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.valves.ValveBase">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.catalina.valves.<a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a></h3>
+<code><a href="../../../../org/apache/catalina/valves/ValveBase.html#asyncSupported">asyncSupported</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#container">container</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#containerLog">containerLog</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#next">next</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#sm">sm</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.util.LifecycleMBeanBase">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.catalina.util.<a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html" title="class in org.apache.catalina.util">LifecycleMBeanBase</a></h3>
+<code><a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#mserver">mserver</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.AccessLog">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.apache.catalina.<a href="../../../../org/apache/catalina/AccessLog.html" title="interface in org.apache.catalina">AccessLog</a></h3>
+<code><a href="../../../../org/apache/catalina/AccessLog.html#PROTOCOL_ATTRIBUTE">PROTOCOL_ATTRIBUTE</a>, <a href="../../../../org/apache/catalina/AccessLog.html#REMOTE_ADDR_ATTRIBUTE">REMOTE_ADDR_ATTRIBUTE</a>, <a href="../../../../org/apache/catalina/AccessLog.html#REMOTE_HOST_ATTRIBUTE">REMOTE_HOST_ATTRIBUTE</a>, <a href="../../../../org/apache/catalina/AccessLog.html#SERVER_PORT_ATTRIBUTE">SERVER_PORT_ATTRIBUTE</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.Lifecycle">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.apache.catalina.<a href="../../../../org/apache/catalina/Lifecycle.html" title="interface in org.apache.catalina">Lifecycle</a></h3>
+<code><a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_DESTROY_EVENT">AFTER_DESTROY_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_INIT_EVENT">AFTER_INIT_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_START_EVENT">AFTER_START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#AFTER_STOP_EVENT">AFTER_STOP_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_DESTROY_EVENT">BEFORE_DESTROY_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_INIT_EVENT">BEFORE_INIT_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_START_EVENT">BEFORE_START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#BEFORE_STOP_EVENT">BEFORE_STOP_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#CONFIGURE_START_EVENT">CONFIGURE_START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#CONFIGURE_STOP_EVENT">CONFIGURE_STOP_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#PERIODIC_EVENT">PERIODIC_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#START_EVENT">START_EVENT</a>, <a href="../../../../org/apache/catalina/Lifecycle.html#STOP_EVENT">STOP_EVENT</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#JDBCAccessLogValve()">JDBCAccessLogValve</a></strong>()</code>
+<div class="block">Class constructor.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#close()">close</a></strong>()</code>
+<div class="block">Close the specified database connection.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#getConnectionName()">getConnectionName</a></strong>()</code>
+<div class="block">Return the username to use to connect to the database.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#getConnectionPassword()">getConnectionPassword</a></strong>()</code>
+<div class="block">Return the password to use to connect to the database.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#getCurrentTimeMillis()">getCurrentTimeMillis</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#getRequestAttributesEnabled()">getRequestAttributesEnabled</a></strong>()</code></td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#getUseLongContentLength()">getUseLongContentLength</a></strong>()</code>
+<div class="block">get useLongContentLength</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#invoke(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response)">invoke</a></strong>(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request,
+      <a href="../../../../org/apache/catalina/connector/Response.html" title="class in org.apache.catalina.connector">Response</a>&nbsp;response)</code>
+<div class="block">This method is invoked by Tomcat on each query.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#log(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response,%20long)">log</a></strong>(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request,
+   <a href="../../../../org/apache/catalina/connector/Response.html" title="class in org.apache.catalina.connector">Response</a>&nbsp;response,
+   long&nbsp;time)</code>
+<div class="block">Add the request/response to the access log using the specified processing
+ time.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#open()">open</a></strong>()</code>
+<div class="block">Open (if necessary) and return a database connection for use by
+ this AccessLogValve.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#setBytesField(java.lang.String)">setBytesField</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;bytesField)</code>
+<div class="block">Sets the name of the field containing the number of bytes returned.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#setConnectionName(java.lang.String)">setConnectionName</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;connectionName)</code>
+<div class="block">Set the username to use to connect to the database.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#setConnectionPassword(java.lang.String)">setConnectionPassword</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;connectionPassword)</code>
+<div class="block">Set the password to use to connect to the database.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#setConnectionURL(java.lang.String)">setConnectionURL</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;connectionURL)</code>
+<div class="block">Sets the JDBC URL for the database where the log is stored.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#setDriverName(java.lang.String)">setDriverName</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;driverName)</code>
+<div class="block">Sets the database driver name.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#setMethodField(java.lang.String)">setMethodField</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;methodField)</code>
+<div class="block">Sets the name of the field containing the HTTP request method.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#setPattern(java.lang.String)">setPattern</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;pattern)</code>
+<div class="block">Sets the logging pattern.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#setQueryField(java.lang.String)">setQueryField</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryField)</code>
+<div class="block">Sets the name of the field containing the URL part of the HTTP query.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#setRefererField(java.lang.String)">setRefererField</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;refererField)</code>
+<div class="block">Sets the name of the field containing the referer.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#setRemoteHostField(java.lang.String)">setRemoteHostField</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;remoteHostField)</code>
+<div class="block">Sets the name of the field containing the remote host.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#setRequestAttributesEnabled(boolean)">setRequestAttributesEnabled</a></strong>(boolean&nbsp;requestAttributesEnabled)</code>
+<div class="block">Should this valve set request attributes for IP address, Hostname,
+ protocol and port used for the request?</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#setResolveHosts(java.lang.String)">setResolveHosts</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resolveHosts)</code>
+<div class="block">Determines whether IP host name resolution is done.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#setStatusField(java.lang.String)">setStatusField</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;statusField)</code>
+<div class="block">Sets the name of the field containing the HTTP response status code.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#setTableName(java.lang.String)">setTableName</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tableName)</code>
+<div class="block">Sets the name of the table where the logs are stored.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#setTimestampField(java.lang.String)">setTimestampField</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;timestampField)</code>
+<div class="block">Sets the name of the field containing the server-determined timestamp.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#setUseLongContentLength(boolean)">setUseLongContentLength</a></strong>(boolean&nbsp;useLongContentLength)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#setUserAgentField(java.lang.String)">setUserAgentField</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userAgentField)</code>
+<div class="block">Sets the name of the field containing the user agent.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#setUserField(java.lang.String)">setUserField</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userField)</code>
+<div class="block">Sets the name of the field containing the remote user name.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#setVirtualHostField(java.lang.String)">setVirtualHostField</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;virtualHostField)</code>
+<div class="block">Sets the name of the field containing the virtual host information
+ (this is in fact the server name).</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#startInternal()">startInternal</a></strong>()</code>
+<div class="block">Start this component and implement the requirements
+ of <a href="../../../../org/apache/catalina/util/LifecycleBase.html#startInternal()"><code>LifecycleBase.startInternal()</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#stopInternal()">stopInternal</a></strong>()</code>
+<div class="block">Stop this component and implement the requirements
+ of <a href="../../../../org/apache/catalina/util/LifecycleBase.html#stopInternal()"><code>LifecycleBase.stopInternal()</code></a>.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.valves.ValveBase">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.valves.<a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a></h3>
+<code><a href="../../../../org/apache/catalina/valves/ValveBase.html#backgroundProcess()">backgroundProcess</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#event(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response,%20org.apache.catalina.comet.CometEvent)">event</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#getContainer()">getContainer</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#getDomainInternal()">getDomainInternal</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#getNext()">getNext</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#getObjectNameKeyProperties()">getObjectNameKeyProperties</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#initInternal()">initInternal</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#isAsyncSupported()">isAsyncSupported</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#setAsyncSupported(boolean)">setAsyncSupported</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#setContainer(org.apache.catalina.Container)">setContainer</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#setNext(org.apache.catalina.Valve)">setNext</a>, <a href="../../../../org/apache/catalina/valves/ValveBase.html#toString()">toString</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.util.LifecycleMBeanBase">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.util.<a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html" title="class in org.apache.catalina.util">LifecycleMBeanBase</a></h3>
+<code><a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#destroyInternal()">destroyInternal</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#getDomain()">getDomain</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#getObjectName()">getObjectName</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#postDeregister()">postDeregister</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#postRegister(java.lang.Boolean)">postRegister</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#preDeregister()">preDeregister</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#preRegister(javax.management.MBeanServer,%20javax.management.ObjectName)">preRegister</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#register(java.lang.Object,%20java.lang.String)">register</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#setDomain(java.lang.String)">setDomain</a>, <a href="../../../../org/apache/catalina/util/LifecycleMBeanBase.html#unregister(javax.management.ObjectName)">unregister</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.util.LifecycleBase">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.util.<a href="../../../../org/apache/catalina/util/LifecycleBase.html" title="class in org.apache.catalina.util">LifecycleBase</a></h3>
+<code><a href="../../../../org/apache/catalina/util/LifecycleBase.html#addLifecycleListener(org.apache.catalina.LifecycleListener)">addLifecycleListener</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#destroy()">destroy</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#findLifecycleListeners()">findLifecycleListeners</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#fireLifecycleEvent(java.lang.String,%20java.lang.Object)">fireLifecycleEvent</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#getState()">getState</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#getStateName()">getStateName</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#init()">init</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#removeLifecycleListener(org.apache.catalina.LifecycleListener)">removeLifecycleListener</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#setState(org.apache.catalina.LifecycleState)">setState</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#setState(org.apache.catalina.LifecycleState,%20java.lang.Object)">setState</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#start()">start</a>, <a href="../../../../org/apache/catalina/util/LifecycleBase.html#stop()">stop</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="useLongContentLength">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>useLongContentLength</h4>
+<pre>protected&nbsp;boolean useLongContentLength</pre>
+<div class="block">Use long contentLength as you have more 4 GB output.</div>
+<dl><dt><span class="strong">Since:</span></dt>
+  <dd>6.0.15</dd></dl>
+</li>
+</ul>
+<a name="connectionName">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>connectionName</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> connectionName</pre>
+<div class="block">The connection username to use when trying to connect to the database.</div>
+</li>
+</ul>
+<a name="connectionPassword">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>connectionPassword</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> connectionPassword</pre>
+<div class="block">The connection URL to use when trying to connect to the database.</div>
+</li>
+</ul>
+<a name="driver">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>driver</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/sql/Driver.html?is-external=true" title="class or interface in java.sql">Driver</a> driver</pre>
+<div class="block">Instance of the JDBC Driver class we use as a connection factory.</div>
+</li>
+</ul>
+<a name="requestAttributesEnabled">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>requestAttributesEnabled</h4>
+<pre>protected&nbsp;boolean requestAttributesEnabled</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../org/apache/catalina/valves/JDBCAccessLogValve.html#setRequestAttributesEnabled(boolean)"><code>setRequestAttributesEnabled(boolean)</code></a></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="JDBCAccessLogValve()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>JDBCAccessLogValve</h4>
+<pre>public&nbsp;JDBCAccessLogValve()</pre>
+<div class="block">Class constructor. Initializes the fields with the default values.
+ The defaults are:
+ <pre>
+      driverName = null;
+      connectionURL = null;
+      tableName = "access";
+      remoteHostField = "remoteHost";
+      userField = "userName";
+      timestampField = "timestamp";
+      virtualHostField = "virtualHost";
+      methodField = "method";
+      queryField = "query";
+      statusField = "status";
+      bytesField = "bytes";
+      refererField = "referer";
+      userAgentField = "userAgent";
+      pattern = "common";
+      resolveHosts = false;
+ </pre></div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setRequestAttributesEnabled(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRequestAttributesEnabled</h4>
+<pre>public&nbsp;void&nbsp;setRequestAttributesEnabled(boolean&nbsp;requestAttributesEnabled)</pre>
+<div class="block">Should this valve set request attributes for IP address, Hostname,
+ protocol and port used for the request? This are typically used in
+ conjunction with the <a href="../../../../org/apache/catalina/valves/AccessLogValve.html" title="class in org.apache.catalina.valves"><code>AccessLogValve</code></a>
+ which will otherwise log the original values.
+ Default is <code>true</code>.
+
+ The attributes set are:
+ <ul>
+ <li>org.apache.catalina.RemoteAddr</li>
+ <li>org.apache.catalina.RemoteHost</li>
+ <li>org.apache.catalina.Protocol</li>
+ <li>org.apache.catalina.ServerPost</li>
+ </ul></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/AccessLog.html#setRequestAttributesEnabled(boolean)">setRequestAttributesEnabled</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/AccessLog.html" title="interface in org.apache.catalina">AccessLog</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>requestAttributesEnabled</code> - <code>true</code> causes the attributes
+                                  to be set, <code>false</code> disables
+                                  the setting of the attributes.</dd></dl>
+</li>
+</ul>
+<a name="getRequestAttributesEnabled()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRequestAttributesEnabled</h4>
+<pre>public&nbsp;boolean&nbsp;getRequestAttributesEnabled()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/AccessLog.html#getRequestAttributesEnabled()">getRequestAttributesEnabled</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/AccessLog.html" title="interface in org.apache.catalina">AccessLog</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the attributes will be logged, otherwise
+         <code>false</code></dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../org/apache/catalina/AccessLog.html#setRequestAttributesEnabled(boolean)"><code>AccessLog.setRequestAttributesEnabled(boolean)</code></a></dd></dl>
+</li>
+</ul>
+<a name="getConnectionName()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getConnectionName</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getConnectionName()</pre>
+<div class="block">Return the username to use to connect to the database.</div>
+</li>
+</ul>
+<a name="setConnectionName(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setConnectionName</h4>
+<pre>public&nbsp;void&nbsp;setConnectionName(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;connectionName)</pre>
+<div class="block">Set the username to use to connect to the database.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>connectionName</code> - Username</dd></dl>
+</li>
+</ul>
+<a name="setDriverName(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDriverName</h4>
+<pre>public&nbsp;void&nbsp;setDriverName(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;driverName)</pre>
+<div class="block">Sets the database driver name.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>driverName</code> - The complete name of the database driver class.</dd></dl>
+</li>
+</ul>
+<a name="getConnectionPassword()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getConnectionPassword</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getConnectionPassword()</pre>
+<div class="block">Return the password to use to connect to the database.</div>
+</li>
+</ul>
+<a name="setConnectionPassword(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setConnectionPassword</h4>
+<pre>public&nbsp;void&nbsp;setConnectionPassword(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;connectionPassword)</pre>
+<div class="block">Set the password to use to connect to the database.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>connectionPassword</code> - User password</dd></dl>
+</li>
+</ul>
+<a name="setConnectionURL(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setConnectionURL</h4>
+<pre>public&nbsp;void&nbsp;setConnectionURL(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;connectionURL)</pre>
+<div class="block">Sets the JDBC URL for the database where the log is stored.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>connectionURL</code> - The JDBC URL of the database.</dd></dl>
+</li>
+</ul>
+<a name="setTableName(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTableName</h4>
+<pre>public&nbsp;void&nbsp;setTableName(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tableName)</pre>
+<div class="block">Sets the name of the table where the logs are stored.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>tableName</code> - The name of the table.</dd></dl>
+</li>
+</ul>
+<a name="setRemoteHostField(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRemoteHostField</h4>
+<pre>public&nbsp;void&nbsp;setRemoteHostField(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;remoteHostField)</pre>
+<div class="block">Sets the name of the field containing the remote host.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>remoteHostField</code> - The name of the remote host field.</dd></dl>
+</li>
+</ul>
+<a name="setUserField(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setUserField</h4>
+<pre>public&nbsp;void&nbsp;setUserField(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userField)</pre>
+<div class="block">Sets the name of the field containing the remote user name.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>userField</code> - The name of the remote user field.</dd></dl>
+</li>
+</ul>
+<a name="setTimestampField(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTimestampField</h4>
+<pre>public&nbsp;void&nbsp;setTimestampField(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;timestampField)</pre>
+<div class="block">Sets the name of the field containing the server-determined timestamp.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>timestampField</code> - The name of the server-determined timestamp field.</dd></dl>
+</li>
+</ul>
+<a name="setVirtualHostField(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setVirtualHostField</h4>
+<pre>public&nbsp;void&nbsp;setVirtualHostField(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;virtualHostField)</pre>
+<div class="block">Sets the name of the field containing the virtual host information
+ (this is in fact the server name).</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>virtualHostField</code> - The name of the virtual host field.</dd></dl>
+</li>
+</ul>
+<a name="setMethodField(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMethodField</h4>
+<pre>public&nbsp;void&nbsp;setMethodField(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;methodField)</pre>
+<div class="block">Sets the name of the field containing the HTTP request method.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>methodField</code> - The name of the HTTP request method field.</dd></dl>
+</li>
+</ul>
+<a name="setQueryField(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setQueryField</h4>
+<pre>public&nbsp;void&nbsp;setQueryField(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;queryField)</pre>
+<div class="block">Sets the name of the field containing the URL part of the HTTP query.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>queryField</code> - The name of the field containing the URL part of
+ the HTTP query.</dd></dl>
+</li>
+</ul>
+<a name="setStatusField(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setStatusField</h4>
+<pre>public&nbsp;void&nbsp;setStatusField(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;statusField)</pre>
+<div class="block">Sets the name of the field containing the HTTP response status code.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>statusField</code> - The name of the HTTP response status code field.</dd></dl>
+</li>
+</ul>
+<a name="setBytesField(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setBytesField</h4>
+<pre>public&nbsp;void&nbsp;setBytesField(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;bytesField)</pre>
+<div class="block">Sets the name of the field containing the number of bytes returned.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>bytesField</code> - The name of the returned bytes field.</dd></dl>
+</li>
+</ul>
+<a name="setRefererField(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRefererField</h4>
+<pre>public&nbsp;void&nbsp;setRefererField(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;refererField)</pre>
+<div class="block">Sets the name of the field containing the referer.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>refererField</code> - The referer field name.</dd></dl>
+</li>
+</ul>
+<a name="setUserAgentField(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setUserAgentField</h4>
+<pre>public&nbsp;void&nbsp;setUserAgentField(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userAgentField)</pre>
+<div class="block">Sets the name of the field containing the user agent.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>userAgentField</code> - The name of the user agent field.</dd></dl>
+</li>
+</ul>
+<a name="setPattern(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPattern</h4>
+<pre>public&nbsp;void&nbsp;setPattern(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;pattern)</pre>
+<div class="block">Sets the logging pattern. The patterns supported correspond to the
+ file-based "common" and "combined". These are translated into the use
+ of tables containing either set of fields.
+ <P><I>TO DO: more flexible field choices.</I></P></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>pattern</code> - The name of the logging pattern.</dd></dl>
+</li>
+</ul>
+<a name="setResolveHosts(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setResolveHosts</h4>
+<pre>public&nbsp;void&nbsp;setResolveHosts(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resolveHosts)</pre>
+<div class="block">Determines whether IP host name resolution is done.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>resolveHosts</code> - "true" or "false", if host IP resolution
+ is desired or not.</dd></dl>
+</li>
+</ul>
+<a name="getUseLongContentLength()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUseLongContentLength</h4>
+<pre>public&nbsp;boolean&nbsp;getUseLongContentLength()</pre>
+<div class="block">get useLongContentLength</div>
+</li>
+</ul>
+<a name="setUseLongContentLength(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setUseLongContentLength</h4>
+<pre>public&nbsp;void&nbsp;setUseLongContentLength(boolean&nbsp;useLongContentLength)</pre>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>useLongContentLength</code> - the useLongContentLength to set</dd></dl>
+</li>
+</ul>
+<a name="invoke(org.apache.catalina.connector.Request, org.apache.catalina.connector.Response)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>invoke</h4>
+<pre>public&nbsp;void&nbsp;invoke(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request,
+          <a href="../../../../org/apache/catalina/connector/Response.html" title="class in org.apache.catalina.connector">Response</a>&nbsp;response)
+            throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                   <a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></pre>
+<div class="block">This method is invoked by Tomcat on each query.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/Valve.html#invoke(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response)">invoke</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/Valve.html" title="interface in org.apache.catalina">Valve</a></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/valves/ValveBase.html#invoke(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response)">invoke</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>request</code> - The Request object.</dd><dd><code>response</code> - The Response object.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - Should not be thrown.</dd>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code> - Database SQLException is wrapped
+ in a ServletException.</dd></dl>
+</li>
+</ul>
+<a name="log(org.apache.catalina.connector.Request, org.apache.catalina.connector.Response, long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>log</h4>
+<pre>public&nbsp;void&nbsp;log(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request,
+       <a href="../../../../org/apache/catalina/connector/Response.html" title="class in org.apache.catalina.connector">Response</a>&nbsp;response,
+       long&nbsp;time)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/catalina/AccessLog.html#log(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response,%20long)">AccessLog</a></code></strong></div>
+<div class="block">Add the request/response to the access log using the specified processing
+ time.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/AccessLog.html#log(org.apache.catalina.connector.Request,%20org.apache.catalina.connector.Response,%20long)">log</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/catalina/AccessLog.html" title="interface in org.apache.catalina">AccessLog</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>request</code> - Request (associated with the response) to log</dd><dd><code>response</code> - Response (associated with the request) to log</dd><dd><code>time</code> - Time taken to process the request/response in
+                  milliseconds (use 0 if not known)</dd></dl>
+</li>
+</ul>
+<a name="open()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>open</h4>
+<pre>protected&nbsp;void&nbsp;open()
+             throws <a href="http://docs.oracle.com/javase/7/docs/api/java/sql/SQLException.html?is-external=true" title="class or interface in java.sql">SQLException</a></pre>
+<div class="block">Open (if necessary) and return a database connection for use by
+ this AccessLogValve.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/sql/SQLException.html?is-external=true" title="class or interface in java.sql">SQLException</a></code> - if a database error occurs</dd></dl>
+</li>
+</ul>
+<a name="close()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>close</h4>
+<pre>protected&nbsp;void&nbsp;close()</pre>
+<div class="block">Close the specified database connection.</div>
+</li>
+</ul>
+<a name="startInternal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>startInternal</h4>
+<pre>protected&nbsp;void&nbsp;startInternal()
+                      throws <a href="../../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></pre>
+<div class="block">Start this component and implement the requirements
+ of <a href="../../../../org/apache/catalina/util/LifecycleBase.html#startInternal()"><code>LifecycleBase.startInternal()</code></a>.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/valves/ValveBase.html#startInternal()">startInternal</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></code> - if this component detects a fatal error
+  that prevents this component from being used</dd></dl>
+</li>
+</ul>
+<a name="stopInternal()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>stopInternal</h4>
+<pre>protected&nbsp;void&nbsp;stopInternal()
+                     throws <a href="../../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></pre>
+<div class="block">Stop this component and implement the requirements
+ of <a href="../../../../org/apache/catalina/util/LifecycleBase.html#stopInternal()"><code>LifecycleBase.stopInternal()</code></a>.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../org/apache/catalina/valves/ValveBase.html#stopInternal()">stopInternal</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/apache/catalina/valves/ValveBase.html" title="class in org.apache.catalina.valves">ValveBase</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../org/apache/catalina/LifecycleException.html" title="class in org.apache.catalina">LifecycleException</a></code> - if this component detects a fatal error
+  that prevents this component from being used</dd></dl>
+</li>
+</ul>
+<a name="getCurrentTimeMillis()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getCurrentTimeMillis</h4>
+<pre>public&nbsp;long&nbsp;getCurrentTimeMillis()</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/valves/ExtendedAccessLogValve.TimeElement.html" title="class in org.apache.catalina.valves"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/valves/PersistentValve.html" title="class in org.apache.catalina.valves"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/valves/JDBCAccessLogValve.html" target="_top">Frames</a></li>
+<li><a href="JDBCAccessLogValve.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

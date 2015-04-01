@@ -1,0 +1,641 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AsyncContextImpl (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="AsyncContextImpl (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/core/AprLifecycleListener.html" title="class in org.apache.catalina.core"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/core/AsyncListenerWrapper.html" title="class in org.apache.catalina.core"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/core/AsyncContextImpl.html" target="_top">Frames</a></li>
+<li><a href="AsyncContextImpl.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.core</div>
+<h2 title="Class AsyncContextImpl" class="title">Class AsyncContextImpl</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.core.AsyncContextImpl</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true" title="class or interface in javax.servlet">AsyncContext</a>, <a href="../../../../org/apache/coyote/AsyncContextCallback.html" title="interface in org.apache.coyote">AsyncContextCallback</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">AsyncContextImpl</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true" title="class or interface in javax.servlet">AsyncContext</a>, <a href="../../../../org/apache/coyote/AsyncContextCallback.html" title="interface in org.apache.coyote">AsyncContextCallback</a></pre>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="../../../../org/apache/tomcat/util/res/StringManager.html" title="class in org.apache.tomcat.util.res">StringManager</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html#sm">sm</a></strong></code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_javax.servlet.AsyncContext">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;javax.servlet.<a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true" title="class or interface in javax.servlet">AsyncContext</a></h3>
+<code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#ASYNC_CONTEXT_PATH" title="class or interface in javax.servlet">ASYNC_CONTEXT_PATH</a>, <a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#ASYNC_PATH_INFO" title="class or interface in javax.servlet">ASYNC_PATH_INFO</a>, <a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#ASYNC_QUERY_STRING" title="class or interface in javax.servlet">ASYNC_QUERY_STRING</a>, <a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#ASYNC_REQUEST_URI" title="class or interface in javax.servlet">ASYNC_REQUEST_URI</a>, <a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#ASYNC_SERVLET_PATH" title="class or interface in javax.servlet">ASYNC_SERVLET_PATH</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html#AsyncContextImpl(org.apache.catalina.connector.Request)">AsyncContextImpl</a></strong>(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html#addListener(javax.servlet.AsyncListener)">addListener</a></strong>(<a href="../../../../../servletapi/javax/servlet/AsyncListener.html?is-external=true" title="class or interface in javax.servlet">AsyncListener</a>&nbsp;listener)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html#addListener(javax.servlet.AsyncListener,%20javax.servlet.ServletRequest,%20javax.servlet.ServletResponse)">addListener</a></strong>(<a href="../../../../../servletapi/javax/servlet/AsyncListener.html?is-external=true" title="class or interface in javax.servlet">AsyncListener</a>&nbsp;listener,
+           <a href="../../../../../servletapi/javax/servlet/ServletRequest.html?is-external=true" title="class or interface in javax.servlet">ServletRequest</a>&nbsp;servletRequest,
+           <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a>&nbsp;servletResponse)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html#complete()">complete</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&lt;T extends <a href="../../../../../servletapi/javax/servlet/AsyncListener.html?is-external=true" title="class or interface in javax.servlet">AsyncListener</a>&gt;&nbsp;<br>T</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html#createListener(java.lang.Class)">createListener</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;clazz)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html#dispatch()">dispatch</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html#dispatch(javax.servlet.ServletContext,%20java.lang.String)">dispatch</a></strong>(<a href="../../../../../servletapi/javax/servlet/ServletContext.html?is-external=true" title="class or interface in javax.servlet">ServletContext</a>&nbsp;context,
+        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html#dispatch(java.lang.String)">dispatch</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html#doInternalDispatch()">doInternalDispatch</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html#fireOnComplete()">fireOnComplete</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../servletapi/javax/servlet/ServletRequest.html?is-external=true" title="class or interface in javax.servlet">ServletRequest</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html#getRequest()">getRequest</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html#getResponse()">getResponse</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html#getTimeout()">getTimeout</a></strong>()</code>
+<div class="block">Get the current.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html#hasOriginalRequestAndResponse()">hasOriginalRequestAndResponse</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html#isStarted()">isStarted</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html#recycle()">recycle</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html#setErrorState(java.lang.Throwable,%20boolean)">setErrorState</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a>&nbsp;t,
+             boolean&nbsp;fireOnError)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html#setStarted(org.apache.catalina.Context,%20javax.servlet.ServletRequest,%20javax.servlet.ServletResponse,%20boolean)">setStarted</a></strong>(<a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a>&nbsp;context,
+          <a href="../../../../../servletapi/javax/servlet/ServletRequest.html?is-external=true" title="class or interface in javax.servlet">ServletRequest</a>&nbsp;request,
+          <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a>&nbsp;response,
+          boolean&nbsp;originalRequestResponse)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html#setTimeout(long)">setTimeout</a></strong>(long&nbsp;timeout)</code>
+<div class="block">Set the timeout.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html#start(java.lang.Runnable)">start</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a>&nbsp;run)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/core/AsyncContextImpl.html#timeout()">timeout</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="sm">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>sm</h4>
+<pre>protected static final&nbsp;<a href="../../../../org/apache/tomcat/util/res/StringManager.html" title="class in org.apache.tomcat.util.res">StringManager</a> sm</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="AsyncContextImpl(org.apache.catalina.connector.Request)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>AsyncContextImpl</h4>
+<pre>public&nbsp;AsyncContextImpl(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="complete()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>complete</h4>
+<pre>public&nbsp;void&nbsp;complete()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#complete()" title="class or interface in javax.servlet">complete</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true" title="class or interface in javax.servlet">AsyncContext</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="fireOnComplete()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>fireOnComplete</h4>
+<pre>public&nbsp;void&nbsp;fireOnComplete()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/AsyncContextCallback.html#fireOnComplete()">fireOnComplete</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/AsyncContextCallback.html" title="interface in org.apache.coyote">AsyncContextCallback</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="timeout()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>timeout</h4>
+<pre>public&nbsp;boolean&nbsp;timeout()</pre>
+</li>
+</ul>
+<a name="dispatch()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>dispatch</h4>
+<pre>public&nbsp;void&nbsp;dispatch()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#dispatch()" title="class or interface in javax.servlet">dispatch</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true" title="class or interface in javax.servlet">AsyncContext</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="dispatch(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>dispatch</h4>
+<pre>public&nbsp;void&nbsp;dispatch(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#dispatch(java.lang.String)" title="class or interface in javax.servlet">dispatch</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true" title="class or interface in javax.servlet">AsyncContext</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>path</code> - The path to which the request/response should be dispatched
+             relative to the <a href="../../../../../servletapi/javax/servlet/ServletContext.html?is-external=true" title="class or interface in javax.servlet"><code>ServletContext</code></a> from which this async
+             request was started.</dd></dl>
+</li>
+</ul>
+<a name="dispatch(javax.servlet.ServletContext, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>dispatch</h4>
+<pre>public&nbsp;void&nbsp;dispatch(<a href="../../../../../servletapi/javax/servlet/ServletContext.html?is-external=true" title="class or interface in javax.servlet">ServletContext</a>&nbsp;context,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#dispatch(javax.servlet.ServletContext,%20java.lang.String)" title="class or interface in javax.servlet">dispatch</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true" title="class or interface in javax.servlet">AsyncContext</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>context</code> - The <a href="../../../../../servletapi/javax/servlet/ServletContext.html?is-external=true" title="class or interface in javax.servlet"><code>ServletContext</code></a> to which the request/response
+                should be dispatched.</dd><dd><code>path</code> - The path to which the request/response should be dispatched
+             relative to the specified <a href="../../../../../servletapi/javax/servlet/ServletContext.html?is-external=true" title="class or interface in javax.servlet"><code>ServletContext</code></a>.</dd></dl>
+</li>
+</ul>
+<a name="getRequest()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRequest</h4>
+<pre>public&nbsp;<a href="../../../../../servletapi/javax/servlet/ServletRequest.html?is-external=true" title="class or interface in javax.servlet">ServletRequest</a>&nbsp;getRequest()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#getRequest()" title="class or interface in javax.servlet">getRequest</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true" title="class or interface in javax.servlet">AsyncContext</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getResponse()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getResponse</h4>
+<pre>public&nbsp;<a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a>&nbsp;getResponse()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#getResponse()" title="class or interface in javax.servlet">getResponse</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true" title="class or interface in javax.servlet">AsyncContext</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="start(java.lang.Runnable)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>start</h4>
+<pre>public&nbsp;void&nbsp;start(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a>&nbsp;run)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#start(java.lang.Runnable)" title="class or interface in javax.servlet">start</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true" title="class or interface in javax.servlet">AsyncContext</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="addListener(javax.servlet.AsyncListener)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addListener</h4>
+<pre>public&nbsp;void&nbsp;addListener(<a href="../../../../../servletapi/javax/servlet/AsyncListener.html?is-external=true" title="class or interface in javax.servlet">AsyncListener</a>&nbsp;listener)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#addListener(javax.servlet.AsyncListener)" title="class or interface in javax.servlet">addListener</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true" title="class or interface in javax.servlet">AsyncContext</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="addListener(javax.servlet.AsyncListener, javax.servlet.ServletRequest, javax.servlet.ServletResponse)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addListener</h4>
+<pre>public&nbsp;void&nbsp;addListener(<a href="../../../../../servletapi/javax/servlet/AsyncListener.html?is-external=true" title="class or interface in javax.servlet">AsyncListener</a>&nbsp;listener,
+               <a href="../../../../../servletapi/javax/servlet/ServletRequest.html?is-external=true" title="class or interface in javax.servlet">ServletRequest</a>&nbsp;servletRequest,
+               <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a>&nbsp;servletResponse)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#addListener(javax.servlet.AsyncListener,%20javax.servlet.ServletRequest,%20javax.servlet.ServletResponse)" title="class or interface in javax.servlet">addListener</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true" title="class or interface in javax.servlet">AsyncContext</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="createListener(java.lang.Class)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createListener</h4>
+<pre>public&nbsp;&lt;T extends <a href="../../../../../servletapi/javax/servlet/AsyncListener.html?is-external=true" title="class or interface in javax.servlet">AsyncListener</a>&gt;&nbsp;T&nbsp;createListener(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;clazz)
+                                       throws <a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#createListener(java.lang.Class)" title="class or interface in javax.servlet">createListener</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true" title="class or interface in javax.servlet">AsyncContext</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code></dd></dl>
+</li>
+</ul>
+<a name="recycle()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>recycle</h4>
+<pre>public&nbsp;void&nbsp;recycle()</pre>
+</li>
+</ul>
+<a name="isStarted()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isStarted</h4>
+<pre>public&nbsp;boolean&nbsp;isStarted()</pre>
+</li>
+</ul>
+<a name="setStarted(org.apache.catalina.Context, javax.servlet.ServletRequest, javax.servlet.ServletResponse, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setStarted</h4>
+<pre>public&nbsp;void&nbsp;setStarted(<a href="../../../../org/apache/catalina/Context.html" title="interface in org.apache.catalina">Context</a>&nbsp;context,
+              <a href="../../../../../servletapi/javax/servlet/ServletRequest.html?is-external=true" title="class or interface in javax.servlet">ServletRequest</a>&nbsp;request,
+              <a href="../../../../../servletapi/javax/servlet/ServletResponse.html?is-external=true" title="class or interface in javax.servlet">ServletResponse</a>&nbsp;response,
+              boolean&nbsp;originalRequestResponse)</pre>
+</li>
+</ul>
+<a name="hasOriginalRequestAndResponse()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hasOriginalRequestAndResponse</h4>
+<pre>public&nbsp;boolean&nbsp;hasOriginalRequestAndResponse()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#hasOriginalRequestAndResponse()" title="class or interface in javax.servlet">hasOriginalRequestAndResponse</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true" title="class or interface in javax.servlet">AsyncContext</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="doInternalDispatch()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>doInternalDispatch</h4>
+<pre>protected&nbsp;void&nbsp;doInternalDispatch()
+                           throws <a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a>,
+                                  <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code></dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="getTimeout()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTimeout</h4>
+<pre>public&nbsp;long&nbsp;getTimeout()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#getTimeout()" title="class or interface in javax.servlet">javax.servlet.AsyncContext</a></code></strong></div>
+<div class="block">Get the current.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#getTimeout()" title="class or interface in javax.servlet">getTimeout</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true" title="class or interface in javax.servlet">AsyncContext</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>The timeout in milliseconds. 0 or less indicates no timeout.</dd></dl>
+</li>
+</ul>
+<a name="setTimeout(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTimeout</h4>
+<pre>public&nbsp;void&nbsp;setTimeout(long&nbsp;timeout)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#setTimeout(long)" title="class or interface in javax.servlet">javax.servlet.AsyncContext</a></code></strong></div>
+<div class="block">Set the timeout.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#setTimeout(long)" title="class or interface in javax.servlet">setTimeout</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true" title="class or interface in javax.servlet">AsyncContext</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>timeout</code> - The timeout in milliseconds. 0 or less indicates no
+                timeout.</dd></dl>
+</li>
+</ul>
+<a name="setErrorState(java.lang.Throwable, boolean)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setErrorState</h4>
+<pre>public&nbsp;void&nbsp;setErrorState(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</a>&nbsp;t,
+                 boolean&nbsp;fireOnError)</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/core/AprLifecycleListener.html" title="class in org.apache.catalina.core"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/core/AsyncListenerWrapper.html" title="class in org.apache.catalina.core"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/core/AsyncContextImpl.html" target="_top">Frames</a></li>
+<li><a href="AsyncContextImpl.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

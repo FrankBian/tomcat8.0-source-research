@@ -1,0 +1,987 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ActionCode (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="ActionCode (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/apache/coyote/AbstractProtocol.RecycledProcessors.html" title="class in org.apache.coyote"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../org/apache/coyote/ActionHook.html" title="interface in org.apache.coyote"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/apache/coyote/ActionCode.html" target="_top">Frames</a></li>
+<li><a href="ActionCode.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#enum_constant_summary">Enum Constants</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#enum_constant_detail">Enum Constants</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.coyote</div>
+<h2 title="Enum ActionCode" class="title">Enum ActionCode</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html?is-external=true" title="class or interface in java.lang">java.lang.Enum</a>&lt;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a>&gt;</li>
+<li>
+<ul class="inheritance">
+<li>org.apache.coyote.ActionCode</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a>&gt;</dd>
+</dl>
+<hr>
+<br>
+<pre>public enum <span class="strong">ActionCode</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html?is-external=true" title="class or interface in java.lang">Enum</a>&lt;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a>&gt;</pre>
+<div class="block">ActionCodes represent callbacks from the servlet container to the coyote
+ connector. Actions are implemented by ProtocolHandler, using the ActionHook
+ interface.</div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Remy Maucherat</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../org/apache/coyote/ProtocolHandler.html" title="interface in org.apache.coyote"><code>ProtocolHandler</code></a>, 
+<a href="../../../org/apache/coyote/ActionHook.html" title="interface in org.apache.coyote"><code>ActionHook</code></a></dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== ENUM CONSTANT SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="enum_constant_summary">
+<!--   -->
+</a>
+<h3>Enum Constant Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Enum Constant Summary table, listing enum constants, and an explanation">
+<caption><span>Enum Constants</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Enum Constant and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#ACK">ACK</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#ASYNC_COMPLETE">ASYNC_COMPLETE</a></strong></code>
+<div class="block">Callback for an async call to
+ <a href="../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#complete()" title="class or interface in javax.servlet"><code>AsyncContext.complete()</code></a>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#ASYNC_DISPATCH">ASYNC_DISPATCH</a></strong></code>
+<div class="block">Callback for an async call to
+ <a href="../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#dispatch()" title="class or interface in javax.servlet"><code>AsyncContext.dispatch()</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#ASYNC_DISPATCHED">ASYNC_DISPATCHED</a></strong></code>
+<div class="block">Callback to indicate the the actual dispatch has started and that the
+ async state needs change.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#ASYNC_ERROR">ASYNC_ERROR</a></strong></code>
+<div class="block">Callback to trigger the error processing.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#ASYNC_IS_ASYNC">ASYNC_IS_ASYNC</a></strong></code>
+<div class="block">Callback to determine if async processing is in progress.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#ASYNC_IS_COMPLETING">ASYNC_IS_COMPLETING</a></strong></code>
+<div class="block">Call back to determine if async complete is in progress.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#ASYNC_IS_DISPATCHING">ASYNC_IS_DISPATCHING</a></strong></code>
+<div class="block">Callback to determine if async dispatch is in progress.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#ASYNC_IS_ERROR">ASYNC_IS_ERROR</a></strong></code>
+<div class="block">Callback to determine if async is in error.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#ASYNC_IS_STARTED">ASYNC_IS_STARTED</a></strong></code>
+<div class="block">Callback to determine if async dispatch is in progress.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#ASYNC_IS_TIMINGOUT">ASYNC_IS_TIMINGOUT</a></strong></code>
+<div class="block">Callback to determine if async is timing out.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#ASYNC_RUN">ASYNC_RUN</a></strong></code>
+<div class="block">Callback for an async call to
+ <a href="../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#start(java.lang.Runnable)" title="class or interface in javax.servlet"><code>AsyncContext.start(Runnable)</code></a>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#ASYNC_SETTIMEOUT">ASYNC_SETTIMEOUT</a></strong></code>
+<div class="block">Callback for an async call to
+ <a href="../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#setTimeout(long)" title="class or interface in javax.servlet"><code>AsyncContext.setTimeout(long)</code></a></div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#ASYNC_START">ASYNC_START</a></strong></code>
+<div class="block">Callback for an async request.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#ASYNC_TIMEOUT">ASYNC_TIMEOUT</a></strong></code>
+<div class="block">Callback to trigger the processing of an async timeout.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#AVAILABLE">AVAILABLE</a></strong></code>
+<div class="block">Callback for getting the amount of available bytes.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#CLIENT_FLUSH">CLIENT_FLUSH</a></strong></code>
+<div class="block">A flush() operation originated by the client ( i.e. a flush() on the
+ servlet output stream or writer, called by a servlet ).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#CLOSE">CLOSE</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#CLOSE_NOW">CLOSE_NOW</a></strong></code>
+<div class="block">A serious error occurred from which it is not possible to recover safely.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#COMET_BEGIN">COMET_BEGIN</a></strong></code>
+<div class="block">Callback for begin Comet processing.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#COMET_CLOSE">COMET_CLOSE</a></strong></code>
+<div class="block">Callback for an asynchronous close of the Comet event</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#COMET_END">COMET_END</a></strong></code>
+<div class="block">Callback for end Comet processing.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#COMET_SETTIMEOUT">COMET_SETTIMEOUT</a></strong></code>
+<div class="block">Callback for setting the timeout asynchronously</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#COMMIT">COMMIT</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#DISABLE_SWALLOW_INPUT">DISABLE_SWALLOW_INPUT</a></strong></code>
+<div class="block">Hook called if swallowing request input should be disabled.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#DISPATCH_EXECUTE">DISPATCH_EXECUTE</a></strong></code>
+<div class="block">Execute any non-blocking dispatches that have been registered via
+ <a href="../../../org/apache/coyote/ActionCode.html#DISPATCH_READ"><code>DISPATCH_READ</code></a> or <a href="../../../org/apache/coyote/ActionCode.html#DISPATCH_WRITE"><code>DISPATCH_WRITE</code></a>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#DISPATCH_READ">DISPATCH_READ</a></strong></code>
+<div class="block">Indicates that the container needs to trigger a call to onDataAvailable()
+ for the registered non-blocking read listener.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#DISPATCH_WRITE">DISPATCH_WRITE</a></strong></code>
+<div class="block">Indicates that the container needs to trigger a call to onWritePossible()
+ for the registered non-blocking write listener.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#END_REQUEST">END_REQUEST</a></strong></code>
+<div class="block">Trigger end of request processing (remaining input swallowed, write any
+ remaining parts of the response etc.).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#IS_ERROR">IS_ERROR</a></strong></code>
+<div class="block">Has the processor been placed into the error state?</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#NB_READ_INTEREST">NB_READ_INTEREST</a></strong></code>
+<div class="block">Indicator that Servlet is interested in being
+ notified when data is available to be read</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#NB_WRITE_INTEREST">NB_WRITE_INTEREST</a></strong></code>
+<div class="block">Indicator that the Servlet is interested
+in being notified when it can write data</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#REQ_HOST_ADDR_ATTRIBUTE">REQ_HOST_ADDR_ATTRIBUTE</a></strong></code>
+<div class="block">Callback for lazy evaluation - extract the remote host infos (address,
+ name, port) and local address.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#REQ_HOST_ATTRIBUTE">REQ_HOST_ATTRIBUTE</a></strong></code>
+<div class="block">Callback for lazy evaluation - extract the remote host address.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#REQ_LOCAL_ADDR_ATTRIBUTE">REQ_LOCAL_ADDR_ATTRIBUTE</a></strong></code>
+<div class="block">Callback for lazy evaluation - local address.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#REQ_LOCAL_NAME_ATTRIBUTE">REQ_LOCAL_NAME_ATTRIBUTE</a></strong></code>
+<div class="block">Callback for lazy evaluation - local address.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#REQ_LOCALPORT_ATTRIBUTE">REQ_LOCALPORT_ATTRIBUTE</a></strong></code>
+<div class="block">Callback for lazy evaluation - socket local port.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#REQ_REMOTEPORT_ATTRIBUTE">REQ_REMOTEPORT_ATTRIBUTE</a></strong></code>
+<div class="block">Callback for lazy evaluation - socket remote port.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#REQ_SET_BODY_REPLAY">REQ_SET_BODY_REPLAY</a></strong></code>
+<div class="block">Callback for setting FORM auth body replay</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#REQ_SSL_ATTRIBUTE">REQ_SSL_ATTRIBUTE</a></strong></code>
+<div class="block">Callback for lazy evaluation - extract the SSL-related attributes.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#REQ_SSL_CERTIFICATE">REQ_SSL_CERTIFICATE</a></strong></code>
+<div class="block">Callback for lazy evaluation - extract the SSL-certificate (including
+ forcing a re-handshake if necessary)</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#REQUEST_BODY_FULLY_READ">REQUEST_BODY_FULLY_READ</a></strong></code>
+<div class="block">Indicates if the request body has been fully read.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#RESET">RESET</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#UPGRADE">UPGRADE</a></strong></code>
+<div class="block">Callback to trigger the HTTP upgrade process.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a></code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#valueOf(java.lang.String)">valueOf</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Returns the enum constant of this type with the specified name.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../org/apache/coyote/ActionCode.html#values()">values</a></strong>()</code>
+<div class="block">Returns an array containing the constants of this enum type, in
+the order they are declared.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Enum">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html?is-external=true" title="class or interface in java.lang">Enum</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html?is-external=true#compareTo(E)" title="class or interface in java.lang">compareTo</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html?is-external=true#getDeclaringClass()" title="class or interface in java.lang">getDeclaringClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html?is-external=true#name()" title="class or interface in java.lang">name</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html?is-external=true#ordinal()" title="class or interface in java.lang">ordinal</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html?is-external=true#valueOf(java.lang.Class,%20java.lang.String)" title="class or interface in java.lang">valueOf</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ ENUM CONSTANT DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="enum_constant_detail">
+<!--   -->
+</a>
+<h3>Enum Constant Detail</h3>
+<a name="ACK">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ACK</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> ACK</pre>
+</li>
+</ul>
+<a name="CLOSE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>CLOSE</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> CLOSE</pre>
+</li>
+</ul>
+<a name="COMMIT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMMIT</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> COMMIT</pre>
+</li>
+</ul>
+<a name="CLOSE_NOW">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>CLOSE_NOW</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> CLOSE_NOW</pre>
+<div class="block">A serious error occurred from which it is not possible to recover safely.
+ Further attempts to write to the response should be ignored and the
+ connection needs to be closed as soon as possible. This can also be used
+ to forcibly close a connection if an error occurs after the response has
+ been committed.</div>
+</li>
+</ul>
+<a name="CLIENT_FLUSH">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>CLIENT_FLUSH</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> CLIENT_FLUSH</pre>
+<div class="block">A flush() operation originated by the client ( i.e. a flush() on the
+ servlet output stream or writer, called by a servlet ). Argument is the
+ Response.</div>
+</li>
+</ul>
+<a name="RESET">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>RESET</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> RESET</pre>
+</li>
+</ul>
+<a name="IS_ERROR">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>IS_ERROR</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> IS_ERROR</pre>
+<div class="block">Has the processor been placed into the error state? Note that the
+ response may not have an appropriate error code set.</div>
+</li>
+</ul>
+<a name="DISABLE_SWALLOW_INPUT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>DISABLE_SWALLOW_INPUT</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> DISABLE_SWALLOW_INPUT</pre>
+<div class="block">Hook called if swallowing request input should be disabled.
+ Example: Cancel a large file upload.</div>
+</li>
+</ul>
+<a name="REQ_HOST_ATTRIBUTE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>REQ_HOST_ATTRIBUTE</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> REQ_HOST_ATTRIBUTE</pre>
+<div class="block">Callback for lazy evaluation - extract the remote host address.</div>
+</li>
+</ul>
+<a name="REQ_HOST_ADDR_ATTRIBUTE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>REQ_HOST_ADDR_ATTRIBUTE</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> REQ_HOST_ADDR_ATTRIBUTE</pre>
+<div class="block">Callback for lazy evaluation - extract the remote host infos (address,
+ name, port) and local address.</div>
+</li>
+</ul>
+<a name="REQ_SSL_ATTRIBUTE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>REQ_SSL_ATTRIBUTE</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> REQ_SSL_ATTRIBUTE</pre>
+<div class="block">Callback for lazy evaluation - extract the SSL-related attributes.</div>
+</li>
+</ul>
+<a name="REQ_SSL_CERTIFICATE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>REQ_SSL_CERTIFICATE</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> REQ_SSL_CERTIFICATE</pre>
+<div class="block">Callback for lazy evaluation - extract the SSL-certificate (including
+ forcing a re-handshake if necessary)</div>
+</li>
+</ul>
+<a name="REQ_REMOTEPORT_ATTRIBUTE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>REQ_REMOTEPORT_ATTRIBUTE</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> REQ_REMOTEPORT_ATTRIBUTE</pre>
+<div class="block">Callback for lazy evaluation - socket remote port.</div>
+</li>
+</ul>
+<a name="REQ_LOCALPORT_ATTRIBUTE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>REQ_LOCALPORT_ATTRIBUTE</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> REQ_LOCALPORT_ATTRIBUTE</pre>
+<div class="block">Callback for lazy evaluation - socket local port.</div>
+</li>
+</ul>
+<a name="REQ_LOCAL_ADDR_ATTRIBUTE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>REQ_LOCAL_ADDR_ATTRIBUTE</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> REQ_LOCAL_ADDR_ATTRIBUTE</pre>
+<div class="block">Callback for lazy evaluation - local address.</div>
+</li>
+</ul>
+<a name="REQ_LOCAL_NAME_ATTRIBUTE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>REQ_LOCAL_NAME_ATTRIBUTE</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> REQ_LOCAL_NAME_ATTRIBUTE</pre>
+<div class="block">Callback for lazy evaluation - local address.</div>
+</li>
+</ul>
+<a name="REQ_SET_BODY_REPLAY">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>REQ_SET_BODY_REPLAY</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> REQ_SET_BODY_REPLAY</pre>
+<div class="block">Callback for setting FORM auth body replay</div>
+</li>
+</ul>
+<a name="COMET_BEGIN">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMET_BEGIN</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> COMET_BEGIN</pre>
+<div class="block">Callback for begin Comet processing.</div>
+</li>
+</ul>
+<a name="COMET_END">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMET_END</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> COMET_END</pre>
+<div class="block">Callback for end Comet processing.</div>
+</li>
+</ul>
+<a name="AVAILABLE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>AVAILABLE</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> AVAILABLE</pre>
+<div class="block">Callback for getting the amount of available bytes.</div>
+</li>
+</ul>
+<a name="COMET_CLOSE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMET_CLOSE</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> COMET_CLOSE</pre>
+<div class="block">Callback for an asynchronous close of the Comet event</div>
+</li>
+</ul>
+<a name="COMET_SETTIMEOUT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMET_SETTIMEOUT</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> COMET_SETTIMEOUT</pre>
+<div class="block">Callback for setting the timeout asynchronously</div>
+</li>
+</ul>
+<a name="ASYNC_START">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ASYNC_START</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> ASYNC_START</pre>
+<div class="block">Callback for an async request.</div>
+</li>
+</ul>
+<a name="ASYNC_DISPATCH">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ASYNC_DISPATCH</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> ASYNC_DISPATCH</pre>
+<div class="block">Callback for an async call to
+ <a href="../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#dispatch()" title="class or interface in javax.servlet"><code>AsyncContext.dispatch()</code></a>.</div>
+</li>
+</ul>
+<a name="ASYNC_DISPATCHED">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ASYNC_DISPATCHED</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> ASYNC_DISPATCHED</pre>
+<div class="block">Callback to indicate the the actual dispatch has started and that the
+ async state needs change.</div>
+</li>
+</ul>
+<a name="ASYNC_RUN">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ASYNC_RUN</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> ASYNC_RUN</pre>
+<div class="block">Callback for an async call to
+ <a href="../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#start(java.lang.Runnable)" title="class or interface in javax.servlet"><code>AsyncContext.start(Runnable)</code></a>.</div>
+</li>
+</ul>
+<a name="ASYNC_COMPLETE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ASYNC_COMPLETE</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> ASYNC_COMPLETE</pre>
+<div class="block">Callback for an async call to
+ <a href="../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#complete()" title="class or interface in javax.servlet"><code>AsyncContext.complete()</code></a>.</div>
+</li>
+</ul>
+<a name="ASYNC_TIMEOUT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ASYNC_TIMEOUT</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> ASYNC_TIMEOUT</pre>
+<div class="block">Callback to trigger the processing of an async timeout.</div>
+</li>
+</ul>
+<a name="ASYNC_ERROR">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ASYNC_ERROR</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> ASYNC_ERROR</pre>
+<div class="block">Callback to trigger the error processing.</div>
+</li>
+</ul>
+<a name="ASYNC_SETTIMEOUT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ASYNC_SETTIMEOUT</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> ASYNC_SETTIMEOUT</pre>
+<div class="block">Callback for an async call to
+ <a href="../../../../servletapi/javax/servlet/AsyncContext.html?is-external=true#setTimeout(long)" title="class or interface in javax.servlet"><code>AsyncContext.setTimeout(long)</code></a></div>
+</li>
+</ul>
+<a name="ASYNC_IS_ASYNC">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ASYNC_IS_ASYNC</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> ASYNC_IS_ASYNC</pre>
+<div class="block">Callback to determine if async processing is in progress.</div>
+</li>
+</ul>
+<a name="ASYNC_IS_STARTED">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ASYNC_IS_STARTED</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> ASYNC_IS_STARTED</pre>
+<div class="block">Callback to determine if async dispatch is in progress.</div>
+</li>
+</ul>
+<a name="ASYNC_IS_COMPLETING">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ASYNC_IS_COMPLETING</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> ASYNC_IS_COMPLETING</pre>
+<div class="block">Call back to determine if async complete is in progress.</div>
+</li>
+</ul>
+<a name="ASYNC_IS_DISPATCHING">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ASYNC_IS_DISPATCHING</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> ASYNC_IS_DISPATCHING</pre>
+<div class="block">Callback to determine if async dispatch is in progress.</div>
+</li>
+</ul>
+<a name="ASYNC_IS_TIMINGOUT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ASYNC_IS_TIMINGOUT</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> ASYNC_IS_TIMINGOUT</pre>
+<div class="block">Callback to determine if async is timing out.</div>
+</li>
+</ul>
+<a name="ASYNC_IS_ERROR">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ASYNC_IS_ERROR</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> ASYNC_IS_ERROR</pre>
+<div class="block">Callback to determine if async is in error.</div>
+</li>
+</ul>
+<a name="UPGRADE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>UPGRADE</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> UPGRADE</pre>
+<div class="block">Callback to trigger the HTTP upgrade process.</div>
+</li>
+</ul>
+<a name="NB_READ_INTEREST">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>NB_READ_INTEREST</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> NB_READ_INTEREST</pre>
+<div class="block">Indicator that Servlet is interested in being
+ notified when data is available to be read</div>
+</li>
+</ul>
+<a name="NB_WRITE_INTEREST">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>NB_WRITE_INTEREST</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> NB_WRITE_INTEREST</pre>
+<div class="block">Indicator that the Servlet is interested
+in being notified when it can write data</div>
+</li>
+</ul>
+<a name="REQUEST_BODY_FULLY_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>REQUEST_BODY_FULLY_READ</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> REQUEST_BODY_FULLY_READ</pre>
+<div class="block">Indicates if the request body has been fully read.</div>
+</li>
+</ul>
+<a name="DISPATCH_READ">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>DISPATCH_READ</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> DISPATCH_READ</pre>
+<div class="block">Indicates that the container needs to trigger a call to onDataAvailable()
+ for the registered non-blocking read listener.</div>
+</li>
+</ul>
+<a name="DISPATCH_WRITE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>DISPATCH_WRITE</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> DISPATCH_WRITE</pre>
+<div class="block">Indicates that the container needs to trigger a call to onWritePossible()
+ for the registered non-blocking write listener.</div>
+</li>
+</ul>
+<a name="DISPATCH_EXECUTE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>DISPATCH_EXECUTE</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> DISPATCH_EXECUTE</pre>
+<div class="block">Execute any non-blocking dispatches that have been registered via
+ <a href="../../../org/apache/coyote/ActionCode.html#DISPATCH_READ"><code>DISPATCH_READ</code></a> or <a href="../../../org/apache/coyote/ActionCode.html#DISPATCH_WRITE"><code>DISPATCH_WRITE</code></a>. Typically required
+ when the non-blocking listeners are configured on a thread where the
+ processing wasn't triggered by a read or write event on the socket.</div>
+</li>
+</ul>
+<a name="END_REQUEST">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>END_REQUEST</h4>
+<pre>public static final&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a> END_REQUEST</pre>
+<div class="block">Trigger end of request processing (remaining input swallowed, write any
+ remaining parts of the response etc.).</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="values()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>values</h4>
+<pre>public static&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a>[]&nbsp;values()</pre>
+<div class="block">Returns an array containing the constants of this enum type, in
+the order they are declared.  This method may be used to iterate
+over the constants as follows:
+<pre>
+for (ActionCode c : ActionCode.values())
+&nbsp;   System.out.println(c);
+</pre></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>an array containing the constants of this enum type, in the order they are declared</dd></dl>
+</li>
+</ul>
+<a name="valueOf(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>valueOf</h4>
+<pre>public static&nbsp;<a href="../../../org/apache/coyote/ActionCode.html" title="enum in org.apache.coyote">ActionCode</a>&nbsp;valueOf(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block">Returns the enum constant of this type with the specified name.
+The string must match <i>exactly</i> an identifier used to declare an
+enum constant in this type.  (Extraneous whitespace characters are 
+not permitted.)</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - the name of the enum constant to be returned.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the enum constant with the specified name</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if this enum type has no constant with the specified name</dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</a></code> - if the argument is null</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../org/apache/coyote/AbstractProtocol.RecycledProcessors.html" title="class in org.apache.coyote"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../org/apache/coyote/ActionHook.html" title="interface in org.apache.coyote"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?org/apache/coyote/ActionCode.html" target="_top">Frames</a></li>
+<li><a href="ActionCode.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#enum_constant_summary">Enum Constants</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#enum_constant_detail">Enum Constants</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

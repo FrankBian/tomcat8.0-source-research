@@ -1,0 +1,354 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>XADataSource (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="XADataSource (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/tomcat/jdbc/pool/Validator.html" title="interface in org.apache.tomcat.jdbc.pool"><span class="strong">Prev Class</span></a></li>
+<li>Next Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/tomcat/jdbc/pool/XADataSource.html" target="_top">Frames</a></li>
+<li><a href="XADataSource.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_org.apache.tomcat.jdbc.pool.DataSource">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#methods_inherited_from_class_org.apache.tomcat.jdbc.pool.DataSource">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li>Method</li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.tomcat.jdbc.pool</div>
+<h2 title="Class XADataSource" class="title">Class XADataSource</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html" title="class in org.apache.tomcat.jdbc.pool">org.apache.tomcat.jdbc.pool.DataSourceProxy</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSource.html" title="class in org.apache.tomcat.jdbc.pool">org.apache.tomcat.jdbc.pool.DataSource</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.tomcat.jdbc.pool.XADataSource</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://docs.oracle.com/javase/7/docs/api/java/sql/Wrapper.html?is-external=true" title="class or interface in java.sql">Wrapper</a>, <a href="http://docs.oracle.com/javase/7/docs/api/javax/management/MBeanRegistration.html?is-external=true" title="class or interface in javax.management">MBeanRegistration</a>, <a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/CommonDataSource.html?is-external=true" title="class or interface in javax.sql">CommonDataSource</a>, <a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/ConnectionPoolDataSource.html?is-external=true" title="class or interface in javax.sql">ConnectionPoolDataSource</a>, <a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/DataSource.html?is-external=true" title="class or interface in javax.sql">DataSource</a>, <a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/XADataSource.html?is-external=true" title="class or interface in javax.sql">XADataSource</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/jmx/ConnectionPoolMBean.html" title="interface in org.apache.tomcat.jdbc.pool.jmx">ConnectionPoolMBean</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html" title="interface in org.apache.tomcat.jdbc.pool">PoolConfiguration</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">XADataSource</span>
+extends <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSource.html" title="class in org.apache.tomcat.jdbc.pool">DataSource</a>
+implements <a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/XADataSource.html?is-external=true" title="class or interface in javax.sql">XADataSource</a></pre>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.tomcat.jdbc.pool.DataSource">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.tomcat.jdbc.pool.<a href="../../../../../org/apache/tomcat/jdbc/pool/DataSource.html" title="class in org.apache.tomcat.jdbc.pool">DataSource</a></h3>
+<code><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSource.html#oname">oname</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.tomcat.jdbc.pool.DataSourceProxy">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.tomcat.jdbc.pool.<a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html" title="class in org.apache.tomcat.jdbc.pool">DataSourceProxy</a></h3>
+<code><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#pool">pool</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#poolProperties">poolProperties</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.tomcat.jdbc.pool.PoolConfiguration">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.apache.tomcat.jdbc.pool.<a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html" title="interface in org.apache.tomcat.jdbc.pool">PoolConfiguration</a></h3>
+<code><a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#PKG_PREFIX">PKG_PREFIX</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/XADataSource.html#XADataSource()">XADataSource</a></strong>()</code>
+<div class="block">Constructor for reflection only.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/XADataSource.html#XADataSource(org.apache.tomcat.jdbc.pool.PoolConfiguration)">XADataSource</a></strong>(<a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html" title="interface in org.apache.tomcat.jdbc.pool">PoolConfiguration</a>&nbsp;poolProperties)</code>
+<div class="block">Constructs a DataSource object wrapping a connection</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.tomcat.jdbc.pool.DataSource">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.tomcat.jdbc.pool.<a href="../../../../../org/apache/tomcat/jdbc/pool/DataSource.html" title="class in org.apache.tomcat.jdbc.pool">DataSource</a></h3>
+<code><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSource.html#createObjectName(javax.management.ObjectName)">createObjectName</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSource.html#postDeregister()">postDeregister</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSource.html#postRegister(java.lang.Boolean)">postRegister</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSource.html#preDeregister()">preDeregister</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSource.html#preRegister(javax.management.MBeanServer,%20javax.management.ObjectName)">preRegister</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSource.html#registerJmx()">registerJmx</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSource.html#unregisterJmx()">unregisterJmx</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.tomcat.jdbc.pool.DataSourceProxy">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.tomcat.jdbc.pool.<a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html" title="class in org.apache.tomcat.jdbc.pool">DataSourceProxy</a></h3>
+<code><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#checkAbandoned()">checkAbandoned</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#checkIdle()">checkIdle</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#close()">close</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#close(boolean)">close</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#createPool()">createPool</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getAbandonWhenPercentageFull()">getAbandonWhenPercentageFull</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getActive()">getActive</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getCommitOnReturn()">getCommitOnReturn</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getConnection()">getConnection</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getConnection(java.lang.String,%20java.lang.String)">getConnection</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getConnectionAsync()">getConnectionAsync</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getConnectionProperties()">getConnectionProperties</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getDataSource()">getDataSource</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getDataSourceJNDI()">getDataSourceJNDI</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getDbProperties()">getDbProperties</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getDefaultAutoCommit()">getDefaultAutoCommit</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getDefaultCatalog()">getDefaultCatalog</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getDefaultReadOnly()">getDefaultReadOnly</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getDefaultTransactionIsolation()">getDefaultTransactionIsolation</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getDriverClassName()">getDriverClassName</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getIdle()">getIdle</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getInitialSize()">getInitialSize</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getInitSQL()">getInitSQL</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getJdbcInterceptors()">getJdbcInterceptors</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getJdbcInterceptorsAsArray()">getJdbcInterceptorsAsArray</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getLoginTimeout()">getLoginTimeout</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getLogValidationErrors()">getLogValidationErrors</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getLogWriter()">getLogWriter</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getMaxActive()">getMaxActive</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getMaxAge()">getMaxAge</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getMaxIdle()">getMaxIdle</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getMaxWait()">getMaxWait</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getMinEvictableIdleTimeMillis()">getMinEvictableIdleTimeMillis</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getMinIdle()">getMinIdle</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getName()">getName</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getNumActive()">getNumActive</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getNumIdle()">getNumIdle</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getNumTestsPerEvictionRun()">getNumTestsPerEvictionRun</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getParentLogger()">getParentLogger</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getPassword()">getPassword</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getPool()">getPool</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getPooledConnection()">getPooledConnection</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getPooledConnection(java.lang.String,%20java.lang.String)">getPooledConnection</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getPoolName()">getPoolName</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getPoolProperties()">getPoolProperties</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getPoolSize()">getPoolSize</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getPropagateInterruptState()">getPropagateInterruptState</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getRemoveAbandonedTimeout()">getRemoveAbandonedTimeout</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getRollbackOnReturn()">getRollbackOnReturn</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getSize()">getSize</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getSuspectTimeout()">getSuspectTimeout</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getTimeBetweenEvictionRunsMillis()">getTimeBetweenEvictionRunsMillis</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getUrl()">getUrl</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getUseDisposableConnectionFacade()">getUseDisposableConnectionFacade</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getUseLock()">getUseLock</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getUsername()">getUsername</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getValidationInterval()">getValidationInterval</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getValidationQuery()">getValidationQuery</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getValidationQueryTimeout()">getValidationQueryTimeout</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getValidator()">getValidator</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getValidatorClassName()">getValidatorClassName</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getWaitCount()">getWaitCount</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getXAConnection()">getXAConnection</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#getXAConnection(java.lang.String,%20java.lang.String)">getXAConnection</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#isAccessToUnderlyingConnectionAllowed()">isAccessToUnderlyingConnectionAllowed</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#isAlternateUsernameAllowed()">isAlternateUsernameAllowed</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#isDefaultAutoCommit()">isDefaultAutoCommit</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#isDefaultReadOnly()">isDefaultReadOnly</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#isFairQueue()">isFairQueue</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#isIgnoreExceptionOnPreLoad()">isIgnoreExceptionOnPreLoad</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#isJmxEnabled()">isJmxEnabled</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#isLogAbandoned()">isLogAbandoned</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#isPoolSweeperEnabled()">isPoolSweeperEnabled</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#isRemoveAbandoned()">isRemoveAbandoned</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#isTestOnBorrow()">isTestOnBorrow</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#isTestOnConnect()">isTestOnConnect</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#isTestOnReturn()">isTestOnReturn</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#isTestWhileIdle()">isTestWhileIdle</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#isUseEquals()">isUseEquals</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#isWrapperFor(java.lang.Class)">isWrapperFor</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#purge()">purge</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#purgeOnReturn()">purgeOnReturn</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setAbandonWhenPercentageFull(int)">setAbandonWhenPercentageFull</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setAccessToUnderlyingConnectionAllowed(boolean)">setAccessToUnderlyingConnectionAllowed</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setAlternateUsernameAllowed(boolean)">setAlternateUsernameAllowed</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setCommitOnReturn(boolean)">setCommitOnReturn</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setConnectionProperties(java.lang.String)">setConnectionProperties</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setDataSource(java.lang.Object)">setDataSource</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setDataSourceJNDI(java.lang.String)">setDataSourceJNDI</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setDbProperties(java.util.Properties)">setDbProperties</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setDefaultAutoCommit(java.lang.Boolean)">setDefaultAutoCommit</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setDefaultCatalog(java.lang.String)">setDefaultCatalog</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setDefaultReadOnly(java.lang.Boolean)">setDefaultReadOnly</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setDefaultTransactionIsolation(int)">setDefaultTransactionIsolation</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setDriverClassName(java.lang.String)">setDriverClassName</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setFairQueue(boolean)">setFairQueue</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setIgnoreExceptionOnPreLoad(boolean)">setIgnoreExceptionOnPreLoad</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setInitialSize(int)">setInitialSize</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setInitSQL(java.lang.String)">setInitSQL</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setJdbcInterceptors(java.lang.String)">setJdbcInterceptors</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setJmxEnabled(boolean)">setJmxEnabled</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setLogAbandoned(boolean)">setLogAbandoned</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setLoginTimeout(int)">setLoginTimeout</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setLogValidationErrors(boolean)">setLogValidationErrors</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setLogWriter(java.io.PrintWriter)">setLogWriter</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setMaxActive(int)">setMaxActive</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setMaxAge(long)">setMaxAge</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setMaxIdle(int)">setMaxIdle</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setMaxWait(int)">setMaxWait</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setMinEvictableIdleTimeMillis(int)">setMinEvictableIdleTimeMillis</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setMinIdle(int)">setMinIdle</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setName(java.lang.String)">setName</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setNumTestsPerEvictionRun(int)">setNumTestsPerEvictionRun</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setPassword(java.lang.String)">setPassword</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setPoolProperties(org.apache.tomcat.jdbc.pool.PoolConfiguration)">setPoolProperties</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setPropagateInterruptState(boolean)">setPropagateInterruptState</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setRemoveAbandoned(boolean)">setRemoveAbandoned</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setRemoveAbandonedTimeout(int)">setRemoveAbandonedTimeout</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setRollbackOnReturn(boolean)">setRollbackOnReturn</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setSuspectTimeout(int)">setSuspectTimeout</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setTestOnBorrow(boolean)">setTestOnBorrow</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setTestOnConnect(boolean)">setTestOnConnect</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setTestOnReturn(boolean)">setTestOnReturn</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setTestWhileIdle(boolean)">setTestWhileIdle</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setTimeBetweenEvictionRunsMillis(int)">setTimeBetweenEvictionRunsMillis</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setUrl(java.lang.String)">setUrl</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setUseDisposableConnectionFacade(boolean)">setUseDisposableConnectionFacade</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setUseEquals(boolean)">setUseEquals</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setUseLock(boolean)">setUseLock</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setUsername(java.lang.String)">setUsername</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setValidationInterval(long)">setValidationInterval</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setValidationQuery(java.lang.String)">setValidationQuery</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setValidationQueryTimeout(int)">setValidationQueryTimeout</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setValidator(org.apache.tomcat.jdbc.pool.Validator)">setValidator</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#setValidatorClassName(java.lang.String)">setValidatorClassName</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#testIdle()">testIdle</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#toString()">toString</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html#unwrap(java.lang.Class)">unwrap</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_javax.sql.XADataSource">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;javax.sql.<a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/XADataSource.html?is-external=true" title="class or interface in javax.sql">XADataSource</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/XADataSource.html?is-external=true#getXAConnection()" title="class or interface in javax.sql">getXAConnection</a>, <a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/XADataSource.html?is-external=true#getXAConnection(java.lang.String,%20java.lang.String)" title="class or interface in javax.sql">getXAConnection</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_javax.sql.CommonDataSource">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;javax.sql.<a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/CommonDataSource.html?is-external=true" title="class or interface in javax.sql">CommonDataSource</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/CommonDataSource.html?is-external=true#getLoginTimeout()" title="class or interface in javax.sql">getLoginTimeout</a>, <a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/CommonDataSource.html?is-external=true#getLogWriter()" title="class or interface in javax.sql">getLogWriter</a>, <a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/CommonDataSource.html?is-external=true#getParentLogger()" title="class or interface in javax.sql">getParentLogger</a>, <a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/CommonDataSource.html?is-external=true#setLoginTimeout(int)" title="class or interface in javax.sql">setLoginTimeout</a>, <a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/CommonDataSource.html?is-external=true#setLogWriter(java.io.PrintWriter)" title="class or interface in javax.sql">setLogWriter</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_javax.sql.DataSource">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;javax.sql.<a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/DataSource.html?is-external=true" title="class or interface in javax.sql">DataSource</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/DataSource.html?is-external=true#getConnection()" title="class or interface in javax.sql">getConnection</a>, <a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/DataSource.html?is-external=true#getConnection(java.lang.String,%20java.lang.String)" title="class or interface in javax.sql">getConnection</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.sql.Wrapper">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;java.sql.<a href="http://docs.oracle.com/javase/7/docs/api/java/sql/Wrapper.html?is-external=true" title="class or interface in java.sql">Wrapper</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/sql/Wrapper.html?is-external=true#isWrapperFor(java.lang.Class)" title="class or interface in java.sql">isWrapperFor</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/sql/Wrapper.html?is-external=true#unwrap(java.lang.Class)" title="class or interface in java.sql">unwrap</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.tomcat.jdbc.pool.jmx.ConnectionPoolMBean">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.apache.tomcat.jdbc.pool.jmx.<a href="../../../../../org/apache/tomcat/jdbc/pool/jmx/ConnectionPoolMBean.html" title="interface in org.apache.tomcat.jdbc.pool.jmx">ConnectionPoolMBean</a></h3>
+<code><a href="../../../../../org/apache/tomcat/jdbc/pool/jmx/ConnectionPoolMBean.html#checkAbandoned()">checkAbandoned</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/jmx/ConnectionPoolMBean.html#checkIdle()">checkIdle</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/jmx/ConnectionPoolMBean.html#getActive()">getActive</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/jmx/ConnectionPoolMBean.html#getIdle()">getIdle</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/jmx/ConnectionPoolMBean.html#getNumActive()">getNumActive</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/jmx/ConnectionPoolMBean.html#getNumIdle()">getNumIdle</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/jmx/ConnectionPoolMBean.html#getSize()">getSize</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/jmx/ConnectionPoolMBean.html#getWaitCount()">getWaitCount</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/jmx/ConnectionPoolMBean.html#purge()">purge</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/jmx/ConnectionPoolMBean.html#purgeOnReturn()">purgeOnReturn</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/jmx/ConnectionPoolMBean.html#testIdle()">testIdle</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.tomcat.jdbc.pool.PoolConfiguration">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.apache.tomcat.jdbc.pool.<a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html" title="interface in org.apache.tomcat.jdbc.pool">PoolConfiguration</a></h3>
+<code><a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getAbandonWhenPercentageFull()">getAbandonWhenPercentageFull</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getCommitOnReturn()">getCommitOnReturn</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getConnectionProperties()">getConnectionProperties</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getDataSource()">getDataSource</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getDataSourceJNDI()">getDataSourceJNDI</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getDbProperties()">getDbProperties</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getDefaultAutoCommit()">getDefaultAutoCommit</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getDefaultCatalog()">getDefaultCatalog</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getDefaultReadOnly()">getDefaultReadOnly</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getDefaultTransactionIsolation()">getDefaultTransactionIsolation</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getDriverClassName()">getDriverClassName</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getInitialSize()">getInitialSize</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getInitSQL()">getInitSQL</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getJdbcInterceptors()">getJdbcInterceptors</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getJdbcInterceptorsAsArray()">getJdbcInterceptorsAsArray</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getLogValidationErrors()">getLogValidationErrors</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getMaxActive()">getMaxActive</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getMaxAge()">getMaxAge</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getMaxIdle()">getMaxIdle</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getMaxWait()">getMaxWait</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getMinEvictableIdleTimeMillis()">getMinEvictableIdleTimeMillis</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getMinIdle()">getMinIdle</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getName()">getName</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getNumTestsPerEvictionRun()">getNumTestsPerEvictionRun</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getPassword()">getPassword</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getPoolName()">getPoolName</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getPropagateInterruptState()">getPropagateInterruptState</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getRemoveAbandonedTimeout()">getRemoveAbandonedTimeout</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getRollbackOnReturn()">getRollbackOnReturn</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getSuspectTimeout()">getSuspectTimeout</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getTimeBetweenEvictionRunsMillis()">getTimeBetweenEvictionRunsMillis</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getUrl()">getUrl</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getUseDisposableConnectionFacade()">getUseDisposableConnectionFacade</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getUseLock()">getUseLock</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getUsername()">getUsername</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getValidationInterval()">getValidationInterval</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getValidationQuery()">getValidationQuery</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getValidationQueryTimeout()">getValidationQueryTimeout</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getValidator()">getValidator</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#getValidatorClassName()">getValidatorClassName</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#isAccessToUnderlyingConnectionAllowed()">isAccessToUnderlyingConnectionAllowed</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#isAlternateUsernameAllowed()">isAlternateUsernameAllowed</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#isDefaultAutoCommit()">isDefaultAutoCommit</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#isDefaultReadOnly()">isDefaultReadOnly</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#isFairQueue()">isFairQueue</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#isIgnoreExceptionOnPreLoad()">isIgnoreExceptionOnPreLoad</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#isJmxEnabled()">isJmxEnabled</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#isLogAbandoned()">isLogAbandoned</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#isPoolSweeperEnabled()">isPoolSweeperEnabled</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#isRemoveAbandoned()">isRemoveAbandoned</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#isTestOnBorrow()">isTestOnBorrow</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#isTestOnConnect()">isTestOnConnect</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#isTestOnReturn()">isTestOnReturn</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#isTestWhileIdle()">isTestWhileIdle</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#isUseEquals()">isUseEquals</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setAbandonWhenPercentageFull(int)">setAbandonWhenPercentageFull</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setAccessToUnderlyingConnectionAllowed(boolean)">setAccessToUnderlyingConnectionAllowed</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setAlternateUsernameAllowed(boolean)">setAlternateUsernameAllowed</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setCommitOnReturn(boolean)">setCommitOnReturn</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setConnectionProperties(java.lang.String)">setConnectionProperties</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setDataSource(java.lang.Object)">setDataSource</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setDataSourceJNDI(java.lang.String)">setDataSourceJNDI</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setDbProperties(java.util.Properties)">setDbProperties</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setDefaultAutoCommit(java.lang.Boolean)">setDefaultAutoCommit</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setDefaultCatalog(java.lang.String)">setDefaultCatalog</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setDefaultReadOnly(java.lang.Boolean)">setDefaultReadOnly</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setDefaultTransactionIsolation(int)">setDefaultTransactionIsolation</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setDriverClassName(java.lang.String)">setDriverClassName</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setFairQueue(boolean)">setFairQueue</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setIgnoreExceptionOnPreLoad(boolean)">setIgnoreExceptionOnPreLoad</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setInitialSize(int)">setInitialSize</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setInitSQL(java.lang.String)">setInitSQL</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setJdbcInterceptors(java.lang.String)">setJdbcInterceptors</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setJmxEnabled(boolean)">setJmxEnabled</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setLogAbandoned(boolean)">setLogAbandoned</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setLogValidationErrors(boolean)">setLogValidationErrors</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setMaxActive(int)">setMaxActive</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setMaxAge(long)">setMaxAge</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setMaxIdle(int)">setMaxIdle</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setMaxWait(int)">setMaxWait</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setMinEvictableIdleTimeMillis(int)">setMinEvictableIdleTimeMillis</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setMinIdle(int)">setMinIdle</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setName(java.lang.String)">setName</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setNumTestsPerEvictionRun(int)">setNumTestsPerEvictionRun</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setPassword(java.lang.String)">setPassword</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setPropagateInterruptState(boolean)">setPropagateInterruptState</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setRemoveAbandoned(boolean)">setRemoveAbandoned</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setRemoveAbandonedTimeout(int)">setRemoveAbandonedTimeout</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setRollbackOnReturn(boolean)">setRollbackOnReturn</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setSuspectTimeout(int)">setSuspectTimeout</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setTestOnBorrow(boolean)">setTestOnBorrow</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setTestOnConnect(boolean)">setTestOnConnect</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setTestOnReturn(boolean)">setTestOnReturn</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setTestWhileIdle(boolean)">setTestWhileIdle</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setTimeBetweenEvictionRunsMillis(int)">setTimeBetweenEvictionRunsMillis</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setUrl(java.lang.String)">setUrl</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setUseDisposableConnectionFacade(boolean)">setUseDisposableConnectionFacade</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setUseEquals(boolean)">setUseEquals</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setUseLock(boolean)">setUseLock</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setUsername(java.lang.String)">setUsername</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setValidationInterval(long)">setValidationInterval</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setValidationQuery(java.lang.String)">setValidationQuery</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setValidationQueryTimeout(int)">setValidationQueryTimeout</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setValidator(org.apache.tomcat.jdbc.pool.Validator)">setValidator</a>, <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html#setValidatorClassName(java.lang.String)">setValidatorClassName</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_javax.sql.ConnectionPoolDataSource">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;javax.sql.<a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/ConnectionPoolDataSource.html?is-external=true" title="class or interface in javax.sql">ConnectionPoolDataSource</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/ConnectionPoolDataSource.html?is-external=true#getPooledConnection()" title="class or interface in javax.sql">getPooledConnection</a>, <a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/ConnectionPoolDataSource.html?is-external=true#getPooledConnection(java.lang.String,%20java.lang.String)" title="class or interface in javax.sql">getPooledConnection</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="XADataSource()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>XADataSource</h4>
+<pre>public&nbsp;XADataSource()</pre>
+<div class="block">Constructor for reflection only. A default set of pool properties will be created.</div>
+</li>
+</ul>
+<a name="XADataSource(org.apache.tomcat.jdbc.pool.PoolConfiguration)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>XADataSource</h4>
+<pre>public&nbsp;XADataSource(<a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html" title="interface in org.apache.tomcat.jdbc.pool">PoolConfiguration</a>&nbsp;poolProperties)</pre>
+<div class="block">Constructs a DataSource object wrapping a connection</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>poolProperties</code> - </dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/tomcat/jdbc/pool/Validator.html" title="interface in org.apache.tomcat.jdbc.pool"><span class="strong">Prev Class</span></a></li>
+<li>Next Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/tomcat/jdbc/pool/XADataSource.html" target="_top">Frames</a></li>
+<li><a href="XADataSource.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#fields_inherited_from_class_org.apache.tomcat.jdbc.pool.DataSource">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#methods_inherited_from_class_org.apache.tomcat.jdbc.pool.DataSource">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li>Method</li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

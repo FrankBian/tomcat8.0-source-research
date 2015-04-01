@@ -1,0 +1,922 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OutputBuffer (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="OutputBuffer (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/connector/InputBuffer.html" title="class in org.apache.catalina.connector"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/connector/OutputBuffer.html" target="_top">Frames</a></li>
+<li><a href="OutputBuffer.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.connector</div>
+<h2 title="Class OutputBuffer" class="title">Class OutputBuffer</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true" title="class or interface in java.io">java.io.Writer</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.connector.OutputBuffer</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Flushable.html?is-external=true" title="class or interface in java.io">Flushable</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Appendable.html?is-external=true" title="class or interface in java.lang">Appendable</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang">AutoCloseable</a>, <a href="../../../../org/apache/tomcat/util/buf/ByteChunk.ByteOutputChannel.html" title="interface in org.apache.tomcat.util.buf">ByteChunk.ByteOutputChannel</a>, <a href="../../../../org/apache/tomcat/util/buf/CharChunk.CharOutputChannel.html" title="interface in org.apache.tomcat.util.buf">CharChunk.CharOutputChannel</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">OutputBuffer</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true" title="class or interface in java.io">Writer</a>
+implements <a href="../../../../org/apache/tomcat/util/buf/ByteChunk.ByteOutputChannel.html" title="interface in org.apache.tomcat.util.buf">ByteChunk.ByteOutputChannel</a>, <a href="../../../../org/apache/tomcat/util/buf/CharChunk.CharOutputChannel.html" title="interface in org.apache.tomcat.util.buf">CharChunk.CharOutputChannel</a></pre>
+<div class="block">The buffer used by Tomcat response. This is a derivative of the Tomcat 3.3
+ OutputBuffer, with the removal of some of the state handling (which in
+ Coyote is mostly the Processor's responsibility).</div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Costin Manolache, Remy Maucherat</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../org/apache/tomcat/util/buf/C2BConverter.html" title="class in org.apache.tomcat.util.buf">C2BConverter</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#conv">conv</a></strong></code>
+<div class="block">Current char to byte converter.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#DEFAULT_BUFFER_SIZE">DEFAULT_BUFFER_SIZE</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#DEFAULT_ENCODING">DEFAULT_ENCODING</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util">HashMap</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/apache/tomcat/util/buf/C2BConverter.html" title="class in org.apache.tomcat.util.buf">C2BConverter</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#encoders">encoders</a></strong></code>
+<div class="block">List of encoders.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_java.io.Writer">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;java.io.<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true" title="class or interface in java.io">Writer</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true#lock" title="class or interface in java.io">lock</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#OutputBuffer()">OutputBuffer</a></strong>()</code>
+<div class="block">Default constructor.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#OutputBuffer(int)">OutputBuffer</a></strong>(int&nbsp;size)</code>
+<div class="block">Alternate constructor which allows specifying the initial buffer size.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#checkConverter()">checkConverter</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#checkRegisterForWrite()">checkRegisterForWrite</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#clearEncoders()">clearEncoders</a></strong>()</code>
+<div class="block">Clear cached encoders (to save memory for Comet requests).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#close()">close</a></strong>()</code>
+<div class="block">Close the output buffer.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#doFlush(boolean)">doFlush</a></strong>(boolean&nbsp;realFlush)</code>
+<div class="block">Flush bytes or chars contained in the buffer.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#flush()">flush</a></strong>()</code>
+<div class="block">Flush bytes or chars contained in the buffer.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#getBufferSize()">getBufferSize</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#getContentWritten()">getContentWritten</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#isBlocking()">isBlocking</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#isClosed()">isClosed</a></strong>()</code>
+<div class="block">Is the response output closed ?</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#isNew()">isNew</a></strong>()</code>
+<div class="block">Has this buffer been used at all?</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#isReady()">isReady</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#isSuspended()">isSuspended</a></strong>()</code>
+<div class="block">Is the response output suspended ?</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#realWriteBytes(byte[],%20int,%20int)">realWriteBytes</a></strong>(byte[]&nbsp;buf,
+              int&nbsp;off,
+              int&nbsp;cnt)</code>
+<div class="block">Sends the buffer data to the client output, checking the
+ state of Response and calling the right interceptors.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#realWriteChars(char[],%20int,%20int)">realWriteChars</a></strong>(char[]&nbsp;buf,
+              int&nbsp;off,
+              int&nbsp;len)</code>
+<div class="block">Convert the chars to bytes, then send the data to the client.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#recycle()">recycle</a></strong>()</code>
+<div class="block">Recycle the output buffer.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#reset()">reset</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#reset(boolean)">reset</a></strong>(boolean&nbsp;resetWriterStreamFlags)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#setBufferSize(int)">setBufferSize</a></strong>(int&nbsp;size)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#setConverter()">setConverter</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#setEncoding(java.lang.String)">setEncoding</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#setResponse(org.apache.coyote.Response)">setResponse</a></strong>(<a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a>&nbsp;coyoteResponse)</code>
+<div class="block">Associated Coyote response.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#setSuspended(boolean)">setSuspended</a></strong>(boolean&nbsp;suspended)</code>
+<div class="block">Set the suspended flag.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#setWriteListener(javax.servlet.WriteListener)">setWriteListener</a></strong>(<a href="../../../../../servletapi/javax/servlet/WriteListener.html?is-external=true" title="class or interface in javax.servlet">WriteListener</a>&nbsp;listener)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#write(byte[],%20int,%20int)">write</a></strong>(byte[]&nbsp;b,
+     int&nbsp;off,
+     int&nbsp;len)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#write(char[])">write</a></strong>(char[]&nbsp;c)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#write(char[],%20int,%20int)">write</a></strong>(char[]&nbsp;c,
+     int&nbsp;off,
+     int&nbsp;len)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#write(int)">write</a></strong>(int&nbsp;c)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#write(java.lang.String)">write</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#write(java.lang.String,%20int,%20int)">write</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s,
+     int&nbsp;off,
+     int&nbsp;len)</code>
+<div class="block">Append a string to the buffer</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/OutputBuffer.html#writeByte(int)">writeByte</a></strong>(int&nbsp;b)</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.io.Writer">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.io.<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true" title="class or interface in java.io">Writer</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true#append(char)" title="class or interface in java.io">append</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true#append(java.lang.CharSequence)" title="class or interface in java.io">append</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true#append(java.lang.CharSequence,%20int,%20int)" title="class or interface in java.io">append</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="DEFAULT_ENCODING">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>DEFAULT_ENCODING</h4>
+<pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> DEFAULT_ENCODING</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.catalina.connector.OutputBuffer.DEFAULT_ENCODING">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="DEFAULT_BUFFER_SIZE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>DEFAULT_BUFFER_SIZE</h4>
+<pre>public static final&nbsp;int DEFAULT_BUFFER_SIZE</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.catalina.connector.OutputBuffer.DEFAULT_BUFFER_SIZE">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="encoders">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>encoders</h4>
+<pre>protected final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util">HashMap</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/apache/tomcat/util/buf/C2BConverter.html" title="class in org.apache.tomcat.util.buf">C2BConverter</a>&gt; encoders</pre>
+<div class="block">List of encoders.</div>
+</li>
+</ul>
+<a name="conv">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>conv</h4>
+<pre>protected&nbsp;<a href="../../../../org/apache/tomcat/util/buf/C2BConverter.html" title="class in org.apache.tomcat.util.buf">C2BConverter</a> conv</pre>
+<div class="block">Current char to byte converter.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="OutputBuffer()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>OutputBuffer</h4>
+<pre>public&nbsp;OutputBuffer()</pre>
+<div class="block">Default constructor. Allocate the buffer with the default buffer size.</div>
+</li>
+</ul>
+<a name="OutputBuffer(int)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>OutputBuffer</h4>
+<pre>public&nbsp;OutputBuffer(int&nbsp;size)</pre>
+<div class="block">Alternate constructor which allows specifying the initial buffer size.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>size</code> - Buffer size to use</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setResponse(org.apache.coyote.Response)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setResponse</h4>
+<pre>public&nbsp;void&nbsp;setResponse(<a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a>&nbsp;coyoteResponse)</pre>
+<div class="block">Associated Coyote response.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>coyoteResponse</code> - Associated Coyote response</dd></dl>
+</li>
+</ul>
+<a name="isSuspended()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isSuspended</h4>
+<pre>public&nbsp;boolean&nbsp;isSuspended()</pre>
+<div class="block">Is the response output suspended ?</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>suspended flag value</dd></dl>
+</li>
+</ul>
+<a name="setSuspended(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSuspended</h4>
+<pre>public&nbsp;void&nbsp;setSuspended(boolean&nbsp;suspended)</pre>
+<div class="block">Set the suspended flag.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>suspended</code> - New suspended flag value</dd></dl>
+</li>
+</ul>
+<a name="isClosed()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isClosed</h4>
+<pre>public&nbsp;boolean&nbsp;isClosed()</pre>
+<div class="block">Is the response output closed ?</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>closed flag value</dd></dl>
+</li>
+</ul>
+<a name="recycle()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>recycle</h4>
+<pre>public&nbsp;void&nbsp;recycle()</pre>
+<div class="block">Recycle the output buffer.</div>
+</li>
+</ul>
+<a name="clearEncoders()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clearEncoders</h4>
+<pre>public&nbsp;void&nbsp;clearEncoders()</pre>
+<div class="block">Clear cached encoders (to save memory for Comet requests).</div>
+</li>
+</ul>
+<a name="close()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>close</h4>
+<pre>public&nbsp;void&nbsp;close()
+           throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Close the output buffer. This tries to calculate the response size if
+ the response has not been committed yet.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Closeable.html?is-external=true#close()" title="class or interface in java.io">close</a></code>&nbsp;in interface&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/AutoCloseable.html?is-external=true#close()" title="class or interface in java.lang">close</a></code>&nbsp;in interface&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang">AutoCloseable</a></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true#close()" title="class or interface in java.io">close</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true" title="class or interface in java.io">Writer</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - An underlying IOException occurred</dd></dl>
+</li>
+</ul>
+<a name="flush()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>flush</h4>
+<pre>public&nbsp;void&nbsp;flush()
+           throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Flush bytes or chars contained in the buffer.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Flushable.html?is-external=true#flush()" title="class or interface in java.io">flush</a></code>&nbsp;in interface&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Flushable.html?is-external=true" title="class or interface in java.io">Flushable</a></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true#flush()" title="class or interface in java.io">flush</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true" title="class or interface in java.io">Writer</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - An underlying IOException occurred</dd></dl>
+</li>
+</ul>
+<a name="doFlush(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>doFlush</h4>
+<pre>protected&nbsp;void&nbsp;doFlush(boolean&nbsp;realFlush)
+                throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Flush bytes or chars contained in the buffer.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - An underlying IOException occurred</dd></dl>
+</li>
+</ul>
+<a name="realWriteBytes(byte[], int, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>realWriteBytes</h4>
+<pre>public&nbsp;void&nbsp;realWriteBytes(byte[]&nbsp;buf,
+                  int&nbsp;off,
+                  int&nbsp;cnt)
+                    throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Sends the buffer data to the client output, checking the
+ state of Response and calling the right interceptors.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/tomcat/util/buf/ByteChunk.ByteOutputChannel.html#realWriteBytes(byte[],%20int,%20int)">realWriteBytes</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/tomcat/util/buf/ByteChunk.ByteOutputChannel.html" title="interface in org.apache.tomcat.util.buf">ByteChunk.ByteOutputChannel</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>buf</code> - Byte buffer to be written to the response</dd><dd><code>off</code> - Offset</dd><dd><code>cnt</code> - Length</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - An underlying IOException occurred</dd></dl>
+</li>
+</ul>
+<a name="write(byte[], int, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>write</h4>
+<pre>public&nbsp;void&nbsp;write(byte[]&nbsp;b,
+         int&nbsp;off,
+         int&nbsp;len)
+           throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="writeByte(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>writeByte</h4>
+<pre>public&nbsp;void&nbsp;writeByte(int&nbsp;b)
+               throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="realWriteChars(char[], int, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>realWriteChars</h4>
+<pre>public&nbsp;void&nbsp;realWriteChars(char[]&nbsp;buf,
+                  int&nbsp;off,
+                  int&nbsp;len)
+                    throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Convert the chars to bytes, then send the data to the client.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/tomcat/util/buf/CharChunk.CharOutputChannel.html#realWriteChars(char[],%20int,%20int)">realWriteChars</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/tomcat/util/buf/CharChunk.CharOutputChannel.html" title="interface in org.apache.tomcat.util.buf">CharChunk.CharOutputChannel</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>buf</code> - Char buffer to be written to the response</dd><dd><code>off</code> - Offset</dd><dd><code>len</code> - Length</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - An underlying IOException occurred</dd></dl>
+</li>
+</ul>
+<a name="write(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>write</h4>
+<pre>public&nbsp;void&nbsp;write(int&nbsp;c)
+           throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true#write(int)" title="class or interface in java.io">write</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true" title="class or interface in java.io">Writer</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="write(char[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>write</h4>
+<pre>public&nbsp;void&nbsp;write(char[]&nbsp;c)
+           throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true#write(char[])" title="class or interface in java.io">write</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true" title="class or interface in java.io">Writer</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="write(char[], int, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>write</h4>
+<pre>public&nbsp;void&nbsp;write(char[]&nbsp;c,
+         int&nbsp;off,
+         int&nbsp;len)
+           throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true#write(char[],%20int,%20int)" title="class or interface in java.io">write</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true" title="class or interface in java.io">Writer</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="write(java.lang.String, int, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>write</h4>
+<pre>public&nbsp;void&nbsp;write(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s,
+         int&nbsp;off,
+         int&nbsp;len)
+           throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Append a string to the buffer</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true#write(java.lang.String,%20int,%20int)" title="class or interface in java.io">write</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true" title="class or interface in java.io">Writer</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="write(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>write</h4>
+<pre>public&nbsp;void&nbsp;write(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)
+           throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true#write(java.lang.String)" title="class or interface in java.io">write</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Writer.html?is-external=true" title="class or interface in java.io">Writer</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="setEncoding(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setEncoding</h4>
+<pre>public&nbsp;void&nbsp;setEncoding(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+</li>
+</ul>
+<a name="checkConverter()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>checkConverter</h4>
+<pre>public&nbsp;void&nbsp;checkConverter()
+                    throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="setConverter()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setConverter</h4>
+<pre>protected&nbsp;void&nbsp;setConverter()
+                     throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="getContentWritten()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getContentWritten</h4>
+<pre>public&nbsp;long&nbsp;getContentWritten()</pre>
+</li>
+</ul>
+<a name="isNew()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isNew</h4>
+<pre>public&nbsp;boolean&nbsp;isNew()</pre>
+<div class="block">Has this buffer been used at all?</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>true if no chars or bytes have been added to the buffer since the
+         last call to <a href="../../../../org/apache/catalina/connector/OutputBuffer.html#recycle()"><code>recycle()</code></a></dd></dl>
+</li>
+</ul>
+<a name="setBufferSize(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setBufferSize</h4>
+<pre>public&nbsp;void&nbsp;setBufferSize(int&nbsp;size)</pre>
+</li>
+</ul>
+<a name="reset()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reset</h4>
+<pre>public&nbsp;void&nbsp;reset()</pre>
+</li>
+</ul>
+<a name="reset(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reset</h4>
+<pre>public&nbsp;void&nbsp;reset(boolean&nbsp;resetWriterStreamFlags)</pre>
+</li>
+</ul>
+<a name="getBufferSize()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBufferSize</h4>
+<pre>public&nbsp;int&nbsp;getBufferSize()</pre>
+</li>
+</ul>
+<a name="isReady()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isReady</h4>
+<pre>public&nbsp;boolean&nbsp;isReady()</pre>
+</li>
+</ul>
+<a name="setWriteListener(javax.servlet.WriteListener)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setWriteListener</h4>
+<pre>public&nbsp;void&nbsp;setWriteListener(<a href="../../../../../servletapi/javax/servlet/WriteListener.html?is-external=true" title="class or interface in javax.servlet">WriteListener</a>&nbsp;listener)</pre>
+</li>
+</ul>
+<a name="isBlocking()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isBlocking</h4>
+<pre>public&nbsp;boolean&nbsp;isBlocking()</pre>
+</li>
+</ul>
+<a name="checkRegisterForWrite()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>checkRegisterForWrite</h4>
+<pre>public&nbsp;void&nbsp;checkRegisterForWrite()</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/connector/InputBuffer.html" title="class in org.apache.catalina.connector"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/connector/OutputBuffer.html" target="_top">Frames</a></li>
+<li><a href="OutputBuffer.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

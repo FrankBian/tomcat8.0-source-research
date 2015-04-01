@@ -1,0 +1,1064 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AbstractOutputBuffer (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="AbstractOutputBuffer (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/coyote/http11/AbstractNioInputBuffer.HeaderParseData.html" title="class in org.apache.coyote.http11"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/coyote/http11/Constants.html" title="class in org.apache.coyote.http11"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/coyote/http11/AbstractOutputBuffer.html" target="_top">Frames</a></li>
+<li><a href="AbstractOutputBuffer.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.coyote.http11</div>
+<h2 title="Class AbstractOutputBuffer" class="title">Class AbstractOutputBuffer&lt;S&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.coyote.http11.AbstractOutputBuffer&lt;S&gt;</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../org/apache/coyote/OutputBuffer.html" title="interface in org.apache.coyote">OutputBuffer</a></dd>
+</dl>
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../../../org/apache/coyote/http11/InternalAprOutputBuffer.html" title="class in org.apache.coyote.http11">InternalAprOutputBuffer</a>, <a href="../../../../org/apache/coyote/http11/InternalNio2OutputBuffer.html" title="class in org.apache.coyote.http11">InternalNio2OutputBuffer</a>, <a href="../../../../org/apache/coyote/http11/InternalNioOutputBuffer.html" title="class in org.apache.coyote.http11">InternalNioOutputBuffer</a>, <a href="../../../../org/apache/coyote/http11/InternalOutputBuffer.html" title="class in org.apache.coyote.http11">InternalOutputBuffer</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public abstract class <span class="strong">AbstractOutputBuffer&lt;S&gt;</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="../../../../org/apache/coyote/OutputBuffer.html" title="interface in org.apache.coyote">OutputBuffer</a></pre>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../org/apache/coyote/http11/OutputFilter.html" title="interface in org.apache.coyote.http11">OutputFilter</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#activeFilters">activeFilters</a></strong></code>
+<div class="block">Active filter (which is actually the top of the pipeline).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/LinkedBlockingDeque.html?is-external=true" title="class or interface in java.util.concurrent">LinkedBlockingDeque</a>&lt;<a href="../../../../org/apache/coyote/ByteBufferHolder.html" title="class in org.apache.coyote">ByteBufferHolder</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#bufferedWrites">bufferedWrites</a></strong></code>
+<div class="block">For "non-blocking" writes use an external set of buffers.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#bufferedWriteSize">bufferedWriteSize</a></strong></code>
+<div class="block">The max size of the buffered write buffer</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#byteCount">byteCount</a></strong></code>
+<div class="block">Bytes written to client for the current request</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#committed">committed</a></strong></code>
+<div class="block">Committed flag.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../org/apache/coyote/http11/OutputFilter.html" title="interface in org.apache.coyote.http11">OutputFilter</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#filterLibrary">filterLibrary</a></strong></code>
+<div class="block">Filter library.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#finished">finished</a></strong></code>
+<div class="block">Finished flag.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#headerBuffer">headerBuffer</a></strong></code>
+<div class="block">The buffer used for header composition.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#lastActiveFilter">lastActiveFilter</a></strong></code>
+<div class="block">Index of the last active filter.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../org/apache/coyote/OutputBuffer.html" title="interface in org.apache.coyote">OutputBuffer</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#outputStreamOutputBuffer">outputStreamOutputBuffer</a></strong></code>
+<div class="block">Underlying output buffer.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#pos">pos</a></strong></code>
+<div class="block">Position in the buffer.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#response">response</a></strong></code>
+<div class="block">Associated Coyote response.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="../../../../org/apache/tomcat/util/res/StringManager.html" title="class in org.apache.tomcat.util.res">StringManager</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#sm">sm</a></strong></code>
+<div class="block">The string manager for this package.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#socketBuffer">socketBuffer</a></strong></code>
+<div class="block">Socket buffering.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier</th>
+<th class="colLast" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected </code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#AbstractOutputBuffer(org.apache.coyote.Response,%20int)">AbstractOutputBuffer</a></strong>(<a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a>&nbsp;response,
+                    int&nbsp;headerBufferSize)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#addActiveFilter(org.apache.coyote.http11.OutputFilter)">addActiveFilter</a></strong>(<a href="../../../../org/apache/coyote/http11/OutputFilter.html" title="interface in org.apache.coyote.http11">OutputFilter</a>&nbsp;filter)</code>
+<div class="block">Add an output filter to the filter library.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#addFilter(org.apache.coyote.http11.OutputFilter)">addFilter</a></strong>(<a href="../../../../org/apache/coyote/http11/OutputFilter.html" title="interface in org.apache.coyote.http11">OutputFilter</a>&nbsp;filter)</code>
+<div class="block">Add an output filter to the filter library.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#commit()">commit</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#doWrite(org.apache.tomcat.util.buf.ByteChunk,%20org.apache.coyote.Response)">doWrite</a></strong>(<a href="../../../../org/apache/tomcat/util/buf/ByteChunk.html" title="class in org.apache.tomcat.util.buf">ByteChunk</a>&nbsp;chunk,
+       <a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a>&nbsp;res)</code>
+<div class="block">Write the contents of a byte chunk.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#endHeaders()">endHeaders</a></strong>()</code>
+<div class="block">End the header block.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#endRequest()">endRequest</a></strong>()</code>
+<div class="block">End request.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#flush()">flush</a></strong>()</code>
+<div class="block">Flush the response.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected abstract boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#flushBuffer(boolean)">flushBuffer</a></strong>(boolean&nbsp;block)</code>
+<div class="block">Writes any remaining buffered data.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#getBufferedWriteSize()">getBufferedWriteSize</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#getBytesWritten()">getBytesWritten</a></strong>()</code>
+<div class="block">Bytes written to the underlying socket.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../org/apache/coyote/http11/OutputFilter.html" title="interface in org.apache.coyote.http11">OutputFilter</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#getFilters()">getFilters</a></strong>()</code>
+<div class="block">Get filters.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#getSocketBuffer()">getSocketBuffer</a></strong>()</code>
+<div class="block">Get the socket buffer flag.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#hasBufferedData()">hasBufferedData</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#hasDataToWrite()">hasDataToWrite</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected abstract boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#hasMoreDataToFlush()">hasMoreDataToFlush</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#init(org.apache.tomcat.util.net.SocketWrapper,%20org.apache.tomcat.util.net.AbstractEndpoint)">init</a></strong>(<a href="../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html" title="type parameter in AbstractOutputBuffer">S</a>&gt;&nbsp;socketWrapper,
+    <a href="../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html" title="type parameter in AbstractOutputBuffer">S</a>&gt;&nbsp;endpoint)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#isBlocking()">isBlocking</a></strong>()</code>
+<div class="block">Is standard Servlet blocking IO being used for output?</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#isReady()">isReady</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#nextRequest()">nextRequest</a></strong>()</code>
+<div class="block">End processing of current HTTP request.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#recycle()">recycle</a></strong>()</code>
+<div class="block">Recycle the output buffer.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#registerWriteInterest()">registerWriteInterest</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#reset()">reset</a></strong>()</code>
+<div class="block">Reset current response.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#sendAck()">sendAck</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#sendHeader(org.apache.tomcat.util.buf.MessageBytes,%20org.apache.tomcat.util.buf.MessageBytes)">sendHeader</a></strong>(<a href="../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;name,
+          <a href="../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;value)</code>
+<div class="block">Send a header.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#sendStatus()">sendStatus</a></strong>()</code>
+<div class="block">Send the response status line.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#setBufferedWriteSize(int)">setBufferedWriteSize</a></strong>(int&nbsp;bufferedWriteSize)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#setSocketBuffer(int)">setSocketBuffer</a></strong>(int&nbsp;socketBuffer)</code>
+<div class="block">Set the socket buffer flag.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#write(byte[])">write</a></strong>(byte[]&nbsp;b)</code>
+<div class="block">This method will write the contents of the specified byte
+ buffer to the output stream, without filtering.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#write(org.apache.tomcat.util.buf.ByteChunk)">write</a></strong>(<a href="../../../../org/apache/tomcat/util/buf/ByteChunk.html" title="class in org.apache.tomcat.util.buf">ByteChunk</a>&nbsp;bc)</code>
+<div class="block">This method will write the contents of the specified message bytes
+ buffer to the output stream, without filtering.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#write(int)">write</a></strong>(int&nbsp;i)</code>
+<div class="block">This method will print the specified integer to the output stream,
+ without filtering.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#write(org.apache.tomcat.util.buf.MessageBytes)">write</a></strong>(<a href="../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;mb)</code>
+<div class="block">This method will write the contents of the specified message bytes
+ buffer to the output stream, without filtering.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html#write(java.lang.String)">write</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>
+<div class="block">This method will write the contents of the specified String to the
+ output stream, without filtering.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="response">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>response</h4>
+<pre>protected&nbsp;<a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a> response</pre>
+<div class="block">Associated Coyote response.</div>
+</li>
+</ul>
+<a name="committed">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>committed</h4>
+<pre>protected&nbsp;boolean committed</pre>
+<div class="block">Committed flag.</div>
+</li>
+</ul>
+<a name="finished">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>finished</h4>
+<pre>protected&nbsp;boolean finished</pre>
+<div class="block">Finished flag.</div>
+</li>
+</ul>
+<a name="headerBuffer">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>headerBuffer</h4>
+<pre>protected&nbsp;byte[] headerBuffer</pre>
+<div class="block">The buffer used for header composition.</div>
+</li>
+</ul>
+<a name="pos">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>pos</h4>
+<pre>protected&nbsp;int pos</pre>
+<div class="block">Position in the buffer.</div>
+</li>
+</ul>
+<a name="filterLibrary">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>filterLibrary</h4>
+<pre>protected&nbsp;<a href="../../../../org/apache/coyote/http11/OutputFilter.html" title="interface in org.apache.coyote.http11">OutputFilter</a>[] filterLibrary</pre>
+<div class="block">Filter library.
+ Note: Filter[0] is always the "chunked" filter.</div>
+</li>
+</ul>
+<a name="activeFilters">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>activeFilters</h4>
+<pre>protected&nbsp;<a href="../../../../org/apache/coyote/http11/OutputFilter.html" title="interface in org.apache.coyote.http11">OutputFilter</a>[] activeFilters</pre>
+<div class="block">Active filter (which is actually the top of the pipeline).</div>
+</li>
+</ul>
+<a name="lastActiveFilter">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>lastActiveFilter</h4>
+<pre>protected&nbsp;int lastActiveFilter</pre>
+<div class="block">Index of the last active filter.</div>
+</li>
+</ul>
+<a name="outputStreamOutputBuffer">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>outputStreamOutputBuffer</h4>
+<pre>protected&nbsp;<a href="../../../../org/apache/coyote/OutputBuffer.html" title="interface in org.apache.coyote">OutputBuffer</a> outputStreamOutputBuffer</pre>
+<div class="block">Underlying output buffer.</div>
+</li>
+</ul>
+<a name="byteCount">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>byteCount</h4>
+<pre>protected&nbsp;long byteCount</pre>
+<div class="block">Bytes written to client for the current request</div>
+</li>
+</ul>
+<a name="socketBuffer">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>socketBuffer</h4>
+<pre>protected&nbsp;int socketBuffer</pre>
+<div class="block">Socket buffering.</div>
+</li>
+</ul>
+<a name="bufferedWrites">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>bufferedWrites</h4>
+<pre>protected final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/LinkedBlockingDeque.html?is-external=true" title="class or interface in java.util.concurrent">LinkedBlockingDeque</a>&lt;<a href="../../../../org/apache/coyote/ByteBufferHolder.html" title="class in org.apache.coyote">ByteBufferHolder</a>&gt; bufferedWrites</pre>
+<div class="block">For "non-blocking" writes use an external set of buffers. Although the
+ API only allows one non-blocking write at a time, due to buffering and
+ the possible need to write HTTP headers, there may be more than one write
+ to the OutputBuffer.</div>
+</li>
+</ul>
+<a name="bufferedWriteSize">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>bufferedWriteSize</h4>
+<pre>protected&nbsp;int bufferedWriteSize</pre>
+<div class="block">The max size of the buffered write buffer</div>
+</li>
+</ul>
+<a name="sm">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>sm</h4>
+<pre>protected static final&nbsp;<a href="../../../../org/apache/tomcat/util/res/StringManager.html" title="class in org.apache.tomcat.util.res">StringManager</a> sm</pre>
+<div class="block">The string manager for this package.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="AbstractOutputBuffer(org.apache.coyote.Response, int)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>AbstractOutputBuffer</h4>
+<pre>protected&nbsp;AbstractOutputBuffer(<a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a>&nbsp;response,
+                    int&nbsp;headerBufferSize)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="addFilter(org.apache.coyote.http11.OutputFilter)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addFilter</h4>
+<pre>public&nbsp;void&nbsp;addFilter(<a href="../../../../org/apache/coyote/http11/OutputFilter.html" title="interface in org.apache.coyote.http11">OutputFilter</a>&nbsp;filter)</pre>
+<div class="block">Add an output filter to the filter library.</div>
+</li>
+</ul>
+<a name="getFilters()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFilters</h4>
+<pre>public&nbsp;<a href="../../../../org/apache/coyote/http11/OutputFilter.html" title="interface in org.apache.coyote.http11">OutputFilter</a>[]&nbsp;getFilters()</pre>
+<div class="block">Get filters.</div>
+</li>
+</ul>
+<a name="addActiveFilter(org.apache.coyote.http11.OutputFilter)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addActiveFilter</h4>
+<pre>public&nbsp;void&nbsp;addActiveFilter(<a href="../../../../org/apache/coyote/http11/OutputFilter.html" title="interface in org.apache.coyote.http11">OutputFilter</a>&nbsp;filter)</pre>
+<div class="block">Add an output filter to the filter library.</div>
+</li>
+</ul>
+<a name="setSocketBuffer(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSocketBuffer</h4>
+<pre>public&nbsp;void&nbsp;setSocketBuffer(int&nbsp;socketBuffer)</pre>
+<div class="block">Set the socket buffer flag.</div>
+</li>
+</ul>
+<a name="getSocketBuffer()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSocketBuffer</h4>
+<pre>public&nbsp;int&nbsp;getSocketBuffer()</pre>
+<div class="block">Get the socket buffer flag.</div>
+</li>
+</ul>
+<a name="setBufferedWriteSize(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setBufferedWriteSize</h4>
+<pre>public&nbsp;void&nbsp;setBufferedWriteSize(int&nbsp;bufferedWriteSize)</pre>
+</li>
+</ul>
+<a name="getBufferedWriteSize()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBufferedWriteSize</h4>
+<pre>public&nbsp;int&nbsp;getBufferedWriteSize()</pre>
+</li>
+</ul>
+<a name="doWrite(org.apache.tomcat.util.buf.ByteChunk, org.apache.coyote.Response)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>doWrite</h4>
+<pre>public&nbsp;int&nbsp;doWrite(<a href="../../../../org/apache/tomcat/util/buf/ByteChunk.html" title="class in org.apache.tomcat.util.buf">ByteChunk</a>&nbsp;chunk,
+          <a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a>&nbsp;res)
+            throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Write the contents of a byte chunk.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/OutputBuffer.html#doWrite(org.apache.tomcat.util.buf.ByteChunk,%20org.apache.coyote.Response)">doWrite</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/OutputBuffer.html" title="interface in org.apache.coyote">OutputBuffer</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>chunk</code> - byte chunk</dd><dd><code>res</code> - used to allow buffers that can be shared by multiple
+          responses.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>number of bytes written</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - an underlying I/O error occurred</dd></dl>
+</li>
+</ul>
+<a name="getBytesWritten()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBytesWritten</h4>
+<pre>public&nbsp;long&nbsp;getBytesWritten()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/coyote/OutputBuffer.html#getBytesWritten()">OutputBuffer</a></code></strong></div>
+<div class="block">Bytes written to the underlying socket. This includes the effects of
+ chunking, compression, etc.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/OutputBuffer.html#getBytesWritten()">getBytesWritten</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/OutputBuffer.html" title="interface in org.apache.coyote">OutputBuffer</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>Bytes written for the current request</dd></dl>
+</li>
+</ul>
+<a name="flush()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>flush</h4>
+<pre>public&nbsp;void&nbsp;flush()
+           throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Flush the response.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - an underlying I/O error occurred</dd></dl>
+</li>
+</ul>
+<a name="reset()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reset</h4>
+<pre>public&nbsp;void&nbsp;reset()</pre>
+<div class="block">Reset current response.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code> - if the response has already been committed</dd></dl>
+</li>
+</ul>
+<a name="recycle()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>recycle</h4>
+<pre>public&nbsp;void&nbsp;recycle()</pre>
+<div class="block">Recycle the output buffer. This should be called when closing the
+ connection.</div>
+</li>
+</ul>
+<a name="nextRequest()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nextRequest</h4>
+<pre>public&nbsp;void&nbsp;nextRequest()</pre>
+<div class="block">End processing of current HTTP request.
+ Note: All bytes of the current request should have been already
+ consumed. This method only resets all the pointers so that we are ready
+ to parse the next HTTP request.</div>
+</li>
+</ul>
+<a name="endRequest()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>endRequest</h4>
+<pre>public&nbsp;void&nbsp;endRequest()
+                throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">End request.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - an underlying I/O error occurred</dd></dl>
+</li>
+</ul>
+<a name="init(org.apache.tomcat.util.net.SocketWrapper, org.apache.tomcat.util.net.AbstractEndpoint)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>init</h4>
+<pre>public abstract&nbsp;void&nbsp;init(<a href="../../../../org/apache/tomcat/util/net/SocketWrapper.html" title="class in org.apache.tomcat.util.net">SocketWrapper</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html" title="type parameter in AbstractOutputBuffer">S</a>&gt;&nbsp;socketWrapper,
+        <a href="../../../../org/apache/tomcat/util/net/AbstractEndpoint.html" title="class in org.apache.tomcat.util.net">AbstractEndpoint</a>&lt;<a href="../../../../org/apache/coyote/http11/AbstractOutputBuffer.html" title="type parameter in AbstractOutputBuffer">S</a>&gt;&nbsp;endpoint)
+                   throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="sendAck()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sendAck</h4>
+<pre>public abstract&nbsp;void&nbsp;sendAck()
+                      throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="commit()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>commit</h4>
+<pre>protected abstract&nbsp;void&nbsp;commit()
+                        throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="sendStatus()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sendStatus</h4>
+<pre>public&nbsp;void&nbsp;sendStatus()</pre>
+<div class="block">Send the response status line.</div>
+</li>
+</ul>
+<a name="sendHeader(org.apache.tomcat.util.buf.MessageBytes, org.apache.tomcat.util.buf.MessageBytes)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sendHeader</h4>
+<pre>public&nbsp;void&nbsp;sendHeader(<a href="../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;name,
+              <a href="../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;value)</pre>
+<div class="block">Send a header.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - Header name</dd><dd><code>value</code> - Header value</dd></dl>
+</li>
+</ul>
+<a name="endHeaders()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>endHeaders</h4>
+<pre>public&nbsp;void&nbsp;endHeaders()</pre>
+<div class="block">End the header block.</div>
+</li>
+</ul>
+<a name="write(org.apache.tomcat.util.buf.MessageBytes)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>write</h4>
+<pre>protected&nbsp;void&nbsp;write(<a href="../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;mb)</pre>
+<div class="block">This method will write the contents of the specified message bytes
+ buffer to the output stream, without filtering. This method is meant to
+ be used to write the response header.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>mb</code> - data to be written</dd></dl>
+</li>
+</ul>
+<a name="write(org.apache.tomcat.util.buf.ByteChunk)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>write</h4>
+<pre>protected&nbsp;void&nbsp;write(<a href="../../../../org/apache/tomcat/util/buf/ByteChunk.html" title="class in org.apache.tomcat.util.buf">ByteChunk</a>&nbsp;bc)</pre>
+<div class="block">This method will write the contents of the specified message bytes
+ buffer to the output stream, without filtering. This method is meant to
+ be used to write the response header.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>bc</code> - data to be written</dd></dl>
+</li>
+</ul>
+<a name="write(byte[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>write</h4>
+<pre>public&nbsp;void&nbsp;write(byte[]&nbsp;b)</pre>
+<div class="block">This method will write the contents of the specified byte
+ buffer to the output stream, without filtering. This method is meant to
+ be used to write the response header.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>b</code> - data to be written</dd></dl>
+</li>
+</ul>
+<a name="write(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>write</h4>
+<pre>protected&nbsp;void&nbsp;write(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+<div class="block">This method will write the contents of the specified String to the
+ output stream, without filtering. This method is meant to be used to
+ write the response header.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>s</code> - data to be written</dd></dl>
+</li>
+</ul>
+<a name="write(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>write</h4>
+<pre>protected&nbsp;void&nbsp;write(int&nbsp;i)</pre>
+<div class="block">This method will print the specified integer to the output stream,
+ without filtering. This method is meant to be used to write the
+ response header.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>i</code> - data to be written</dd></dl>
+</li>
+</ul>
+<a name="hasMoreDataToFlush()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hasMoreDataToFlush</h4>
+<pre>protected abstract&nbsp;boolean&nbsp;hasMoreDataToFlush()</pre>
+</li>
+</ul>
+<a name="registerWriteInterest()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>registerWriteInterest</h4>
+<pre>protected abstract&nbsp;void&nbsp;registerWriteInterest()
+                                       throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="flushBuffer(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>flushBuffer</h4>
+<pre>protected abstract&nbsp;boolean&nbsp;flushBuffer(boolean&nbsp;block)
+                                throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Writes any remaining buffered data.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>block</code> - Should this method block until the buffer is empty</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if data remains in the buffer (which can only
+          happen in non-blocking mode) else <code>false</code>.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="isBlocking()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isBlocking</h4>
+<pre>protected final&nbsp;boolean&nbsp;isBlocking()</pre>
+<div class="block">Is standard Servlet blocking IO being used for output?</div>
+</li>
+</ul>
+<a name="isReady()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isReady</h4>
+<pre>protected final&nbsp;boolean&nbsp;isReady()
+                         throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="hasDataToWrite()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hasDataToWrite</h4>
+<pre>public&nbsp;boolean&nbsp;hasDataToWrite()</pre>
+</li>
+</ul>
+<a name="hasBufferedData()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>hasBufferedData</h4>
+<pre>protected&nbsp;boolean&nbsp;hasBufferedData()</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/coyote/http11/AbstractNioInputBuffer.HeaderParseData.html" title="class in org.apache.coyote.http11"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/coyote/http11/Constants.html" title="class in org.apache.coyote.http11"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/coyote/http11/AbstractOutputBuffer.html" target="_top">Frames</a></li>
+<li><a href="AbstractOutputBuffer.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

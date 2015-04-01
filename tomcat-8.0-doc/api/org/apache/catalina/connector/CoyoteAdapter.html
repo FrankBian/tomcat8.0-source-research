@@ -1,0 +1,718 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CoyoteAdapter (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="CoyoteAdapter (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/connector/Constants.html" title="class in org.apache.catalina.connector"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/connector/CoyoteInputStream.html" title="class in org.apache.catalina.connector"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/connector/CoyoteAdapter.html" target="_top">Frames</a></li>
+<li><a href="CoyoteAdapter.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.connector</div>
+<h2 title="Class CoyoteAdapter" class="title">Class CoyoteAdapter</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.connector.CoyoteAdapter</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../org/apache/coyote/Adapter.html" title="interface in org.apache.coyote">Adapter</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">CoyoteAdapter</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="../../../../org/apache/coyote/Adapter.html" title="interface in org.apache.coyote">Adapter</a></pre>
+<div class="block">Implementation of a request processor which delegates the processing to a
+ Coyote processor.</div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Craig R. McClanahan, Remy Maucherat</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/CoyoteAdapter.html#ADAPTER_NOTES">ADAPTER_NOTES</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/CoyoteAdapter.html#ALLOW_BACKSLASH">ALLOW_BACKSLASH</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="../../../../org/apache/tomcat/util/res/StringManager.html" title="class in org.apache.tomcat.util.res">StringManager</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/CoyoteAdapter.html#sm">sm</a></strong></code>
+<div class="block">The string manager for this package.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/catalina/connector/CoyoteAdapter.html#CoyoteAdapter(org.apache.catalina.connector.Connector)">CoyoteAdapter</a></strong>(<a href="../../../../org/apache/catalina/connector/Connector.html" title="class in org.apache.catalina.connector">Connector</a>&nbsp;connector)</code>
+<div class="block">Construct a new CoyoteProcessor associated with the specified connector.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/CoyoteAdapter.html#asyncDispatch(org.apache.coyote.Request,%20org.apache.coyote.Response,%20org.apache.tomcat.util.net.SocketStatus)">asyncDispatch</a></strong>(<a href="../../../../org/apache/coyote/Request.html" title="class in org.apache.coyote">Request</a>&nbsp;req,
+             <a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a>&nbsp;res,
+             <a href="../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net">SocketStatus</a>&nbsp;status)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/CoyoteAdapter.html#checkNormalize(org.apache.tomcat.util.buf.MessageBytes)">checkNormalize</a></strong>(<a href="../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;uriMB)</code>
+<div class="block">Check that the URI is normalized following character decoding.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/CoyoteAdapter.html#checkRecycled(org.apache.coyote.Request,%20org.apache.coyote.Response)">checkRecycled</a></strong>(<a href="../../../../org/apache/coyote/Request.html" title="class in org.apache.coyote">Request</a>&nbsp;req,
+             <a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a>&nbsp;res)</code>
+<div class="block">Assert that request and response have been recycled.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/CoyoteAdapter.html#convertMB(org.apache.tomcat.util.buf.MessageBytes)">convertMB</a></strong>(<a href="../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;mb)</code>
+<div class="block">Character conversion of the a US-ASCII MessageBytes.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/CoyoteAdapter.html#convertURI(org.apache.tomcat.util.buf.MessageBytes,%20org.apache.catalina.connector.Request)">convertURI</a></strong>(<a href="../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;uri,
+          <a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request)</code>
+<div class="block">Character conversion of the URI.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/CoyoteAdapter.html#copyBytes(byte[],%20int,%20int,%20int)">copyBytes</a></strong>(byte[]&nbsp;b,
+         int&nbsp;dest,
+         int&nbsp;src,
+         int&nbsp;len)</code>
+<div class="block">Copy an array of bytes to a different position.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/CoyoteAdapter.html#errorDispatch(org.apache.coyote.Request,%20org.apache.coyote.Response)">errorDispatch</a></strong>(<a href="../../../../org/apache/coyote/Request.html" title="class in org.apache.coyote">Request</a>&nbsp;req,
+             <a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a>&nbsp;res)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/CoyoteAdapter.html#event(org.apache.coyote.Request,%20org.apache.coyote.Response,%20org.apache.tomcat.util.net.SocketStatus)">event</a></strong>(<a href="../../../../org/apache/coyote/Request.html" title="class in org.apache.coyote">Request</a>&nbsp;req,
+     <a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a>&nbsp;res,
+     <a href="../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net">SocketStatus</a>&nbsp;status)</code>
+<div class="block">Event method.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/CoyoteAdapter.html#getDomain()">getDomain</a></strong>()</code>
+<div class="block">Provide the name of the domain to use to register MBeans for components
+ associated with the connector.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/CoyoteAdapter.html#log(org.apache.coyote.Request,%20org.apache.coyote.Response,%20long)">log</a></strong>(<a href="../../../../org/apache/coyote/Request.html" title="class in org.apache.coyote">Request</a>&nbsp;req,
+   <a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a>&nbsp;res,
+   long&nbsp;time)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/CoyoteAdapter.html#normalize(org.apache.tomcat.util.buf.MessageBytes)">normalize</a></strong>(<a href="../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;uriMB)</code>
+<div class="block">This method normalizes "\", "//", "/./" and "/../".</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/CoyoteAdapter.html#parsePathParameters(org.apache.coyote.Request,%20org.apache.catalina.connector.Request)">parsePathParameters</a></strong>(<a href="../../../../org/apache/coyote/Request.html" title="class in org.apache.coyote">Request</a>&nbsp;req,
+                   <a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request)</code>
+<div class="block">Extract the path parameters from the request.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/CoyoteAdapter.html#parseSessionCookiesId(org.apache.catalina.connector.Request)">parseSessionCookiesId</a></strong>(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request)</code>
+<div class="block">Parse session id in URL.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/CoyoteAdapter.html#parseSessionSslId(org.apache.catalina.connector.Request)">parseSessionSslId</a></strong>(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request)</code>
+<div class="block">Look for SSL session ID if required.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/CoyoteAdapter.html#postParseRequest(org.apache.coyote.Request,%20org.apache.catalina.connector.Request,%20org.apache.coyote.Response,%20org.apache.catalina.connector.Response)">postParseRequest</a></strong>(<a href="../../../../org/apache/coyote/Request.html" title="class in org.apache.coyote">Request</a>&nbsp;req,
+                <a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request,
+                <a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a>&nbsp;res,
+                <a href="../../../../org/apache/catalina/connector/Response.html" title="class in org.apache.catalina.connector">Response</a>&nbsp;response)</code>
+<div class="block">Perform the necessary processing after the HTTP headers have been parsed
+ to enable the request/response pair to be passed to the start of the
+ container pipeline for processing.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/CoyoteAdapter.html#prepare(org.apache.coyote.Request,%20org.apache.coyote.Response)">prepare</a></strong>(<a href="../../../../org/apache/coyote/Request.html" title="class in org.apache.coyote">Request</a>&nbsp;req,
+       <a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a>&nbsp;res)</code>
+<div class="block">Prepare the given request/response for processing.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/connector/CoyoteAdapter.html#service(org.apache.coyote.Request,%20org.apache.coyote.Response)">service</a></strong>(<a href="../../../../org/apache/coyote/Request.html" title="class in org.apache.coyote">Request</a>&nbsp;req,
+       <a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a>&nbsp;res)</code>
+<div class="block">Service method.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="ADAPTER_NOTES">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ADAPTER_NOTES</h4>
+<pre>public static final&nbsp;int ADAPTER_NOTES</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.catalina.connector.CoyoteAdapter.ADAPTER_NOTES">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="ALLOW_BACKSLASH">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALLOW_BACKSLASH</h4>
+<pre>protected static final&nbsp;boolean ALLOW_BACKSLASH</pre>
+</li>
+</ul>
+<a name="sm">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>sm</h4>
+<pre>protected static final&nbsp;<a href="../../../../org/apache/tomcat/util/res/StringManager.html" title="class in org.apache.tomcat.util.res">StringManager</a> sm</pre>
+<div class="block">The string manager for this package.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="CoyoteAdapter(org.apache.catalina.connector.Connector)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>CoyoteAdapter</h4>
+<pre>public&nbsp;CoyoteAdapter(<a href="../../../../org/apache/catalina/connector/Connector.html" title="class in org.apache.catalina.connector">Connector</a>&nbsp;connector)</pre>
+<div class="block">Construct a new CoyoteProcessor associated with the specified connector.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>connector</code> - CoyoteConnector that owns this processor</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="event(org.apache.coyote.Request, org.apache.coyote.Response, org.apache.tomcat.util.net.SocketStatus)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>event</h4>
+<pre>public&nbsp;boolean&nbsp;event(<a href="../../../../org/apache/coyote/Request.html" title="class in org.apache.coyote">Request</a>&nbsp;req,
+            <a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a>&nbsp;res,
+            <a href="../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net">SocketStatus</a>&nbsp;status)</pre>
+<div class="block">Event method.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Adapter.html#event(org.apache.coyote.Request,%20org.apache.coyote.Response,%20org.apache.tomcat.util.net.SocketStatus)">event</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Adapter.html" title="interface in org.apache.coyote">Adapter</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>false to indicate an error, expected or not</dd></dl>
+</li>
+</ul>
+<a name="asyncDispatch(org.apache.coyote.Request, org.apache.coyote.Response, org.apache.tomcat.util.net.SocketStatus)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>asyncDispatch</h4>
+<pre>public&nbsp;boolean&nbsp;asyncDispatch(<a href="../../../../org/apache/coyote/Request.html" title="class in org.apache.coyote">Request</a>&nbsp;req,
+                    <a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a>&nbsp;res,
+                    <a href="../../../../org/apache/tomcat/util/net/SocketStatus.html" title="enum in org.apache.tomcat.util.net">SocketStatus</a>&nbsp;status)
+                      throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Adapter.html#asyncDispatch(org.apache.coyote.Request,%20org.apache.coyote.Response,%20org.apache.tomcat.util.net.SocketStatus)">asyncDispatch</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Adapter.html" title="interface in org.apache.coyote">Adapter</a></code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd></dl>
+</li>
+</ul>
+<a name="service(org.apache.coyote.Request, org.apache.coyote.Response)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>service</h4>
+<pre>public&nbsp;void&nbsp;service(<a href="../../../../org/apache/coyote/Request.html" title="class in org.apache.coyote">Request</a>&nbsp;req,
+           <a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a>&nbsp;res)
+             throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<div class="block">Service method.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Adapter.html#service(org.apache.coyote.Request,%20org.apache.coyote.Response)">service</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Adapter.html" title="interface in org.apache.coyote">Adapter</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>req</code> - The request object</dd><dd><code>res</code> - The response object</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code> - if an error happens during handling of
+   the request. Common errors are:
+   <ul><li>IOException if an input/output error occurs and we are
+   processing an included servlet (otherwise it is swallowed and
+   handled by the top level error handler mechanism)
+       <li>ServletException if a servlet throws an exception and
+  we are processing an included servlet (otherwise it is swallowed
+  and handled by the top level error handler mechanism)
+  </ul>
+  Tomcat should be able to handle and log any other exception ( including
+  runtime exceptions )</dd></dl>
+</li>
+</ul>
+<a name="prepare(org.apache.coyote.Request, org.apache.coyote.Response)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>prepare</h4>
+<pre>public&nbsp;boolean&nbsp;prepare(<a href="../../../../org/apache/coyote/Request.html" title="class in org.apache.coyote">Request</a>&nbsp;req,
+              <a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a>&nbsp;res)
+                throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                       <a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/coyote/Adapter.html#prepare(org.apache.coyote.Request,%20org.apache.coyote.Response)">Adapter</a></code></strong></div>
+<div class="block">Prepare the given request/response for processing. This method requires
+ that the request object has been populated with the information available
+ from the HTTP headers.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Adapter.html#prepare(org.apache.coyote.Request,%20org.apache.coyote.Response)">prepare</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Adapter.html" title="interface in org.apache.coyote">Adapter</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>req</code> - The request object</dd><dd><code>res</code> - The response object</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if processing can continue, otherwise
+         <code>false</code> in which case an appropriate error will have
+         been set on the response</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code></dd></dl>
+</li>
+</ul>
+<a name="errorDispatch(org.apache.coyote.Request, org.apache.coyote.Response)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>errorDispatch</h4>
+<pre>public&nbsp;void&nbsp;errorDispatch(<a href="../../../../org/apache/coyote/Request.html" title="class in org.apache.coyote">Request</a>&nbsp;req,
+                 <a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a>&nbsp;res)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Adapter.html#errorDispatch(org.apache.coyote.Request,%20org.apache.coyote.Response)">errorDispatch</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Adapter.html" title="interface in org.apache.coyote">Adapter</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="log(org.apache.coyote.Request, org.apache.coyote.Response, long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>log</h4>
+<pre>public&nbsp;void&nbsp;log(<a href="../../../../org/apache/coyote/Request.html" title="class in org.apache.coyote">Request</a>&nbsp;req,
+       <a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a>&nbsp;res,
+       long&nbsp;time)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Adapter.html#log(org.apache.coyote.Request,%20org.apache.coyote.Response,%20long)">log</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Adapter.html" title="interface in org.apache.coyote">Adapter</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="checkRecycled(org.apache.coyote.Request, org.apache.coyote.Response)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>checkRecycled</h4>
+<pre>public&nbsp;void&nbsp;checkRecycled(<a href="../../../../org/apache/coyote/Request.html" title="class in org.apache.coyote">Request</a>&nbsp;req,
+                 <a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a>&nbsp;res)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/coyote/Adapter.html#checkRecycled(org.apache.coyote.Request,%20org.apache.coyote.Response)">Adapter</a></code></strong></div>
+<div class="block">Assert that request and response have been recycled. If they have not
+ then log a warning and force a recycle. This method is called as a safety
+ check when a processor is being recycled and may be returned to a pool
+ for reuse.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Adapter.html#checkRecycled(org.apache.coyote.Request,%20org.apache.coyote.Response)">checkRecycled</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Adapter.html" title="interface in org.apache.coyote">Adapter</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>req</code> - Request</dd><dd><code>res</code> - Response</dd></dl>
+</li>
+</ul>
+<a name="getDomain()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDomain</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getDomain()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/apache/coyote/Adapter.html#getDomain()">Adapter</a></code></strong></div>
+<div class="block">Provide the name of the domain to use to register MBeans for components
+ associated with the connector.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../org/apache/coyote/Adapter.html#getDomain()">getDomain</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/coyote/Adapter.html" title="interface in org.apache.coyote">Adapter</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>The MBean domain name</dd></dl>
+</li>
+</ul>
+<a name="postParseRequest(org.apache.coyote.Request, org.apache.catalina.connector.Request, org.apache.coyote.Response, org.apache.catalina.connector.Response)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>postParseRequest</h4>
+<pre>protected&nbsp;boolean&nbsp;postParseRequest(<a href="../../../../org/apache/coyote/Request.html" title="class in org.apache.coyote">Request</a>&nbsp;req,
+                       <a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request,
+                       <a href="../../../../org/apache/coyote/Response.html" title="class in org.apache.coyote">Response</a>&nbsp;res,
+                       <a href="../../../../org/apache/catalina/connector/Response.html" title="class in org.apache.catalina.connector">Response</a>&nbsp;response)
+                            throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                                   <a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></pre>
+<div class="block">Perform the necessary processing after the HTTP headers have been parsed
+ to enable the request/response pair to be passed to the start of the
+ container pipeline for processing.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>req</code> - The coyote request object</dd><dd><code>request</code> - The catalina request object</dd><dd><code>res</code> - The coyote response object</dd><dd><code>response</code> - The catalina response object</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the request should be passed on to the start
+         of the container pipeline, otherwise <code>false</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - If there is insufficient space in a buffer while
+                     processing headers</dd>
+<dd><code><a href="../../../../../servletapi/javax/servlet/ServletException.html?is-external=true" title="class or interface in javax.servlet">ServletException</a></code> - If the supported methods of the target servlet
+                          can not be determined</dd></dl>
+</li>
+</ul>
+<a name="parsePathParameters(org.apache.coyote.Request, org.apache.catalina.connector.Request)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>parsePathParameters</h4>
+<pre>protected&nbsp;void&nbsp;parsePathParameters(<a href="../../../../org/apache/coyote/Request.html" title="class in org.apache.coyote">Request</a>&nbsp;req,
+                       <a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request)</pre>
+<div class="block">Extract the path parameters from the request. This assumes parameters are
+ of the form /path;name=value;name2=value2/ etc. Currently only really
+ interested in the session ID that will be in this form. Other parameters
+ can safely be ignored.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>req</code> - </dd><dd><code>request</code> - </dd></dl>
+</li>
+</ul>
+<a name="parseSessionSslId(org.apache.catalina.connector.Request)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>parseSessionSslId</h4>
+<pre>protected&nbsp;void&nbsp;parseSessionSslId(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request)</pre>
+<div class="block">Look for SSL session ID if required. Only look for SSL Session ID if it
+ is the only tracking method enabled.</div>
+</li>
+</ul>
+<a name="parseSessionCookiesId(org.apache.catalina.connector.Request)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>parseSessionCookiesId</h4>
+<pre>protected&nbsp;void&nbsp;parseSessionCookiesId(<a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request)</pre>
+<div class="block">Parse session id in URL.</div>
+</li>
+</ul>
+<a name="convertURI(org.apache.tomcat.util.buf.MessageBytes, org.apache.catalina.connector.Request)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>convertURI</h4>
+<pre>protected&nbsp;void&nbsp;convertURI(<a href="../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;uri,
+              <a href="../../../../org/apache/catalina/connector/Request.html" title="class in org.apache.catalina.connector">Request</a>&nbsp;request)
+                   throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Character conversion of the URI.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="convertMB(org.apache.tomcat.util.buf.MessageBytes)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>convertMB</h4>
+<pre>protected&nbsp;void&nbsp;convertMB(<a href="../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;mb)</pre>
+<div class="block">Character conversion of the a US-ASCII MessageBytes.</div>
+</li>
+</ul>
+<a name="normalize(org.apache.tomcat.util.buf.MessageBytes)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>normalize</h4>
+<pre>public static&nbsp;boolean&nbsp;normalize(<a href="../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;uriMB)</pre>
+<div class="block">This method normalizes "\", "//", "/./" and "/../".</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>uriMB</code> - URI to be normalized</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>false</false> if normalizing this URI would require going
+         above the root, or if the URI contains a null byte, otherwise
+         <code>true</code></dd></dl>
+</li>
+</ul>
+<a name="checkNormalize(org.apache.tomcat.util.buf.MessageBytes)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>checkNormalize</h4>
+<pre>public static&nbsp;boolean&nbsp;checkNormalize(<a href="../../../../org/apache/tomcat/util/buf/MessageBytes.html" title="class in org.apache.tomcat.util.buf">MessageBytes</a>&nbsp;uriMB)</pre>
+<div class="block">Check that the URI is normalized following character decoding. This
+ method checks for "\", 0, "//", "/./" and "/../".</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>uriMB</code> - URI to be checked (should be chars)</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>false</code> if sequences that are supposed to be
+         normalized are still present in the URI, otherwise
+         <code>true</code></dd></dl>
+</li>
+</ul>
+<a name="copyBytes(byte[], int, int, int)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>copyBytes</h4>
+<pre>protected static&nbsp;void&nbsp;copyBytes(byte[]&nbsp;b,
+             int&nbsp;dest,
+             int&nbsp;src,
+             int&nbsp;len)</pre>
+<div class="block">Copy an array of bytes to a different position. Used during
+ normalization.</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/connector/Constants.html" title="class in org.apache.catalina.connector"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/connector/CoyoteInputStream.html" title="class in org.apache.catalina.connector"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/connector/CoyoteAdapter.html" target="_top">Frames</a></li>
+<li><a href="CoyoteAdapter.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

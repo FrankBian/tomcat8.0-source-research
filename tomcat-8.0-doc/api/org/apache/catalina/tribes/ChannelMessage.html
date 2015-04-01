@@ -1,0 +1,400 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ChannelMessage (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="ChannelMessage (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/tribes/ChannelListener.html" title="interface in org.apache.catalina.tribes"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/tribes/ChannelReceiver.html" title="interface in org.apache.catalina.tribes"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/tribes/ChannelMessage.html" target="_top">Frames</a></li>
+<li><a href="ChannelMessage.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.tribes</div>
+<h2 title="Interface ChannelMessage" class="title">Interface ChannelMessage</h2>
+</div>
+<div class="contentContainer">
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Superinterfaces:</dt>
+<dd><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></dd>
+</dl>
+<dl>
+<dt>All Known Implementing Classes:</dt>
+<dd><a href="../../../../org/apache/catalina/tribes/io/ChannelData.html" title="class in org.apache.catalina.tribes.io">ChannelData</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public interface <span class="strong">ChannelMessage</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
+<div class="block">Message that is passed through the interceptor stack after the
+ data serialized in the Channel object and then passed down to the
+ interceptor and eventually down to the ChannelSender component</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/tribes/ChannelMessage.html#clone()">clone</a></strong>()</code>
+<div class="block">Shallow clone, what gets cloned depends on the implementation</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/tribes/ChannelMessage.html#deepclone()">deepclone</a></strong>()</code>
+<div class="block">Deep clone, all fields MUST get cloned</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/tribes/ChannelMessage.html#getAddress()">getAddress</a></strong>()</code>
+<div class="block">Get the address that this message originated from.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../org/apache/catalina/tribes/io/XByteBuffer.html" title="class in org.apache.catalina.tribes.io">XByteBuffer</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/tribes/ChannelMessage.html#getMessage()">getMessage</a></strong>()</code>
+<div class="block">returns the byte buffer that contains the actual message payload</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/tribes/ChannelMessage.html#getOptions()">getOptions</a></strong>()</code>
+<div class="block">The message options is a 32 bit flag set
+ that triggers interceptors and message behavior.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/tribes/ChannelMessage.html#getTimestamp()">getTimestamp</a></strong>()</code>
+<div class="block">Timestamp of when the message was created.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/tribes/ChannelMessage.html#getUniqueId()">getUniqueId</a></strong>()</code>
+<div class="block">Each message must have a globally unique Id.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/tribes/ChannelMessage.html#setAddress(org.apache.catalina.tribes.Member)">setAddress</a></strong>(<a href="../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;member)</code>
+<div class="block">Sets the source or reply-to address of this message</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/tribes/ChannelMessage.html#setMessage(org.apache.catalina.tribes.io.XByteBuffer)">setMessage</a></strong>(<a href="../../../../org/apache/catalina/tribes/io/XByteBuffer.html" title="class in org.apache.catalina.tribes.io">XByteBuffer</a>&nbsp;buf)</code>
+<div class="block">The byte buffer that contains the actual message payload</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/tribes/ChannelMessage.html#setOptions(int)">setOptions</a></strong>(int&nbsp;options)</code>
+<div class="block">sets the option bits for this message</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/catalina/tribes/ChannelMessage.html#setTimestamp(long)">setTimestamp</a></strong>(long&nbsp;timestamp)</code>
+<div class="block">Sets the timestamp of this message</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getAddress()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAddress</h4>
+<pre><a href="../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;getAddress()</pre>
+<div class="block">Get the address that this message originated from.
+ Almost always <code>Channel.getLocalMember(boolean)</code><br>
+ This would be set to a different address
+ if the message was being relayed from a host other than the one
+ that originally sent it.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the source or reply-to address of this message</dd></dl>
+</li>
+</ul>
+<a name="setAddress(org.apache.catalina.tribes.Member)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAddress</h4>
+<pre>void&nbsp;setAddress(<a href="../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;member)</pre>
+<div class="block">Sets the source or reply-to address of this message</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>member</code> - Member</dd></dl>
+</li>
+</ul>
+<a name="getTimestamp()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTimestamp</h4>
+<pre>long&nbsp;getTimestamp()</pre>
+<div class="block">Timestamp of when the message was created.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>long timestamp in milliseconds</dd></dl>
+</li>
+</ul>
+<a name="setTimestamp(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTimestamp</h4>
+<pre>void&nbsp;setTimestamp(long&nbsp;timestamp)</pre>
+<div class="block">Sets the timestamp of this message</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>timestamp</code> - The timestamp</dd></dl>
+</li>
+</ul>
+<a name="getUniqueId()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUniqueId</h4>
+<pre>byte[]&nbsp;getUniqueId()</pre>
+<div class="block">Each message must have a globally unique Id.
+ interceptors heavily depend on this id for message processing</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>byte</dd></dl>
+</li>
+</ul>
+<a name="setMessage(org.apache.catalina.tribes.io.XByteBuffer)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMessage</h4>
+<pre>void&nbsp;setMessage(<a href="../../../../org/apache/catalina/tribes/io/XByteBuffer.html" title="class in org.apache.catalina.tribes.io">XByteBuffer</a>&nbsp;buf)</pre>
+<div class="block">The byte buffer that contains the actual message payload</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>buf</code> - XByteBuffer</dd></dl>
+</li>
+</ul>
+<a name="getMessage()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMessage</h4>
+<pre><a href="../../../../org/apache/catalina/tribes/io/XByteBuffer.html" title="class in org.apache.catalina.tribes.io">XByteBuffer</a>&nbsp;getMessage()</pre>
+<div class="block">returns the byte buffer that contains the actual message payload</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>XByteBuffer</dd></dl>
+</li>
+</ul>
+<a name="getOptions()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOptions</h4>
+<pre>int&nbsp;getOptions()</pre>
+<div class="block">The message options is a 32 bit flag set
+ that triggers interceptors and message behavior.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>int - the option bits set for this message</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../org/apache/catalina/tribes/Channel.html#send(org.apache.catalina.tribes.Member[],%20java.io.Serializable,%20int)"><code>Channel.send(Member[], Serializable, int)</code></a>, 
+<a href="../../../../org/apache/catalina/tribes/ChannelInterceptor.html#getOptionFlag()"><code>ChannelInterceptor.getOptionFlag()</code></a></dd></dl>
+</li>
+</ul>
+<a name="setOptions(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOptions</h4>
+<pre>void&nbsp;setOptions(int&nbsp;options)</pre>
+<div class="block">sets the option bits for this message</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>options</code> - int</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../org/apache/catalina/tribes/ChannelMessage.html#getOptions()"><code>getOptions()</code></a></dd></dl>
+</li>
+</ul>
+<a name="clone()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clone</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;clone()</pre>
+<div class="block">Shallow clone, what gets cloned depends on the implementation</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>ChannelMessage</dd></dl>
+</li>
+</ul>
+<a name="deepclone()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>deepclone</h4>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;deepclone()</pre>
+<div class="block">Deep clone, all fields MUST get cloned</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>ChannelMessage</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/catalina/tribes/ChannelListener.html" title="interface in org.apache.catalina.tribes"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/catalina/tribes/ChannelReceiver.html" title="interface in org.apache.catalina.tribes"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/catalina/tribes/ChannelMessage.html" target="_top">Frames</a></li>
+<li><a href="ChannelMessage.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

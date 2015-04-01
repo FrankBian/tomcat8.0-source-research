@@ -1,0 +1,731 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Poll (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="Poll (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/tomcat/jni/PasswordCallback.html" title="interface in org.apache.tomcat.jni"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/tomcat/jni/Pool.html" title="class in org.apache.tomcat.jni"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/tomcat/jni/Poll.html" target="_top">Frames</a></li>
+<li><a href="Poll.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.tomcat.jni</div>
+<h2 title="Class Poll" class="title">Class Poll</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.tomcat.jni.Poll</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="strong">Poll</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">Poll</div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Mladen Turk</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#APR_NO_DESC">APR_NO_DESC</a></strong></code>
+<div class="block">Used in apr_pollfd_t to determine what the apr_descriptor is
+ apr_datatype_e enum</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#APR_POLL_FILE">APR_POLL_FILE</a></strong></code>
+<div class="block">descriptor refers to a socket</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#APR_POLL_LASTDESC">APR_POLL_LASTDESC</a></strong></code>
+<div class="block">descriptor refers to a file</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#APR_POLL_SOCKET">APR_POLL_SOCKET</a></strong></code>
+<div class="block">nothing here</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#APR_POLLERR">APR_POLLERR</a></strong></code>
+<div class="block">Pending error</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#APR_POLLHUP">APR_POLLHUP</a></strong></code>
+<div class="block">Hangup occurred</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#APR_POLLIN">APR_POLLIN</a></strong></code>
+<div class="block">Can read without blocking</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#APR_POLLNVAL">APR_POLLNVAL</a></strong></code>
+<div class="block">Descriptor invalid</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#APR_POLLOUT">APR_POLLOUT</a></strong></code>
+<div class="block">Can write without blocking</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#APR_POLLPRI">APR_POLLPRI</a></strong></code>
+<div class="block">Priority data available</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#APR_POLLSET_THREADSAFE">APR_POLLSET_THREADSAFE</a></strong></code>
+<div class="block">Adding or Removing a Descriptor is thread safe</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#Poll()">Poll</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#add(long,%20long,%20int)">add</a></strong>(long&nbsp;pollset,
+   long&nbsp;sock,
+   int&nbsp;reqevents)</code>
+<div class="block">Add a socket to a pollset with the default timeout.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#addWithTimeout(long,%20long,%20int,%20long)">addWithTimeout</a></strong>(long&nbsp;pollset,
+              long&nbsp;sock,
+              int&nbsp;reqevents,
+              long&nbsp;timeout)</code>
+<div class="block">Add a socket to a pollset with a specific timeout.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#create(int,%20long,%20int,%20long)">create</a></strong>(int&nbsp;size,
+      long&nbsp;p,
+      int&nbsp;flags,
+      long&nbsp;ttl)</code>
+<div class="block">Setup a pollset object.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#destroy(long)">destroy</a></strong>(long&nbsp;pollset)</code>
+<div class="block">Destroy a pollset object</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#getTtl(long)">getTtl</a></strong>(long&nbsp;pollset)</code>
+<div class="block">Get the socket time to live.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#interrupt(long)">interrupt</a></strong>(long&nbsp;pollset)</code>
+<div class="block">Make poll() return.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#maintain(long,%20long[],%20boolean)">maintain</a></strong>(long&nbsp;pollset,
+        long[]&nbsp;descriptors,
+        boolean&nbsp;remove)</code>
+<div class="block">Maintain on the descriptor(s) in a pollset</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#poll(long,%20long,%20long[],%20boolean)">poll</a></strong>(long&nbsp;pollset,
+    long&nbsp;timeout,
+    long[]&nbsp;descriptors,
+    boolean&nbsp;remove)</code>
+<div class="block">Block for activity on the descriptor(s) in a pollset</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#pollset(long,%20long[])">pollset</a></strong>(long&nbsp;pollset,
+       long[]&nbsp;descriptors)</code>
+<div class="block">Return all descriptor(s) in a pollset</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#remove(long,%20long)">remove</a></strong>(long&nbsp;pollset,
+      long&nbsp;sock)</code>
+<div class="block">Remove a descriptor from a pollset</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#setTtl(long,%20long)">setTtl</a></strong>(long&nbsp;pollset,
+      long&nbsp;ttl)</code>
+<div class="block">Set the socket time to live.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Poll.html#wakeable(long)">wakeable</a></strong>(long&nbsp;pollset)</code>
+<div class="block">Check if interrupt() is allowed.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="APR_POLLIN">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>APR_POLLIN</h4>
+<pre>public static final&nbsp;int APR_POLLIN</pre>
+<div class="block">Can read without blocking</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.tomcat.jni.Poll.APR_POLLIN">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="APR_POLLPRI">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>APR_POLLPRI</h4>
+<pre>public static final&nbsp;int APR_POLLPRI</pre>
+<div class="block">Priority data available</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.tomcat.jni.Poll.APR_POLLPRI">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="APR_POLLOUT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>APR_POLLOUT</h4>
+<pre>public static final&nbsp;int APR_POLLOUT</pre>
+<div class="block">Can write without blocking</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.tomcat.jni.Poll.APR_POLLOUT">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="APR_POLLERR">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>APR_POLLERR</h4>
+<pre>public static final&nbsp;int APR_POLLERR</pre>
+<div class="block">Pending error</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.tomcat.jni.Poll.APR_POLLERR">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="APR_POLLHUP">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>APR_POLLHUP</h4>
+<pre>public static final&nbsp;int APR_POLLHUP</pre>
+<div class="block">Hangup occurred</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.tomcat.jni.Poll.APR_POLLHUP">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="APR_POLLNVAL">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>APR_POLLNVAL</h4>
+<pre>public static final&nbsp;int APR_POLLNVAL</pre>
+<div class="block">Descriptor invalid</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.tomcat.jni.Poll.APR_POLLNVAL">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="APR_POLLSET_THREADSAFE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>APR_POLLSET_THREADSAFE</h4>
+<pre>public static final&nbsp;int APR_POLLSET_THREADSAFE</pre>
+<div class="block">Adding or Removing a Descriptor is thread safe</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.tomcat.jni.Poll.APR_POLLSET_THREADSAFE">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="APR_NO_DESC">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>APR_NO_DESC</h4>
+<pre>public static final&nbsp;int APR_NO_DESC</pre>
+<div class="block">Used in apr_pollfd_t to determine what the apr_descriptor is
+ apr_datatype_e enum</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.tomcat.jni.Poll.APR_NO_DESC">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="APR_POLL_SOCKET">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>APR_POLL_SOCKET</h4>
+<pre>public static final&nbsp;int APR_POLL_SOCKET</pre>
+<div class="block">nothing here</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.tomcat.jni.Poll.APR_POLL_SOCKET">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="APR_POLL_FILE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>APR_POLL_FILE</h4>
+<pre>public static final&nbsp;int APR_POLL_FILE</pre>
+<div class="block">descriptor refers to a socket</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.tomcat.jni.Poll.APR_POLL_FILE">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="APR_POLL_LASTDESC">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>APR_POLL_LASTDESC</h4>
+<pre>public static final&nbsp;int APR_POLL_LASTDESC</pre>
+<div class="block">descriptor refers to a file</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.tomcat.jni.Poll.APR_POLL_LASTDESC">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="Poll()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>Poll</h4>
+<pre>public&nbsp;Poll()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="create(int, long, int, long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>create</h4>
+<pre>public static&nbsp;long&nbsp;create(int&nbsp;size,
+          long&nbsp;p,
+          int&nbsp;flags,
+          long&nbsp;ttl)
+                   throws <a href="../../../../org/apache/tomcat/jni/Error.html" title="class in org.apache.tomcat.jni">Error</a></pre>
+<div class="block">Setup a pollset object.
+ If flags equals APR_POLLSET_THREADSAFE, then a pollset is
+ created on which it is safe to make concurrent calls to
+ apr_pollset_add(), apr_pollset_remove() and apr_pollset_poll() from
+ separate threads.  This feature is only supported on some
+ platforms; the apr_pollset_create() call will fail with
+ APR_ENOTIMPL on platforms where it is not supported.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>size</code> - The maximum number of descriptors that this pollset can hold</dd><dd><code>p</code> - The pool from which to allocate the pollset</dd><dd><code>flags</code> - Optional flags to modify the operation of the pollset.</dd><dd><code>ttl</code> - Maximum time to live for a particular socket.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The pointer in which to return the newly created object</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../org/apache/tomcat/jni/Error.html" title="class in org.apache.tomcat.jni">Error</a></code></dd></dl>
+</li>
+</ul>
+<a name="destroy(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>destroy</h4>
+<pre>public static&nbsp;int&nbsp;destroy(long&nbsp;pollset)</pre>
+<div class="block">Destroy a pollset object</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>pollset</code> - The pollset to destroy</dd></dl>
+</li>
+</ul>
+<a name="add(long, long, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>add</h4>
+<pre>public static&nbsp;int&nbsp;add(long&nbsp;pollset,
+      long&nbsp;sock,
+      int&nbsp;reqevents)</pre>
+<div class="block">Add a socket to a pollset with the default timeout.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>pollset</code> - The pollset to which to add the socket</dd><dd><code>sock</code> - The sockets to add</dd><dd><code>reqevents</code> - requested events</dd></dl>
+</li>
+</ul>
+<a name="addWithTimeout(long, long, int, long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addWithTimeout</h4>
+<pre>public static&nbsp;int&nbsp;addWithTimeout(long&nbsp;pollset,
+                 long&nbsp;sock,
+                 int&nbsp;reqevents,
+                 long&nbsp;timeout)</pre>
+<div class="block">Add a socket to a pollset with a specific timeout.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>pollset</code> - The pollset to which to add the socket</dd><dd><code>sock</code> - The sockets to add</dd><dd><code>reqevents</code> - requested events</dd><dd><code>timeout</code> - requested timeout in microseconds (-1 for infinite)</dd></dl>
+</li>
+</ul>
+<a name="remove(long, long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>remove</h4>
+<pre>public static&nbsp;int&nbsp;remove(long&nbsp;pollset,
+         long&nbsp;sock)</pre>
+<div class="block">Remove a descriptor from a pollset</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>pollset</code> - The pollset from which to remove the descriptor</dd><dd><code>sock</code> - The socket to remove</dd></dl>
+</li>
+</ul>
+<a name="poll(long, long, long[], boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>poll</h4>
+<pre>public static&nbsp;int&nbsp;poll(long&nbsp;pollset,
+       long&nbsp;timeout,
+       long[]&nbsp;descriptors,
+       boolean&nbsp;remove)</pre>
+<div class="block">Block for activity on the descriptor(s) in a pollset</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>pollset</code> - The pollset to use</dd><dd><code>timeout</code> - Timeout in microseconds</dd><dd><code>descriptors</code> - Array of signaled descriptors (output parameter)
+        The descriptor array must be two times the size of pollset.
+        and are populated as follows:
+ <PRE>
+ descriptors[2n + 0] -&gt; returned events
+ descriptors[2n + 1] -&gt; socket
+ </PRE></dd><dd><code>remove</code> - Remove signaled descriptors from pollset</dd>
+<dt><span class="strong">Returns:</span></dt><dd>Number of signaled descriptors (output parameter)
+         or negative APR error code.</dd></dl>
+</li>
+</ul>
+<a name="maintain(long, long[], boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>maintain</h4>
+<pre>public static&nbsp;int&nbsp;maintain(long&nbsp;pollset,
+           long[]&nbsp;descriptors,
+           boolean&nbsp;remove)</pre>
+<div class="block">Maintain on the descriptor(s) in a pollset</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>pollset</code> - The pollset to use</dd><dd><code>descriptors</code> - Array of signaled descriptors (output parameter)
+        The descriptor array must be the size of pollset.
+        and are populated as follows:
+ <PRE>
+ descriptors[n] -&gt; socket
+ </PRE></dd><dd><code>remove</code> - Remove signaled descriptors from pollset</dd>
+<dt><span class="strong">Returns:</span></dt><dd>Number of signaled descriptors (output parameter)
+         or negative APR error code.</dd></dl>
+</li>
+</ul>
+<a name="setTtl(long, long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTtl</h4>
+<pre>public static&nbsp;void&nbsp;setTtl(long&nbsp;pollset,
+          long&nbsp;ttl)</pre>
+<div class="block">Set the socket time to live.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>pollset</code> - The pollset to use</dd><dd><code>ttl</code> - Timeout in microseconds</dd></dl>
+</li>
+</ul>
+<a name="getTtl(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTtl</h4>
+<pre>public static&nbsp;long&nbsp;getTtl(long&nbsp;pollset)</pre>
+<div class="block">Get the socket time to live.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>pollset</code> - The pollset to use</dd>
+<dt><span class="strong">Returns:</span></dt><dd>Timeout in microseconds</dd></dl>
+</li>
+</ul>
+<a name="pollset(long, long[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>pollset</h4>
+<pre>public static&nbsp;int&nbsp;pollset(long&nbsp;pollset,
+          long[]&nbsp;descriptors)</pre>
+<div class="block">Return all descriptor(s) in a pollset</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>pollset</code> - The pollset to use</dd><dd><code>descriptors</code> - Array of descriptors (output parameter)
+        The descriptor array must be two times the size of pollset.
+        and are populated as follows:
+ <PRE>
+ descriptors[2n + 0] -&gt; returned events
+ descriptors[2n + 1] -&gt; socket
+ </PRE></dd>
+<dt><span class="strong">Returns:</span></dt><dd>Number of descriptors (output parameter) in the Poll
+         or negative APR error code.</dd></dl>
+</li>
+</ul>
+<a name="interrupt(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>interrupt</h4>
+<pre>public static&nbsp;int&nbsp;interrupt(long&nbsp;pollset)</pre>
+<div class="block">Make poll() return.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>pollset</code> - </dd>
+<dt><span class="strong">Returns:</span></dt><dd>Negative APR error code</dd></dl>
+</li>
+</ul>
+<a name="wakeable(long)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>wakeable</h4>
+<pre>public static&nbsp;boolean&nbsp;wakeable(long&nbsp;pollset)</pre>
+<div class="block">Check if interrupt() is allowed.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>pollset</code> - </dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if <a href="../../../../org/apache/tomcat/jni/Poll.html#interrupt(long)"><code>interrupt(long)</code></a> is allowed, else
+          <code>false</code></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/tomcat/jni/PasswordCallback.html" title="interface in org.apache.tomcat.jni"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/tomcat/jni/Pool.html" title="class in org.apache.tomcat.jni"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/tomcat/jni/Poll.html" target="_top">Frames</a></li>
+<li><a href="Poll.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

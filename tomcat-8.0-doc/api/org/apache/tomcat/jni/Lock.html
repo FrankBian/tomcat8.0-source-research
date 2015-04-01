@@ -1,0 +1,564 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Lock (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="Lock (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/tomcat/jni/Local.html" title="class in org.apache.tomcat.jni"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/tomcat/jni/Mmap.html" title="class in org.apache.tomcat.jni"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/tomcat/jni/Lock.html" target="_top">Frames</a></li>
+<li><a href="Lock.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.tomcat.jni</div>
+<h2 title="Class Lock" class="title">Class Lock</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.tomcat.jni.Lock</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="strong">Lock</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">Lock</div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Mladen Turk</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Lock.html#APR_LOCK_DEFAULT">APR_LOCK_DEFAULT</a></strong></code>
+<div class="block">POSIX semaphore process-based locking</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Lock.html#APR_LOCK_FCNTL">APR_LOCK_FCNTL</a></strong></code>
+<div class="block">Enumerated potential types for APR process locking methods
+ <br><b>Warning :</b> Check APR_HAS_foo_SERIALIZE defines to see if the platform supports
+          APR_LOCK_foo.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Lock.html#APR_LOCK_FLOCK">APR_LOCK_FLOCK</a></strong></code>
+<div class="block">fcntl()</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Lock.html#APR_LOCK_POSIXSEM">APR_LOCK_POSIXSEM</a></strong></code>
+<div class="block">POSIX pthread process-based locking</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Lock.html#APR_LOCK_PROC_PTHREAD">APR_LOCK_PROC_PTHREAD</a></strong></code>
+<div class="block">System V Semaphores</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Lock.html#APR_LOCK_SYSVSEM">APR_LOCK_SYSVSEM</a></strong></code>
+<div class="block">flock()</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/tomcat/jni/Lock.html#Lock()">Lock</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Lock.html#childInit(java.lang.String,%20long)">childInit</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fname,
+         long&nbsp;pool)</code>
+<div class="block">Re-open a mutex in a child process.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static long</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Lock.html#create(java.lang.String,%20int,%20long)">create</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fname,
+      int&nbsp;mech,
+      long&nbsp;pool)</code>
+<div class="block">Create and initialize a mutex that can be used to synchronize processes.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Lock.html#defname()">defname</a></strong>()</code>
+<div class="block">Display the name of the default mutex: APR_LOCK_DEFAULT</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Lock.html#destroy(long)">destroy</a></strong>(long&nbsp;mutex)</code>
+<div class="block">Destroy the mutex and free the memory associated with the lock.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Lock.html#lock(long)">lock</a></strong>(long&nbsp;mutex)</code>
+<div class="block">Acquire the lock for the given mutex.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Lock.html#lockfile(long)">lockfile</a></strong>(long&nbsp;mutex)</code>
+<div class="block">Return the name of the lockfile for the mutex, or NULL
+ if the mutex doesn't use a lock file</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Lock.html#name(long)">name</a></strong>(long&nbsp;mutex)</code>
+<div class="block">Display the name of the mutex, as it relates to the actual method used.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Lock.html#trylock(long)">trylock</a></strong>(long&nbsp;mutex)</code>
+<div class="block">Attempt to acquire the lock for the given mutex.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/tomcat/jni/Lock.html#unlock(long)">unlock</a></strong>(long&nbsp;mutex)</code>
+<div class="block">Release the lock for the given mutex.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="APR_LOCK_FCNTL">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>APR_LOCK_FCNTL</h4>
+<pre>public static final&nbsp;int APR_LOCK_FCNTL</pre>
+<div class="block">Enumerated potential types for APR process locking methods
+ <br><b>Warning :</b> Check APR_HAS_foo_SERIALIZE defines to see if the platform supports
+          APR_LOCK_foo.  Only APR_LOCK_DEFAULT is portable.</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.tomcat.jni.Lock.APR_LOCK_FCNTL">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="APR_LOCK_FLOCK">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>APR_LOCK_FLOCK</h4>
+<pre>public static final&nbsp;int APR_LOCK_FLOCK</pre>
+<div class="block">fcntl()</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.tomcat.jni.Lock.APR_LOCK_FLOCK">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="APR_LOCK_SYSVSEM">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>APR_LOCK_SYSVSEM</h4>
+<pre>public static final&nbsp;int APR_LOCK_SYSVSEM</pre>
+<div class="block">flock()</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.tomcat.jni.Lock.APR_LOCK_SYSVSEM">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="APR_LOCK_PROC_PTHREAD">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>APR_LOCK_PROC_PTHREAD</h4>
+<pre>public static final&nbsp;int APR_LOCK_PROC_PTHREAD</pre>
+<div class="block">System V Semaphores</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.tomcat.jni.Lock.APR_LOCK_PROC_PTHREAD">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="APR_LOCK_POSIXSEM">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>APR_LOCK_POSIXSEM</h4>
+<pre>public static final&nbsp;int APR_LOCK_POSIXSEM</pre>
+<div class="block">POSIX pthread process-based locking</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.tomcat.jni.Lock.APR_LOCK_POSIXSEM">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="APR_LOCK_DEFAULT">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>APR_LOCK_DEFAULT</h4>
+<pre>public static final&nbsp;int APR_LOCK_DEFAULT</pre>
+<div class="block">POSIX semaphore process-based locking</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#org.apache.tomcat.jni.Lock.APR_LOCK_DEFAULT">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="Lock()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>Lock</h4>
+<pre>public&nbsp;Lock()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="create(java.lang.String, int, long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>create</h4>
+<pre>public static&nbsp;long&nbsp;create(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fname,
+          int&nbsp;mech,
+          long&nbsp;pool)
+                   throws <a href="../../../../org/apache/tomcat/jni/Error.html" title="class in org.apache.tomcat.jni">Error</a></pre>
+<div class="block">Create and initialize a mutex that can be used to synchronize processes.
+ <br><b>Warning :</b> Check APR_HAS_foo_SERIALIZE defines to see if the platform supports
+          APR_LOCK_foo.  Only APR_LOCK_DEFAULT is portable.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fname</code> - A file name to use if the lock mechanism requires one.  This
+        argument should always be provided.  The lock code itself will
+        determine if it should be used.</dd><dd><code>mech</code> - The mechanism to use for the interprocess lock, if any; one of
+ <PRE>
+            APR_LOCK_FCNTL
+            APR_LOCK_FLOCK
+            APR_LOCK_SYSVSEM
+            APR_LOCK_POSIXSEM
+            APR_LOCK_PROC_PTHREAD
+            APR_LOCK_DEFAULT     pick the default mechanism for the platform
+ </PRE></dd><dd><code>pool</code> - the pool from which to allocate the mutex.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>Newly created mutex.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../org/apache/tomcat/jni/Error.html" title="class in org.apache.tomcat.jni">Error</a></code></dd></dl>
+</li>
+</ul>
+<a name="childInit(java.lang.String, long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>childInit</h4>
+<pre>public static&nbsp;long&nbsp;childInit(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fname,
+             long&nbsp;pool)
+                      throws <a href="../../../../org/apache/tomcat/jni/Error.html" title="class in org.apache.tomcat.jni">Error</a></pre>
+<div class="block">Re-open a mutex in a child process.
+ This function must be called to maintain portability, even
+ if the underlying lock mechanism does not require it.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fname</code> - A file name to use if the mutex mechanism requires one.  This
+              argument should always be provided.  The mutex code itself will
+              determine if it should be used.  This filename should be the
+              same one that was passed to apr_proc_mutex_create().</dd><dd><code>pool</code> - The pool to operate on.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>Newly opened mutex.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../org/apache/tomcat/jni/Error.html" title="class in org.apache.tomcat.jni">Error</a></code></dd></dl>
+</li>
+</ul>
+<a name="lock(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>lock</h4>
+<pre>public static&nbsp;int&nbsp;lock(long&nbsp;mutex)</pre>
+<div class="block">Acquire the lock for the given mutex. If the mutex is already locked,
+ the current thread will be put to sleep until the lock becomes available.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>mutex</code> - the mutex on which to acquire the lock.</dd></dl>
+</li>
+</ul>
+<a name="trylock(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>trylock</h4>
+<pre>public static&nbsp;int&nbsp;trylock(long&nbsp;mutex)</pre>
+<div class="block">Attempt to acquire the lock for the given mutex. If the mutex has already
+ been acquired, the call returns immediately with APR_EBUSY. Note: it
+ is important that the APR_STATUS_IS_EBUSY(s) macro be used to determine
+ if the return value was APR_EBUSY, for portability reasons.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>mutex</code> - the mutex on which to attempt the lock acquiring.</dd></dl>
+</li>
+</ul>
+<a name="unlock(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>unlock</h4>
+<pre>public static&nbsp;int&nbsp;unlock(long&nbsp;mutex)</pre>
+<div class="block">Release the lock for the given mutex.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>mutex</code> - the mutex from which to release the lock.</dd></dl>
+</li>
+</ul>
+<a name="destroy(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>destroy</h4>
+<pre>public static&nbsp;int&nbsp;destroy(long&nbsp;mutex)</pre>
+<div class="block">Destroy the mutex and free the memory associated with the lock.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>mutex</code> - the mutex to destroy.</dd></dl>
+</li>
+</ul>
+<a name="lockfile(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>lockfile</h4>
+<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;lockfile(long&nbsp;mutex)</pre>
+<div class="block">Return the name of the lockfile for the mutex, or NULL
+ if the mutex doesn't use a lock file</div>
+</li>
+</ul>
+<a name="name(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>name</h4>
+<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name(long&nbsp;mutex)</pre>
+<div class="block">Display the name of the mutex, as it relates to the actual method used.
+ This matches the valid options for Apache's AcceptMutex directive</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>mutex</code> - the name of the mutex</dd></dl>
+</li>
+</ul>
+<a name="defname()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>defname</h4>
+<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;defname()</pre>
+<div class="block">Display the name of the default mutex: APR_LOCK_DEFAULT</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/tomcat/jni/Local.html" title="class in org.apache.tomcat.jni"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/tomcat/jni/Mmap.html" title="class in org.apache.tomcat.jni"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/tomcat/jni/Lock.html" target="_top">Frames</a></li>
+<li><a href="Lock.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

@@ -1,0 +1,999 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>XByteBuffer (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="XByteBuffer (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/catalina/tribes/io/ReplicationStream.html" title="class in org.apache.catalina.tribes.io"><span class="strong">Prev Class</span></a></li>
+<li>Next Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/catalina/tribes/io/XByteBuffer.html" target="_top">Frames</a></li>
+<li><a href="XByteBuffer.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.tribes.io</div>
+<h2 title="Class XByteBuffer" class="title">Class XByteBuffer</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.tribes.io.XByteBuffer</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="strong">XByteBuffer</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">The XByteBuffer provides a dual functionality.
+ One, it stores message bytes and automatically extends the byte buffer if needed.<BR>
+ Two, it can encode and decode packages so that they can be defined and identified
+ as they come in on a socket.
+ <br>
+ <b>THIS CLASS IS NOT THREAD SAFE</B><BR>
+ <br>
+ Transfer package:
+ <ul>
+ <li><b>START_DATA</b>- 7 bytes - <i>FLT2002</i></li>
+ <li><b>SIZE</b>      - 4 bytes - size of the data package</li>
+ <li><b>DATA</b>      - should be as many bytes as the prev SIZE</li>
+ <li><b>END_DATA</b>  - 7 bytes - <i>TLF2003</i></li>
+ </ul></div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#buf">buf</a></strong></code>
+<div class="block">Variable to hold the data</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#bufSize">bufSize</a></strong></code>
+<div class="block">Current length of data in the buffer</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#discard">discard</a></strong></code>
+<div class="block">Flag for discarding invalid packages
+ If this flag is set to true, and append(byte[],...) is called,
+ the data added will be inspected, and if it doesn't start with
+ <code>START_DATA</code> it will be thrown away.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#XByteBuffer(byte[],%20boolean)">XByteBuffer</a></strong>(byte[]&nbsp;data,
+           boolean&nbsp;discard)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#XByteBuffer(byte[],%20int,%20boolean)">XByteBuffer</a></strong>(byte[]&nbsp;data,
+           int&nbsp;size,
+           boolean&nbsp;discard)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#XByteBuffer(int,%20boolean)">XByteBuffer</a></strong>(int&nbsp;size,
+           boolean&nbsp;discard)</code>
+<div class="block">Constructs a new XByteBuffer.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#append(boolean)">append</a></strong>(boolean&nbsp;i)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#append(byte)">append</a></strong>(byte&nbsp;i)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#append(byte[],%20int,%20int)">append</a></strong>(byte[]&nbsp;b,
+      int&nbsp;off,
+      int&nbsp;len)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#append(java.nio.ByteBuffer,%20int)">append</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/nio/ByteBuffer.html?is-external=true" title="class or interface in java.nio">ByteBuffer</a>&nbsp;b,
+      int&nbsp;len)</code>
+<div class="block">Appends the data to the buffer.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#append(int)">append</a></strong>(int&nbsp;i)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#append(long)">append</a></strong>(long&nbsp;i)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#clear()">clear</a></strong>()</code>
+<div class="block">Resets the buffer</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#countPackages()">countPackages</a></strong>()</code>
+<div class="block">Internal mechanism to make a check if a complete package exists
+ within the buffer</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#countPackages(boolean)">countPackages</a></strong>(boolean&nbsp;first)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#createDataPackage(byte[])">createDataPackage</a></strong>(byte[]&nbsp;data)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#createDataPackage(byte[],%20int,%20int,%20byte[],%20int)">createDataPackage</a></strong>(byte[]&nbsp;data,
+                 int&nbsp;doff,
+                 int&nbsp;dlength,
+                 byte[]&nbsp;buffer,
+                 int&nbsp;bufoff)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#createDataPackage(org.apache.catalina.tribes.io.ChannelData)">createDataPackage</a></strong>(<a href="../../../../../org/apache/catalina/tribes/io/ChannelData.html" title="class in org.apache.catalina.tribes.io">ChannelData</a>&nbsp;cdata)</code>
+<div class="block">Creates a complete data package</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#deserialize(byte[])">deserialize</a></strong>(byte[]&nbsp;data)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#deserialize(byte[],%20int,%20int)">deserialize</a></strong>(byte[]&nbsp;data,
+           int&nbsp;offset,
+           int&nbsp;length)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#deserialize(byte[],%20int,%20int,%20java.lang.ClassLoader[])">deserialize</a></strong>(byte[]&nbsp;data,
+           int&nbsp;offset,
+           int&nbsp;length,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>[]&nbsp;cls)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#doesPackageExist()">doesPackageExist</a></strong>()</code>
+<div class="block">Method to check if a package exists in this byte buffer.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#expand(int)">expand</a></strong>(int&nbsp;newcount)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html" title="class in org.apache.catalina.tribes.io">XByteBuffer</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#extractDataPackage(boolean)">extractDataPackage</a></strong>(boolean&nbsp;clearFromBuffer)</code>
+<div class="block">Extracts the message bytes from a package.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/catalina/tribes/io/ChannelData.html" title="class in org.apache.catalina.tribes.io">ChannelData</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#extractPackage(boolean)">extractPackage</a></strong>(boolean&nbsp;clearFromBuffer)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#firstIndexOf(byte[],%20int,%20byte[])">firstIndexOf</a></strong>(byte[]&nbsp;src,
+            int&nbsp;srcOff,
+            byte[]&nbsp;find)</code>
+<div class="block">Similar to a String.IndexOf, but uses pure bytes</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#getBytes()">getBytes</a></strong>()</code>
+<div class="block">Returns the bytes in the buffer, in its exact length</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#getBytesDirect()">getBytesDirect</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#getCapacity()">getCapacity</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#getDataPackageLength(int)">getDataPackageLength</a></strong>(int&nbsp;datalength)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#getDiscard()">getDiscard</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#getLength()">getLength</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#reset()">reset</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#serialize(java.io.Serializable)">serialize</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;msg)</code>
+<div class="block">Serializes a message into cluster data</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#setDiscard(boolean)">setDiscard</a></strong>(boolean&nbsp;discard)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#setLength(int)">setLength</a></strong>(int&nbsp;size)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#toBoolean(byte[],%20int)">toBoolean</a></strong>(byte[]&nbsp;b,
+         int&nbsp;offset)</code>
+<div class="block">Converts a byte array entry to boolean</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#toBytes(boolean,%20byte[],%20int)">toBytes</a></strong>(boolean&nbsp;bool,
+       byte[]&nbsp;data,
+       int&nbsp;offset)</code>
+<div class="block">Converts a boolean to a 1-byte array</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#toBytes(int,%20byte[],%20int)">toBytes</a></strong>(int&nbsp;n,
+       byte[]&nbsp;b,
+       int&nbsp;offset)</code>
+<div class="block">Converts an integer to four bytes</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static byte[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#toBytes(long,%20byte[],%20int)">toBytes</a></strong>(long&nbsp;n,
+       byte[]&nbsp;b,
+       int&nbsp;offset)</code>
+<div class="block">Converts an long to eight bytes</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#toInt(byte[],%20int)">toInt</a></strong>(byte[]&nbsp;b,
+     int&nbsp;off)</code>
+<div class="block">Convert four bytes to an int</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#toLong(byte[],%20int)">toLong</a></strong>(byte[]&nbsp;b,
+      int&nbsp;off)</code>
+<div class="block">Convert eight bytes to a long</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html#trim(int)">trim</a></strong>(int&nbsp;length)</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="buf">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>buf</h4>
+<pre>protected&nbsp;byte[] buf</pre>
+<div class="block">Variable to hold the data</div>
+</li>
+</ul>
+<a name="bufSize">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>bufSize</h4>
+<pre>protected&nbsp;int bufSize</pre>
+<div class="block">Current length of data in the buffer</div>
+</li>
+</ul>
+<a name="discard">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>discard</h4>
+<pre>protected&nbsp;boolean discard</pre>
+<div class="block">Flag for discarding invalid packages
+ If this flag is set to true, and append(byte[],...) is called,
+ the data added will be inspected, and if it doesn't start with
+ <code>START_DATA</code> it will be thrown away.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="XByteBuffer(int, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>XByteBuffer</h4>
+<pre>public&nbsp;XByteBuffer(int&nbsp;size,
+           boolean&nbsp;discard)</pre>
+<div class="block">Constructs a new XByteBuffer.<br>
+ TODO use a pool of byte[] for performance</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>size</code> - - the initial size of the byte buffer</dd></dl>
+</li>
+</ul>
+<a name="XByteBuffer(byte[], boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>XByteBuffer</h4>
+<pre>public&nbsp;XByteBuffer(byte[]&nbsp;data,
+           boolean&nbsp;discard)</pre>
+</li>
+</ul>
+<a name="XByteBuffer(byte[], int, boolean)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>XByteBuffer</h4>
+<pre>public&nbsp;XByteBuffer(byte[]&nbsp;data,
+           int&nbsp;size,
+           boolean&nbsp;discard)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getLength()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLength</h4>
+<pre>public&nbsp;int&nbsp;getLength()</pre>
+</li>
+</ul>
+<a name="setLength(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLength</h4>
+<pre>public&nbsp;void&nbsp;setLength(int&nbsp;size)</pre>
+</li>
+</ul>
+<a name="trim(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>trim</h4>
+<pre>public&nbsp;void&nbsp;trim(int&nbsp;length)</pre>
+</li>
+</ul>
+<a name="reset()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reset</h4>
+<pre>public&nbsp;void&nbsp;reset()</pre>
+</li>
+</ul>
+<a name="getBytesDirect()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBytesDirect</h4>
+<pre>public&nbsp;byte[]&nbsp;getBytesDirect()</pre>
+</li>
+</ul>
+<a name="getBytes()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBytes</h4>
+<pre>public&nbsp;byte[]&nbsp;getBytes()</pre>
+<div class="block">Returns the bytes in the buffer, in its exact length</div>
+</li>
+</ul>
+<a name="clear()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clear</h4>
+<pre>public&nbsp;void&nbsp;clear()</pre>
+<div class="block">Resets the buffer</div>
+</li>
+</ul>
+<a name="append(java.nio.ByteBuffer, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>append</h4>
+<pre>public&nbsp;boolean&nbsp;append(<a href="http://docs.oracle.com/javase/7/docs/api/java/nio/ByteBuffer.html?is-external=true" title="class or interface in java.nio">ByteBuffer</a>&nbsp;b,
+             int&nbsp;len)</pre>
+<div class="block">Appends the data to the buffer. If the data is incorrectly formatted, ie, the data should always start with the
+ header, false will be returned and the data will be discarded.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>b</code> - - bytes to be appended</dd><dd><code>len</code> - - the number of bytes to append.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>true if the data was appended correctly. Returns false if the package is incorrect, ie missing header or something, or the length of data is 0</dd></dl>
+</li>
+</ul>
+<a name="append(byte)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>append</h4>
+<pre>public&nbsp;boolean&nbsp;append(byte&nbsp;i)</pre>
+</li>
+</ul>
+<a name="append(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>append</h4>
+<pre>public&nbsp;boolean&nbsp;append(boolean&nbsp;i)</pre>
+</li>
+</ul>
+<a name="append(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>append</h4>
+<pre>public&nbsp;boolean&nbsp;append(long&nbsp;i)</pre>
+</li>
+</ul>
+<a name="append(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>append</h4>
+<pre>public&nbsp;boolean&nbsp;append(int&nbsp;i)</pre>
+</li>
+</ul>
+<a name="append(byte[], int, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>append</h4>
+<pre>public&nbsp;boolean&nbsp;append(byte[]&nbsp;b,
+             int&nbsp;off,
+             int&nbsp;len)</pre>
+</li>
+</ul>
+<a name="expand(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>expand</h4>
+<pre>public&nbsp;void&nbsp;expand(int&nbsp;newcount)</pre>
+</li>
+</ul>
+<a name="getCapacity()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCapacity</h4>
+<pre>public&nbsp;int&nbsp;getCapacity()</pre>
+</li>
+</ul>
+<a name="countPackages()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>countPackages</h4>
+<pre>public&nbsp;int&nbsp;countPackages()</pre>
+<div class="block">Internal mechanism to make a check if a complete package exists
+ within the buffer</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>- true if a complete package (header,compress,size,data,footer) exists within the buffer</dd></dl>
+</li>
+</ul>
+<a name="countPackages(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>countPackages</h4>
+<pre>public&nbsp;int&nbsp;countPackages(boolean&nbsp;first)</pre>
+</li>
+</ul>
+<a name="doesPackageExist()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>doesPackageExist</h4>
+<pre>public&nbsp;boolean&nbsp;doesPackageExist()</pre>
+<div class="block">Method to check if a package exists in this byte buffer.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>- true if a complete package (header,options,size,data,footer) exists within the buffer</dd></dl>
+</li>
+</ul>
+<a name="extractDataPackage(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>extractDataPackage</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/catalina/tribes/io/XByteBuffer.html" title="class in org.apache.catalina.tribes.io">XByteBuffer</a>&nbsp;extractDataPackage(boolean&nbsp;clearFromBuffer)</pre>
+<div class="block">Extracts the message bytes from a package.
+ If no package exists, a IllegalStateException will be thrown.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>clearFromBuffer</code> - - if true, the package will be removed from the byte buffer</dd>
+<dt><span class="strong">Returns:</span></dt><dd>- returns the actual message bytes (header, compress,size and footer not included).</dd></dl>
+</li>
+</ul>
+<a name="extractPackage(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>extractPackage</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/catalina/tribes/io/ChannelData.html" title="class in org.apache.catalina.tribes.io">ChannelData</a>&nbsp;extractPackage(boolean&nbsp;clearFromBuffer)</pre>
+</li>
+</ul>
+<a name="createDataPackage(org.apache.catalina.tribes.io.ChannelData)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createDataPackage</h4>
+<pre>public static&nbsp;byte[]&nbsp;createDataPackage(<a href="../../../../../org/apache/catalina/tribes/io/ChannelData.html" title="class in org.apache.catalina.tribes.io">ChannelData</a>&nbsp;cdata)</pre>
+<div class="block">Creates a complete data package</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>cdata</code> - - the message data to be contained within the package</dd>
+<dt><span class="strong">Returns:</span></dt><dd>- a full package (header,size,data,footer)</dd></dl>
+</li>
+</ul>
+<a name="createDataPackage(byte[], int, int, byte[], int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createDataPackage</h4>
+<pre>public static&nbsp;byte[]&nbsp;createDataPackage(byte[]&nbsp;data,
+                       int&nbsp;doff,
+                       int&nbsp;dlength,
+                       byte[]&nbsp;buffer,
+                       int&nbsp;bufoff)</pre>
+</li>
+</ul>
+<a name="getDataPackageLength(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDataPackageLength</h4>
+<pre>public static&nbsp;int&nbsp;getDataPackageLength(int&nbsp;datalength)</pre>
+</li>
+</ul>
+<a name="createDataPackage(byte[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createDataPackage</h4>
+<pre>public static&nbsp;byte[]&nbsp;createDataPackage(byte[]&nbsp;data)</pre>
+</li>
+</ul>
+<a name="toInt(byte[], int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toInt</h4>
+<pre>public static&nbsp;int&nbsp;toInt(byte[]&nbsp;b,
+        int&nbsp;off)</pre>
+<div class="block">Convert four bytes to an int</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>b</code> - - the byte array containing the four bytes</dd><dd><code>off</code> - - the offset</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the integer value constructed from the four bytes</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ArrayIndexOutOfBoundsException.html?is-external=true" title="class or interface in java.lang">ArrayIndexOutOfBoundsException</a></code></dd></dl>
+</li>
+</ul>
+<a name="toLong(byte[], int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toLong</h4>
+<pre>public static&nbsp;long&nbsp;toLong(byte[]&nbsp;b,
+          int&nbsp;off)</pre>
+<div class="block">Convert eight bytes to a long</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>b</code> - - the byte array containing the four bytes</dd><dd><code>off</code> - - the offset</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the long value constructed from the eight bytes</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ArrayIndexOutOfBoundsException.html?is-external=true" title="class or interface in java.lang">ArrayIndexOutOfBoundsException</a></code></dd></dl>
+</li>
+</ul>
+<a name="toBytes(boolean, byte[], int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toBytes</h4>
+<pre>public static&nbsp;byte[]&nbsp;toBytes(boolean&nbsp;bool,
+             byte[]&nbsp;data,
+             int&nbsp;offset)</pre>
+<div class="block">Converts a boolean to a 1-byte array</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>bool</code> - - the integer</dd>
+<dt><span class="strong">Returns:</span></dt><dd>- 1-byte array</dd></dl>
+</li>
+</ul>
+<a name="toBoolean(byte[], int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toBoolean</h4>
+<pre>public static&nbsp;boolean&nbsp;toBoolean(byte[]&nbsp;b,
+                int&nbsp;offset)</pre>
+<div class="block">Converts a byte array entry to boolean</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>b</code> - byte array</dd><dd><code>offset</code> - within byte array</dd>
+<dt><span class="strong">Returns:</span></dt><dd>true if byte array entry is non-zero, false otherwise</dd></dl>
+</li>
+</ul>
+<a name="toBytes(int, byte[], int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toBytes</h4>
+<pre>public static&nbsp;byte[]&nbsp;toBytes(int&nbsp;n,
+             byte[]&nbsp;b,
+             int&nbsp;offset)</pre>
+<div class="block">Converts an integer to four bytes</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>n</code> - - the integer</dd>
+<dt><span class="strong">Returns:</span></dt><dd>- four bytes in an array</dd></dl>
+</li>
+</ul>
+<a name="toBytes(long, byte[], int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toBytes</h4>
+<pre>public static&nbsp;byte[]&nbsp;toBytes(long&nbsp;n,
+             byte[]&nbsp;b,
+             int&nbsp;offset)</pre>
+<div class="block">Converts an long to eight bytes</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>n</code> - - the long</dd>
+<dt><span class="strong">Returns:</span></dt><dd>- eight bytes in an array</dd></dl>
+</li>
+</ul>
+<a name="firstIndexOf(byte[], int, byte[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>firstIndexOf</h4>
+<pre>public static&nbsp;int&nbsp;firstIndexOf(byte[]&nbsp;src,
+               int&nbsp;srcOff,
+               byte[]&nbsp;find)</pre>
+<div class="block">Similar to a String.IndexOf, but uses pure bytes</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>src</code> - - the source bytes to be searched</dd><dd><code>srcOff</code> - - offset on the source buffer</dd><dd><code>find</code> - - the string to be found within src</dd>
+<dt><span class="strong">Returns:</span></dt><dd>- the index of the first matching byte. -1 if the find array is not found</dd></dl>
+</li>
+</ul>
+<a name="deserialize(byte[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>deserialize</h4>
+<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;deserialize(byte[]&nbsp;data)
+                                throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</a>,
+                                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassCastException.html?is-external=true" title="class or interface in java.lang">ClassCastException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</a></code></dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassCastException.html?is-external=true" title="class or interface in java.lang">ClassCastException</a></code></dd></dl>
+</li>
+</ul>
+<a name="deserialize(byte[], int, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>deserialize</h4>
+<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;deserialize(byte[]&nbsp;data,
+                       int&nbsp;offset,
+                       int&nbsp;length)
+                                throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</a>,
+                                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassCastException.html?is-external=true" title="class or interface in java.lang">ClassCastException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</a></code></dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassCastException.html?is-external=true" title="class or interface in java.lang">ClassCastException</a></code></dd></dl>
+</li>
+</ul>
+<a name="deserialize(byte[], int, int, java.lang.ClassLoader[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>deserialize</h4>
+<pre>public static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;deserialize(byte[]&nbsp;data,
+                       int&nbsp;offset,
+                       int&nbsp;length,
+                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang">ClassLoader</a>[]&nbsp;cls)
+                                throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</a>,
+                                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassCastException.html?is-external=true" title="class or interface in java.lang">ClassCastException</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</a></code></dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassCastException.html?is-external=true" title="class or interface in java.lang">ClassCastException</a></code></dd></dl>
+</li>
+</ul>
+<a name="serialize(java.io.Serializable)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>serialize</h4>
+<pre>public static&nbsp;byte[]&nbsp;serialize(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;msg)
+                        throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
+<div class="block">Serializes a message into cluster data</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>msg</code> - ClusterMessage</dd>
+<dt><span class="strong">Returns:</span></dt><dd>serialized content as byte[] array</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd></dl>
+</li>
+</ul>
+<a name="setDiscard(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDiscard</h4>
+<pre>public&nbsp;void&nbsp;setDiscard(boolean&nbsp;discard)</pre>
+</li>
+</ul>
+<a name="getDiscard()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getDiscard</h4>
+<pre>public&nbsp;boolean&nbsp;getDiscard()</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/catalina/tribes/io/ReplicationStream.html" title="class in org.apache.catalina.tribes.io"><span class="strong">Prev Class</span></a></li>
+<li>Next Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/catalina/tribes/io/XByteBuffer.html" target="_top">Frames</a></li>
+<li><a href="XByteBuffer.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

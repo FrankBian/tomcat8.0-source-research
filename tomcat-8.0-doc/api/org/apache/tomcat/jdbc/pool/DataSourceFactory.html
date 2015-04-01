@@ -1,0 +1,1138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>DataSourceFactory (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="DataSourceFactory (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSource.html" title="class in org.apache.tomcat.jdbc.pool"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html" title="class in org.apache.tomcat.jdbc.pool"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/tomcat/jdbc/pool/DataSourceFactory.html" target="_top">Frames</a></li>
+<li><a href="DataSourceFactory.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.tomcat.jdbc.pool</div>
+<h2 title="Class DataSourceFactory" class="title">Class DataSourceFactory</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.tomcat.jdbc.pool.DataSourceFactory</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://docs.oracle.com/javase/7/docs/api/javax/naming/spi/ObjectFactory.html?is-external=true" title="class or interface in javax.naming.spi">ObjectFactory</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">DataSourceFactory</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="http://docs.oracle.com/javase/7/docs/api/javax/naming/spi/ObjectFactory.html?is-external=true" title="class or interface in javax.naming.spi">ObjectFactory</a></pre>
+<div class="block"><p>JNDI object factory that creates an instance of
+ <code>BasicDataSource</code> that has been configured based on the
+ <code>RefAddr</code> values of the specified <code>Reference</code>,
+ which must match the names and data types of the
+ <code>BasicDataSource</code> bean properties.</p>
+ <br>
+ Properties available for configuration:<br>
+ <a href="http://commons.apache.org/dbcp/configuration.html">Commons DBCP properties</a><br>
+<ol>
+  <li>initSQL - A query that gets executed once, right after the connection is established.</li>
+  <li>testOnConnect - run validationQuery after connection has been established.</li>
+  <li>validationInterval - avoid excess validation, only run validation at most at this frequency - time in milliseconds.</li>
+  <li>jdbcInterceptors - a semicolon separated list of classnames extending <a href="../../../../../org/apache/tomcat/jdbc/pool/JdbcInterceptor.html" title="class in org.apache.tomcat.jdbc.pool"><code>JdbcInterceptor</code></a> class.</li>
+  <li>jmxEnabled - true of false, whether to register the pool with JMX.</li>
+  <li>fairQueue - true of false, whether the pool should sacrifice a little bit of performance for true fairness.</li>
+</ol></div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Craig R. McClanahan, Dirk Verbeeck</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#ALL_PROPERTIES">ALL_PROPERTIES</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#OBJECT_NAME">OBJECT_NAME</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_ABANDONWHENPERCENTAGEFULL">PROP_ABANDONWHENPERCENTAGEFULL</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_ACCESSTOUNDERLYINGCONNECTIONALLOWED">PROP_ACCESSTOUNDERLYINGCONNECTIONALLOWED</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_ALTERNATE_USERNAME_ALLOWED">PROP_ALTERNATE_USERNAME_ALLOWED</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_COMMITONRETURN">PROP_COMMITONRETURN</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_CONNECTIONPROPERTIES">PROP_CONNECTIONPROPERTIES</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_DATASOURCE">PROP_DATASOURCE</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_DATASOURCE_JNDI">PROP_DATASOURCE_JNDI</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_DEFAULTAUTOCOMMIT">PROP_DEFAULTAUTOCOMMIT</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_DEFAULTCATALOG">PROP_DEFAULTCATALOG</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_DEFAULTREADONLY">PROP_DEFAULTREADONLY</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_DEFAULTTRANSACTIONISOLATION">PROP_DEFAULTTRANSACTIONISOLATION</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_DRIVERCLASSNAME">PROP_DRIVERCLASSNAME</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_FAIR_QUEUE">PROP_FAIR_QUEUE</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_IGNOREEXCEPTIONONPRELOAD">PROP_IGNOREEXCEPTIONONPRELOAD</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_INITIALSIZE">PROP_INITIALSIZE</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_INITSQL">PROP_INITSQL</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_INTERCEPTORS">PROP_INTERCEPTORS</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_JMX_ENABLED">PROP_JMX_ENABLED</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_LOGABANDONED">PROP_LOGABANDONED</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_LOGVALIDATIONERRORS">PROP_LOGVALIDATIONERRORS</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_MAXACTIVE">PROP_MAXACTIVE</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_MAXAGE">PROP_MAXAGE</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_MAXIDLE">PROP_MAXIDLE</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_MAXOPENPREPAREDSTATEMENTS">PROP_MAXOPENPREPAREDSTATEMENTS</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_MAXWAIT">PROP_MAXWAIT</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_MINEVICTABLEIDLETIMEMILLIS">PROP_MINEVICTABLEIDLETIMEMILLIS</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_MINIDLE">PROP_MINIDLE</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_NUMTESTSPEREVICTIONRUN">PROP_NUMTESTSPEREVICTIONRUN</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_PASSWORD">PROP_PASSWORD</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_POOLPREPAREDSTATEMENTS">PROP_POOLPREPAREDSTATEMENTS</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_PROPAGATEINTERRUPTSTATE">PROP_PROPAGATEINTERRUPTSTATE</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_REMOVEABANDONED">PROP_REMOVEABANDONED</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_REMOVEABANDONEDTIMEOUT">PROP_REMOVEABANDONEDTIMEOUT</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_ROLLBACKONRETURN">PROP_ROLLBACKONRETURN</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_SUSPECT_TIMEOUT">PROP_SUSPECT_TIMEOUT</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_TESTONBORROW">PROP_TESTONBORROW</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_TESTONCONNECT">PROP_TESTONCONNECT</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_TESTONRETURN">PROP_TESTONRETURN</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_TESTWHILEIDLE">PROP_TESTWHILEIDLE</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_TIMEBETWEENEVICTIONRUNSMILLIS">PROP_TIMEBETWEENEVICTIONRUNSMILLIS</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_URL">PROP_URL</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_USE_CON_LOCK">PROP_USE_CON_LOCK</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_USE_EQUALS">PROP_USE_EQUALS</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_USEDISPOSABLECONNECTIONFACADE">PROP_USEDISPOSABLECONNECTIONFACADE</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_USERNAME">PROP_USERNAME</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_VALIDATIONINTERVAL">PROP_VALIDATIONINTERVAL</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_VALIDATIONQUERY">PROP_VALIDATIONQUERY</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_VALIDATIONQUERY_TIMEOUT">PROP_VALIDATIONQUERY_TIMEOUT</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#PROP_VALIDATOR_CLASS_NAME">PROP_VALIDATOR_CLASS_NAME</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#UNKNOWN_TRANSACTIONISOLATION">UNKNOWN_TRANSACTIONISOLATION</a></strong></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#DataSourceFactory()">DataSourceFactory</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/DataSource.html?is-external=true" title="class or interface in javax.sql">DataSource</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#createDataSource(java.util.Properties)">createDataSource</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;properties)</code>
+<div class="block">Creates and configures a <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSource.html" title="class in org.apache.tomcat.jdbc.pool"><code>DataSource</code></a> instance based on the
+ given properties.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/DataSource.html?is-external=true" title="class or interface in javax.sql">DataSource</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#createDataSource(java.util.Properties,%20javax.naming.Context,%20boolean)">createDataSource</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;properties,
+                <a href="http://docs.oracle.com/javase/7/docs/api/javax/naming/Context.html?is-external=true" title="class or interface in javax.naming">Context</a>&nbsp;context,
+                boolean&nbsp;XA)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#getObjectInstance(java.lang.Object,%20javax.naming.Name,%20javax.naming.Context,%20java.util.Hashtable)">getObjectInstance</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;obj,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/javax/naming/Name.html?is-external=true" title="class or interface in javax.naming">Name</a>&nbsp;name,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/javax/naming/Context.html?is-external=true" title="class or interface in javax.naming">Context</a>&nbsp;nameCtx,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Hashtable.html?is-external=true" title="class or interface in java.util">Hashtable</a>&lt;?,?&gt;&nbsp;environment)</code>
+<div class="block">Create and return a new <code>BasicDataSource</code> instance.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#getProperties(java.lang.String)">getProperties</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;propText)</code>
+<div class="block">Parse properties from the string.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html" title="interface in org.apache.tomcat.jdbc.pool">PoolConfiguration</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#parsePoolProperties(java.util.Properties)">parsePoolProperties</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;properties)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceFactory.html#performJNDILookup(javax.naming.Context,%20org.apache.tomcat.jdbc.pool.PoolConfiguration)">performJNDILookup</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/javax/naming/Context.html?is-external=true" title="class or interface in javax.naming">Context</a>&nbsp;context,
+                 <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html" title="interface in org.apache.tomcat.jdbc.pool">PoolConfiguration</a>&nbsp;poolProperties)</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="PROP_DEFAULTAUTOCOMMIT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_DEFAULTAUTOCOMMIT</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_DEFAULTAUTOCOMMIT</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_DEFAULTAUTOCOMMIT">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_DEFAULTREADONLY">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_DEFAULTREADONLY</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_DEFAULTREADONLY</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_DEFAULTREADONLY">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_DEFAULTTRANSACTIONISOLATION">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_DEFAULTTRANSACTIONISOLATION</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_DEFAULTTRANSACTIONISOLATION</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_DEFAULTTRANSACTIONISOLATION">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_DEFAULTCATALOG">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_DEFAULTCATALOG</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_DEFAULTCATALOG</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_DEFAULTCATALOG">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_DRIVERCLASSNAME">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_DRIVERCLASSNAME</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_DRIVERCLASSNAME</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_DRIVERCLASSNAME">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_PASSWORD">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_PASSWORD</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_PASSWORD</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_PASSWORD">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_URL">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_URL</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_URL</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_URL">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_USERNAME">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_USERNAME</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_USERNAME</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_USERNAME">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_MAXACTIVE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_MAXACTIVE</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_MAXACTIVE</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_MAXACTIVE">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_MAXIDLE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_MAXIDLE</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_MAXIDLE</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_MAXIDLE">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_MINIDLE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_MINIDLE</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_MINIDLE</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_MINIDLE">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_INITIALSIZE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_INITIALSIZE</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_INITIALSIZE</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_INITIALSIZE">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_MAXWAIT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_MAXWAIT</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_MAXWAIT</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_MAXWAIT">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_MAXAGE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_MAXAGE</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_MAXAGE</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_MAXAGE">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_TESTONBORROW">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_TESTONBORROW</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_TESTONBORROW</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_TESTONBORROW">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_TESTONRETURN">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_TESTONRETURN</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_TESTONRETURN</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_TESTONRETURN">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_TESTWHILEIDLE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_TESTWHILEIDLE</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_TESTWHILEIDLE</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_TESTWHILEIDLE">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_TESTONCONNECT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_TESTONCONNECT</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_TESTONCONNECT</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_TESTONCONNECT">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_VALIDATIONQUERY">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_VALIDATIONQUERY</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_VALIDATIONQUERY</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_VALIDATIONQUERY">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_VALIDATIONQUERY_TIMEOUT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_VALIDATIONQUERY_TIMEOUT</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_VALIDATIONQUERY_TIMEOUT</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_VALIDATIONQUERY_TIMEOUT">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_VALIDATOR_CLASS_NAME">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_VALIDATOR_CLASS_NAME</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_VALIDATOR_CLASS_NAME</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_VALIDATOR_CLASS_NAME">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_NUMTESTSPEREVICTIONRUN">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_NUMTESTSPEREVICTIONRUN</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_NUMTESTSPEREVICTIONRUN</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_NUMTESTSPEREVICTIONRUN">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_TIMEBETWEENEVICTIONRUNSMILLIS">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_TIMEBETWEENEVICTIONRUNSMILLIS</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_TIMEBETWEENEVICTIONRUNSMILLIS</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_TIMEBETWEENEVICTIONRUNSMILLIS">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_MINEVICTABLEIDLETIMEMILLIS">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_MINEVICTABLEIDLETIMEMILLIS</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_MINEVICTABLEIDLETIMEMILLIS</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_MINEVICTABLEIDLETIMEMILLIS">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_ACCESSTOUNDERLYINGCONNECTIONALLOWED">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_ACCESSTOUNDERLYINGCONNECTIONALLOWED</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_ACCESSTOUNDERLYINGCONNECTIONALLOWED</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_ACCESSTOUNDERLYINGCONNECTIONALLOWED">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_REMOVEABANDONED">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_REMOVEABANDONED</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_REMOVEABANDONED</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_REMOVEABANDONED">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_REMOVEABANDONEDTIMEOUT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_REMOVEABANDONEDTIMEOUT</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_REMOVEABANDONEDTIMEOUT</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_REMOVEABANDONEDTIMEOUT">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_LOGABANDONED">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_LOGABANDONED</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_LOGABANDONED</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_LOGABANDONED">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_ABANDONWHENPERCENTAGEFULL">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_ABANDONWHENPERCENTAGEFULL</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_ABANDONWHENPERCENTAGEFULL</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_ABANDONWHENPERCENTAGEFULL">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_POOLPREPAREDSTATEMENTS">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_POOLPREPAREDSTATEMENTS</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_POOLPREPAREDSTATEMENTS</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_POOLPREPAREDSTATEMENTS">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_MAXOPENPREPAREDSTATEMENTS">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_MAXOPENPREPAREDSTATEMENTS</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_MAXOPENPREPAREDSTATEMENTS</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_MAXOPENPREPAREDSTATEMENTS">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_CONNECTIONPROPERTIES">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_CONNECTIONPROPERTIES</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_CONNECTIONPROPERTIES</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_CONNECTIONPROPERTIES">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_INITSQL">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_INITSQL</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_INITSQL</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_INITSQL">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_INTERCEPTORS">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_INTERCEPTORS</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_INTERCEPTORS</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_INTERCEPTORS">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_VALIDATIONINTERVAL">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_VALIDATIONINTERVAL</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_VALIDATIONINTERVAL</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_VALIDATIONINTERVAL">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_JMX_ENABLED">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_JMX_ENABLED</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_JMX_ENABLED</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_JMX_ENABLED">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_FAIR_QUEUE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_FAIR_QUEUE</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_FAIR_QUEUE</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_FAIR_QUEUE">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_USE_EQUALS">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_USE_EQUALS</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_USE_EQUALS</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_USE_EQUALS">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_USE_CON_LOCK">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_USE_CON_LOCK</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_USE_CON_LOCK</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_USE_CON_LOCK">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_DATASOURCE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_DATASOURCE</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_DATASOURCE</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_DATASOURCE">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_DATASOURCE_JNDI">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_DATASOURCE_JNDI</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_DATASOURCE_JNDI</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_DATASOURCE_JNDI">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_SUSPECT_TIMEOUT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_SUSPECT_TIMEOUT</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_SUSPECT_TIMEOUT</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_SUSPECT_TIMEOUT">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_ALTERNATE_USERNAME_ALLOWED">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_ALTERNATE_USERNAME_ALLOWED</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_ALTERNATE_USERNAME_ALLOWED</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_ALTERNATE_USERNAME_ALLOWED">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_COMMITONRETURN">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_COMMITONRETURN</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_COMMITONRETURN</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_COMMITONRETURN">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_ROLLBACKONRETURN">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_ROLLBACKONRETURN</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_ROLLBACKONRETURN</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_ROLLBACKONRETURN">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_USEDISPOSABLECONNECTIONFACADE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_USEDISPOSABLECONNECTIONFACADE</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_USEDISPOSABLECONNECTIONFACADE</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_USEDISPOSABLECONNECTIONFACADE">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_LOGVALIDATIONERRORS">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_LOGVALIDATIONERRORS</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_LOGVALIDATIONERRORS</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_LOGVALIDATIONERRORS">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_PROPAGATEINTERRUPTSTATE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_PROPAGATEINTERRUPTSTATE</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_PROPAGATEINTERRUPTSTATE</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_PROPAGATEINTERRUPTSTATE">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="PROP_IGNOREEXCEPTIONONPRELOAD">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROP_IGNOREEXCEPTIONONPRELOAD</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> PROP_IGNOREEXCEPTIONONPRELOAD</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.PROP_IGNOREEXCEPTIONONPRELOAD">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="UNKNOWN_TRANSACTIONISOLATION">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>UNKNOWN_TRANSACTIONISOLATION</h4>
+<pre>public static final&nbsp;int UNKNOWN_TRANSACTIONISOLATION</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.UNKNOWN_TRANSACTIONISOLATION">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="OBJECT_NAME">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>OBJECT_NAME</h4>
+<pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> OBJECT_NAME</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.tomcat.jdbc.pool.DataSourceFactory.OBJECT_NAME">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="ALL_PROPERTIES">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ALL_PROPERTIES</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[] ALL_PROPERTIES</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="DataSourceFactory()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>DataSourceFactory</h4>
+<pre>public&nbsp;DataSourceFactory()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getObjectInstance(java.lang.Object, javax.naming.Name, javax.naming.Context, java.util.Hashtable)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getObjectInstance</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;getObjectInstance(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;obj,
+                       <a href="http://docs.oracle.com/javase/7/docs/api/javax/naming/Name.html?is-external=true" title="class or interface in javax.naming">Name</a>&nbsp;name,
+                       <a href="http://docs.oracle.com/javase/7/docs/api/javax/naming/Context.html?is-external=true" title="class or interface in javax.naming">Context</a>&nbsp;nameCtx,
+                       <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Hashtable.html?is-external=true" title="class or interface in java.util">Hashtable</a>&lt;?,?&gt;&nbsp;environment)
+                         throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<div class="block"><p>Create and return a new <code>BasicDataSource</code> instance.  If no
+ instance can be created, return <code>null</code> instead.</p></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/javax/naming/spi/ObjectFactory.html?is-external=true#getObjectInstance(java.lang.Object,%20javax.naming.Name,%20javax.naming.Context,%20java.util.Hashtable)" title="class or interface in javax.naming.spi">getObjectInstance</a></code>&nbsp;in interface&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/javax/naming/spi/ObjectFactory.html?is-external=true" title="class or interface in javax.naming.spi">ObjectFactory</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>obj</code> - The possibly null object containing location or
+  reference information that can be used in creating an object</dd><dd><code>name</code> - The name of this object relative to <code>nameCtx</code></dd><dd><code>nameCtx</code> - The context relative to which the <code>name</code>
+  parameter is specified, or <code>null</code> if <code>name</code>
+  is relative to the default initial context</dd><dd><code>environment</code> - The possibly null environment that is used in
+  creating this object</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code> - if an exception occurs creating the instance</dd></dl>
+</li>
+</ul>
+<a name="parsePoolProperties(java.util.Properties)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>parsePoolProperties</h4>
+<pre>public static&nbsp;<a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html" title="interface in org.apache.tomcat.jdbc.pool">PoolConfiguration</a>&nbsp;parsePoolProperties(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;properties)</pre>
+</li>
+</ul>
+<a name="createDataSource(java.util.Properties)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createDataSource</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/DataSource.html?is-external=true" title="class or interface in javax.sql">DataSource</a>&nbsp;createDataSource(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;properties)
+                            throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<div class="block">Creates and configures a <a href="../../../../../org/apache/tomcat/jdbc/pool/DataSource.html" title="class in org.apache.tomcat.jdbc.pool"><code>DataSource</code></a> instance based on the
+ given properties.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>properties</code> - the datasource configuration properties</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code> - if an error occurs creating the data source</dd></dl>
+</li>
+</ul>
+<a name="createDataSource(java.util.Properties, javax.naming.Context, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createDataSource</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/DataSource.html?is-external=true" title="class or interface in javax.sql">DataSource</a>&nbsp;createDataSource(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;properties,
+                          <a href="http://docs.oracle.com/javase/7/docs/api/javax/naming/Context.html?is-external=true" title="class or interface in javax.naming">Context</a>&nbsp;context,
+                          boolean&nbsp;XA)
+                            throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd></dl>
+</li>
+</ul>
+<a name="performJNDILookup(javax.naming.Context, org.apache.tomcat.jdbc.pool.PoolConfiguration)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>performJNDILookup</h4>
+<pre>public&nbsp;void&nbsp;performJNDILookup(<a href="http://docs.oracle.com/javase/7/docs/api/javax/naming/Context.html?is-external=true" title="class or interface in javax.naming">Context</a>&nbsp;context,
+                     <a href="../../../../../org/apache/tomcat/jdbc/pool/PoolConfiguration.html" title="interface in org.apache.tomcat.jdbc.pool">PoolConfiguration</a>&nbsp;poolProperties)</pre>
+</li>
+</ul>
+<a name="getProperties(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getProperties</h4>
+<pre>protected static&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Properties.html?is-external=true" title="class or interface in java.util">Properties</a>&nbsp;getProperties(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;propText)</pre>
+<div class="block"><p>Parse properties from the string. Format of the string must be [propertyName=property;]*<p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>propText</code> - </dd>
+<dt><span class="strong">Returns:</span></dt><dd>Properties</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSource.html" title="class in org.apache.tomcat.jdbc.pool"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/tomcat/jdbc/pool/DataSourceProxy.html" title="class in org.apache.tomcat.jdbc.pool"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/tomcat/jdbc/pool/DataSourceFactory.html" target="_top">Frames</a></li>
+<li><a href="DataSourceFactory.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

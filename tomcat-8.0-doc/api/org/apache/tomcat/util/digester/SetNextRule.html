@@ -1,0 +1,450 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SetNextRule (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="SetNextRule (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/tomcat/util/digester/RuleSetBase.html" title="class in org.apache.tomcat.util.digester"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/tomcat/util/digester/SetPropertiesRule.html" title="class in org.apache.tomcat.util.digester"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/tomcat/util/digester/SetNextRule.html" target="_top">Frames</a></li>
+<li><a href="SetNextRule.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.tomcat.util.digester</div>
+<h2 title="Class SetNextRule" class="title">Class SetNextRule</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../org/apache/tomcat/util/digester/Rule.html" title="class in org.apache.tomcat.util.digester">org.apache.tomcat.util.digester.Rule</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.tomcat.util.digester.SetNextRule</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="strong">SetNextRule</span>
+extends <a href="../../../../../org/apache/tomcat/util/digester/Rule.html" title="class in org.apache.tomcat.util.digester">Rule</a></pre>
+<div class="block"><p>Rule implementation that calls a method on the (top-1) (parent)
+ object, passing the top object (child) as an argument.  It is
+ commonly used to establish parent-child relationships.</p>
+
+ <p>This rule now supports more flexible method matching by default.
+ It is possible that this may break (some) code
+ written against release 1.1.1 or earlier.
+ See <a href="../../../../../org/apache/tomcat/util/digester/SetNextRule.html#isExactMatch()"><code>isExactMatch()</code></a> for more details.</p></div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/digester/SetNextRule.html#methodName">methodName</a></strong></code>
+<div class="block">The method name to call on the parent object.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/digester/SetNextRule.html#paramType">paramType</a></strong></code>
+<div class="block">The Java class name of the parameter type expected by the method.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/digester/SetNextRule.html#useExactMatch">useExactMatch</a></strong></code>
+<div class="block">Should we use exact matching.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.tomcat.util.digester.Rule">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.tomcat.util.digester.<a href="../../../../../org/apache/tomcat/util/digester/Rule.html" title="class in org.apache.tomcat.util.digester">Rule</a></h3>
+<code><a href="../../../../../org/apache/tomcat/util/digester/Rule.html#digester">digester</a>, <a href="../../../../../org/apache/tomcat/util/digester/Rule.html#namespaceURI">namespaceURI</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/tomcat/util/digester/SetNextRule.html#SetNextRule(java.lang.String,%20java.lang.String)">SetNextRule</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;methodName,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;paramType)</code>
+<div class="block">Construct a "set next" rule with the specified method name.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/digester/SetNextRule.html#end(java.lang.String,%20java.lang.String)">end</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;namespace,
+   <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Process the end of this element.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/digester/SetNextRule.html#isExactMatch()">isExactMatch</a></strong>()</code>
+<div class="block">Is exact matching being used.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/digester/SetNextRule.html#setExactMatch(boolean)">setExactMatch</a></strong>(boolean&nbsp;useExactMatch)</code>
+<div class="block">Set whether exact matching is enabled.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/tomcat/util/digester/SetNextRule.html#toString()">toString</a></strong>()</code>
+<div class="block">Render a printable version of this Rule.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.tomcat.util.digester.Rule">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.tomcat.util.digester.<a href="../../../../../org/apache/tomcat/util/digester/Rule.html" title="class in org.apache.tomcat.util.digester">Rule</a></h3>
+<code><a href="../../../../../org/apache/tomcat/util/digester/Rule.html#begin(org.xml.sax.Attributes)">begin</a>, <a href="../../../../../org/apache/tomcat/util/digester/Rule.html#begin(java.lang.String,%20java.lang.String,%20org.xml.sax.Attributes)">begin</a>, <a href="../../../../../org/apache/tomcat/util/digester/Rule.html#body(java.lang.String)">body</a>, <a href="../../../../../org/apache/tomcat/util/digester/Rule.html#body(java.lang.String,%20java.lang.String,%20java.lang.String)">body</a>, <a href="../../../../../org/apache/tomcat/util/digester/Rule.html#end()">end</a>, <a href="../../../../../org/apache/tomcat/util/digester/Rule.html#finish()">finish</a>, <a href="../../../../../org/apache/tomcat/util/digester/Rule.html#getDigester()">getDigester</a>, <a href="../../../../../org/apache/tomcat/util/digester/Rule.html#getNamespaceURI()">getNamespaceURI</a>, <a href="../../../../../org/apache/tomcat/util/digester/Rule.html#setDigester(org.apache.tomcat.util.digester.Digester)">setDigester</a>, <a href="../../../../../org/apache/tomcat/util/digester/Rule.html#setNamespaceURI(java.lang.String)">setNamespaceURI</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="methodName">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>methodName</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> methodName</pre>
+<div class="block">The method name to call on the parent object.</div>
+</li>
+</ul>
+<a name="paramType">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>paramType</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> paramType</pre>
+<div class="block">The Java class name of the parameter type expected by the method.</div>
+</li>
+</ul>
+<a name="useExactMatch">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>useExactMatch</h4>
+<pre>protected&nbsp;boolean useExactMatch</pre>
+<div class="block">Should we use exact matching. Default is no.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="SetNextRule(java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>SetNextRule</h4>
+<pre>public&nbsp;SetNextRule(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;methodName,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;paramType)</pre>
+<div class="block">Construct a "set next" rule with the specified method name.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>methodName</code> - Method name of the parent method to call</dd><dd><code>paramType</code> - Java class of the parent method's argument
+  (if you wish to use a primitive type, specify the corresponding
+  Java wrapper class instead, such as <code>java.lang.Boolean</code>
+  for a <code>boolean</code> parameter)</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="isExactMatch()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isExactMatch</h4>
+<pre>public&nbsp;boolean&nbsp;isExactMatch()</pre>
+<div class="block"><p>Is exact matching being used.</p>
+
+ <p>This rule uses <code>org.apache.commons.beanutils.MethodUtils</code>
+ to introspect the relevant objects so that the right method can be called.
+ Originally, <code>MethodUtils.invokeExactMethod</code> was used.
+ This matches methods very strictly
+ and so may not find a matching method when one exists.
+ This is still the behaviour when exact matching is enabled.</p>
+
+ <p>When exact matching is disabled, <code>MethodUtils.invokeMethod</code> is used.
+ This method finds more methods but is less precise when there are several methods
+ with correct signatures.
+ So, if you want to choose an exact signature you might need to enable this property.</p>
+
+ <p>The default setting is to disable exact matches.</p></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>true iff exact matching is enabled</dd><dt><span class="strong">Since:</span></dt>
+  <dd>Digester Release 1.1.1</dd></dl>
+</li>
+</ul>
+<a name="setExactMatch(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setExactMatch</h4>
+<pre>public&nbsp;void&nbsp;setExactMatch(boolean&nbsp;useExactMatch)</pre>
+<div class="block"><p>Set whether exact matching is enabled.</p>
+
+ <p>See <a href="../../../../../org/apache/tomcat/util/digester/SetNextRule.html#isExactMatch()"><code>isExactMatch()</code></a>.</p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>useExactMatch</code> - should this rule use exact method matching</dd><dt><span class="strong">Since:</span></dt>
+  <dd>Digester Release 1.1.1</dd></dl>
+</li>
+</ul>
+<a name="end(java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>end</h4>
+<pre>public&nbsp;void&nbsp;end(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;namespace,
+       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)
+         throws <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
+<div class="block">Process the end of this element.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../org/apache/tomcat/util/digester/Rule.html#end(java.lang.String,%20java.lang.String)">end</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/tomcat/util/digester/Rule.html" title="class in org.apache.tomcat.util.digester">Rule</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>namespace</code> - the namespace URI of the matching element, or an
+   empty string if the parser is not namespace aware or the element has
+   no namespace</dd><dd><code>name</code> - the local name if the parser is namespace aware, or just
+   the element name otherwise</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code></dd></dl>
+</li>
+</ul>
+<a name="toString()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>toString</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<div class="block">Render a printable version of this Rule.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/tomcat/util/digester/RuleSetBase.html" title="class in org.apache.tomcat.util.digester"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/tomcat/util/digester/SetPropertiesRule.html" title="class in org.apache.tomcat.util.digester"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/tomcat/util/digester/SetNextRule.html" target="_top">Frames</a></li>
+<li><a href="SetNextRule.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>

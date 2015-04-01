@@ -1,0 +1,1161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GroupChannel (Apache Tomcat 8.0.21 API Documentation)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="GroupChannel (Apache Tomcat 8.0.21 API Documentation)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/catalina/tribes/group/ExtendedRpcCallback.html" title="interface in org.apache.catalina.tribes.group"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.HeartbeatThread.html" title="class in org.apache.catalina.tribes.group"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/catalina/tribes/group/GroupChannel.html" target="_top">Frames</a></li>
+<li><a href="GroupChannel.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.catalina.tribes.group</div>
+<h2 title="Class GroupChannel" class="title">Class GroupChannel</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html" title="class in org.apache.catalina.tribes.group">org.apache.catalina.tribes.group.ChannelInterceptorBase</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.catalina.tribes.group.GroupChannel</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../../org/apache/catalina/tribes/Channel.html" title="interface in org.apache.catalina.tribes">Channel</a>, <a href="../../../../../org/apache/catalina/tribes/ChannelInterceptor.html" title="interface in org.apache.catalina.tribes">ChannelInterceptor</a>, <a href="../../../../../org/apache/catalina/tribes/Heartbeat.html" title="interface in org.apache.catalina.tribes">Heartbeat</a>, <a href="../../../../../org/apache/catalina/tribes/ManagedChannel.html" title="interface in org.apache.catalina.tribes">ManagedChannel</a>, <a href="../../../../../org/apache/catalina/tribes/MembershipListener.html" title="interface in org.apache.catalina.tribes">MembershipListener</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">GroupChannel</span>
+extends <a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html" title="class in org.apache.catalina.tribes.group">ChannelInterceptorBase</a>
+implements <a href="../../../../../org/apache/catalina/tribes/ManagedChannel.html" title="interface in org.apache.catalina.tribes">ManagedChannel</a></pre>
+<div class="block">The default implementation of a Channel.<br>
+ The GroupChannel manages the replication channel. It coordinates
+ message being sent and received with membership announcements.
+ The channel has an chain of interceptors that can modify the message or perform other logic.<br>
+ It manages a complete group, both membership and replication.</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested_class_summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Class and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.HeartbeatThread.html" title="class in org.apache.catalina.tribes.group">GroupChannel.HeartbeatThread</a></strong></code>
+<div class="block">Title: Internal heartbeat thread
+
+ Description: if <code>Channel.getHeartbeat()==true</code> then a thread of this class
+ is created</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.InterceptorIterator.html" title="class in org.apache.catalina.tribes.group">GroupChannel.InterceptorIterator</a></strong></code>
+<div class="block">Title: Interceptor Iterator
+
+ Description: An iterator to loop through the interceptors in a channel</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="nested_classes_inherited_from_class_org.apache.catalina.tribes.ChannelInterceptor">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from interface&nbsp;org.apache.catalina.tribes.<a href="../../../../../org/apache/catalina/tribes/ChannelInterceptor.html" title="interface in org.apache.catalina.tribes">ChannelInterceptor</a></h3>
+<code><a href="../../../../../org/apache/catalina/tribes/ChannelInterceptor.InterceptorEvent.html" title="interface in org.apache.catalina.tribes">ChannelInterceptor.InterceptorEvent</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#channelListeners">channelListeners</a></strong></code>
+<div class="block">A list of channel listeners that subscribe to incoming messages</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../org/apache/catalina/tribes/group/ChannelCoordinator.html" title="class in org.apache.catalina.tribes.group">ChannelCoordinator</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#coordinator">coordinator</a></strong></code>
+<div class="block">The  <code>ChannelCoordinator</code> coordinates the bottom layer components:<br>
+ - MembershipService<br>
+ - ChannelSender <br>
+ - ChannelReceiver<br></div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.HeartbeatThread.html" title="class in org.apache.catalina.tribes.group">GroupChannel.HeartbeatThread</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#hbthread">hbthread</a></strong></code>
+<div class="block">Internal heartbeat thread</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#heartbeat">heartbeat</a></strong></code>
+<div class="block">Flag to determine if the channel manages its own heartbeat
+ If set to true, the channel will start a local thread for the heart beat.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#heartbeatSleeptime">heartbeatSleeptime</a></strong></code>
+<div class="block">If <code>heartbeat == true</code> then how often do we want this
+ heartbeat to run. default is one minute</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../org/apache/catalina/tribes/ChannelInterceptor.html" title="interface in org.apache.catalina.tribes">ChannelInterceptor</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#interceptors">interceptors</a></strong></code>
+<div class="block">The first interceptor in the interceptor stack.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#membershipListeners">membershipListeners</a></strong></code>
+<div class="block">A list of membership listeners that subscribe to membership announcements</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#optionCheck">optionCheck</a></strong></code>
+<div class="block">If set to true, the GroupChannel will check to make sure that</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.tribes.group.ChannelInterceptorBase">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.apache.catalina.tribes.group.<a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html" title="class in org.apache.catalina.tribes.group">ChannelInterceptorBase</a></h3>
+<code><a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html#optionFlag">optionFlag</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_org.apache.catalina.tribes.Channel">
+<!--   -->
+</a>
+<h3>Fields inherited from interface&nbsp;org.apache.catalina.tribes.<a href="../../../../../org/apache/catalina/tribes/Channel.html" title="interface in org.apache.catalina.tribes">Channel</a></h3>
+<code><a href="../../../../../org/apache/catalina/tribes/Channel.html#DEFAULT">DEFAULT</a>, <a href="../../../../../org/apache/catalina/tribes/Channel.html#MBR_RX_SEQ">MBR_RX_SEQ</a>, <a href="../../../../../org/apache/catalina/tribes/Channel.html#MBR_TX_SEQ">MBR_TX_SEQ</a>, <a href="../../../../../org/apache/catalina/tribes/Channel.html#SEND_OPTIONS_ASYNCHRONOUS">SEND_OPTIONS_ASYNCHRONOUS</a>, <a href="../../../../../org/apache/catalina/tribes/Channel.html#SEND_OPTIONS_BYTE_MESSAGE">SEND_OPTIONS_BYTE_MESSAGE</a>, <a href="../../../../../org/apache/catalina/tribes/Channel.html#SEND_OPTIONS_DEFAULT">SEND_OPTIONS_DEFAULT</a>, <a href="../../../../../org/apache/catalina/tribes/Channel.html#SEND_OPTIONS_MULTICAST">SEND_OPTIONS_MULTICAST</a>, <a href="../../../../../org/apache/catalina/tribes/Channel.html#SEND_OPTIONS_SECURE">SEND_OPTIONS_SECURE</a>, <a href="../../../../../org/apache/catalina/tribes/Channel.html#SEND_OPTIONS_SYNCHRONIZED_ACK">SEND_OPTIONS_SYNCHRONIZED_ACK</a>, <a href="../../../../../org/apache/catalina/tribes/Channel.html#SEND_OPTIONS_UDP">SEND_OPTIONS_UDP</a>, <a href="../../../../../org/apache/catalina/tribes/Channel.html#SEND_OPTIONS_USE_ACK">SEND_OPTIONS_USE_ACK</a>, <a href="../../../../../org/apache/catalina/tribes/Channel.html#SND_RX_SEQ">SND_RX_SEQ</a>, <a href="../../../../../org/apache/catalina/tribes/Channel.html#SND_TX_SEQ">SND_TX_SEQ</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#GroupChannel()">GroupChannel</a></strong>()</code>
+<div class="block">Creates a GroupChannel.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#addChannelListener(org.apache.catalina.tribes.ChannelListener)">addChannelListener</a></strong>(<a href="../../../../../org/apache/catalina/tribes/ChannelListener.html" title="interface in org.apache.catalina.tribes">ChannelListener</a>&nbsp;channelListener)</code>
+<div class="block">Adds a channel listener to the channel.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#addInterceptor(org.apache.catalina.tribes.ChannelInterceptor)">addInterceptor</a></strong>(<a href="../../../../../org/apache/catalina/tribes/ChannelInterceptor.html" title="interface in org.apache.catalina.tribes">ChannelInterceptor</a>&nbsp;interceptor)</code>
+<div class="block">Adds an interceptor to the stack for message processing<br>
+ Interceptors are ordered in the way they are added.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#addMembershipListener(org.apache.catalina.tribes.MembershipListener)">addMembershipListener</a></strong>(<a href="../../../../../org/apache/catalina/tribes/MembershipListener.html" title="interface in org.apache.catalina.tribes">MembershipListener</a>&nbsp;membershipListener)</code>
+<div class="block">Adds a membership listener to the channel.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#checkOptionFlags()">checkOptionFlags</a></strong>()</code>
+<div class="block">Validates the option flags that each interceptor is using and reports
+ an error if two interceptor share the same flag.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/catalina/tribes/ChannelReceiver.html" title="interface in org.apache.catalina.tribes">ChannelReceiver</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#getChannelReceiver()">getChannelReceiver</a></strong>()</code>
+<div class="block">Returns the channel receiver component</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/catalina/tribes/ChannelSender.html" title="interface in org.apache.catalina.tribes">ChannelSender</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#getChannelSender()">getChannelSender</a></strong>()</code>
+<div class="block">Returns the channel sender component</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/catalina/tribes/ChannelInterceptor.html" title="interface in org.apache.catalina.tribes">ChannelInterceptor</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#getFirstInterceptor()">getFirstInterceptor</a></strong>()</code>
+<div class="block">Returns the first interceptor of the stack.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#getHeartbeat()">getHeartbeat</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#getHeartbeatSleeptime()">getHeartbeatSleeptime</a></strong>()</code>
+<div class="block">Returns the sleep time in milliseconds that the internal heartbeat will
+ sleep in between invocations of <code>Channel.heartbeat()</code></div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../org/apache/catalina/tribes/ChannelInterceptor.html" title="interface in org.apache.catalina.tribes">ChannelInterceptor</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#getInterceptors()">getInterceptors</a></strong>()</code>
+<div class="block">Returns an iterator of all the interceptors in this stack</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/catalina/tribes/MembershipService.html" title="interface in org.apache.catalina.tribes">MembershipService</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#getMembershipService()">getMembershipService</a></strong>()</code>
+<div class="block">Returns the membership service component</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#getOptionCheck()">getOptionCheck</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#heartbeat()">heartbeat</a></strong>()</code>
+<div class="block">Sends a heartbeat through the interceptor stack.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#memberAdded(org.apache.catalina.tribes.Member)">memberAdded</a></strong>(<a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;member)</code>
+<div class="block">memberAdded gets invoked by the interceptor below the channel
+ and the channel will broadcast it to the membership listeners</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#memberDisappeared(org.apache.catalina.tribes.Member)">memberDisappeared</a></strong>(<a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;member)</code>
+<div class="block">memberDisappeared gets invoked by the interceptor below the channel
+ and the channel will broadcast it to the membership listeners</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#messageReceived(org.apache.catalina.tribes.ChannelMessage)">messageReceived</a></strong>(<a href="../../../../../org/apache/catalina/tribes/ChannelMessage.html" title="interface in org.apache.catalina.tribes">ChannelMessage</a>&nbsp;msg)</code>
+<div class="block">Callback from the interceptor stack.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#removeChannelListener(org.apache.catalina.tribes.ChannelListener)">removeChannelListener</a></strong>(<a href="../../../../../org/apache/catalina/tribes/ChannelListener.html" title="interface in org.apache.catalina.tribes">ChannelListener</a>&nbsp;channelListener)</code>
+<div class="block">Removes a channel listener from the channel.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#removeMembershipListener(org.apache.catalina.tribes.MembershipListener)">removeMembershipListener</a></strong>(<a href="../../../../../org/apache/catalina/tribes/MembershipListener.html" title="interface in org.apache.catalina.tribes">MembershipListener</a>&nbsp;membershipListener)</code>
+<div class="block">Removes a membership listener from the channel.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/catalina/tribes/UniqueId.html" title="class in org.apache.catalina.tribes">UniqueId</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#send(org.apache.catalina.tribes.Member[],%20java.io.Serializable,%20int)">send</a></strong>(<a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>[]&nbsp;destination,
+    <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;msg,
+    int&nbsp;options)</code>
+<div class="block">Send a message to the destinations specified</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/apache/catalina/tribes/UniqueId.html" title="class in org.apache.catalina.tribes">UniqueId</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#send(org.apache.catalina.tribes.Member[],%20java.io.Serializable,%20int,%20org.apache.catalina.tribes.ErrorHandler)">send</a></strong>(<a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>[]&nbsp;destination,
+    <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;msg,
+    int&nbsp;options,
+    <a href="../../../../../org/apache/catalina/tribes/ErrorHandler.html" title="interface in org.apache.catalina.tribes">ErrorHandler</a>&nbsp;handler)</code>
+<div class="block">Send a message to one or more members in the cluster</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#sendNoRpcChannelReply(org.apache.catalina.tribes.group.RpcMessage,%20org.apache.catalina.tribes.Member)">sendNoRpcChannelReply</a></strong>(<a href="../../../../../org/apache/catalina/tribes/group/RpcMessage.html" title="class in org.apache.catalina.tribes.group">RpcMessage</a>&nbsp;msg,
+                     <a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;destination)</code>
+<div class="block">Sends a <code>NoRpcChannelReply</code> message to a member<br>
+ This method gets invoked by the channel if a RPC message comes in
+ and no channel listener accepts the message.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#setChannelReceiver(org.apache.catalina.tribes.ChannelReceiver)">setChannelReceiver</a></strong>(<a href="../../../../../org/apache/catalina/tribes/ChannelReceiver.html" title="interface in org.apache.catalina.tribes">ChannelReceiver</a>&nbsp;clusterReceiver)</code>
+<div class="block">Sets the channel receiver component</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#setChannelSender(org.apache.catalina.tribes.ChannelSender)">setChannelSender</a></strong>(<a href="../../../../../org/apache/catalina/tribes/ChannelSender.html" title="interface in org.apache.catalina.tribes">ChannelSender</a>&nbsp;clusterSender)</code>
+<div class="block">Sets the channel sender component</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#setHeartbeat(boolean)">setHeartbeat</a></strong>(boolean&nbsp;heartbeat)</code>
+<div class="block">Enables or disables local heartbeat.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#setHeartbeatSleeptime(long)">setHeartbeatSleeptime</a></strong>(long&nbsp;heartbeatSleeptime)</code>
+<div class="block">Configure local heartbeat sleep time<br>
+ Only used when <code>getHeartbeat()==true</code></div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#setMembershipService(org.apache.catalina.tribes.MembershipService)">setMembershipService</a></strong>(<a href="../../../../../org/apache/catalina/tribes/MembershipService.html" title="interface in org.apache.catalina.tribes">MembershipService</a>&nbsp;membershipService)</code>
+<div class="block">Sets the membership component</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#setOptionCheck(boolean)">setOptionCheck</a></strong>(boolean&nbsp;optionCheck)</code>
+<div class="block">Enables/disables the option check<br>
+ Setting this to true, will make the GroupChannel perform a conflict check
+ on the interceptors.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#setupDefaultStack()">setupDefaultStack</a></strong>()</code>
+<div class="block">Sets up the default implementation interceptor stack
+ if no interceptors have been added</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#start(int)">start</a></strong>(int&nbsp;svc)</code>
+<div class="block">Starts the channel</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#stop(int)">stop</a></strong>(int&nbsp;svc)</code>
+<div class="block">Stops the channel</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.tribes.group.ChannelInterceptorBase">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.catalina.tribes.group.<a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html" title="class in org.apache.catalina.tribes.group">ChannelInterceptorBase</a></h3>
+<code><a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html#fireInterceptorEvent(org.apache.catalina.tribes.ChannelInterceptor.InterceptorEvent)">fireInterceptorEvent</a>, <a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html#getLocalMember(boolean)">getLocalMember</a>, <a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html#getMember(org.apache.catalina.tribes.Member)">getMember</a>, <a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html#getMembers()">getMembers</a>, <a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html#getNext()">getNext</a>, <a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html#getOptionFlag()">getOptionFlag</a>, <a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html#getPrevious()">getPrevious</a>, <a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html#hasMembers()">hasMembers</a>, <a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html#okToProcess(int)">okToProcess</a>, <a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html#sendMessage(org.apache.catalina.tribes.Member[],%20org.apache.catalina.tribes.ChannelMessage,%20org.apache.catalina.tribes.group.InterceptorPayload)">sendMessage</a>, <a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html#setNext(org.apache.catalina.tribes.ChannelInterceptor)">setNext</a>, <a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html#setOptionFlag(int)">setOptionFlag</a>, <a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html#setPrevious(org.apache.catalina.tribes.ChannelInterceptor)">setPrevious</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.catalina.tribes.Channel">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.apache.catalina.tribes.<a href="../../../../../org/apache/catalina/tribes/Channel.html" title="interface in org.apache.catalina.tribes">Channel</a></h3>
+<code><a href="../../../../../org/apache/catalina/tribes/Channel.html#getLocalMember(boolean)">getLocalMember</a>, <a href="../../../../../org/apache/catalina/tribes/Channel.html#getMember(org.apache.catalina.tribes.Member)">getMember</a>, <a href="../../../../../org/apache/catalina/tribes/Channel.html#getMembers()">getMembers</a>, <a href="../../../../../org/apache/catalina/tribes/Channel.html#hasMembers()">hasMembers</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="heartbeat">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>heartbeat</h4>
+<pre>protected&nbsp;boolean heartbeat</pre>
+<div class="block">Flag to determine if the channel manages its own heartbeat
+ If set to true, the channel will start a local thread for the heart beat.</div>
+</li>
+</ul>
+<a name="heartbeatSleeptime">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>heartbeatSleeptime</h4>
+<pre>protected&nbsp;long heartbeatSleeptime</pre>
+<div class="block">If <code>heartbeat == true</code> then how often do we want this
+ heartbeat to run. default is one minute</div>
+</li>
+</ul>
+<a name="hbthread">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hbthread</h4>
+<pre>protected&nbsp;<a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.HeartbeatThread.html" title="class in org.apache.catalina.tribes.group">GroupChannel.HeartbeatThread</a> hbthread</pre>
+<div class="block">Internal heartbeat thread</div>
+</li>
+</ul>
+<a name="coordinator">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>coordinator</h4>
+<pre>protected final&nbsp;<a href="../../../../../org/apache/catalina/tribes/group/ChannelCoordinator.html" title="class in org.apache.catalina.tribes.group">ChannelCoordinator</a> coordinator</pre>
+<div class="block">The  <code>ChannelCoordinator</code> coordinates the bottom layer components:<br>
+ - MembershipService<br>
+ - ChannelSender <br>
+ - ChannelReceiver<br></div>
+</li>
+</ul>
+<a name="interceptors">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>interceptors</h4>
+<pre>protected&nbsp;<a href="../../../../../org/apache/catalina/tribes/ChannelInterceptor.html" title="interface in org.apache.catalina.tribes">ChannelInterceptor</a> interceptors</pre>
+<div class="block">The first interceptor in the interceptor stack.
+ The interceptors are chained in a linked list, so we only need a reference to the
+ first one</div>
+</li>
+</ul>
+<a name="membershipListeners">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>membershipListeners</h4>
+<pre>protected final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt; membershipListeners</pre>
+<div class="block">A list of membership listeners that subscribe to membership announcements</div>
+</li>
+</ul>
+<a name="channelListeners">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>channelListeners</h4>
+<pre>protected final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt; channelListeners</pre>
+<div class="block">A list of channel listeners that subscribe to incoming messages</div>
+</li>
+</ul>
+<a name="optionCheck">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>optionCheck</h4>
+<pre>protected&nbsp;boolean optionCheck</pre>
+<div class="block">If set to true, the GroupChannel will check to make sure that</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="GroupChannel()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>GroupChannel</h4>
+<pre>public&nbsp;GroupChannel()</pre>
+<div class="block">Creates a GroupChannel. This constructor will also
+ add the first interceptor in the GroupChannel.<br>
+ The first interceptor is always the channel itself.</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="addInterceptor(org.apache.catalina.tribes.ChannelInterceptor)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addInterceptor</h4>
+<pre>public&nbsp;void&nbsp;addInterceptor(<a href="../../../../../org/apache/catalina/tribes/ChannelInterceptor.html" title="interface in org.apache.catalina.tribes">ChannelInterceptor</a>&nbsp;interceptor)</pre>
+<div class="block">Adds an interceptor to the stack for message processing<br>
+ Interceptors are ordered in the way they are added.<br>
+ <code>channel.addInterceptor(A);</code><br>
+ <code>channel.addInterceptor(C);</code><br>
+ <code>channel.addInterceptor(B);</code><br>
+ Will result in a interceptor stack like this:<br>
+ <code>A -&gt; C -&gt; B</code><br>
+ The complete stack will look like this:<br>
+ <code>Channel -&gt; A -&gt; C -&gt; B -&gt; ChannelCoordinator</code><br></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Channel.html#addInterceptor(org.apache.catalina.tribes.ChannelInterceptor)">addInterceptor</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Channel.html" title="interface in org.apache.catalina.tribes">Channel</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>interceptor</code> - ChannelInterceptorBase</dd></dl>
+</li>
+</ul>
+<a name="heartbeat()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>heartbeat</h4>
+<pre>public&nbsp;void&nbsp;heartbeat()</pre>
+<div class="block">Sends a heartbeat through the interceptor stack.<br>
+ Invoke this method from the application on a periodic basis if
+ you have turned off internal heartbeats <code>channel.setHeartbeat(false)</code></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Channel.html#heartbeat()">heartbeat</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Channel.html" title="interface in org.apache.catalina.tribes">Channel</a></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/ChannelInterceptor.html#heartbeat()">heartbeat</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/ChannelInterceptor.html" title="interface in org.apache.catalina.tribes">ChannelInterceptor</a></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Heartbeat.html#heartbeat()">heartbeat</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Heartbeat.html" title="interface in org.apache.catalina.tribes">Heartbeat</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html#heartbeat()">heartbeat</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html" title="class in org.apache.catalina.tribes.group">ChannelInterceptorBase</a></code></dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/Channel.html#setHeartbeat(boolean)"><code>Channel.setHeartbeat(boolean)</code></a></dd></dl>
+</li>
+</ul>
+<a name="send(org.apache.catalina.tribes.Member[], java.io.Serializable, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>send</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/catalina/tribes/UniqueId.html" title="class in org.apache.catalina.tribes">UniqueId</a>&nbsp;send(<a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>[]&nbsp;destination,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;msg,
+            int&nbsp;options)
+              throws <a href="../../../../../org/apache/catalina/tribes/ChannelException.html" title="class in org.apache.catalina.tribes">ChannelException</a></pre>
+<div class="block">Send a message to the destinations specified</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Channel.html#send(org.apache.catalina.tribes.Member[],%20java.io.Serializable,%20int)">send</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Channel.html" title="interface in org.apache.catalina.tribes">Channel</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>destination</code> - Member[] - destination.length &gt; 0</dd><dd><code>msg</code> - Serializable - the message to send</dd><dd><code>options</code> - sender options, options can trigger guarantee levels and different
+                interceptors to react to the message see class documentation for the
+                <code>Channel</code> object.<br></dd>
+<dt><span class="strong">Returns:</span></dt><dd>UniqueId - the unique Id that was assigned to this message</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/ChannelException.html" title="class in org.apache.catalina.tribes">ChannelException</a></code> - - if an error occurs processing the message</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/Channel.html" title="interface in org.apache.catalina.tribes"><code>Channel</code></a></dd></dl>
+</li>
+</ul>
+<a name="send(org.apache.catalina.tribes.Member[], java.io.Serializable, int, org.apache.catalina.tribes.ErrorHandler)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>send</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/catalina/tribes/UniqueId.html" title="class in org.apache.catalina.tribes">UniqueId</a>&nbsp;send(<a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>[]&nbsp;destination,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>&nbsp;msg,
+            int&nbsp;options,
+            <a href="../../../../../org/apache/catalina/tribes/ErrorHandler.html" title="interface in org.apache.catalina.tribes">ErrorHandler</a>&nbsp;handler)
+              throws <a href="../../../../../org/apache/catalina/tribes/ChannelException.html" title="class in org.apache.catalina.tribes">ChannelException</a></pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Channel.html#send(org.apache.catalina.tribes.Member[],%20java.io.Serializable,%20int,%20org.apache.catalina.tribes.ErrorHandler)">Channel</a></code></strong></div>
+<div class="block">Send a message to one or more members in the cluster</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Channel.html#send(org.apache.catalina.tribes.Member[],%20java.io.Serializable,%20int,%20org.apache.catalina.tribes.ErrorHandler)">send</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Channel.html" title="interface in org.apache.catalina.tribes">Channel</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>destination</code> - Member[] - destination.length &gt; 0</dd><dd><code>msg</code> - Serializable - the message to send</dd><dd><code>options</code> - sender options, options can trigger guarantee levels and different
+                interceptors to react to the message see class documentation for the
+                <code>Channel</code> object.<br></dd><dd><code>handler</code> - - callback object for error handling and completion notification,
+                  used when a message is sent asynchronously using the
+                  <code>Channel.SEND_OPTIONS_ASYNCHRONOUS</code> flag enabled.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>UniqueId - the unique Id that was assigned to this message</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/ChannelException.html" title="class in org.apache.catalina.tribes">ChannelException</a></code> - - if an error occurs processing the message</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/Channel.html" title="interface in org.apache.catalina.tribes"><code>Channel</code></a></dd></dl>
+</li>
+</ul>
+<a name="messageReceived(org.apache.catalina.tribes.ChannelMessage)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>messageReceived</h4>
+<pre>public&nbsp;void&nbsp;messageReceived(<a href="../../../../../org/apache/catalina/tribes/ChannelMessage.html" title="interface in org.apache.catalina.tribes">ChannelMessage</a>&nbsp;msg)</pre>
+<div class="block">Callback from the interceptor stack. <br>
+ When a message is received from a remote node, this method will be
+ invoked by the previous interceptor.<br>
+ This method can also be used to send a message to other components
+ within the same application, but its an extreme case, and you're probably
+ better off doing that logic between the applications itself.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/ChannelInterceptor.html#messageReceived(org.apache.catalina.tribes.ChannelMessage)">messageReceived</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/ChannelInterceptor.html" title="interface in org.apache.catalina.tribes">ChannelInterceptor</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html#messageReceived(org.apache.catalina.tribes.ChannelMessage)">messageReceived</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html" title="class in org.apache.catalina.tribes.group">ChannelInterceptorBase</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>msg</code> - ChannelMessage</dd></dl>
+</li>
+</ul>
+<a name="sendNoRpcChannelReply(org.apache.catalina.tribes.group.RpcMessage, org.apache.catalina.tribes.Member)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sendNoRpcChannelReply</h4>
+<pre>protected&nbsp;void&nbsp;sendNoRpcChannelReply(<a href="../../../../../org/apache/catalina/tribes/group/RpcMessage.html" title="class in org.apache.catalina.tribes.group">RpcMessage</a>&nbsp;msg,
+                         <a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;destination)</pre>
+<div class="block">Sends a <code>NoRpcChannelReply</code> message to a member<br>
+ This method gets invoked by the channel if a RPC message comes in
+ and no channel listener accepts the message. This avoids timeout</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>msg</code> - RpcMessage</dd><dd><code>destination</code> - Member - the destination for the reply</dd></dl>
+</li>
+</ul>
+<a name="memberAdded(org.apache.catalina.tribes.Member)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>memberAdded</h4>
+<pre>public&nbsp;void&nbsp;memberAdded(<a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;member)</pre>
+<div class="block">memberAdded gets invoked by the interceptor below the channel
+ and the channel will broadcast it to the membership listeners</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/MembershipListener.html#memberAdded(org.apache.catalina.tribes.Member)">memberAdded</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/MembershipListener.html" title="interface in org.apache.catalina.tribes">MembershipListener</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html#memberAdded(org.apache.catalina.tribes.Member)">memberAdded</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html" title="class in org.apache.catalina.tribes.group">ChannelInterceptorBase</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>member</code> - Member - the new member</dd></dl>
+</li>
+</ul>
+<a name="memberDisappeared(org.apache.catalina.tribes.Member)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>memberDisappeared</h4>
+<pre>public&nbsp;void&nbsp;memberDisappeared(<a href="../../../../../org/apache/catalina/tribes/Member.html" title="interface in org.apache.catalina.tribes">Member</a>&nbsp;member)</pre>
+<div class="block">memberDisappeared gets invoked by the interceptor below the channel
+ and the channel will broadcast it to the membership listeners</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/MembershipListener.html#memberDisappeared(org.apache.catalina.tribes.Member)">memberDisappeared</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/MembershipListener.html" title="interface in org.apache.catalina.tribes">MembershipListener</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html#memberDisappeared(org.apache.catalina.tribes.Member)">memberDisappeared</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html" title="class in org.apache.catalina.tribes.group">ChannelInterceptorBase</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>member</code> - Member - the member that left or crashed</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/Member.html#SHUTDOWN_PAYLOAD"><code>Member.SHUTDOWN_PAYLOAD</code></a></dd></dl>
+</li>
+</ul>
+<a name="setupDefaultStack()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setupDefaultStack</h4>
+<pre>protected&nbsp;void&nbsp;setupDefaultStack()
+                          throws <a href="../../../../../org/apache/catalina/tribes/ChannelException.html" title="class in org.apache.catalina.tribes">ChannelException</a></pre>
+<div class="block">Sets up the default implementation interceptor stack
+ if no interceptors have been added</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/ChannelException.html" title="class in org.apache.catalina.tribes">ChannelException</a></code></dd></dl>
+</li>
+</ul>
+<a name="checkOptionFlags()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>checkOptionFlags</h4>
+<pre>protected&nbsp;void&nbsp;checkOptionFlags()
+                         throws <a href="../../../../../org/apache/catalina/tribes/ChannelException.html" title="class in org.apache.catalina.tribes">ChannelException</a></pre>
+<div class="block">Validates the option flags that each interceptor is using and reports
+ an error if two interceptor share the same flag.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/ChannelException.html" title="class in org.apache.catalina.tribes">ChannelException</a></code></dd></dl>
+</li>
+</ul>
+<a name="start(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>start</h4>
+<pre>public&nbsp;void&nbsp;start(int&nbsp;svc)
+           throws <a href="../../../../../org/apache/catalina/tribes/ChannelException.html" title="class in org.apache.catalina.tribes">ChannelException</a></pre>
+<div class="block">Starts the channel</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Channel.html#start(int)">start</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Channel.html" title="interface in org.apache.catalina.tribes">Channel</a></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/ChannelInterceptor.html#start(int)">start</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/ChannelInterceptor.html" title="interface in org.apache.catalina.tribes">ChannelInterceptor</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html#start(int)">start</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html" title="class in org.apache.catalina.tribes.group">ChannelInterceptorBase</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>svc</code> - int - what service to start</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/ChannelException.html" title="class in org.apache.catalina.tribes">ChannelException</a></code></dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/Channel.html#start(int)"><code>Channel.start(int)</code></a></dd></dl>
+</li>
+</ul>
+<a name="stop(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>stop</h4>
+<pre>public&nbsp;void&nbsp;stop(int&nbsp;svc)
+          throws <a href="../../../../../org/apache/catalina/tribes/ChannelException.html" title="class in org.apache.catalina.tribes">ChannelException</a></pre>
+<div class="block">Stops the channel</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Channel.html#stop(int)">stop</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Channel.html" title="interface in org.apache.catalina.tribes">Channel</a></code></dd>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/ChannelInterceptor.html#stop(int)">stop</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/ChannelInterceptor.html" title="interface in org.apache.catalina.tribes">ChannelInterceptor</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html#stop(int)">stop</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/group/ChannelInterceptorBase.html" title="class in org.apache.catalina.tribes.group">ChannelInterceptorBase</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>svc</code> - int</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/ChannelException.html" title="class in org.apache.catalina.tribes">ChannelException</a></code></dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/Channel.html#stop(int)"><code>Channel.stop(int)</code></a></dd></dl>
+</li>
+</ul>
+<a name="getFirstInterceptor()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFirstInterceptor</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/catalina/tribes/ChannelInterceptor.html" title="interface in org.apache.catalina.tribes">ChannelInterceptor</a>&nbsp;getFirstInterceptor()</pre>
+<div class="block">Returns the first interceptor of the stack. Useful for traversal.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>ChannelInterceptor</dd></dl>
+</li>
+</ul>
+<a name="getChannelReceiver()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getChannelReceiver</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/catalina/tribes/ChannelReceiver.html" title="interface in org.apache.catalina.tribes">ChannelReceiver</a>&nbsp;getChannelReceiver()</pre>
+<div class="block">Returns the channel receiver component</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/ManagedChannel.html#getChannelReceiver()">getChannelReceiver</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/ManagedChannel.html" title="interface in org.apache.catalina.tribes">ManagedChannel</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>ChannelReceiver</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/ChannelReceiver.html" title="interface in org.apache.catalina.tribes"><code>ChannelReceiver</code></a></dd></dl>
+</li>
+</ul>
+<a name="getChannelSender()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getChannelSender</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/catalina/tribes/ChannelSender.html" title="interface in org.apache.catalina.tribes">ChannelSender</a>&nbsp;getChannelSender()</pre>
+<div class="block">Returns the channel sender component</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/ManagedChannel.html#getChannelSender()">getChannelSender</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/ManagedChannel.html" title="interface in org.apache.catalina.tribes">ManagedChannel</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>ChannelSender</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/ChannelSender.html" title="interface in org.apache.catalina.tribes"><code>ChannelSender</code></a></dd></dl>
+</li>
+</ul>
+<a name="getMembershipService()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMembershipService</h4>
+<pre>public&nbsp;<a href="../../../../../org/apache/catalina/tribes/MembershipService.html" title="interface in org.apache.catalina.tribes">MembershipService</a>&nbsp;getMembershipService()</pre>
+<div class="block">Returns the membership service component</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/ManagedChannel.html#getMembershipService()">getMembershipService</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/ManagedChannel.html" title="interface in org.apache.catalina.tribes">ManagedChannel</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>MembershipService</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/MembershipService.html" title="interface in org.apache.catalina.tribes"><code>MembershipService</code></a></dd></dl>
+</li>
+</ul>
+<a name="setChannelReceiver(org.apache.catalina.tribes.ChannelReceiver)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setChannelReceiver</h4>
+<pre>public&nbsp;void&nbsp;setChannelReceiver(<a href="../../../../../org/apache/catalina/tribes/ChannelReceiver.html" title="interface in org.apache.catalina.tribes">ChannelReceiver</a>&nbsp;clusterReceiver)</pre>
+<div class="block">Sets the channel receiver component</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/ManagedChannel.html#setChannelReceiver(org.apache.catalina.tribes.ChannelReceiver)">setChannelReceiver</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/ManagedChannel.html" title="interface in org.apache.catalina.tribes">ManagedChannel</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>clusterReceiver</code> - ChannelReceiver</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/ChannelReceiver.html" title="interface in org.apache.catalina.tribes"><code>ChannelReceiver</code></a></dd></dl>
+</li>
+</ul>
+<a name="setChannelSender(org.apache.catalina.tribes.ChannelSender)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setChannelSender</h4>
+<pre>public&nbsp;void&nbsp;setChannelSender(<a href="../../../../../org/apache/catalina/tribes/ChannelSender.html" title="interface in org.apache.catalina.tribes">ChannelSender</a>&nbsp;clusterSender)</pre>
+<div class="block">Sets the channel sender component</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/ManagedChannel.html#setChannelSender(org.apache.catalina.tribes.ChannelSender)">setChannelSender</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/ManagedChannel.html" title="interface in org.apache.catalina.tribes">ManagedChannel</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>clusterSender</code> - ChannelSender</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/ChannelSender.html" title="interface in org.apache.catalina.tribes"><code>ChannelSender</code></a></dd></dl>
+</li>
+</ul>
+<a name="setMembershipService(org.apache.catalina.tribes.MembershipService)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMembershipService</h4>
+<pre>public&nbsp;void&nbsp;setMembershipService(<a href="../../../../../org/apache/catalina/tribes/MembershipService.html" title="interface in org.apache.catalina.tribes">MembershipService</a>&nbsp;membershipService)</pre>
+<div class="block">Sets the membership component</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/ManagedChannel.html#setMembershipService(org.apache.catalina.tribes.MembershipService)">setMembershipService</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/ManagedChannel.html" title="interface in org.apache.catalina.tribes">ManagedChannel</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>membershipService</code> - MembershipService</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/MembershipService.html" title="interface in org.apache.catalina.tribes"><code>MembershipService</code></a></dd></dl>
+</li>
+</ul>
+<a name="addMembershipListener(org.apache.catalina.tribes.MembershipListener)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addMembershipListener</h4>
+<pre>public&nbsp;void&nbsp;addMembershipListener(<a href="../../../../../org/apache/catalina/tribes/MembershipListener.html" title="interface in org.apache.catalina.tribes">MembershipListener</a>&nbsp;membershipListener)</pre>
+<div class="block">Adds a membership listener to the channel.<br>
+ Membership listeners are uniquely identified using the equals(Object) method</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Channel.html#addMembershipListener(org.apache.catalina.tribes.MembershipListener)">addMembershipListener</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Channel.html" title="interface in org.apache.catalina.tribes">Channel</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>membershipListener</code> - MembershipListener</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/MembershipListener.html" title="interface in org.apache.catalina.tribes"><code>MembershipListener</code></a></dd></dl>
+</li>
+</ul>
+<a name="removeMembershipListener(org.apache.catalina.tribes.MembershipListener)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeMembershipListener</h4>
+<pre>public&nbsp;void&nbsp;removeMembershipListener(<a href="../../../../../org/apache/catalina/tribes/MembershipListener.html" title="interface in org.apache.catalina.tribes">MembershipListener</a>&nbsp;membershipListener)</pre>
+<div class="block">Removes a membership listener from the channel.<br>
+ Membership listeners are uniquely identified using the equals(Object) method</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Channel.html#removeMembershipListener(org.apache.catalina.tribes.MembershipListener)">removeMembershipListener</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Channel.html" title="interface in org.apache.catalina.tribes">Channel</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>membershipListener</code> - MembershipListener</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/MembershipListener.html" title="interface in org.apache.catalina.tribes"><code>MembershipListener</code></a></dd></dl>
+</li>
+</ul>
+<a name="addChannelListener(org.apache.catalina.tribes.ChannelListener)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addChannelListener</h4>
+<pre>public&nbsp;void&nbsp;addChannelListener(<a href="../../../../../org/apache/catalina/tribes/ChannelListener.html" title="interface in org.apache.catalina.tribes">ChannelListener</a>&nbsp;channelListener)</pre>
+<div class="block">Adds a channel listener to the channel.<br>
+ Channel listeners are uniquely identified using the equals(Object) method</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Channel.html#addChannelListener(org.apache.catalina.tribes.ChannelListener)">addChannelListener</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Channel.html" title="interface in org.apache.catalina.tribes">Channel</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>channelListener</code> - ChannelListener</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/ChannelListener.html" title="interface in org.apache.catalina.tribes"><code>ChannelListener</code></a>, 
+<a href="../../../../../org/apache/catalina/tribes/Heartbeat.html" title="interface in org.apache.catalina.tribes"><code>Heartbeat</code></a></dd></dl>
+</li>
+</ul>
+<a name="removeChannelListener(org.apache.catalina.tribes.ChannelListener)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeChannelListener</h4>
+<pre>public&nbsp;void&nbsp;removeChannelListener(<a href="../../../../../org/apache/catalina/tribes/ChannelListener.html" title="interface in org.apache.catalina.tribes">ChannelListener</a>&nbsp;channelListener)</pre>
+<div class="block">Removes a channel listener from the channel.<br>
+ Channel listeners are uniquely identified using the equals(Object) method</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Channel.html#removeChannelListener(org.apache.catalina.tribes.ChannelListener)">removeChannelListener</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Channel.html" title="interface in org.apache.catalina.tribes">Channel</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>channelListener</code> - ChannelListener</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/ChannelListener.html" title="interface in org.apache.catalina.tribes"><code>ChannelListener</code></a></dd></dl>
+</li>
+</ul>
+<a name="getInterceptors()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getInterceptors</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../org/apache/catalina/tribes/ChannelInterceptor.html" title="interface in org.apache.catalina.tribes">ChannelInterceptor</a>&gt;&nbsp;getInterceptors()</pre>
+<div class="block">Returns an iterator of all the interceptors in this stack</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/ManagedChannel.html#getInterceptors()">getInterceptors</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/ManagedChannel.html" title="interface in org.apache.catalina.tribes">ManagedChannel</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>Iterator</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/Channel.html#addInterceptor(org.apache.catalina.tribes.ChannelInterceptor)"><code>Channel.addInterceptor(ChannelInterceptor)</code></a></dd></dl>
+</li>
+</ul>
+<a name="setOptionCheck(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOptionCheck</h4>
+<pre>public&nbsp;void&nbsp;setOptionCheck(boolean&nbsp;optionCheck)</pre>
+<div class="block">Enables/disables the option check<br>
+ Setting this to true, will make the GroupChannel perform a conflict check
+ on the interceptors. If two interceptors are using the same option flag
+ and throw an error upon start.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>optionCheck</code> - boolean</dd></dl>
+</li>
+</ul>
+<a name="setHeartbeatSleeptime(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setHeartbeatSleeptime</h4>
+<pre>public&nbsp;void&nbsp;setHeartbeatSleeptime(long&nbsp;heartbeatSleeptime)</pre>
+<div class="block">Configure local heartbeat sleep time<br>
+ Only used when <code>getHeartbeat()==true</code></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>heartbeatSleeptime</code> - long - time in milliseconds to sleep between heartbeats</dd></dl>
+</li>
+</ul>
+<a name="setHeartbeat(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setHeartbeat</h4>
+<pre>public&nbsp;void&nbsp;setHeartbeat(boolean&nbsp;heartbeat)</pre>
+<div class="block">Enables or disables local heartbeat.
+ if <code>setHeartbeat(true)</code> is invoked then the channel will start an internal
+ thread to invoke <code>Channel.heartbeat()</code> every <code>getHeartbeatSleeptime</code> milliseconds</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/catalina/tribes/Channel.html#setHeartbeat(boolean)">setHeartbeat</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/apache/catalina/tribes/Channel.html" title="interface in org.apache.catalina.tribes">Channel</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>heartbeat</code> - boolean</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/Channel.html#heartbeat()"><code>Channel.heartbeat()</code></a></dd></dl>
+</li>
+</ul>
+<a name="getOptionCheck()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOptionCheck</h4>
+<pre>public&nbsp;boolean&nbsp;getOptionCheck()</pre>
+<dl><dt><span class="strong">Returns:</span></dt><dd>boolean</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#setOptionCheck(boolean)"><code>setOptionCheck(boolean)</code></a></dd></dl>
+</li>
+</ul>
+<a name="getHeartbeat()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHeartbeat</h4>
+<pre>public&nbsp;boolean&nbsp;getHeartbeat()</pre>
+<dl><dt><span class="strong">Returns:</span></dt><dd>boolean</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.html#setHeartbeat(boolean)"><code>setHeartbeat(boolean)</code></a></dd></dl>
+</li>
+</ul>
+<a name="getHeartbeatSleeptime()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getHeartbeatSleeptime</h4>
+<pre>public&nbsp;long&nbsp;getHeartbeatSleeptime()</pre>
+<div class="block">Returns the sleep time in milliseconds that the internal heartbeat will
+ sleep in between invocations of <code>Channel.heartbeat()</code></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>long</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><em><b>Apache Tomcat 8.0.21</b></em></div>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/catalina/tribes/group/ExtendedRpcCallback.html" title="interface in org.apache.catalina.tribes.group"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/catalina/tribes/group/GroupChannel.HeartbeatThread.html" title="class in org.apache.catalina.tribes.group"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/catalina/tribes/group/GroupChannel.html" target="_top">Frames</a></li>
+<li><a href="GroupChannel.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2000-2015 Apache Software Foundation. All Rights Reserved.</small></p>
+</body>
+</html>
