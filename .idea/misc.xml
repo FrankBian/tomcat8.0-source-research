@@ -24,6 +24,23 @@
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
   <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$PROJECT_DIR$/tomcat-code">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="http://svn.apache.org/repos/asf/tomcat/tc8.0.x/branches" />
+                  <option value="http://svn.apache.org/repos/asf/tomcat/tc8.0.x/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="http://svn.apache.org/repos/asf/tomcat/tc8.0.x/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
 </project>
