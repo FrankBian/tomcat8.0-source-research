@@ -5,4 +5,4 @@ I will record whatever I think while I study the code , it also has some resourc
 
 # Questions
 
-* the class `BootStrap` is a final *Class* , what's the benifit of `final`?
+* the class `BootStrap` is a final *Class* , what's the benefit of `final`?
