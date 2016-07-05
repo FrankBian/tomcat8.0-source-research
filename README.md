@@ -13,5 +13,8 @@ Now, it can be used to import to intellij directly if you would like to read the
 
 ___Just the `catalina-home` and `tomcat-code` must exist___
 
+# Run
 
-
++ import into IDEA
++ Find ```tomcat-code/java/org/apache/catalina/startup/Bootstrap.java```
++ Run ```main()``` method
